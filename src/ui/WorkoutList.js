@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import {
     View,
     Text,
-    ListView,
+    FlatList,
     StyleSheet,
-    Dimensions
+    Dimensions, TouchableWithoutFeedback
 } from 'react-native';
 import Button from 'apsl-react-native-button';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -20,20 +20,27 @@ export class WorkoutList extends Component {
         this.props.setModalVisibility(true)
     }
 
-    render() {
-        return (
-            <View style={styles.addSomeExercises}>
-                <Text style={styles.bigText}>
-                    add some{'\n'}
-                    exercises
-                </Text>
-                <Button
-                    onPress={this.handlePress.bind(this)}
-                    style={styles.plusButton}
-                    textStyle={styles.plus}
-                    children={<Icon name="add" size={50} color="white" key="add"/>}
-                />
+    _renderItem = ({item}) => (
+        <TouchableWithoutFeedback onPress={(item) => this.handlePress.call(this, item)}>
+            <View style={styles.listItem}>
+                <Text style={styles.listText}>{item.title}</Text>
             </View>
+        </TouchableWithoutFeedback>
+    )
+
+    render() {
+        const listFooterComponent = (
+            <View style={styles.addSomeExercises}><Text style={styles.bigText}>add some{'\n'}exercises</Text><Button
+                onPress={this.handlePress.bind(this)} style={styles.plusButton} textStyle={styles.plus}
+                children={<Icon name="fitness-center" size={50} color="white" key="add"/>}/></View>)
+        return (
+            <FlatList
+                ListFooterComponent={listFooterComponent}
+                data={[{title: 'Title Text', key: 'item1'}]} renderItem={this._renderItem}
+            >
+            </FlatList>
+
+
         )
     }
 }

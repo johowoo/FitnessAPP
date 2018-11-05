@@ -3,11 +3,11 @@ import {
     View, Text, StyleSheet
 } from 'react-native';
 import {connect} from 'react-redux';
-import {TopBar} from "./TopBar";
+import {TopBar} from "../ui/TopBar";
 import {Fonts} from "../utils/Fonts";
-import {setExerciseModalVisibility} from '../store/actions';
-import {WorkoutList} from "../page/WorkoutList";
-import {ExerciseModal} from "../page/ExerciseModal";
+import {setExerciseModalVisibility, addExercise} from '../store/actions';
+import {WorkoutList} from "../ui/WorkoutList";
+import {ExerciseModal} from "./ExerciseModal";
 
 class _CurrentWorkout extends Component {
     static defaultProps = {
@@ -23,14 +23,16 @@ class _CurrentWorkout extends Component {
                 </TopBar>
                 <View>
                     <WorkoutList
-                    setModalVisibility={this.props.setModalVisibility}
-                    currentWorkout={this.props.currentWorkout}
+                        setModalVisibility={this.props.setModalVisibility}
+                        currentWorkout={this.props.currentWorkout}
                     />
                 </View>
                 <View>
                     <ExerciseModal
-                    visible={this.props.exerciseModal}
-                    closeModal={()=>this.props.setModalVisibility(false)}
+                        addExercise={this.props.addExercise}
+                        exercises={this.props.exercises}
+                        visible={this.props.exerciseModal}
+                        closeModal={() => this.props.setModalVisibility(false)}
                     />
                 </View>
             </View>
@@ -41,11 +43,15 @@ class _CurrentWorkout extends Component {
 
 const mapStateToProps = state => ({
     currentWorkout: state.currentWorkout,
-    exerciseModal: state.ui.exerciseModal
+    exerciseModal: state.ui.exerciseModal,
+    exercises: state.exercises,
 })
 const mapActionsToProps = dispatch => ({
     setModalVisibility(visible) {
         return dispatch(setExerciseModalVisibility(visible))
+    },
+    addExercise(exercise) {
+        return dispatch(addExercise(exercise));
     }
 })
 
