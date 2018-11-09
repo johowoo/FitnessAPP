@@ -1,5 +1,5 @@
-import {exercises as initState} from "../../initialExercises";
+import {sectionExercises,extraSectionExercises } from "../../initialExercises";
 
-export const exercises = (state = initState, { type, payload }) => {
+export const exercises = (state = {sectionExercises,extraSectionExercises}) => {
     return state;
 };

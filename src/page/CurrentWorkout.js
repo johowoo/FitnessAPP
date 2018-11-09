@@ -5,32 +5,48 @@ import {
 import {connect} from 'react-redux';
 import {TopBar} from "../ui/TopBar";
 import {Fonts} from "../utils/Fonts";
-import {setExerciseModalVisibility, addExercise} from '../store/actions';
+import {setExerciseModalVisibility, addExerciseAction,clearCurrentWorkoutAction} from '../store/actions';
 import {WorkoutList} from "../ui/WorkoutList";
 import {ExerciseModal} from "./ExerciseModal";
+import Button from "apsl-react-native-button";
 
 class _CurrentWorkout extends Component {
     static defaultProps = {
         currentWorkout: [],
         // exercises:[],
     }
+    handlePressComplete = () => {
+        this.props.clearCurrentWorkout();
+    }
 
     render() {
+        console.log(this.props.isExerciseListEmpty)
         return (
             <View>
                 <TopBar style={styles.topBar}>
-                    <Text style={styles.textBar}>Current Workout</Text>
+                    <View>
+                        <Text style={styles.textBar}>Current Workout</Text>
+                    </View>
+                    <View style={{position: 'absolute', right: 5, top: -18}}>
+                        <Button
+                            style={this.props.isExerciseListEmpty? styles.completeButtonDisabled:styles.completeButton}
+                            onPress={this.handlePressComplete.bind(this)}
+                            children={<Text key="completed" style={this.props.isExerciseListEmpty?styles.completeDisabled:styles.complete}>Completed</Text>}
+                        />
+                    </View>
                 </TopBar>
                 <View>
                     <WorkoutList
+                        isCompleted={this.props.isCompleted}
                         setModalVisibility={this.props.setModalVisibility}
                         currentWorkout={this.props.currentWorkout}
                     />
                 </View>
                 <View>
                     <ExerciseModal
-                        addExercise={this.props.addExercise}
-                        exercises={this.props.exercises}
+                        // addExercise={this.props.addExercise}
+                        sectionExercises={this.props.sectionExercises}
+                        extraSectionExercises={this.props.extraSectionExercises}
                         visible={this.props.exerciseModal}
                         closeModal={() => this.props.setModalVisibility(false)}
                     />
@@ -42,16 +58,22 @@ class _CurrentWorkout extends Component {
 }
 
 const mapStateToProps = state => ({
+    isCompleted: state.exerciseCompleted.isCompleted,
+    isExerciseListEmpty: state.exerciseCompleted.isExerciseListEmpty,
     currentWorkout: state.currentWorkout,
     exerciseModal: state.ui.exerciseModal,
-    exercises: state.exercises,
+    sectionExercises: state.exercises.sectionExercises,
+    extraSectionExercises: state.exercises.extraSectionExercises,
 })
 const mapActionsToProps = dispatch => ({
     setModalVisibility(visible) {
         return dispatch(setExerciseModalVisibility(visible))
     },
     addExercise(exercise) {
-        return dispatch(addExercise(exercise));
+        return dispatch(addExerciseAction(exercise));
+    },
+    clearCurrentWorkout(){
+        return dispatch(clearCurrentWorkoutAction());
     }
 })
 
@@ -69,5 +91,33 @@ const styles = StyleSheet.create({
         color: '#ddd',
         fontSize: 30,
         fontFamily: Fonts.PattayaRegular
+    },
+    completeButton: {
+        borderColor: '#fff',
+        marginTop: 50,
+        // borderStyle: null,
+        borderWidth: 1,
+
+        height: 30,
+        width: 90,
+        marginLeft: 50,
+    },
+
+    complete: {
+        color: '#fff'
+    },
+    completeButtonDisabled:{
+        backgroundColor: 'rgba(50,50,50,0.1)',
+        borderColor: '#999',
+        marginTop: 50,
+        // borderStyle: null,
+        borderWidth: 1,
+        height: 30,
+        width: 90,
+        marginLeft: 50,
+    },
+    completeDisabled:{
+        color: '#999'
     }
+
 })

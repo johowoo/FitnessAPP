@@ -5,6 +5,12 @@ export const currentWorkout=(state=[],action)=>{
     switch(action.type){
         case types.ADD_EXERCISE:
             return [...state,action.payload]
-        default:return state;
+
+        case types.CLEAR_CURRENT_WORKOUT:
+            console.log('here')
+            return []
+
+        default:
+            return state;
     }
 }
