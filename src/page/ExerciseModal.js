@@ -18,11 +18,7 @@ export class ExerciseModal extends Component {
                 visible={this.props.visible}
                 onRequestClose={this.props.closeModal}
             >
-
                     <ExerciseList {...this.props}/>
-
-
-
             </Modal>
         );
     }

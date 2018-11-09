@@ -5,6 +5,6 @@ export const setExerciseModalVisibility=(visible)=>(
     createAction(types.SET_EXECERCISE_VISIBILITY)(visible)
 );
 
-export const addExercise=(exercise)=>(
+export const addExerciseAction=(exercise)=>(
     createAction(types.ADD_EXERCISE)(exercise)
 );
