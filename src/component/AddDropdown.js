@@ -6,40 +6,49 @@ import ApslButton from 'apsl-react-native-button';
 
 const {width}=Dimensions.get('window');
 
-export  class AddExerciseDropdown extends Component {
+export  class AddDropdown extends Component {
+    static defaultProps= {
+        placeholder: 'Please enter information',
+        placeholderTextColor: '#666',
+        keyboardType: 'default',
+        adjustScreen: () => null,
+    }
     state={
-        category:'Cardio',
+        category:this.props.options[0],
         inputText:''
     }
     handlePress=()=>{
-        this.props.changeDisplayExercises({
-            exercise:this.state.inputText,
-            category:this.state.category
+        this.props.handleConfirm({
+            item:this.state.inputText,
+            category:this.state.category,
         })
     }
     render(){
+        // console.warn({...styles,...this.props.styles}.dropdownMenu)
         return(
-            <View style={styles.container}>
+            <View style={[styles.container,this.props.styles.container]}>
                 <TextInput
-                    style={styles.input}
-                    placeholderTextColor='#666'
-                    placeholder={"Please enter an exercise"}
+                    style={[styles.dropdownInput,this.props.styles.dropdownInput]}
+                    placeholderTextColor={this.props.placeholderTextColor}
+                    placeholder={this.props.placeholder}
                     value={this.state.inputText}
                     onChangeText={text=>this.setState({inputText:text})}
+                    keyboardType={this.props.keyboardType}
+                    onFocus={this.props.adjustScreen}
                 />
-                <View style={styles.dropdownContainer} >
+                <View style={[styles.dropdownContainer,this.props.styles.dropdownContainer]} >
                     <ModalDropdown
-                        style={styles.dropdownMenu}
-                        textStyle={styles.dropdownMenuText}
-                        dropdownStyle={styles.dropdownList}
-                        dropdownTextStyle={styles.dropdownListText}
-                        dropdownTextHighlightStyle={styles.dropdownSelection}
-                        options={data}
-                        defaultValue={"Cardio"}
+                        style={[styles.dropdownMenu,this.props.styles.dropdownMenu]}
+                        textStyle={[styles.dropdownMenuText,this.props.styles.dropdownMenuText]}
+                        dropdownStyle={[styles.dropdownList,this.props.styles.dropdownList]}
+                        dropdownTextStyle={[styles.dropdownListText,this.props.styles.dropdownListText]}
+                        dropdownTextHighlightStyle={[styles.dropdownSelection,this.props.styles.dropdownSelection]}
+                        options={this.props.options}
+                        defaultValue={this.props.options[0]}
                         onSelect={(index,value)=>{this.setState({category:value})}}
                     />
                     <ApslButton
-                        style={styles.confirmButton}
+                        style={[styles.confirmButton,this.props.styles.confirmButton]}
                         onPress={this.handlePress}
                         children={<Text key={"confirm"} style={{color:'#FF8c00'}}>Confirm</Text>}
                     />
@@ -55,11 +64,10 @@ const styles = StyleSheet.create({
         marginBottom: 20,
         zIndex: 999
     },
-    input:{
+    dropdownInput:{
         marginLeft:width*0.03,
         marginRight:width*0.03,
-        backgroundColor: "rgba(255,140,0,0.1)",
-
+        // backgroundColor: "rgba(255,140,0,0.1)",
         height:50,
     },
     dropdownContainer:{
@@ -74,8 +82,7 @@ const styles = StyleSheet.create({
         marginRight:width*0.02,
         borderWidth:1,
         borderColor:'#FF8c00',
-        // flex:1,
-        backgroundColor:'#EEE',
+        // backgroundColor:'#EEE',
         justifyContent: 'center'
     },
     dropdownMenuText:{

@@ -5,9 +5,9 @@ import {
 
 import LinearGradient from 'react-native-linear-gradient';
 import TabView from 'react-native-scrollable-tab-view';
-import {Calender} from './Calender';
-import {CurrentWorkout} from '../ui';
-import {Weight} from "./Weight";
+import {Calendar} from './Calendar';
+import {CurrentWorkout} from '../component';
+import {Health} from "./Health";
 
 class TabPage extends Component {
     render() {
@@ -26,12 +26,12 @@ class TabPage extends Component {
                 >
                     <CurrentWorkout tabLabel="+"></CurrentWorkout>
 
-                    <View tabLabel="calender">
-                        <Calender/>
+                    <View tabLabel="calendar">
+                        <Calendar/>
                     </View>
 
-                    <View tabLabel="weight">
-                        <Weight/>
+                    <View tabLabel="health">
+                        <Health/>
                     </View>
                 </TabView>
 

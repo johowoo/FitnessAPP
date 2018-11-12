@@ -1,16 +1,17 @@
 import React,{Component} from'react';
 import {View,Text,StyleSheet} from'react-native';
 import { CalendarList } from 'react-native-calendars';
-import {TopBar} from "../ui";
+import {TopBar} from "../component";
 import {Fonts} from "../utils/Fonts";
+import {connect} from 'react-redux';
 
 
-export class Calender extends Component{
+export class _Calendar extends Component{
     render(){
         return(
             <View>
                 <TopBar style={styles.topBar}>
-                    <Text style={styles.textBar}>Calender</Text>
+                    <Text style={styles.textBar}>Calendar</Text>
                 </TopBar>
                 <CalendarList
                     // Callback which gets executed when visible months change in scroll view. Default = undefined
@@ -21,19 +22,18 @@ export class Calender extends Component{
                         futureScrollRange={50}
                         // Enable or disable scrolling of calendar list
                         scrollEnabled={true}
-                    markedDates={{
-                        '2018-11-16': {selected: true, marked: true, selectedColor: '#1b98d9'},
-                        '2018-11-17': {marked: true},
-                        '2018-11-18': {marked: true, dotColor: 'red', activeOpacity: 0},
-                        '2018-11-19': {disabled: true, disableTouchEvent: true},
-                        '2018-11-21': {selected: true,marked: true, selectedColor: 'orange'}
-                    }}
+                    markedDates={this.props.markedDates}
                     onDayPress={(day)=>{console.warn(day.dateString)}}
-                        />
+                />
             </View>
         )
     }
 }
+const mapStateToProps=state=>({
+    markedDates:state.calendar.markedDates,
+})
+
+export const Calendar=connect(mapStateToProps,null)(_Calendar)
 const styles = StyleSheet.create({
     topBar: {
         backgroundColor: 'transparent',

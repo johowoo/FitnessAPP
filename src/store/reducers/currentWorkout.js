@@ -7,7 +7,6 @@ export const currentWorkout=(state=[],action)=>{
             return [...state,action.payload]
 
         case types.CLEAR_CURRENT_WORKOUT:
-            console.log('here')
             return []
 
         default:

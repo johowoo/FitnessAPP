@@ -2,9 +2,11 @@ import React, {Component} from 'react';
 import {
     View,
     Text,
-    FlatList,
+    SwipeableFlatList,
     StyleSheet,
-    Dimensions, TouchableWithoutFeedback
+    Dimensions,
+    TouchableWithoutFeedback,
+    TouchableHighlight
 } from 'react-native';
 import Button from 'apsl-react-native-button';
 import Icon from 'react-native-vector-icons/MaterialIcons';
@@ -17,13 +19,37 @@ export class _WorkoutList extends Component {
         this.props.setModalVisibility(true)
     }
 
-    _renderItem = ({item}) => (
-        <TouchableWithoutFeedback onPress={(item) => this.handlePress.call(this, item)}>
+    genQuickActions=()=>{
+        return <View style={styles.quickContainer}>
+            <TouchableHighlight
+                onPress={()=>{
+                    alert("确认删除？")
+                }}
+            >
+                <View style={styles.quick}>
+                    {/*<Text style={styles.text}>删除</Text>*/}
+                </View>
+            </TouchableHighlight>
+
+        </View>
+
+    }
+    _renderItem = ({item: {exercise, sets}}) => {
+        // console.warn(exercise,sets);
+        return (<TouchableWithoutFeedback
+            // onPress={(item) => this.handlePress.call(this, item)}
+        >
             <View style={styles.listItem}>
-                <Text style={styles.listText}>{item}</Text>
+                <View style={{flex: 0.03}}/>
+                <View style={{flex: 0.77}}>
+                    <Text style={styles.exerciseText}>{'  ' + exercise}</Text>
+                </View>
+                <View style={{flex: 0.20}}>
+                    <Text style={styles.exerciseText}>{sets} sets</Text>
+                </View>
             </View>
-        </TouchableWithoutFeedback>
-    )
+        </TouchableWithoutFeedback>)
+    }
 
     render() {
         const listFooterComponent = (
@@ -40,10 +66,13 @@ export class _WorkoutList extends Component {
             </View>
         )
         return (
-            <FlatList style={{marginTop: 2}}
-                      ListFooterComponent={listFooterComponent}
-                      data={this.props.currentWorkout} renderItem={this._renderItem}
-                      keyExtractor={(item, index) => item + index}
+            <SwipeableFlatList
+                style={{marginTop: 2}}
+                ListFooterComponent={listFooterComponent}
+                data={this.props.currentWorkout} renderItem={this._renderItem}
+                keyExtractor={(item, index) => item + index}
+                renderQuickActions={() => this.genQuickActions()}
+                maxSwipeDistance={100}
             />
         )
     }
@@ -96,14 +125,19 @@ const styles = StyleSheet.create({
         fontSize: 24
     },
     listItem: {
+        flexDirection: 'row',
+
         alignItems: 'center',
         height: 40,
-        justifyContent: 'center',
+        justifyContent: 'space-around',
         borderColor: '#ccc',
         borderWidth: 1
     },
-    listText: {
+    exerciseText: {
         fontSize: 20,
         color: '#eee'
+    },
+    setsText: {
+        fontSize: 20,
     }
 });

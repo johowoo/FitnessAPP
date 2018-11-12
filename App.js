@@ -10,10 +10,11 @@ import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View,TextInput,TouchableHighlight,Dimensions} from 'react-native';
 import {Root} from "./src/Root";
 import {Provider} from'react-redux';
-import {index} from "./src/store/index";
-import {Fonts} from "./src/utils/Fonts";
+import getStore from "./src/store/index";
+import { PersistGate } from 'redux-persist/integration/react'
 
 
+let{ store,persistor} =getStore();
 const instructions = Platform.select({
     ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
     android:
@@ -22,11 +23,14 @@ const instructions = Platform.select({
 });
 
 type Props = {};
+
 export default class App extends Component<Props> {
     render() {
         return (
-           <Provider store={index}>
+           <Provider store={store}>
+               <PersistGate loading={null} persistor={persistor}>
                 <Root/>
+               </PersistGate>
            </Provider>
         );
     }

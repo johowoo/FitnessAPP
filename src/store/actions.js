@@ -15,3 +15,16 @@ export const clearCurrentWorkoutAction=()=>(
 export const updateEmptyAction=(bool)=>(
     createAction(types.UPDATE_EMPTY)(bool)
 )
+export const setCurrentDateAction=(date)=>(
+    createAction(types.SET_CURRENT_DATE)(date)
+)
+export const addMarkedDateAction=(date)=>(
+    createAction(types.ADD_MARKED_DATE)(date)
+)
+export const updateWeightAction=(data)=>(
+    createAction(types.UPDATE_WEIGHT_DATA)(data)
+)
+export const updateBfrAction=(data)=>(
+    createAction(types.UPDATE_BFR_DATA)(data)
+)
+
