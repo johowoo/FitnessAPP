@@ -5,6 +5,7 @@ import {exercises} from "./reducers/exercises";
 import {exerciseCompleted} from './reducers/exerciseCompleted';
 import {calendar}from'./reducers/calendar';
 import {health}from'./reducers/health';
+import {savedExerciseForEachDay}from'./reducers/savedExerciseForEachDay';
 
 export const reducer=combineReducers({
     currentWorkout,
@@ -12,5 +13,6 @@ export const reducer=combineReducers({
     exercises,
     exerciseCompleted,
     calendar,
-    health
+    health,
+    savedExerciseForEachDay
 })

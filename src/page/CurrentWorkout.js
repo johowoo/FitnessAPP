@@ -10,24 +10,31 @@ import {
     addExerciseAction,
     clearCurrentWorkoutAction,
     setCurrentDateAction,
-    addMarkedDateAction, updateEmptyAction
+    addMarkedDateAction,
+    updateEmptyAction,
+    addNewExerciseListAction
 } from '../store/actions';
 import {WorkoutList} from "../component/WorkoutList";
 import {ExerciseModal} from "./ExerciseModal";
 import Button from "apsl-react-native-button";
+import {formateMonthandDay} from '../utils/formateMonthandDay';
+
 
 class _CurrentWorkout extends Component {
     static defaultProps = {
         currentWorkout: [],
-        // currentDate: ''
-        // exercises:[],
+
     }
     handlePressComplete = () => {
         this.props.clearCurrentWorkout();
         const currentTimestamp = new Date();
-        const currentDate = `${currentTimestamp.getFullYear()}-${currentTimestamp.getMonth() + 1}-${currentTimestamp.getDate()}`
+        const currentDate = `${currentTimestamp.getFullYear()}-${formateMonthandDay(currentTimestamp.getMonth()) + 1}-${formateMonthandDay(currentTimestamp.getDate()+1)}`;
         this.props.addMarkedDate(currentDate);
         this.props.updateEmpty(true)
+        this.props.addNewExerciseList({
+            date: currentDate,
+            exercises: this.props.currentWorkout
+        })
     }
 
 
@@ -36,7 +43,7 @@ class _CurrentWorkout extends Component {
         return (
             <View>
                 <TopBar style={styles.topBar}>
-                    <View>
+                    <View style={{marginRight: 55}}>
                         <Text style={styles.textBar}>Current Workout</Text>
                     </View>
                     <View style={{position: 'absolute', right: 5, top: -18}}>
@@ -95,7 +102,12 @@ const mapActionsToProps = dispatch => ({
     addMarkedDate(date) {
         return dispatch(addMarkedDateAction(date))
     },
-    updateEmpty:(bool)=>dispatch(updateEmptyAction(bool)),
+    updateEmpty(bool) {
+        return dispatch(updateEmptyAction(bool))
+    },
+    addNewExerciseList(payload) {
+        return dispatch(addNewExerciseListAction(payload))
+    }
 })
 
 export const CurrentWorkout = connect(mapStateToProps, mapActionsToProps)(_CurrentWorkout)

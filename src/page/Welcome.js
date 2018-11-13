@@ -1,12 +1,13 @@
 import React, {Component} from 'react';
 import {
-    StyleSheet, View, Text, Dimensions,
+    StyleSheet, View, Text, Dimensions,Platform,StatusBar
 } from 'react-native';
 
 import LinearGradient from 'react-native-linear-gradient'
 import {Fonts} from "../utils/Fonts";
 import Button from 'apsl-react-native-button'
 
+const STATUS_BAR_HEIGHT = 30;
 const {height}=Dimensions.get('window');
 
 class Welcome extends Component {
@@ -18,6 +19,7 @@ class Welcome extends Component {
         return (
                 <LinearGradient
                     colors={["#4a168c","#880e4f"]} style={styles.container}>
+
                     <View style={styles.header}>
                         <Text style={styles.headerText}>Joe's Fitness</Text>
                     </View >
@@ -27,8 +29,6 @@ class Welcome extends Component {
                     <View style={styles.bottom}>
                         <Button onPress={this.handlePress.bind(this)} style={{borderColor:'#ddd'}}><Text style={styles.buttonText}>Start Workout</Text></Button>
                     </View>
-
-
                 </LinearGradient>
         )
     }
@@ -37,6 +37,10 @@ class Welcome extends Component {
 export default Welcome;
 
 const styles=StyleSheet.create({
+     statusBar: {
+        height: Platform.OS === 'ios' ? STATUS_BAR_HEIGHT:0,
+         backgroundColor:'red'
+    },
     container:{
         flex:1,
         justifyContent: 'center',

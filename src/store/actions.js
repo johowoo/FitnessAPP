@@ -27,4 +27,7 @@ export const updateWeightAction=(data)=>(
 export const updateBfrAction=(data)=>(
     createAction(types.UPDATE_BFR_DATA)(data)
 )
+export const addNewExerciseListAction=(data)=>(
+    createAction(types.ADD_NEW_EXERCISE_LIST)(data)
+)
 

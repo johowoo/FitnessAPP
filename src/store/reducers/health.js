@@ -19,7 +19,7 @@ const defaultState = {
 export const health = (state = defaultState, action) => {
     switch (action.type) {
         case types.UPDATE_WEIGHT_DATA:
-            console.warn(action.payload)
+            // console.warn(action.payload)
             const newWeightData = state.weightData;
             newWeightData[monthToNumberClass[action.payload.category]] = action.payload.item;
             return {...state,weightData:newWeightData}

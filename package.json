@@ -11,7 +11,7 @@
     "apsl-react-native-button": "^3.1.1",
     "prop-types": "^15.6.2",
     "react": "16.6.0-alpha.8af6728",
-    "react-native": "0.57.4",
+    "react-native": "^0.57.4",
     "react-native-calendars": "^1.21.0",
     "react-native-chart-kit": "^1.1.9",
     "react-native-linear-gradient": "^2.4.3",
@@ -22,7 +22,8 @@
     "react-redux": "^5.1.0",
     "redux": "^4.0.1",
     "redux-actions": "^2.6.4",
-    "redux-persist": "^5.10.0"
+    "redux-persist": "^5.10.0",
+    "worker-farm": "^1.6.0"
   },
   "devDependencies": {
     "babel-jest": "23.6.0",

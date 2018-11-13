@@ -3,14 +3,13 @@ import {
     View,
     Text,
     SectionList,
-    TouchableWithoutFeedback,
+    TouchableHighlight,
     StyleSheet,
     ActivityIndicator,
     FlatList,
     Dimensions,
     Button,
     Modal,
-    Alert,
     Platform
 } from 'react-native';
 import {connect} from 'react-redux';
@@ -40,7 +39,6 @@ export class _ExerciseList extends Component {
             addHintText: 'add more exercises',
 
             setsModalVisible: false,
-            // transparent: true,
             selectedSets: 4,
             selectedExercise: ''
         };
@@ -52,23 +50,19 @@ export class _ExerciseList extends Component {
         })
     }
 
-    componentWillUnmount() {
-        // clearTimeout(timer);
-    }
-
     closeModal = () => {
         this.props.closeModal();
     }
 
     _renderItem = ({item}) => (
-        <TouchableWithoutFeedback
+        <TouchableHighlight
             // onPress={() => this.handlePress.call(this, item)}
             onPress={() => this.setState({setsModalVisible: true, selectedExercise: item})}
         >
             <View style={styles.listItem}>
                 <Text style={styles.listText}>{item}</Text>
             </View>
-        </TouchableWithoutFeedback>
+        </TouchableHighlight>
     )
     _renderSectionHeader = ({section}) => {
         return (
@@ -145,7 +139,7 @@ export class _ExerciseList extends Component {
     render() {
         return (
             <View style={{flex: 1, backgroundColor: '#eee'}}>
-                <TopBar style={{padding: 0, backgroundColor: '#999'}}>
+                <TopBar style={{padding: 0, backgroundColor: '#999',marginTop:0}}>
                     <LinearGradient
                         // colors={['#87FC70', '#0BD318']}
                         colors={['#00FFFF', '#00CCCC']}
@@ -350,11 +344,11 @@ const styles = StyleSheet.create({
         borderRadius: 8
     },
     modalInnerContainer:{
-        height: 180,
+        height: 190,
         width: width * 0.7,
         backgroundColor: 'white',
         paddingTop:20,
-        padding:10
+        padding:10,
     },
     modalButtonContainer:{
         width: 0.25 * width

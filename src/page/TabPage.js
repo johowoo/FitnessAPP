@@ -13,24 +13,26 @@ class TabPage extends Component {
     render() {
         return (
             <LinearGradient
+
                 // colors={["#0077fe", "#00fe81"]}
+
                 colors={["#1b98d9", "#57c5b8"]}
                 style={{flex: 1}}
             >
                 <TabView
                     tabBarTextStyle={{fontSize: 25}}
-                    tabBarPosition="overlayBottom"
+                    tabBarPosition="bottom"
                     tabBarUnderlineStyle={{backgroundColor:"#787"}}
                     tabBarActiveTextColor="#787"
                     tabBarInactiveTextColor="#ddd"
                 >
                     <CurrentWorkout tabLabel="+"></CurrentWorkout>
 
-                    <View tabLabel="calendar">
+                    <View tabLabel="Calendar">
                         <Calendar/>
                     </View>
 
-                    <View tabLabel="health">
+                    <View tabLabel="Health">
                         <Health/>
                     </View>
                 </TabView>

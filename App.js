@@ -7,11 +7,18 @@
  */
 
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View,TextInput,TouchableHighlight,Dimensions} from 'react-native';
+import {Platform, StatusBar,StyleSheet,SafeAreaView,View} from 'react-native';
 import {Root} from "./src/Root";
 import {Provider} from'react-redux';
 import getStore from "./src/store/index";
 import { PersistGate } from 'redux-persist/integration/react'
+
+
+
+const NAV_BAR_HEIGHT_IOS = 44;
+// const NAV_BAR_HEIGHT_IOS = 40;
+const NAV_BAR_HEIGHT_ANDROID = 50;
+const STATUS_BAR_HEIGHT = 30;
 
 
 let{ store,persistor} =getStore();
@@ -29,9 +36,20 @@ export default class App extends Component<Props> {
         return (
            <Provider store={store}>
                <PersistGate loading={null} persistor={persistor}>
-                <Root/>
+                   {/*<View style={{paddingTop: 40}}>*/}
+                   <StatusBar backgroundColor='transparent' translucent barStyle={'dark-content'}
+                              />
+                <Root  />
+                   {/*</View>*/}
                </PersistGate>
            </Provider>
         );
     }
 }
+
+
+// const styles=StyleSheet.create({
+//     statusBar: {
+//         height: Platform.OS === 'ios' ? STATUS_BAR_HEIGHT:0,
+//     }
+// })
