@@ -28,7 +28,7 @@ class _CurrentWorkout extends Component {
     handlePressComplete = () => {
         this.props.clearCurrentWorkout();
         const currentTimestamp = new Date();
-        const currentDate = `${currentTimestamp.getFullYear()}-${formateMonthandDay(currentTimestamp.getMonth()) + 1}-${formateMonthandDay(currentTimestamp.getDate()+1)}`;
+        const currentDate = `${currentTimestamp.getFullYear()}-${formateMonthandDay(currentTimestamp.getMonth()) + 1}-${formateMonthandDay(currentTimestamp.getDate())}`;
         this.props.addMarkedDate(currentDate);
         this.props.updateEmpty(true)
         this.props.addNewExerciseList({
