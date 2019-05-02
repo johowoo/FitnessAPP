@@ -9,7 +9,7 @@ import {Health} from './Health';
 import {CurrentWorkout} from '../component';
 import {CustomBar} from '../component/CustomBar';
 
-// import {Progress} from "./Progress";
+import {Progress} from "./Progress";
 
 class TabPage extends Component {
     render() {
@@ -33,12 +33,17 @@ class TabPage extends Component {
                     </ScrollView>
                     <ScrollView tabLabel="ios-paper">
                         <View>
-                            <Calendar/>
+                            <Calendar />
                         </View>
                     </ScrollView>
                     <ScrollView tabLabel="ios-trending-up">
                         <View>
                             <Health/>
+                        </View>
+                    </ScrollView>
+                    <ScrollView tabLabel="ios-trending-up">
+                        <View>
+                            <Progress/>
                         </View>
                     </ScrollView>
                 </TabView>
@@ -50,10 +55,5 @@ class TabPage extends Component {
 export default TabPage;
 
 const styles = StyleSheet.create({
-    tabView: {
 
-    },
-    card: {
-
-    },
 });

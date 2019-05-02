@@ -8,7 +8,6 @@ import LinearGradient from "react-native-linear-gradient";
 import ApslButton from 'apsl-react-native-button';
 import Icon from "react-native-vector-icons/MaterialIcons";
 
-
 export class _Calendar extends Component {
     state = {
         isModalListVisible: false,
@@ -40,7 +39,6 @@ export class _Calendar extends Component {
 
                     }}
                 />
-
 
                 <Modal
                     visible={this.state.isModalListVisible}
@@ -164,5 +162,4 @@ const styles = StyleSheet.create({
         top:10,
         zIndex: 999,
     }
-
 })
