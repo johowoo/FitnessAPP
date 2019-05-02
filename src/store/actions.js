@@ -30,4 +30,7 @@ export const updateBfrAction=(data)=>(
 export const addNewExerciseListAction=(data)=>(
     createAction(types.ADD_NEW_EXERCISE_LIST)(data)
 )
+export const addProgressPhoto=(data)=>(
+    createAction(types.ADD_PROGRESS_PHOTO)(data)
+)
 

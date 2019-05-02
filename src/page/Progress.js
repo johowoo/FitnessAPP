@@ -6,6 +6,7 @@ import ImagePicker from 'react-native-image-picker';
 import {TopBar} from "../component";
 import {connect} from 'react-redux'
 import {updateBfrAction, updateWeightAction} from "../store/actions";
+import {addProgressPhoto} from '../store/actions';
 
 const {width, height} = Dimensions.get('window');
 
@@ -30,6 +31,8 @@ export class _Progress extends Component {
     }
 
     render() {
+
+        const {addProgressPhotoDispatch, progress} = this.props;
         return (
             <View>
                 <TopBar style={styles.topBar}>
@@ -47,7 +50,8 @@ export class _Progress extends Component {
                                               onPress={() => ImagePicker.showImagePicker(options, (response) => {
                                                   console.log('Response = ', response);
                                                   if (response.uri) {
-                                                      this.setState({photo: response})
+                                                      this.setState({photo: response});
+
                                                   }
                                                   if (response.didCancel) {
                                                       console.log('User cancelled image picker');
@@ -57,13 +61,17 @@ export class _Progress extends Component {
                                                       console.log('User tapped custom button: ', response.customButton);
                                                   } else {
                                                       const source = {uri: response.uri};
-
                                                       // You can also display the image using data:
                                                       // const source = { uri: 'data:image/jpeg;base64,' + response.data };
-
                                                       this.setState({
                                                           avatarSource: source,
                                                       });
+                                                      addProgressPhotoDispatch({
+                                                          photoURI: response.uri,
+                                                          id: 1,
+                                                          weight: 80,
+                                                          BFR: 20,
+                                                      })
                                                   }
                                               })}
                                               style={styles.plusButton}
@@ -74,22 +82,23 @@ export class _Progress extends Component {
                         </View>
                     </View>
                     <View>
-                        {this.state.photo && <Image style={styles.image} source={{uri: this.state.photo.uri}}/>}
+                        {progress.map((photo, index) => photo?.photoURI &&
+                            <Image key={index} style={styles.image} source={{uri: photo.photoURI}}/>)}
                     </View>
                 </ScrollView>
-
             </View>
         )
     }
 }
 
+// {this.state.photo && <Image style={styles.image} source={{uri: this.state.photo.uri}}/>}
 const mapStateToProps = (state) => ({
-    bfrData: state.health.bfrData,
-    weightData: state.health.weightData
+    progress: state.progress
+
 })
 const mapActionToProps = (dispatch) => ({
-    updateWeightData(data) {
-        dispatch(updateWeightAction(data))
+    addProgressPhotoDispatch(data) {
+        dispatch(addProgressPhoto(data))
     },
     updateBfrData(data) {
         dispatch(updateBfrAction(data))
@@ -117,8 +126,8 @@ const styles = StyleSheet.create({
     },
     image: {
         flex: 1,
-        alignItems:'center',
-        justifyContent:'center',
+        alignItems: 'center',
+        justifyContent: 'center',
         marginTop: 50,
         height: height * 0.6
     }
