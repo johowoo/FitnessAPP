@@ -13,6 +13,7 @@
     "react": "16.6.0-alpha.8af6728",
     "react-native": "^0.57.4",
     "react-native-calendars": "^1.21.0",
+    "react-native-camera": "^1.0.0",
     "react-native-chart-kit": "^1.1.9",
     "react-native-linear-gradient": "^2.4.3",
     "react-native-modal-dropdown": "^0.6.2",
