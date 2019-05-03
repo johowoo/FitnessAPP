@@ -2,22 +2,14 @@ import React from 'react';
 import {View, StyleSheet, Dimensions, Modal, Text, TextInput} from 'react-native';
 import ApslButton from "apsl-react-native-button";
 
-// export const TopBar = (props) => (
-//     <View style={[styles.container, props.style]}>
-//         {props.children}
-//     </View>
-// );
-
 const {width, height} = Dimensions.get('window');
 
 
-const marginTop = (height / width >= 18.5 / 9) ? 40 : 0;
-
 export class PhotoModal extends React.Component {
-    state = {inputTextWeight: "", inputTextBFR: ""}
+    state = {inputTextWeight: "", inputTextBFR: ""};
     handlePress = () => {
         this.props.handleCloseModal(false)
-    }
+    };
 
     render() {
         return (
@@ -25,7 +17,8 @@ export class PhotoModal extends React.Component {
                 {/*{this.props.children}*/}
                 <View style={styles.container}>
                     <View style={styles.modalInnerContainer}>
-                        <Text>Please enter your weight and BFR?</Text>
+                        <Text style={{color: '#eee', fontSize: 16, marginLeft: 10}}>Please enter your weight and
+                            BFR?</Text>
                         <TextInput
                             style={[styles.dropdownInput, this.props.styles?.dropdownInput]}
                             placeholderTextColor={this.props.placeholderTextColor || "#ccc"}
@@ -44,11 +37,13 @@ export class PhotoModal extends React.Component {
                             keyboardType={"number-pad"}
                             // onFocus={this.props.adjustScreen}
                         />
-                        <ApslButton
-                            style={[styles.confirmButton, this.props.styles?.confirmButton]}
-                            onPress={this.handlePress}
-                            children={<Text key={"confirm"} style={{color: '#FF8c00'}}>Confirm</Text>}
-                        />
+                        <View style={{alignItems: "center", justifyContent: "center"}}>
+                            <ApslButton
+                                style={[styles.confirmButton, this.props.styles?.confirmButton]}
+                                onPress={this.handlePress}
+                                children={<Text key={"confirm"} style={{color: '#FF8c00'}}>Confirm</Text>}
+                            />
+                        </View>
                     </View>
                 </View>
             </Modal>
@@ -61,22 +56,24 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
-        backgroundColor: 'transparent',
+        backgroundColor: 'rgba(0,0,0,0.8)',
         borderRadius: 8
     },
-
     modalInnerContainer: {
-        height: 190,
+        height: width * 0.66,
         width: width * 0.7,
-        backgroundColor: 'white',
+        backgroundColor: 'rgba(165,15,180,0.29)',
         paddingTop: 20,
         padding: 10,
     },
     dropdownInput: {
         marginLeft: width * 0.03,
         marginRight: width * 0.03,
-        // backgroundColor: "rgba(255,140,0,0.1)",
+        marginTop: width * 0.01,
+        marginBottom: width * 0.02,
+        backgroundColor: "rgba(255,140,0,0.1)",
         height: 50,
+        color:'#eee'
     },
     dropdownContainer: {
         padding: width * 0.03,
@@ -86,6 +83,7 @@ const styles = StyleSheet.create({
     confirmButton: {
         height: 50,
         width: width * 0.30,
-        borderColor: "#787"
+        borderColor: "#787",
+        marginLeft: width * 0.165
     }
 });
