@@ -7,6 +7,7 @@ import {TopBar} from "../component";
 import {connect} from 'react-redux'
 import {updateBfrAction, updateWeightAction} from "../store/actions";
 import {addProgressPhoto} from '../store/actions';
+import {PhotoModal} from "../component/PhotoModal";
 
 const {width, height} = Dimensions.get('window');
 
@@ -26,13 +27,18 @@ export class _Progress extends Component {
         this.state = {
             isAddingWeight: false,
             isAddingBFR: false,
-            photo: null
+            photo: null,
+            showModal: false
         }
     }
 
-    render() {
+    handleCloseModal = (showModal) => {
+        this.setState({showModal})
+    }
 
+    render() {
         const {addProgressPhotoDispatch, progress} = this.props;
+        console.warn(progress);
         return (
             <View>
                 <TopBar style={styles.topBar}>
@@ -51,7 +57,6 @@ export class _Progress extends Component {
                                                   console.log('Response = ', response);
                                                   if (response.uri) {
                                                       this.setState({photo: response});
-
                                                   }
                                                   if (response.didCancel) {
                                                       console.log('User cancelled image picker');
@@ -63,15 +68,18 @@ export class _Progress extends Component {
                                                       const source = {uri: response.uri};
                                                       // You can also display the image using data:
                                                       // const source = { uri: 'data:image/jpeg;base64,' + response.data };
-                                                      this.setState({
-                                                          avatarSource: source,
-                                                      });
+
                                                       addProgressPhotoDispatch({
                                                           photoURI: response.uri,
                                                           id: 1,
                                                           weight: 80,
                                                           BFR: 20,
                                                       })
+                                                      this.setState({
+                                                          avatarSource: source,
+                                                          showModal: true,
+                                                      });
+
                                                   }
                                               })}
                                               style={styles.plusButton}
@@ -82,9 +90,10 @@ export class _Progress extends Component {
                         </View>
                     </View>
                     <View>
-                        {progress.map((photo, index) => photo?.photoURI &&
+                        {progress.map((photo, index) => photo.photoURI &&
                             <Image key={index} style={styles.image} source={{uri: photo.photoURI}}/>)}
                     </View>
+                    {this.state.showModal && <PhotoModal handleCloseModal={this.handleCloseModal}/>}
                 </ScrollView>
             </View>
         )
@@ -128,7 +137,8 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 50,
-        height: height * 0.6
+        height: 100
     }
 });
+
+
