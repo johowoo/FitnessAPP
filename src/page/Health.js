@@ -77,18 +77,18 @@ export class _Health extends Component {
                                    key="add"/></TouchableOpacity>
                         </View>
                         <View>
-                            {this.state.isAddingWeight ?
-                                <View>
-                                    <AddDropdown
-                                        styles={dropdownStyles}
-                                        placeholderTextColor={'#bbb'}
-                                        placeholder={"  Please enter the weight number (KG)"}
-                                        keyboardType={'numeric'}
-                                        options={labels}
-                                        handleConfirm={this.handleAddWeightConfirm.bind(this)}
-                                    />
-                                </View>
-                                : <View></View>
+                            {this.state.isAddingWeight &&
+                            <View>
+                                <AddDropdown
+                                    styles={dropdownStyles}
+                                    placeholderTextColor={'#bbb'}
+                                    placeholder={"  Please enter the weight number (KG)"}
+                                    keyboardType={'numeric'}
+                                    options={labels}
+                                    handleConfirm={this.handleAddWeightConfirm.bind(this)}
+                                />
+                            </View>
+
                             }
                         </View>
                         <LineChart
@@ -115,7 +115,7 @@ export class _Health extends Component {
                                 Body Fat Rate
                             </Text>
                             <TouchableOpacity style={{height: 25, width: 25, backgroundColor: 'transparent'}}
-                                              onPress={() => this.handleAddDropdown('isAddingBFR')}
+                                              onPress={() => {this.handleAddDropdown('isAddingBFR')}}
                                               style={styles.plusButton}
                                               textStyle={styles.plus}
                             ><Icon name={this.state.isAddingBFR ? "remove" : "add"} size={25} color="white"
@@ -123,20 +123,18 @@ export class _Health extends Component {
                         </View>
 
                         <View>
-                            {
-                                this.state.isAddingBFR ?
-                                    <View>
-                                        <AddDropdown
-                                            styles={dropdownStyles}
-                                            placeholderTextColor={'#bbb'}
-                                            placeholder={"  Please enter the Body Fat Rate (<0.50)"}
-                                            keyboardType={'numeric'}
-                                            options={labels}
-                                            handleConfirm={this.handleAddBFRConfirm.bind(this)}
-                                            adjustScreen={this.scrollToEnd.bind(this)}
-                                        />
-                                    </View>
-                                    : <View></View>
+                            {this.state.isAddingBFR &&
+                            <View>
+                                <AddDropdown
+                                    styles={dropdownStyles}
+                                    placeholderTextColor={'#bbb'}
+                                    placeholder={"  Please enter the Body Fat Rate (<0.50)"}
+                                    keyboardType={'numeric'}
+                                    options={labels}
+                                    handleConfirm={this.handleAddBFRConfirm.bind(this)}
+                                    adjustScreen={this.scrollToEnd.bind(this)}
+                                />
+                            </View>
                             }
                         </View>
                         <LineChart
