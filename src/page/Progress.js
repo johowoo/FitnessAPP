@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, Image, Dimensions, TouchableOpacity, ScrollView, StyleSheet} from 'react-native';
+import {View, Text, Image, Dimensions, TouchableOpacity, ScrollView, StyleSheet,FlatList} from 'react-native';
 import {Fonts} from '../utils/Fonts';
 import Icon from "react-native-vector-icons/MaterialIcons";
 import ImagePicker from 'react-native-image-picker';
@@ -20,7 +20,7 @@ const options = {
         path: 'images',
     },
 };
-
+const numColumns = 3;
 export class _Progress extends Component {
     constructor(props) {
         super(props);
@@ -31,7 +31,13 @@ export class _Progress extends Component {
             showModal: false
         }
     }
-
+    renderItem = ({item, index}) => {
+        return (
+            <View style={styles.item}>
+                <Image key={index} style={styles.image} source={{uri: item.photoURI}}/>
+            </View>
+        )
+    };
     handleCloseModal = (showModal) => {
         this.setState({showModal})
     }
@@ -89,10 +95,16 @@ export class _Progress extends Component {
                                    key="add"/></TouchableOpacity>
                         </View>
                     </View>
-                    <View>
-                        {progress.map((photo, index) => photo.photoURI &&
-                            <Image key={index} style={styles.image} source={{uri: photo.photoURI}}/>)}
-                    </View>
+                    {/*<View>*/}
+                    {/*    {progress.map((photo, index) => photo.photoURI &&*/}
+                    {/*        <Image key={index} style={styles.image} source={{uri: photo.photoURI}}/>)}*/}
+                    {/*</View>*/}
+                    <FlatList
+                        data={progress}
+                        style={styles.container}
+                        renderItem={this.renderItem}
+                        numColumns={numColumns}
+                    />
                     {this.state.showModal && <PhotoModal handleCloseModal={this.handleCloseModal}/>}
                 </ScrollView>
             </View>
@@ -134,10 +146,23 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     image: {
-        flex: 1,
+        // flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        height: 100
+        width: width * 0.3,
+        height: height * 0.2,
+    },
+    container: {
+        flex: 1,
+        marginVertical: 20
+    },
+    item: {
+        backgroundColor: 'transparent',
+        alignItems: 'center',
+        justifyContent: 'center',
+        width: width / 3,
+        height: height / 5,
+        marginTop: 2
     }
 });
 
