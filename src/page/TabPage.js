@@ -31,7 +31,7 @@ class TabPage extends Component {
                             <CurrentWorkout/>
                         </View>
                     </ScrollView>
-                    <ScrollView tabLabel="ios-paper">
+                    <ScrollView tabLabel="ios-calendar">
                         <View>
                             <Calendar />
                         </View>
@@ -41,7 +41,7 @@ class TabPage extends Component {
                             <Health/>
                         </View>
                     </ScrollView>
-                    <ScrollView tabLabel="ios-trending-up">
+                    <ScrollView tabLabel="ios-images">
                         <View>
                             <Progress/>
                         </View>
