@@ -33,11 +33,11 @@ export class _Progress extends Component {
         }
     }
 
-    renderItem = ({item, index}) => {
+    renderItem = ({item}) => {
         return (
             <View style={styles.item}>
-                <TouchableOpacity onPress={()=>{console.warn('Work!')}}>
-                    <Image key={index} style={styles.image} source={{uri: item.photoURI}}/>
+                <TouchableOpacity onPress={()=>{console.log('Work!')}}>
+                    <Image style={styles.image} source={{uri: item.photoURI}}/>
                 </TouchableOpacity>
             </View>
         )
@@ -48,7 +48,7 @@ export class _Progress extends Component {
 
     render() {
         const {addProgressPhotoDispatch, progress} = this.props;
-        console.warn(progress);
+        console.log(progress);
         return (
             <View>
                 <TopBar style={styles.topBar}>
@@ -97,6 +97,7 @@ export class _Progress extends Component {
                         style={styles.container}
                         renderItem={this.renderItem}
                         numColumns={numColumns}
+                        keyExtractor={(item, index) => index.toString()}
                     />
                     {this.state.showModal && <PhotoModal handleCloseModal={this.handleCloseModal}/>}
                 </ScrollView>
