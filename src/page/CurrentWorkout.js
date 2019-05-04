@@ -46,7 +46,7 @@ class _CurrentWorkout extends Component {
                     <View style={{marginRight: 55}}>
                         <Text style={styles.textBar}>Current Workout</Text>
                     </View>
-                    <View style={{position: 'absolute', right: 5, top: -18}}>
+                    <View style={{position: 'absolute', right: 5, top: -28}}>
                         <Button
                             style={this.props.isExerciseListEmpty ? styles.completeButtonDisabled : styles.completeButton}
                             onPress={this.handlePressComplete.bind(this)}
@@ -116,13 +116,13 @@ const styles = StyleSheet.create({
     topBar: {
         backgroundColor: 'transparent',
         justifyContent: 'center',
-        borderBottomWidth: 4,
-        borderBottomColor: '#ddd'
+        borderBottomWidth: 1,
+        borderBottomColor: '#b0b0b0'
     },
     textBar: {
         textAlign: 'center',
         color: '#ddd',
-        fontSize: 30,
+        fontSize: 28,
         fontFamily: Fonts.PattayaRegular
     },
     completeButton: {

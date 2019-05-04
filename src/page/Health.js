@@ -63,7 +63,7 @@ export class _Health extends Component {
                 <ScrollView
                     ref={(ref) => this.scrollView = ref}
                 >
-                    <View style={{marginTop: 5}}>
+                    <View style={{marginTop: 20}}>
                         <View style={{flexDirection: 'row', justifyContent: 'space-around', alignItems: 'center'}}>
                             <Text style={styles.chartTitle}>
                                 Weight
@@ -183,13 +183,13 @@ const styles = StyleSheet.create({
     topBar: {
         backgroundColor: 'transparent',
         justifyContent: 'center',
-        borderBottomWidth: 4,
-        borderBottomColor: '#ddd'
+        borderBottomWidth: 1,
+        borderBottomColor: '#b0b0b0'
     },
     textBar: {
         textAlign: 'center',
         color: '#ddd',
-        fontSize: 30,
+        fontSize: 28,
         fontFamily: Fonts.PattayaRegular
     },
     chartTitle: {

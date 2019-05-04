@@ -124,13 +124,13 @@ const styles = StyleSheet.create({
     topBar: {
         backgroundColor: 'transparent',
         justifyContent: 'center',
-        borderBottomWidth: 4,
-        borderBottomColor: '#ddd'
+        borderBottomWidth: 1,
+        borderBottomColor: '#b0b0b0'
     },
     textBar: {
         textAlign: 'center',
         color: '#ddd',
-        fontSize: 30,
+        fontSize: 28,
         fontFamily: Fonts.PattayaRegular
     },
     chartTitle: {

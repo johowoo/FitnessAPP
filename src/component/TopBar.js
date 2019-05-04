@@ -10,7 +10,7 @@ import { View, StyleSheet,Dimensions } from 'react-native';
 const {width,height} =Dimensions.get('window');
 
 
-const marginTop=(height/width >=18.5/9)? 40:0;
+const marginTop=(height/width >=18.5/9)? 35:0;
 
 export class TopBar extends React.Component{
     render(){
@@ -24,7 +24,7 @@ export class TopBar extends React.Component{
 
 const styles = StyleSheet.create({
     container: {
-        height: 70,
+        height: 60,
         padding: 10,
         marginTop: marginTop,
     }
