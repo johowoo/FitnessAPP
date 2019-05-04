@@ -23,7 +23,9 @@ import {AddDropdown} from "./AddDropdown";
 import {addExerciseAction} from '../store/actions';
 import {updateEmptyAction} from '../store/actions';
 
-const {width} = Dimensions.get('window');
+const {width, height} = Dimensions.get('window');
+
+const isNotchScreen = (height / width >= 18.5 / 9);
 
 import ModalDropdown from 'react-native-modal-dropdown';
 
@@ -139,15 +141,15 @@ export class _ExerciseList extends Component {
     render() {
         return (
             <View style={{flex: 1, backgroundColor: '#eee'}}>
-                <TopBar style={{padding: 0, backgroundColor: '#999',marginTop:0}}>
-                    <LinearGradient
-                        // colors={['#87FC70', '#0BD318']}
-                        colors={['#00FFFF', '#00CCCC']}
-                        start={{x: 0.0, y: 0.5}}
-                        end={{x: 1.0, y: 0.5}}
-                        locations={[0.0, 1.0]}
-                        style={styles.topBar}
-                    >
+                <LinearGradient
+                    // colors={['#87FC70', '#0BD318']}
+                    colors={['#00FFFF', '#00CCCC']}
+                    start={{x: 0.0, y: 0.5}}
+                    end={{x: 1.0, y: 0.5}}
+                    locations={[0.0, 1.0]}
+                    style={styles.linearGradientContainer}
+                >
+                    <TopBar style={{flex: 1, flexDirection: 'row'}}>
                         <SearchBar
                             placeholder={'search for exercises'}
                             autoFocus
@@ -164,8 +166,8 @@ export class _ExerciseList extends Component {
                                 children={<Icon name="cancel" size={34} key="cancel"/>}
                             />
                         </View>
-                    </LinearGradient>
-                </TopBar>
+                    </TopBar>
+                </LinearGradient>
                 <View>
                     <ApslButton style={styles.addButton}
                                 onPress={this.handlePressAddExercise}
@@ -175,12 +177,12 @@ export class _ExerciseList extends Component {
                 <Modal
                     visible={this.state.setsModalVisible}
                     transparent={true}
-                    onRequestClose={() => this.setState({setsModalVisible:false})}
+                    onRequestClose={() => this.setState({setsModalVisible: false})}
                 >
                     <View
                         style={styles.modalOuterContainer}>
                         <View style={styles.modalInnerContainer}>
-                            <Text style={{color:'#66666f',fontSize:16,marginLeft:10}}
+                            <Text style={{color: '#66666f', fontSize: 16, marginLeft: 10}}
                             >Please select the number of sets:
                             </Text>
                             <ModalDropdown
@@ -199,10 +201,10 @@ export class _ExerciseList extends Component {
                                 <View style={styles.modalButtonContainer}>
                                     <Button style={styles.modalButton}
                                             color={"#00cccc"}
-                                        title='Confirm' onPress={() => {
+                                            title='Confirm' onPress={() => {
                                         this.handlePress.call(this);
                                         this.setState({setsModalVisible: false});
-                                        if(Platform.OS==='android') {
+                                        if (Platform.OS === 'android') {
                                             this.props.closeModal();
                                         }
                                     }}/>
@@ -266,6 +268,17 @@ const mapActionToProps = (dispatch) => ({
 export const ExerciseList = connect(mapStateToProps, mapActionToProps)(_ExerciseList);
 
 const styles = StyleSheet.create({
+    // topBar: {
+    //     flexDirection: 'row',
+    //     flex: 1,
+    //     padding: 2,
+    //     height:100,
+    //     justifyContent: 'center',
+    //     alignItems: 'center'
+    // },
+    linearGradientContainer: {
+        height: isNotchScreen ? 100 : 65,
+    },
     searchBar: {
         backgroundColor: 'white',
         flex: 0.9,
@@ -275,13 +288,6 @@ const styles = StyleSheet.create({
         padding: 5,
         justifyContent: 'center',
         borderRadius: 20
-    },
-    topBar: {
-        flexDirection: 'row',
-        flex: 1,
-        padding: 2,
-        justifyContent: 'center',
-        alignItems: 'center'
     },
     input: {
         color: 'black',
@@ -328,7 +334,7 @@ const styles = StyleSheet.create({
     addButton: {
         borderColor: 'transparent',
         height: 40,
-        // marginTop: 10
+        marginBottom: 5
     },
     addText: {
         color: '#FF8c00',
@@ -343,47 +349,47 @@ const styles = StyleSheet.create({
         backgroundColor: 'rgba(0, 0, 0, 0.3)',
         borderRadius: 8
     },
-    modalInnerContainer:{
+    modalInnerContainer: {
         height: 190,
         width: width * 0.7,
         backgroundColor: 'white',
-        paddingTop:20,
-        padding:10,
+        paddingTop: 20,
+        padding: 10,
     },
-    modalButtonContainer:{
+    modalButtonContainer: {
         width: 0.25 * width
     },
-    modalButton:{
-        backgroundColor:'#00cccc'
+    modalButton: {
+        backgroundColor: '#00cccc'
     },
-    dropdownMenu:{
-        width:width*0.58,
-        height:45,
-        borderRadius:6,
-        margin:10,
-        marginRight:width*0.02,
-        marginTop:15,
-        marginBottom:20,
+    dropdownMenu: {
+        width: width * 0.58,
+        height: 45,
+        borderRadius: 6,
+        margin: 10,
+        marginRight: width * 0.02,
+        marginTop: 15,
+        marginBottom: 20,
 
-        borderWidth:1,
-        borderColor:'#FF8c00',
+        borderWidth: 1,
+        borderColor: '#FF8c00',
         justifyContent: 'center'
     },
-    dropdownMenuText:{
-       color:'#00cccc',
-        fontSize:20,
+    dropdownMenuText: {
+        color: '#00cccc',
+        fontSize: 20,
         paddingLeft: 10,
     },
-    dropdownList:{
-        width:width*0.58,
+    dropdownList: {
+        width: width * 0.58,
     },
-    dropdownListText:{
-        color:'#00cccc',
-        fontSize:20,
+    dropdownListText: {
+        color: '#00cccc',
+        fontSize: 20,
         paddingLeft: 10
     },
-    dropdownSelection:{
-         backgroundColor:'#FF8c00'
+    dropdownSelection: {
+        backgroundColor: '#FF8c00'
     },
 
     quick: {
