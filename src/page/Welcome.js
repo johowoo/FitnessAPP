@@ -3,7 +3,7 @@ import {
     StyleSheet, View, Text, Dimensions,Platform,StatusBar
 } from 'react-native';
 
-import LinearGradient from 'react-native-linear-gradient'
+import {LinearGradient} from 'expo'
 import {Fonts} from "../utils/Fonts";
 import Button from 'apsl-react-native-button'
 
@@ -21,10 +21,10 @@ class Welcome extends Component {
                     colors={["#4a168c","#880e4f"]} style={styles.container}>
 
                     <View style={styles.header}>
-                        <Text style={styles.headerText}>Joe's Fitness</Text>
+                        {this.props.fontLoaded?<Text style={styles.headerText}>Joe's Fitness</Text>:null}
                     </View >
                     <View style={styles.middle}>
-                        <Text style={styles.logText}>Log your fitness</Text>
+                        {this.props.fontLoaded?<Text style={styles.logText}>Log your fitness</Text>:null}
                     </View>
                     <View style={styles.bottom}>
                         <Button onPress={this.handlePress.bind(this)} style={{borderColor:'#ddd'}}><Text style={styles.buttonText}>Start Workout</Text></Button>
@@ -50,7 +50,8 @@ const styles=StyleSheet.create({
         fontSize:32,
         color:'#ddd',
         textAlign: 'center',
-        fontFamily:Fonts.PacificoRegular
+        // fontFamily:Fonts.PacificoRegular
+        fontFamily:"PacificoRegular"
     },
     header:{
         height:0.45*height,
@@ -72,7 +73,9 @@ const styles=StyleSheet.create({
       fontSize:50,
         color:'#ddd',
         textAlign: 'center',
-        fontFamily:Fonts.PacificoRegular
+        // fontFamily:Fonts.PacificoRegular
+        fontFamily:"PacificoRegular"
+
     },
     buttonText:{
         color:"#ddd",

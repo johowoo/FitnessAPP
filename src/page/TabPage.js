@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {
     StyleSheet, View, Text, Dimensions, ScrollView
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import {LinearGradient} from 'expo';
 import TabView from 'react-native-scrollable-tab-view';
 import {Calendar} from './Calendar';
 import {Health} from './Health';
@@ -28,22 +28,22 @@ class TabPage extends Component {
                 >
                     <ScrollView tabLabel="ios-fitness">
                         <View>
-                            <CurrentWorkout/>
+                            <CurrentWorkout fontLoaded={this.props.fontLoaded}/>
                         </View>
                     </ScrollView>
                     <ScrollView tabLabel="ios-calendar">
                         <View>
-                            <Calendar />
+                            <Calendar fontLoaded={this.props.fontLoaded} />
                         </View>
                     </ScrollView>
                     <ScrollView tabLabel="ios-trending-up">
                         <View>
-                            <Health/>
+                            <Health fontLoaded={this.props.fontLoaded}/>
                         </View>
                     </ScrollView>
                     <ScrollView tabLabel="ios-images">
                         <View>
-                            <Progress/>
+                            <Progress fontLoaded={this.props.fontLoaded}/>
                         </View>
                     </ScrollView>
                 </TabView>

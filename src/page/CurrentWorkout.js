@@ -44,7 +44,7 @@ class _CurrentWorkout extends Component {
             <View>
                 <TopBar style={styles.topBar}>
                     <View style={{marginRight: 55}}>
-                        <Text style={styles.textBar}>Current Workout</Text>
+                        {this.props.fontLoaded ? <Text style={styles.textBar}>Current Workout</Text> : null}
                     </View>
                     <View style={{position: 'absolute', right: 5, top: -28}}>
                         <Button
@@ -123,7 +123,8 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#ddd',
         fontSize: 28,
-        fontFamily: Fonts.PattayaRegular
+        // fontFamily: Fonts.PattayaRegular
+        fontFamily: "PattayaRegular"
     },
     completeButton: {
         borderColor: '#fff',

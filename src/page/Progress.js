@@ -36,7 +36,9 @@ export class _Progress extends Component {
     renderItem = ({item}) => {
         return (
             <View style={styles.item}>
-                <TouchableOpacity onPress={()=>{console.log('Work!')}}>
+                <TouchableOpacity onPress={() => {
+                    console.log('Work!')
+                }}>
                     <Image style={styles.image} source={{uri: item.photoURI}}/>
                 </TouchableOpacity>
             </View>
@@ -52,7 +54,7 @@ export class _Progress extends Component {
         return (
             <View>
                 <TopBar style={styles.topBar}>
-                    <Text style={styles.textBar}>Progress</Text>
+                    {this.props.fontLoaded ? <Text style={styles.textBar}>Progress</Text> : null}
                     <View style={{position: 'absolute', right: 5}}>
                         <TouchableOpacity style={{height: 25, width: 25, backgroundColor: 'transparent'}}
                                           onPress={() => ImagePicker.showImagePicker(options, (response) => {
@@ -131,7 +133,8 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#ddd',
         fontSize: 28,
-        fontFamily: Fonts.PattayaRegular
+        // fontFamily: Fonts.PattayaRegular
+        fontFamily: "PattayaRegular"
     },
     chartTitle: {
         fontSize: 20,

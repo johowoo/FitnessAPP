@@ -14,7 +14,7 @@ import {
 } from 'react-native';
 import {connect} from 'react-redux';
 import {TopBar} from "./TopBar";
-import LinearGradient from "react-native-linear-gradient";
+import {LinearGradient} from "expo";
 import {SearchBar} from "./SearchBar";
 import {fuzzySearch} from "../services/fuzzySearch";
 import ApslButton from "apsl-react-native-button";

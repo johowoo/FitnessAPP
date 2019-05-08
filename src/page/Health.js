@@ -57,7 +57,7 @@ export class _Health extends Component {
         return (
             <View>
                 <TopBar style={styles.topBar}>
-                    <Text style={styles.textBar}>Health</Text>
+                    {this.props.fontLoaded ? <Text style={styles.textBar}>Health</Text> : null}
                 </TopBar>
 
                 <ScrollView
@@ -115,7 +115,9 @@ export class _Health extends Component {
                                 Body Fat Rate
                             </Text>
                             <TouchableOpacity style={{height: 25, width: 25, backgroundColor: 'transparent'}}
-                                              onPress={() => {this.handleAddDropdown('isAddingBFR')}}
+                                              onPress={() => {
+                                                  this.handleAddDropdown('isAddingBFR')
+                                              }}
                                               style={styles.plusButton}
                                               textStyle={styles.plus}
                             ><Icon name={this.state.isAddingBFR ? "remove" : "add"} size={25} color="white"
@@ -190,7 +192,8 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#ddd',
         fontSize: 28,
-        fontFamily: Fonts.PattayaRegular
+        // fontFamily: Fonts.PattayaRegular
+        fontFamily: "PattayaRegular"
     },
     chartTitle: {
         fontSize: 20,

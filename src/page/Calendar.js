@@ -4,7 +4,7 @@ import {CalendarList} from 'react-native-calendars';
 import {TopBar} from "../component";
 import {Fonts} from "../utils/Fonts";
 import {connect} from 'react-redux';
-import LinearGradient from "react-native-linear-gradient";
+import {LinearGradient} from "expo";
 import ApslButton from 'apsl-react-native-button';
 import Icon from "react-native-vector-icons/MaterialIcons";
 
@@ -14,11 +14,12 @@ export class _Calendar extends Component {
         pressedDay: '',
         displayExercisesList: [],
     }
+
     render() {
         return (
             <View>
                 <TopBar style={styles.topBar}>
-                    <Text style={styles.textBar}>Calendar</Text>
+                    {this.props.fontLoaded ? <Text style={styles.textBar}>Calendar</Text> : null}
                 </TopBar>
                 <CalendarList
                     onVisibleMonthsChange={(months) => {
@@ -29,17 +30,16 @@ export class _Calendar extends Component {
                     scrollEnabled={true}
                     markedDates={this.props.markedDates}
                     onDayPress={(day) => {
-                        const date=day.dateString;
+                        const date = day.dateString;
                         if (!this.props.markedDates.hasOwnProperty(date)) return;
                         this.setState({
-                            pressedDay:date,
+                            pressedDay: date,
                             displayExercisesList: this.props.allExercisesList[date],
                             isModalListVisible: true
                         })
 
                     }}
                 />
-
                 <Modal
                     visible={this.state.isModalListVisible}
                     style={{flex: 1}}
@@ -57,23 +57,23 @@ export class _Calendar extends Component {
                             children={<Icon name="cancel" size={24} color="#bbb" key="cancel"/>}
                         />
                         <View style={styles.topTitle}>
-                            <Text style={styles.title}>
-                               Workout History
-                            </Text>
+                            {this.props.fontLoaded ? <Text style={styles.title}>
+                                Workout History
+                            </Text> : null}
 
-                         </View>
+                        </View>
 
-                         <View style={{margin:20}}>
-                             <Text style={styles.subTitle}>
-                                 {this.state.pressedDay}
-                             </Text>
-                         </View>
+                        <View style={{margin: 20}}>
+                            {this.props.fontLoaded ? <Text style={styles.subTitle}>
+                                {this.state.pressedDay}
+                            </Text> : null}
+                        </View>
 
                         <FlatList
-                        style={{marginTop: 2}}
-                        data={this.state.displayExercisesList}
-                        renderItem={this._renderItem}
-                        keyExtractor={(item, index) => item + index}
+                            style={{marginTop: 2}}
+                            data={this.state.displayExercisesList}
+                            renderItem={this._renderItem}
+                            keyExtractor={(item, index) => item + index}
                         />
                     </LinearGradient>
                 </Modal>
@@ -82,6 +82,7 @@ export class _Calendar extends Component {
             </View>
         )
     }
+
     _renderItem = ({item: {exercise, sets}}) => {
         return (<TouchableWithoutFeedback>
             <View style={styles.listItem}>
@@ -112,7 +113,8 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         color: '#ddd',
         fontSize: 28,
-        fontFamily: Fonts.PattayaRegular
+        // fontFamily: Fonts.PattayaRegular
+        fontFamily: "PattayaRegular"
     },
     topBar: {
         backgroundColor: 'transparent',
@@ -120,24 +122,28 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderBottomColor: '#b0b0b0'
     },
-    topTitle:{
-        height:90,
-        alignItems:'center',
-        padding:20,
+    topTitle: {
+        height: 90,
+        alignItems: 'center',
+        padding: 20,
         borderBottomWidth: 4,
         borderBottomColor: '#ddd'
     },
-    title:{
+    title: {
         textAlign: 'center',
         color: '#ddd',
         fontSize: 32,
-        fontFamily: Fonts.PattayaRegular
+        // fontFamily: Fonts.PattayaRegular
+        fontFamily: "PattayaRegular"
+
     },
-    subTitle:{
+    subTitle: {
         textAlign: 'center',
         color: '#ddd',
         fontSize: 24,
-        fontFamily: Fonts.PattayaRegular
+        // fontFamily: Fonts.PattayaRegular
+        fontFamily: "PattayaRegular"
+
     },
     listItem: {
         flexDirection: 'row',
@@ -155,11 +161,11 @@ const styles = StyleSheet.create({
     setsText: {
         fontSize: 20,
     },
-    closeButton:{
-        position:'absolute',
+    closeButton: {
+        position: 'absolute',
         borderColor: 'transparent',
-        right:20,
-        top:10,
+        right: 20,
+        top: 10,
         zIndex: 999,
     }
 })

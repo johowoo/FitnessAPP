@@ -1,43 +1,32 @@
 {
-  "name": "JoesFitness",
-  "version": "0.0.1",
-  "private": true,
+  "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest",
-    "postinstall": "rnpm link"
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "eject": "expo eject"
   },
   "dependencies": {
     "apsl-react-native-button": "^3.1.1",
-    "prop-types": "^15.6.2",
-    "react": "16.6.0-alpha.8af6728",
-    "react-native": "^0.57.4",
-    "react-native-calendars": "^1.21.0",
-    "react-native-chart-kit": "^1.1.9",
+    "expo": "^32.0.0",
+    "expo-camera": "^4.0.0",
+    "prop-types": "^15.7.2",
+    "react": "16.5.0",
+    "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
+    "react-native-calendars": "^1.110.0",
+    "react-native-chart-kit": "^2.6.1",
     "react-native-image-picker": "^0.28.1",
-    "react-native-linear-gradient": "^2.4.3",
     "react-native-modal-dropdown": "^0.6.2",
-    "react-native-scrollable-tab-view": "^0.9.0",
-    "react-native-svg": "^8.0.8",
-    "react-native-vector-icons": "^6.0.2",
-    "react-redux": "^5.1.0",
+    "react-native-scrollable-tab-view": "^0.10.0",
+    "react-native-vector-icons": "^6.4.2",
+    "react-redux": "6.0.0",
     "redux": "^4.0.1",
-    "redux-actions": "^2.6.4",
+    "redux-actions": "^2.6.5",
     "redux-persist": "^5.10.0",
-    "worker-farm": "^1.6.0"
+    "worker-farm": "^1.7.0"
   },
   "devDependencies": {
-    "babel-jest": "23.6.0",
-    "jest": "23.6.0",
-    "metro-react-native-babel-preset": "0.49.0",
-    "react-test-renderer": "16.6.0-alpha.8af6728"
+    "babel-preset-expo": "^5.0.0"
   },
-  "jest": {
-    "preset": "react-native"
-  },
-  "rnpm": {
-    "assets": [
-      "./assets/fonts/"
-    ]
-  }
+  "private": true
 }
