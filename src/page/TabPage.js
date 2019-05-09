@@ -17,7 +17,8 @@ let fontLoaded = true;
 
 const StackNavigator = createStackNavigator({
     Progress: {
-        screen: () => <Progress fontLoaded={fontLoaded}/>
+        screen: () => <Progress fontLoaded={fontLoaded}/>,
+        header: null,
     }
 })
 
@@ -48,6 +49,7 @@ const BottomTabNavigator = createBottomTabNavigator({
     },
     Progress: {
         screen: StackNavigator,
+        header: null,
         navigationOptions: () => ({
             tabBarIcon: ({focused}) => <TabBarIcon name={"ios-images"} focused={focused}/>,
             tabBarLabel: "progress"
