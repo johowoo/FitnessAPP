@@ -31,7 +31,7 @@ const S = StyleSheet.create({
         elevation: 2,
         alignItems: "center",
         marginTop: 5,
-        marginBottom: isIphoneX ? 15 : 0
+        marginBottom: isIphoneX ? 18 : 0
     },
     tabButton: {flex: 1},
     spotLight: {
