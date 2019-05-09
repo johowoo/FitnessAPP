@@ -1,25 +1,18 @@
 import React, {Component} from 'react';
 import {View, Text, Image, Dimensions, TouchableOpacity, ScrollView, StyleSheet, FlatList} from 'react-native';
 import Icon from "react-native-vector-icons/MaterialIcons";
-import {ImagePicker, Permissions} from 'expo';
+import {ImagePicker, LinearGradient, Permissions} from 'expo';
 import {TopBar} from "../component";
 import {connect} from 'react-redux'
 import {updateBfrAction} from "../store/actions";
 import {addProgressPhoto, showProgressModal, showProgressPicker} from '../store/actions';
-import {PhotoModal} from "../component/PhotoModal";
 import {PickerCamera} from '../component/PickerCamera';
+
+import {createStackNavigator, createAppContainer} from "react-navigation";
+
 
 const {width, height} = Dimensions.get('window');
 
-
-const options = {
-    title: 'Select Avatar',
-    customButtons: [{name: 'fb', title: 'Choose Photo from Facebook'}],
-    storageOptions: {
-        skipBackup: true,
-        path: 'images',
-    },
-};
 const numColumns = 3;
 
 
@@ -59,32 +52,6 @@ export class _Progress extends Component {
             </View>
         )
     };
-    handleModal = (changedState) => {
-        this.setState(changedState)
-    };
-
-    // _pickImage = async () => {
-    //     let result = await ImagePicker.launchImageLibraryAsync({
-    //         allowsEditing: true,
-    //         aspect: [4, 3],
-    //     });
-    //
-    //     console.log(result);
-    //
-    //     if (!result.cancelled) {
-    //         this.setState({
-    //             avatarSource: result.uri,
-    //             showPicker: true,
-    //             // showModal: true,
-    //         });
-    //         this.props.addProgressPhotoDispatch({
-    //             photoURI: result.uri,
-    //             id: 1,
-    //             weight: 80,
-    //             BFR: 20,
-    //         });
-    //     }
-    // };
 
     render() {
         const {
@@ -93,9 +60,13 @@ export class _Progress extends Component {
         } = this.props;
         console.log(progress);
         return (
-            <View>
+            <LinearGradient
+                colors={["#1b98d9", "#57c5b8"]}
+                style={{flex: 1}}
+            >
                 <TopBar style={styles.topBar}>
-                    {this.props.fontLoaded ? <Text style={styles.textBar}>Progress</Text> : null}
+                    {/*{this.props.fontLoaded ? <Text style={styles.textBar}>Progress</Text> : null}*/}
+                    <Text style={styles.textBar}>Progress</Text>
                     <View style={{position: 'absolute', right: 15}}>
                         <TouchableOpacity style={{height: 25, width: 25, backgroundColor: 'transparent'}}
                             // onPress={() => this.handleModal({showPicker: true})}
@@ -127,7 +98,7 @@ export class _Progress extends Component {
                     {/*{this.state.showModal &&*/}
                     {/*<PhotoModal handleModal={this.handleModal({showModal: false})}/>}*/}
                 </ScrollView>
-            </View>
+            </LinearGradient>
         )
     }
 }
@@ -152,7 +123,16 @@ const mapActionToProps = (dispatch) => ({
     }
 });
 
-export const Progress = connect(mapStateToProps, mapActionToProps)(_Progress);
+const Progress = connect(mapStateToProps, mapActionToProps)(_Progress);
+
+export default Progress;
+
+const StackNavigator = createStackNavigator({
+    Progress: {
+        screen: Progress,
+        header: null
+    },
+})
 const styles = StyleSheet.create({
     topBar: {
         backgroundColor: 'transparent',
@@ -193,3 +173,4 @@ const styles = StyleSheet.create({
 });
 
 
+// export default createAppContainer(StackNavigator);

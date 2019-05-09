@@ -9,16 +9,22 @@ import {Calendar} from './Calendar';
 import {Health} from './Health';
 import {CurrentWorkout} from '../component';
 import {CustomBar} from '../component/CustomBar';
-import {createBottomTabNavigator, createAppContainer} from 'react-navigation'
-import {Progress} from "./Progress";
+import {createBottomTabNavigator, createStackNavigator, createAppContainer} from 'react-navigation'
+import Progress from "./Progress";
 import {TabBarIcon} from '../component/TabBarIcon'
 
 let fontLoaded = true;
 
+const StackNavigator = createStackNavigator({
+    Progress: {
+        screen: () => <Progress fontLoaded={fontLoaded}/>
+    }
+})
+
 const BottomTabNavigator = createBottomTabNavigator({
     CurrentWorkout: {
-        screen: (xxx) => {
-            console.warn(xxx);
+        screen: () => {
+            // console.warn(xxx);
             return <CurrentWorkout fontLoaded={fontLoaded}/>
         },
         navigationOptions: () => ({
@@ -41,7 +47,7 @@ const BottomTabNavigator = createBottomTabNavigator({
         }),
     },
     Progress: {
-        screen: () => <Progress fontLoaded={fontLoaded}/>,
+        screen: StackNavigator,
         navigationOptions: () => ({
             tabBarIcon: ({focused}) => <TabBarIcon name={"ios-images"} focused={focused}/>,
             tabBarLabel: "progress"
@@ -57,7 +63,9 @@ const BottomTabNavigator = createBottomTabNavigator({
     }
 })
 
+
 const BottomTabContainer = createAppContainer(BottomTabNavigator);
+
 
 class TabPage extends Component {
     render() {
