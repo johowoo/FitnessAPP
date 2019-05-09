@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
 import {View, Text, Image, Dimensions, TouchableOpacity, ScrollView, StyleSheet, FlatList} from 'react-native';
-import {Fonts} from '../utils/Fonts';
 import Icon from "react-native-vector-icons/MaterialIcons";
-import ImagePicker from 'react-native-image-picker';
+import {ImagePicker, Permissions} from 'expo';
 import {TopBar} from "../component";
 import {connect} from 'react-redux'
 import {updateBfrAction} from "../store/actions";
 import {addProgressPhoto} from '../store/actions';
 import {PhotoModal} from "../component/PhotoModal";
+import {PickerCamera} from '../component/PickerCamera';
 
 const {width, height} = Dimensions.get('window');
 
@@ -22,14 +22,32 @@ const options = {
 };
 const numColumns = 3;
 
+
 export class _Progress extends Component {
+    async componentDidMount() {
+        const permission1 = await Permissions.getAsync(Permissions.CAMERA_ROLL);
+        const permission2 = await Permissions.getAsync(Permissions.CAMERA);
+        if (permission1.status !== 'granted') {
+            const newPermission = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+        } else {
+
+        }
+        if (permission2.status !== 'granted') {
+            const newPermission = await Permissions.askAsync(Permissions.CAMERA);
+
+        } else {
+
+        }
+    }
+
     constructor(props) {
         super(props);
         this.state = {
+            showPicker: false,
             isAddingWeight: false,
             isAddingBFR: false,
             photo: null,
-            showModal: false
+            showModal: false,
         }
     }
 
@@ -44,47 +62,43 @@ export class _Progress extends Component {
             </View>
         )
     };
-    handleCloseModal = (showModal) => {
-        this.setState({showModal})
+    handleModal = (changedState) => {
+        this.setState(changedState)
     };
 
+    // _pickImage = async () => {
+    //     let result = await ImagePicker.launchImageLibraryAsync({
+    //         allowsEditing: true,
+    //         aspect: [4, 3],
+    //     });
+    //
+    //     console.log(result);
+    //
+    //     if (!result.cancelled) {
+    //         this.setState({
+    //             avatarSource: result.uri,
+    //             showPicker: true,
+    //             // showModal: true,
+    //         });
+    //         this.props.addProgressPhotoDispatch({
+    //             photoURI: result.uri,
+    //             id: 1,
+    //             weight: 80,
+    //             BFR: 20,
+    //         });
+    //     }
+    // };
+
     render() {
-        const {addProgressPhotoDispatch, progress} = this.props;
+        const {progress, addProgressPhotoDispatch} = this.props;
         console.log(progress);
         return (
             <View>
                 <TopBar style={styles.topBar}>
                     {this.props.fontLoaded ? <Text style={styles.textBar}>Progress</Text> : null}
-                    <View style={{position: 'absolute', right: 5}}>
+                    <View style={{position: 'absolute', right: 15}}>
                         <TouchableOpacity style={{height: 25, width: 25, backgroundColor: 'transparent'}}
-                                          onPress={() => ImagePicker.showImagePicker(options, (response) => {
-                                              console.log('Response = ', response);
-                                              if (response.uri) {
-                                                  this.setState({photo: response});
-                                              }
-                                              if (response.didCancel) {
-                                                  console.log('User cancelled image picker');
-                                              } else if (response.error) {
-                                                  console.log('ImagePicker Error: ', response.error);
-                                              } else if (response.customButton) {
-                                                  console.log('User tapped custom button: ', response.customButton);
-                                              } else {
-                                                  const source = {uri: response.uri};
-                                                  // You can also display the image using data:
-                                                  // const source = { uri: 'data:image/jpeg;base64,' + response.data };
-                                                  addProgressPhotoDispatch({
-                                                      photoURI: response.uri,
-                                                      id: 1,
-                                                      weight: 80,
-                                                      BFR: 20,
-                                                  });
-                                                  this.setState({
-                                                      avatarSource: source,
-                                                      showModal: true,
-                                                  });
-
-                                              }
-                                          })}
+                                          onPress={() => this.handleModal({showPicker: true})}
                                           style={styles.plusButton}
                                           textStyle={styles.plus}
                                           title='+'
@@ -101,7 +115,11 @@ export class _Progress extends Component {
                         numColumns={numColumns}
                         keyExtractor={(item, index) => index.toString()}
                     />
-                    {this.state.showModal && <PhotoModal handleCloseModal={this.handleCloseModal}/>}
+                    {this.state.showPicker &&
+                    <PickerCamera handleModal={this.handleModal}
+                                  addProgressPhotoDispatch={addProgressPhotoDispatch}/>}
+                    {/*{this.state.showModal &&*/}
+                    {/*<PhotoModal handleModal={this.handleModal({showModal: false})}/>}*/}
                 </ScrollView>
             </View>
         )
