@@ -7,7 +7,6 @@ import {ImagePicker, Permissions} from 'expo';
 
 export class PickerCamera extends React.Component {
 
-
     async componentDidMount() {
         // const permission1 = await Permissions.getAsync(Permissions.CAMERA_ROLL);
         const permission2 = await Permissions.getAsync(Permissions.CAMERA);
@@ -20,7 +19,6 @@ export class PickerCamera extends React.Component {
         } else {
         }
     }
-
     _openCamera = async () => {
         let result = await ImagePicker.launchCameraAsync({
             mediaTypes: "Images",

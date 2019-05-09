@@ -25,6 +25,7 @@ class TabPage extends Component {
                     tabBarActiveTextColor="#787"
                     tabBarInactiveTextColor="#ddd"
                     renderTabBar={() => <CustomBar/>}
+                    style={{marginBottom: 15}}
                 >
                     <ScrollView tabLabel="ios-fitness">
                         <View>
@@ -33,7 +34,7 @@ class TabPage extends Component {
                     </ScrollView>
                     <ScrollView tabLabel="ios-calendar">
                         <View>
-                            <Calendar fontLoaded={this.props.fontLoaded} />
+                            <Calendar fontLoaded={this.props.fontLoaded}/>
                         </View>
                     </ScrollView>
                     <ScrollView tabLabel="ios-trending-up">
@@ -54,6 +55,4 @@ class TabPage extends Component {
 
 export default TabPage;
 
-const styles = StyleSheet.create({
-
-});
+const styles = StyleSheet.create({});

@@ -5,7 +5,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 export class CustomBar extends Component {
     icons = [];
     render() {
-        return <View style={[styles.tabs, this.props.style, ]}>
+        return <View style={[styles.tabs, this.props.style ]}>
             {this.props.tabs.map((tab, i) => {
                 return <TouchableOpacity key={tab} onPress={() => this.props.goToPage(i)} style={styles.tab}>
                     <Icon
