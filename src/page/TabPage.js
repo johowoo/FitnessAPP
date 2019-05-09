@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {
-    StyleSheet, View, ScrollView
+    StyleSheet, View, ScrollView, Text
 } from 'react-native';
 
 import {LinearGradient} from 'expo';
@@ -12,13 +12,16 @@ import {CustomBar} from '../component/CustomBar';
 import {createBottomTabNavigator, createStackNavigator, createAppContainer} from 'react-navigation'
 import Progress from "./Progress";
 import {TabBarIcon} from '../component/TabBarIcon'
+import TabBarComponent from "../component/TabBarComponent";
 
 let fontLoaded = true;
 
 const StackNavigator = createStackNavigator({
     Progress: {
         screen: () => <Progress fontLoaded={fontLoaded}/>,
-        header: null,
+        navigationOptions: {
+            header: null
+        }
     }
 })
 
@@ -29,21 +32,21 @@ const BottomTabNavigator = createBottomTabNavigator({
             return <CurrentWorkout fontLoaded={fontLoaded}/>
         },
         navigationOptions: () => ({
-            tabBarIcon: ({focused}) => <TabBarIcon name={"ios-fitness"} focused={focused}/>,
+            tabBarIcon: (props) => <TabBarIcon name={"ios-fitness"} {...props}/>,
             tabBarLabel: 'fitness'
         }),
     },
     Calendar: {
         screen: () => <Calendar fontLoaded={fontLoaded}/>,
         navigationOptions: () => ({
-            tabBarIcon: ({focused}) => <TabBarIcon name={"ios-calendar"} focused={focused}/>,
+            tabBarIcon: (props) => <TabBarIcon name={"ios-calendar"} {...props}/>,
             tabBarLabel: 'calendar'
         }),
     },
     Health: {
         screen: () => <Health fontLoaded={fontLoaded}/>,
         navigationOptions: () => ({
-            tabBarIcon: ({focused}) => <TabBarIcon name={"ios-trending-up"} focused={focused}/>,
+            tabBarIcon: (props) => <TabBarIcon name={"ios-trending-up"} {...props}/>,
             tabBarLabel: "health"
         }),
     },
@@ -51,18 +54,29 @@ const BottomTabNavigator = createBottomTabNavigator({
         screen: StackNavigator,
         header: null,
         navigationOptions: () => ({
-            tabBarIcon: ({focused}) => <TabBarIcon name={"ios-images"} focused={focused}/>,
+            tabBarIcon: (props) => <TabBarIcon name={"ios-images"} {...props}/>,
             tabBarLabel: "progress"
         }),
     }
 }, {
     tabBarOptions: {
-        activeTintColor: '#c69',
+        activeTintColor: '#eee',
+        inactiveTintColor: '#c69',
         inactiveBackgroundColor: "#57c5b8",
-        style: {
-            backgroundColor: "#57c5b8"
-        }
-    }
+        // style: {
+        //     backgroundColor: "#57c5b8"
+        // }
+    },
+    tabBarComponent: (props) => <TabBarComponent {...props}/>
+
+    // tabBarComponent: ({navigation: {state: {routes}}}) => <LinearGradient
+    //     colors={["#1b98d9", "#57c5b8"]}
+    //     style={{flex: 1}}
+    // >
+    //     {routes.map(this.renderItem)}
+    // </LinearGradient>
+
+
 })
 
 
