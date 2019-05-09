@@ -8,6 +8,8 @@ import {
 } from "react-native";
 import posed from "react-native-pose";
 
+import isIphoneX from '../utils/isIphoneX';
+
 const windowWidth = Dimensions.get("window").width;
 const tabWidth = windowWidth / 4;
 const SpotLight = posed.View({
@@ -27,7 +29,9 @@ const S = StyleSheet.create({
         flexDirection: "row",
         height: 52,
         elevation: 2,
-        alignItems: "center"
+        alignItems: "center",
+        marginTop: 5,
+        marginBottom: isIphoneX ? 15 : 0
     },
     tabButton: {flex: 1},
     spotLight: {
