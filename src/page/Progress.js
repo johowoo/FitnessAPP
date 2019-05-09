@@ -5,7 +5,7 @@ import {ImagePicker, Permissions} from 'expo';
 import {TopBar} from "../component";
 import {connect} from 'react-redux'
 import {updateBfrAction} from "../store/actions";
-import {addProgressPhoto} from '../store/actions';
+import {addProgressPhoto, showProgressModal, showProgressPicker} from '../store/actions';
 import {PhotoModal} from "../component/PhotoModal";
 import {PickerCamera} from '../component/PickerCamera';
 
@@ -30,13 +30,10 @@ export class _Progress extends Component {
         if (permission1.status !== 'granted') {
             const newPermission = await Permissions.askAsync(Permissions.CAMERA_ROLL);
         } else {
-
         }
         if (permission2.status !== 'granted') {
             const newPermission = await Permissions.askAsync(Permissions.CAMERA);
-
         } else {
-
         }
     }
 
@@ -90,7 +87,10 @@ export class _Progress extends Component {
     // };
 
     render() {
-        const {progress, addProgressPhotoDispatch} = this.props;
+        const {
+            progress, addProgressPhotoDispatch, showProgressPickerDispatch, showProgressModalDispatch, showPicker,
+            showModal
+        } = this.props;
         console.log(progress);
         return (
             <View>
@@ -98,7 +98,8 @@ export class _Progress extends Component {
                     {this.props.fontLoaded ? <Text style={styles.textBar}>Progress</Text> : null}
                     <View style={{position: 'absolute', right: 15}}>
                         <TouchableOpacity style={{height: 25, width: 25, backgroundColor: 'transparent'}}
-                                          onPress={() => this.handleModal({showPicker: true})}
+                            // onPress={() => this.handleModal({showPicker: true})}
+                                          onPress={() => showProgressPickerDispatch(true)}
                                           style={styles.plusButton}
                                           textStyle={styles.plus}
                                           title='+'
@@ -115,9 +116,14 @@ export class _Progress extends Component {
                         numColumns={numColumns}
                         keyExtractor={(item, index) => index.toString()}
                     />
-                    {this.state.showPicker &&
-                    <PickerCamera handleModal={this.handleModal}
-                                  addProgressPhotoDispatch={addProgressPhotoDispatch}/>}
+                    {showPicker &&
+                    <PickerCamera addProgressPhotoDispatch={addProgressPhotoDispatch}
+                                  showProgressPickerDispatch={showProgressPickerDispatch}
+                                  showProgressModalDispatch={showProgressModalDispatch}
+                                  showPicker={showPicker}
+                                  showModal={showModal}
+                    />
+                    }
                     {/*{this.state.showModal &&*/}
                     {/*<PhotoModal handleModal={this.handleModal({showModal: false})}/>}*/}
                 </ScrollView>
@@ -127,8 +133,9 @@ export class _Progress extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    progress: state.progress
-
+    progress: state.progress,
+    showPicker: state.progressModal.showPicker,
+    showModal: state.progressModal.showModal
 });
 const mapActionToProps = (dispatch) => ({
     addProgressPhotoDispatch(data) {
@@ -136,6 +143,12 @@ const mapActionToProps = (dispatch) => ({
     },
     updateBfrData(data) {
         dispatch(updateBfrAction(data))
+    },
+    showProgressPickerDispatch(bool) {
+        dispatch(showProgressPicker({showPicker: bool}))
+    },
+    showProgressModalDispatch(bool) {
+        dispatch(showProgressModal({showModal: bool}))
     }
 });
 

@@ -2,29 +2,56 @@ import React from 'react';
 import {View, StyleSheet, Dimensions, Modal, Text, TextInput, TouchableOpacity} from 'react-native';
 
 const {width, height} = Dimensions.get('window');
-import {ImagePicker, Camera} from 'expo';
+import {ImagePicker, Permissions} from 'expo';
 
 
 export class PickerCamera extends React.Component {
-    // handlePress = () => {
-    //     this.props.handleCloseModal({showPicker: false})
-    // };
-    state = {
-        showPickerCamera: false
+
+
+    async componentDidMount() {
+        // const permission1 = await Permissions.getAsync(Permissions.CAMERA_ROLL);
+        const permission2 = await Permissions.getAsync(Permissions.CAMERA);
+        // if (permission1.status !== 'granted') {
+        //     const newPermission = await Permissions.askAsync(Permissions.CAMERA_ROLL);
+        // } else {
+        // }
+        if (permission2.status !== 'granted') {
+            const newPermission = await Permissions.askAsync(Permissions.CAMERA);
+        } else {
+        }
+    }
+
+    _openCamera = async () => {
+        let result = await ImagePicker.launchCameraAsync({
+            mediaTypes: "Images",
+            allowsEditing: true,
+            aspect: [4, 3],
+        });
+        this.props.showProgressPickerDispatch(false);
+        // this.props.handleModal({showPicker: false});
+
+        if (!result.cancelled) {
+            this.props.addProgressPhotoDispatch({
+                photoURI: result.uri,
+                id: 1,
+                weight: 80,
+                BFR: 20,
+            });
+        }
     }
     _pickImage = async () => {
         let result = await ImagePicker.launchImageLibraryAsync({
             allowsEditing: true,
             aspect: [4, 3],
         });
-        this.props.handleModal({showPicker: false});
+
+        this.props.showProgressPickerDispatch(false);
+
         console.log(result);
 
         if (!result.cancelled) {
             this.setState({
                 avatarSource: result.uri,
-                showPicker: true,
-                // showModal: true,
             });
             this.props.addProgressPhotoDispatch({
                 photoURI: result.uri,
@@ -43,7 +70,8 @@ export class PickerCamera extends React.Component {
                 <View style={styles.modalContainer}>
                     <View style={styles.modalInnerContainer}>
                         <TouchableOpacity style={styles.button} onPress={() => {
-                            this.props.handleModal({showPicker: false})
+                            // this.setState({showCamera: true})
+                            this._openCamera().catch(err => console.warn(err))
                         }}>
                             <Text style={styles.buttonText}>Camera</Text>
                         </TouchableOpacity>
