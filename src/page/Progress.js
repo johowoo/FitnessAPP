@@ -69,6 +69,8 @@ export class _Progress extends Component {
             progress, addProgressPhotoDispatch, showProgressPickerDispatch, showProgressModalDispatch, showPicker,
             showModal, navigation
         } = this.props;
+        console.warn(showModal);
+        // showProgressModalDispatch(false);
         // console.log("allprops", this.props);
         return (
             <LinearGradient
@@ -106,8 +108,6 @@ export class _Progress extends Component {
                                   showModal={showModal}
                     />
                     }
-                    {/*{this.state.showModal &&*/}
-                    {/*<PhotoModal handleModal={this.handleModal({showModal: false})}/>}*/}
                 </ScrollView>
             </LinearGradient>
         )

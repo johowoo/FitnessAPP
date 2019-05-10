@@ -7,13 +7,11 @@ const {width, height} = Dimensions.get('window');
 
 export class PhotoModal extends React.Component {
     state = {inputTextWeight: "", inputTextBFR: ""};
-    handlePress = () => {
-        this.props.handleCloseModal(false)
-    };
 
     render() {
+        console.warn(this.props.uri);
         return (
-            <Modal transparent={true}>
+            <Modal transparent={true} visible={this.props.showModal}>
                 {/*{this.props.children}*/}
                 <View style={styles.container}>
                     <View style={styles.modalInnerContainer}>
@@ -40,7 +38,7 @@ export class PhotoModal extends React.Component {
                         <View style={{alignItems: "center", justifyContent: "center"}}>
                             <ApslButton
                                 style={[styles.confirmButton, this.props.styles?.confirmButton]}
-                                onPress={this.handlePress}
+                                onPress={() => this.props.showProgressModalDispatch(false)}
                                 children={<Text key={"confirm"} style={{color: '#FF8c00'}}>Confirm</Text>}
                             />
                         </View>
@@ -73,7 +71,7 @@ const styles = StyleSheet.create({
         marginBottom: width * 0.02,
         backgroundColor: "rgba(255,140,0,0.1)",
         height: 50,
-        color:'#eee'
+        color: '#eee'
     },
     dropdownContainer: {
         padding: width * 0.03,
