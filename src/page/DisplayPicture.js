@@ -29,10 +29,11 @@ export class _DisplayPicture extends Component {
 
                     <View style={styles.textContainer}>
                         <View style={styles.textInnerContainer}>
-                            <Text style={styles.text}>Weight:{navProps.weight}</Text>
+                            <Text style={styles.text}>Weight: {navProps.weight} <Text
+                                style={{fontSize: 13}}>KG</Text></Text>
                         </View>
                         <View style={styles.textInnerContainer}>
-                            <Text style={styles.text}>BFR: {navProps.BFR}</Text>
+                            <Text style={styles.text}>Body Fat Rate: {navProps.BFR} %</Text>
                         </View>
                     </View>
                 </ScrollView>
@@ -84,6 +85,7 @@ const styles = StyleSheet.create({
     },
     text: {
         color: "#eee",
-        fontFamily:'PattayaRegular'
+        fontFamily: 'PattayaRegular',
+        fontSize: 16
     }
 })

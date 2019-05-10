@@ -39,4 +39,8 @@ export const showProgressModal = (data) => (
 export const showProgressPicker = (data) => (
     createAction(types.SHOW_PROGRESS_PICKER)(data)
 )
+export const changeTmpUriAction = (data) => (
+    createAction(types.CHANGE_TMP_URI)(data)
+
+)
 

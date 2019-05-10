@@ -1,13 +1,11 @@
 import React from 'react';
-import {View, StyleSheet, Dimensions, Modal, Text, TextInput, TouchableOpacity, ScrollView} from 'react-native';
+import {View, StyleSheet, Dimensions, Modal, Text, TouchableOpacity} from 'react-native';
 
 const {width, height} = Dimensions.get('window');
 import {ImagePicker, Permissions} from 'expo';
 import {PhotoModal} from "./PhotoModal";
 
-
 export class PickerCamera extends React.Component {
-
     state = {
         uri: null
     }
@@ -31,19 +29,20 @@ export class PickerCamera extends React.Component {
             allowsEditing: true,
             aspect: [4, 3],
         });
-        this.props.showProgressPickerDispatch(false);
-        // this.props.handleModal({showPicker: false});
 
+        // this.props.showProgressPickerDispatch(false);
+        // this.props.handleModal({showPicker: false});
 
         if (!result.cancelled) {
             await this.setState({uri: result.uri});
             // this.props.showProgressPickerDispatch(true);
-            await this.props.addProgressPhotoDispatch({
-                photoURI: result.uri,
-                id: 1,
-                weight: 80,
-                BFR: 20,
-            });
+            await this.props.changeTmpUri(result.uri);
+            // await this.props.addProgressPhotoDispatch({
+            //     photoURI: result.uri,
+            //     id: 1,
+            //     weight: 80,
+            //     BFR: 20,
+            // });
             await this.props.showProgressModalDispatch(true);
         }
     }
@@ -53,20 +52,23 @@ export class PickerCamera extends React.Component {
             aspect: [4, 3],
         });
 
-        this.props.showProgressPickerDispatch(false);
+        // this.props.showProgressPickerDispatch(false);
 
         if (!result.cancelled) {
             // this.setState({
             //     avatarSource: result.uri,
             // });
-            this.props.addProgressPhotoDispatch({
-                photoURI: result.uri,
-                id: 1,
-                weight: 80,
-                BFR: 20,
-                date: new Date()
-            });
-            this.props.showProgressModalDispatch(true);
+            // console.warn("uri", result.uri)
+            await this.setState({uri: result.uri});
+            await this.props.changeTmpUri(result.uri);
+            // this.props.addProgressPhotoDispatch({
+            //     photoURI: result.uri,
+            //     id: 1,
+            //     weight: 80,
+            //     BFR: 20,
+            //     date: new Date()
+            // });
+            await this.props.showProgressModalDispatch(true);
         }
     };
 
@@ -98,9 +100,12 @@ export class PickerCamera extends React.Component {
                     </View>
                 </View>
                 {this.props.showModal &&
-                <PhotoModal showProgressModalDispatch={this.props.showProgressModalDispatch}
-                            currentURI={this.state.uri}
-                            showModal={this.props.showModal}/>
+                <PhotoModal
+                    // showProgressModalDispatch={this.props.showProgressModalDispatch}
+                    //         showProgressPickerDispatch={this.props.showProgressPickerDispatch}
+                    //         currentURI={this.state.uri}
+                    //         showModal={this.props.showModal}
+                />
                 }
             </Modal>
         )

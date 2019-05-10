@@ -3,13 +3,23 @@ import {View, StyleSheet, Dimensions, Modal, Text, TextInput} from 'react-native
 import ApslButton from "apsl-react-native-button";
 
 const {width, height} = Dimensions.get('window');
+import {connect} from 'react-redux';
+import {addProgressPhoto, showProgressModal, showProgressPicker, updateBfrAction} from "../store/actions";
 
-
-export class PhotoModal extends React.Component {
+class _PhotoModal extends React.Component {
     state = {inputTextWeight: "", inputTextBFR: ""};
+    handleSubmit = () => {
+        this.props.showProgressModalDispatch(false);
+        // this.props.showProgressPickerDispatch(false);
+        this.props.addProgressPhotoDispatch({
+            photoURI: this.props.tmpURI,
+            BFR: this.state.inputTextBFR,
+            weight: this.state.inputTextWeight
+        })
+    }
 
     render() {
-        console.warn(this.props.uri);
+        // console.warn("TMP", this.props.tmpURI);
         return (
             <Modal transparent={true} visible={this.props.showModal}>
                 {/*{this.props.children}*/}
@@ -20,7 +30,7 @@ export class PhotoModal extends React.Component {
                         <TextInput
                             style={[styles.dropdownInput, this.props.styles?.dropdownInput]}
                             placeholderTextColor={this.props.placeholderTextColor || "#ccc"}
-                            placeholder={"Please enter your weight"}
+                            placeholder={"Please enter your weight:(KG)"}
                             value={this.state.inputTextWeight}
                             onChangeText={text => this.setState({inputTextWeight: text})}
                             keyboardType={"number-pad"}
@@ -29,7 +39,7 @@ export class PhotoModal extends React.Component {
                         <TextInput
                             style={[styles.dropdownInput, this.props.styles?.dropdownInput]}
                             placeholderTextColor={this.props.placeholderTextColor || "#ccc"}
-                            placeholder={"Please enter your BFR"}
+                            placeholder={"Please enter your BFR(%)"}
                             value={this.state.inputTextBFR}
                             onChangeText={text => this.setState({inputTextBFR: text})}
                             keyboardType={"number-pad"}
@@ -38,7 +48,7 @@ export class PhotoModal extends React.Component {
                         <View style={{alignItems: "center", justifyContent: "center"}}>
                             <ApslButton
                                 style={[styles.confirmButton, this.props.styles?.confirmButton]}
-                                onPress={() => this.props.showProgressModalDispatch(false)}
+                                onPress={this.handleSubmit}
                                 children={<Text key={"confirm"} style={{color: '#FF8c00'}}>Confirm</Text>}
                             />
                         </View>
@@ -49,6 +59,29 @@ export class PhotoModal extends React.Component {
     }
 }
 
+const mapStateToProps = (state) => ({
+    progress: state.progress,
+    showPicker: state.progressModal.showPicker,
+    showModal: state.progressModal.showModal,
+    tmpURI: state.progressModal.tmpURI
+});
+const mapActionToProps = (dispatch) => ({
+    addProgressPhotoDispatch(data) {
+        dispatch(addProgressPhoto(data))
+    },
+    updateBfrData(data) {
+        dispatch(updateBfrAction(data))
+    },
+    showProgressPickerDispatch(bool) {
+        dispatch(showProgressPicker({showPicker: bool}))
+    },
+    showProgressModalDispatch(bool) {
+        dispatch(showProgressModal({showModal: bool}))
+    }
+});
+
+
+export const PhotoModal = connect(mapStateToProps, mapActionToProps)(_PhotoModal);
 const styles = StyleSheet.create({
     container: {
         flex: 1,

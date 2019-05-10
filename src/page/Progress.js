@@ -15,7 +15,7 @@ import {LinearGradient, Permissions} from 'expo';
 import {TopBar} from "../component";
 import {connect} from 'react-redux'
 import {updateBfrAction} from "../store/actions";
-import {addProgressPhoto, showProgressModal, showProgressPicker} from '../store/actions';
+import {addProgressPhoto, showProgressModal, showProgressPicker, changeTmpUriAction} from '../store/actions';
 import {PickerCamera} from '../component/PickerCamera';
 
 // import {createStackNavigator, createAppContainer} from "react-navigation";
@@ -67,9 +67,9 @@ export class _Progress extends Component {
     render() {
         const {
             progress, addProgressPhotoDispatch, showProgressPickerDispatch, showProgressModalDispatch, showPicker,
-            showModal, navigation
+            showModal, navigation, changeTmpUri
         } = this.props;
-        console.warn(showModal);
+        // console.warn(showModal);
         // showProgressModalDispatch(false);
         // console.log("allprops", this.props);
         return (
@@ -106,6 +106,7 @@ export class _Progress extends Component {
                                   showProgressModalDispatch={showProgressModalDispatch}
                                   showPicker={showPicker}
                                   showModal={showModal}
+                                  changeTmpUri={changeTmpUri}
                     />
                     }
                 </ScrollView>
@@ -117,7 +118,8 @@ export class _Progress extends Component {
 const mapStateToProps = (state) => ({
     progress: state.progress,
     showPicker: state.progressModal.showPicker,
-    showModal: state.progressModal.showModal
+    showModal: state.progressModal.showModal,
+    tmpURI: state.progressModal.tmpURI
 });
 const mapActionToProps = (dispatch) => ({
     addProgressPhotoDispatch(data) {
@@ -131,7 +133,11 @@ const mapActionToProps = (dispatch) => ({
     },
     showProgressModalDispatch(bool) {
         dispatch(showProgressModal({showModal: bool}))
+    },
+    changeTmpUri(uri) {
+        dispatch(changeTmpUriAction(uri))
     }
+
 });
 
 const Progress = connect(mapStateToProps, mapActionToProps)(_Progress);
@@ -144,6 +150,7 @@ export default Progress;
 //         header: null
 //     },
 // })
+
 const styles = StyleSheet.create({
     topBar: {
         backgroundColor: 'transparent',
