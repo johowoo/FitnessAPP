@@ -201,9 +201,10 @@ export class _ExerciseList extends Component {
                                 <View style={styles.modalButtonContainer}>
                                     <Button style={styles.modalButton}
                                             color={"#00cccc"}
-                                            title='Confirm' onPress={() => {
-                                        this.handlePress.call(this);
-                                        this.setState({setsModalVisible: false});
+                                            title='Confirm' onPress={async () => {
+                                        await this.handlePress.call(this);
+                                        await this.setState({setsModalVisible: false});
+                                        await this.props.closeModal();
                                         if (Platform.OS === 'android') {
                                             this.props.closeModal();
                                         }

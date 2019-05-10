@@ -39,7 +39,6 @@ class _CurrentWorkout extends Component {
 
 
     render() {
-        console.log(this.props.isExerciseListEmpty)
         return (
             <View>
                 <TopBar style={styles.topBar}>
