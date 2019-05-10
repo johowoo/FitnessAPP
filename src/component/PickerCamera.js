@@ -67,6 +67,13 @@ export class PickerCamera extends React.Component {
             <Modal transparent={true}
                    visible={this.props.showPicker}>
                 {/*{this.props.children}*/}
+                <TouchableOpacity style={{flex: 1, backgroundColor: 'transparent'}}
+                                  onPress={() => this.props.showProgressPickerDispatch(false)}>
+                    <View style={styles.modalContainer}>
+
+                    </View>
+                </TouchableOpacity>
+
                 <View style={styles.modalContainer}>
                     <View style={styles.modalInnerContainer}>
                         <TouchableOpacity style={styles.button} onPress={() => {

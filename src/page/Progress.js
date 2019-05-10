@@ -1,5 +1,15 @@
 import React, {Component} from 'react';
-import {View, Text, Image, Dimensions, TouchableOpacity, ScrollView, StyleSheet, FlatList} from 'react-native';
+import {
+    View,
+    Text,
+    Image,
+    Dimensions,
+    TouchableOpacity,
+    ScrollView,
+    StyleSheet,
+    FlatList,
+    TouchableWithoutFeedback
+} from 'react-native';
 import Icon from "react-native-vector-icons/MaterialIcons";
 import {LinearGradient, Permissions} from 'expo';
 import {TopBar} from "../component";
