@@ -19,6 +19,7 @@ export class PickerCamera extends React.Component {
         } else {
         }
     }
+
     _openCamera = async () => {
         let result = await ImagePicker.launchCameraAsync({
             mediaTypes: "Images",
@@ -56,6 +57,7 @@ export class PickerCamera extends React.Component {
                 id: 1,
                 weight: 80,
                 BFR: 20,
+                date: new Date()
             });
         }
     };

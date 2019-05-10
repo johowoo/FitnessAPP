@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {View, Text, Image, Dimensions, TouchableOpacity, ScrollView, StyleSheet, FlatList} from 'react-native';
 import Icon from "react-native-vector-icons/MaterialIcons";
-import {ImagePicker, LinearGradient, Permissions} from 'expo';
+import {LinearGradient, Permissions} from 'expo';
 import {TopBar} from "../component";
 import {connect} from 'react-redux'
 import {updateBfrAction} from "../store/actions";
@@ -46,7 +46,7 @@ export class _Progress extends Component {
         return (
             <View style={styles.item}>
                 <TouchableOpacity onPress={() => {
-                    props.navigation.navigate("DisplayPicture")
+                    props.navigation.navigate("DisplayPicture", {...props.item})
                 }}>
                     <Image style={styles.image} source={{uri: props.item.photoURI}}/>
                 </TouchableOpacity>

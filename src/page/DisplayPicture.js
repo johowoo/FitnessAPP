@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Dimensions, Button, TouchableOpacity, ScrollView} from 'react-native';
+import {View, Text, StyleSheet, Dimensions, Button, TouchableOpacity, ScrollView, Image} from 'react-native';
 import {TopBar} from "../component";
 
 const {width, height} = Dimensions.get('window');
@@ -15,19 +15,21 @@ export class _DisplayPicture extends Component {
     }
 
     render() {
+        const navProps = this.props?.navigation?.state?.params;
         return (
-                <LinearGradient
-                    colors={["#219dd5", "#51c0bb"]}
-                    style={{flex: 1}}
+            <LinearGradient
+                colors={["#219dd5", "#51c0bb"]}
+                style={{flex: 1}}
+            >
+                <ScrollView
+                    // ref={(ref) => this.scrollView = ref}
                 >
-                    <ScrollView
-                        ref={(ref) => this.scrollView = ref}
-                    >
-                        <View>
-                            <Text>Picture view</Text>
-                        </View>
-                    </ScrollView>
-                </LinearGradient>
+                    <View style={styles.imageContainer}>
+                        <Text>{navProps.weight}</Text>
+                        <Image style={styles.image} source={{uri: navProps?.photoURI}}/>
+                    </View>
+                </ScrollView>
+            </LinearGradient>
         )
     }
 }
@@ -51,4 +53,12 @@ const styles = StyleSheet.create({
         borderBottomWidth: 1,
         borderBottomColor: '#b0b0b0'
     },
+    image: {
+        width: width * 0.9,
+        height: height * 0.6
+    },
+    imageContainer: {
+        alignItems: "center",
+        justifyContent: "center"
+    }
 })
