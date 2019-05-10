@@ -94,7 +94,7 @@ export class _Progress extends Component {
                 <ScrollView ref={(ref) => this.scrollView = ref}>
                     <View style={{marginTop: 5}}/>
                     <FlatList
-                        data={progress}
+                        data={progress.reverse()}
                         style={styles.container}
                         renderItem={(props) => this.renderItem({...props, navigation})}
                         numColumns={numColumns}

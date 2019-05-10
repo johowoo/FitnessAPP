@@ -15,7 +15,6 @@ class _PhotoModal extends React.Component {
             max: "150",
             value: parseInt(this.state.inputTextWeight, 10)
         })) {
-
             this.props.showProgressModalDispatch(false);
             // this.props.showProgressPickerDispatch(false);
             this.props.addProgressPhotoDispatch({
@@ -25,9 +24,11 @@ class _PhotoModal extends React.Component {
                 date: new Date()
             })
         } else {
-            // Alert.alert("Please enter valid data",[{text:'sure'])
+            Alert.alert("Please enter valid data", null)
         }
     }
+
+
     changeText = (text, name) => {
         this.setState({
             [name]: text
@@ -35,18 +36,18 @@ class _PhotoModal extends React.Component {
     }
 
     render() {
-        // console.warn("TMP", this.props.tmpURI);
+
         return (
             <Modal transparent={true} visible={this.props.showModal}>
                 {/*{this.props.children}*/}
                 <View style={styles.container}>
                     <View style={styles.modalInnerContainer}>
                         <Text style={{color: '#eee', fontSize: 16, marginLeft: 10}}>Please enter your weight and
-                            BFR?</Text>
+                            Body fat rate?</Text>
                         <TextInput
                             style={[styles.dropdownInput, this.props.styles?.dropdownInput]}
                             placeholderTextColor={this.props.placeholderTextColor || "#ccc"}
-                            placeholder={"Please enter your weight:(KG)"}
+                            placeholder={"  weight:40-150(KG)"}
                             value={this.state.inputTextWeight}
                             // onChangeText={text => this.setState({inputTextWeight: text})}
                             onChangeText={text => this.changeText(text, "inputTextWeight")}
@@ -56,7 +57,7 @@ class _PhotoModal extends React.Component {
                         <TextInput
                             style={[styles.dropdownInput, this.props.styles?.dropdownInput]}
                             placeholderTextColor={this.props.placeholderTextColor || "#ccc"}
-                            placeholder={"Please enter your BFR(%)"}
+                            placeholder={"  body fat rate:5-40(%)"}
                             value={this.state.inputTextBFR}
                             // onChangeText={text => this.setState({inputTextBFR: text})}
                             onChangeText={text => this.changeText(text, "inputTextBFR")}

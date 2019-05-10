@@ -22,8 +22,7 @@ const StackNavigator = createStackNavigator({
     DisplayPicture: {
         screen: (props) => <DisplayPicture {...props}/>,
         navigationOptions: ({navigation}) => ({
-            headerMode: "screen",
-            headerTitle: navigation?.state?.params?.date,
+            headerTitle: navigation?.state?.params?.date.toString(),
             // header: null
             headerBackTitle: "Progress Page",
             // headerLeftContainerStyle: {color: "#fff"},

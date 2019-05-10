@@ -23,8 +23,8 @@ export class PickerCamera extends React.Component {
         }
     }
 
-    _pickImage = async () => {
-        let result = await ImagePicker.launchImageLibraryAsync({
+    _pickImage = async (launchType) => {
+        let result = await ImagePicker[launchType]({
             allowsEditing: true,
             aspect: [4, 3],
         });
@@ -52,12 +52,12 @@ export class PickerCamera extends React.Component {
                     <View style={styles.modalInnerContainer}>
                         <TouchableOpacity style={styles.button} onPress={() => {
                             // this.setState({showCamera: true})
-                            this._pickImage().catch(err => console.warn(err))
+                            this._pickImage("launchCameraAsync").catch(err => console.warn(err))
                         }}>
                             <Text style={styles.buttonText}>Camera</Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.button} onPress={() => {
-                            this._pickImage().catch(err => console.warn(err))
+                            this._pickImage("launchImageLibraryAsync").catch(err => console.warn(err))
                         }}>
                             <Text style={styles.buttonText}>Choose from library</Text>
                         </TouchableOpacity>
@@ -70,6 +70,7 @@ export class PickerCamera extends React.Component {
         )
     }
 }
+
 const styles = StyleSheet.create({
     modalContainer: {
         position: "absolute",

@@ -41,7 +41,6 @@ export class _DisplayPicture extends Component {
         )
     }
 }
-
 const mapStateToProps = (state) => ({
     bfrData: state.health.bfrData,
     weightData: state.health.weightData
