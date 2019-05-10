@@ -17,7 +17,7 @@ export class _DisplayPicture extends Component {
     render() {
         return (
                 <LinearGradient
-                    colors={["#1b98d9", "#57c5b8"]}
+                    colors={["#219dd5", "#51c0bb"]}
                     style={{flex: 1}}
                 >
                     <ScrollView

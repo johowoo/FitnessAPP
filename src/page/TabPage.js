@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {StyleSheet} from 'react-native';
-
 import {LinearGradient} from 'expo';
 import {Calendar} from './Calendar';
 import {Health} from './Health';
@@ -22,7 +21,26 @@ const StackNavigator = createStackNavigator({
     },
     DisplayPicture: {
         screen: (props) => <DisplayPicture {...props}/>,
-        navigationOptions: {}
+        navigationOptions: {
+            headerMode: "screen",
+            // header: null
+            headerBackTitle: "Progress Page",
+            // headerLeftContainerStyle: {color: "#fff"},
+            // headerTintColor: {color: "#FFF"},
+            headerBackground: <LinearGradient
+                colors={["#1b98d9", "#219dd5"]}
+                style={{flex: 1}}
+            />,
+            headerTintColor: '#c69',
+            // headerTitleStyle: {
+            //     color: "#eee",
+            // },
+            // headerBackTitleStyle: {
+            //     color: "#eee",
+            //     fontWeight: "bold"
+            //
+            // }
+        }
     }
 })
 
