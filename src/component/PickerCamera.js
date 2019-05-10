@@ -46,12 +46,10 @@ export class PickerCamera extends React.Component {
 
         this.props.showProgressPickerDispatch(false);
 
-        console.log(result);
-
         if (!result.cancelled) {
-            this.setState({
-                avatarSource: result.uri,
-            });
+            // this.setState({
+            //     avatarSource: result.uri,
+            // });
             this.props.addProgressPhotoDispatch({
                 photoURI: result.uri,
                 id: 1,
