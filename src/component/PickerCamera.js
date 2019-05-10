@@ -23,51 +23,15 @@ export class PickerCamera extends React.Component {
         }
     }
 
-    _openCamera = async () => {
-        let result = await ImagePicker.launchCameraAsync({
-            mediaTypes: "Images",
-            allowsEditing: true,
-            aspect: [4, 3],
-        });
-
-        // this.props.showProgressPickerDispatch(false);
-        // this.props.handleModal({showPicker: false});
-
-        if (!result.cancelled) {
-            await this.setState({uri: result.uri});
-            // this.props.showProgressPickerDispatch(true);
-            await this.props.changeTmpUri(result.uri);
-            // await this.props.addProgressPhotoDispatch({
-            //     photoURI: result.uri,
-            //     id: 1,
-            //     weight: 80,
-            //     BFR: 20,
-            // });
-            await this.props.showProgressModalDispatch(true);
-        }
-    }
     _pickImage = async () => {
         let result = await ImagePicker.launchImageLibraryAsync({
             allowsEditing: true,
             aspect: [4, 3],
         });
-
         // this.props.showProgressPickerDispatch(false);
-
         if (!result.cancelled) {
-            // this.setState({
-            //     avatarSource: result.uri,
-            // });
-            // console.warn("uri", result.uri)
             await this.setState({uri: result.uri});
             await this.props.changeTmpUri(result.uri);
-            // this.props.addProgressPhotoDispatch({
-            //     photoURI: result.uri,
-            //     id: 1,
-            //     weight: 80,
-            //     BFR: 20,
-            //     date: new Date()
-            // });
             await this.props.showProgressModalDispatch(true);
         }
     };
@@ -88,7 +52,7 @@ export class PickerCamera extends React.Component {
                     <View style={styles.modalInnerContainer}>
                         <TouchableOpacity style={styles.button} onPress={() => {
                             // this.setState({showCamera: true})
-                            this._openCamera().catch(err => console.warn(err))
+                            this._pickImage().catch(err => console.warn(err))
                         }}>
                             <Text style={styles.buttonText}>Camera</Text>
                         </TouchableOpacity>
@@ -100,18 +64,12 @@ export class PickerCamera extends React.Component {
                     </View>
                 </View>
                 {this.props.showModal &&
-                <PhotoModal
-                    // showProgressModalDispatch={this.props.showProgressModalDispatch}
-                    //         showProgressPickerDispatch={this.props.showProgressPickerDispatch}
-                    //         currentURI={this.state.uri}
-                    //         showModal={this.props.showModal}
-                />
+                <PhotoModal/>
                 }
             </Modal>
         )
     }
 }
-
 const styles = StyleSheet.create({
     modalContainer: {
         position: "absolute",

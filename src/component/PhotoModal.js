@@ -1,21 +1,37 @@
 import React from 'react';
-import {View, StyleSheet, Dimensions, Modal, Text, TextInput} from 'react-native';
+import {View, StyleSheet, Dimensions, Modal, Text, TextInput, Alert} from 'react-native';
 import ApslButton from "apsl-react-native-button";
 
 const {width, height} = Dimensions.get('window');
 import {connect} from 'react-redux';
 import {addProgressPhoto, showProgressModal, showProgressPicker, updateBfrAction} from "../store/actions";
+import {validation} from "../utils/validation";
 
 class _PhotoModal extends React.Component {
-    state = {inputTextWeight: "", inputTextBFR: ""};
+    state = {inputTextWeight: "", inputTextBFR: "", validated: false};
     handleSubmit = () => {
-        this.props.showProgressModalDispatch(false);
-        // this.props.showProgressPickerDispatch(false);
-        this.props.addProgressPhotoDispatch({
-            photoURI: this.props.tmpURI,
-            BFR: this.state.inputTextBFR,
-            weight: this.state.inputTextWeight
-        })
+        if (validation({min: "5", max: "40", value: parseInt(this.state.inputTextBFR, 10)}) && validation({
+            min: "40",
+            max: "150",
+            value: parseInt(this.state.inputTextWeight, 10)
+        })) {
+
+            this.props.showProgressModalDispatch(false);
+            // this.props.showProgressPickerDispatch(false);
+            this.props.addProgressPhotoDispatch({
+                photoURI: this.props.tmpURI,
+                BFR: this.state.inputTextBFR,
+                weight: this.state.inputTextWeight,
+                date: new Date()
+            })
+        } else {
+            // Alert.alert("Please enter valid data",[{text:'sure'])
+        }
+    }
+    changeText = (text, name) => {
+        this.setState({
+            [name]: text
+        });
     }
 
     render() {
@@ -32,7 +48,8 @@ class _PhotoModal extends React.Component {
                             placeholderTextColor={this.props.placeholderTextColor || "#ccc"}
                             placeholder={"Please enter your weight:(KG)"}
                             value={this.state.inputTextWeight}
-                            onChangeText={text => this.setState({inputTextWeight: text})}
+                            // onChangeText={text => this.setState({inputTextWeight: text})}
+                            onChangeText={text => this.changeText(text, "inputTextWeight")}
                             keyboardType={"number-pad"}
                             // onFocus={this.props.adjustScreen}
                         />
@@ -41,7 +58,8 @@ class _PhotoModal extends React.Component {
                             placeholderTextColor={this.props.placeholderTextColor || "#ccc"}
                             placeholder={"Please enter your BFR(%)"}
                             value={this.state.inputTextBFR}
-                            onChangeText={text => this.setState({inputTextBFR: text})}
+                            // onChangeText={text => this.setState({inputTextBFR: text})}
+                            onChangeText={text => this.changeText(text, "inputTextBFR")}
                             keyboardType={"number-pad"}
                             // onFocus={this.props.adjustScreen}
                         />
