@@ -9,25 +9,24 @@ import {validation} from "../utils/validation";
 
 class _PhotoModal extends React.Component {
     state = {inputTextWeight: "", inputTextBFR: "", validated: false};
-    handleSubmit = () => {
+    handleSubmit = async () => {
         if (validation({min: "5", max: "40", value: parseInt(this.state.inputTextBFR, 10)}) && validation({
             min: "40",
             max: "150",
             value: parseInt(this.state.inputTextWeight, 10)
         })) {
-            this.props.showProgressModalDispatch(false);
-            // this.props.showProgressPickerDispatch(false);
-            this.props.addProgressPhotoDispatch({
+            await this.props.showProgressModalDispatch(false);
+            await this.props.addProgressPhotoDispatch({
                 photoURI: this.props.tmpURI,
                 BFR: this.state.inputTextBFR,
                 weight: this.state.inputTextWeight,
                 date: new Date()
             })
+            await this.props.showProgressPickerDispatch(false);
         } else {
             Alert.alert("Please enter valid data", null)
         }
     }
-
 
     changeText = (text, name) => {
         this.setState({
