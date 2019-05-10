@@ -8,7 +8,7 @@ import {updateBfrAction} from "../store/actions";
 import {addProgressPhoto, showProgressModal, showProgressPicker} from '../store/actions';
 import {PickerCamera} from '../component/PickerCamera';
 
-import {createStackNavigator, createAppContainer} from "react-navigation";
+// import {createStackNavigator, createAppContainer} from "react-navigation";
 
 
 const {width, height} = Dimensions.get('window');
@@ -41,13 +41,14 @@ export class _Progress extends Component {
         }
     }
 
-    renderItem = ({item}) => {
+    renderItem = (props) => {
+        console.log(props.navigation);
         return (
             <View style={styles.item}>
                 <TouchableOpacity onPress={() => {
-                    console.log('Work!')
+                    props.navigation.navigate("DisplayPicture")
                 }}>
-                    <Image style={styles.image} source={{uri: item.photoURI}}/>
+                    <Image style={styles.image} source={{uri: props.item.photoURI}}/>
                 </TouchableOpacity>
             </View>
         )
@@ -56,9 +57,9 @@ export class _Progress extends Component {
     render() {
         const {
             progress, addProgressPhotoDispatch, showProgressPickerDispatch, showProgressModalDispatch, showPicker,
-            showModal
+            showModal, navigation
         } = this.props;
-        console.log(progress);
+        // console.log("allprops", this.props);
         return (
             <LinearGradient
                 colors={["#1b98d9", "#57c5b8"]}
@@ -83,7 +84,7 @@ export class _Progress extends Component {
                     <FlatList
                         data={progress}
                         style={styles.container}
-                        renderItem={this.renderItem}
+                        renderItem={(props) => this.renderItem({...props, navigation})}
                         numColumns={numColumns}
                         keyExtractor={(item, index) => index.toString()}
                     />
@@ -127,12 +128,12 @@ const Progress = connect(mapStateToProps, mapActionToProps)(_Progress);
 
 export default Progress;
 
-const StackNavigator = createStackNavigator({
-    Progress: {
-        screen: Progress,
-        header: null
-    },
-})
+// const StackNavigator = createStackNavigator({
+//     Progress: {
+//         screen: Progress,
+//         header: null
+//     },
+// })
 const styles = StyleSheet.create({
     topBar: {
         backgroundColor: 'transparent',
