@@ -1,11 +1,15 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Modal, FlatList, TouchableWithoutFeedback} from 'react-native';
+import {View, Text, StyleSheet, Modal, FlatList, TouchableWithoutFeedback, Dimensions} from 'react-native';
 import {CalendarList} from 'react-native-calendars';
 import {TopBar} from "../component";
 import {connect} from 'react-redux';
 import {LinearGradient} from "expo";
 import ApslButton from 'apsl-react-native-button';
 import Icon from "react-native-vector-icons/MaterialIcons";
+
+const {width, height} = Dimensions.get('window');
+
+const marginTop = (height / width >= 18.5 / 9) ? 35 : 0;
 
 export class _Calendar extends Component {
     state = {
@@ -15,8 +19,8 @@ export class _Calendar extends Component {
     }
 
     render() {
-        console.warn(this.props.markedDates);
-        console.log(this.props.markedDates);
+        // console.warn(this.props.markedDates);
+        // console.log(this.props.markedDates);
         return (
             <View>
                 <TopBar style={styles.topBar}>
@@ -61,7 +65,6 @@ export class _Calendar extends Component {
                             {this.props.fontLoaded ? <Text style={styles.title}>
                                 Workout History
                             </Text> : null}
-
                         </View>
 
                         <View style={{margin: 20}}>
@@ -108,7 +111,7 @@ const mapStateToProps = state => ({
 export const Calendar = connect(mapStateToProps, null)(_Calendar)
 const styles = StyleSheet.create({
     container: {
-        flex: 1
+        flex: 1, paddingTop: marginTop
     },
     textBar: {
         textAlign: 'center',
@@ -165,6 +168,7 @@ const styles = StyleSheet.create({
     closeButton: {
         position: 'absolute',
         borderColor: 'transparent',
+        marginTop,
         right: 20,
         top: 10,
         zIndex: 999,
