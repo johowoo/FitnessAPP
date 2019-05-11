@@ -21,6 +21,8 @@ export class _Calendar extends Component {
     render() {
         // console.warn(this.props.markedDates);
         // console.log(this.props.markedDates);
+        // console.warn(this.props.allExercisesList);
+        console.log(this.state.displayExercisesList);
         return (
             <View>
                 <TopBar style={styles.topBar}>
@@ -42,7 +44,6 @@ export class _Calendar extends Component {
                             displayExercisesList: this.props.allExercisesList[date],
                             isModalListVisible: true
                         })
-
                     }}
                 />
                 <Modal

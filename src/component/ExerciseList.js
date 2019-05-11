@@ -97,7 +97,11 @@ export class _ExerciseList extends Component {
     }
     handlePress = () => {
         this.props.updateEmpty(false);
-        this.props.addExercise({exercise: this.state.selectedExercise, sets: this.state.selectedSets});
+        this.props.addExercise({
+            exercise: this.state.selectedExercise,
+            sets: this.state.selectedSets,
+            time: new Date().getTime()
+        });
         // this.props.closeModal();
 
     }

@@ -19,10 +19,10 @@ export class _WorkoutList extends Component {
         this.props.setModalVisibility(true)
     }
 
-    genQuickActions=()=>{
+    genQuickActions = ({item, index}) => {
         return <View style={styles.quickContainer}>
             <TouchableHighlight
-                onPress={()=>{
+                onPress={() => {
                     alert("确认删除？")
                 }}
             >
@@ -34,22 +34,49 @@ export class _WorkoutList extends Component {
         </View>
 
     }
-    _renderItem = ({item: {exercise, sets}}) => {
+    _renderItem = ({item: {exercise, sets, weight, time}}) => {
         // console.warn(exercise,sets);
         return (<TouchableWithoutFeedback
             // onPress={(item) => this.handlePress.call(this, item)}
         >
-            <View style={styles.listItem}>
-                <View style={{flex: 0.03}}/>
-                <View style={{flex: 0.77}}>
-                    <Text style={styles.exerciseText}>{'  ' + exercise}</Text>
+            <View style={styles.listContainer}>
+                <View style={styles.listItem}>
+                    <View style={{flex: 0.03}}/>
+                    <View style={{flex: 0.77}}>
+                        <Text style={styles.exerciseText}>{'  ' + exercise}</Text>
+                    </View>
+                    <View style={{flex: 0.20}}>
+                        <Text style={styles.exerciseText}>{sets} sets</Text>
+                    </View>
                 </View>
-                <View style={{flex: 0.20}}>
-                    <Text style={styles.exerciseText}>{sets} sets</Text>
-                </View>
+                <TouchableHighlight>
+                    <View style={{...styles.listItem, height: 30}}>
+                        <Text
+                            style={{color: "#bbb"}}>{weight ? weight + "  KG" : "Touch to add exercise weight / Swipe to delete"}</Text>
+                    </View>
+                </TouchableHighlight>
             </View>
+
         </TouchableWithoutFeedback>)
     }
+
+    getQuickActions = ({index, item}) => {
+        console.warn("currentWorkout", this.props.currentWorkout);
+        return <View style={styles.quickAContent}>
+            <TouchableHighlight
+                onPress={() => alert("确认删除？")}
+            >
+                <View style={styles.quick}>
+                    <View style={styles.quick}>
+                        <Text style={styles.delete}>删除</Text>
+                    </View>
+                    <View>
+
+                    </View>
+                </View>
+            </TouchableHighlight>
+        </View>
+    };
 
     render() {
         const listFooterComponent = (
@@ -71,7 +98,7 @@ export class _WorkoutList extends Component {
                 ListFooterComponent={listFooterComponent}
                 data={this.props.currentWorkout} renderItem={this._renderItem}
                 keyExtractor={(item, index) => item + index}
-                renderQuickActions={() => this.genQuickActions()}
+                renderQuickActions={this.getQuickActions}
                 maxSwipeDistance={100}
             />
         )
@@ -124,14 +151,17 @@ const styles = StyleSheet.create({
         color: 'white',
         fontSize: 24
     },
+    listContainer: {
+        borderColor: '#999',
+        borderWidth: 0.5
+    },
     listItem: {
+        backgroundColor: "#C69",
         flexDirection: 'row',
-
         alignItems: 'center',
         height: 40,
         justifyContent: 'space-around',
-        borderColor: '#ccc',
-        borderWidth: 1
+
     },
     exerciseText: {
         fontSize: 20,
@@ -139,5 +169,26 @@ const styles = StyleSheet.create({
     },
     setsText: {
         fontSize: 20,
+    },
+    quickAContent: {
+        flex: 1,
+        flexDirection: 'row',
+        justifyContent: 'flex-end',
+        marginRight: 15,
+        marginBottom: 10,
+    },
+    quick: {
+        backgroundColor: "rgba(199,50,50,0.8)",
+        flex: 1,
+        alignItems: 'flex-end',//水平靠右
+        justifyContent: 'center',//上下居中
+        width: 100,
+        borderRadius: 5,
+        elevation: 5,//漂浮的效果
+
+    },
+    delete: {
+        color: "#d8fffa",
+        marginRight: 30
     }
 });

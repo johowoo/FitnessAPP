@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import {View, Text, StyleSheet, Dimensions, Button, TouchableOpacity, ScrollView} from 'react-native';
-import {Fonts} from "../utils/Fonts";
 import {
     LineChart,
 } from 'react-native-chart-kit'
