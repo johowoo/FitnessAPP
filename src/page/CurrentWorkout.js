@@ -17,7 +17,7 @@ import {
 import {WorkoutList} from "../component/WorkoutList";
 import {ExerciseModal} from "./ExerciseModal";
 import Button from "apsl-react-native-button";
-import {formateMonthandDay} from '../utils/formateMonthandDay';
+import {formatMonthandDay} from '../utils/formatMonthandDay';
 
 
 class _CurrentWorkout extends Component {
@@ -28,7 +28,7 @@ class _CurrentWorkout extends Component {
     handlePressComplete = () => {
         this.props.clearCurrentWorkout();
         const currentTimestamp = new Date();
-        const currentDate = `${currentTimestamp.getFullYear()}-${parseInt(formateMonthandDay(currentTimestamp.getMonth())) + 1}-${formateMonthandDay(currentTimestamp.getDate())}`;
+        const currentDate = `${currentTimestamp.getFullYear()}-${formatMonthandDay(currentTimestamp.getMonth() + 1)}-${formatMonthandDay(currentTimestamp.getDate())}`;
         this.props.addMarkedDate(currentDate);
         this.props.updateEmpty(true)
         this.props.addNewExerciseList({
