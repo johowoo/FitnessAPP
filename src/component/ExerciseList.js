@@ -205,9 +205,9 @@ export class _ExerciseList extends Component {
                                         await this.handlePress.call(this);
                                         await this.setState({setsModalVisible: false});
                                         await this.props.closeModal();
-                                        if (Platform.OS === 'android') {
-                                            this.props.closeModal();
-                                        }
+                                        // if (Platform.OS === 'android') {
+                                        //     this.props.closeModal();
+                                        // }
                                     }}/>
                                 </View>
                                 <View style={styles.modalButtonContainer}>

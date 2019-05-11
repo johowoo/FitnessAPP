@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet, Modal, FlatList, TouchableWithoutFeedback} from 'react-native';
 import {CalendarList} from 'react-native-calendars';
 import {TopBar} from "../component";
-import {Fonts} from "../utils/Fonts";
 import {connect} from 'react-redux';
 import {LinearGradient} from "expo";
 import ApslButton from 'apsl-react-native-button';
@@ -16,6 +15,8 @@ export class _Calendar extends Component {
     }
 
     render() {
+        console.warn(this.props.markedDates);
+        console.log(this.props.markedDates);
         return (
             <View>
                 <TopBar style={styles.topBar}>
