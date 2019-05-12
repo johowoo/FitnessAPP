@@ -37,19 +37,12 @@ export class _WorkoutList extends Component {
     }
     _renderItem = ({item: {exercise, sets, weight, time, reps}}) => {
         // console.warn(exercise,sets);
-        return (<TouchableWithoutFeedback
+        return (<TouchableHighlight
             // onPress={(item) => this.handlePress.call(this, item)}
             onPress={async () => {
                 await this.setState({time})
                 await this.setState({showAddWeightModal: true})
             }}
-            //*************************
-            /*final step
-            onPress={(item) => {
-                this.props.addWeightToExercise({});
-
-            }}
-            */
         >
             <View style={styles.listContainer}>
                 <View style={styles.listItem}>
@@ -61,7 +54,6 @@ export class _WorkoutList extends Component {
                         <Text style={styles.exerciseText}>{sets} sets</Text>
                     </View>
                 </View>
-                <TouchableHighlight>
                     <View style={{...styles.listItem, height: 30}}>
                         <Text
                             style={{
@@ -69,9 +61,8 @@ export class _WorkoutList extends Component {
                                 marginRight: 20
                             }}>{weight ? ` ${weight} KG ✖ ${reps} reps` : "Touch to edit weight & reps  /  Swipe to delete"}</Text>
                     </View>
-                </TouchableHighlight>
             </View>
-        </TouchableWithoutFeedback>)
+        </TouchableHighlight>)
     }
 
     getQuickActions = ({index, item}) => {
@@ -106,6 +97,7 @@ export class _WorkoutList extends Component {
             </TouchableHighlight>
         </View>
     };
+
     render() {
         console.log(this.props.currentWorkout);
         const listFooterComponent = (
