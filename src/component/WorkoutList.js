@@ -80,18 +80,15 @@ export class _WorkoutList extends Component {
                 onPress={() => alert("Do you want to delete this exercise？")}
             >
                 <View style={styles.quick}>
-                    <View style={{flex: 1, alignItems: 'center', justifyContent: "center"}}>
+                    <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: "center"}}>
                         <View style={{flex: 0.1}}>
                         </View>
-                        <View style={{flex: 0.5,alignItems:"flex-end"}}>
-                            <Icon name="delete" size={30} color="#bbb" key="delete"/>
-                        </View>
-                        <View style={{flex: 0.2}}>
+                        <View style={{flex: 0.6,marginLeft: 5}}>
                             <Text style={{color:"#eee"}}>Delete</Text>
                         </View>
-                        <View style={{flex: 0.1}}>
+                        <View style={{flex: 0.3}}>
+                            <Icon name="delete" size={24} color="#bbb" key="delete"/>
                         </View>
-
                     </View>
                 </View>
             </TouchableHighlight>
