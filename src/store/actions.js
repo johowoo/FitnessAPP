@@ -45,4 +45,7 @@ export const changeTmpUriAction = (data) => (
 export const addWeightToExercisesAction = (data) => (
     createAction(types.ADD_WEIGHT_TO_EXERCISE)(data)
 )
+export const deleteExerciseFromWorkoutListAction = (data) => (
+    createAction(types.DELETE_EXERCISE_FROM_WORKOUTLIST)(data)
+)
 

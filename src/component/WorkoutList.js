@@ -6,13 +6,14 @@ import {
     StyleSheet,
     Dimensions,
     TouchableWithoutFeedback,
-    TouchableHighlight
+    TouchableHighlight,
+    Alert
 } from 'react-native';
 import Button from 'apsl-react-native-button';
 // import {Icon} from 'expo';
 import Icon from "react-native-vector-icons/MaterialIcons";
 import {connect} from 'react-redux';
-import {addWeightToExercisesAction} from '../store/actions';
+import {addWeightToExercisesAction, deleteExerciseFromWorkoutListAction} from '../store/actions';
 import {AddWeightToExercise} from "./AddWeightToExercise";
 
 const {width, height} = Dimensions.get('window');
@@ -75,16 +76,28 @@ export class _WorkoutList extends Component {
 
     getQuickActions = ({index, item}) => {
         // console.warn("currentWorkout", this.props.currentWorkout);
+
         return <View style={styles.quickAContent}>
             <TouchableHighlight
-                onPress={() => alert("Do you want to delete this exercise？")}
+                onPress={() => Alert.alert('Delete', "Do you want to delete this exercise？",
+                    [
+                        {
+                            text: "Delete", onPress: async () => {
+                                await this.setState({time: item.time});
+                                await this.props.deleteExerciseFromWorkoutList({time: this.state.time});
+                            }
+                        },
+                        {text: "Cancel"},
+
+                    ]
+                )}
             >
                 <View style={styles.quick}>
                     <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: "center"}}>
                         <View style={{flex: 0.1}}>
                         </View>
-                        <View style={{flex: 0.6,marginLeft: 5}}>
-                            <Text style={{color:"#eee"}}>Delete</Text>
+                        <View style={{flex: 0.6, marginLeft: 5}}>
+                            <Text style={{color: "#eee"}}>Delete</Text>
                         </View>
                         <View style={{flex: 0.3}}>
                             <Icon name="delete" size={24} color="#bbb" key="delete"/>
@@ -135,6 +148,9 @@ const mapStateToProps = (state) => ({
 const mapActionsToProps = dispatch => ({
     addWeightRepsToExercise: (data) => {
         dispatch(addWeightToExercisesAction(data))
+    },
+    deleteExerciseFromWorkoutList: (data) => {
+        dispatch(deleteExerciseFromWorkoutListAction(data));
     }
 })
 export const WorkoutList = connect(mapStateToProps, mapActionsToProps)(_WorkoutList)
