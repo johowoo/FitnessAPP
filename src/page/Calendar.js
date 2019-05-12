@@ -74,8 +74,9 @@ export class _Calendar extends Component {
                                 marginTop: 2,
                                 borderTopColor: "#ccc",
                                 borderTopWidth: 0.6,
-                                marginLeft: 10,
-                                marginRight: 10
+                                marginLeft: 15,
+                                marginRight: 15,
+                                paddingTop: 10
                             }}
                             data={this.state.displayExercisesList}
                             renderItem={this._renderItem}
