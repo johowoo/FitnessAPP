@@ -19,9 +19,6 @@ export class _Calendar extends Component {
     }
 
     render() {
-        // console.warn(this.props.markedDates);
-        // console.log(this.props.markedDates);
-        // console.warn(this.props.allExercisesList);
         console.log(this.state.displayExercisesList);
         return (
             <View>
@@ -73,7 +70,13 @@ export class _Calendar extends Component {
                             </Text> : null}
                         </View>
                         <FlatList
-                            style={{marginTop: 2}}
+                            style={{
+                                marginTop: 2,
+                                borderTopColor: "#ccc",
+                                borderTopWidth: 0.6,
+                                marginLeft: 10,
+                                marginRight: 10
+                            }}
                             data={this.state.displayExercisesList}
                             renderItem={this._renderItem}
                             keyExtractor={(item, index) => item + index}
@@ -86,17 +89,27 @@ export class _Calendar extends Component {
         )
     }
 
-    _renderItem = ({item: {exercise, sets}}) => {
+    _renderItem = ({item: {exercise, sets, weight, reps}}) => {
         return (<TouchableWithoutFeedback>
-            <View style={styles.listItem}>
-                <View style={{flex: 0.03}}/>
-                <View style={{flex: 0.77}}>
-                    <Text style={styles.exerciseText}>{'  ' + exercise}</Text>
+            <View style={styles.workoutContainer}>
+                <View style={styles.listItem}>
+                    <View style={{flex: 0.03}}/>
+                    <View style={{flex: 0.77}}>
+                        <Text style={styles.exerciseText}>{'  ' + exercise}</Text>
+                    </View>
+                    <View style={{flex: 0.20}}>
+                        <Text style={styles.exerciseText}>{sets} sets</Text>
+                    </View>
                 </View>
-                <View style={{flex: 0.20}}>
-                    <Text style={styles.exerciseText}>{sets} sets</Text>
+                <View style={{...styles.listItem, height: 30}}>
+                    <Text
+                        style={{
+                            color: "#bbb",
+                            marginRight: 20
+                        }}>{weight ? ` ${weight} KG ✖ ${reps} reps` : "Touch to edit weight & reps  /  Swipe to delete"}</Text>
                 </View>
             </View>
+
         </TouchableWithoutFeedback>)
     }
 }
@@ -153,8 +166,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         height: 40,
         justifyContent: 'space-around',
-        borderColor: '#787',
-        borderWidth: 1,
+        // borderWidth: 1,
         // borderTopWidth:0,
     },
     exerciseText: {
@@ -171,5 +183,12 @@ const styles = StyleSheet.create({
         right: 20,
         top: 10,
         zIndex: 999,
+    },
+    workoutContainer: {
+        borderBottomColor: "#ccc",
+        borderBottomWidth: 0.6,
+        marginBottom: 10,
+        // marginLeft: 10,
+        // marginRight: 10
     }
 })

@@ -106,10 +106,8 @@ export class _WorkoutList extends Component {
             </TouchableHighlight>
         </View>
     };
-
     render() {
         console.log(this.props.currentWorkout);
-
         const listFooterComponent = (
             <View style={styles.addSomeExercises}>
                 <View style={styles.buttonContainer}>
