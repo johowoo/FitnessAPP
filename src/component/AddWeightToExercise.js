@@ -7,11 +7,13 @@ const {width, height} = Dimensions.get('window');
 
 export class AddWeightToExercise extends Component {
     state = {
-        weightText: 0,
-        repsText: 0
+        weightText: "",
+        repsText: ""
     }
 
     render() {
+        console.warn("weightText", this.state.weightText);
+        console.warn("repsText", this.state.repsText);
         return (
             <Modal
                 visible={this.props.showAddWeightModal}
@@ -26,25 +28,27 @@ export class AddWeightToExercise extends Component {
                         </Text>
                         <TextInput style={styles.weightTextInput}
                                    value={this.state.weightText}
-                                   placeholder={"Weight: 0-300 (KG)"}
-                                   onChange={text => {
+                                   placeholder={" Weight: 0-300 (KG)"}
+                                   onChangeText={text => {
                                        this.setState({weightText: text})
                                    }}/>
                         <TextInput style={styles.weightTextInput}
                                    value={this.state.repsText}
-                                   placeholder={"Reps: 0-50"}
-                                   onChange={text => {
-                                       this.setState({weightText: text})
+                                   placeholder={" Reps: 0-50"}
+                                   onChangeText={text => {
+                                       this.setState({repsText: text})
                                    }}/>
                         <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
                             <View style={styles.modalButtonContainer}>
                                 <Button style={styles.modalButton}
                                         color={"#00cccc"}
                                         title='Confirm' onPress={async () => {
-                                    this.props.handleCloseWeightModal(false)
-                                    // if (Platform.OS === 'android') {
-                                    //     this.props.closeModal();
-                                    // }
+                                    await this.props.addWeightRepsToExercise({
+                                        time: this.props.time,
+                                        weight: this.state.weightText,
+                                        reps: this.state.repsText
+                                    })
+                                    await this.props.handleCloseWeightModal(false);
                                 }}/>
                             </View>
                             <View style={styles.modalButtonContainer}>

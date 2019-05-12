@@ -19,7 +19,8 @@ const {width, height} = Dimensions.get('window');
 
 export class _WorkoutList extends Component {
     state = {
-        showAddWeightModal: false
+        showAddWeightModal: false,
+        time: 0  //time for the chosen exercise(to add weight & reps)
     };
 
     handlePress() {
@@ -47,12 +48,13 @@ export class _WorkoutList extends Component {
             showAddWeightModal: bool
         })
     }
-    _renderItem = ({item: {exercise, sets, weight, time}}) => {
+    _renderItem = ({item: {exercise, sets, weight, time, reps}}) => {
         // console.warn(exercise,sets);
         return (<TouchableWithoutFeedback
             // onPress={(item) => this.handlePress.call(this, item)}
-            onPress={() => {
-                this.setState({showAddWeightModal: true})
+            onPress={async () => {
+                await this.setState({time})
+                await this.setState({showAddWeightModal: true})
             }}
             //*************************
             /*final step
@@ -83,7 +85,7 @@ export class _WorkoutList extends Component {
     }
 
     getQuickActions = ({index, item}) => {
-        console.warn("currentWorkout", this.props.currentWorkout);
+        // console.warn("currentWorkout", this.props.currentWorkout);
         return <View style={styles.quickAContent}>
             <TouchableHighlight
                 onPress={() => alert("确认删除？")}
@@ -109,7 +111,10 @@ export class _WorkoutList extends Component {
                 <Text style={styles.bigText}>add some{'\n'}exercises</Text>
                 {this.state.showAddWeightModal &&
                 <AddWeightToExercise showAddWeightModal={this.state.showAddWeightModal}
-                                     handleCloseWeightModal={this.handleCloseWeightModal}/>}
+                                     handleCloseWeightModal={this.handleCloseWeightModal}
+                                     addWeightRepsToExercise={this.props.addWeightRepsToExercise}
+                                     time={this.state.time}
+                />}
             </View>
         )
         return (
@@ -130,7 +135,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapActionsToProps = dispatch => ({
-    addWeightToExercise: (data) => {
+    addWeightRepsToExercise: (data) => {
         dispatch(addWeightToExercisesAction(data))
     }
 })
