@@ -16,9 +16,6 @@ export const currentWorkout = (state = [], action) => {
                 }
             })
             return stateCopy;
-        // console.warn("time", action.payload.time);
-        // console.warn("weight", action.payload.weight);
-        // console.warn("reps", action.payload.reps);
         case types.DELETE_EXERCISE_FROM_WORKOUTLIST:
             let stateCopyDelete = JSON.parse(JSON.stringify(state));
             stateCopyDelete.map((item, index) => {

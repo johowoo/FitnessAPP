@@ -67,13 +67,11 @@ export class _Calendar extends Component {
                                 Workout History
                             </Text> : null}
                         </View>
-
                         <View style={{margin: 20}}>
                             {this.props.fontLoaded ? <Text style={styles.subTitle}>
                                 {this.state.pressedDay}
                             </Text> : null}
                         </View>
-
                         <FlatList
                             style={{marginTop: 2}}
                             data={this.state.displayExercisesList}
