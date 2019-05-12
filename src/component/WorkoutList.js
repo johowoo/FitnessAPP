@@ -27,21 +27,6 @@ export class _WorkoutList extends Component {
         this.props.setModalVisibility(true)
     }
 
-    genQuickActions = ({item, index}) => {
-        return <View style={styles.quickContainer}>
-            <TouchableHighlight
-                onPress={() => {
-                    alert("确认删除？")
-                }}
-            >
-                <View style={styles.quick}>
-                    {/*<Text style={styles.text}>删除</Text>*/}
-                </View>
-            </TouchableHighlight>
-
-        </View>
-
-    }
 
     handleCloseWeightModal = (bool) => {
         this.setState({
