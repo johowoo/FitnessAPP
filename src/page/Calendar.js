@@ -1,11 +1,22 @@
 import React, {Component} from 'react';
-import {View, Text, StyleSheet, Modal, FlatList, TouchableWithoutFeedback, Dimensions} from 'react-native';
+import {
+    View,
+    Text,
+    StyleSheet,
+    Modal,
+    FlatList,
+    TouchableWithoutFeedback,
+    Dimensions,
+    TouchableHighlight
+} from 'react-native';
 import {CalendarList} from 'react-native-calendars';
 import {TopBar} from "../component";
 import {connect} from 'react-redux';
 import {LinearGradient} from "expo";
 import ApslButton from 'apsl-react-native-button';
 import Icon from "react-native-vector-icons/MaterialIcons";
+import {addWeightToExercisesAction, deleteExerciseFromWorkoutListAction} from '../store/actions';
+import {AddWeightToExercise} from "../component/AddWeightToExercise";
 
 const {width, height} = Dimensions.get('window');
 
@@ -16,10 +27,12 @@ export class _Calendar extends Component {
         isModalListVisible: false,
         pressedDay: '',
         displayExercisesList: [],
+        time: '',
+        showAddWeightModal: false
     }
 
     render() {
-        console.log(this.state.displayExercisesList);
+        // console.log(this.state.displayExercisesList);
         return (
             <View>
                 <TopBar style={styles.topBar}>
@@ -82,7 +95,14 @@ export class _Calendar extends Component {
                             renderItem={this._renderItem}
                             keyExtractor={(item, index) => item + index}
                         />
+                        {this.state.showAddWeightModal &&
+                        <AddWeightToExercise showAddWeightModal={this.state.showAddWeightModal}
+                                             handleCloseWeightModal={this.handleCloseWeightModal}
+                                             addWeightRepsToExercise={this.props.addWeightRepsToExercise}
+                                             time={this.state.time}
+                        />}
                     </LinearGradient>
+
                 </Modal>
 
 
@@ -90,8 +110,18 @@ export class _Calendar extends Component {
         )
     }
 
-    _renderItem = ({item: {exercise, sets, weight, reps}}) => {
-        return (<TouchableWithoutFeedback>
+    handleCloseWeightModal = (bool) => {
+        this.setState({
+            showAddWeightModal: bool
+        })
+    }
+    _renderItem = ({item: {exercise, sets, weight, reps, time}}) => {
+        return (<TouchableWithoutFeedback
+            onPress={async () => {
+                await this.setState({time})
+                await this.setState({showAddWeightModal: true})
+            }}
+        >
             <View style={styles.workoutContainer}>
                 <View style={styles.listItem}>
                     <View style={{flex: 0.03}}/>
@@ -107,7 +137,7 @@ export class _Calendar extends Component {
                         style={{
                             color: "#bbb",
                             marginRight: 20
-                        }}>{weight ? ` ${weight} KG ✖ ${reps} reps` : "Touch to edit weight & reps  /  Swipe to delete"}</Text>
+                        }}>{weight ? ` ${weight} KG ✖ ${reps} reps` : "No record"}</Text>
                 </View>
             </View>
 
@@ -121,7 +151,16 @@ const mapStateToProps = state => ({
     exercisesListForPressedDay: state.savedExerciseForEachDay.exercisesListForPressedDay,
 })
 
-export const Calendar = connect(mapStateToProps, null)(_Calendar)
+const mapActionsToProps = dispatch => ({
+    addWeightRepsToExercise: (data) => {
+        dispatch(addWeightToExercisesAction(data))
+    },
+    deleteExerciseFromWorkoutList: (data) => {
+        dispatch(deleteExerciseFromWorkoutListAction(data));
+    }
+})
+export const Calendar = connect(mapStateToProps, mapActionsToProps)(_Calendar)
+
 const styles = StyleSheet.create({
     container: {
         flex: 1, paddingTop: marginTop

@@ -59,7 +59,7 @@ export class _WorkoutList extends Component {
                             style={{
                                 color: "#bbb",
                                 marginRight: 20
-                            }}>{weight ? ` ${weight} KG ✖ ${reps} reps` : "Touch to edit weight & reps  /  Swipe to delete"}</Text>
+                            }}>{weight ? ` ${weight} KG ✖ ${reps} reps` : "Touch to edit weight & reps "}</Text>
                     </View>
             </View>
         </TouchableHighlight>)
