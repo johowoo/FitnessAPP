@@ -77,7 +77,7 @@ export class _WorkoutList extends Component {
         // console.warn("currentWorkout", this.props.currentWorkout);
         return <View style={styles.quickAContent}>
             <TouchableHighlight
-                onPress={() => alert("确认删除？")}
+                onPress={() => alert("Do you want to delete this exercise？")}
             >
                 <View style={styles.quick}>
                     <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: "center"}}>
