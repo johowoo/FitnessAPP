@@ -4,7 +4,6 @@ import {
 } from 'react-native';
 import {connect} from 'react-redux';
 import {TopBar} from "../component/TopBar";
-import {Fonts} from "../utils/Fonts";
 import {
     setExerciseModalVisibility,
     addExerciseAction,
@@ -14,6 +13,7 @@ import {
     updateEmptyAction,
     addNewExerciseListAction
 } from '../store/actions';
+
 import {WorkoutList} from "../component/WorkoutList";
 import {ExerciseModal} from "./ExerciseModal";
 import Button from "apsl-react-native-button";
@@ -36,8 +36,6 @@ class _CurrentWorkout extends Component {
             exercises: this.props.currentWorkout
         })
     }
-
-
     render() {
         return (
             <View>

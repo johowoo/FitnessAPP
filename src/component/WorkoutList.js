@@ -11,10 +11,17 @@ import {
 import Button from 'apsl-react-native-button';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import {connect} from 'react-redux';
+import {addWeightToExercisesAction} from '../store/actions';
+import {AddWeightToExercise} from "./AddWeightToExercise";
 
 const {width, height} = Dimensions.get('window');
 
+
 export class _WorkoutList extends Component {
+    state = {
+        showAddWeightModal: false
+    };
+
     handlePress() {
         this.props.setModalVisibility(true)
     }
@@ -34,10 +41,26 @@ export class _WorkoutList extends Component {
         </View>
 
     }
+
+    handleCloseWeightModal = (bool) => {
+        this.setState({
+            showAddWeightModal: bool
+        })
+    }
     _renderItem = ({item: {exercise, sets, weight, time}}) => {
         // console.warn(exercise,sets);
         return (<TouchableWithoutFeedback
             // onPress={(item) => this.handlePress.call(this, item)}
+            onPress={() => {
+                this.setState({showAddWeightModal: true})
+            }}
+            //*************************
+            /*final step
+            onPress={(item) => {
+                this.props.addWeightToExercise({});
+
+            }}
+            */
         >
             <View style={styles.listContainer}>
                 <View style={styles.listItem}>
@@ -52,11 +75,10 @@ export class _WorkoutList extends Component {
                 <TouchableHighlight>
                     <View style={{...styles.listItem, height: 30}}>
                         <Text
-                            style={{color: "#bbb"}}>{weight ? weight + "  KG" : "Touch to add exercise weight / Swipe to delete"}</Text>
+                            style={{color: "#bbb"}}>{weight ? weight + "  KG" : "Touch to add weight + reps / Swipe to delete"}</Text>
                     </View>
                 </TouchableHighlight>
             </View>
-
         </TouchableWithoutFeedback>)
     }
 
@@ -69,9 +91,6 @@ export class _WorkoutList extends Component {
                 <View style={styles.quick}>
                     <View style={styles.quick}>
                         <Text style={styles.delete}>删除</Text>
-                    </View>
-                    <View>
-
                     </View>
                 </View>
             </TouchableHighlight>
@@ -86,10 +105,11 @@ export class _WorkoutList extends Component {
                         onPress={this.handlePress.bind(this)} style={styles.plusButton} textStyle={styles.plus}
                         children={<Icon name="fitness-center" size={50} color="white" key="add"/>}
                     />
-
                 </View>
-
                 <Text style={styles.bigText}>add some{'\n'}exercises</Text>
+                {this.state.showAddWeightModal &&
+                <AddWeightToExercise showAddWeightModal={this.state.showAddWeightModal}
+                                     handleCloseWeightModal={this.handleCloseWeightModal}/>}
             </View>
         )
         return (
@@ -108,7 +128,13 @@ export class _WorkoutList extends Component {
 const mapStateToProps = (state) => ({
     currentWorkout: state.currentWorkout
 });
-export const WorkoutList = connect(mapStateToProps, null)(_WorkoutList)
+
+const mapActionsToProps = dispatch => ({
+    addWeightToExercise: (data) => {
+        dispatch(addWeightToExercisesAction(data))
+    }
+})
+export const WorkoutList = connect(mapStateToProps, mapActionsToProps)(_WorkoutList)
 
 const styles = StyleSheet.create({
     addSomeExercises: {
@@ -180,11 +206,11 @@ const styles = StyleSheet.create({
     quick: {
         backgroundColor: "rgba(199,50,50,0.8)",
         flex: 1,
-        alignItems: 'flex-end',//水平靠右
-        justifyContent: 'center',//上下居中
+        alignItems: 'flex-end',
+        justifyContent: 'center',
         width: 100,
         borderRadius: 5,
-        elevation: 5,//漂浮的效果
+        elevation: 5,
 
     },
     delete: {

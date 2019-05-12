@@ -41,6 +41,8 @@ export const showProgressPicker = (data) => (
 )
 export const changeTmpUriAction = (data) => (
     createAction(types.CHANGE_TMP_URI)(data)
-
+)
+export const addWeightToExercisesAction = (data) => (
+    createAction(types.ADD_WEIGHT_TO_EXERCISE)(data)
 )
 

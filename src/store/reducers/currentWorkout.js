@@ -8,6 +8,7 @@ export const currentWorkout=(state=[],action)=>{
 
         case types.CLEAR_CURRENT_WORKOUT:
             return []
+        case types.ADD_WEIGHT_TO_EXERCISE:
 
         default:
             return state;
