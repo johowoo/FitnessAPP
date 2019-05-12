@@ -7,7 +7,6 @@ import {
     FlatList,
     TouchableWithoutFeedback,
     Dimensions,
-    TouchableHighlight
 } from 'react-native';
 import {CalendarList} from 'react-native-calendars';
 import {TopBar} from "../component";
@@ -102,10 +101,7 @@ export class _Calendar extends Component {
                                              time={this.state.time}
                         />}
                     </LinearGradient>
-
                 </Modal>
-
-
             </View>
         )
     }

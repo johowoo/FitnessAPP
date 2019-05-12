@@ -1,0 +1,134 @@
+{
+    "parser": "babel-eslint",
+    "plugins": ["react", "prettier"],
+    "extends": [
+        "eslint-config-umi",
+        //        "plugin:react/recommended",
+        "prettier",
+        "prettier/react"
+    ],
+    "rules": {
+        "prettier/prettier": [
+            "error",
+            {
+                "singleQuote": false,
+                "trailingComma": "es5",
+                "jsxBracketSameLine": true,
+                "semi": true
+            }
+        ],
+        /*已经启用*/
+        "no-duplicate-imports": 2, //禁止重复模块导入
+        "complexity": [2, 50], // 一个函数的复杂性不超过 10，所有分支、循环、回调加在一起，在一个函数里不超过 10 个
+        "max-len": [2, 120, 4, { "ignoreUrls": true, "ignoreComments": true }],
+        "max-depth": [2, 4], // 一个函数的嵌套不能超过 4 层，多个 for 循环，深层的 if-else，这些都是罪恶之源
+        "max-nested-callbacks": [2, 3], // 一个函数最多有 3 层 callback，使用 async/await
+        "max-params": [2, 5], // 一个函数最多 5 个参数。参数太多的函数，意味着函数功能过于复杂，请拆分
+        "max-statements": [2, 50], // 一个函数最多有 50 行代码，如果超过了，请拆分之，或者精简之
+        "no-use-before-define": 2, //禁止在变量定义之前使用它们
+        "no-unused-vars": 2, //禁止出现未使用过的变量
+        "no-var": 2, //要求使用 let 或 const 而不是 var
+        "prefer-const": 2, //要求使用 const 声明那些声明后不再被修改的变量
+        "no-const-assign": 2, //禁止修改 const 声明的变量
+        "no-useless-constructor": 2, //禁用不必要的构造函数
+        "prefer-destructuring": 2, //优先使用数组和对象解构
+        "no-useless-computed-key": 2, //禁止在对象中使用不必要的计算属性
+        "no-this-before-super": 2, //禁止在构造函数中，在调用 super() 之前使用 this 或 super
+        "no-new-symbol": 2, //禁止 Symbolnew 操作符和 new 一起使用
+        "no-dupe-class-members": 2, //禁止类成员中出现重复的名称
+        "eol-last": 2, //要求文件末尾存在空行
+        "no-await-in-loop": 2, //禁止在循环中出现await
+        "no-cond-assign": 2, //禁止条件表达式中出现赋值操作符
+        "no-debugger": 2, //禁用 debugger
+        "no-dupe-args": 2, //禁止 function 定义中出现重名参数
+        "no-dupe-keys": 2, //禁止对象字面量中出现重复的 key
+        "no-duplicate-case": 2, //禁止出现重复的 case 标签
+        "no-empty": 2, //禁止出现空语句块
+        "no-empty-character-class": 2, //禁止在正则表达式中使用空字符集
+        "no-ex-assign": 2, //禁止对 catch 子句的参数重新赋值
+        "no-extra-boolean-cast": 2, //禁止不必要的布尔转换
+        "no-func-assign": 2, //禁止对 function 声明重新赋值
+        "no-inner-declarations": 2, //禁止在嵌套的块中出现变量声明或 function 声明
+        "no-shadow-restricted-names": 2, //禁止将标识符定义为受限的名字
+        "no-shadow": 2, //禁止变量声明与外层作用域的变量同名
+        "new-cap": 2, //要求构造函数首字母大写
+        "no-array-constructor": 2, //禁用 Array 构造函数
+        "no-continue": 2, //禁用 continue 语句
+        "no-multi-assign": 2, //禁止连续赋值
+        "handle-callback-err": 2, //要求回调函数中有容错处理
+        "no-undef": 2, //禁用未声明的变量，除非它们在 /*global */ 注释中被提到
+        "no-label-var": 2, //不允许标签与变量同名
+        "vars-on-top": 2, //要求所有的 var 声明出现在它们所在的作用域顶部
+        "no-void": 2, //禁用 void 操作符
+        "no-useless-return": 2, //禁止多余的 return 语句
+        "no-useless-concat": 2, //禁止不必要的字符串字面量或模板字面量的连接
+        "no-useless-call": 2, //禁止不必要的 .call() 和 .apply()
+        "no-unused-labels": 2, //禁用出现未使用过的标
+        "no-unused-expressions": 2, //禁止出现未使用过的表达式
+        "no-unmodified-loop-condition": 2, //禁用一成不变的循环条件
+        "no-throw-literal": 2, //禁止抛出异常字面量
+        "no-sequences": 2, //禁用逗号操作符
+        "no-self-compare": 2, //禁止自身比较
+        "no-self-assign": 2, //禁止自我赋值
+        "no-script-url": 2, //禁止使用 javascript: url
+        "no-return-await": 2, //禁用不必要的 return await
+        "no-return-assign": 2, //禁止在 return 语句中使用赋值语句
+        "no-redeclare": 2, //禁止多次声明同一变量
+        "no-param-reassign": 2, //禁止对 function 的参数进行重新赋值
+        "no-new-wrappers": 2, //禁止对 String，Number 和 Boolean 使用 new 操作符
+        "no-new-func": 2, //禁止对 Function 对象使用 new 操作符
+        "no-new": 2, //禁止使用 new 以避免产生副作用
+        "no-multi-str": 2, //禁止使用多行字符串
+        "no-multi-spaces": 2, //禁止使用多个空格
+        "no-loop-func": 2, //禁止在循环中出现 function 声明和表达式
+        "no-lone-blocks": 2, //禁用不必要的嵌套块
+        "no-labels": 2, //禁用标签语句
+        "no-implied-eval": 2, //禁止使用类似 eval() 的方法
+        "no-implicit-globals": 2, //禁止在全局范围内使用变量声明和 function 声明
+        "no-global-assign": 2, //禁止对原生对象或只读的全局对象进行赋值
+        "no-floating-decimal": 2, //禁止数字字面量中使用前导和末尾小数点
+        "accessor-pairs": 2, //强制 getter 和 setter 在对象中成对出现
+        "array-callback-return": 2, //强制数组方法的回调函数中有return语句
+        "block-scoped-var": 2, //强制把变量的使用限制在其定义的作用域范围内
+        "consistent-return": 2, //要求return语句要么总是指定返回的值，要么不指定
+        "curly": 2, //强制所有控制语句使用一致的括号风格
+        "default-case": 2, //要求switch语句中有default分支
+        "dot-location": 2, //强制在点号之前和之后一致的换行
+        "dot-notation": 2, //强制尽可能地使用点号
+        "eqeqeq": 2, //要求使用===和!==
+        "no-alert": 2, //禁用alert、confirm和prompt
+        "no-caller": 2, //禁用arguments.caller或arguments.callee
+        "no-case-declarations": 2, //不允许在case子句中使用词法声明
+        "no-div-regex": 2, //禁止除法操作符显式的出现在正则表达式开始的位置
+        "no-else-return": 2, //禁止if语句中return语句之后有else块
+        "no-empty-function": 2, //禁止出现空函数
+        "no-empty-pattern": 2, //禁止使用空解构模式
+        "no-eq-null": 2, //禁止在没有类型检查操作符的情况下与null进行比较
+        "no-eval": 2, //禁用eval()
+        "no-extend-native": 2, //禁止扩展原生类型
+        "no-extra-bind": 2, //禁止不必要的.bind()调用
+        "no-extra-label": 2, //禁用不必要的标签
+        "no-fallthrough": 2, //禁止case语句落空
+        "no-constant-condition": 2, //禁止在条件中使用常量表达式
+        "camelcase": 2, //使用骆驼拼写法命名约定
+        "no-undefined": 2, //不要将 undefined 作为标识符
+        "react/jsx-no-target-blank": 2,
+        "prefer-template": 2, //优先使用模板字符串而非字符串连接
+        /*计划启用,或只是提醒*/
+        "no-console": 1, //提交的代码不得携带console
+        //        "no-useless-escape": 0, //禁用不必要的转义字符
+        //        "require-await": 0, //禁止使用不带 await 表达式的 async 函数
+        /*测试*/
+        /*类库bug*/
+        "jsx-a11y/href-no-hash": [0]
+    },
+    "globals": {
+        "__DEV__": true,
+        "WorkbenchSdk": true
+    },
+    "env": {
+        "browser": true,
+        "es6": true,
+        "node": true
+    }
+}

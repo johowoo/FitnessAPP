@@ -1,4 +1,4 @@
-import {Button, Modal, Text, View, StyleSheet, Dimensions, TextInput} from "react-native";
+import {Button, Modal, Text, View, StyleSheet, Dimensions, TextInput, Keyboard} from "react-native";
 // import ModalDropdown from "react-native-modal-dropdown";
 import React, {Component} from 'react';
 
@@ -8,7 +8,20 @@ const {width, height} = Dimensions.get('window');
 export class AddWeightToExercise extends Component {
     state = {
         weightText: "",
-        repsText: ""
+        repsText: "",
+        top: height * 0.30,
+    }
+
+
+    keyboardDidShowHandler = () => {
+        this.setState({
+            top: height * 0.2
+        })
+    }
+
+    componentDidMount() {
+        this.keyboardDidShowListener = Keyboard.addListener('keyboardDidShow',
+            this.keyboardDidShowHandler.bind(this))
     }
 
     render() {
@@ -19,7 +32,7 @@ export class AddWeightToExercise extends Component {
                 onRequestClose={() => this.props.handleCloseWeightModal(false)}
             >
                 <View
-                    style={styles.modalOuterContainer}>
+                    style={{...styles.modalOuterContainer, top: this.state.top}}>
                     <View style={styles.modalInnerContainer}>
                         <Text style={{color: '#66666f', fontSize: 16, marginLeft: 10, marginBottom: 15}}
                         >Please input the weight and reps of this exercise:
@@ -70,8 +83,11 @@ export class AddWeightToExercise extends Component {
 const styles = StyleSheet.create({
     modalOuterContainer: {
         flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
+        // justifyContent: 'center',
+        // alignItems: 'center',
+        position: "absolute",
+        left: width * 0.148,
+        // top: this.state.top,
         backgroundColor: 'rgba(0, 0, 0, 0.3)',
         borderRadius: 8
     },

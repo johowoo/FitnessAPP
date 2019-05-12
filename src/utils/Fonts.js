@@ -1,5 +1,5 @@
-export const Fonts={
-    SCRATCHMYBACK:'SCRATCHMYBACK',
-    PacificoRegular:'Pacifico-Regular',
-    PattayaRegular:'Pattaya-Regular'
-}
+export const Fonts = {
+  SCRATCHMYBACK: 'SCRATCHMYBACK',
+  PacificoRegular: 'Pacifico-Regular',
+  PattayaRegular: 'Pattaya-Regular',
+};

@@ -1,5 +1,3 @@
-import {sectionExercises,extraSectionExercises } from "../../initialExercises";
+import { sectionExercises, extraSectionExercises } from '../../initialExercises';
 
-export const exercises = (state = {sectionExercises,extraSectionExercises}) => {
-    return state;
-};
+export const exercises = (state = { sectionExercises, extraSectionExercises }) => state;
