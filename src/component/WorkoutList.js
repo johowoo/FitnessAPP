@@ -88,7 +88,6 @@ export class _WorkoutList extends Component {
                             }
                         },
                         {text: "Cancel"},
-
                     ]
                 )}
             >
