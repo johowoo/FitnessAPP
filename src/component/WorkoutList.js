@@ -77,7 +77,10 @@ export class _WorkoutList extends Component {
                 <TouchableHighlight>
                     <View style={{...styles.listItem, height: 30}}>
                         <Text
-                            style={{color: "#bbb"}}>{weight ? `Weight: ${weight} KG + Reps: ${reps} ` : "Touch to add weight + reps / Swipe to delete"}</Text>
+                            style={{
+                                color: "#bbb",
+                                marginRight: 20
+                            }}>{weight ? ` ${weight} KG ✖ ${reps} reps` : "Touch to edit weight & reps  /  Swipe to delete"}</Text>
                     </View>
                 </TouchableHighlight>
             </View>
@@ -193,7 +196,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         height: 40,
-        justifyContent: 'space-around',
+        justifyContent: 'flex-end',
 
     },
     exerciseText: {
