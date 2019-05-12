@@ -9,7 +9,8 @@ import {
     TouchableHighlight
 } from 'react-native';
 import Button from 'apsl-react-native-button';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+// import {Icon} from 'expo';
+import Icon from "react-native-vector-icons/MaterialIcons";
 import {connect} from 'react-redux';
 import {addWeightToExercisesAction} from '../store/actions';
 import {AddWeightToExercise} from "./AddWeightToExercise";
@@ -79,8 +80,15 @@ export class _WorkoutList extends Component {
                 onPress={() => alert("确认删除？")}
             >
                 <View style={styles.quick}>
-                    <View style={styles.quick}>
-                        <Text style={styles.delete}>删除</Text>
+                    <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: "center"}}>
+                        <View style={{flex: 0.1}}>
+                        </View>
+                        <View style={{flex: 0.6}}>
+                            <Text style={{color:"#eee"}}>Delete</Text>
+                        </View>
+                        <View style={{flex: 0.3}}>
+                            <Icon name="delete" size={24} color="#bbb" key="delete"/>
+                        </View>
                     </View>
                 </View>
             </TouchableHighlight>
@@ -114,7 +122,7 @@ export class _WorkoutList extends Component {
                 data={this.props.currentWorkout} renderItem={this._renderItem}
                 keyExtractor={(item, index) => item + index}
                 renderQuickActions={this.getQuickActions}
-                maxSwipeDistance={100}
+                maxSwipeDistance={80}
             />
         )
     }
@@ -195,15 +203,15 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         justifyContent: 'flex-end',
-        marginRight: 15,
-        marginBottom: 10,
+        // marginRight: 15,
+        // marginBottom: 10,
     },
     quick: {
         backgroundColor: "rgba(199,50,50,0.8)",
         flex: 1,
         alignItems: 'flex-end',
         justifyContent: 'center',
-        width: 100,
+        width: 80,
         borderRadius: 5,
         elevation: 5,
 

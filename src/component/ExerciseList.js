@@ -10,7 +10,7 @@ import {
     Dimensions,
     Button,
     Modal,
-    Platform
+    // Platform
 } from 'react-native';
 import {connect} from 'react-redux';
 import {TopBar} from "./TopBar";
