@@ -77,7 +77,7 @@ export class _WorkoutList extends Component {
                 <TouchableHighlight>
                     <View style={{...styles.listItem, height: 30}}>
                         <Text
-                            style={{color: "#bbb"}}>{weight ? weight + "  KG" : "Touch to add weight + reps / Swipe to delete"}</Text>
+                            style={{color: "#bbb"}}>{weight ? `Weight: ${weight} KG + Reps: ${reps} ` : "Touch to add weight + reps / Swipe to delete"}</Text>
                     </View>
                 </TouchableHighlight>
             </View>
@@ -100,6 +100,8 @@ export class _WorkoutList extends Component {
     };
 
     render() {
+        console.log(this.props.currentWorkout);
+
         const listFooterComponent = (
             <View style={styles.addSomeExercises}>
                 <View style={styles.buttonContainer}>

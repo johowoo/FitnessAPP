@@ -12,8 +12,6 @@ export class AddWeightToExercise extends Component {
     }
 
     render() {
-        console.warn("weightText", this.state.weightText);
-        console.warn("repsText", this.state.repsText);
         return (
             <Modal
                 visible={this.props.showAddWeightModal}

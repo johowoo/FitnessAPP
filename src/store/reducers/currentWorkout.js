@@ -9,9 +9,17 @@ export const currentWorkout = (state = [], action) => {
         case types.CLEAR_CURRENT_WORKOUT:
             return []
         case types.ADD_WEIGHT_TO_EXERCISE:
-            console.warn("time", action.payload.time);
-            console.warn("weight", action.payload.weight);
-            console.warn("reps", action.payload.reps);
+            let stateCopy = JSON.parse(JSON.stringify(state));
+            stateCopy.map(item => {
+                if (item.time == action.payload.time) {
+                    item.reps = action.payload.reps;
+                    item.weight = action.payload.weight;
+                }
+            })
+            return stateCopy;
+        // console.warn("time", action.payload.time);
+        // console.warn("weight", action.payload.weight);
+        // console.warn("reps", action.payload.reps);
         default:
             return state;
     }
