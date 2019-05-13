@@ -1,5 +1,4 @@
-import * as types from '../actionTypes';
-
+import * as types from "../actionTypes";
 
 export const currentWorkout = (state = [], action) => {
   switch (action.type) {
@@ -9,7 +8,7 @@ export const currentWorkout = (state = [], action) => {
       return [];
     case types.ADD_WEIGHT_TO_EXERCISE:
       const stateCopy = JSON.parse(JSON.stringify(state));
-      stateCopy.map((item) => {
+      stateCopy.map(item => {
         if (item.time == action.payload.time) {
           item.reps = action.payload.reps;
           item.weight = action.payload.weight;

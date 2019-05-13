@@ -10,11 +10,14 @@ export const fuzzySearch = (predicate, terms, prop) => {
 };
 
 const search = (predicate, terms, prop) => {
-  const wordsToMatch = predicate.trim().toLowerCase().split(' ');
-  return terms.filter((term) => {
+  const wordsToMatch = predicate
+    .trim()
+    .toLowerCase()
+    .split(" ");
+  return terms.filter(term => {
     const currentTerm = term.toLowerCase();
-    return Boolean(wordsToMatch.filter(word => (
-      currentTerm.includes(word)
-    )).length);
+    return Boolean(
+      wordsToMatch.filter(word => currentTerm.includes(word)).length
+    );
   });
 };

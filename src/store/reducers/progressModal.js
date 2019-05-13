@@ -1,11 +1,13 @@
-import * as types from '../actionTypes';
+import * as types from "../actionTypes";
 
-export const progressModal = (state = {
-  showModal: false,
-  showPicker: false,
-  tmpURI: '',
-},
-action) => {
+export const progressModal = (
+  state = {
+    showModal: false,
+    showPicker: false,
+    tmpURI: "",
+  },
+  action
+) => {
   switch (action.type) {
     case types.SHOW_PROGRESS_MODAL:
       return { ...state, ...action.payload };

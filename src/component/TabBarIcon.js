@@ -1,5 +1,5 @@
-import React from 'react';
-import { Icon } from 'expo';
+import React from "react";
+import { Icon } from "expo";
 
 export class TabBarIcon extends React.Component {
   render() {
@@ -7,9 +7,9 @@ export class TabBarIcon extends React.Component {
       <Icon.Ionicons
         name={this.props.name}
         size={26}
-        style={{ marginBottom: -3, backgroundColor: 'transparent' }}
-                // color={this.props.focused ? "#c69" : "#666"}
-                // color={this.props.focused ? this.props.tintColor : this.props.inactiveTintColor}
+        style={{ marginBottom: -3, backgroundColor: "transparent" }}
+        // color={this.props.focused ? "#c69" : "#666"}
+        // color={this.props.focused ? this.props.tintColor : this.props.inactiveTintColor}
         color={this.props.tintColor}
       />
     );

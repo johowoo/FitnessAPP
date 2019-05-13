@@ -1,7 +1,6 @@
-import * as types from '../actionTypes';
+import * as types from "../actionTypes";
 
-export const progress = (state = [],
-  action) => {
+export const progress = (state = [], action) => {
   switch (action.type) {
     case types.ADD_PROGRESS_PHOTO:
       return [...state, action.payload];

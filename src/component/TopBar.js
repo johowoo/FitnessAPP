@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, StyleSheet, Dimensions } from 'react-native';
+import React from "react";
+import { View, StyleSheet, Dimensions } from "react-native";
 
 // export const TopBar = (props) => (
 //     <View style={[styles.container, props.style]}>
@@ -7,10 +7,9 @@ import { View, StyleSheet, Dimensions } from 'react-native';
 //     </View>
 // );
 
-const { width, height } = Dimensions.get('window');
+const { width, height } = Dimensions.get("window");
 
-
-const marginTop = (height / width >= 18.5 / 9) ? 35 : 0;
+const marginTop = height / width >= 18.5 / 9 ? 35 : 0;
 
 export class TopBar extends React.Component {
   render() {

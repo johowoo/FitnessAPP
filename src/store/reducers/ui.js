@@ -1,8 +1,11 @@
-import * as types from '../actionTypes';
+import * as types from "../actionTypes";
 
-export const ui = (state = {
-  exerciseModal: false,
-}, action) => {
+export const ui = (
+  state = {
+    exerciseModal: false,
+  },
+  action
+) => {
   switch (action.type) {
     case types.SET_EXECERCISE_VISIBILITY:
       return {

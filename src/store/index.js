@@ -1,11 +1,10 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import { persistStore, persistReducer } from 'redux-persist';
-import { AsyncStorage } from 'react-native';
-import { reducer as rootReducer } from './reducer';
-
+import { createStore, applyMiddleware, compose } from "redux";
+import { persistStore, persistReducer } from "redux-persist";
+import { AsyncStorage } from "react-native";
+import { reducer as rootReducer } from "./reducer";
 
 const persistConfig = {
-  key: 'root',
+  key: "root",
   storage: AsyncStorage,
 };
 

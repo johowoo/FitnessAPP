@@ -2,12 +2,50 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd580928-bb60-480d-8b73-7c94df331487" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.eslintignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Root.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Root.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/AddDropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/AddDropdown.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/AddWeightToExercise.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/AddWeightToExercise.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/CustomBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/CustomBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/ExerciseList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/ExerciseList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/PhotoModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/PhotoModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/PickerCamera.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/PickerCamera.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/SearchBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/SearchBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/TabBarComponent.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/TabBarComponent.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/TabBarIcon.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/TabBarIcon.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/TopBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/TopBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/WorkoutList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/WorkoutList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/initialExercises.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/initialExercises.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/page/Calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Calendar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/CurrentWorkout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/CurrentWorkout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/DisplayPicture.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/DisplayPicture.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/ExerciseModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/ExerciseModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/Health.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Health.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/Progress.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Progress.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/TabPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/TabPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/Welcome.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Welcome.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/services/fuzzySearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/fuzzySearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actionTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/calendar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/currentWorkout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/currentWorkout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/exerciseCompleted.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/exerciseCompleted.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/exercises.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/exercises.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/health.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/health.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/progress.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/progress.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/progressModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/progressModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/savedExerciseForEachDay.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/savedExerciseForEachDay.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/ui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Fonts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Fonts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/formatMonthandDay.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/formatMonthandDay.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/isIphoneX.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/isIphoneX.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -24,67 +62,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1363">
-              <caret line="61" column="102" selection-start-line="61" selection-start-column="75" selection-end-line="61" selection-end-column="102" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="957">
+              <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/component/AddWeightToExercise.js">
+        <entry file="file://$PROJECT_DIR$/src/component/PhotoModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="726">
-              <caret line="96" column="28" selection-start-line="96" selection-start-column="28" selection-end-line="96" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.eslintrc">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/package.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/store/actions.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1363">
-              <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#43#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/page/Calendar.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="696">
-              <caret line="41" column="53" selection-start-line="41" selection-start-column="53" selection-end-line="41" selection-end-column="53" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/component/TabBarIcon.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="348">
-              <caret line="13" column="14" selection-start-line="6" selection-start-column="12" selection-end-line="13" selection-end-column="14" />
+            <state relative-caret-position="1015">
+              <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -93,10 +81,28 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/store/reducers/currentWorkout.js">
+        <entry file="file://$PROJECT_DIR$/src/page/CurrentWorkout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="261">
-              <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+            <state relative-caret-position="359">
+              <caret line="91" column="21" selection-start-line="91" selection-start-column="21" selection-end-line="91" selection-end-column="21" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/component/AddDropdown.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="41">
+              <caret line="16" selection-start-line="16" selection-end-line="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.eslintrc">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-1322">
+              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -112,11 +118,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>style={styles.dropdownMenu}</find>
-      <find>styles</find>
-      <find>select thewei</find>
-      <find>closeModal</find>
-      <find>AddWei</find>
       <find>add</find>
       <find>Confirm</find>
       <find>Confir</find>
@@ -142,6 +143,11 @@
       <find>handle</find>
       <find>onPress</find>
       <find>renderItem</find>
+      <find>formatMonthandDay</find>
+      <find>parser</find>
+      <find>参数</find>
+      <find>类型</find>
+      <find>检查</find>
     </findStrings>
     <replaceStrings>
       <replace>expo</replace>
@@ -149,8 +155,8 @@
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/component</dir>
-      <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/src</dir>
+      <dir>$PROJECT_DIR$</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -174,20 +180,24 @@
         <option value="$PROJECT_DIR$/src/page/Progress.js" />
         <option value="$PROJECT_DIR$/src/page/DisplayPicture.js" />
         <option value="$PROJECT_DIR$/src/page/TabPage.js" />
-        <option value="$PROJECT_DIR$/src/component/PhotoModal.js" />
         <option value="$PROJECT_DIR$/src/page/ExerciseModal.js" />
         <option value="$PROJECT_DIR$/src/utils/formateMonthandDay.js" />
         <option value="$PROJECT_DIR$/src/page/Health.js" />
-        <option value="$PROJECT_DIR$/src/page/CurrentWorkout.js" />
         <option value="$PROJECT_DIR$/src/component/addWeightToExercise.js" />
         <option value="$PROJECT_DIR$/src/component/ExerciseList.js" />
         <option value="$PROJECT_DIR$/src/store/actionTypes.js" />
         <option value="$PROJECT_DIR$/src/store/actions.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/currentWorkout.js" />
-        <option value="$PROJECT_DIR$/src/component/WorkoutList.js" />
         <option value="$PROJECT_DIR$/src/page/Calendar.js" />
         <option value="$PROJECT_DIR$/src/component/AddWeightToExercise.js" />
         <option value="$PROJECT_DIR$/package.json" />
+        <option value="$PROJECT_DIR$/src/component/WorkoutList.js" />
+        <option value="$PROJECT_DIR$/src/utils/formatMonthandDay.js" />
+        <option value="$PROJECT_DIR$/src/component/PhotoModal.js" />
+        <option value="$PROJECT_DIR$/src/page/CurrentWorkout.js" />
+        <option value="$PROJECT_DIR$/src/component/AddDropdown.js" />
+        <option value="$PROJECT_DIR$/.eslintrc.js" />
+        <option value="$PROJECT_DIR$/.eslintrc" />
       </list>
     </option>
   </component>
@@ -197,7 +207,7 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="23" />
     <option name="width" value="1680" />
     <option name="height" value="1027" />
@@ -219,6 +229,29 @@
               <item name="FitnessAPP" type="462c0819:PsiDirectoryNode" />
               <item name="assets" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="FitnessAPP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FitnessAPP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FitnessAPP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FitnessAPP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="component" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FitnessAPP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FitnessAPP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FitnessAPP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FitnessAPP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -231,10 +264,17 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="eu.ydp.idea.ts.spec.generator.settings.spec.template" value="import {$ClassName$} from '$TestsRelativePath$../src/$classRelativePath$/$ClassName$';&#10;&#10;describe('$ClassName$', () =&gt; {&#10;  let $ObjName$:$ClassName$;&#10;&#10;  beforeEach(() =&gt; {&#10;    $ObjName$ = new $ClassName$();&#10;  });&#10;&#10;  describe('', () =&gt; {&#10;    it('', () =&gt; {&#10;      // given&#10;&#10;      // when&#10;&#10;      // then&#10;    });&#10;  });&#10;});&#10;" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
-    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="settings.editor.selected.configurable" value="com.eslint.settings.ESLintSettingsPage" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
@@ -285,17 +325,25 @@
       <workItem from="1557565529904" duration="5827000" />
       <workItem from="1557616645919" duration="8112000" />
       <workItem from="1557644161528" duration="1381000" />
-      <workItem from="1557646599553" duration="1268000" />
+      <workItem from="1557646599553" duration="3902000" />
+      <workItem from="1557653823308" duration="308000" />
+      <workItem from="1557708968404" duration="2680000" />
+      <workItem from="1557731372024" duration="635000" />
+      <workItem from="1557735422903" duration="703000" />
+      <workItem from="1557737691375" duration="2044000" />
+      <workItem from="1557745730763" duration="191000" />
+      <workItem from="1557788614971" duration="1075000" />
+      <workItem from="1557789906140" duration="495000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="96870000" />
+    <option name="totallyTimeSpent" value="107635000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1680" height="1027" extended-state="0" />
+    <frame x="26" y="23" width="1680" height="1027" extended-state="0" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.22373301" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2577256" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -309,7 +357,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="RNConsole" order="8" />
       <window_info anchor="bottom" id="CSS-X-Fire" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.42474917" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.2954292" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.71794873" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
@@ -373,13 +421,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/isIphoneX.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/CustomBar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -394,13 +435,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="17" column="25" lean-forward="true" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/validation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -435,16 +469,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/PhotoModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-697">
-          <caret line="20" column="37" lean-forward="true" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/PickerCamera.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="456">
@@ -472,13 +496,6 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/formatMonthandDay.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -519,16 +536,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/CurrentWorkout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="38" column="14" lean-forward="true" selection-start-line="38" selection-start-column="14" selection-end-line="38" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/SearchBar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="438">
@@ -536,20 +543,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/AddDropdown.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="34" column="53" selection-start-line="34" selection-start-column="45" selection-end-line="34" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/ExerciseList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-6489">
           <caret line="13" column="15" lean-forward="true" selection-start-line="13" selection-start-column="15" selection-end-line="13" selection-end-column="15" />
-          <folding>
-            <marker date="1557624170966" expanded="true" signature="7615:7768" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -560,13 +557,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
+    <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1363">
-          <caret line="61" column="102" selection-start-line="61" selection-start-column="75" selection-end-line="61" selection-end-column="102" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="580">
+          <caret line="20" column="37" selection-start-line="20" selection-start-column="37" selection-end-line="20" selection-end-column="37" />
         </state>
       </provider>
     </entry>
@@ -574,15 +568,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1363">
           <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/page/Calendar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="696">
+        <state relative-caret-position="586">
           <caret line="41" column="53" selection-start-line="41" selection-start-column="53" selection-end-line="41" selection-end-column="53" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
@@ -593,34 +584,85 @@
     <entry file="file://$PROJECT_DIR$/src/component/TabBarIcon.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="348">
-          <caret line="13" column="14" selection-start-line="6" selection-start-column="12" selection-end-line="13" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
+          <caret line="13" column="8" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/store/reducers/currentWorkout.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="261">
-          <caret line="9" column="42" selection-start-line="9" selection-start-column="42" selection-end-line="9" selection-end-column="42" />
+          <caret line="9" column="38" selection-start-line="9" selection-start-column="38" selection-end-line="9" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/AddWeightToExercise.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="726">
+        <state relative-caret-position="2784">
           <caret line="96" column="28" selection-start-line="96" selection-start-column="28" selection-end-line="96" selection-end-column="28" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.eslintrc">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
+    <entry file="file://$PROJECT_DIR$/src/utils/isIphoneX.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="232">
-          <caret line="8" column="39" selection-start-line="8" selection-start-column="39" selection-end-line="8" selection-end-column="39" />
+          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/validation.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/formatMonthandDay.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="30" selection-start-column="30" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.eslintrc.js" />
+    <entry file="file://$PROJECT_DIR$/.eslintignore">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.eslintrc.json" />
+    <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="957">
+          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/PhotoModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1015">
+          <caret line="44" column="24" selection-start-line="44" selection-start-column="24" selection-end-line="44" selection-end-column="24" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/AddDropdown.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="41">
+          <caret line="16" selection-start-line="16" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/CurrentWorkout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="91" column="21" selection-start-line="91" selection-start-column="21" selection-end-line="91" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.eslintrc">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1322">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
         </state>
       </provider>
     </entry>

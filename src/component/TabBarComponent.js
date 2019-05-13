@@ -1,16 +1,16 @@
-import React from 'react';
+import React from "react";
 import {
   View,
   Text,
   StyleSheet,
   TouchableOpacity,
   Dimensions,
-} from 'react-native';
-import posed from 'react-native-pose';
+} from "react-native";
+import posed from "react-native-pose";
 
-import isIphoneX from '../utils/isIphoneX';
+import isIphoneX from "../utils/isIphoneX";
 
-const windowWidth = Dimensions.get('window').width;
+const windowWidth = Dimensions.get("window").width;
 const tabWidth = windowWidth / 4;
 const SpotLight = posed.View({
   route0: { x: 0 },
@@ -26,33 +26,33 @@ const Scaler = posed.View({
 
 const S = StyleSheet.create({
   container: {
-    flexDirection: 'row',
+    flexDirection: "row",
     height: 52,
     elevation: 2,
-    alignItems: 'center',
+    alignItems: "center",
     marginTop: 5,
     marginBottom: isIphoneX ? 18 : 0,
   },
   tabButton: { flex: 1 },
   spotLight: {
     width: tabWidth,
-    height: '100%',
-    justifyContent: 'center',
-    alignItems: 'center',
+    height: "100%",
+    justifyContent: "center",
+    alignItems: "center",
   },
   spotLightInner: {
     width: 48,
     height: 48,
-    backgroundColor: '#c69',
+    backgroundColor: "#c69",
     borderRadius: 24,
   },
-  scaler: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+  scaler: { flex: 1, alignItems: "center", justifyContent: "center" },
 });
 
-const TabBar = (props) => {
+const TabBar = props => {
   const {
     renderIcon,
-    activeTintColor = '#fff',
+    activeTintColor = "#fff",
     inactiveTintColor,
     onTabPress,
     onTabLongPress,
@@ -83,12 +83,10 @@ const TabBar = (props) => {
             onLongPress={() => {
               onTabLongPress({ route });
             }}
-            accessibilityLabel={getAccessibilityLabel({ route })}
-          >
+            accessibilityLabel={getAccessibilityLabel({ route })}>
             <Scaler
-              pose={isRouteActive ? 'active' : 'inactive'}
-              style={S.scaler}
-            >
+              pose={isRouteActive ? "active" : "inactive"}
+              style={S.scaler}>
               {renderIcon({ route, focused: isRouteActive, tintColor })}
             </Scaler>
           </TouchableOpacity>

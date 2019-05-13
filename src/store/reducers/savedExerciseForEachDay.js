@@ -1,4 +1,4 @@
-import * as types from '../actionTypes';
+import * as types from "../actionTypes";
 
 const defaultState = {
   allExercisesList: {},
@@ -14,11 +14,11 @@ export const savedExerciseForEachDay = (state = defaultState, action) => {
           [action.payload.date]: action.payload.exercises,
         },
       };
-      // case types.GET_EXERCISE_LIST_FOR_PRESSED_DAY:
-      //     return {
-      //         ...state,
-      //         exercisesListForPressedDay: state.allExercisesList[action.payload]
-      //     }
+    // case types.GET_EXERCISE_LIST_FOR_PRESSED_DAY:
+    //     return {
+    //         ...state,
+    //         exercisesListForPressedDay: state.allExercisesList[action.payload]
+    //     }
     default:
       return state;
   }
