@@ -46,12 +46,6 @@ class _PhotoModal extends React.Component {
                 date: timeStamp,
                 month: timeStamp.getMonth() + 1,
             });
-            await this.props.updateWeightBFRFromProgressPics({
-                year: timeStamp.getFullYear(),
-                month: timeStamp.getMonth(),
-                BFR: this.state.inputTextBFR,
-                weight: this.state.inputTextWeight,
-            });
             await this.props.showProgressPickerDispatch(false);
         } else {
             Alert.alert("Please enter valid data", null);
@@ -128,8 +122,8 @@ const mapActionToProps = dispatch => ({
     showProgressModalDispatch(bool) {
         dispatch(showProgressModal({showModal: bool}));
     },
-    updateWeightBFRFromProgressPics(data) {
-        dispatch(updateWeightBFRFromProgressPicsAction(data))
+    updateWeightBFRFromProgressPics(data){
+        dispatch(updateWeightBFRFromProgressPicsAction)
     }
 });
 

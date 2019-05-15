@@ -47,10 +47,9 @@ class _PhotoModal extends React.Component {
                 month: timeStamp.getMonth() + 1,
             });
             await this.props.updateWeightBFRFromProgressPics({
-                year: timeStamp.getFullYear(),
-                month: timeStamp.getMonth(),
-                BFR: this.state.inputTextBFR,
-                weight: this.state.inputTextWeight,
+               year:timeStamp.getFullYear(),
+                month:timeStamp.getMonth()+1,
+                BFR:
             });
             await this.props.showProgressPickerDispatch(false);
         } else {

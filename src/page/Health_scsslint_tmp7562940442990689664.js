@@ -16,22 +16,22 @@ import {updateBfrAction, updateWeightAction} from "../store/actions";
 import {TopBar} from "../component";
 
 const {width, height} = Dimensions.get("window");
-import {monthArrary} from '../utils/monthArray';
+
 //automatic generated ->change
-const labels = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "Jul",
-    "Aug",
-    "Sep",
-    "Oct",
-    "Nov",
-    "Dec",
-];
+// const labels = [
+//     "Jan",
+//     "Feb",
+//     "Mar",
+//     "Apr",
+//     "May",
+//     "Jun",
+//     "Jul",
+//     "Aug",
+//     "Sep",
+//     "Oct",
+//     "Nov",
+//     "Dec",
+// ];
 const labels1 = [
     {1: "Jan"},
     {2: "Feb"},

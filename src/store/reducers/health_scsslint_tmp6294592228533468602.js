@@ -41,24 +41,20 @@ const defaultState = {
 };
 
 export const health = (state = defaultState, action) => {
-    const newWeightData = state.weightData;
-    const newBfrData = state.bfrData;
     switch (action.type) {
         case types.UPDATE_WEIGHT_DATA:
             // console.warn(action.payload)
+            const newWeightData = state.weightData;
             newWeightData[monthToNumberClass[action.payload.category]] =
                 action.payload.item;
             return {...state, weightData: newWeightData};
         case types.UPDATE_BFR_DATA:
+            const newBfrData = state.bfrData;
             newBfrData[monthToNumberClass[action.payload.category]] =
                 action.payload.item;
             return {...state, bfrData: newBfrData};
         case types.UPDATE_WEIGHT_BFR_FROM_PROGRESS_PICS:
-            newBfrData[action.payload.month] =
-                action.payload.BFR;
-            newWeightData[action.payload.month] =
-                action.payload.weight;
-            return {...state, bfrData: newBfrData, weightData: newWeightData};
+            const newBfr
         default:
             return state;
     }

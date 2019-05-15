@@ -32,5 +32,5 @@ export const addWeightToExercisesAction = data =>
     createAction(types.ADD_WEIGHT_TO_EXERCISE)(data);
 export const deleteExerciseFromWorkoutListAction = data =>
     createAction(types.DELETE_EXERCISE_FROM_WORKOUTLIST)(data);
-export const updateWeightBFRFromProgressPicsAction = data =>
+export const updateWeightBFRFromProgressPics = data =>
     createAction(types.UPDATE_WEIGHT_BFR_FROM_PROGRESS_PICS)(data);
