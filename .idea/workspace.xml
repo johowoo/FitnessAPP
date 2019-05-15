@@ -1,7 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd580928-bb60-480d-8b73-7c94df331487" name="Default Changelist" comment="" />
+    <list default="true" id="fd580928-bb60-480d-8b73-7c94df331487" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actionTypes_scsslint_tmp2158691835816855549.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actionTypes_scsslint_tmp2903547108061652830.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actionTypes_scsslint_tmp3182139946289515328.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actionTypes_scsslint_tmp3978326737851961409.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actionTypes_scsslint_tmp6225957699995397225.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actionTypes_scsslint_tmp8362143397278894267.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions_scsslint_tmp1761111720645238462.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions_scsslint_tmp2275498531541464354.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions_scsslint_tmp3073142443849587540.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions_scsslint_tmp3345620856550645563.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions_scsslint_tmp366780305238682011.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions_scsslint_tmp5844496325316060391.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions_scsslint_tmp5969328171451015175.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions_scsslint_tmp6154411969640638522.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions_scsslint_tmp7653605453204331753.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/health.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/health.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/health_scsslint_tmp2449853053373095711.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/health_scsslint_tmp3380849521626780484.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/health_scsslint_tmp3495484589543444999.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/health_scsslint_tmp4231210639187875513.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/health_scsslint_tmp4457937419979944657.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/health_scsslint_tmp4528521415874916982.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/health_scsslint_tmp4611258006814246383.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/health_scsslint_tmp476046471816824804.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/health_scsslint_tmp4909294802788112884.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/health_scsslint_tmp5577056357873128534.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/health_scsslint_tmp571541874777310962.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/health_scsslint_tmp6205960969729921316.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/health_scsslint_tmp6294592228533468602.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/health_scsslint_tmp7264993564857076410.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/health_scsslint_tmp7741582272003788495.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/health_scsslint_tmp8296883907430451271.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/health_scsslint_tmp8638142880904630971.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/health_scsslint_tmp8723099745246131312.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/monthArray_scsslint_tmp1010134731773371602.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/monthArray_scsslint_tmp1842189040528630432.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/monthArray_scsslint_tmp5481799432396801161.js" beforeDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -25,13 +65,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/Health.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="584">
+            <state relative-caret-position="8322">
               <caret line="145" column="67" selection-start-line="145" selection-start-column="57" selection-end-line="145" selection-end-column="67" />
               <caret line="234" column="14" selection-start-line="234" selection-start-column="4" selection-end-line="234" selection-end-column="14" />
               <caret line="234" column="39" selection-start-line="234" selection-start-column="29" selection-end-line="234" selection-end-column="39" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -48,7 +85,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/PhotoModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="325">
+            <state relative-caret-position="1900">
               <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
@@ -60,8 +97,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/store/reducers/health.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="58" column="49" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
+            <state relative-caret-position="2204">
+              <caret line="58" column="47" selection-start-line="58" selection-start-column="47" selection-end-line="58" selection-end-column="47" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -72,7 +109,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/store/actions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="455">
+            <state relative-caret-position="1254">
               <caret line="34" column="50" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="50" />
             </state>
           </provider>
@@ -81,7 +118,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/store/actionTypes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
+            <state relative-caret-position="912">
               <caret line="24" column="41" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="41" />
             </state>
           </provider>
@@ -276,7 +313,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="yarn" />
     <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="com.eslint.settings.ESLintSettingsPage" />
+    <property name="settings.editor.selected.configurable" value="Errors" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
@@ -337,17 +374,19 @@
       <workItem from="1557788614971" duration="1075000" />
       <workItem from="1557789906140" duration="495000" />
       <workItem from="1557883468127" duration="390000" />
-      <workItem from="1557883914370" duration="4363000" />
+      <workItem from="1557883914370" duration="4640000" />
+      <workItem from="1557891727978" duration="829000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="112388000" />
+    <option name="totallyTimeSpent" value="113494000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="947" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2265861" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2261185" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -361,7 +400,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="RNConsole" order="8" />
       <window_info anchor="bottom" id="CSS-X-Fire" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4996979" visible="true" weight="0.28398058" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4996979" visible="true" weight="0.09146342" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50030214" side_tool="true" weight="0.03640777" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.717233" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
@@ -591,13 +630,6 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/.eslintrc.json" />
-    <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="646">
-          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/jsonSchema/schema.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="380">
@@ -639,25 +671,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Health_scsslint_tmp3994645436888645333.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Health_scsslint_tmp439047218457048163.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="631">
-          <caret line="76" column="44" lean-forward="true" selection-start-line="76" selection-start-column="44" selection-end-line="76" selection-end-column="44" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/Health_scsslint_tmp3994645436888645333.js" />
+    <entry file="file://$PROJECT_DIR$/src/page/Health_scsslint_tmp439047218457048163.js" />
     <entry file="file://$PROJECT_DIR$/src/page/CurrentWorkout.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1491">
@@ -672,6 +687,22 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="33" column="16" selection-start-line="33" selection-start-column="16" selection-end-line="33" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/Health.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8322">
+          <caret line="145" column="67" selection-start-line="145" selection-start-column="57" selection-end-line="145" selection-end-column="67" />
+          <caret line="234" column="14" selection-start-line="234" selection-start-column="4" selection-end-line="234" selection-end-column="14" />
+          <caret line="234" column="39" selection-start-line="234" selection-start-column="29" selection-end-line="234" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/page/Progress.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1292">
@@ -681,7 +712,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/PhotoModal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
+        <state relative-caret-position="1900">
           <caret line="50" column="43" selection-start-line="50" selection-start-column="43" selection-end-line="50" selection-end-column="43" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
@@ -689,36 +720,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/actionTypes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="24" column="41" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/store/actions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="455">
+        <state relative-caret-position="1254">
           <caret line="34" column="50" selection-start-line="34" selection-start-column="13" selection-end-line="34" selection-end-column="50" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Health.js">
+    <entry file="file://$PROJECT_DIR$/src/store/actionTypes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="584">
-          <caret line="145" column="67" selection-start-line="145" selection-start-column="57" selection-end-line="145" selection-end-column="67" />
-          <caret line="234" column="14" selection-start-line="234" selection-start-column="4" selection-end-line="234" selection-end-column="14" />
-          <caret line="234" column="39" selection-start-line="234" selection-start-column="29" selection-end-line="234" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="912">
+          <caret line="24" column="41" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/store/reducers/health.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="58" column="49" selection-start-line="58" selection-start-column="49" selection-end-line="58" selection-end-column="49" />
+        <state relative-caret-position="2204">
+          <caret line="58" column="47" selection-start-line="58" selection-start-column="47" selection-end-line="58" selection-end-column="47" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
           </folding>

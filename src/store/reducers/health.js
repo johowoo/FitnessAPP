@@ -1,6 +1,9 @@
 import * as types from "../actionTypes";
 import {monthArrary} from "../../utils/monthArray";
 
+//only show data that exist
+//labels should be generated automatically
+
 const labels = [
     "Jan",
     "Feb",
@@ -41,24 +44,26 @@ const defaultState = {
 };
 
 export const health = (state = defaultState, action) => {
-    const newWeightData = state.weightData;
-    const newBfrData = state.bfrData;
     switch (action.type) {
         case types.UPDATE_WEIGHT_DATA:
+            const newWeightData = state.weightData;
             // console.warn(action.payload)
             newWeightData[monthToNumberClass[action.payload.category]] =
                 action.payload.item;
             return {...state, weightData: newWeightData};
         case types.UPDATE_BFR_DATA:
+            const newBfrData = state.bfrData;
             newBfrData[monthToNumberClass[action.payload.category]] =
                 action.payload.item;
             return {...state, bfrData: newBfrData};
         case types.UPDATE_WEIGHT_BFR_FROM_PROGRESS_PICS:
-            newBfrData[action.payload.month] =
+            const newWeightDataX = state.weightData;
+            const newBfrDataX = state.bfrData;
+            newBfrDataX[action.payload.month] =
                 action.payload.BFR;
-            newWeightData[action.payload.month] =
+            newWeightDataX[action.payload.month] =
                 action.payload.weight;
-            return {...state, bfrData: newBfrData, weightData: newWeightData};
+            return {...state, bfrData: newBfrDataX, weightData: newWeightDataX};
         default:
             return state;
     }
