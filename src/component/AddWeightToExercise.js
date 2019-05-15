@@ -42,7 +42,7 @@ export class AddWeightToExercise extends Component {
                     <View style={styles.modalInnerContainer}>
                         <Text
                             style={{
-                                color: "#00cccc",
+                                color: "#00ffcc",
                                 fontSize: 16,
                                 marginLeft: 10,
                                 marginBottom: 15,
@@ -50,7 +50,7 @@ export class AddWeightToExercise extends Component {
                             Please input the weight and reps of this exercise:
                         </Text>
                         <TextInput
-                            placeholderTextColor={"#00cccc"}
+                            placeholderTextColor={"#cc6699"}
                             style={styles.weightTextInput}
                             value={this.state.weightText}
                             placeholder=" Weight: 0-300 (KG)"
@@ -59,7 +59,7 @@ export class AddWeightToExercise extends Component {
                             }}
                         />
                         <TextInput
-                            placeholderTextColor={"#00cccc"}
+                            placeholderTextColor={"#cc6699"}
                             style={styles.weightTextInput}
                             value={this.state.repsText}
                             placeholder=" Reps: 0-50"
@@ -72,7 +72,7 @@ export class AddWeightToExercise extends Component {
                             <View style={styles.modalButtonContainer}>
                                 <Button
                                     style={styles.modalButton}
-                                    color="#00cccc"
+                                    color="#00ffcc"
                                     title="Confirm"
                                     onPress={async () => {
                                         await this.props.addWeightRepsToExercise({
@@ -86,7 +86,7 @@ export class AddWeightToExercise extends Component {
                             </View>
                             <View style={styles.modalButtonContainer}>
                                 <Button
-                                    color="#00cccc"
+                                    color="#00ffcc"
                                     style={styles.modalButton}
                                     title="Cancel"
                                     onPress={() => {
@@ -131,6 +131,6 @@ const styles = StyleSheet.create({
         marginBottom: width * 0.02,
         backgroundColor: "rgba(255,140,0,0.1)",
         height: 50,
-        color: "#00cccc",
+        color: "#00ffcc",
     },
 });
