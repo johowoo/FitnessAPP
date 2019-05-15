@@ -22,6 +22,7 @@
     "eslint-plugin-react": "^7.11.0",
     "expo": "^32.0.0",
     "expo-camera": "^4.0.0",
+    "expo-cli": "^2.17.2",
     "global": "^4.3.2",
     "prettier": "^1.17.1",
     "prop-types": "^15.7.2",
