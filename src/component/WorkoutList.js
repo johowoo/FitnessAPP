@@ -17,6 +17,7 @@ import {
     deleteExerciseFromWorkoutListAction,
 } from "../store/actions";
 import {AddWeightToExercise} from "./AddWeightToExercise";
+import {EditWeightReps} from './EditWeightReps';
 
 const {width, height} = Dimensions.get("window");
 
@@ -24,18 +25,18 @@ export class _WorkoutList extends Component {
     state = {
         showAddWeightModal: false,
         time: 0, // time for the chosen exercise(to add weight & reps)
+        showEditWeightReps: false,
     };
 
     handlePress() {
         this.props.setModalVisibility(true);
     }
 
-    handleCloseWeightModal = bool => {
+    handleCloseWeightModal = (showFlag, bool) => {
         this.setState({
-            showAddWeightModal: bool,
+            [showFlag]: bool,
         });
     };
-
     _renderItem = ({item: {exercise, sets, weight, time, reps, weightRepsDataArr}}) => (
         <TouchableHighlight
             // onPress={(item) => this.handlePress.call(this, item)}
@@ -44,7 +45,12 @@ export class _WorkoutList extends Component {
                     await this.setState({time});
                     await this.setState({showAddWeightModal: true});
                 }
-            }}>
+            }}
+            onLongPress={async () => {
+                await this.setState({time});
+                await this.setState({showEditWeightReps: true})
+            }}
+        >
             <View style={styles.listContainer}>
                 <View style={styles.listItem}>
                     <View style={{flex: 0.03}}/>
@@ -139,6 +145,14 @@ export class _WorkoutList extends Component {
                 {this.state.showAddWeightModal && (
                     <AddWeightToExercise
                         showAddWeightModal={this.state.showAddWeightModal}
+                        handleCloseWeightModal={this.handleCloseWeightModal}
+                        addWeightRepsToExercise={this.props.addWeightRepsToExercise}
+                        time={this.state.time}
+                    />
+                )}
+                {this.state.showEditWeightReps && (
+                    <EditWeightReps
+                        showEditWeightReps={this.state.showEditWeightReps}
                         handleCloseWeightModal={this.handleCloseWeightModal}
                         addWeightRepsToExercise={this.props.addWeightRepsToExercise}
                         time={this.state.time}

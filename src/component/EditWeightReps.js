@@ -12,7 +12,7 @@ import React, {Component} from "react";
 
 const {width, height} = Dimensions.get("window");
 
-export class AddWeightToExercise extends Component {
+export class EditWeightReps extends Component {
     state = {
         weightText: "",
         repsText: "",
@@ -35,22 +35,21 @@ export class AddWeightToExercise extends Component {
     render() {
         return (
             <Modal
-                visible={this.props.showAddWeightModal}
+                visible={this.props.showEditWeightReps}
                 transparent
-                onRequestClose={() => this.props.handleCloseWeightModal("showAddWeightModal", false)}>
+                onRequestClose={() => this.props.handleCloseWeightModal("showEditWeightReps", false)}>
                 <View style={{...styles.modalOuterContainer, top: this.state.top}}>
                     <View style={styles.modalInnerContainer}>
                         <Text
                             style={{
-                                color: "#00cccc",
+                                color: "#66666f",
                                 fontSize: 16,
                                 marginLeft: 10,
                                 marginBottom: 15,
                             }}>
-                            Please input the weight and reps of this exercise:
+                            Please edit the weight and rep numbers of these sets:
                         </Text>
                         <TextInput
-                            placeholderTextColor={"#00cccc"}
                             style={styles.weightTextInput}
                             value={this.state.weightText}
                             placeholder=" Weight: 0-300 (KG)"
@@ -59,7 +58,6 @@ export class AddWeightToExercise extends Component {
                             }}
                         />
                         <TextInput
-                            placeholderTextColor={"#00cccc"}
                             style={styles.weightTextInput}
                             value={this.state.repsText}
                             placeholder=" Reps: 0-50"
@@ -80,7 +78,7 @@ export class AddWeightToExercise extends Component {
                                             weight: this.state.weightText,
                                             reps: this.state.repsText,
                                         });
-                                        await this.props.handleCloseWeightModal("showAddWeightModal", false);
+                                        await this.props.handleCloseWeightModal("showEditWeightReps", false);
                                     }}
                                 />
                             </View>
@@ -90,7 +88,7 @@ export class AddWeightToExercise extends Component {
                                     style={styles.modalButton}
                                     title="Cancel"
                                     onPress={() => {
-                                        this.props.handleCloseWeightModal("showAddWeightModal", false);
+                                        this.props.handleCloseWeightModal("showEditWeightReps", false);
                                     }}
                                 />
                             </View>
@@ -116,7 +114,7 @@ const styles = StyleSheet.create({
     modalInnerContainer: {
         height: 250,
         width: width * 0.7,
-        backgroundColor: "rgba(102,51,204,0.9)",
+        backgroundColor: "white",
         paddingTop: 20,
         padding: 10,
         borderRadius: 8,
@@ -131,6 +129,6 @@ const styles = StyleSheet.create({
         marginBottom: width * 0.02,
         backgroundColor: "rgba(255,140,0,0.1)",
         height: 50,
-        color: "#00cccc",
+        color: "#666",
     },
 });
