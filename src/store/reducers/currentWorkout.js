@@ -30,6 +30,10 @@ export const currentWorkout = (state = [], action) => {
                 }
             });
             return stateCopyDelete;
+        case types.EDIT_WEIGHT_REPS_IN_EXERCISE:
+            const stateCopyForEditAll = JSON.parse(JSON.stringify(state));
+
+
         default:
             return state;
     }

@@ -30,6 +30,8 @@ export const changeTmpUriAction = data =>
     createAction(types.CHANGE_TMP_URI)(data);
 export const addWeightToExercisesAction = data =>
     createAction(types.ADD_WEIGHT_TO_EXERCISE)(data);
+export const editWeightRepsInWorkoutAction = data =>
+    createAction(types.EDIT_WEIGHT_REPS_IN_EXERCISE)(data);
 export const deleteExerciseFromWorkoutListAction = data =>
     createAction(types.DELETE_EXERCISE_FROM_WORKOUTLIST)(data);
 export const updateWeightBFRFromProgressPicsAction = data =>

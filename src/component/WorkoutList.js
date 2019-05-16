@@ -26,6 +26,8 @@ export class _WorkoutList extends Component {
         showAddWeightModal: false,
         time: 0, // time for the chosen exercise(to add weight & reps)
         showEditWeightReps: false,
+        weightRepsDataArr: [],
+        sets: 1
     };
 
     handlePress() {
@@ -44,10 +46,12 @@ export class _WorkoutList extends Component {
                 if (sets > weightRepsDataArr?.length) {
                     await this.setState({time});
                     await this.setState({showAddWeightModal: true});
+                } else {
+                    Alert.alert("Reminder", "You have already added weight and reps for all sets.")
                 }
             }}
             onLongPress={async () => {
-                await this.setState({time});
+                await this.setState({time, weightRepsDataArr, sets});
                 await this.setState({showEditWeightReps: true})
             }}
         >
@@ -155,7 +159,10 @@ export class _WorkoutList extends Component {
                         showEditWeightReps={this.state.showEditWeightReps}
                         handleCloseWeightModal={this.handleCloseWeightModal}
                         addWeightRepsToExercise={this.props.addWeightRepsToExercise}
+                        weightRepsDataArr={this.state.weightRepsDataArr}
+                        sets={this.state.sets}
                         time={this.state.time}
+
                     />
                 )}
             </View>
