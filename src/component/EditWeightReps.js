@@ -25,11 +25,31 @@ export class EditWeightReps extends Component {
             top: height * 0.15,
         });
     };
+    keyboardDidHideHandler = () => {
+        this.setState({
+            top: height * 0.3,
+        });
+    };
 
     componentDidMount() {
+
+        const weightTextTmp = {};
+        const repsTextTmp = {};
+        for (let i = 0; i < this.props.sets; i++) {
+            weightTextTmp[i] = this.props.weightRepsDataArr[i] ? this.props.weightRepsDataArr[i].weight : 0;
+            repsTextTmp[i] = this.props.weightRepsDataArr[i] ? this.props.weightRepsDataArr[i].reps : 0;
+        }
+        this.setState({
+            weightText: weightTextTmp,
+            repsText: repsTextTmp
+        });
         this.keyboardDidShowListener = Keyboard.addListener(
             "keyboardDidShow",
             this.keyboardDidShowHandler.bind(this)
+        );
+        this.keyboardDidHideListener = Keyboard.addListener(
+            "keyboardDidHide",
+            this.keyboardDidHideHandler.bind(this)
         );
     }
 
@@ -103,10 +123,12 @@ export class EditWeightReps extends Component {
                                     color="#00cccc"
                                     title="Confirm"
                                     onPress={async () => {
-                                        await this.props.addWeightRepsToExercise({
+                                        console.warn("weightText", this.state.weightText);
+                                        console.warn("repsText", this.state.repsText);
+                                        await this.props.editWeightRepsInWorkout({
                                             time: this.props.time,
-                                            weight: this.state.weightText,
-                                            reps: this.state.repsText,
+                                            weightText: this.state.weightText,
+                                            repsText: this.state.repsText,
                                         });
                                         await this.props.handleCloseWeightModal("showEditWeightReps", false);
                                     }}

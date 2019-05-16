@@ -15,6 +15,7 @@ import {connect} from "react-redux";
 import {
     addWeightToExercisesAction,
     deleteExerciseFromWorkoutListAction,
+    editWeightRepsInWorkoutAction
 } from "../store/actions";
 import {AddWeightToExercise} from "./AddWeightToExercise";
 import {EditWeightReps} from './EditWeightReps';
@@ -162,7 +163,7 @@ export class _WorkoutList extends Component {
                         weightRepsDataArr={this.state.weightRepsDataArr}
                         sets={this.state.sets}
                         time={this.state.time}
-
+                        editWeightRepsInWorkout={this.props.editWeightRepsInWorkout}
                     />
                 )}
             </View>
@@ -192,6 +193,9 @@ const mapActionsToProps = dispatch => ({
     deleteExerciseFromWorkoutList: data => {
         dispatch(deleteExerciseFromWorkoutListAction(data));
     },
+    editWeightRepsInWorkout: data => {
+        dispatch(editWeightRepsInWorkoutAction(data));
+    }
 });
 export const WorkoutList = connect(
     mapStateToProps,

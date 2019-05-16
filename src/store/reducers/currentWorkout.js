@@ -32,8 +32,22 @@ export const currentWorkout = (state = [], action) => {
             return stateCopyDelete;
         case types.EDIT_WEIGHT_REPS_IN_EXERCISE:
             const stateCopyForEditAll = JSON.parse(JSON.stringify(state));
-
-
+            stateCopyForEditAll.map((item, index) => {
+                if (parseInt(item.time, 10) === parseInt(action.payload.time, 10)) {
+                    // stateCopyForEditAll.splice(index, 1);
+                    delete item.weightRepsDataArr;
+                    item.weightRepsDataArr = [];
+                    let arrTmp = Object.keys(action.payload.weightText);
+                    console.warn("length", arrTmp.length);
+                    for (let i = 0; i < arrTmp.length; i++) {
+                        item.weightRepsDataArr.push({
+                            reps: action.payload.repsText[i],
+                            weight: action.payload.weightText[i]
+                        });
+                    }
+                }
+            });
+            return stateCopyForEditAll;
         default:
             return state;
     }
