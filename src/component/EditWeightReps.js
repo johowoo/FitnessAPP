@@ -35,7 +35,7 @@ export class EditWeightReps extends Component {
 
         const weightTextTmp = {};
         const repsTextTmp = {};
-        for (let i = 0; i < this.props.sets; i++) {
+        for (let i = 0; i < this.props.weightRepsDataArr.length; i++) {
             weightTextTmp[i] = this.props.weightRepsDataArr[i] ? this.props.weightRepsDataArr[i].weight : 0;
             repsTextTmp[i] = this.props.weightRepsDataArr[i] ? this.props.weightRepsDataArr[i].reps : 0;
         }
