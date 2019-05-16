@@ -3,6 +3,7 @@ import {View, Text, StyleSheet, Alert} from "react-native";
 import {connect} from "react-redux";
 import Button from "apsl-react-native-button";
 import {TopBar} from "../component/TopBar";
+import {ReminderModal} from "../component/ReminderModal";
 import {
     setExerciseModalVisibility,
     addExerciseAction,
@@ -21,8 +22,9 @@ class _CurrentWorkout extends Component {
     static defaultProps = {
         currentWorkout: [],
     };
-
-    // 写到这了
+    state = {
+        showReminderModal: false
+    };
     handlePressComplete = () => {
         console.warn("this", this);
         this.props.clearCurrentWorkout();
@@ -36,6 +38,11 @@ class _CurrentWorkout extends Component {
             date: currentDate,
             exercises: this.props.currentWorkout,
         });
+    };
+    handleCloseReminder = (bool) => {
+        this.setState({
+            showReminderModal: bool
+        })
     };
 
     render() {
@@ -54,6 +61,7 @@ class _CurrentWorkout extends Component {
                                     ? styles.completeButtonDisabled
                                     : styles.completeButton
                             }
+                            // onPress={this.handlePressComplete.bind(this)}
                             onPress={this.handlePressComplete.bind(this)}
                             // onPress={(props) => {
                             //     let _this = this;
@@ -96,6 +104,13 @@ class _CurrentWorkout extends Component {
                         closeModal={() => this.props.setModalVisibility(false)}
                     />
                 </View>
+                {this.state.showReminderModal &&
+                <ReminderModal
+                    showReminderModal={this.state.showReminderModal}
+                    handleCloseReminder={this.state.handleCloseReminder}
+                    reminderTitle={this.state.reminderTitle}
+                    reminderContent={this.state.reminderContent}
+                />}
             </View>
         );
     }
