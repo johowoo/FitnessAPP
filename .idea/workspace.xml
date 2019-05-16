@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd580928-bb60-480d-8b73-7c94df331487" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/component/CustomBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/CustomBar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/EditWeightReps.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/EditWeightReps.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/WorkoutList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/WorkoutList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/Calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Calendar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/CurrentWorkout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/CurrentWorkout.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,14 +15,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="70" column="29" lean-forward="true" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
+            <state relative-caret-position="407">
+              <caret line="107" column="22" lean-forward="true" selection-start-line="96" selection-start-column="19" selection-end-line="107" selection-end-column="22" />
               <folding>
                 <element signature="e#259#318#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/page/CurrentWorkout.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="205">
+              <caret line="59" column="48" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
             </state>
           </provider>
         </entry>
@@ -90,8 +96,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>parser</find>
-      <find>参数</find>
       <find>类型</find>
       <find>检查</find>
       <find>par</find>
@@ -116,9 +120,11 @@
       <find>confirm</find>
       <find>new</find>
       <find>this.props</find>
+      <find>key</find>
+      <find>completed</find>
+      <find>Alert.alert(</find>
       <find>Alert</find>
       <find>ALERT</find>
-      <find>key</find>
       <find>key=</find>
     </findStrings>
     <replaceStrings>
@@ -157,7 +163,6 @@
         <option value="$PROJECT_DIR$/src/component/ExerciseList.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/utils/formatMonthandDay.js" />
-        <option value="$PROJECT_DIR$/src/page/CurrentWorkout.js" />
         <option value="$PROJECT_DIR$/src/component/AddDropdown.js" />
         <option value="$PROJECT_DIR$/.eslintrc.js" />
         <option value="$PROJECT_DIR$/.eslintrc" />
@@ -175,6 +180,7 @@
         <option value="$PROJECT_DIR$/src/page/Calendar.js" />
         <option value="$PROJECT_DIR$/src/component/CustomBar.js" />
         <option value="$PROJECT_DIR$/src/component/WorkoutList.js" />
+        <option value="$PROJECT_DIR$/src/page/CurrentWorkout.js" />
       </list>
     </option>
   </component>
@@ -322,18 +328,18 @@
       <workItem from="1557883914370" duration="4640000" />
       <workItem from="1557891727978" duration="1886000" />
       <workItem from="1557906650011" duration="4411000" />
-      <workItem from="1557962034041" duration="12898000" />
+      <workItem from="1557962034041" duration="13458000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="131860000" />
+    <option name="totallyTimeSpent" value="132420000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="947" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16505441" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16505441" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -347,7 +353,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="RNConsole" order="8" />
       <window_info anchor="bottom" id="CSS-X-Fire" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4996979" visible="true" weight="0.2621951" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4996979" visible="true" weight="0.27317074" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50030214" side_tool="true" weight="0.03640777" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.717233" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
@@ -583,13 +589,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/page/Health_scsslint_tmp3994645436888645333.js" />
     <entry file="file://$PROJECT_DIR$/src/page/Health_scsslint_tmp439047218457048163.js" />
-    <entry file="file://$PROJECT_DIR$/src/page/CurrentWorkout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1491">
-          <caret line="91" column="21" selection-start-line="91" selection-start-column="21" selection-end-line="91" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/utils/monthArray.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -650,13 +649,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/actions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="33" column="51" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/store/actionTypes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="269">
@@ -664,10 +656,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="107" column="22" lean-forward="true" selection-start-line="96" selection-start-column="19" selection-end-line="107" selection-end-column="22" />
+          <folding>
+            <element signature="e#259#318#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/store/reducers/currentWorkout.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1640">
           <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/actions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="33" column="51" selection-start-line="33" selection-start-column="23" selection-end-line="33" selection-end-column="51" />
         </state>
       </provider>
     </entry>
@@ -681,6 +690,13 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/CustomBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/page/Calendar.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="41">
@@ -689,20 +705,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/CustomBar.js">
+    <entry file="file://$PROJECT_DIR$/src/page/CurrentWorkout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="70" column="29" lean-forward="true" selection-start-line="70" selection-start-column="29" selection-end-line="70" selection-end-column="29" />
-          <folding>
-            <element signature="e#259#318#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="205">
+          <caret line="59" column="48" selection-start-line="59" selection-start-column="48" selection-end-line="59" selection-end-column="48" />
         </state>
       </provider>
     </entry>
