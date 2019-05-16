@@ -25,14 +25,13 @@ export class EditWeightReps extends Component {
             top: height * 0.15,
         });
     };
-    keyboardDidHideHandler = () => {
-        this.setState({
-            top: height * 0.3,
-        });
-    };
+    // keyboardDidHideHandler = () => {
+    //     this.setState({
+    //         top: height * 0.3,
+    //     });
+    // };
 
     componentDidMount() {
-
         const weightTextTmp = {};
         const repsTextTmp = {};
         for (let i = 0; i < this.props.weightRepsDataArr.length; i++) {
@@ -47,10 +46,10 @@ export class EditWeightReps extends Component {
             "keyboardDidShow",
             this.keyboardDidShowHandler.bind(this)
         );
-        this.keyboardDidHideListener = Keyboard.addListener(
-            "keyboardDidHide",
-            this.keyboardDidHideHandler.bind(this)
-        );
+        // this.keyboardDidHideListener = Keyboard.addListener(
+        //     "keyboardDidHide",
+        //     this.keyboardDidHideHandler.bind(this)
+        // );
     }
 
     render() {
