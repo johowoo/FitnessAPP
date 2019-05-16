@@ -17,6 +17,7 @@ export class ReminderModal extends Component {
         return (
             <Modal
                 visible={this.props.showReminderModal}
+                style={styles.modal}
                 transparent
                 onRequestClose={() => this.props.handleCloseReminder(false)}>
                 <View style={{...styles.modalOuterContainer}}>
@@ -24,13 +25,22 @@ export class ReminderModal extends Component {
                         <Text
                             style={{
                                 color: "#00ffcc",
-                                fontSize: 16,
-                                marginLeft: 10,
+                                justifyContent: 'center',
+                                alignItems: "center",
+                                fontSize: 20,
+                                marginTop: 20,
+                                marginLeft: 20,
                                 marginBottom: 15,
                             }}>
                             {this.props.reminderTitle}
                         </Text>
-                        <Text>{this.props.reminderContent}</Text>
+                        <Text style={{
+                            color: "#eee",
+                            fontSize: 20,
+                            marginTop: 20,
+                            marginLeft: 10,
+                            marginBottom: 30,
+                        }}> {this.props.reminderContent}</Text>
                         <View
                             style={{flexDirection: "row", justifyContent: "space-around"}}>
                             <View style={styles.modalButtonContainer}>
@@ -60,12 +70,17 @@ export class ReminderModal extends Component {
 }
 
 const styles = StyleSheet.create({
+    modal: {
+        flex: 1,
+        alignItems: "center",
+        justifyContent: "center"
+    },
     modalOuterContainer: {
         flex: 1,
-        // justifyContent: 'center',
-        // alignItems: 'center',
-        position: "absolute",
-        left: width * 0.148,
+        justifyContent: 'center',
+        alignItems: 'center',
+        // position: "absolute",
+        // left: width * 0.148,
         // top: this.state.top,
         backgroundColor: "rgba(0, 0, 0, 0.3)",
         borderRadius: 8,

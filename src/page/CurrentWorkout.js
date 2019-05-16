@@ -46,8 +46,9 @@ class _CurrentWorkout extends Component {
             showReminderModal: bool
         })
     };
-    handleConfirm = () => {
-        this.handlePressComplete.bind(this)()
+    handleConfirm = async () => {
+        await this.handlePressComplete.bind(this)();
+        await this.handleCloseReminder(false);
     };
 
     render() {
@@ -71,7 +72,7 @@ class _CurrentWorkout extends Component {
                             onPress={async () => {
                                 await this.setState({
                                     reminderTitle: "Completed",
-                                    reminderContent: "Have you completed all these exercises"
+                                    reminderContent: "Have you completed all these exercises???"
                                 });
                                 await this.setState({showReminderModal: true});
                             }
