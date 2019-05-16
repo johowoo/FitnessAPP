@@ -24,6 +24,7 @@ class _CurrentWorkout extends Component {
 
     // 写到这了
     handlePressComplete = () => {
+        console.warn("this", this);
         this.props.clearCurrentWorkout();
         const currentTimestamp = new Date();
         const currentDate = `${currentTimestamp.getFullYear()}-${formatMonthandDay(
@@ -53,16 +54,18 @@ class _CurrentWorkout extends Component {
                                     ? styles.completeButtonDisabled
                                     : styles.completeButton
                             }
-                            onPress={() => {
-                                Alert.alert("Completed", "Have you completed these exercises？", [
-                                    {
-                                        text: "yes",
-                                        onPress: this.handlePressComplete.bind(this)
-                                    },
-                                    {text: "Cancel"},
-                                ])
-                                this.handlePressComplete.bind(this)
-                            }}
+                            onPress={this.handlePressComplete.bind(this)}
+                            // onPress={(props) => {
+                            //     let _this = this;
+                            //     Alert.alert("Completed", "Have you completed all these exercises？", [
+                            //         {
+                            //             text: "Yes",
+                            //             onPress: () => _this.handlePressComplete.bind(_this)(props)
+                            //         },
+                            //         {text: "Cancel"},
+                            //     ])
+                            // }
+                            // }
                             children={
                                 <Text
                                     key="completed"

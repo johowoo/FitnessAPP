@@ -35,6 +35,7 @@ export class _Calendar extends Component {
 
     render() {
         // console.log(this.state.displayExercisesList);
+        console.warn(this.props.allExercisesList);
         return (
             <View>
                 <TopBar style={styles.topBar}>

@@ -123,8 +123,6 @@ export class EditWeightReps extends Component {
                                     color="#00cccc"
                                     title="Confirm"
                                     onPress={async () => {
-                                        console.warn("weightText", this.state.weightText);
-                                        console.warn("repsText", this.state.repsText);
                                         await this.props.editWeightRepsInWorkout({
                                             time: this.props.time,
                                             weightText: this.state.weightText,
