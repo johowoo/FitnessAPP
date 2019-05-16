@@ -19,7 +19,7 @@ export class ReminderModal extends Component {
                 visible={this.props.showReminderModal}
                 transparent
                 onRequestClose={() => this.props.handleCloseReminder(false)}>
-                <View style={{...styles.modalOuterContainer, top: this.state.top}}>
+                <View style={{...styles.modalOuterContainer}}>
                     <View style={styles.modalInnerContainer}>
                         <Text
                             style={{

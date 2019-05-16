@@ -23,7 +23,9 @@ class _CurrentWorkout extends Component {
         currentWorkout: [],
     };
     state = {
-        showReminderModal: false
+        showReminderModal: false,
+        reminderTitle: "",
+        reminderContent: ""
     };
     handlePressComplete = () => {
         console.warn("this", this);
@@ -44,6 +46,9 @@ class _CurrentWorkout extends Component {
             showReminderModal: bool
         })
     };
+    handleConfirm = () => {
+        this.handlePressComplete.bind(this)()
+    };
 
     render() {
         return (
@@ -62,7 +67,15 @@ class _CurrentWorkout extends Component {
                                     : styles.completeButton
                             }
                             // onPress={this.handlePressComplete.bind(this)}
-                            onPress={this.handlePressComplete.bind(this)}
+                            // onPress={this.handlePressComplete.bind(this)}
+                            onPress={async () => {
+                                await this.setState({
+                                    reminderTitle: "Completed",
+                                    reminderContent: "Have you completed all these exercises"
+                                });
+                                await this.setState({showReminderModal: true});
+                            }
+                            }
                             // onPress={(props) => {
                             //     let _this = this;
                             //     Alert.alert("Completed", "Have you completed all these exercises？", [
@@ -107,9 +120,10 @@ class _CurrentWorkout extends Component {
                 {this.state.showReminderModal &&
                 <ReminderModal
                     showReminderModal={this.state.showReminderModal}
-                    handleCloseReminder={this.state.handleCloseReminder}
                     reminderTitle={this.state.reminderTitle}
                     reminderContent={this.state.reminderContent}
+                    handleCloseReminder={this.handleCloseReminder}
+                    handleConfirm={this.handleConfirm}
                 />}
             </View>
         );
