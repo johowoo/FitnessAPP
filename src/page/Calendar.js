@@ -140,7 +140,7 @@ export class _Calendar extends Component {
                     </View>
                 </View>
                 {weightRepsDataArr && weightRepsDataArr.length > 0 && weightRepsDataArr.map((item, index) => (
-                    <View style={{...styles.listItem, height: 30}} key={item.weight + index + item.reps}>
+                    <View style={{...styles.listItem, height: 30}} key={item.weight + index + item.time}>
                         <Text
                             style={{
                                 color: "#bbb",

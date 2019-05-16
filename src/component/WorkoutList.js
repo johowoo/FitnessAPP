@@ -67,7 +67,7 @@ export class _WorkoutList extends Component {
                     </View>
                 </View>
                 {weightRepsDataArr?.map((item, index) => (
-                    <View key={item.weight + item.index + item.reps} style={{...styles.listItem, height: 25}}>
+                    <View key={item.weight + index + item.reps} style={{...styles.listItem, height: 25}}>
                         <Text
                             style={{
                                 color: "#bbb",

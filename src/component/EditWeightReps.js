@@ -86,7 +86,7 @@ export class EditWeightReps extends Component {
                             </Text>
                             {newWeightRepsDataArr.map((item, index) => {
                                 return (
-                                    <View style={styles.dataContainer} key={index + item.weight + index + item.sets}>
+                                    <View style={styles.dataContainer} key={index + item.weight + index + item.time}>
                                         <Text style={{
                                             alignItems: "center",
                                             marginTop: width * 0.02,
