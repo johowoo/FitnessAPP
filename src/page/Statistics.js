@@ -11,6 +11,7 @@ import {LineChart} from "react-native-chart-kit";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import {connect} from "react-redux";
 import {AddDropdown} from "../component/AddDropdown";
+import {PeriodAnalysis} from "../component/PeriodAnalysis";
 import {updateBfrAction, updateWeightAction} from "../store/actions";
 
 import {TopBar} from "../component";
@@ -93,10 +94,10 @@ export class _Health extends Component {
             <View>
                 <TopBar style={styles.topBar}>
                     {this.props.fontLoaded ? (
-                        <Text style={styles.textBar}>Health</Text>
+                        <Text style={styles.textBar}>Statistics</Text>
                     ) : null}
                 </TopBar>
-
+                <PeriodAnalysis/>
                 <ScrollView ref={ref => (this.scrollView = ref)}>
                     <View style={{marginTop: 20}}>
                         <View
@@ -243,7 +244,7 @@ const mapActionToProps = dispatch => ({
     },
 });
 
-export const Health = connect(
+export const Statistics = connect(
     mapStateToProps,
     mapActionToProps
 )(_Health);

@@ -7,7 +7,7 @@ import {
   createAppContainer,
 } from "react-navigation";
 import { Calendar } from "./Calendar";
-import { Health } from "./Health";
+import { Statistics } from "./Statistics";
 import { CurrentWorkout } from "../component";
 import Progress from "./Progress";
 import { TabBarIcon } from "../component/TabBarIcon";
@@ -63,11 +63,11 @@ const BottomTabNavigator = createBottomTabNavigator(
         tabBarLabel: "calendar",
       }),
     },
-    Health: {
-      screen: props => <Health fontLoaded={fontLoaded} {...props} />,
+    Statistics: {
+      screen: props => <Statistics fontLoaded={fontLoaded} {...props} />,
       navigationOptions: () => ({
         tabBarIcon: props => <TabBarIcon name="ios-trending-up" {...props} />,
-        tabBarLabel: "health",
+        tabBarLabel: "statistics",
       }),
     },
     Progress: {

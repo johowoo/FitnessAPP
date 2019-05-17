@@ -2,14 +2,16 @@ import React, {Component} from "react";
 import {View, Text, StyleSheet,} from "react-native";
 import {AddDropdown} from "./AddDropdown";
 
-
 export class PeriodAnalysis extends Component {
+    handleConfirm = () => {
+    }
+
     render() {
         return (
             <View>
                 <View>
                     <AddDropdown
-                        handleConfirm={this.changeDisplayExercises.bind(this)}
+                        handleConfirm={this.handleConfirm.bind(this)}
                         styles={dropdownStyles}
                         options={[
                             "7 days",
