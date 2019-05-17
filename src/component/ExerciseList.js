@@ -32,14 +32,13 @@ const ITEM_HEIGHT = 40;
 // let timer=null;
 
 export class _ExerciseList extends PureComponent {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             isAddingExercise: false,
             foundExercises: [],
             displayExercises: [],
             addHintText: "add more exercises",
-
             setsModalVisible: false,
             selectedSets: 4,
             selectedExercise: "",
@@ -431,7 +430,6 @@ const styles = StyleSheet.create({
 
     quick: {
         backgroundColor: "red",
-
         flex: 1,
         alignItems: "flex-end",
         justifyContent: "center",

@@ -98,47 +98,49 @@ export class EditWeightReps extends Component {
                                 }}>
                                 weight(0-100KG) reps(0-50)
                             </Text>
-                            <KeyboardAvoidingView
-                                behavior={'height'}
-                                key={keyboardAvoidingViewKey}
-                            >
-                                {newWeightRepsDataArr.map((item, index) => {
-                                    return (
-                                        <View style={styles.dataContainer}
-                                              key={index + item.weight + index + Math.random()}>
-                                            <Text style={{
-                                                alignItems: "center",
-                                                marginTop: width * 0.02,
-                                                marginLeft: width * 0.02,
-                                                marginBottom: width * 0.02, height: 25,
-                                                color: "#777"
-                                            }}>{index + 1}:</Text>
-                                            <TextInput
-                                                style={{...styles.weightTextInput, flex: 0.5}}
-                                                value={this.state.weightText[index]}
-                                                placeholder="0-300 (KG)"
-                                                defaultValue={item.weight}
-                                                onChangeText={text => {
-                                                    this.setState({
-                                                        weightText: {
-                                                            ...this.state.weightText,
-                                                            [index]: text
-                                                        }
-                                                    })
-                                                }}
-                                            />
-                                            <TextInput
-                                                style={{...styles.weightTextInput, flex: 0.4}}
-                                                value={this.state.repsText[index]}
-                                                defaultValue={item.reps}
-                                                placeholder="0-50 reps"
-                                                onChangeText={text => {
-                                                    this.setState({repsText: {...this.state.repsText, [index]: text}})
-                                                }}
-                                            />
-                                        </View>)
-                                })}
-                            </KeyboardAvoidingView>
+                            {newWeightRepsDataArr.map((item, index) => {
+                                // if (item.weight && item.reps) {
+                                return (
+                                    <View style={styles.dataContainer}
+                                          key={index + item.weight + index + Math.random()}>
+                                        <Text style={{
+                                            alignItems: "center",
+                                            marginTop: width * 0.02,
+                                            marginLeft: width * 0.02,
+                                            marginBottom: width * 0.02, height: 25,
+                                            color: "#777"
+                                        }}>{index + 1}:</Text>
+                                        <TextInput
+                                            style={{...styles.weightTextInput, flex: 0.5}}
+                                            value={this.state.weightText[index]}
+                                            placeholder="0-300 (KG)"
+                                            defaultValue={item.weight}
+                                            onChangeText={text => {
+                                                this.setState({
+                                                    weightText: {
+                                                        ...this.state.weightText,
+                                                        [index]: text
+                                                    }
+                                                })
+                                            }}
+                                        />
+                                        <TextInput
+                                            style={{...styles.weightTextInput, flex: 0.4}}
+                                            value={this.state.repsText[index]}
+                                            defaultValue={item.reps}
+                                            placeholder="0-50 reps"
+                                            onChangeText={text => {
+                                                this.setState({
+                                                    repsText: {
+                                                        ...this.state.repsText,
+                                                        [index]: text
+                                                    }
+                                                })
+                                            }}
+                                        />
+                                    </View>)
+                                // }
+                            })}
                         </ScrollView>
                         <View
                             style={{flexDirection: "row", justifyContent: "space-around"}}>

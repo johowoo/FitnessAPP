@@ -67,8 +67,6 @@ class _CurrentWorkout extends Component {
                                     ? styles.completeButtonDisabled
                                     : styles.completeButton
                             }
-                            // onPress={this.handlePressComplete.bind(this)}
-                            // onPress={this.handlePressComplete.bind(this)}
                             onPress={async () => {
                                 await this.setState({
                                     reminderTitle: "Completed",
@@ -77,17 +75,6 @@ class _CurrentWorkout extends Component {
                                 await this.setState({showReminderModal: true});
                             }
                             }
-                            // onPress={(props) => {
-                            //     let _this = this;
-                            //     Alert.alert("Completed", "Have you completed all these exercises？", [
-                            //         {
-                            //             text: "Yes",
-                            //             onPress: () => _this.handlePressComplete.bind(_this)(props)
-                            //         },
-                            //         {text: "Cancel"},
-                            //     ])
-                            // }
-                            // }
                             children={
                                 <Text
                                     key="completed"
@@ -111,7 +98,6 @@ class _CurrentWorkout extends Component {
                 </View>
                 <View>
                     <ExerciseModal
-                        // addExercise={this.props.addExercise}
                         sectionExercises={this.props.sectionExercises}
                         extraSectionExercises={this.props.extraSectionExercises}
                         visible={this.props.exerciseModal}

@@ -66,24 +66,30 @@ export class _WorkoutList extends Component {
                         <Text style={styles.exerciseText}>{sets} sets</Text>
                     </View>
                 </View>
-                {weightRepsDataArr?.map((item, index) => (
-                    <View key={item.weight + index + item.reps} style={{...styles.listItem, height: 25}}>
-                        <Text
-                            style={{
-                                color: "#bbb",
-                                marginRight: 20,
-                            }}>
-                            {item.weight} KG ✖ {item.reps} reps
-                        </Text>
-                    </View>
-                ))}
+                {weightRepsDataArr?.map((item, index) => {
+                    if (!item.weight && !item.reps) {
+                        weightRepsDataArr.splice(index, 1);
+                    } else {
+                        return (
+                            <View key={item.weight + index + item.reps} style={{...styles.listItem, height: 25}}>
+                                <Text
+                                    style={{
+                                        color: "#bbb",
+                                        marginRight: 20,
+                                    }}>
+                                    {item.weight} KG ✖ {item.reps} reps
+                                </Text>
+                            </View>
+                        )
+                    }
+                })}
                 {(sets > weightRepsDataArr?.length) && <View style={{...styles.listItem, height: 25}}>
                     <Text
                         style={{
                             color: "#bbb",
                             marginRight: 20,
                         }}>
-                        {"Touch to add more weight & reps "}
+                        {"Touch to add more weight & reps / Hold to edit"}
                     </Text>
                 </View>}
             </View>
