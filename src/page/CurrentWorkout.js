@@ -31,9 +31,15 @@ class _CurrentWorkout extends Component {
         console.warn("this", this);
         this.props.clearCurrentWorkout();
         const currentTimestamp = new Date();
+
+        // ***modified
         const currentDate = `${currentTimestamp.getFullYear()}-${formatMonthandDay(
             currentTimestamp.getMonth() + 1
         )}-${formatMonthandDay(currentTimestamp.getDate())}`;
+        // const currentDate = `${currentTimestamp.getFullYear()}${formatMonthandDay(
+        //     currentTimestamp.getMonth() + 1
+        // )}${formatMonthandDay(currentTimestamp.getDate())}`;
+
         this.props.addMarkedDate(currentDate);
         this.props.updateEmpty(true);
         this.props.addNewExerciseList({

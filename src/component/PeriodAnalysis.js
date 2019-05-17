@@ -1,9 +1,9 @@
 import React, {Component} from "react";
 import {View, Text, StyleSheet, Dimensions,} from "react-native";
-import {AddDropdown} from "./AddDropdown";
 import ModalDropdown from "react-native-modal-dropdown";
 import {connect} from 'react-redux';
 import ApslButton from "apsl-react-native-button";
+import {formatYYYYMMDDFromDate} from "../utils/formatMonthandDay";
 
 const {width} = Dimensions.get("window");
 
@@ -11,6 +11,7 @@ const NumberOfDaysArr = [1, 7, 30, 180, 365];
 
 class _PeriodAnalysis extends Component {
     state = {
+        newAllExerciseList: {},
         selectedCategory: "",
         selectedIndex: 0,
         sets: 0,
@@ -18,6 +19,18 @@ class _PeriodAnalysis extends Component {
         workouts: 0,
         volume: 0
     };
+
+    componentDidMount() {
+        const list = JSON.parse(JSON.stringify(this.props.allExercisesList));
+        const newAllExerciseList = {};
+        for (let key in list) {
+            if (list.hasOwnProperty(key)) {
+                let tmpKey = key.replace(/-/g, '');
+                newAllExerciseList[tmpKey] = list[key];
+            }
+        }
+        this.setState({newAllExerciseList});
+    }
 
     handleConfirm = () => {
 
@@ -28,23 +41,44 @@ class _PeriodAnalysis extends Component {
     };
 
     handleConfirmPressed = () => {
-        console.warn(this.props.allExercisesList);
+        const todayDate = new Date();
+        const todayDateYYYYMMDD = formatYYYYMMDDFromDate(todayDate);
+
         switch (this.state.selectedIndex) {
             case 0:
-                break;
-            case 1:
-                break;
-            case 2:
-                break;
-            case 3:
-                break;
-            case 4:
-                break;
-            default:
+                // console.warn(today.getDate());
+                console.warn(this.state.newAllExerciseList[todayDateYYYYMMDD]);
+                this.setState({
+                    // reps: this.state.newAllExerciseList[todayDateYYYYMMDD].weightRepsDataArr
         }
+    )
+        ;
+        break;
+    case
+        1
+    :
+        break;
+    case
+        2
+    :
+        break;
+    case
+        3
+    :
+        break;
+    case
+        4
+    :
+        break;
+    default:
+    }
     };
 
     render() {
+
+        //convert date from 2019-05-19 to 20190519 and then convert to number
+        // so that these dates can be compared easily
+
         return (
             <View style={styles.wholeContainer}>
                 <View style={styles.dropdownContainer}>
