@@ -28,7 +28,20 @@ class _PeriodAnalysis extends Component {
     };
 
     handleConfirmPressed = () => {
-
+        console.warn(this.props.allExercisesList);
+        switch (this.state.selectedIndex) {
+            case 0:
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            default:
+        }
     };
 
     render() {
@@ -50,21 +63,21 @@ class _PeriodAnalysis extends Component {
                             styles.dropdownSelection,
                         ]}
                         options={[
-                            "24 Hour",
+                            "Today",
                             "7 Days",
                             "1 Month",
                             "6 Months",
                             "1 Year"
                         ]}
-                        defaultValue={"24 Hour"}
+                        defaultValue={"Today"}
                         onSelect={this.handleSelect.bind(this)}
                     />
-                    <Text style={styles.analysisTitle}>analysis</Text>
+                    <Text style={styles.analysisTitle}>Analysis</Text>
                     <ApslButton
                         style={[styles.confirmButton]}
-                        onPress={this.handlePress}
+                        onPress={this.handleConfirmPressed}
                         children={
-                            <Text key="confirm" style={{color: "#FF8c00",fontSize:16}}>
+                            <Text key="confirm" style={{color: "#FF8c00", fontSize: 16}}>
                                 Confirm
                             </Text>
                         }
@@ -128,7 +141,7 @@ const styles = StyleSheet.create({
         flexDirection: "row",
     },
     dropdownMenu: {
-        width: width *0.28,
+        width: width * 0.28,
         height: 40,
         borderRadius: 6,
         marginRight: width * 0.02,
@@ -143,7 +156,7 @@ const styles = StyleSheet.create({
         color: "#FF8c00",
     },
     dropdownList: {
-        width: width *0.28,
+        width: width * 0.28,
         marginTop: 15,
     },
     dropdownListText: {
@@ -155,7 +168,7 @@ const styles = StyleSheet.create({
         color: "#00cccc",
     },
     confirmButton: {
-        backgroundColor:"rgba(200,200,200,0.1)",
+        backgroundColor: "rgba(200,200,200,0.1)",
         marginLeft: 36,
         height: 40,
         width: width * 0.25,
