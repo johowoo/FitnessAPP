@@ -36,6 +36,7 @@ export class PeriodAnalysis extends Component {
                             "year"
                         ]}
                         hideTextInput={true}
+                        hideConfirmButton={true}
                         handleSelect={this.handleSelect.bind(this)}
                     />
                 </View>
@@ -56,10 +57,10 @@ export class PeriodAnalysis extends Component {
 
 const styles = StyleSheet.create({
     wholeContainer: {
-        borderRadius:20,
+        borderRadius: 20,
         borderWidth: 1,
-        borderColor:"#ccc",
-        margin:10
+        borderColor: "#ccc",
+        margin: 10
     },
     analysisTitle: {
         color: "#ddd",

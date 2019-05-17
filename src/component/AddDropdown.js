@@ -73,7 +73,7 @@ export class AddDropdown extends Component {  //eslint-disable-line
                         defaultValue={this.props.options[0]}
                         onSelect={handleSelect}
                     />
-                    <ApslButton
+                    {!this.props.hideConfirmButton && <ApslButton
                         style={[styles.confirmButton, this.props.styles.confirmButton]}
                         onPress={this.handlePress}
                         children={
@@ -81,7 +81,7 @@ export class AddDropdown extends Component {  //eslint-disable-line
                                 Confirm
                             </Text>
                         }
-                    />
+                    />}
                 </View>
             </View>
         );
