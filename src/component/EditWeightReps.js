@@ -8,12 +8,21 @@ import {
     TextInput,
     Keyboard,
     ScrollView,
+    KeyboardAvoidingView,
+    Platform
 } from "react-native";
 import React, {Component} from "react";
 
 const {width, height} = Dimensions.get("window");
 
 export class EditWeightReps extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            keyboardAvoidingViewKey: 'keyboardAvoidingViewKey',
+        }
+    }
+
     state = {
         weightText: {},
         repsText: {},
@@ -22,16 +31,29 @@ export class EditWeightReps extends Component {
 
     keyboardDidShowHandler = () => {
         this.setState({
-            top: height * 0.15,
+            top: height * 0.2,
         });
     };
-    // keyboardDidHideHandler = () => {
-    //     this.setState({
-    //         top: height * 0.3,
-    //     });
-    // };
 
     componentDidMount() {
+        // this.keyboardDidShowListener = Keyboard.addListener(
+        //     "keyboardDidShow",
+        //     this.keyboardDidShowHandler.bind(this)
+        // );
+        this.keyboardHideListener = Keyboard.addListener(Platform.OS === 'android' ? 'keyboardDidHide' : 'keyboardWillHide', this.keyboardHideListener.bind(this));
+    }
+
+    componentWillUnmount() {
+        this.keyboardHideListener.remove()
+    }
+
+    keyboardHideListener() {
+        this.setState({
+            keyboardAvoidingViewKey: 'keyboardAvoidingViewKey' + new Date().getTime()
+        });
+    }
+
+    componentWillMount() {
         const weightTextTmp = {};
         const repsTextTmp = {};
         for (let i = 0; i < this.props.weightRepsDataArr.length; i++) {
@@ -42,14 +64,6 @@ export class EditWeightReps extends Component {
             weightText: weightTextTmp,
             repsText: repsTextTmp
         });
-        this.keyboardDidShowListener = Keyboard.addListener(
-            "keyboardDidShow",
-            this.keyboardDidShowHandler.bind(this)
-        );
-        // this.keyboardDidHideListener = Keyboard.addListener(
-        //     "keyboardDidHide",
-        //     this.keyboardDidHideHandler.bind(this)
-        // );
     }
 
     render() {
@@ -57,12 +71,13 @@ export class EditWeightReps extends Component {
         for (let i = newWeightRepsDataArr.length; i < this.props.sets; i++) {
             newWeightRepsDataArr.push({weight: 0, reps: 0});
         }
+        let {keyboardAvoidingViewKey} = this.state;
         return (
             <Modal
                 visible={this.props.showEditWeightReps}
                 transparent
                 onRequestClose={() => this.props.handleCloseWeightModal("showEditWeightReps", false)}>
-                <View style={{...styles.modalOuterContainer, top: this.state.top}}>
+                <View style={{...styles.modalOuterContainer, top: 120}}>
                     <View style={styles.modalInnerContainer}>
                         <Text
                             style={{
@@ -83,37 +98,47 @@ export class EditWeightReps extends Component {
                                 }}>
                                 weight(0-100KG) reps(0-50)
                             </Text>
-                            {newWeightRepsDataArr.map((item, index) => {
-                                return (
-                                    <View style={styles.dataContainer}
-                                          key={index + item.weight + index + Math.random()}>
-                                        <Text style={{
-                                            alignItems: "center",
-                                            marginTop: width * 0.02,
-                                            marginLeft: width * 0.02,
-                                            marginBottom: width * 0.02, height: 25,
-                                            color: "#777"
-                                        }}>{index + 1}:</Text>
-                                        <TextInput
-                                            style={{...styles.weightTextInput, flex: 0.5}}
-                                            value={this.state.weightText[index]}
-                                            placeholder="0-300 (KG)"
-                                            defaultValue={item.weight}
-                                            onChangeText={text => {
-                                                this.setState({weightText: {...this.state.weightText, [index]: text}})
-                                            }}
-                                        />
-                                        <TextInput
-                                            style={{...styles.weightTextInput, flex: 0.4}}
-                                            value={this.state.repsText[index]}
-                                            defaultValue={item.reps}
-                                            placeholder="0-50 reps"
-                                            onChangeText={text => {
-                                                this.setState({repsText: {...this.state.repsText, [index]: text}})
-                                            }}
-                                        />
-                                    </View>)
-                            })}
+                            <KeyboardAvoidingView
+                                behavior={'height'}
+                                key={keyboardAvoidingViewKey}
+                            >
+                                {newWeightRepsDataArr.map((item, index) => {
+                                    return (
+                                        <View style={styles.dataContainer}
+                                              key={index + item.weight + index + Math.random()}>
+                                            <Text style={{
+                                                alignItems: "center",
+                                                marginTop: width * 0.02,
+                                                marginLeft: width * 0.02,
+                                                marginBottom: width * 0.02, height: 25,
+                                                color: "#777"
+                                            }}>{index + 1}:</Text>
+                                            <TextInput
+                                                style={{...styles.weightTextInput, flex: 0.5}}
+                                                value={this.state.weightText[index]}
+                                                placeholder="0-300 (KG)"
+                                                defaultValue={item.weight}
+                                                onChangeText={text => {
+                                                    this.setState({
+                                                        weightText: {
+                                                            ...this.state.weightText,
+                                                            [index]: text
+                                                        }
+                                                    })
+                                                }}
+                                            />
+                                            <TextInput
+                                                style={{...styles.weightTextInput, flex: 0.4}}
+                                                value={this.state.repsText[index]}
+                                                defaultValue={item.reps}
+                                                placeholder="0-50 reps"
+                                                onChangeText={text => {
+                                                    this.setState({repsText: {...this.state.repsText, [index]: text}})
+                                                }}
+                                            />
+                                        </View>)
+                                })}
+                            </KeyboardAvoidingView>
                         </ScrollView>
                         <View
                             style={{flexDirection: "row", justifyContent: "space-around"}}>

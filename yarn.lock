@@ -10301,6 +10301,13 @@ react-native-gesture-handler@~1.0.14:
     invariant "^2.2.2"
     prop-types "^15.5.10"
 
+react-native-input-scroll-view@^1.9.2:
+  version "1.9.2"
+  resolved "https://registry.yarnpkg.com/react-native-input-scroll-view/-/react-native-input-scroll-view-1.9.2.tgz#2d641b78a6926cadb72a9cec0e65601c60e9b47f"
+  integrity sha512-AB2PbM/0gIdMmiDC37lKHyxEZQptm9YD5fe8Uq26MJifQUjW3UBYI5IfMTFedSfpzq76WtTJ5D2Csu9Q58F3IA==
+  dependencies:
+    prop-types "^15.5.10"
+
 react-native-maps@expo/react-native-maps#v0.22.1-exp.0:
   version "0.22.1"
   resolved "https://codeload.github.com/expo/react-native-maps/tar.gz/e6f98ff7272e5d0a7fe974a41f28593af2d77bb2"
