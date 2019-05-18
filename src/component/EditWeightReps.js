@@ -26,7 +26,7 @@ export class EditWeightReps extends Component {
     state = {
         weightText: {},
         repsText: {},
-        top: height * 0.3,
+        top: height * 0.3
     };
 
     // keyboardDidShowHandler = () => {
@@ -113,34 +113,38 @@ export class EditWeightReps extends Component {
                                         }}>{index + 1}:</Text>
                                         <TextInput
                                             style={{...styles.weightTextInput, flex: 0.5}}
+                                            autoFocus={true}
                                             value={this.state.weightText[index]}
                                             placeholder="0-300 (KG)"
                                             defaultValue={item.weight || ""}
-                                            onChangeText={() => null
-                                                //     text => {
-                                                //     this.setState({
-                                                //         weightText: {
-                                                //             ...this.state.weightText,
-                                                //             [index]: text
-                                                //         }
-                                                //     })
-                                                // }
+                                            onChangeText={//阻止主动重新渲染
+                                                text => {
+                                                    setTimeout(() => {
+                                                        const weightText = JSON.parse(JSON.stringify(this.state.weightText));
+                                                        weightText[index] = text;
+                                                        this.setState({
+                                                            weightText
+                                                        })
+                                                    }, 100)
+                                                }
                                             }
                                         />
                                         <TextInput
                                             style={{...styles.weightTextInput, flex: 0.4}}
                                             value={this.state.repsText[index]}
+                                            // autoFocus={true}
                                             defaultValue={item.reps || ""}
                                             placeholder="0-50 reps"
-                                            onChangeText={() => null
-                                                //     text => {
-                                                //     this.setState({
-                                                //         repsText: {
-                                                //             ...this.state.repsText,
-                                                //             [index]: text
-                                                //         }
-                                                //     })
-                                                // }
+                                            onChangeText={
+                                                text => {
+                                                    setTimeout(() => {
+                                                        const repsText = JSON.parse(JSON.stringify(this.state.repsText));
+                                                        repsText[index] = text;
+                                                        this.setState({
+                                                            repsText
+                                                        })
+                                                    }, 100)
+                                                }
                                             }
                                         />
                                     </View>)
