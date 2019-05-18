@@ -11,10 +11,9 @@ export const accumulateExercisesData = ({list, todayNumber, todayDate, period}) 
                         sets += item.sets;
                     }
                     if (item.weightRepsDataArr?.length) {
-                        list[key].weightRepsDataArr.map((item, index) => {
-                            console.warn("item",item);
+                        item.weightRepsDataArr.map((item, index) => {
                             if (item.reps && item.weight) {
-                                reps += item.reps;
+                                reps += parseInt(item.reps);
                                 volume += item.reps * item.weight;
                             }
                         })

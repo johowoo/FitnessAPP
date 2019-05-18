@@ -177,9 +177,7 @@ const styles = StyleSheet.create({
     completeButton: {
         borderColor: "#fff",
         marginTop: 50,
-        // borderStyle: null,
         borderWidth: 1,
-
         height: 30,
         width: 90,
         marginLeft: 50,

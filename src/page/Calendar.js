@@ -36,8 +36,6 @@ export class _Calendar extends Component {
     render() {
         // console.log(this.state.displayExercisesList);
         // console.warn(this.props.markedDates);
-
-
         // console.warn("list", list);
         // console.warn(this.props.allExercisesList);
         return (

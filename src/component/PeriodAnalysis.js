@@ -40,33 +40,37 @@ class _PeriodAnalysis extends Component {
     handleSelect = (index, value) => {
         this.setState({selectedCategory: value, selectedIndex: index});
     };
-
-    handleConfirmPressed = () => {
+    handleSetData = (period) => {
         const todayDate = new Date();
         const todayDateYYYYMMDD = formatYYYYMMDDFromDate(todayDate);
+        const {sets, reps, volume, workouts} = accumulateExercisesData({
+            list: this.state.newAllExerciseList,
+            todayNumber: parseInt(todayDateYYYYMMDD, 10),
+            todayDate,
+            period: period,
+        });
+        this.setState({
+                sets, reps, volume, workouts
+            }
+        );
+    }
+    handleConfirmPressed = () => {
+
         switch (this.state.selectedIndex) {
             case 0:
-                const {sets, reps, volume, workouts} = accumulateExercisesData({
-                    list: this.state.newAllExerciseList,
-                    todayNumber: parseInt(todayDateYYYYMMDD, 10),
-                    todayDate,
-                    period: 7,
-                });
-                // console.warn(sets);
-                this.setState({
-                        sets, reps, volume, workouts
-                        // reps: this.state.newAllExerciseList[todayDateYYYYMMDD].weightRepsDataArr
-                    }
-                );
+                this.handleSetData( 1);
                 break;
             case 1:
-
+                this.handleSetData( 7);
                 break;
             case 2:
+                this.handleSetData( 30);
                 break;
             case 3:
+                this.handleSetData( 180);
                 break;
             case 4:
+                this.handleSetData( 365);
                 break;
             default:
         }
@@ -120,7 +124,7 @@ class _PeriodAnalysis extends Component {
                     </View>
                     <View style={styles.textLine}>
                         <Text style={styles.textTerm}>Workouts:{this.state.workouts}</Text>
-                        <Text style={styles.textTerm}>Volume:{this.state.volume}</Text>
+                        <Text style={styles.textTerm}>Volume:{this.state.volume} KG</Text>
                     </View>
                 </View>
             </View>
