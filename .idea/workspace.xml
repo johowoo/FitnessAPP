@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd580928-bb60-480d-8b73-7c94df331487" name="Default Changelist" comment="" />
+    <list default="true" id="fd580928-bb60-480d-8b73-7c94df331487" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/component/EditWeightReps.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/EditWeightReps.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -49,10 +51,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/component/EditWeightReps.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41">
-              <caret line="137" column="58" selection-start-line="137" selection-start-column="58" selection-end-line="137" selection-end-column="58" />
+            <state relative-caret-position="463">
+              <caret line="87" column="39" lean-forward="true" selection-start-line="87" selection-start-column="39" selection-end-line="87" selection-end-column="39" />
               <folding>
                 <element signature="e#0#190#0" expanded="true" />
+                <element signature="e#4268#5464#0" />
               </folding>
             </state>
           </provider>
@@ -359,14 +362,16 @@
       <workItem from="1558142981018" duration="502000" />
       <workItem from="1558143728807" duration="8937000" />
       <workItem from="1558171106691" duration="3630000" />
+      <workItem from="1558216718722" duration="1547000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181802000" />
+    <option name="totallyTimeSpent" value="183349000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="947" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15961306" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -382,7 +387,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="RNConsole" order="8" />
       <window_info anchor="bottom" id="CSS-X-Fire" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4996979" visible="true" weight="0.36219513" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4996979" visible="true" weight="0.28902438" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50030214" side_tool="true" weight="0.03640777" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.71707314" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
@@ -772,10 +777,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/EditWeightReps.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="137" column="58" selection-start-line="137" selection-start-column="58" selection-end-line="137" selection-end-column="58" />
+        <state relative-caret-position="463">
+          <caret line="87" column="39" lean-forward="true" selection-start-line="87" selection-start-column="39" selection-end-line="87" selection-end-column="39" />
           <folding>
             <element signature="e#0#190#0" expanded="true" />
+            <element signature="e#4268#5464#0" />
           </folding>
         </state>
       </provider>

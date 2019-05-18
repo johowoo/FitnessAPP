@@ -85,7 +85,7 @@ export class EditWeightReps extends Component {
                             }}>
                             Please edit the weight and rep numbers of these sets:
                         </Text>
-                        <ScrollView style={{height: 160}}>
+                        <ScrollView style={{height: 160}} keyboardShouldPersistTaps={'always'}>
                             <Text
                                 style={{
                                     color: "#66666f",
@@ -110,7 +110,7 @@ export class EditWeightReps extends Component {
                                         <TextInput
                                             style={{...styles.weightTextInput, flex: 0.5}}
                                             // autoFocus={true}
-                                            value={this.state.weightText[index]}
+                                            value={this.state[`weightText${index}`]}
                                             placeholder="0-300 (KG)"
                                             defaultValue={item.weight || ""}
                                             onChangeText={//阻止主动重新渲染
@@ -119,7 +119,7 @@ export class EditWeightReps extends Component {
                                                         const weightText = JSON.parse(JSON.stringify(this.state.weightText));
                                                         weightText[index] = text;
                                                         this.setState({
-                                                            weightText
+                                                            [`weightText${index}`]: text
                                                         })
                                                     }, 100)
                                                 }
