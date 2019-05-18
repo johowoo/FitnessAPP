@@ -19,8 +19,6 @@ export const accumulateExercisesData = ({list, todayNumber, todayDate, period}) 
                         })
                     }
                 });
-
-
             }
         }
     }

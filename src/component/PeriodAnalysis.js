@@ -38,10 +38,10 @@ class _PeriodAnalysis extends Component {
     };
 
     handleSelect = (index, value) => {
-        // console.warn(index);
         this.setState({selectedCategory: value, selectedIndex: index});
     };
     handleSetData = (period) => {
+        // console.warn("period", period);
         const todayDate = new Date();
         const todayDateYYYYMMDD = formatYYYYMMDDFromDate(todayDate);
         const {sets, reps, volume, workouts} = accumulateExercisesData({
@@ -56,18 +56,18 @@ class _PeriodAnalysis extends Component {
         );
     };
     handleConfirmPressed = () => {
-        console.warn(this.state.selectedIndex);
+        // console.warn("enterConfirmPressed",this.state.selectedIndex);
         switch (this.state.selectedIndex) {
-            case 0:
+            case "0":
                 this.handleSetData(1);
                 break;
             case "1":
                 this.handleSetData(7);
                 break;
-            case 2:
+            case "2":
                 this.handleSetData(30);
                 break;
-            case 3:
+            case "3":
                 this.handleSetData(180);
                 break;
             case 4:
@@ -110,7 +110,7 @@ class _PeriodAnalysis extends Component {
                     <Text style={styles.analysisTitle}>Analysis</Text>
                     <ApslButton
                         style={[styles.confirmButton]}
-                        onPress={this.handleConfirmPressed}
+                        onPress={this.handleConfirmPressed.bind(this)}
                         children={
                             <Text key="confirm" style={{color: "#FF8c00", fontSize: 16}}>
                                 Confirm
