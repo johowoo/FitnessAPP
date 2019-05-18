@@ -49,29 +49,20 @@ class _PeriodAnalysis extends Component {
                 // console.warn(today.getDate());
                 console.warn(this.state.newAllExerciseList[todayDateYYYYMMDD]);
                 this.setState({
-                    // reps: this.state.newAllExerciseList[todayDateYYYYMMDD].weightRepsDataArr
+                        // reps: this.state.newAllExerciseList[todayDateYYYYMMDD].weightRepsDataArr
+                    }
+                );
+                break;
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            default:
         }
-    )
-        ;
-        break;
-    case
-        1
-    :
-        break;
-    case
-        2
-    :
-        break;
-    case
-        3
-    :
-        break;
-    case
-        4
-    :
-        break;
-    default:
-    }
     };
 
     render() {
