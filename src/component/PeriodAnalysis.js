@@ -4,6 +4,7 @@ import ModalDropdown from "react-native-modal-dropdown";
 import {connect} from 'react-redux';
 import ApslButton from "apsl-react-native-button";
 import {formatYYYYMMDDFromDate} from "../utils/formatMonthandDay";
+import {accumulateExercisesData} from "../utils/accumulateExercisesData";
 
 const {width} = Dimensions.get("window");
 
@@ -21,12 +22,12 @@ class _PeriodAnalysis extends Component {
     };
 
     componentDidMount() {
-        const list = JSON.parse(JSON.stringify(this.props.allExercisesList));
+        this.state.list = JSON.parse(JSON.stringify(this.props.allExercisesList));
         const newAllExerciseList = {};
-        for (let key in list) {
-            if (list.hasOwnProperty(key)) {
+        for (let key in this.state.list) {
+            if (this.state.list.hasOwnProperty(key)) {
                 let tmpKey = key.replace(/-/g, '');
-                newAllExerciseList[tmpKey] = list[key];
+                newAllExerciseList[tmpKey] = this.state.list[key];
             }
         }
         this.setState({newAllExerciseList});
@@ -43,17 +44,23 @@ class _PeriodAnalysis extends Component {
     handleConfirmPressed = () => {
         const todayDate = new Date();
         const todayDateYYYYMMDD = formatYYYYMMDDFromDate(todayDate);
-
         switch (this.state.selectedIndex) {
             case 0:
-                // console.warn(today.getDate());
-                console.warn(this.state.newAllExerciseList[todayDateYYYYMMDD]);
+                const {sets, reps, volume, workouts} = accumulateExercisesData({
+                    list: this.state.newAllExerciseList,
+                    todayNumber: parseInt(todayDateYYYYMMDD, 10),
+                    todayDate,
+                    period: 7,
+                });
+                // console.warn(sets);
                 this.setState({
+                        sets, reps, volume, workouts
                         // reps: this.state.newAllExerciseList[todayDateYYYYMMDD].weightRepsDataArr
                     }
                 );
                 break;
             case 1:
+
                 break;
             case 2:
                 break;
@@ -66,10 +73,8 @@ class _PeriodAnalysis extends Component {
     };
 
     render() {
-
         //convert date from 2019-05-19 to 20190519 and then convert to number
         // so that these dates can be compared easily
-
         return (
             <View style={styles.wholeContainer}>
                 <View style={styles.dropdownContainer}>
