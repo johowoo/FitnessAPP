@@ -18,9 +18,9 @@ const {width, height} = Dimensions.get("window");
 export class EditWeightReps extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            keyboardAvoidingViewKey: 'keyboardAvoidingViewKey',
-        }
+        // this.state = {
+        //     keyboardAvoidingViewKey: 'keyboardAvoidingViewKey',
+        // }
     }
 
     state = {
@@ -29,29 +29,30 @@ export class EditWeightReps extends Component {
         top: height * 0.3,
     };
 
-    keyboardDidShowHandler = () => {
-        this.setState({
-            top: height * 0.2,
-        });
-    };
+    // keyboardDidShowHandler = () => {
+    //     this.setState({
+    //         top: height * 0.2,
+    //     });
+    // };
 
     componentDidMount() {
         // this.keyboardDidShowListener = Keyboard.addListener(
         //     "keyboardDidShow",
         //     this.keyboardDidShowHandler.bind(this)
         // );
-        this.keyboardHideListener = Keyboard.addListener(Platform.OS === 'android' ? 'keyboardDidHide' : 'keyboardWillHide', this.keyboardHideListener.bind(this));
+        // this.keyboardHideListener = Keyboard.addListener(Platform.OS === 'android' ? 'keyboardDidHide' : 'keyboardWillHide', this.keyboardHideListener.bind(this));
     }
 
     componentWillUnmount() {
-        this.keyboardHideListener.remove()
+        //     this.keyboardHideListener.remove()
+        // }
     }
 
-    keyboardHideListener() {
-        this.setState({
-            keyboardAvoidingViewKey: 'keyboardAvoidingViewKey' + new Date().getTime()
-        });
-    }
+    // keyboardHideListener() {
+    //     // this.setState({
+    //     //     keyboardAvoidingViewKey: 'keyboardAvoidingViewKey' + new Date().getTime()
+    //     // });
+    // }
 
     componentWillMount() {
         const weightTextTmp = {};
@@ -71,7 +72,7 @@ export class EditWeightReps extends Component {
         for (let i = newWeightRepsDataArr.length; i < this.props.sets; i++) {
             newWeightRepsDataArr.push({weight: 0, reps: 0});
         }
-        let {keyboardAvoidingViewKey} = this.state;
+        // let {keyboardAvoidingViewKey} = this.state;
         return (
             <Modal
                 visible={this.props.showEditWeightReps}
@@ -180,11 +181,8 @@ export class EditWeightReps extends Component {
 const styles = StyleSheet.create({
     modalOuterContainer: {
         flex: 1,
-        // justifyContent: 'center',
-        // alignItems: 'center',
         position: "absolute",
         left: width * 0.148,
-        // top: this.state.top,
         backgroundColor: "rgba(0, 0, 0, 0.3)",
         borderRadius: 8,
     },

@@ -54,7 +54,7 @@ class _PeriodAnalysis extends Component {
         // console.warn("enterConfirmPressed",this.state.selectedIndex);
         switch (parseInt(this.state.selectedIndex)) {
             case 0:
-                this.handleSetData(1);
+                this.handleSetData(0);
                 break;
             case 1:
                 this.handleSetData(7);
