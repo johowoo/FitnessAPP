@@ -114,7 +114,7 @@ export class EditWeightReps extends Component {
                                             style={{...styles.weightTextInput, flex: 0.5}}
                                             value={this.state.weightText[index]}
                                             placeholder="0-300 (KG)"
-                                            defaultValue={item.weight}
+                                            defaultValue={item.weight || ""}
                                             onChangeText={text => {
                                                 this.setState({
                                                     weightText: {
@@ -127,7 +127,7 @@ export class EditWeightReps extends Component {
                                         <TextInput
                                             style={{...styles.weightTextInput, flex: 0.4}}
                                             value={this.state.repsText[index]}
-                                            defaultValue={item.reps}
+                                            defaultValue={item.reps || ""}
                                             placeholder="0-50 reps"
                                             onChangeText={text => {
                                                 this.setState({
