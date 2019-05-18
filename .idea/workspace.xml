@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd580928-bb60-480d-8b73-7c94df331487" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/component/EditWeightReps.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/EditWeightReps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/component/PeriodAnalysis.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="108">
-              <caret line="65" column="40" lean-forward="true" selection-start-line="65" selection-start-column="40" selection-end-line="65" selection-end-column="40" />
+            <state relative-caret-position="574">
+              <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -48,7 +48,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/EditWeightReps.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="326">
@@ -94,7 +94,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>didhide</find>
       <find>keyboard</find>
       <find>top</find>
       <find>Adddrop</find>
@@ -124,6 +123,7 @@
       <find>warn</find>
       <find>edit</find>
       <find>console.warn</find>
+      <find>change</find>
     </findStrings>
     <replaceStrings>
       <replace>expo</replace>
@@ -183,8 +183,8 @@
         <option value="$PROJECT_DIR$/src/page/Calendar.js" />
         <option value="$PROJECT_DIR$/src/page/CurrentWorkout.js" />
         <option value="$PROJECT_DIR$/src/utils/accumulateExercisesData.js" />
-        <option value="$PROJECT_DIR$/src/component/PeriodAnalysis.js" />
         <option value="$PROJECT_DIR$/src/component/EditWeightReps.js" />
+        <option value="$PROJECT_DIR$/src/component/PeriodAnalysis.js" />
       </list>
     </option>
   </component>
@@ -359,12 +359,12 @@
       <workItem from="1558062637818" duration="961000" />
       <workItem from="1558075754440" duration="5491000" />
       <workItem from="1558142981018" duration="502000" />
-      <workItem from="1558143728807" duration="5231000" />
+      <workItem from="1558143728807" duration="5763000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="174466000" />
+    <option name="totallyTimeSpent" value="174998000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="947" extended-state="0" />
@@ -762,22 +762,22 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/PeriodAnalysis.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="108">
-          <caret line="65" column="40" lean-forward="true" selection-start-line="65" selection-start-column="40" selection-end-line="65" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/EditWeightReps.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="326">
           <caret line="75" column="16" lean-forward="true" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
           <folding>
             <element signature="e#0#190#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/PeriodAnalysis.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="574">
+          <caret line="14" column="31" lean-forward="true" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>

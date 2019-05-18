@@ -116,28 +116,32 @@ export class EditWeightReps extends Component {
                                             value={this.state.weightText[index]}
                                             placeholder="0-300 (KG)"
                                             defaultValue={item.weight || ""}
-                                            onChangeText={text => {
-                                                this.setState({
-                                                    weightText: {
-                                                        ...this.state.weightText,
-                                                        [index]: text
-                                                    }
-                                                })
-                                            }}
+                                            onChangeText={() => null
+                                                //     text => {
+                                                //     this.setState({
+                                                //         weightText: {
+                                                //             ...this.state.weightText,
+                                                //             [index]: text
+                                                //         }
+                                                //     })
+                                                // }
+                                            }
                                         />
                                         <TextInput
                                             style={{...styles.weightTextInput, flex: 0.4}}
                                             value={this.state.repsText[index]}
                                             defaultValue={item.reps || ""}
                                             placeholder="0-50 reps"
-                                            onChangeText={text => {
-                                                this.setState({
-                                                    repsText: {
-                                                        ...this.state.repsText,
-                                                        [index]: text
-                                                    }
-                                                })
-                                            }}
+                                            onChangeText={() => null
+                                                //     text => {
+                                                //     this.setState({
+                                                //         repsText: {
+                                                //             ...this.state.repsText,
+                                                //             [index]: text
+                                                //         }
+                                                //     })
+                                                // }
+                                            }
                                         />
                                     </View>)
                                 // }
