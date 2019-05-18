@@ -36,6 +36,8 @@ export class EditWeightReps extends Component {
     // };
 
     componentDidMount() {
+        // for (let i = 0; i <this.props.) {
+        // }
         // this.keyboardDidShowListener = Keyboard.addListener(
         //     "keyboardDidShow",
         //     this.keyboardDidShowHandler.bind(this)
@@ -47,12 +49,6 @@ export class EditWeightReps extends Component {
         //     this.keyboardHideListener.remove()
         // }
     }
-
-    // keyboardHideListener() {
-    //     // this.setState({
-    //     //     keyboardAvoidingViewKey: 'keyboardAvoidingViewKey' + new Date().getTime()
-    //     // });
-    // }
 
     componentWillMount() {
         const weightTextTmp = {};
@@ -113,7 +109,7 @@ export class EditWeightReps extends Component {
                                         }}>{index + 1}:</Text>
                                         <TextInput
                                             style={{...styles.weightTextInput, flex: 0.5}}
-                                            autoFocus={true}
+                                            // autoFocus={true}
                                             value={this.state.weightText[index]}
                                             placeholder="0-300 (KG)"
                                             defaultValue={item.weight || ""}
