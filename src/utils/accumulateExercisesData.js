@@ -1,7 +1,7 @@
 export const accumulateExercisesData = ({list, todayNumber, todayDate, period}) => {
     let reps = 0, sets = 0, workouts = 0, volume = 0;
     // const todayNumber = parseInt(todayNumber, 10);
-    const startDateNumber = calculateStartDate({today: todayDate, period: 30});
+    const startDateNumber = calculateStartDate({today: todayDate, period});
     for (let key in list) {
         if (list.hasOwnProperty(key)) {
             if (belongToRange({startDateNumber, todayNumber, key})) {

@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fd580928-bb60-480d-8b73-7c94df331487" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/src/component/PeriodAnalysis.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/PeriodAnalysis.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/Calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Calendar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/CurrentWorkout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/CurrentWorkout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/accumulateExercisesData.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/accumulateExercisesData.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -42,8 +39,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/component/PeriodAnalysis.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="71" column="49" selection-start-line="71" selection-start-column="49" selection-end-line="71" selection-end-column="49" />
+            <state relative-caret-position="241">
+              <caret line="63" column="20" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -93,7 +90,6 @@
       <find>keyboard</find>
       <find>top</find>
       <find>Adddrop</find>
-      <find>select</find>
       <find>onselect</find>
       <find>dropdown</find>
       <find>history</find>
@@ -117,6 +113,7 @@
       <find>volum</find>
       <find>console.warn</find>
       <find>warn</find>
+      <find>select</find>
     </findStrings>
     <replaceStrings>
       <replace>expo</replace>
@@ -340,12 +337,12 @@
       <workItem from="1558062637818" duration="961000" />
       <workItem from="1558075754440" duration="5491000" />
       <workItem from="1558142981018" duration="502000" />
-      <workItem from="1558143728807" duration="2549000" />
+      <workItem from="1558143728807" duration="2799000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171784000" />
+    <option name="totallyTimeSpent" value="172034000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="947" extended-state="0" />
@@ -757,8 +754,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/PeriodAnalysis.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="71" column="49" selection-start-line="71" selection-start-column="49" selection-end-line="71" selection-end-column="49" />
+        <state relative-caret-position="241">
+          <caret line="63" column="20" selection-start-line="63" selection-start-column="20" selection-end-line="63" selection-end-column="20" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

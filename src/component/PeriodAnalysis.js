@@ -38,6 +38,7 @@ class _PeriodAnalysis extends Component {
     };
 
     handleSelect = (index, value) => {
+        // console.warn(index);
         this.setState({selectedCategory: value, selectedIndex: index});
     };
     handleSetData = (period) => {
@@ -53,24 +54,24 @@ class _PeriodAnalysis extends Component {
                 sets, reps, volume, workouts
             }
         );
-    }
+    };
     handleConfirmPressed = () => {
-
+        console.warn(this.state.selectedIndex);
         switch (this.state.selectedIndex) {
             case 0:
-                this.handleSetData( 1);
+                this.handleSetData(1);
                 break;
-            case 1:
-                this.handleSetData( 7);
+            case "1":
+                this.handleSetData(7);
                 break;
             case 2:
-                this.handleSetData( 30);
+                this.handleSetData(30);
                 break;
             case 3:
-                this.handleSetData( 180);
+                this.handleSetData(180);
                 break;
             case 4:
-                this.handleSetData( 365);
+                this.handleSetData(365);
                 break;
             default:
         }
