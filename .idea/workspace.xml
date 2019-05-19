@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="fd580928-bb60-480d-8b73-7c94df331487" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/AddDropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/AddDropdown.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/ExerciseList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/ExerciseList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/initialExercises.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/initialExercises.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actionTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/exercises.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/exercises.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/ReminderModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/ReminderModal.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -33,8 +29,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/component/ExerciseList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
-              <caret line="261" column="61" selection-start-line="261" selection-start-column="61" selection-end-line="261" selection-end-column="61" />
+            <state relative-caret-position="452">
+              <caret line="121" column="9" lean-forward="true" selection-start-line="121" selection-start-column="9" selection-end-line="121" selection-end-column="9" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
               </folding>
@@ -43,10 +39,25 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/component/ReminderModal.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1605">
+              <caret line="19" column="68" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="68" />
+              <caret line="32" column="53" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="53" />
+              <caret line="40" column="55" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="55" />
+              <caret line="43" column="58" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="58" />
+              <folding>
+                <element signature="e#0#135#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/store/reducers/exercises.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="7" column="29" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="29" />
+            <state relative-caret-position="571">
+              <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
               <folding>
                 <element signature="e#0#90#0" expanded="true" />
               </folding>
@@ -118,13 +129,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>length</find>
-      <find>allexer</find>
-      <find>kg</find>
-      <find>volum</find>
-      <find>select</find>
-      <find>handleselect</find>
-      <find>warn</find>
       <find>edit</find>
       <find>change</find>
       <find>_render</find>
@@ -136,11 +140,9 @@
       <find>delete</find>
       <find>reverse</find>
       <find>console.warn</find>
-      <find>renderItem</find>
       <find>apsl</find>
       <find>console.war</find>
       <find>Image</find>
-      <find>sectionlist</find>
       <find>addExerciseAction</find>
       <find>ADD_EXERCISE</find>
       <find>state.exercises.</find>
@@ -148,6 +150,15 @@
       <find>category</find>
       <find>display</find>
       <find>displayExercises</find>
+      <find>Section</find>
+      <find>SectionList</find>
+      <find>this.forece</find>
+      <find>sectionlist</find>
+      <find>section</find>
+      <find>force</find>
+      <find>renderItem</find>
+      <find>search</find>
+      <find>empty</find>
     </findStrings>
     <replaceStrings>
       <replace>expo</replace>
@@ -204,15 +215,15 @@
         <option value="$PROJECT_DIR$/src/component/EditWeightReps.js" />
         <option value="$PROJECT_DIR$/src/component/FooterComponent.js" />
         <option value="$PROJECT_DIR$/src/page/TabPage.js" />
-        <option value="$PROJECT_DIR$/src/component/ReminderModal.js" />
         <option value="$PROJECT_DIR$/src/page/DisplayPicture.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/progress.js" />
         <option value="$PROJECT_DIR$/src/page/Progress.js" />
         <option value="$PROJECT_DIR$/src/component/AddDropdown.js" />
         <option value="$PROJECT_DIR$/src/initialExercises.js" />
         <option value="$PROJECT_DIR$/src/store/actionTypes.js" />
-        <option value="$PROJECT_DIR$/src/store/reducers/exercises.js" />
         <option value="$PROJECT_DIR$/src/store/actions.js" />
+        <option value="$PROJECT_DIR$/src/store/reducers/exercises.js" />
+        <option value="$PROJECT_DIR$/src/component/ReminderModal.js" />
         <option value="$PROJECT_DIR$/src/component/ExerciseList.js" />
       </list>
     </option>
@@ -253,6 +264,12 @@
               <item name="FitnessAPP" type="b2602c69:ProjectViewProjectNode" />
               <item name="FitnessAPP" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FitnessAPP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FitnessAPP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="component" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FitnessAPP" type="b2602c69:ProjectViewProjectNode" />
@@ -378,12 +395,12 @@
       <workItem from="1558258411575" duration="3680000" />
       <workItem from="1558263897400" duration="30000" />
       <workItem from="1558302510752" duration="37000" />
-      <workItem from="1558302551886" duration="1868000" />
+      <workItem from="1558302551886" duration="3271000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203179000" />
+    <option name="totallyTimeSpent" value="204582000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="2440" height="947" extended-state="0" />
@@ -403,7 +420,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="RNConsole" order="8" />
       <window_info anchor="bottom" id="CSS-X-Fire" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4996979" visible="true" weight="0.085365854" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4996979" visible="true" weight="0.046341464" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50030214" side_tool="true" weight="0.03640777" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.71707314" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
@@ -682,16 +699,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/ReminderModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="34" column="53" selection-start-line="34" selection-start-column="40" selection-end-line="34" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#135#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/store/reducers/progress.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="533">
@@ -777,6 +784,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/reducers/exercises.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="571">
+          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+          <folding>
+            <element signature="e#0#90#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/store/actions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="328">
@@ -784,20 +801,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/reducers/exercises.js">
+    <entry file="file://$PROJECT_DIR$/src/component/ReminderModal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="7" column="29" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="29" />
+        <state relative-caret-position="1605">
+          <caret line="19" column="68" selection-start-line="19" selection-start-column="49" selection-end-line="19" selection-end-column="68" />
+          <caret line="32" column="53" selection-start-line="32" selection-start-column="40" selection-end-line="32" selection-end-column="53" />
+          <caret line="40" column="55" selection-start-line="40" selection-start-column="40" selection-end-line="40" selection-end-column="55" />
+          <caret line="43" column="58" selection-start-line="43" selection-start-column="41" selection-end-line="43" selection-end-column="58" />
           <folding>
-            <element signature="e#0#90#0" expanded="true" />
+            <element signature="e#0#135#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/ExerciseList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
-          <caret line="261" column="61" selection-start-line="261" selection-start-column="61" selection-end-line="261" selection-end-column="61" />
+        <state relative-caret-position="452">
+          <caret line="121" column="9" lean-forward="true" selection-start-line="121" selection-start-column="9" selection-end-line="121" selection-end-column="9" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
           </folding>

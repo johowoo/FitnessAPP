@@ -21,7 +21,7 @@ import {SearchBar} from "./SearchBar";
 import {fuzzySearch} from "../utils/fuzzySearch";
 import {AddDropdown} from "./AddDropdown";
 import {addExerciseAction, updateEmptyAction, addExerciseToSectionListAction} from "../store/actions";
-import {sectionExercises} from "../initialExercises";
+import {ReminderModal} from "./ReminderModal";
 
 const {width, height} = Dimensions.get("window");
 const isNotchScreen = height / width >= 18.5 / 9;
@@ -33,20 +33,19 @@ export class _ExerciseList extends PureComponent {
         this.state = {
             isAddingExercise: false,
             foundExercises: [],
-            displayExercises: [],
             addHintText: "add more exercises",
             setsModalVisible: false,
             selectedSets: 4,
             selectedExercise: "",
+            showReminderModal: false,
         };
     };
 
-    componentDidMount() {
+    handleCloseReminder = (bool) => {
         this.setState({
-            displayExercises: this.props.sectionExercises,
-        });
+            showReminderModal: bool
+        })
     };
-
     closeModal = () => {
         this.props.closeModal();
     };
@@ -80,7 +79,7 @@ export class _ExerciseList extends PureComponent {
     );
     handleSearch = text => {
         this.setState({
-            foundExercises: fuzzySearch(text, this.state.displayExercises, "data"),
+            foundExercises: fuzzySearch(text, this.props.sectionExercises, "data"),
         });
     };
     handleBlur = () => {
@@ -113,8 +112,30 @@ export class _ExerciseList extends PureComponent {
     };
 
     changeDisplayExercises = async ({category, item}) => {
-        await this.props.addExerciseToSectionList({category, item});
-        await this.forceUpdate();
+        if (!item) {
+            this.setState({
+                showReminderModal: true,
+                reminderTitle: "Empty",
+                reminderContent: "Please enter an exercise!"
+            });
+            return;
+        }
+        let errorFlag = false;
+        await this.props.sectionExercises.map((i, index) => {
+            if (i.data.includes(item)) {
+                errorFlag = true;
+                this.setState({
+                    showReminderModal: true,
+                    reminderTitle: "Exist",
+                    reminderContent: "Please enter another exercise!"
+                });
+            }
+        });
+        if (!errorFlag) {
+            await this.props.addExerciseToSectionList({category, item});
+            await this.forceUpdate();
+        }
+
     };
 
     // loadData = () => {
@@ -129,6 +150,7 @@ export class _ExerciseList extends PureComponent {
     // };
 
     render() {
+        console.warn(this.props.sectionExercises);
         return (
             <View style={{flex: 1, backgroundColor: "#eee"}}>
                 <LinearGradient
@@ -263,6 +285,13 @@ export class _ExerciseList extends PureComponent {
                     <View style={{flex: 1}}>
                     </View>
                 </TouchableHighlight>
+                {this.state.showReminderModal && <ReminderModal
+                    showReminderModal={this.state.showReminderModal}
+                    handleCloseReminder={this.handleCloseReminder}
+                    reminderTitle={this.state.reminderTitle}
+                    reminderContent={this.state.reminderContent}
+                    hideConfirmButton={true}
+                />}
             </View>
         );
     }

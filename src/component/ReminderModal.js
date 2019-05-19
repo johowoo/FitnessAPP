@@ -5,8 +5,6 @@ import {
     View,
     StyleSheet,
     Dimensions,
-    TextInput,
-    Keyboard,
 } from "react-native";
 import React, {Component} from "react";
 
