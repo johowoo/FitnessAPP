@@ -148,7 +148,7 @@ export class _Progress extends Component {
                                 size={25}
                                 color="white"
                                 key="add"
-                            /> : <Text style={{color: "#eee"}}>delete</Text>}
+                            /> : <Text style={{color: "#eee" ,fontSize:22}}>delete</Text>}
                         </TouchableOpacity>
                     </View>
                     <View style={{position: "absolute", right: 15}}>
