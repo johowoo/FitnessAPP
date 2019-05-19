@@ -4,6 +4,7 @@ import {
     Text,
     SectionList,
     TouchableHighlight,
+    TouchableOpacity,
     StyleSheet,
     ActivityIndicator,
     FlatList,
@@ -57,7 +58,18 @@ export class _ExerciseList extends PureComponent {
             }
             }>
             <View style={styles.listItem}>
-                <Text style={styles.listText}>{item}</Text>
+                <View style={{flex: 0.9}}>
+                    <Text style={styles.listText}>{item}</Text>
+                </View>
+                <View style={styles.deleteButtonView}>
+                    <TouchableOpacity
+                     onPress={()=>{
+
+                     }}>
+                        <Icon name="delete" size={24} color="#bbb" key="delete"/>
+                    </TouchableOpacity>
+                </View>
+
             </View>
         </TouchableHighlight>
     );
@@ -150,7 +162,6 @@ export class _ExerciseList extends PureComponent {
     // };
 
     render() {
-        console.warn(this.props.sectionExercises);
         return (
             <View style={{flex: 1, backgroundColor: "#eee"}}>
                 <LinearGradient
@@ -352,10 +363,12 @@ const styles = StyleSheet.create({
         marginLeft: 20,
     },
     listItem: {
+        flexDirection: 'row',
         borderBottomWidth: 0.5,
         borderBottomColor: "#aaa",
         height: 60,
         justifyContent: "center",
+        alignItems: "center",
     },
     listText: {
         fontSize: 20,
@@ -442,6 +455,11 @@ const styles = StyleSheet.create({
         marginRight: 15,
         marginBottom: 15,
     },
+    deleteButtonView:
+        {
+            flex: 0.1, height: 60,
+            paddingLeft: 40, paddingRight: 10, justifyContent: "center"
+        }
 });
 const dropdownStyles = StyleSheet.create({
     dropdownInput: {
