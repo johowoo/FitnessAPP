@@ -1,4 +1,4 @@
-import React, {Component, PureComponent} from "react";
+import React, {PureComponent} from "react";
 import {
     View,
     Text,
@@ -10,7 +10,6 @@ import {
     Dimensions,
     Button,
     Modal,
-    // Platform
 } from "react-native";
 import {connect} from "react-redux";
 import {LinearGradient} from "expo";
@@ -22,15 +21,10 @@ import {SearchBar} from "./SearchBar";
 import {fuzzySearch} from "../utils/fuzzySearch";
 import {AddDropdown} from "./AddDropdown";
 import {addExerciseAction, updateEmptyAction} from "../store/actions";
-import {FooterComponent} from "./FooterComponent";
 
 const {width, height} = Dimensions.get("window");
-
 const isNotchScreen = height / width >= 18.5 / 9;
-
 const ITEM_HEIGHT = 40;
-
-// let timer=null;
 
 export class _ExerciseList extends PureComponent {
     constructor(props) {
@@ -44,18 +38,17 @@ export class _ExerciseList extends PureComponent {
             selectedSets: 4,
             selectedExercise: "",
         };
-    }
+    };
 
     componentDidMount() {
         this.setState({
             displayExercises: this.props.sectionExercises,
         });
-    }
+    };
 
     closeModal = () => {
         this.props.closeModal();
     };
-
     _renderItem = ({item}) => (
         <TouchableHighlight
             // onPress={() => this.handlePress.call(this, item)}
@@ -68,13 +61,11 @@ export class _ExerciseList extends PureComponent {
             </View>
         </TouchableHighlight>
     );
-
     _renderSectionHeader = ({section}) => (
         <View style={styles.sectionHeader}>
             <Text style={styles.sectionHeaderText}>{section.category}</Text>
         </View>
     );
-
     _renderListFooter = () => (
         <View style={styles.indicatorContainer}>
             <ActivityIndicator
@@ -86,20 +77,17 @@ export class _ExerciseList extends PureComponent {
             <Text>Loading...</Text>
         </View>
     );
-
     handleSearch = text => {
         this.setState({
             foundExercises: fuzzySearch(text, this.state.displayExercises, "data"),
         });
     };
-
     handleBlur = () => {
         this.setState({
             foundExercises: [],
         });
     };
     onRefresh = () => {
-
     };
     handlePress = () => {
         this.props.updateEmpty(false);
@@ -108,9 +96,7 @@ export class _ExerciseList extends PureComponent {
             sets: this.state.selectedSets,
             time: new Date().getTime(),
         });
-        // this.props.closeModal();
     };
-
     handlePressAddExercise = () => {
         if (!this.state.isAddingExercise) {
             this.setState({
@@ -124,7 +110,6 @@ export class _ExerciseList extends PureComponent {
             });
         }
     };
-
     changeDisplayExercises({category, item}) {
         const cacheExercises = this.state.displayExercises;
         cacheExercises.map(value => {
@@ -136,8 +121,7 @@ export class _ExerciseList extends PureComponent {
             displayExercises: cacheExercises,
         });
         this.forceUpdate();
-    }
-
+    };
     loadData = () => {
         const newDisplayExercises = this.state.displayExercises.concat(
             this.props.extraSectionExercises
@@ -152,7 +136,6 @@ export class _ExerciseList extends PureComponent {
         return (
             <View style={{flex: 1, backgroundColor: "#eee"}}>
                 <LinearGradient
-                    // colors={['#87FC70', '#0BD318']}
                     colors={["#00FFFF", "#00CCCC"]}
                     start={{x: 0.0, y: 0.5}}
                     end={{x: 1.0, y: 0.5}}
@@ -223,9 +206,6 @@ export class _ExerciseList extends PureComponent {
                                             await this.handlePress.call(this);
                                             await this.setState({setsModalVisible: false});
                                             await this.props.closeModal();
-                                            // if (Platform.OS === 'android') {
-                                            //     this.props.closeModal();
-                                            // }
                                         }}
                                     />
                                 </View>
@@ -290,7 +270,6 @@ export class _ExerciseList extends PureComponent {
         );
     }
 }
-
 const mapStateToProps = state => ({
     isExerciseListEmpty: state.exerciseCompleted.isExerciseListEmpty,
 });
@@ -298,21 +277,11 @@ const mapActionToProps = dispatch => ({
     addExercise: exercise => dispatch(addExerciseAction(exercise)),
     updateEmpty: bool => dispatch(updateEmptyAction(bool)),
 });
-
 export const ExerciseList = connect(
     mapStateToProps,
     mapActionToProps
 )(_ExerciseList);
-
 const styles = StyleSheet.create({
-    // topBar: {
-    //     flexDirection: 'row',
-    //     flex: 1,
-    //     padding: 2,
-    //     height:100,
-    //     justifyContent: 'center',
-    //     alignItems: 'center'
-    // },
     linearGradientContainer: {
         height: isNotchScreen ? 100 : 65,
     },
@@ -408,7 +377,6 @@ const styles = StyleSheet.create({
         marginRight: width * 0.02,
         marginTop: 15,
         marginBottom: 20,
-
         borderWidth: 1,
         borderColor: "#FF8c00",
         justifyContent: "center",
@@ -429,7 +397,6 @@ const styles = StyleSheet.create({
     dropdownSelection: {
         backgroundColor: "#FF8c00",
     },
-
     quick: {
         backgroundColor: "red",
         flex: 1,
@@ -446,7 +413,6 @@ const styles = StyleSheet.create({
         marginBottom: 15,
     },
 });
-
 const dropdownStyles = StyleSheet.create({
     dropdownInput: {
         backgroundColor: "rgba(255,140,0,0.1)",

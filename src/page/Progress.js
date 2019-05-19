@@ -8,7 +8,7 @@ import {
     ScrollView,
     StyleSheet,
     FlatList,
-    TouchableWithoutFeedback, SectionList, ActivityIndicator,
+    SectionList,
 } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import {LinearGradient, Permissions} from "expo";
@@ -20,6 +20,7 @@ import {
     showProgressModal,
     showProgressPicker,
     changeTmpUriAction,
+    deletePicsFromProgressAction,
 } from "../store/actions";
 // import {FooterComponent} from "../component/FooterComponent";
 import {PickerCamera} from "../component/PickerCamera";
@@ -37,11 +38,9 @@ export class _Progress extends Component {
         const permission2 = await Permissions.getAsync(Permissions.CAMERA);
         if (permission1.status !== "granted") {
             const newPermission = await Permissions.askAsync(Permissions.CAMERA_ROLL);
-        } else {
         }
         if (permission2.status !== "granted") {
             const newPermission = await Permissions.askAsync(Permissions.CAMERA);
-        } else {
         }
     }
 
@@ -54,22 +53,29 @@ export class _Progress extends Component {
             photo: null,
             showModal: false,
             showDeleteButton: false,
+            selectTobeDeleted: []
         };
     }
 
     renderItem = props => {
-        // console.warn(props.index);
         return (
             <View style={styles.item}>
                 <TouchableOpacity
                     onPress={() => {
-                        props.navigation.navigate("DisplayPicture", {
-                            ...props.item,
-                            index: props.index,
-                        })
+                        if (this.state.showDeleteButton) {
+                            this.setState({
+                                selectTobeDeleted: [...this.state.selectTobeDeleted, props.item.date]
+                            });
+                        } else {
+                            props.navigation.navigate("DisplayPicture", {
+                                ...props.item,
+                                index: props.index,
+                            });
+                        }
                     }}>
                     <Image style={styles.image} source={{uri: props.item.photoURI}}/>
-                    {!this.state.showDeleteButton && <ApslButton
+                    {this.state.showDeleteButton && this.state.selectTobeDeleted.includes(props.item.date) &&
+                    <ApslButton
                         onPress={this.closeModal}
                         textStyle={{fontSize: 34, color: "#c69"}}
                         style={{position: "absolute", right: 0, top: -6, borderWidth: 0, borderRadius: 16}}
@@ -96,6 +102,7 @@ export class _Progress extends Component {
             addProgressPhotoDispatch,
             showProgressPickerDispatch,
             showProgressModalDispatch,
+            deletePicsFromProgress,
             showPicker,
             showModal,
             navigation,
@@ -111,7 +118,13 @@ export class _Progress extends Component {
                         <TouchableOpacity
                             style={{height: 25, width: 25, backgroundColor: "transparent"}}
                             // onPress={() => this.handleModal({showPicker: true})}
-                            onPress={() => this.setState({showDeleteButton: !this.state.showDeleteButton})}
+                            onPress={() => {
+                                if (this.state.showDeleteButton) {
+                                    deletePicsFromProgress(this.state.selectTobeDeleted);
+                                }
+                                this.setState({showDeleteButton: !this.state.showDeleteButton})
+                            }
+                            }
                             style={styles.plusButton}
                             textStyle={styles.plus}
                             title="+">
@@ -153,7 +166,7 @@ export class _Progress extends Component {
                         onEndReachedThreshol={0.2}
                         onRefresh={this.onRefresh}
                         refreshing={this.state.refreshing}
-                        extraData={this.state.showDeleteButton}
+                        extraData={this.state.showDeleteButton + this.state.selectTobeDeleted}
                     />
                     {showPicker && (
                         <PickerCamera
@@ -178,6 +191,9 @@ const mapStateToProps = state => ({
     tmpURI: state.progressModal.tmpURI,
 });
 const mapActionToProps = dispatch => ({
+    deletePicsFromProgress(data) {
+        dispatch(deletePicsFromProgressAction(data));
+    },
     addProgressPhotoDispatch(data) {
         dispatch(addProgressPhoto(data));
     },

@@ -36,3 +36,5 @@ export const deleteExerciseFromWorkoutListAction = data =>
     createAction(types.DELETE_EXERCISE_FROM_WORKOUTLIST)(data);
 export const updateWeightBFRFromProgressPicsAction = data =>
     createAction(types.UPDATE_WEIGHT_BFR_FROM_PROGRESS_PICS)(data);
+export const deletePicsFromProgressAction = data =>
+    createAction(types.DELETE_PICS_FROM_PROGRESS)(data);
