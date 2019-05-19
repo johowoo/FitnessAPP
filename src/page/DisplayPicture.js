@@ -12,36 +12,53 @@ import {
 import {LinearGradient} from "expo";
 import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 import {connect} from "react-redux";
+import {ReminderModal} from "../component/ReminderModal";
+
 
 const {width, height} = Dimensions.get("window");
 
 export class _DisplayPicture extends Component {
     constructor(props) {
         super(props);
-        this.state = {myText: "", index: 0};
+        this.state = {
+            index: 0,
+            reminderTitle: "",
+            reminderContent: "",
+            showReminder: false
+        };
     }
 
     onSwipeLeft(gestureState) {
-        if (this.state.index < this.props.progress.length-1) {
+        if (this.state.index < this.props.progress.length - 1) {
             this.setState({
-                myText: 'left!',
                 photoURI: this.props.progress[this.state.index + 1].photoURI,
                 weight: this.props.progress[this.state.index + 1].weight,
                 BFR: this.props.progress[this.state.index + 1].BFR,
                 index: this.state.index + 1,
             });
+        } else {
+            this.setState({
+                showReminder: true,
+                reminderTitle: "Last pic",
+                reminderContent: "You have already reached the last pic"
+            })
         }
     }
 
     onSwipeRight(gestureState) {
         if (this.state.index > 0) {
             this.setState({
-                myText: 'right!',
                 photoURI: this.props.progress[this.state.index - 1].photoURI,
                 weight: this.props.progress[this.state.index - 1].weight,
                 BFR: this.props.progress[this.state.index - 1].BFR,
                 index: this.state.index - 1,
             });
+        } else {
+            this.setState({
+                showReminder: true,
+                reminderTitle: "First pic",
+                reminderContent: "You have already reached the first pic"
+            })
         }
     }
 
@@ -56,6 +73,12 @@ export class _DisplayPicture extends Component {
         })
     }
 
+    handleCloseReminder = (bool = false) => {
+        this.setState({
+            showReminder: bool
+        })
+    };
+
     render() {
         // const this.state.values = this.props?.navigation?.state?.params;
         return (
@@ -65,9 +88,6 @@ export class _DisplayPicture extends Component {
                     <ScrollView>
                         <View style={styles.imageContainer}>
                             <Image style={styles.image} source={{uri: this.state.photoURI}}/>
-                        </View>
-                        <View>
-                            <Text>{this.state.myText}</Text>
                         </View>
                         <View style={styles.textContainer}>
                             <View style={styles.textInnerContainer}>
@@ -85,6 +105,12 @@ export class _DisplayPicture extends Component {
                         </View>
                     </ScrollView>
                 </GestureRecognizer>
+                {this.state.showReminder && <ReminderModal
+                    reminderTitle={this.state.reminderTitle}
+                    reminderContent={this.state.reminderContent}
+                    handleCloseReminder={this.handleCloseReminder}
+                    hideConfirmButton={true}/>
+                }
             </LinearGradient>
         );
     }
@@ -95,16 +121,12 @@ const mapStateToProps = state => ({
     weightData: state.health.weightData,
     progress: state.progress,
 });
-const mapActionToProps = dispatch => ({
-    updateWeightData(data) {
-    },
-    updateBfrData(data) {
-    },
-});
+// const mapActionToProps = dispatch => ({
+// });
 
 export const DisplayPicture = connect(
     mapStateToProps,
-    mapActionToProps
+    null
 )(_DisplayPicture);
 const styles = StyleSheet.create({
     topBar: {

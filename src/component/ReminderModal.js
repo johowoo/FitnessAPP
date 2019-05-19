@@ -43,14 +43,14 @@ export class ReminderModal extends Component {
                         }}> {this.props.reminderContent}</Text>
                         <View
                             style={{flexDirection: "row", justifyContent: "space-around"}}>
-                            <View style={styles.modalButtonContainer}>
+                            {!this.props.hideConfirmButton && <View style={styles.modalButtonContainer}>
                                 <Button
                                     style={styles.modalButton}
                                     color="#00ffcc"
                                     title="Confirm"
-                                    onPress={this.props.handleConfirm}
+                                    onPress={this.props.handleConfirm || this.props.handleCloseReminder}
                                 />
-                            </View>
+                            </View>}
                             <View style={styles.modalButtonContainer}>
                                 <Button
                                     color="#00ffcc"
