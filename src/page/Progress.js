@@ -101,6 +101,7 @@ export class _Progress extends Component {
             navigation,
             changeTmpUri,
         } = this.props;
+
         return (
             <LinearGradient colors={["#1b98d9", "#57c5b8"]} style={{flex: 1}}>
                 <TopBar style={styles.topBar}>
@@ -110,7 +111,7 @@ export class _Progress extends Component {
                         <TouchableOpacity
                             style={{height: 25, width: 25, backgroundColor: "transparent"}}
                             // onPress={() => this.handleModal({showPicker: true})}
-                            onPress={() => this.setState({showDeleteButton:!this.state.showDeleteButton})}
+                            onPress={() => this.setState({showDeleteButton: !this.state.showDeleteButton})}
                             style={styles.plusButton}
                             textStyle={styles.plus}
                             title="+">
@@ -142,7 +143,7 @@ export class _Progress extends Component {
                 <ScrollView ref={ref => (this.scrollView = ref)}>
                     <View style={{marginTop: 5}}/>
                     <FlatList
-                        data={progress.reverse()}
+                        data={progress}
                         style={styles.container}
                         renderItem={props => this.renderItem({...props, navigation})}
                         numColumns={numColumns}
@@ -152,6 +153,7 @@ export class _Progress extends Component {
                         onEndReachedThreshol={0.2}
                         onRefresh={this.onRefresh}
                         refreshing={this.state.refreshing}
+                        extraData={this.state.showDeleteButton}
                     />
                     {showPicker && (
                         <PickerCamera
@@ -170,7 +172,7 @@ export class _Progress extends Component {
 }
 
 const mapStateToProps = state => ({
-    progress: state.progress,
+    progress: state.progress.reverse(),
     showPicker: state.progressModal.showPicker,
     showModal: state.progressModal.showModal,
     tmpURI: state.progressModal.tmpURI,
