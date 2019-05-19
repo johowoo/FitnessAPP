@@ -4,8 +4,6 @@ import {
     Text,
     StyleSheet,
     Dimensions,
-    Button,
-    TouchableOpacity,
     ScrollView,
     Image,
 } from "react-native";
@@ -13,7 +11,6 @@ import {LinearGradient} from "expo";
 import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 import {connect} from "react-redux";
 import {ReminderModal} from "../component/ReminderModal";
-
 
 const {width, height} = Dimensions.get("window");
 
@@ -121,8 +118,6 @@ const mapStateToProps = state => ({
     weightData: state.health.weightData,
     progress: state.progress,
 });
-// const mapActionToProps = dispatch => ({
-// });
 
 export const DisplayPicture = connect(
     mapStateToProps,

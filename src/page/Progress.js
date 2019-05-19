@@ -21,8 +21,9 @@ import {
     showProgressPicker,
     changeTmpUriAction,
 } from "../store/actions";
-import {FooterComponent} from "../component/FooterComponent";
+// import {FooterComponent} from "../component/FooterComponent";
 import {PickerCamera} from "../component/PickerCamera";
+import ApslButton from "apsl-react-native-button";
 
 // import {createStackNavigator, createAppContainer} from "react-navigation";
 
@@ -44,18 +45,6 @@ export class _Progress extends Component {
         }
     }
 
-    _renderListFooter = () => (
-        <View style={styles.indicatorContainer}>
-            <ActivityIndicator
-                style={styles.indicator}
-                size="large"
-                animating
-                color="#c69"
-            />
-            <Text>Loading...</Text>
-        </View>
-    );
-
     constructor(props) {
         super(props);
         this.state = {
@@ -64,6 +53,7 @@ export class _Progress extends Component {
             isAddingBFR: false,
             photo: null,
             showModal: false,
+            showDeleteButton: false,
         };
     }
 
@@ -79,6 +69,12 @@ export class _Progress extends Component {
                         })
                     }}>
                     <Image style={styles.image} source={{uri: props.item.photoURI}}/>
+                    {!this.state.showDeleteButton && <ApslButton
+                        onPress={this.closeModal}
+                        textStyle={{fontSize: 34, color: "#c69"}}
+                        style={{position: "absolute", right: 0, top: -6, borderWidth: 0, borderRadius: 16}}
+                        children={<Icon name="check-circle" size={34} color={"rgba(204,51,51,0.9)"} key="cancel"/>}
+                    />}
                 </TouchableOpacity>
             </View>
         );
@@ -110,6 +106,22 @@ export class _Progress extends Component {
                 <TopBar style={styles.topBar}>
                     {/* {this.props.fontLoaded ? <Text style={styles.textBar}>Progress</Text> : null} */}
                     <Text style={styles.textBar}>Progress</Text>
+                    <View style={{position: "absolute", left: 15}}>
+                        <TouchableOpacity
+                            style={{height: 25, width: 25, backgroundColor: "transparent"}}
+                            // onPress={() => this.handleModal({showPicker: true})}
+                            onPress={() => this.setState({showDeleteButton:!this.state.showDeleteButton})}
+                            style={styles.plusButton}
+                            textStyle={styles.plus}
+                            title="+">
+                            {!this.state.showDeleteButton ? <Icon
+                                name={"remove"}
+                                size={25}
+                                color="white"
+                                key="add"
+                            /> : <Text style={{color: "#eee"}}>delete</Text>}
+                        </TouchableOpacity>
+                    </View>
                     <View style={{position: "absolute", right: 15}}>
                         <TouchableOpacity
                             style={{height: 25, width: 25, backgroundColor: "transparent"}}
