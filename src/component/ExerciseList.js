@@ -21,7 +21,12 @@ import {TopBar} from "./TopBar";
 import {SearchBar} from "./SearchBar";
 import {fuzzySearch} from "../utils/fuzzySearch";
 import {AddDropdown} from "./AddDropdown";
-import {addExerciseAction, updateEmptyAction, addExerciseToSectionListAction} from "../store/actions";
+import {
+    addExerciseAction,
+    updateEmptyAction,
+    addExerciseToSectionListAction,
+    deleteExerciseFromSectionListAction
+} from "../store/actions";
 import {ReminderModal} from "./ReminderModal";
 
 const {width, height} = Dimensions.get("window");
@@ -63,13 +68,13 @@ export class _ExerciseList extends PureComponent {
                 </View>
                 <View style={styles.deleteButtonView}>
                     <TouchableOpacity
-                     onPress={()=>{
-
-                     }}>
+                        onPress={() => {
+                            // console.warn("item", item);
+                            // this.props.deleteExerciseFromSectionList({item})
+                        }}>
                         <Icon name="delete" size={24} color="#bbb" key="delete"/>
                     </TouchableOpacity>
                 </View>
-
             </View>
         </TouchableHighlight>
     );
@@ -310,12 +315,14 @@ export class _ExerciseList extends PureComponent {
 
 const mapStateToProps = state => ({
     isExerciseListEmpty: state.exerciseCompleted.isExerciseListEmpty,
-    sectionExercises: state.exercises.sectionExercises
+    sectionExercises: state.exercises.sectionExercises,
 });
 const mapActionToProps = dispatch => ({
         addExercise: exercise => dispatch(addExerciseAction(exercise)),
         updateEmpty: bool => dispatch(updateEmptyAction(bool)),
-        addExerciseToSectionList: data => dispatch(addExerciseToSectionListAction(data))
+        addExerciseToSectionList: data => dispatch(addExerciseToSectionListAction(data)),
+        deleteExerciseFromSectionList: data => dispatch(deleteExerciseFromSectionListAction(data))
+
     })
 ;
 export const ExerciseList = connect(

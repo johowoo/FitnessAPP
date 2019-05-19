@@ -9,6 +9,8 @@ export const addExerciseAction = exercise =>
 
 export const addExerciseToSectionListAction = exercise =>
     createAction(types.ADD_EXERCISE_TO_SECTIONLIST)(exercise);
+export const deleteExerciseFromSectionListAction = exercise =>
+    createAction(types.DELETE_EXERCISE_FROM_SECTIONLIST)(exercise);
 
 export const clearCurrentWorkoutAction = () =>
     createAction(types.CLEAR_CURRENT_WORKOUT)();
