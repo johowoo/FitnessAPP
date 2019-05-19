@@ -7,6 +7,9 @@ export const setExerciseModalVisibility = visible =>
 export const addExerciseAction = exercise =>
     createAction(types.ADD_EXERCISE)(exercise);
 
+export const addExerciseToSectionListAction = exercise =>
+    createAction(types.ADD_EXERCISE_TO_SECTIONLIST)(exercise);
+
 export const clearCurrentWorkoutAction = () =>
     createAction(types.CLEAR_CURRENT_WORKOUT)();
 export const updateEmptyAction = bool => createAction(types.UPDATE_EMPTY)(bool);

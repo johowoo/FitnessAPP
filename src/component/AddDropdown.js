@@ -21,7 +21,7 @@ export class AddDropdown extends Component {  //eslint-disable-line
     };
 
     handlePress = () => {
-        this.props.handleConfirmPressed();
+        this.props.handleConfirmPressed && this.props.handleConfirmPressed();
         this.props.handleConfirm({
             item: this.state.inputText,
             category: this.state.category,

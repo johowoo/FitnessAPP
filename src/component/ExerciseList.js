@@ -20,7 +20,8 @@ import {TopBar} from "./TopBar";
 import {SearchBar} from "./SearchBar";
 import {fuzzySearch} from "../utils/fuzzySearch";
 import {AddDropdown} from "./AddDropdown";
-import {addExerciseAction, updateEmptyAction} from "../store/actions";
+import {addExerciseAction, updateEmptyAction, addExerciseToSectionListAction} from "../store/actions";
+import {sectionExercises} from "../initialExercises";
 
 const {width, height} = Dimensions.get("window");
 const isNotchScreen = height / width >= 18.5 / 9;
@@ -110,28 +111,23 @@ export class _ExerciseList extends PureComponent {
             });
         }
     };
-    changeDisplayExercises({category, item}) {
-        const cacheExercises = this.state.displayExercises;
-        cacheExercises.map(value => {
-            if (value.category === category) {
-                value.data.push(item);
-            }
-        });
-        this.setState({
-            displayExercises: cacheExercises,
-        });
-        this.forceUpdate();
+
+    changeDisplayExercises = async ({category, item}) => {
+        await this.props.addExerciseToSectionList({category, item});
+        await this.forceUpdate();
     };
-    loadData = () => {
-        const newDisplayExercises = this.state.displayExercises.concat(
-            this.props.extraSectionExercises
-        );
-        // timer =setTimeout(() => {
-        this.setState({
-            displayExercises: newDisplayExercises,
-        });
-        // }, 2000)
-    };
+
+    // loadData = () => {
+    //     const newDisplayExercises = this.state.displayExercises.concat(
+    //         this.props.extraSectionExercises
+    //     );
+    //     // timer =setTimeout(() => {
+    //     this.setState({
+    //         displayExercises: newDisplayExercises,
+    //     });
+    //     // }, 2000)
+    // };
+
     render() {
         return (
             <View style={{flex: 1, backgroundColor: "#eee"}}>
@@ -254,12 +250,13 @@ export class _ExerciseList extends PureComponent {
                     </TouchableHighlight>
                 ) : (
                     <SectionList
-                        sections={this.state.displayExercises}
+                        sections={this.props.sectionExercises}
                         renderItem={data => this._renderItem(data)}
                         renderSectionHeader={data => this._renderSectionHeader(data)}
                         ListFooterComponent={() => this._renderListFooter()}
                         // onEndReached={this.loadData}
                         keyExtractor={(item, index) => item + index}
+                        extraData={this.props.sectionExercises}
                     />
                 )}
                 <TouchableHighlight style={{flex: 1}} onPress={this.handleBlur.bind(this)}>
@@ -270,13 +267,17 @@ export class _ExerciseList extends PureComponent {
         );
     }
 }
+
 const mapStateToProps = state => ({
     isExerciseListEmpty: state.exerciseCompleted.isExerciseListEmpty,
+    sectionExercises: state.exercises.sectionExercises
 });
 const mapActionToProps = dispatch => ({
-    addExercise: exercise => dispatch(addExerciseAction(exercise)),
-    updateEmpty: bool => dispatch(updateEmptyAction(bool)),
-});
+        addExercise: exercise => dispatch(addExerciseAction(exercise)),
+        updateEmpty: bool => dispatch(updateEmptyAction(bool)),
+        addExerciseToSectionList: data => dispatch(addExerciseToSectionListAction(data))
+    })
+;
 export const ExerciseList = connect(
     mapStateToProps,
     mapActionToProps
