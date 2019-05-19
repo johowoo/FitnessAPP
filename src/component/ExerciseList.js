@@ -22,6 +22,7 @@ import {SearchBar} from "./SearchBar";
 import {fuzzySearch} from "../utils/fuzzySearch";
 import {AddDropdown} from "./AddDropdown";
 import {addExerciseAction, updateEmptyAction} from "../store/actions";
+import {FooterComponent} from "./FooterComponent";
 
 const {width, height} = Dimensions.get("window");
 
@@ -97,7 +98,9 @@ export class _ExerciseList extends PureComponent {
             foundExercises: [],
         });
     };
+    onRefresh = () => {
 
+    };
     handlePress = () => {
         this.props.updateEmpty(false);
         this.props.addExercise({
@@ -268,6 +271,7 @@ export class _ExerciseList extends PureComponent {
                             getItemLayout={(data, index) => (
                                 {length: ITEM_HEIGHT, offset: ITEM_HEIGHT * index, index}
                             )}
+
                         />
                     </TouchableHighlight>
                 ) : (
