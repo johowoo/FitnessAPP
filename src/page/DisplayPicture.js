@@ -22,7 +22,7 @@ export class _DisplayPicture extends Component {
     }
 
     onSwipeLeft(gestureState) {
-        if (this.state.index < this.props.progress.length) {
+        if (this.state.index < this.props.progress.length-1) {
             this.setState({
                 myText: 'left!',
                 photoURI: this.props.progress[this.state.index + 1].photoURI,
