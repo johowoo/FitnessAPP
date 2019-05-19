@@ -68,12 +68,15 @@ export class _Progress extends Component {
     }
 
     renderItem = props => {
-        console.log(props.navigation);
+        // console.warn(props.index);
         return (
             <View style={styles.item}>
                 <TouchableOpacity
                     onPress={() => {
-                        props.navigation.navigate("DisplayPicture", {...props.item});
+                        props.navigation.navigate("DisplayPicture", {
+                            ...props.item,
+                            index: props.index,
+                        })
                     }}>
                     <Image style={styles.image} source={{uri: props.item.photoURI}}/>
                 </TouchableOpacity>

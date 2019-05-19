@@ -148,7 +148,6 @@ export class _ExerciseList extends PureComponent {
         });
         // }, 2000)
     };
-
     render() {
         return (
             <View style={{flex: 1, backgroundColor: "#eee"}}>
@@ -271,7 +270,6 @@ export class _ExerciseList extends PureComponent {
                             getItemLayout={(data, index) => (
                                 {length: ITEM_HEIGHT, offset: ITEM_HEIGHT * index, index}
                             )}
-
                         />
                     </TouchableHighlight>
                 ) : (

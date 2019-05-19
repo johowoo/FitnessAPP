@@ -18,27 +18,53 @@ const {width, height} = Dimensions.get("window");
 export class _DisplayPicture extends Component {
     constructor(props) {
         super(props);
-        this.state = {myText: ""};
+        this.state = {myText: "", index: 0};
     }
 
     onSwipeLeft(gestureState) {
-        this.setState({myText: 'You swiped left!'});
+        if (this.state.index < this.props.progress.length) {
+            this.setState({
+                myText: 'left!',
+                photoURI: this.props.progress[this.state.index + 1].photoURI,
+                weight: this.props.progress[this.state.index + 1].weight,
+                BFR: this.props.progress[this.state.index + 1].BFR,
+                index: this.state.index + 1,
+            });
+        }
     }
 
     onSwipeRight(gestureState) {
-        this.setState({myText: 'You swiped right!'});
+        if (this.state.index > 0) {
+            this.setState({
+                myText: 'right!',
+                photoURI: this.props.progress[this.state.index - 1].photoURI,
+                weight: this.props.progress[this.state.index - 1].weight,
+                BFR: this.props.progress[this.state.index - 1].BFR,
+                index: this.state.index - 1,
+            });
+        }
     }
 
+    componentWillMount() {
+        const navProps = this.props?.navigation?.state?.params;
+        this.setState({
+            values: navProps,
+            index: navProps.index,
+            photoURI: navProps.photoURI,
+            weight: navProps.weight,
+            BFR: navProps.BFR
+        })
+    }
 
     render() {
-        const navProps = this.props?.navigation?.state?.params;
+        // const this.state.values = this.props?.navigation?.state?.params;
         return (
-                <LinearGradient colors={["#219dd5", "#51c0bb"]} style={{flex: 1}}>
-                    <GestureRecognizer onSwipeLeft={(state) => this.onSwipeLeft(state)}
-                                       onSwipeRight={(state) => this.onSwipeRight(state)}>
+            <LinearGradient colors={["#219dd5", "#51c0bb"]} style={{flex: 1}}>
+                <GestureRecognizer onSwipeLeft={(state) => this.onSwipeLeft(state)}
+                                   onSwipeRight={(state) => this.onSwipeRight(state)}>
                     <ScrollView>
                         <View style={styles.imageContainer}>
-                            <Image style={styles.image} source={{uri: navProps?.photoURI}}/>
+                            <Image style={styles.image} source={{uri: this.state.photoURI}}/>
                         </View>
                         <View>
                             <Text>{this.state.myText}</Text>
@@ -47,19 +73,19 @@ export class _DisplayPicture extends Component {
                             <View style={styles.textInnerContainer}>
                                 <Text style={styles.text}>
                                     Weight:
-                                    {navProps.weight} <Text style={{fontSize: 13}}>KG</Text>
+                                    {this.state.weight} <Text style={{fontSize: 13}}>KG</Text>
                                 </Text>
                             </View>
                             <View style={styles.textInnerContainer}>
                                 <Text style={styles.text}>
                                     Body Fat Rate:
-                                    {navProps.BFR} %
+                                    {this.state.BFR} %
                                 </Text>
                             </View>
                         </View>
                     </ScrollView>
-                    </GestureRecognizer>
-                </LinearGradient>
+                </GestureRecognizer>
+            </LinearGradient>
         );
     }
 }
@@ -67,6 +93,7 @@ export class _DisplayPicture extends Component {
 const mapStateToProps = state => ({
     bfrData: state.health.bfrData,
     weightData: state.health.weightData,
+    progress: state.progress,
 });
 const mapActionToProps = dispatch => ({
     updateWeightData(data) {
