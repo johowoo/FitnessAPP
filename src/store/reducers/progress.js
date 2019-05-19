@@ -2,16 +2,26 @@ import * as types from "../actionTypes";
 
 export const progress = (state = [], action) => {
     const newState = JSON.parse(JSON.stringify(state));
+    const emptyState = [];
     switch (action.type) {
         case types.ADD_PROGRESS_PHOTO:
             return [...state, action.payload];
         case types.DELETE_PICS_FROM_PROGRESS:
             newState.map((item, index) => {
-                if (action.payload.includes(item.date)) {
-                    newState.splice(index, 1);
+                if (!action.payload.includes(item.date)) {
+                    emptyState.push(item);
+                    // action.payload.map(i => {
+                    //     //********index has changed
+                    //     if (i !== item.date) {
+                    //         emptyState.push()
+                    //     }
+                    // });
+                    // // if (action.payload.indexOf(item.date) !== -1) {
+                    // //     console.warn("yes");
+                    // //
                 }
             });
-            return newState;
+            return emptyState;
         default:
             return state;
     }

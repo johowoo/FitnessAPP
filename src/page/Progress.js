@@ -63,9 +63,21 @@ export class _Progress extends Component {
                 <TouchableOpacity
                     onPress={() => {
                         if (this.state.showDeleteButton) {
-                            this.setState({
-                                selectTobeDeleted: [...this.state.selectTobeDeleted, props.item.date]
-                            });
+                            if (this.state.selectTobeDeleted.includes(props.item.date)) {
+                                const newSelectTobeDeleted = [];
+                                this.state.selectTobeDeleted.map((item, index) => {
+                                    if (item !== props.item.date) {
+                                        newSelectTobeDeleted.push(item);
+                                    }
+                                });
+                                this.setState({
+                                    selectTobeDeleted: newSelectTobeDeleted
+                                })
+                            } else {
+                                this.setState({
+                                    selectTobeDeleted: [...this.state.selectTobeDeleted, props.item.date]
+                                });
+                            }
                         } else {
                             props.navigation.navigate("DisplayPicture", {
                                 ...props.item,
@@ -79,7 +91,7 @@ export class _Progress extends Component {
                         onPress={this.closeModal}
                         textStyle={{fontSize: 34, color: "#c69"}}
                         style={{position: "absolute", right: 0, top: -6, borderWidth: 0, borderRadius: 16}}
-                        children={<Icon name="check-circle" size={34} color={"rgba(204,51,51,0.9)"} key="cancel"/>}
+                        children={<Icon name="check-circle" size={34} color={"#c69"} key="cancel"/>}
                     />}
                 </TouchableOpacity>
             </View>
@@ -118,11 +130,14 @@ export class _Progress extends Component {
                         <TouchableOpacity
                             style={{height: 25, width: 25, backgroundColor: "transparent"}}
                             // onPress={() => this.handleModal({showPicker: true})}
-                            onPress={() => {
+                            onPress={async () => {
                                 if (this.state.showDeleteButton) {
-                                    deletePicsFromProgress(this.state.selectTobeDeleted);
+                                    await deletePicsFromProgress(this.state.selectTobeDeleted);
                                 }
-                                this.setState({showDeleteButton: !this.state.showDeleteButton})
+                                await this.setState({
+                                    showDeleteButton: !this.state.showDeleteButton,
+                                    selectTobeDeleted: []
+                                })
                             }
                             }
                             style={styles.plusButton}
@@ -185,7 +200,7 @@ export class _Progress extends Component {
 }
 
 const mapStateToProps = state => ({
-    progress: state.progress.reverse(),
+    progress: state.progress,
     showPicker: state.progressModal.showPicker,
     showModal: state.progressModal.showModal,
     tmpURI: state.progressModal.tmpURI,
