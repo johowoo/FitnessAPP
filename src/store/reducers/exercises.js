@@ -29,6 +29,4 @@ export const exercises = (
         default:
             return state;
     }
-
-
 };

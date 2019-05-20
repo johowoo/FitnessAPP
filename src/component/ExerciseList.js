@@ -44,6 +44,8 @@ export class _ExerciseList extends PureComponent {
             selectedSets: 4,
             selectedExercise: "",
             showReminderModal: false,
+            hideConfirmButton: true,
+            tobeDeletedItem: ""
         };
     };
 
@@ -68,7 +70,17 @@ export class _ExerciseList extends PureComponent {
                 </View>
                 <View style={styles.deleteButtonView}>
                     <TouchableOpacity
-                        onPress={() => {this.props.deleteExerciseFromSectionList(item)}}>
+                        onPress={() => {
+                            this.setState({
+                                showReminderModal: true,
+                                reminderTitle: "Delete",
+                                reminderContent: `Do you want to delete this exercise: ${item}?`,
+                                hideConfirmButton: false,
+                                tobeDeletedItem: item
+                            });
+                            // this.props.deleteExerciseFromSectionList(item)
+                        }
+                        }>
                         <Icon name="delete" size={24} color="#bbb" key="delete"/>
                     </TouchableOpacity>
                 </View>
@@ -111,6 +123,11 @@ export class _ExerciseList extends PureComponent {
             time: new Date().getTime(),
         });
     };
+
+    handleConfirm = () => {
+        this.props.deleteExerciseFromSectionList(this.state.tobeDeletedItem);
+        this.setState({showReminderModal: false});
+    };
     handlePressAddExercise = () => {
         if (!this.state.isAddingExercise) {
             this.setState({
@@ -130,7 +147,8 @@ export class _ExerciseList extends PureComponent {
             this.setState({
                 showReminderModal: true,
                 reminderTitle: "Empty",
-                reminderContent: "Please enter an exercise!"
+                reminderContent: "Please enter an exercise!",
+                hideConfirmButton: true
             });
             return;
         }
@@ -303,7 +321,8 @@ export class _ExerciseList extends PureComponent {
                     handleCloseReminder={this.handleCloseReminder}
                     reminderTitle={this.state.reminderTitle}
                     reminderContent={this.state.reminderContent}
-                    hideConfirmButton={true}
+                    hideConfirmButton={this.state.hideConfirmButton}
+                    handleConfirm={this.handleConfirm}
                 />}
             </View>
         );
