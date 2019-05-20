@@ -23,21 +23,41 @@ export class EditWeightReps extends Component {
         };
     }
 
-    shouldComponentUpdate(nextProps, nextState) {
-        // console.warn("should");
-        const length = this.props.weightRepsDataArr.length;
-        if (this.state.blur && nextState !== this.state) {
-            console.warn("in");
-            // for (let i = 0; i < length; i++) {
-            //     this.setState({
-            //         [`weightText${i}`]: nextState[`weightText${i}`]
-            //     })
-            // }
-            // this.setState({weightText: nextState.weightText});
-            return true;
-        }
-        return false;
+    weightText = {};
+
+    componentDidMount() {
+        console.warn(this.props.weightRepsDataArr);
+        // this.props.weightRepsDataArr.forEach((item, index) => {
+        //     if (item) {
+        //         this.weightText[index] = item.weight;
+        //     } else {
+        //         this.weightText[index] = "";
+        //     }
+        // });
+        // weightText = JSON.parse(JSON.stringify(this.state.weightText));
     }
+
+
+    // shouldComponentUpdate(nextProps, nextState) {
+    //     // console.warn("should");
+    //     const length = this.props.weightRepsDataArr.length;
+    //     // if (this.state.blur && nextState !== this.state) {
+    //     if (nextState.weightText !== this.state.weightText) {
+    //         console.warn("in");
+    //         if (this.state.blur) {
+    //             this.setState({
+    //                 weightText: this.weightText
+    //             })
+    //         }
+    //         // for (let i = 0; i < length; i++) {
+    //         //     this.setState({
+    //         //         [`weightText${i}`]: nextState[`weightText${i}`]
+    //         //     })
+    //         // }
+    //         // this.setState({weightText: nextState.weightText});
+    //     }
+    //     return true;
+    // }
 
     componentWillMount() {
         const weightTextTmp = {};
@@ -96,34 +116,42 @@ export class EditWeightReps extends Component {
                                         }}>{index + 1}:</Text>
                                         <TextInput
                                             style={{...styles.weightTextInput, flex: 0.5}}
-                                            value={this.state[`weightText${index}`]}
+                                            value={this.weightText[index]}
+                                            // value={this.state[`weightText${index}`]}
                                             // value={this.state.weightText[index]}
                                             placeholder="0-300 (KG)"
-                                            multiline={true}
-                                            defaultValue={item.weight || ""}
+                                            defaultValue={item.weight || this.weightText[index] || ""}
                                             onChangeText={//阻止主动重新渲染
                                                 text => {
-                                                    setTimeout(() => {
-                                                        const weightText = JSON.parse(JSON.stringify(this.state.weightText));
-                                                        weightText[index] = text;
-                                                        this.setState({
-                                                            [`weightText${index}tmp`]: text
-                                                            // weightText
-                                                        })
-                                                    }, 100)
+                                                    this.weightText[index] = text;
+                                                    // setTimeout(() => {
+                                                    //     const weightText = JSON.parse(JSON.stringify(this.state.weightText));
+                                                    //     weightText[index] = text;
+                                                    //     this.setState({
+                                                    //         [`weightText${index}tmp`]: text
+                                                    //         // weightText: weightText
+                                                    //     })
+                                                    // }, 100)
                                                 }
                                             }
                                             onBlur={async () => {
-                                                const length = newWeightRepsDataArr.length;
-                                                await this.setState({
-                                                    blur: true,
-                                                    // [`weightText${index}`]: this.state[`weightText${index}tmp`]
+                                                // const length = newWeightRepsDataArr.length;
+
+                                                this.setState({
+                                                    weightText: this.weightText
                                                 });
-                                                for (let i = 0; i < length; i++) {
-                                                    this.setState({
-                                                        [`weightText${i}`]: [`weightText${i}tmp`]
-                                                    })
-                                                }
+
+                                                // await this.setState({
+                                                //     blur: true,
+                                                //     // [`weightText${index}`]: this.state[`weightText${index}tmp`]
+                                                // });
+                                                // this.forceUpdate();
+                                                // for (let i = 0; i < length; i++) {
+                                                //     this.setState({
+                                                //         [`weightText${i}`]: [`weightText${i}tmp`]
+                                                //         // weightText: this.state.weightTextTmp
+                                                //     })
+                                                // }
                                             }}
                                         />
                                         <TextInput
@@ -158,7 +186,7 @@ export class EditWeightReps extends Component {
                                     onPress={async () => {
                                         await this.props.editWeightRepsInWorkout({
                                             time: this.props.time,
-                                            weightText: this.state.weightText,
+                                            weightText: this.weightText,
                                             repsText: this.state.repsText,
                                         });
                                         await this.props.handleCloseWeightModal("showEditWeightReps", false);
