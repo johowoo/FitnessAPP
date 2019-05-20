@@ -130,15 +130,15 @@ export class _Progress extends Component {
                             style={{height: 25, width: 25, backgroundColor: "transparent"}}
                             // onPress={() => this.handleModal({showPicker: true})}
                             onPress={async () => {
-                                await LoadingUtil.showLoading();
                                 if (this.state.showDeleteButton) {
+                                    await LoadingUtil.showLoading();
                                     await deletePicsFromProgress(this.state.selectTobeDeleted);
+                                    await LoadingUtil.dismissLoading();
                                 }
                                 await this.setState({
                                     showDeleteButton: !this.state.showDeleteButton,
                                     selectTobeDeleted: []
                                 });
-                                await LoadingUtil.dismissLoading();
                             }
                             }
                             style={styles.plusButton}
@@ -148,7 +148,7 @@ export class _Progress extends Component {
                                 name={"remove"}
                                 size={25}
                                 color="white"
-                                key="add"
+                                key="remove"
                             /> : <Text style={{color: "#eee", fontSize: 22}}>delete</Text>}
                         </TouchableOpacity>
                     </View>

@@ -20,6 +20,7 @@ import {
 import {AddWeightToExercise} from "./AddWeightToExercise";
 import {EditWeightReps} from './EditWeightReps';
 import LoadingUtil from '../utils/LoadingUtil';
+import {ReminderModal} from "./ReminderModal";
 
 const {width, height} = Dimensions.get("window");
 
@@ -29,7 +30,8 @@ export class _WorkoutList extends Component {
         time: 0, // time for the chosen exercise(to add weight & reps)
         showEditWeightReps: false,
         weightRepsDataArr: [],
-        sets: 1
+        sets: 1,
+        showReminderModal: false,
     };
 
     handlePress() {
@@ -49,7 +51,13 @@ export class _WorkoutList extends Component {
                     await this.setState({time});
                     await this.setState({showAddWeightModal: true});
                 } else {
-                    Alert.alert("Reminder", "You have already added weight and reps for all sets.")
+                    // Alert.alert("Reminder", "You have already added weight and reps for all sets.")
+                    await this.setState({
+                        showReminderModal: true,
+                        reminderTitle: "Reminder",
+                        reminderContent: "You have already added weight and reps for all sets.",
+                        hideReminderButton: true,
+                    })
                 }
             }}
             onLongPress={async () => {
@@ -96,26 +104,47 @@ export class _WorkoutList extends Component {
             </View>
         </TouchableHighlight>
     );
-
+    handleCloseReminder = (bool) => {
+        this.setState({
+            showReminderModal: bool
+        })
+    };
+    handleConfirm = async () => {
+        LoadingUtil.showLoading();
+        await this.props.deleteExerciseFromWorkoutList({
+            time: this.state.time,
+        });
+        await this.setState({
+            showReminderModal: false,
+        });
+        LoadingUtil.dismissLoading();
+    };
     getQuickActions = ({index, item}) => (
         <View style={styles.quickAContent}>
             <TouchableHighlight
-                onPress={() =>
-                    Alert.alert("Delete", "Do you want to delete this exercise？", [
-                        {
-                            text: "Delete",
-                            onPress: async () => {
-                                LoadingUtil.showLoading();
-                                await this.setState({time: item.time});
-                                await this.props.deleteExerciseFromWorkoutList({
-                                    time: this.state.time,
-                                });
-                                LoadingUtil.dismissLoading();
-                            },
-                        },
-                        {text: "Cancel"},
-                    ])
-                }>
+                onPress={() => {
+                    this.setState({
+                        showReminderModal: true,
+                        reminderTitle: "Delete",
+                        reminderContent: "Do you want to delete this exercise",
+                        hideConfirmButton: false,
+                        time: item.time,
+                    });
+                    // Alert.alert("Delete", "Do you want to delete this exercise？", [
+                    //     {
+                    //         text: "Delete",
+                    //         onPress: async () => {
+                    //             LoadingUtil.showLoading();
+                    //             await this.setState({time: item.time});
+                    //             await this.props.deleteExerciseFromWorkoutList({
+                    //                 time: this.state.time,
+                    //             });
+                    //             LoadingUtil.dismissLoading();
+                    //         },
+                    //     },
+                    //     {text: "Cancel"},
+                    // ])
+                }}>
                 <View style={styles.quick}>
                     <View
                         style={{
@@ -134,6 +163,15 @@ export class _WorkoutList extends Component {
                     </View>
                 </View>
             </TouchableHighlight>
+            {this.state.showReminderModal &&
+            <ReminderModal
+                showReminderModal={this.state.showReminderModal}
+                reminderTitle={this.state.reminderTitle}
+                reminderContent={this.state.reminderContent}
+                handleCloseReminder={this.handleCloseReminder}
+                handleConfirm={this.handleConfirm}
+                hideConfirmButton={this.state.hideConfirmButton}
+            />}
         </View>
     );
 

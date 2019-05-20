@@ -18,6 +18,7 @@ import {
     updateWeightBFRFromProgressPicsAction
 } from "../store/actions";
 import {validation} from "../utils/validation";
+import {ReminderModal} from "./ReminderModal";
 
 const {width, height} = Dimensions.get("window");
 
@@ -54,7 +55,13 @@ class _PhotoModal extends React.Component {
             });
             await this.props.showProgressPickerDispatch(false);
         } else {
-            Alert.alert("Please enter valid data", null);
+            this.setState({
+                showReminderModal: true,
+                reminderTitle: "Invalid data",
+                reminderContent: "Please enter valid data",
+                hideConfirmButton: true
+            });
+            // Alert.alert("Please enter valid data", null);
         }
     };
 
@@ -63,6 +70,11 @@ class _PhotoModal extends React.Component {
             [name]: text,
         });
     };
+    handleCloseReminder = (bool) => {
+        this.setState({
+            showReminderModal: bool
+        })
+    }
 
     render() {
         return (
@@ -104,6 +116,14 @@ class _PhotoModal extends React.Component {
                         </View>
                     </View>
                 </View>
+                {this.state.showReminderModal &&
+                <ReminderModal
+                    showReminderModal={this.state.showReminderModal}
+                    reminderTitle={this.state.reminderTitle}
+                    reminderContent={this.state.reminderContent}
+                    handleCloseReminder={this.handleCloseReminder}
+                    hideConfirmButton={this.state.hideConfirmButton || true}
+                />}
             </Modal>
         );
     }
