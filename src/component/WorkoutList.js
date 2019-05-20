@@ -19,6 +19,7 @@ import {
 } from "../store/actions";
 import {AddWeightToExercise} from "./AddWeightToExercise";
 import {EditWeightReps} from './EditWeightReps';
+import LoadingUtil from '../utils/LoadingUtil';
 
 const {width, height} = Dimensions.get("window");
 
@@ -104,10 +105,12 @@ export class _WorkoutList extends Component {
                         {
                             text: "Delete",
                             onPress: async () => {
+                                LoadingUtil.showLoading();
                                 await this.setState({time: item.time});
                                 await this.props.deleteExerciseFromWorkoutList({
                                     time: this.state.time,
                                 });
+                                LoadingUtil.dismissLoading();
                             },
                         },
                         {text: "Cancel"},
