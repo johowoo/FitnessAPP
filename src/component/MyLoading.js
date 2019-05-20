@@ -10,7 +10,7 @@ export default class MyLoading extends React.Component {
         this.state = {
             isLoading: false,
             setIsLoading: (isLoading) => {
-                if (isLoading != this.state.isLoading) {
+                if (isLoading !== this.state.isLoading) {
                     let curTimeLong = new Date().getTime();
                     if (isLoading) {
                         this.startTime = curTimeLong;
@@ -25,7 +25,6 @@ export default class MyLoading extends React.Component {
                                     isLoading
                                 });
                             }, this.minShowingTime - hasShowingTimeLong);
-
                         } else {
                             this.setState({
                                 isLoading
