@@ -8,7 +8,6 @@ import {
     ScrollView,
     StyleSheet,
     FlatList,
-    SectionList,
 } from "react-native";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import {LinearGradient, Permissions} from "expo";
@@ -22,11 +21,11 @@ import {
     changeTmpUriAction,
     deletePicsFromProgressAction,
 } from "../store/actions";
-// import {FooterComponent} from "../component/FooterComponent";
+
 import {PickerCamera} from "../component/PickerCamera";
 import ApslButton from "apsl-react-native-button";
+import LoadingUtil from "../utils/LoadingUtil";
 
-// import {createStackNavigator, createAppContainer} from "react-navigation";
 
 const {width, height} = Dimensions.get("window");
 
@@ -131,13 +130,15 @@ export class _Progress extends Component {
                             style={{height: 25, width: 25, backgroundColor: "transparent"}}
                             // onPress={() => this.handleModal({showPicker: true})}
                             onPress={async () => {
+                                await LoadingUtil.showLoading();
                                 if (this.state.showDeleteButton) {
                                     await deletePicsFromProgress(this.state.selectTobeDeleted);
                                 }
                                 await this.setState({
                                     showDeleteButton: !this.state.showDeleteButton,
                                     selectTobeDeleted: []
-                                })
+                                });
+                                await LoadingUtil.dismissLoading();
                             }
                             }
                             style={styles.plusButton}
@@ -148,7 +149,7 @@ export class _Progress extends Component {
                                 size={25}
                                 color="white"
                                 key="add"
-                            /> : <Text style={{color: "#eee" ,fontSize:22}}>delete</Text>}
+                            /> : <Text style={{color: "#eee", fontSize: 22}}>delete</Text>}
                         </TouchableOpacity>
                     </View>
                     <View style={{position: "absolute", right: 15}}>

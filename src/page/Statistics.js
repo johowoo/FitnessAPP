@@ -13,11 +13,11 @@ import {connect} from "react-redux";
 import {AddDropdown} from "../component/AddDropdown";
 import {PeriodAnalysis} from "../component/PeriodAnalysis";
 import {updateBfrAction, updateWeightAction} from "../store/actions";
+import LoadingUtil from '../utils/LoadingUtil';
 
 import {TopBar} from "../component";
 
 const {width, height} = Dimensions.get("window");
-import {monthArrary} from '../utils/monthArray';
 //automatic generated ->change
 const labels = [
     "Jan",
@@ -67,20 +67,26 @@ export class _Health extends Component {
         };
     }
 
-    handleAddDropdown = type => {
-        this.setState({
+    handleAddDropdown = async (type) => {
+        await LoadingUtil.showLoading();
+        await this.setState({
             [type]: !this.state[type],
         });
+        await LoadingUtil.dismissLoading();
     };
 
-    handleAddWeightConfirm = data => {
-        this.props.updateWeightData(data);
-        this.forceUpdate();
+    handleAddWeightConfirm = async data => {
+        await LoadingUtil.showLoading();
+        await this.props.updateWeightData(data);
+        await this.forceUpdate();
+        await LoadingUtil.dismissLoading();
     };
 
-    handleAddBFRConfirm = data => {
+    handleAddBFRConfirm = async data => {
+        await LoadingUtil.showLoading();
         this.props.updateBfrData(data);
         this.forceUpdate();
+        await LoadingUtil.dismissLoading();
     };
 
     scrollToEnd = () => {

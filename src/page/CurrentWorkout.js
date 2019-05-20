@@ -17,6 +17,7 @@ import {
 import {WorkoutList} from "../component/WorkoutList";
 import {ExerciseModal} from "./ExerciseModal";
 import {formatMonthandDay} from "../utils/formatMonthandDay";
+import LoadingUtil from "../utils/LoadingUtil";
 
 class _CurrentWorkout extends Component {
     static defaultProps = {
@@ -74,11 +75,13 @@ class _CurrentWorkout extends Component {
                                     : styles.completeButton
                             }
                             onPress={async () => {
+                                await LoadingUtil.showLoading();
                                 await this.setState({
                                     reminderTitle: "Completed",
                                     reminderContent: "Have you completed all these exercises???"
                                 });
                                 await this.setState({showReminderModal: true});
+                                await LoadingUtil.dismissLoading();
                             }
                             }
                             children={

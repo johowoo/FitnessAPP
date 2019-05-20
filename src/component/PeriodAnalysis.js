@@ -10,8 +10,6 @@ import LoadingUtil from '../utils/LoadingUtil';
 
 const {width} = Dimensions.get("window");
 
-const NumberOfDaysArr = [1, 7, 30, 180, 365];
-
 class _PeriodAnalysis extends Component {
     state = {
         newAllExerciseList: {},

@@ -2,6 +2,7 @@ import React, {Component} from "react";
 import {View, StyleSheet, Text, TextInput, Dimensions} from "react-native";
 import ModalDropdown from "react-native-modal-dropdown";
 import ApslButton from "apsl-react-native-button";
+import LoadingUtil from '../utils/LoadingUtil';
 
 const data = ["Chest", "Shoulder", "Back", "Arms", "Legs", "Core", "Cardio"];
 
@@ -20,12 +21,15 @@ export class AddDropdown extends Component {  //eslint-disable-line
         inputText: "",
     };
 
-    handlePress = () => {
-        this.props.handleConfirmPressed && this.props.handleConfirmPressed();
-        this.props.handleConfirm({
+    handlePress = async () => {
+        await LoadingUtil.showLoading();
+        await this.props.handleConfirmPressed && this.props.handleConfirmPressed();
+        await this.props.handleConfirm({
             item: this.state.inputText,
             category: this.state.category,
         });
+        await LoadingUtil.dismissLoading();
+
     };
 
 

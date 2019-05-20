@@ -1,5 +1,5 @@
 let LoadingUtil = {
-    showLoading(timeOut = 1000){
+    showLoading(timeOut = 10000){
         global.mLoadingComponentRef && global.mLoadingComponentRef.showLoading();
         this.timerLoading = setTimeout(() => {
             this.dismissLoading();

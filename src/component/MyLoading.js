@@ -6,7 +6,7 @@ let height = Dimensions.get('window').height;
 export default class MyLoading extends React.Component {
     constructor(props) {
         super(props);
-        this.minShowingTime = 200;
+        this.minShowingTime = 300;
         this.state = {
             isLoading: false,
             setIsLoading: (isLoading) => {
@@ -69,7 +69,7 @@ export default class MyLoading extends React.Component {
 
 const styles = StyleSheet.create({
     loading: {
-        backgroundColor: 'rgba(50,50,50,0.4)',
+        backgroundColor: 'rgba(50,50,50,0.2)',
         height: 80,
         width: 100,
         borderRadius: 10,
