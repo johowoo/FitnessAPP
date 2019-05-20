@@ -5,6 +5,8 @@ import {connect} from 'react-redux';
 import ApslButton from "apsl-react-native-button";
 import {formatYYYYMMDDFromDate} from "../utils/formatMonthandDay";
 import {accumulateExercisesData} from "../utils/accumulateExercisesData";
+import LoadingUtil from '../utils/LoadingUtil';
+
 
 const {width} = Dimensions.get("window");
 
@@ -50,9 +52,10 @@ class _PeriodAnalysis extends Component {
             }
         );
     };
-    handleConfirmPressed = () => {
+    handleConfirmPressed = async () => {
         // console.warn("enterConfirmPressed",this.state.selectedIndex);
-        switch (parseInt(this.state.selectedIndex)) {
+        await LoadingUtil.showLoading();
+         switch (parseInt(this.state.selectedIndex)) {
             case 0:
                 this.handleSetData(0);
                 break;
@@ -68,8 +71,8 @@ class _PeriodAnalysis extends Component {
             case 4:
                 this.handleSetData(365);
                 break;
-            default:
         }
+        await LoadingUtil.dismissLoading();
     };
 
     render() {
