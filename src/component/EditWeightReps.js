@@ -6,10 +6,7 @@ import {
     StyleSheet,
     Dimensions,
     TextInput,
-    Keyboard,
     ScrollView,
-    KeyboardAvoidingView,
-    Platform
 } from "react-native";
 import React, {Component} from "react";
 
@@ -18,36 +15,28 @@ const {width, height} = Dimensions.get("window");
 export class EditWeightReps extends Component {
     constructor(props) {
         super(props);
-        // this.state = {
-        //     keyboardAvoidingViewKey: 'keyboardAvoidingViewKey',
-        // }
+        state = {
+            weightText: {},
+            repsText: {},
+            top: height * 0.3,
+            blur: false,
+        };
     }
 
-    state = {
-        weightText: {},
-        repsText: {},
-        top: height * 0.3
-    };
-
-    // keyboardDidShowHandler = () => {
-    //     this.setState({
-    //         top: height * 0.2,
-    //     });
-    // };
-
-    componentDidMount() {
-        // for (let i = 0; i <this.props.) {
-        // }
-        // this.keyboardDidShowListener = Keyboard.addListener(
-        //     "keyboardDidShow",
-        //     this.keyboardDidShowHandler.bind(this)
-        // );
-        // this.keyboardHideListener = Keyboard.addListener(Platform.OS === 'android' ? 'keyboardDidHide' : 'keyboardWillHide', this.keyboardHideListener.bind(this));
-    }
-
-    componentWillUnmount() {
-        //     this.keyboardHideListener.remove()
-        // }
+    shouldComponentUpdate(nextProps, nextState) {
+        // console.warn("should");
+        const length = this.props.weightRepsDataArr.length;
+        if (this.state.blur && nextState !== this.state) {
+            console.warn("in");
+            // for (let i = 0; i < length; i++) {
+            //     this.setState({
+            //         [`weightText${i}`]: nextState[`weightText${i}`]
+            //     })
+            // }
+            // this.setState({weightText: nextState.weightText});
+            return true;
+        }
+        return false;
     }
 
     componentWillMount() {
@@ -68,7 +57,6 @@ export class EditWeightReps extends Component {
         for (let i = newWeightRepsDataArr.length; i < this.props.sets; i++) {
             newWeightRepsDataArr.push({weight: 0, reps: 0});
         }
-        // let {keyboardAvoidingViewKey} = this.state;
         return (
             <Modal
                 visible={this.props.showEditWeightReps}
@@ -96,7 +84,6 @@ export class EditWeightReps extends Component {
                                 weight(0-100KG) reps(0-50)
                             </Text>
                             {newWeightRepsDataArr.map((item, index) => {
-                                // if (item.weight && item.reps) {
                                 return (
                                     <View style={styles.dataContainer}
                                           key={index + item.weight + index + Math.random()}>
@@ -109,9 +96,10 @@ export class EditWeightReps extends Component {
                                         }}>{index + 1}:</Text>
                                         <TextInput
                                             style={{...styles.weightTextInput, flex: 0.5}}
-                                            // autoFocus={true}
                                             value={this.state[`weightText${index}`]}
+                                            // value={this.state.weightText[index]}
                                             placeholder="0-300 (KG)"
+                                            multiline={true}
                                             defaultValue={item.weight || ""}
                                             onChangeText={//阻止主动重新渲染
                                                 text => {
@@ -119,11 +107,24 @@ export class EditWeightReps extends Component {
                                                         const weightText = JSON.parse(JSON.stringify(this.state.weightText));
                                                         weightText[index] = text;
                                                         this.setState({
-                                                            [`weightText${index}`]: text
+                                                            [`weightText${index}tmp`]: text
+                                                            // weightText
                                                         })
                                                     }, 100)
                                                 }
                                             }
+                                            onBlur={async () => {
+                                                const length = newWeightRepsDataArr.length;
+                                                await this.setState({
+                                                    blur: true,
+                                                    // [`weightText${index}`]: this.state[`weightText${index}tmp`]
+                                                });
+                                                for (let i = 0; i < length; i++) {
+                                                    this.setState({
+                                                        [`weightText${i}`]: [`weightText${i}tmp`]
+                                                    })
+                                                }
+                                            }}
                                         />
                                         <TextInput
                                             style={{...styles.weightTextInput, flex: 0.4}}
