@@ -26,9 +26,9 @@ export class ReminderModal extends Component {
                                 justifyContent: 'center',
                                 alignItems: "center",
                                 fontSize: 20,
-                                marginTop: 20,
+                                marginTop: 15,
                                 marginLeft: 20,
-                                marginBottom: 15,
+                                marginBottom: 10,
                             }}>
                             {this.props.reminderTitle}
                         </Text>

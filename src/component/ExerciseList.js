@@ -81,7 +81,7 @@ export class _ExerciseList extends PureComponent {
                             // this.props.deleteExerciseFromSectionList(item)
                         }
                         }>
-                        <Icon name="delete" size={24} color="#bbb" key="delete"/>
+                        <Icon name="delete" size={24} color="rgba(204,102,153,0.3)" key="delete"/>
                     </TouchableOpacity>
                 </View>
             </View>
