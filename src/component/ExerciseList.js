@@ -68,10 +68,7 @@ export class _ExerciseList extends PureComponent {
                 </View>
                 <View style={styles.deleteButtonView}>
                     <TouchableOpacity
-                        onPress={() => {
-                            // console.warn("item", item);
-                            // this.props.deleteExerciseFromSectionList({item})
-                        }}>
+                        onPress={() => {this.props.deleteExerciseFromSectionList(item)}}>
                         <Icon name="delete" size={24} color="#bbb" key="delete"/>
                     </TouchableOpacity>
                 </View>
@@ -138,7 +135,7 @@ export class _ExerciseList extends PureComponent {
             return;
         }
         let errorFlag = false;
-        await this.props.sectionExercises.map((i, index) => {
+        this.props.sectionExercises.map((i, index) => {
             if (i.data.includes(item)) {
                 errorFlag = true;
                 this.setState({
