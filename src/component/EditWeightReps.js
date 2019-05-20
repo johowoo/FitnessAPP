@@ -134,25 +134,23 @@ export class EditWeightReps extends Component {
                                                     // }, 100)
                                                 }
                                             }
-                                            onBlur={async () => {
-                                                // const length = newWeightRepsDataArr.length;
-
-                                                this.setState({
-                                                    weightText: this.weightText
-                                                });
-
-                                                // await this.setState({
-                                                //     blur: true,
-                                                //     // [`weightText${index}`]: this.state[`weightText${index}tmp`]
-                                                // });
-                                                // this.forceUpdate();
-                                                // for (let i = 0; i < length; i++) {
-                                                //     this.setState({
-                                                //         [`weightText${i}`]: [`weightText${i}tmp`]
-                                                //         // weightText: this.state.weightTextTmp
-                                                //     })
-                                                // }
-                                            }}
+                                            // onBlur={async () => {
+                                            //     // const length = newWeightRepsDataArr.length;
+                                            //     // this.setState({
+                                            //     //     weightText: this.weightText
+                                            //     // });
+                                            //     // await this.setState({
+                                            //     //     blur: true,
+                                            //     //     // [`weightText${index}`]: this.state[`weightText${index}tmp`]
+                                            //     // });
+                                            //     // this.forceUpdate();
+                                            //     // for (let i = 0; i < length; i++) {
+                                            //     //     this.setState({
+                                            //     //         [`weightText${i}`]: [`weightText${i}tmp`]
+                                            //     //         // weightText: this.state.weightTextTmp
+                                            //     //     })
+                                            //     // }
+                                            // }}
                                         />
                                         <TextInput
                                             style={{...styles.weightTextInput, flex: 0.4}}
