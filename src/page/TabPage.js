@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {StyleSheet} from "react-native";
+import {StyleSheet, TouchableOpacity, View, Text, Alert} from "react-native";
 import {LinearGradient} from "expo";
 import {
     createBottomTabNavigator,
@@ -13,6 +13,8 @@ import Progress from "./Progress";
 import {TabBarIcon} from "../component/TabBarIcon";
 import TabBarComponent from "../component/TabBarComponent";
 import {DisplayPicture} from "./DisplayPicture";
+import Icon from "react-native-vector-icons/FontAwesome";
+import LoadingUtil from '../utils/LoadingUtil';
 
 let fontLoaded = true;
 
@@ -30,6 +32,29 @@ const StackNavigator = createStackNavigator({
             headerTitle: navigation?.state?.params?.date.toString(),
             // header: null
             headerBackTitle: "Progress Page",
+            headerRight: (
+                <TouchableOpacity style={{marginRight: 30}}
+                                  onPress={() => {
+                                      Alert.alert("Delete", "Do you want to delete this photo？", [
+                                          {
+                                              text: "Delete",
+                                              onPress: async () => {
+                                                  await LoadingUtil.showLoading();
+                                                  await navigation?.state?.params?.deleteOnePicFromProgress({
+                                                      date: navigation?.state?.params?.date,
+                                                  });
+                                                  await LoadingUtil.dismissLoading();
+                                              },
+                                          },
+                                          {text: "Cancel"},
+                                      ])
+                                  }
+                                  }>
+                    <View>
+                        <Icon name="trash-o" size={24} color="#c69" key="delete"/>
+                    </View>
+                </TouchableOpacity>
+            ),
             // headerLeftContainerStyle: {color: "#fff"},
             // headerTintColor: {color: "#FFF"},
             headerBackground: (

@@ -43,3 +43,5 @@ export const updateWeightBFRFromProgressPicsAction = data =>
     createAction(types.UPDATE_WEIGHT_BFR_FROM_PROGRESS_PICS)(data);
 export const deletePicsFromProgressAction = data =>
     createAction(types.DELETE_PICS_FROM_PROGRESS)(data);
+export const deleteOnePicFromProgressAction = data =>
+    createAction(types.DELETE_ONE_PIC_FROM_PROGRESS)(data);

@@ -20,6 +20,7 @@ import {
     showProgressPicker,
     changeTmpUriAction,
     deletePicsFromProgressAction,
+    deleteOnePicFromProgressAction
 } from "../store/actions";
 
 import {PickerCamera} from "../component/PickerCamera";
@@ -81,6 +82,7 @@ export class _Progress extends Component {
                             props.navigation.navigate("DisplayPicture", {
                                 ...props.item,
                                 index: props.index,
+                                deleteOnePicFromProgress: this.props.deleteOnePicFromProgress
                             });
                         }
                     }}>
@@ -207,6 +209,9 @@ const mapStateToProps = state => ({
     tmpURI: state.progressModal.tmpURI,
 });
 const mapActionToProps = dispatch => ({
+    deleteOnePicFromProgress(data) {
+        dispatch(deleteOnePicFromProgressAction(data));
+    },
     deletePicsFromProgress(data) {
         dispatch(deletePicsFromProgressAction(data));
     },
