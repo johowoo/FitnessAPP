@@ -99,6 +99,7 @@ export class EditWeightReps extends Component {
                                 // if (item.weight && item.reps) {
                                 return (
                                     <View style={styles.dataContainer}
+                                        // ****key can not includes math.random(). or it will rerender many times
                                           key={index + item.weight + index}>
                                         <Text style={{
                                             alignItems: "center",
@@ -129,11 +130,11 @@ export class EditWeightReps extends Component {
                                             placeholder="0-50 reps"
                                             onChangeText={
                                                 text => {
-                                                        const repsText = JSON.parse(JSON.stringify(this.state.repsText));
-                                                        repsText[index] = text;
-                                                        this.setState({
-                                                            repsText
-                                                        })
+                                                    const repsText = JSON.parse(JSON.stringify(this.state.repsText));
+                                                    repsText[index] = text;
+                                                    this.setState({
+                                                        repsText
+                                                    })
                                                 }
                                             }
                                         />
