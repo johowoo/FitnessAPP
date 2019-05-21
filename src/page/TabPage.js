@@ -30,6 +30,7 @@ const StackNavigator = createStackNavigator({
         screenProps: "",
         navigationOptions: ({navigation}) => ({
             gesturesEnabled: false,
+            // headerTitle: navigation?.state?.params?.date.toString(),
             headerTitle: navigation?.state?.params?.date.toString(),
             // header: null
             headerBackTitle: "Progress Page",
