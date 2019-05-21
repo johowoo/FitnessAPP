@@ -1,3 +1,6 @@
+### FitnessAPP
+fitness app built with React native(expo)
+
 ##To be done
 #bugs to be fixed
 * white screen in calendar
