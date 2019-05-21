@@ -1,6 +1,5 @@
-### FitnessAPP
-fitness app built with React native(expo)
-
+# FitnessAPP
+fitness app built with React native
 ##To be done
 #bugs to be fixed
 * white screen in calendar
@@ -37,4 +36,3 @@ fitness app built with React native(expo)
   (newAllExerciseList-->redux
   completed-> change newAllExercistList directly)
 * headerTitle of PictureModal ✔️
-
