@@ -15,6 +15,7 @@ import TabBarComponent from "../component/TabBarComponent";
 import {DisplayPicture} from "./DisplayPicture";
 import Icon from "react-native-vector-icons/FontAwesome";
 import LoadingUtil from '../utils/LoadingUtil';
+import {formatYYYY_MM_DD_HHMMFromParams} from '../utils/formatMonthandDay';
 
 let fontLoaded = true;
 
@@ -31,8 +32,8 @@ const StackNavigator = createStackNavigator({
         navigationOptions: ({navigation}) => ({
             gesturesEnabled: false,
             // headerTitle: navigation?.state?.params?.date.toString()
-            headerTitle:
-                `${navigation?.state?.params?.year.toString()}-${navigation?.state?.params?.month.toString()}-${navigation?.state?.params?.day.toString()} ${navigation?.state?.params?.hour.toString()}:${navigation?.state?.params?.minute.toString()}`,
+            headerTitle: formatYYYY_MM_DD_HHMMFromParams(navigation?.state?.params),
+            // `${navigation?.state?.params?.year.toString()}-${navigation?.state?.params?.month.toString()}-${navigation?.state?.params?.day.toString()} ${navigation?.state?.params?.hour.toString()}:${navigation?.state?.params?.minute.toString()}`,
             // header: null
             headerBackTitle: "Progress Page",
             headerRight: (
