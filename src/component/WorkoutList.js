@@ -11,6 +11,7 @@ import {
 import Button from "apsl-react-native-button";
 // import {Icon} from 'expo';
 import Icon from "react-native-vector-icons/MaterialIcons";
+import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import {connect} from "react-redux";
 import {
     addWeightToExercisesAction,
@@ -176,43 +177,74 @@ export class _WorkoutList extends Component {
     );
 
     render() {
-        console.log(this.props.currentWorkout);
         const listFooterComponent = (
-            <View style={styles.addSomeExercises}>
-                <View style={styles.buttonContainer}>
-                    <Button
-                        onPress={this.handlePress.bind(this)}
-                        style={styles.plusButton}
-                        textStyle={styles.plus}
-                        children={
-                            <Icon name="fitness-center" size={50} color="white" key="add"/>
-                        }
-                    />
+            <View>
+                <View style={styles.addSomeExercises}>
+                    <View style={styles.buttonContainer}>
+                        <Button
+                            onPress={this.handlePress.bind(this)}
+                            style={styles.plusButton}
+                            textStyle={styles.plus}
+                            children={
+                                <Icon name="fitness-center" size={50} color="white" key="add"/>
+                            }
+                        />
+                    </View>
+                    <Text style={styles.bigText}>
+                        Manual Workout
+                    </Text>
+                    <View style={styles.buttonContainer}>
+                        <Button
+                            onPress={this.handlePress.bind(this)}
+                            style={styles.plusButton}
+                            textStyle={styles.plus}
+                            children={
+                                <FontAwesomeIcon name="pencil" size={50} color="white" key="add"/>
+                            }
+                        />
+                    </View>
+                    <Text style={styles.bigText}>
+                        Custom Workout
+                        {/*add some*/}
+                        {/*{"\n"}*/}
+                        {/*exercises*/}
+                    </Text>
+                    <View style={styles.buttonContainer}>
+                        <Button
+                            onPress={this.handlePress.bind(this)}
+                            style={styles.plusButton}
+                            textStyle={styles.plus}
+                            children={
+                                <FontAwesomeIcon name="book" size={50} color="white" key="add"/>
+                            }
+                        />
+                    </View>
+                    <Text style={styles.bigText}>
+                        Edit Library
+                        {/*add some*/}
+                        {/*{"\n"}*/}
+                        {/*exercises*/}
+                    </Text>
+                    {this.state.showAddWeightModal && (
+                        <AddWeightToExercise
+                            showAddWeightModal={this.state.showAddWeightModal}
+                            handleCloseWeightModal={this.handleCloseWeightModal}
+                            addWeightRepsToExercise={this.props.addWeightRepsToExercise}
+                            time={this.state.time}
+                        />
+                    )}
+                    {this.state.showEditWeightReps && (
+                        <EditWeightReps
+                            showEditWeightReps={this.state.showEditWeightReps}
+                            handleCloseWeightModal={this.handleCloseWeightModal}
+                            addWeightRepsToExercise={this.props.addWeightRepsToExercise}
+                            weightRepsDataArr={this.state.weightRepsDataArr}
+                            sets={this.state.sets}
+                            time={this.state.time}
+                            editWeightRepsInWorkout={this.props.editWeightRepsInWorkout}
+                        />
+                    )}
                 </View>
-                <Text style={styles.bigText}>
-                    add some
-                    {"\n"}
-                    exercises
-                </Text>
-                {this.state.showAddWeightModal && (
-                    <AddWeightToExercise
-                        showAddWeightModal={this.state.showAddWeightModal}
-                        handleCloseWeightModal={this.handleCloseWeightModal}
-                        addWeightRepsToExercise={this.props.addWeightRepsToExercise}
-                        time={this.state.time}
-                    />
-                )}
-                {this.state.showEditWeightReps && (
-                    <EditWeightReps
-                        showEditWeightReps={this.state.showEditWeightReps}
-                        handleCloseWeightModal={this.handleCloseWeightModal}
-                        addWeightRepsToExercise={this.props.addWeightRepsToExercise}
-                        weightRepsDataArr={this.state.weightRepsDataArr}
-                        sets={this.state.sets}
-                        time={this.state.time}
-                        editWeightRepsInWorkout={this.props.editWeightRepsInWorkout}
-                    />
-                )}
             </View>
         );
         return (
@@ -262,8 +294,10 @@ const styles = StyleSheet.create({
     bigText: {
         lineHeight: 40,
         textAlign: "center",
-        fontSize: 36,
+        marginTop: 10,
+        fontSize: 25,
         color: "#eee",
+        fontFamily: "PattayaRegular"
     },
     plusButton: {
         marginTop: 20,
