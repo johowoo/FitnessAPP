@@ -20,7 +20,8 @@ import {
     showProgressPicker,
     changeTmpUriAction,
     deletePicsFromProgressAction,
-    deleteOnePicFromProgressAction
+    deleteOnePicFromProgressAction,
+    changeCurrentDisplayPicAction
 } from "../store/actions";
 
 import {PickerCamera} from "../component/PickerCamera";
@@ -111,7 +112,7 @@ export class _Progress extends Component {
 
     render() {
         const {
-            progress,
+            progressPics,
             addProgressPhotoDispatch,
             showProgressPickerDispatch,
             showProgressModalDispatch,
@@ -174,7 +175,7 @@ export class _Progress extends Component {
                 <ScrollView ref={ref => (this.scrollView = ref)}>
                     <View style={{marginTop: 5}}/>
                     <FlatList
-                        data={progress}
+                        data={progressPics}
                         style={styles.container}
                         renderItem={props => this.renderItem({...props, navigation})}
                         numColumns={numColumns}
@@ -203,7 +204,7 @@ export class _Progress extends Component {
 }
 
 const mapStateToProps = state => ({
-    progress: state.progress,
+    progressPics: state.progress.pics,
     showPicker: state.progressModal.showPicker,
     showModal: state.progressModal.showModal,
     tmpURI: state.progressModal.tmpURI,

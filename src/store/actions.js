@@ -25,14 +25,7 @@ export const updateBfrAction = data =>
     createAction(types.UPDATE_BFR_DATA)(data);
 export const addNewExerciseListAction = data =>
     createAction(types.ADD_NEW_EXERCISE_LIST)(data);
-export const addProgressPhoto = data =>
-    createAction(types.ADD_PROGRESS_PHOTO)(data);
-export const showProgressModal = data =>
-    createAction(types.SHOW_PROGRESS_MODAL)(data);
-export const showProgressPicker = data =>
-    createAction(types.SHOW_PROGRESS_PICKER)(data);
-export const changeTmpUriAction = data =>
-    createAction(types.CHANGE_TMP_URI)(data);
+
 export const addWeightToExercisesAction = data =>
     createAction(types.ADD_WEIGHT_TO_EXERCISE)(data);
 export const editWeightRepsInWorkoutAction = data =>
@@ -41,7 +34,19 @@ export const deleteExerciseFromWorkoutListAction = data =>
     createAction(types.DELETE_EXERCISE_FROM_WORKOUTLIST)(data);
 export const updateWeightBFRFromProgressPicsAction = data =>
     createAction(types.UPDATE_WEIGHT_BFR_FROM_PROGRESS_PICS)(data);
+
+//PROGRESS
 export const deletePicsFromProgressAction = data =>
     createAction(types.DELETE_PICS_FROM_PROGRESS)(data);
 export const deleteOnePicFromProgressAction = data =>
     createAction(types.DELETE_ONE_PIC_FROM_PROGRESS)(data);
+export const addProgressPhoto = data =>
+    createAction(types.ADD_PROGRESS_PHOTO)(data);
+export const showProgressModal = data =>
+    createAction(types.SHOW_PROGRESS_MODAL)(data);
+export const showProgressPicker = data =>
+    createAction(types.SHOW_PROGRESS_PICKER)(data);
+export const changeTmpUriAction = data =>
+    createAction(types.CHANGE_TMP_URI)(data);
+export const changeCurrentDisplayPicAction = data =>
+    createAction(types.CHANGE_CURRENT_DISPLAY_PIC)(data);
