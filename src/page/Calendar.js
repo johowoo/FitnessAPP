@@ -34,10 +34,6 @@ export class _Calendar extends Component {
     };
 
     render() {
-        // console.log(this.state.displayExercisesList);
-        // console.warn(this.props.markedDates);
-        // console.warn("list", list);
-        // console.warn(this.props.allExercisesList);
         return (
             <View>
                 <TopBar style={styles.topBar}>
@@ -47,7 +43,7 @@ export class _Calendar extends Component {
                 </TopBar>
                 <CalendarList
                     onVisibleMonthsChange={months => {
-                        console.log("now these months are visible", months);
+                        // console.warn("now these months are visible", months);
                     }}
                     pastScrollRange={50}
                     futureScrollRange={50}
