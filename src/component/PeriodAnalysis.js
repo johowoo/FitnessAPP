@@ -148,10 +148,10 @@ const styles = StyleSheet.create({
         height: 30
     },
     textTerm: {
-        fontSize: 18,
+        fontSize: 16,
         color: "#ddd",
         width: width * 0.4,
-        marginLeft: width * 0.1
+        marginLeft: width * 0.04
     },
     dropdownContainer: {
         height: 110,

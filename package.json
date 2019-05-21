@@ -28,7 +28,7 @@
     "prop-types": "^15.7.2",
     "react": "16.5.0",
     "react-native": "https://github.com/expo/react-native/archive/sdk-32.0.0.tar.gz",
-    "react-native-calendars": "^1.110.0",
+    "react-native-calendars": "^1.141.0",
     "react-native-chart-kit": "^2.6.1",
     "react-native-input-scroll-view": "^1.9.2",
     "react-native-modal-dropdown": "^0.6.2",
