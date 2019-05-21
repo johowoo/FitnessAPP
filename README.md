@@ -1,7 +1,7 @@
 # FitnessAPP
 fitness app built with React native
-##To be done
-###bugs to be fixed
+## To be done
+### bugs to be fixed
 * white screen in calendar
 * delete one modal -> confirm modal
 
@@ -9,8 +9,8 @@ fitness app built with React native
 * the main focus of exercise (chest/back ....)
 * saved selection of exercises
 
-##completed
-###functions
+## completed
+### functions
 * deletable set data ✔️
 * keep refreshing exercise category ✔️
 * add more exercise ✔️
@@ -29,7 +29,7 @@ fitness app built with React native
 * delete function in each pic  ✔️
  (refresh after deleting
   after deleting the last pic return to Progress)
-###bugs
+### bugs
 * position of photoModal ✔️
 * blur on editSets (key must be unique and can not be random)✔️
 * refresh analysis when update today's workouts ✔️
