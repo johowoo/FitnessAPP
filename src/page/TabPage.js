@@ -30,8 +30,9 @@ const StackNavigator = createStackNavigator({
         screenProps: "",
         navigationOptions: ({navigation}) => ({
             gesturesEnabled: false,
-            // headerTitle: navigation?.state?.params?.date.toString(),
-            headerTitle: navigation?.state?.params?.date.toString(),
+            // headerTitle: navigation?.state?.params?.date.toString()
+            headerTitle:
+                `${navigation?.state?.params?.year.toString()}-${navigation?.state?.params?.month.toString()}-${navigation?.state?.params?.day.toString()} ${navigation?.state?.params?.hour.toString()}:${navigation?.state?.params?.minute.toString()}`,
             // header: null
             headerBackTitle: "Progress Page",
             headerRight: (
