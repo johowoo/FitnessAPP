@@ -29,14 +29,14 @@ export class _DisplayPicture extends Component {
     }
 
     async onSwipeLeft(gestureState) {
-        // console.warn("curentPicIndex", this.props.currentPicIndex);
+        // console.warn("curentPicIndex", this.props.currentPic.index);
         // console.warn("total length", this.props.progressPics.length - 1);
-        if (this.props.currentPicIndex < this.props.progressPics.length - 1) {
+        if (this.props.currentPic.index < this.props.progressPics.length - 1) {
             await this.setState({
-                photoURI: this.props.progressPics[this.props.currentPicIndex + 1].photoURI,
-                weight: this.props.progressPics[this.props.currentPicIndex + 1].weight,
-                BFR: this.props.progressPics[this.props.currentPicIndex + 1].BFR,
-                date: this.props.progressPics[this.props.currentPicIndex + 1].date,
+                // photoURI: this.props.progressPics[this.props.currentPic.index + 1].photoURI,
+                // weight: this.props.progressPics[this.props.currentPic.index + 1].weight,
+                // BFR: this.props.progressPics[this.props.currentPic.index + 1].BFR,
+                date: this.props.progressPics[this.props.currentPic.index + 1].date,
                 index: this.state.index + 1,
             });
             await this.props.changeCurrentDisplayPic({index: this.state.index, date: this.state.date})
@@ -51,12 +51,12 @@ export class _DisplayPicture extends Component {
 
     async onSwipeRight(gestureState) {
         console.warn("pics", this.props.progressPics);
-        if (this.props.currentPicIndex > 0) {
+        if (this.props.currentPic.index > 0) {
             await this.setState({
-                photoURI: this.props.progressPics[this.props.currentPicIndex - 1].photoURI,
-                weight: this.props.progressPics[this.props.currentPicIndex - 1].weight,
-                BFR: this.props.progressPics[this.props.currentPicIndex - 1].BFR,
-                date: this.props.progressPics[this.props.currentPicIndex - 1].date,
+                // photoURI: this.props.progressPics[this.props.currentPic.index - 1].photoURI,
+                // weight: this.props.progressPics[this.props.currentPic.index - 1].weight,
+                // BFR: this.props.progressPics[this.props.currentPic.index - 1].BFR,
+                date: this.props.progressPics[this.props.currentPic.index - 1].date,
                 index: this.state.index - 1,
             });
             await this.props.changeCurrentDisplayPic({index: this.state.index, date: this.state.date})
@@ -94,19 +94,19 @@ export class _DisplayPicture extends Component {
                                    onSwipeRight={(state) => this.onSwipeRight(state)}>
                     <ScrollView>
                         <View style={styles.imageContainer}>
-                            <Image style={styles.image} source={{uri: this.state.photoURI}}/>
+                            <Image style={styles.image} source={{uri: this.props.currentPic.photoURI}}/>
                         </View>
                         <View style={styles.textContainer}>
                             <View style={styles.textInnerContainer}>
                                 <Text style={styles.text}>
                                     Weight:
-                                    {this.state.weight} <Text style={{fontSize: 13}}>KG</Text>
+                                    {this.props.currentPic.weight} <Text style={{fontSize: 13}}>KG</Text>
                                 </Text>
                             </View>
                             <View style={styles.textInnerContainer}>
                                 <Text style={styles.text}>
                                     Body Fat Rate:
-                                    {this.state.BFR} %
+                                    {this.props.currentPic.BFR} %
                                 </Text>
                             </View>
                         </View>
@@ -127,8 +127,7 @@ const mapStateToProps = state => ({
     bfrData: state.health.bfrData,
     weightData: state.health.weightData,
     progressPics: state.progress.pics,
-    currentPicIndex: state.progress.currentPic.index,
-    currentPicDate: state.progress.currentPic.date,
+    currentPic: state.progress.currentPic
 });
 
 const mapActionToProps = dispatch => ({

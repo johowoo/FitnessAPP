@@ -27,7 +27,7 @@ const StackNavigator = createStackNavigator({
     },
     DisplayPicture: {
         screen: props => <DisplayPicture {...props}  />,
-        screenProps:"",
+        screenProps: "",
         navigationOptions: ({navigation}) => ({
             gesturesEnabled: false,
             headerTitle: navigation?.state?.params?.date.toString(),
