@@ -8,12 +8,13 @@ import {
     Image,
 } from "react-native";
 import {
-    changeCurrentDisplayPicAction
+    changeCurrentDisplayPicAction, deleteOnePicFromProgressAction, showDeleteConfirmModalInDisplayPictureAction
 } from "../store/actions";
 import {LinearGradient} from "expo";
 import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 import {connect} from "react-redux";
 import {ReminderModal} from "../component/ReminderModal";
+import LoadingUtil from "../utils/LoadingUtil";
 
 const {width, height} = Dimensions.get("window");
 
@@ -41,11 +42,18 @@ export class _DisplayPicture extends Component {
             });
             await this.props.changeCurrentDisplayPic({index: this.state.index, date: this.state.date})
         } else {
-            this.setState({
+
+            this.props.showDeleteConfirmModalInDisplayPicture({
                 showReminder: true,
                 reminderTitle: "Last pic",
-                reminderContent: "You have already reached the last pic"
-            })
+                reminderContent: "You have already reached the last pic",
+                hideConfirmButton: true
+            });
+            // this.setState({
+            //     showReminder: true,
+            //     reminderTitle: "Last pic",
+            //     reminderContent: "You have already reached the last pic"
+            // })
         }
     }
 
@@ -61,11 +69,17 @@ export class _DisplayPicture extends Component {
             });
             await this.props.changeCurrentDisplayPic({index: this.state.index, date: this.state.date})
         } else {
-            this.setState({
+            this.props.showDeleteConfirmModalInDisplayPicture({
                 showReminder: true,
                 reminderTitle: "First pic",
-                reminderContent: "You have already reached the first pic"
-            })
+                reminderContent: "You have already reached the first pic",
+                hideConfirmButton: true
+            });
+            // this.setState({
+            //     showReminder: true,
+            //     reminderTitle: "First pic",
+            //     reminderContent: "You have already reached the first pic"
+            // })
         }
     }
 
@@ -80,10 +94,22 @@ export class _DisplayPicture extends Component {
         })
     }
 
+    //delete pic from progress
+    handleConfirm = async () => {
+        await LoadingUtil.showLoading();
+        await this.props.deleteOnePicFromProgress({});
+        await this.props.showDeleteConfirmModalInDisplayPicture({
+            showReminder: false
+        });
+        await LoadingUtil.dismissLoading();
+    };
     handleCloseReminder = (bool = false) => {
-        this.setState({
-            showReminder: bool
+        this.props.showDeleteConfirmModalInDisplayPicture({
+            showReminder: false
         })
+        // this.setState({
+        //     showReminder: bool
+        // })
     };
 
     render() {
@@ -116,11 +142,12 @@ export class _DisplayPicture extends Component {
                         </View>
                     </ScrollView>
                 </GestureRecognizer>
-                {this.state.showReminder && <ReminderModal
-                    reminderTitle={this.state.reminderTitle}
-                    reminderContent={this.state.reminderContent}
+                {this.props.displayPicture.showReminder && <ReminderModal
+                    reminderTitle={this.props.displayPicture.reminderTitle}
+                    reminderContent={this.props.displayPicture.reminderContent}
                     handleCloseReminder={this.handleCloseReminder}
-                    hideConfirmButton={true}/>
+                    handleConfirm={this.handleConfirm}
+                    hideConfirmButton={this.props.displayPicture.hideConfirmButton}/>
                 }
             </LinearGradient>
         );
@@ -131,13 +158,20 @@ const mapStateToProps = state => ({
     bfrData: state.health.bfrData,
     weightData: state.health.weightData,
     progressPics: state.progress.pics,
-    currentPic: state.progress.currentPic
+    currentPic: state.progress.currentPic,
+    displayPicture: state.displayPicture,
 });
 
 const mapActionToProps = dispatch => ({
     changeCurrentDisplayPic(data) {
         dispatch(changeCurrentDisplayPicAction(data));
-    }
+    },
+    showDeleteConfirmModalInDisplayPicture(data) {
+        dispatch(showDeleteConfirmModalInDisplayPictureAction(data))
+    },
+    deleteOnePicFromProgress(data) {
+        dispatch(deleteOnePicFromProgressAction(data));
+    },
 });
 
 export const DisplayPicture = connect(

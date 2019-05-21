@@ -39,20 +39,23 @@ const StackNavigator = createStackNavigator({
             headerRight: (
                 <TouchableOpacity style={{marginRight: 30}}
                                   onPress={() => {
-                                      Alert.alert("Delete", "Do you want to delete this photo？", [
-                                          {
-                                              text: "Delete",
-                                              onPress: async () => {
-                                                  await LoadingUtil.showLoading();
-                                                  await navigation?.state?.params?.deleteOnePicFromProgress({
-                                                      // date: navigation?.state?.params?.date,//problem
-                                                      // index: navigation?.state?.params?.index
-                                                  });
-                                                  await LoadingUtil.dismissLoading();
-                                              },
-                                          },
-                                          {text: "Cancel"},
-                                      ])
+                                      navigation?.state?.params?.showDeleteConfirmModalInDisplayPicture({
+                                          showReminder: true,
+                                          reminderTitle: 'Delete',
+                                          reminderContent: "Do you want to delete this photo？",
+                                          hideConfirmButton: false
+                                      });
+                                      // Alert.alert("Delete", "Do you want to delete this photo？", [
+                                      //     {
+                                      //         text: "Delete",
+                                      //         onPress: async () => {
+                                      //             await LoadingUtil.showLoading();
+                                      //             await navigation?.state?.params?.deleteOnePicFromProgress({});
+                                      //             await LoadingUtil.dismissLoading();
+                                      //         },
+                                      //     },
+                                      //     {text: "Cancel"},
+                                      // ])
                                   }
                                   }>
                     <View>

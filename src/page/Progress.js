@@ -21,7 +21,7 @@ import {
     changeTmpUriAction,
     deletePicsFromProgressAction,
     deleteOnePicFromProgressAction,
-    changeCurrentDisplayPicAction
+    changeCurrentDisplayPicAction, showDeleteConfirmModalInDisplayPictureAction
 } from "../store/actions";
 
 import {PickerCamera} from "../component/PickerCamera";
@@ -86,7 +86,8 @@ export class _Progress extends Component {
                             await props.navigation.navigate("DisplayPicture", {
                                 ...props.item,
                                 index: props.index,
-                                deleteOnePicFromProgress: this.props.deleteOnePicFromProgress
+                                deleteOnePicFromProgress: this.props.deleteOnePicFromProgress,
+                                showDeleteConfirmModalInDisplayPicture: this.props.showDeleteConfirmModalInDisplayPicture
                             });
 
                         }
@@ -137,7 +138,7 @@ export class _Progress extends Component {
                             style={{height: 25, width: 25, backgroundColor: "transparent"}}
                             // onPress={() => this.handleModal({showPicker: true})}
                             onPress={async () => {
-                                if (this.state.showDeleteButton&&this.state.selectTobeDeleted.length) {
+                                if (this.state.showDeleteButton && this.state.selectTobeDeleted.length) {
                                     await LoadingUtil.showLoading();
                                     await deletePicsFromProgress(this.state.selectTobeDeleted);
                                     await LoadingUtil.dismissLoading();
@@ -241,6 +242,9 @@ const mapActionToProps = dispatch => ({
     },
     changeTmpUri(uri) {
         dispatch(changeTmpUriAction(uri));
+    },
+    showDeleteConfirmModalInDisplayPicture(data) {
+        dispatch(showDeleteConfirmModalInDisplayPictureAction(data))
     },
 });
 

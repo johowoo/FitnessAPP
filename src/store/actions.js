@@ -50,3 +50,6 @@ export const changeTmpUriAction = data =>
     createAction(types.CHANGE_TMP_URI)(data);
 export const changeCurrentDisplayPicAction = data =>
     createAction(types.CHANGE_CURRENT_DISPLAY_PIC)(data);
+export const showDeleteConfirmModalInDisplayPictureAction = data =>
+    createAction(types.SHOW_DELETE_CONFIRM_MODAL_IN_DISPLAY_PICTURE)(data);
+
