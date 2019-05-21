@@ -80,11 +80,14 @@ export class _Progress extends Component {
                                 });
                             }
                         } else {
+                            console.warn("props.index", props.index);
+                            console.warn("props.item.date", props.item.date);
                             props.navigation.navigate("DisplayPicture", {
                                 ...props.item,
                                 index: props.index,
                                 deleteOnePicFromProgress: this.props.deleteOnePicFromProgress
                             });
+                            this.props.changeCurrentDisplayPic({index: props.index, date: props.item.date})
                         }
                     }}>
                     <Image style={styles.image} source={{uri: props.item.photoURI}}/>
@@ -99,16 +102,16 @@ export class _Progress extends Component {
             </View>
         );
     };
-    loadData = () => {
-        const newDisplayExercises = this.state.displayExercises.concat(
-            this.props.extraSectionExercises
-        );
-        // timer =setTimeout(() => {
-        this.setState({
-            displayExercises: newDisplayExercises,
-        });
-        // }, 2000)
-    };
+    // loadData = () => {
+    //     const newDisplayExercises = this.state.displayExercises.concat(
+    //         this.props.extraSectionExercises
+    //     );
+    //     // timer =setTimeout(() => {
+    //     this.setState({
+    //         displayExercises: newDisplayExercises,
+    //     });
+    //     // }, 2000)
+    // };
 
     render() {
         const {
@@ -210,6 +213,9 @@ const mapStateToProps = state => ({
     tmpURI: state.progressModal.tmpURI,
 });
 const mapActionToProps = dispatch => ({
+    changeCurrentDisplayPic(data) {
+        dispatch(changeCurrentDisplayPicAction(data));
+    },
     deleteOnePicFromProgress(data) {
         dispatch(deleteOnePicFromProgressAction(data));
     },

@@ -25,11 +25,11 @@ export class _DisplayPicture extends Component {
         };
     }
     onSwipeLeft(gestureState) {
-        if (this.state.index < this.props.progress.length - 1) {
+        if (this.state.index < this.props.progressPics.length - 1) {
             this.setState({
-                photoURI: this.props.progress[this.state.index + 1].photoURI,
-                weight: this.props.progress[this.state.index + 1].weight,
-                BFR: this.props.progress[this.state.index + 1].BFR,
+                photoURI: this.props.progressPics[this.state.index + 1].photoURI,
+                weight: this.props.progressPics[this.state.index + 1].weight,
+                BFR: this.props.progressPics[this.state.index + 1].BFR,
                 index: this.state.index + 1,
             });
         } else {
@@ -44,9 +44,9 @@ export class _DisplayPicture extends Component {
     onSwipeRight(gestureState) {
         if (this.state.index > 0) {
             this.setState({
-                photoURI: this.props.progress[this.state.index - 1].photoURI,
-                weight: this.props.progress[this.state.index - 1].weight,
-                BFR: this.props.progress[this.state.index - 1].BFR,
+                photoURI: this.props.progressPics[this.state.index - 1].photoURI,
+                weight: this.props.progressPics[this.state.index - 1].weight,
+                BFR: this.props.progressPics[this.state.index - 1].BFR,
                 index: this.state.index - 1,
             });
         } else {
@@ -115,7 +115,7 @@ export class _DisplayPicture extends Component {
 const mapStateToProps = state => ({
     bfrData: state.health.bfrData,
     weightData: state.health.weightData,
-    progress: state.progress,
+    progressPics: state.progress.pics,
 });
 
 export const DisplayPicture = connect(
