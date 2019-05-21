@@ -7,6 +7,9 @@ import {
     ScrollView,
     Image,
 } from "react-native";
+import {
+    changeCurrentDisplayPicAction
+} from "../store/actions";
 import {LinearGradient} from "expo";
 import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 import {connect} from "react-redux";
@@ -24,14 +27,19 @@ export class _DisplayPicture extends Component {
             showReminder: false
         };
     }
-    onSwipeLeft(gestureState) {
-        if (this.state.index < this.props.progressPics.length - 1) {
-            this.setState({
-                photoURI: this.props.progressPics[this.state.index + 1].photoURI,
-                weight: this.props.progressPics[this.state.index + 1].weight,
-                BFR: this.props.progressPics[this.state.index + 1].BFR,
+
+    async onSwipeLeft(gestureState) {
+        // console.warn("curentPicIndex", this.props.currentPicIndex);
+        // console.warn("total length", this.props.progressPics.length - 1);
+        if (this.props.currentPicIndex < this.props.progressPics.length - 1) {
+            await this.setState({
+                photoURI: this.props.progressPics[this.props.currentPicIndex + 1].photoURI,
+                weight: this.props.progressPics[this.props.currentPicIndex + 1].weight,
+                BFR: this.props.progressPics[this.props.currentPicIndex + 1].BFR,
+                date: this.props.progressPics[this.props.currentPicIndex + 1].date,
                 index: this.state.index + 1,
             });
+            await this.props.changeCurrentDisplayPic({index: this.state.index, date: this.state.date})
         } else {
             this.setState({
                 showReminder: true,
@@ -41,14 +49,17 @@ export class _DisplayPicture extends Component {
         }
     }
 
-    onSwipeRight(gestureState) {
-        if (this.state.index > 0) {
-            this.setState({
-                photoURI: this.props.progressPics[this.state.index - 1].photoURI,
-                weight: this.props.progressPics[this.state.index - 1].weight,
-                BFR: this.props.progressPics[this.state.index - 1].BFR,
+    async onSwipeRight(gestureState) {
+        console.warn("pics", this.props.progressPics);
+        if (this.props.currentPicIndex > 0) {
+            await this.setState({
+                photoURI: this.props.progressPics[this.props.currentPicIndex - 1].photoURI,
+                weight: this.props.progressPics[this.props.currentPicIndex - 1].weight,
+                BFR: this.props.progressPics[this.props.currentPicIndex - 1].BFR,
+                date: this.props.progressPics[this.props.currentPicIndex - 1].date,
                 index: this.state.index - 1,
             });
+            await this.props.changeCurrentDisplayPic({index: this.state.index, date: this.state.date})
         } else {
             this.setState({
                 showReminder: true,
@@ -116,11 +127,19 @@ const mapStateToProps = state => ({
     bfrData: state.health.bfrData,
     weightData: state.health.weightData,
     progressPics: state.progress.pics,
+    currentPicIndex: state.progress.currentPic.index,
+    currentPicDate: state.progress.currentPic.date,
+});
+
+const mapActionToProps = dispatch => ({
+    changeCurrentDisplayPic(data) {
+        dispatch(changeCurrentDisplayPicAction(data));
+    }
 });
 
 export const DisplayPicture = connect(
     mapStateToProps,
-    null
+    mapActionToProps
 )(_DisplayPicture);
 const styles = StyleSheet.create({
     topBar: {

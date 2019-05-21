@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd580928-bb60-480d-8b73-7c94df331487" name="Default Changelist" comment="p">
+      <change beforePath="$PROJECT_DIR$/src/page/DisplayPicture.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/DisplayPicture.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/page/Progress.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Progress.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/reducers/progress.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/progress.js" afterDir="false" />
     </list>
@@ -31,8 +32,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/Progress.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="87" column="44" selection-start-line="87" selection-start-column="44" selection-end-line="87" selection-end-column="44" />
+            <state relative-caret-position="1118">
+              <caret line="86" column="46" lean-forward="true" selection-start-line="86" selection-start-column="46" selection-end-line="86" selection-end-column="46" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -43,8 +44,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/page/DisplayPicture.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="31" column="57" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="57" />
+            <state relative-caret-position="226">
+              <caret line="33" column="62" lean-forward="true" selection-start-line="33" selection-start-column="62" selection-end-line="33" selection-end-column="62" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -55,8 +56,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/store/reducers/progress.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="218">
-              <caret line="26" column="30" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="30" />
+            <state relative-caret-position="327">
+              <caret line="34" column="59" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -93,9 +94,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>remindertitle</find>
-      <find>&lt;remindermodal</find>
-      <find>alert</find>
       <find>handlecONFIRM</find>
       <find>quick</find>
       <find>remindermodal</find>
@@ -109,7 +107,6 @@
       <find>completed</find>
       <find>newAll</find>
       <find>allExercise</find>
-      <find>warn</find>
       <find>picker</find>
       <find>show</find>
       <find>construct</find>
@@ -120,9 +117,13 @@
       <find>.progress</find>
       <find>navigatio</find>
       <find>navigation</find>
-      <find>console.warn</find>
-      <find>current</find>
       <find>index</find>
+      <find>progress</find>
+      <find>warn</find>
+      <find>current</find>
+      <find>console.warn</find>
+      <find>navigate</find>
+      <find>total</find>
     </findStrings>
     <replaceStrings>
       <replace>expo</replace>
@@ -186,12 +187,12 @@
         <option value="$PROJECT_DIR$/src/page/CurrentWorkout.js" />
         <option value="$PROJECT_DIR$/src/component/PhotoModal.js" />
         <option value="$PROJECT_DIR$/src/component/ExerciseList.js" />
-        <option value="$PROJECT_DIR$/src/page/DisplayPicture.js" />
         <option value="$PROJECT_DIR$/src/page/TabPage.js" />
         <option value="$PROJECT_DIR$/src/store/actionTypes.js" />
         <option value="$PROJECT_DIR$/src/store/actions.js" />
         <option value="$PROJECT_DIR$/src/page/Progress.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/progress.js" />
+        <option value="$PROJECT_DIR$/src/page/DisplayPicture.js" />
       </list>
     </option>
   </component>
@@ -372,15 +373,16 @@
       <workItem from="1558333585779" duration="4443000" />
       <workItem from="1558403511979" duration="642000" />
       <workItem from="1558404180978" duration="5138000" />
-      <workItem from="1558421915344" duration="6316000" />
+      <workItem from="1558421915344" duration="8561000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="236118000" />
+    <option name="totallyTimeSpent" value="238363000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="947" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17956468" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -762,23 +764,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/actionTypes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="461">
-          <caret line="35" column="39" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="39" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/reducers/progress.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="218">
-          <caret line="26" column="30" selection-start-line="26" selection-start-column="20" selection-end-line="26" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/page/TabPage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -791,18 +776,35 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/page/Progress.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="87" column="44" selection-start-line="87" selection-start-column="44" selection-end-line="87" selection-end-column="44" />
+        <state relative-caret-position="1118">
+          <caret line="86" column="46" lean-forward="true" selection-start-line="86" selection-start-column="46" selection-end-line="86" selection-end-column="46" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/actionTypes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="461">
+          <caret line="35" column="39" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="39" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/reducers/progress.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="327">
+          <caret line="34" column="59" selection-start-line="34" selection-start-column="59" selection-end-line="34" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/page/DisplayPicture.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="31" column="57" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="57" />
+        <state relative-caret-position="226">
+          <caret line="33" column="62" lean-forward="true" selection-start-line="33" selection-start-column="62" selection-end-line="33" selection-end-column="62" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

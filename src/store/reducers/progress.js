@@ -20,14 +20,19 @@ export const progress = (state = {pics: []}, action) => {
                     emptyPics.push(item);
                 }
             });
-            return {...state, pics: emptyPics};
-        case types.CHANGE_CURRENT_DISPLAY_PIC:
             state.pics.map((item, index) => {
                 if (action.payload.date === item.date) {
                     currentPic.index = index > 0 ? index - 1 : 0;
                     currentPic.date = index > 0 ? state.pics[index - 1].date : item.date;
                 }
             });
+            return {...state, pics: emptyPics, currentPic};
+        case types.CHANGE_CURRENT_DISPLAY_PIC:
+            // console.warn("payload date", action.payload.date);
+            console.warn("payload index", action.payload.index);
+            currentPic.date = action.payload.date || state.currentPic.date;
+            currentPic.index = action.payload.index;
+            console.warn("result index", currentPic.index);
             return {...state, currentPic};
         default:
             return state;

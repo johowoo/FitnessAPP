@@ -62,32 +62,33 @@ export class _Progress extends Component {
         return (
             <View style={styles.item}>
                 <TouchableOpacity
-                    onPress={() => {
+                    onPress={async () => {
                         if (this.state.showDeleteButton) {
                             if (this.state.selectTobeDeleted.includes(props.item.date)) {
                                 const newSelectTobeDeleted = [];
-                                this.state.selectTobeDeleted.map((item, index) => {
+                                await this.state.selectTobeDeleted.map((item, index) => {
                                     if (item !== props.item.date) {
                                         newSelectTobeDeleted.push(item);
                                     }
                                 });
-                                this.setState({
+                                await this.setState({
                                     selectTobeDeleted: newSelectTobeDeleted
                                 })
                             } else {
-                                this.setState({
+                                await this.setState({
                                     selectTobeDeleted: [...this.state.selectTobeDeleted, props.item.date]
                                 });
                             }
                         } else {
-                            console.warn("props.index", props.index);
-                            console.warn("props.item.date", props.item.date);
-                            props.navigation.navigate("DisplayPicture", {
+                            // console.warn("props.index", props.index);
+                            // console.warn("props.item.date", props.item.date);
+                            await this.props.changeCurrentDisplayPic({index: props.index, date: props.item.date})
+                            await props.navigation.navigate("DisplayPicture", {
                                 ...props.item,
                                 index: props.index,
                                 deleteOnePicFromProgress: this.props.deleteOnePicFromProgress
                             });
-                            this.props.changeCurrentDisplayPic({index: props.index, date: props.item.date})
+
                         }
                     }}>
                     <Image style={styles.image} source={{uri: props.item.photoURI}}/>
