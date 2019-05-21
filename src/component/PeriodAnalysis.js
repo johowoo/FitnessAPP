@@ -7,7 +7,7 @@ import {formatYYYYMMDDFromDate} from "../utils/formatMonthandDay";
 import {accumulateExercisesData} from "../utils/accumulateExercisesData";
 import LoadingUtil from '../utils/LoadingUtil';
 
-
+// data source:  state.savedExerciseForEachDay.allExercisesList
 const {width} = Dimensions.get("window");
 
 class _PeriodAnalysis extends Component {
@@ -53,7 +53,7 @@ class _PeriodAnalysis extends Component {
     handleConfirmPressed = async () => {
         // console.warn("enterConfirmPressed",this.state.selectedIndex);
         await LoadingUtil.showLoading();
-         switch (parseInt(this.state.selectedIndex)) {
+        switch (parseInt(this.state.selectedIndex)) {
             case 0:
                 this.handleSetData(0);
                 break;
@@ -76,6 +76,7 @@ class _PeriodAnalysis extends Component {
     render() {
         //convert date from 2019-05-19 to 20190519 and then convert to number
         // so that these dates can be compared easily
+        console.warn("allExL",this.props.allExercisesList);
         return (
             <View style={styles.wholeContainer}>
                 <View style={styles.dropdownContainer}>

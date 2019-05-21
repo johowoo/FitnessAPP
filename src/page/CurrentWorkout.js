@@ -29,10 +29,9 @@ class _CurrentWorkout extends Component {
         reminderContent: ""
     };
     handlePressComplete = () => {
-        console.warn("this", this);
+        // console.warn("this", this);
         this.props.clearCurrentWorkout();
         const currentTimestamp = new Date();
-
         // ***modified
         const currentDate = `${currentTimestamp.getFullYear()}-${formatMonthandDay(
             currentTimestamp.getMonth() + 1

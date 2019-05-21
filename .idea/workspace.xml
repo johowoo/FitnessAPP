@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd580928-bb60-480d-8b73-7c94df331487" name="Default Changelist" comment="p">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/EditWeightReps.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/EditWeightReps.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/PeriodAnalysis.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/PeriodAnalysis.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/CurrentWorkout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/CurrentWorkout.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,8 +19,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/CurrentWorkout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="3280">
-              <caret line="99" column="12" selection-start-line="99" selection-start-column="12" selection-end-line="99" selection-end-column="12" />
+            <state relative-caret-position="332">
+              <caret line="44" column="39" lean-forward="true" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/page/Statistics.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="344">
+              <caret line="105" column="31" selection-start-line="105" selection-start-column="17" selection-end-line="105" selection-end-column="31" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -29,11 +41,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/component/EditWeightReps.js">
+        <entry file="file://$PROJECT_DIR$/src/component/PeriodAnalysis.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="373">
-              <caret line="135" column="68" lean-forward="true" selection-start-line="135" selection-start-column="68" selection-end-line="135" selection-end-column="68" />
+            <state relative-caret-position="107">
+              <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/store/reducers/savedExerciseForEachDay.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-354" />
           </provider>
         </entry>
       </file>
@@ -48,8 +70,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>do you</find>
-      <find>reducer</find>
       <find>add moree</find>
       <find>button</find>
       <find>loading</find>
@@ -60,7 +80,6 @@
       <find>add</find>
       <find>&quot;add</find>
       <find>rgba</find>
-      <find>completed</find>
       <find>await</find>
       <find>Remindermodal</find>
       <find>compl</find>
@@ -78,6 +97,9 @@
       <find>this.setstate(</find>
       <find>state</find>
       <find>Textinput</find>
+      <find>weightText</find>
+      <find>completed</find>
+      <find>handlecon</find>
     </findStrings>
     <replaceStrings>
       <replace>expo</replace>
@@ -136,16 +158,16 @@
         <option value="$PROJECT_DIR$/src/component/ExerciseList.js" />
         <option value="$PROJECT_DIR$/src/Root.js" />
         <option value="$PROJECT_DIR$/src/component/AddDropdown.js" />
-        <option value="$PROJECT_DIR$/src/component/PeriodAnalysis.js" />
         <option value="$PROJECT_DIR$/src/page/Statistics.js" />
         <option value="$PROJECT_DIR$/src/component/MyLoading.js" />
         <option value="$PROJECT_DIR$/src/component/PickerCamera.js" />
         <option value="$PROJECT_DIR$/src/utils/LoadingUtil.js" />
-        <option value="$PROJECT_DIR$/src/page/CurrentWorkout.js" />
         <option value="$PROJECT_DIR$/src/component/WorkoutList.js" />
         <option value="$PROJECT_DIR$/src/component/PhotoModal.js" />
         <option value="$PROJECT_DIR$/src/page/Progress.js" />
         <option value="$PROJECT_DIR$/src/component/EditWeightReps.js" />
+        <option value="$PROJECT_DIR$/src/component/PeriodAnalysis.js" />
+        <option value="$PROJECT_DIR$/src/page/CurrentWorkout.js" />
       </list>
     </option>
   </component>
@@ -197,6 +219,19 @@
               <item name="FitnessAPP" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="page" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FitnessAPP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FitnessAPP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FitnessAPP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FitnessAPP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FitnessAPP" type="b2602c69:ProjectViewProjectNode" />
@@ -319,18 +354,18 @@
       <workItem from="1558312490046" duration="7905000" />
       <workItem from="1558333585779" duration="4443000" />
       <workItem from="1558403511979" duration="642000" />
-      <workItem from="1558404180978" duration="811000" />
+      <workItem from="1558404180978" duration="2206000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="225475000" />
+    <option name="totallyTimeSpent" value="226870000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="947" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17956468" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17956468" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -344,7 +379,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="RNConsole" order="8" />
       <window_info anchor="bottom" id="CSS-X-Fire" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4996979" visible="true" weight="0.20121951" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4996979" visible="true" weight="0.20121951" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50030214" side_tool="true" weight="0.03640777" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.71707314" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
@@ -480,16 +515,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="697">
           <caret line="37" column="48" selection-start-line="37" selection-start-column="48" selection-end-line="37" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/reducers/savedExerciseForEachDay.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/accumulateExercisesData.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -630,27 +655,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Statistics.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="82" column="6" lean-forward="true" selection-start-line="82" selection-start-column="6" selection-end-line="82" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Root.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1044">
           <caret line="1" column="37" selection-start-line="1" selection-start-column="37" selection-end-line="1" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/PeriodAnalysis.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="7" selection-start-line="7" selection-end-line="8" />
         </state>
       </provider>
     </entry>
@@ -700,16 +708,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="356">
-          <caret line="173" column="15" lean-forward="true" selection-start-line="165" selection-start-column="12" selection-end-line="173" selection-end-column="15" />
-          <folding>
-            <element signature="e#259#318#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/PhotoModal.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
@@ -730,20 +728,62 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/CurrentWorkout.js">
+    <entry file="file://$PROJECT_DIR$/src/component/EditWeightReps.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3280">
-          <caret line="99" column="12" selection-start-line="99" selection-start-column="12" selection-end-line="99" selection-end-column="12" />
+        <state relative-caret-position="272">
+          <caret line="112" column="50" lean-forward="true" selection-start-line="112" selection-start-column="50" selection-end-line="112" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/accumulateExercisesData.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="492">
+          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/Statistics.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="105" column="31" selection-start-line="105" selection-start-column="17" selection-end-line="105" selection-end-column="31" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/EditWeightReps.js">
+    <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="373">
-          <caret line="135" column="68" lean-forward="true" selection-start-line="135" selection-start-column="68" selection-end-line="135" selection-end-column="68" />
+        <state relative-caret-position="182">
+          <caret line="179" column="28" selection-start-line="179" selection-start-column="28" selection-end-line="179" selection-end-column="28" />
+          <folding>
+            <element signature="e#259#318#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/CurrentWorkout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="44" column="39" lean-forward="true" selection-start-line="44" selection-start-column="39" selection-end-line="44" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/reducers/savedExerciseForEachDay.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-354" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/PeriodAnalysis.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="9" column="45" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
