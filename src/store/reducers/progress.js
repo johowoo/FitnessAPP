@@ -15,8 +15,9 @@ export const progress = (state = {pics: []}, action) => {
                     emptyPics.push(item);
                 }
             });
+            //******problem*****
             state.pics.map((item, index) => {
-                if (action.payload.date === item.date) {
+                if (state.currentPic.date === item.date) {
                     currentPic.index = index > 0 ? index - 1 : 0;
                     currentPic.date = index > 0 ? state.pics[index - 1].date : item.date;
                     currentPic.photoURI = state.pics[currentPic.index].photoURI;

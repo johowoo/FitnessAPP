@@ -42,8 +42,8 @@ const StackNavigator = createStackNavigator({
                                               onPress: async () => {
                                                   await LoadingUtil.showLoading();
                                                   await navigation?.state?.params?.deleteOnePicFromProgress({
-                                                      date: navigation?.state?.params?.date,//problem
-                                                      index: navigation?.state?.params?.index
+                                                      // date: navigation?.state?.params?.date,//problem
+                                                      // index: navigation?.state?.params?.index
                                                   });
                                                   await LoadingUtil.dismissLoading();
                                               },
