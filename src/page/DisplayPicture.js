@@ -24,7 +24,6 @@ export class _DisplayPicture extends Component {
             showReminder: false
         };
     }
-
     onSwipeLeft(gestureState) {
         if (this.state.index < this.props.progress.length - 1) {
             this.setState({
