@@ -23,6 +23,8 @@ import {
     deleteOnePicFromProgressAction,
     changeCurrentDisplayPicAction, showDeleteConfirmModalInDisplayPictureAction
 } from "../store/actions";
+import IconFontAwesome from "react-native-vector-icons/FontAwesome";
+
 
 import {PickerCamera} from "../component/PickerCamera";
 import ApslButton from "apsl-react-native-button";
@@ -86,7 +88,7 @@ export class _Progress extends Component {
                             await props.navigation.navigate("DisplayPicture", {
                                 ...props.item,
                                 index: props.index,
-                                deleteOnePicFromProgress: this.props.deleteOnePicFromProgress,
+                                // deleteOnePicFromProgress: this.props.deleteOnePicFromProgress,
                                 showDeleteConfirmModalInDisplayPicture: this.props.showDeleteConfirmModalInDisplayPicture
                             });
 
@@ -192,9 +194,26 @@ export class _Progress extends Component {
                             onRefresh={this.onRefresh}
                             refreshing={this.state.refreshing}
                             extraData={this.state.showDeleteButton + this.state.selectTobeDeleted}
-                        /> : (<View>
-                            <Text>Please press the + button on the right side to add more photos </Text>
-                        </View>)
+                        /> : (
+                            <View style={{
+                                flex: 1,
+                                height: height * 0.66,
+                                textAlign: "center",
+                                justifyContent: "center",
+                                // backgroundColor: "#ccc"
+                            }}>
+                                <Text style={{textAlign: 'center'}}>
+                                    <IconFontAwesome name="camera-retro" size={110} color="#c69"
+                                                     key="delete"/>
+                                </Text>
+                                <Text style={{
+                                    color: "#eee",
+                                    fontSize: 24,
+                                    fontFamily: "PattayaRegular",
+                                    margin: 20,
+                                    marginLeft: 40
+                                }}>Please Click the + button to add your first progress photo  </Text>
+                            </View>)
                     }
                     {showPicker && (
                         <PickerCamera
