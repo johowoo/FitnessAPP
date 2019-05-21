@@ -88,6 +88,10 @@ export class _DisplayPicture extends Component {
 
     render() {
         // const this.state.values = this.props?.navigation?.state?.params;
+        if (this.props.progressPics.length === 0) {
+            this.props?.navigation.goBack();
+            return <View><Text>NULL</Text></View>;
+        }
         return (
             <LinearGradient colors={["#219dd5", "#51c0bb"]} style={{flex: 1}}>
                 <GestureRecognizer onSwipeLeft={(state) => this.onSwipeLeft(state)}

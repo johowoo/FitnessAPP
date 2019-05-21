@@ -178,19 +178,23 @@ export class _Progress extends Component {
                 </TopBar>
                 <ScrollView ref={ref => (this.scrollView = ref)}>
                     <View style={{marginTop: 5}}/>
-                    <FlatList
-                        data={progressPics}
-                        style={styles.container}
-                        renderItem={props => this.renderItem({...props, navigation})}
-                        numColumns={numColumns}
-                        keyExtractor={(item, index) => index.toString()}
-                        // onEndReached={this.loadData}
-                        // ListFooterComponent={() => <FooterComponent/>}
-                        onEndReachedThreshol={0.2}
-                        onRefresh={this.onRefresh}
-                        refreshing={this.state.refreshing}
-                        extraData={this.state.showDeleteButton + this.state.selectTobeDeleted}
-                    />
+                    {progressPics.length > 0 ?
+                        <FlatList
+                            data={progressPics}
+                            style={styles.container}
+                            renderItem={props => this.renderItem({...props, navigation})}
+                            numColumns={numColumns}
+                            keyExtractor={(item, index) => index.toString()}
+                            // onEndReached={this.loadData}
+                            // ListFooterComponent={() => <FooterComponent/>}
+                            onEndReachedThreshol={0.2}
+                            onRefresh={this.onRefresh}
+                            refreshing={this.state.refreshing}
+                            extraData={this.state.showDeleteButton + this.state.selectTobeDeleted}
+                        /> : (<View>
+                            <Text>Please press the + button on the right side to add more photos </Text>
+                        </View>)
+                    }
                     {showPicker && (
                         <PickerCamera
                             addProgressPhotoDispatch={addProgressPhotoDispatch}
