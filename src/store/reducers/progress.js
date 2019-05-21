@@ -28,7 +28,8 @@ export const progress = (state = {pics: []}, action) => {
             return {...state, pics: emptyPics, currentPic};
 
         case types.DELETE_PICS_FROM_PROGRESS:
-            newPics.map((item, index) => {
+            // console.warn(action.payload);
+            state.pics.map((item, index) => {
                 if (!action.payload.includes(item.date)) {
                     emptyPics.push(item);
                 }

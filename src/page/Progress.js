@@ -137,7 +137,7 @@ export class _Progress extends Component {
                             style={{height: 25, width: 25, backgroundColor: "transparent"}}
                             // onPress={() => this.handleModal({showPicker: true})}
                             onPress={async () => {
-                                if (this.state.showDeleteButton) {
+                                if (this.state.showDeleteButton&&this.state.selectTobeDeleted.length) {
                                     await LoadingUtil.showLoading();
                                     await deletePicsFromProgress(this.state.selectTobeDeleted);
                                     await LoadingUtil.dismissLoading();
