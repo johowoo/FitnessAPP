@@ -18,9 +18,19 @@ const {width, height} = Dimensions.get("window");
 export class EditWeightReps extends Component {
     constructor(props) {
         super(props);
-        // this.state = {
-        //     keyboardAvoidingViewKey: 'keyboardAvoidingViewKey',
-        // }
+    }
+
+    keyboardDidShowHandler = () => {
+        this.setState({
+            top: height * 0.15,
+        });
+    };
+
+    componentDidMount() {
+        this.keyboardDidShowListener = Keyboard.addListener(
+            "keyboardDidShow",
+            this.keyboardDidShowHandler.bind(this)
+        );
     }
 
     state = {
@@ -29,26 +39,6 @@ export class EditWeightReps extends Component {
         top: height * 0.3
     };
 
-    // keyboardDidShowHandler = () => {
-    //     this.setState({
-    //         top: height * 0.2,
-    //     });
-    // };
-
-    componentDidMount() {
-        // for (let i = 0; i <this.props.) {
-        // }
-        // this.keyboardDidShowListener = Keyboard.addListener(
-        //     "keyboardDidShow",
-        //     this.keyboardDidShowHandler.bind(this)
-        // );
-        // this.keyboardHideListener = Keyboard.addListener(Platform.OS === 'android' ? 'keyboardDidHide' : 'keyboardWillHide', this.keyboardHideListener.bind(this));
-    }
-
-    componentWillUnmount() {
-        //     this.keyboardHideListener.remove()
-        // }
-    }
 
     componentWillMount() {
         const weightTextTmp = {};
@@ -74,7 +64,7 @@ export class EditWeightReps extends Component {
                 visible={this.props.showEditWeightReps}
                 transparent
                 onRequestClose={() => this.props.handleCloseWeightModal("showEditWeightReps", false)}>
-                <View style={{...styles.modalOuterContainer, top: 120}}>
+                <View style={{...styles.modalOuterContainer, top: this.state.top}}>
                     <View style={styles.modalInnerContainer}>
                         <Text
                             style={{

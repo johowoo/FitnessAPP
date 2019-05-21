@@ -6,7 +6,7 @@ import {
     Modal,
     Text,
     TextInput,
-    Alert,
+    Alert, Keyboard,
 } from "react-native";
 import ApslButton from "apsl-react-native-button";
 import {connect} from "react-redux";
@@ -23,7 +23,19 @@ import {ReminderModal} from "./ReminderModal";
 const {width, height} = Dimensions.get("window");
 
 class _PhotoModal extends React.Component {
-    state = {inputTextWeight: "", inputTextBFR: "", validated: false};
+    state = {inputTextWeight: "", inputTextBFR: "", validated: false, top: height * 0.3};
+    keyboardDidShowHandler = () => {
+        this.setState({
+            top: height * 0.2,
+        });
+    };
+
+    componentDidMount() {
+        this.keyboardDidShowListener = Keyboard.addListener(
+            "keyboardDidShow",
+            this.keyboardDidShowHandler.bind(this)
+        );
+    }
 
     handleSubmit = async () => {
         if (
@@ -78,14 +90,14 @@ class _PhotoModal extends React.Component {
         this.setState({
             showReminderModal: bool
         })
-    }
+    };
 
     render() {
         return (
             <Modal transparent visible={this.props.showModal}>
                 {/* {this.props.children} */}
                 <View style={styles.container}>
-                    <View style={styles.modalInnerContainer}>
+                    <View style={{...styles.modalInnerContainer, position: "absolute", top: this.state.top}}>
                         <Text style={{color: "#eee", fontSize: 16, marginLeft: 10}}>
                             Please enter your weight and Body fat rate?
                         </Text>
