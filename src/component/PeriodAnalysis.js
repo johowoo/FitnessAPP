@@ -21,18 +21,6 @@ class _PeriodAnalysis extends Component {
         volume: 0
     };
 
-    componentDidMount() {
-        this.state.list = JSON.parse(JSON.stringify(this.props.allExercisesList));
-        const newAllExerciseList = {};
-        for (let key in this.state.list) {
-            if (this.state.list.hasOwnProperty(key)) {
-                let tmpKey = key.replace(/-/g, '');
-                newAllExerciseList[tmpKey] = this.state.list[key];
-            }
-        }
-        this.setState({newAllExerciseList});
-    }
-
     handleSelect = (index, value) => {
         this.setState({selectedCategory: value, selectedIndex: index});
     };
@@ -40,7 +28,7 @@ class _PeriodAnalysis extends Component {
         const todayDate = new Date();
         const todayDateYYYYMMDD = formatYYYYMMDDFromDate(todayDate);
         const {sets, reps, volume, workouts} = accumulateExercisesData({
-            list: this.state.newAllExerciseList,
+            list: this.props.newAllExerciseListWithout_,
             todayNumber: parseInt(todayDateYYYYMMDD, 10),
             todayDate,
             period: period,
@@ -76,7 +64,6 @@ class _PeriodAnalysis extends Component {
     render() {
         //convert date from 2019-05-19 to 20190519 and then convert to number
         // so that these dates can be compared easily
-        console.warn("allExL",this.props.allExercisesList);
         return (
             <View style={styles.wholeContainer}>
                 <View style={styles.dropdownContainer}>
@@ -132,7 +119,7 @@ class _PeriodAnalysis extends Component {
 
 const mapStateToProps = state => ({
     markedDates: state.calendar.markedDates,
-    allExercisesList: state.savedExerciseForEachDay.allExercisesList,
+    newAllExerciseListWithout_: state.savedExerciseForEachDay.newAllExerciseListWithout_,
 });
 
 export const PeriodAnalysis = connect(mapStateToProps, null)(_PeriodAnalysis);
