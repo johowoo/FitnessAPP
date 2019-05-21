@@ -42,9 +42,9 @@ export class _Calendar extends Component {
                     ) : null}
                 </TopBar>
                 <CalendarList
-                    onVisibleMonthsChange={months => {
-                        // console.warn("now these months are visible", months);
-                    }}
+                    // onVisibleMonthsChange={months => {
+                    //     // console.warn("now these months are visible", months);
+                    // }}
                     pastScrollRange={50}
                     futureScrollRange={50}
                     scrollEnabled

@@ -11,7 +11,6 @@ import {ImagePicker, Permissions} from "expo";
 import {PhotoModal} from "./PhotoModal";
 import LoadingUtil from '../utils/LoadingUtil';
 
-
 const {width, height} = Dimensions.get("window");
 
 export class PickerCamera extends React.Component {

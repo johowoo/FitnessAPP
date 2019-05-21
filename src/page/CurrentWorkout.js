@@ -23,11 +23,16 @@ class _CurrentWorkout extends Component {
     static defaultProps = {
         currentWorkout: [],
     };
-    state = {
-        showReminderModal: false,
-        reminderTitle: "",
-        reminderContent: ""
-    };
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            showReminderModal: false,
+            reminderTitle: "",
+            reminderContent: ""
+        };
+    }
+
     handlePressComplete = () => {
         // console.warn("this", this);
         this.props.clearCurrentWorkout();
