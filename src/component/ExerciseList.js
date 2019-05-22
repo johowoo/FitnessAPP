@@ -11,6 +11,7 @@ import {
     Dimensions,
     Button,
     Modal,
+    Alert
 } from "react-native";
 import {connect} from "react-redux";
 import {LinearGradient} from "expo";
@@ -115,13 +116,27 @@ export class _ExerciseList extends PureComponent {
     };
     onRefresh = () => {
     };
-    handlePress = () => {
-        this.props.updateEmpty(false);
-        this.props.addExercise({
-            exercise: this.state.selectedExercise,
-            sets: this.state.selectedSets,
-            time: new Date().getTime(),
+    handlePress = async () => {
+        let flag = true;
+        this.props.currentWorkout.forEach(item => {
+            if (item.exercise === this.state.selectedExercise) {
+                flag = false;
+                console.warn("false");
+                //ReminderModal
+                // Alert.alert("error", "can not add same exercise twice");
+            }
         });
+        if (flag) {
+            console.warn("true");
+            await this.props.updateEmpty(false);
+            await this.props.addExercise({
+                exercise: this.state.selectedExercise,
+                sets: this.state.selectedSets,
+                time: new Date().getTime(),
+            });
+            await this.setState({setsModalVisible: false});
+            await this.props.closeModal();
+        }
     };
 
     handleConfirm = () => {
@@ -255,8 +270,7 @@ export class _ExerciseList extends PureComponent {
                                         title="Confirm"
                                         onPress={async () => {
                                             await this.handlePress.call(this);
-                                            await this.setState({setsModalVisible: false});
-                                            await this.props.closeModal();
+
                                         }}
                                     />
                                 </View>
@@ -332,6 +346,7 @@ export class _ExerciseList extends PureComponent {
 }
 
 const mapStateToProps = state => ({
+    currentWorkout: state.currentWorkout,
     isExerciseListEmpty: state.exerciseCompleted.isExerciseListEmpty,
     sectionExercises: state.exercises.sectionExercises,
 });
