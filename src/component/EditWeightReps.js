@@ -8,10 +8,10 @@ import {
     TextInput,
     Keyboard,
     ScrollView,
-    KeyboardAvoidingView,
-    Platform
 } from "react-native";
 import React, {Component} from "react";
+// import {AddDropdown} from "./AddDropdown";
+import ModalDropdown from "react-native-modal-dropdown";
 
 const {width, height} = Dimensions.get("window");
 
@@ -36,6 +36,7 @@ export class EditWeightReps extends Component {
     state = {
         weightText: {},
         repsText: {},
+        selectedSets: 0,
         top: height * 0.3
     };
 
@@ -59,12 +60,16 @@ export class EditWeightReps extends Component {
             newWeightRepsDataArr.push({weight: 0, reps: 0});
         }
         // let {keyboardAvoidingViewKey} = this.state;
+        handleSelect = (index, value) => {
+            this.setState({selectedSets: value, selectedIndex: index});
+        };
         return (
             <Modal
                 visible={this.props.showEditWeightReps}
                 transparent
                 onRequestClose={() => this.props.handleCloseWeightModal("showEditWeightReps", false)}>
                 <View style={{...styles.modalOuterContainer, top: this.state.top}}>
+
                     <View style={styles.modalInnerContainer}>
                         <Text
                             style={{
@@ -73,8 +78,31 @@ export class EditWeightReps extends Component {
                                 marginLeft: 10,
                                 marginBottom: 15,
                             }}>
-                            Please edit the weight and rep numbers of these sets:
+                            Please edit the sets , weight and rep numbers of this exercise:
                         </Text>
+
+                        <View style={styles.dropdownModalContainerLine}>
+                            <ModalDropdown
+                                style={[styles.dropdownMenu]}
+                                textStyle={[
+                                    styles.dropdownMenuText,
+                                ]}
+                                dropdownStyle={[
+                                    styles.dropdownList,
+                                ]}
+                                dropdownTextStyle={[
+                                    styles.dropdownListText,
+                                ]}
+                                dropdownTextHighlightStyle={[
+                                    styles.dropdownSelection,
+                                ]}
+                                options={[
+                                    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "15", "20", "25", "30"
+                                ]}
+                                defaultValue={"4"}
+                                onSelect={this.handleSelect}
+                            /><Text style={{color: "#666", fontSize: 16}}>sets</Text>
+                        </View>
                         <ScrollView style={{height: 160}} keyboardShouldPersistTaps={'always'}>
                             <Text
                                 style={{
@@ -144,6 +172,7 @@ export class EditWeightReps extends Component {
                                             time: this.props.time,
                                             weightText: this.state.weightText,
                                             repsText: this.state.repsText,
+                                            sets: this.state.selectedSets
                                         });
                                         await this.props.handleCloseWeightModal("showEditWeightReps", false);
                                     }}
@@ -199,5 +228,45 @@ const styles = StyleSheet.create({
     dataContainer: {
         flex: 1,
         flexDirection: "row",
+    },
+    dropdownContainer: {
+        height: 110,
+        padding: width * 0.03,
+        paddingTop: width * 0.02,
+        flexDirection: "row",
+    },
+    dropdownMenu: {
+        width: width * 0.5,
+        height: 30,
+        borderRadius: 6,
+        marginLeft: 10,
+        marginRight: width * 0.02,
+        borderWidth: 1,
+        borderColor: "#FF8c00",
+        // backgroundColor:'#EEE',
+        justifyContent: "center",
+    },
+    dropdownMenuText: {
+        marginLeft: 10,
+        fontSize: 18,
+        color: "#FF8c00",
+    },
+    dropdownList: {
+        width: width * 0.5,
+        // marginTop: 15,
+    },
+    dropdownListText: {
+        fontSize: 18,
+        marginLeft: 10,
+        color: "#FF8c00",
+    },
+    dropdownSelection: {
+        color: "#00cccc",
+    },
+    dropdownModalContainerLine: {
+        flex: 1,
+        flexDirection: "row",
+        alignItems: "center",
+        marginBottom: 10
     }
 });
