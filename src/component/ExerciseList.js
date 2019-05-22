@@ -235,7 +235,9 @@ export class _ExerciseList extends PureComponent {
                                 dropdownStyle={styles.dropdownList}
                                 dropdownTextStyle={styles.dropdownListText}
                                 dropdownTextHighlightStyle={styles.dropdownSelection}
-                                options={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]}
+                                options={[
+                                    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "15", "20", "25", "30"
+                                ]}
                                 defaultValue="4"
                                 onSelect={(index, value) => {
                                     this.setState({selectedSets: value});

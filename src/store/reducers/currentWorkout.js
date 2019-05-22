@@ -35,6 +35,9 @@ export const currentWorkout = (state = [], action) => {
             stateCopyForEditAll.map((item, index) => {
                 if (parseInt(item.time, 10) === parseInt(action.payload.time, 10)) {
                     // stateCopyForEditAll.splice(index, 1);
+                    // console.warn("item.sets", item.sets);
+                    // console.warn("action.payload.sets", action.payload.sets);
+                    item.sets = action.payload.sets;
                     delete item.weightRepsDataArr;
                     item.weightRepsDataArr = [];
                     let arrTmp = Object.keys(action.payload.weightText);

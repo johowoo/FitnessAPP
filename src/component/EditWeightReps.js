@@ -31,6 +31,8 @@ export class EditWeightReps extends Component {
             "keyboardDidShow",
             this.keyboardDidShowHandler.bind(this)
         );
+        this.setState(
+            {selectedSets: this.props.sets});
     }
 
     state = {
@@ -54,22 +56,22 @@ export class EditWeightReps extends Component {
         });
     }
 
+    handleSelect = (index, value) => {
+        this.setState({selectedSets: value, selectedIndex: index});
+    };
+
     render() {
         const newWeightRepsDataArr = JSON.parse(JSON.stringify(this.props.weightRepsDataArr));
         for (let i = newWeightRepsDataArr.length; i < this.props.sets; i++) {
             newWeightRepsDataArr.push({weight: 0, reps: 0});
         }
         // let {keyboardAvoidingViewKey} = this.state;
-        handleSelect = (index, value) => {
-            this.setState({selectedSets: value, selectedIndex: index});
-        };
         return (
             <Modal
                 visible={this.props.showEditWeightReps}
                 transparent
                 onRequestClose={() => this.props.handleCloseWeightModal("showEditWeightReps", false)}>
                 <View style={{...styles.modalOuterContainer, top: this.state.top}}>
-
                     <View style={styles.modalInnerContainer}>
                         <Text
                             style={{
@@ -99,8 +101,8 @@ export class EditWeightReps extends Component {
                                 options={[
                                     "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "15", "20", "25", "30"
                                 ]}
-                                defaultValue={"4"}
-                                onSelect={this.handleSelect}
+                                defaultValue={this.props.sets}
+                                onSelect={this.handleSelect.bind(this)}
                             /><Text style={{color: "#666", fontSize: 16}}>sets</Text>
                         </View>
                         <ScrollView style={{height: 160}} keyboardShouldPersistTaps={'always'}>
