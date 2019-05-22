@@ -115,6 +115,9 @@ export class _WorkoutList extends Component {
         await this.props.deleteExerciseFromWorkoutList({
             time: this.state.time,
         });
+        if (this.props.currentWorkout.length === 0) {
+            await this.props.updateEmpty(true);
+        }
         await this.setState({
             showReminderModal: false,
         });
@@ -177,6 +180,7 @@ export class _WorkoutList extends Component {
     );
 
     render() {
+
         const listFooterComponent = (
             <View>
                 <View style={styles.addSomeExercises}>

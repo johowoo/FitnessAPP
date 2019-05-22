@@ -107,6 +107,7 @@ class _CurrentWorkout extends Component {
                         isCompleted={this.props.isCompleted}
                         setModalVisibility={this.props.setModalVisibility}
                         currentWorkout={this.props.currentWorkout}
+                        updateEmpty={this.props.updateEmpty}
                     />
                 </View>
                 <View>
