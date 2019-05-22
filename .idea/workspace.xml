@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd580928-bb60-480d-8b73-7c94df331487" name="Default Changelist" comment="p">
-      <change afterPath="$PROJECT_DIR$/src/page/EditLibrary.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/WorkoutList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/WorkoutList.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/page/TabPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/TabPage.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -59,8 +56,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/page/TabPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41">
-              <caret line="107" column="31" selection-start-line="107" selection-start-column="31" selection-end-line="107" selection-end-column="31" />
+            <state relative-caret-position="245">
+              <caret line="138" column="44" lean-forward="true" selection-start-line="138" selection-start-column="44" selection-end-line="138" selection-end-column="44" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -389,18 +386,18 @@
       <workItem from="1558474929177" duration="7440000" />
       <workItem from="1558486475770" duration="2841000" />
       <workItem from="1558516275559" duration="2312000" />
-      <workItem from="1558561731364" duration="5888000" />
+      <workItem from="1558561731364" duration="6171000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="261736000" />
+    <option name="totallyTimeSpent" value="262019000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="23" width="1680" height="947" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17956468" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17956468" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -414,7 +411,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="RNConsole" order="8" />
       <window_info anchor="bottom" id="CSS-X-Fire" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4996979" visible="true" weight="0.25365853" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4996979" visible="true" weight="0.25365853" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50030214" side_tool="true" weight="0.03640777" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.71707314" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
@@ -873,8 +870,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/page/TabPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="107" column="31" selection-start-line="107" selection-start-column="31" selection-end-line="107" selection-end-column="31" />
+        <state relative-caret-position="245">
+          <caret line="138" column="44" lean-forward="true" selection-start-line="138" selection-start-column="44" selection-end-line="138" selection-end-column="44" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
