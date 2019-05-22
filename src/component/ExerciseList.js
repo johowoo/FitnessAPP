@@ -50,6 +50,11 @@ export class _ExerciseList extends PureComponent {
         };
     };
 
+    handleCloseReminderDuplicated = (bool) => {
+        this.setState({
+            showReminderModalDuplicated: bool
+        })
+    };
     handleCloseReminder = (bool) => {
         this.setState({
             showReminderModal: bool
@@ -118,11 +123,17 @@ export class _ExerciseList extends PureComponent {
     };
     handlePress = async () => {
         let flag = true;
-        this.props.currentWorkout.forEach(item => {
+        this.props.currentWorkout.forEach(async item => {
             if (item.exercise === this.state.selectedExercise) {
                 flag = false;
                 console.warn("false");
-                //ReminderModal
+                // ReminderModal
+                await this.setState({
+                    showReminderModalDuplicated: true,
+                    reminderTitleDuplicated: "Duplicated",
+                    reminderContentDuplicated: "This exercise has been already added to today's workout",
+                    hideConfirmButtonDuplicated: true,
+                })
                 // Alert.alert("error", "can not add same exercise twice");
             }
         });
@@ -142,6 +153,11 @@ export class _ExerciseList extends PureComponent {
     handleConfirm = () => {
         this.props.deleteExerciseFromSectionList(this.state.tobeDeletedItem);
         this.setState({showReminderModal: false});
+    };
+    handelCancelDuplicated = async () => {
+        await this.setState({setsModalVisible: false});
+        console.warn("cancel successfully");
+
     };
     handlePressAddExercise = () => {
         if (!this.state.isAddingExercise) {
@@ -287,6 +303,14 @@ export class _ExerciseList extends PureComponent {
                             </View>
                         </View>
                     </View>
+                    {this.state.showReminderModalDuplicated && <ReminderModal
+                        showReminderModal={this.state.showReminderModalDuplicated}
+                        handleCloseReminder={this.handleCloseReminderDuplicated}
+                        reminderTitle={this.state.reminderTitleDuplicated}
+                        reminderContent={this.state.reminderContentDuplicated}
+                        hideConfirmButton={this.state.hideConfirmButtonDuplicated}
+                        handelCancel={this.handelCancelDuplicated}
+                    />}
                 </Modal>
                 <View>
                     {this.state.isAddingExercise ? (

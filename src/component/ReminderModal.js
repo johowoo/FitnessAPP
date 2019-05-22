@@ -54,8 +54,12 @@ export class ReminderModal extends Component {
                                     color="#00ffcc"
                                     style={styles.modalButton}
                                     title="Cancel"
-                                    onPress={this.handleCancel ? this.handleCancel : () => {
-                                        this.props.handleCloseReminder(false)
+                                    // onPress={this.props.handleCancel ? this.props.handleCancel : () => {
+                                    //     this.props.handleCloseReminder(false)
+                                    // }}
+                                    onPress={async () => {
+                                        await this.props.handleCloseReminder(false);
+                                        await this.props.handelCancel && this.props.handelCancel();
                                     }}
                                 />
                             </View>
