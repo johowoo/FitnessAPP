@@ -73,6 +73,7 @@ class _CurrentWorkout extends Component {
                     </View>
                     <View style={{position: "absolute", right: 5, top: -28}}>
                         <Button
+                            isDisabled={this.props.isExerciseListEmpty}
                             style={
                                 this.props.isExerciseListEmpty
                                     ? styles.completeButtonDisabled
@@ -82,7 +83,7 @@ class _CurrentWorkout extends Component {
                                 await LoadingUtil.showLoading();
                                 await this.setState({
                                     reminderTitle: "Completed",
-                                    reminderContent: "Have you completed all these exercises???"
+                                    reminderContent: "Have you finished all these exercises???"
                                 });
                                 await this.setState({showReminderModal: true});
                                 await LoadingUtil.dismissLoading();
@@ -91,12 +92,13 @@ class _CurrentWorkout extends Component {
                             children={
                                 <Text
                                     key="completed"
+
                                     style={
                                         this.props.isExerciseListEmpty
                                             ? styles.completeDisabled
                                             : styles.complete
                                     }>
-                                    Completed
+                                    Finish
                                 </Text>
                             }
                         />
@@ -190,10 +192,6 @@ const styles = StyleSheet.create({
         width: 90,
         marginLeft: 50,
     },
-
-    complete: {
-        color: "#fff",
-    },
     completeButtonDisabled: {
         backgroundColor: "rgba(50,50,50,0.1)",
         borderColor: "#999",
@@ -206,5 +204,8 @@ const styles = StyleSheet.create({
     },
     completeDisabled: {
         color: "#999",
+    },
+    complete: {
+        color: "#fff",
     },
 });

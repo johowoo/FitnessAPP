@@ -3,8 +3,6 @@ fitness app built with React native
 
 ## To be done
 ### bugs to be fixed
-
-* can't add the same exercise twice
 * white screen in calendar
 
 ### new functions
@@ -36,6 +34,8 @@ fitness app built with React native
 * delete one pic modal -> confirm modal✔️
 * default empty page of progress ✔️
 * editable sets in currentWorkout ✔️
+* can't add the same exercise twice  -> reminderModal ✔️
+
 
 ### bugs
 * position of photoModal ✔️
