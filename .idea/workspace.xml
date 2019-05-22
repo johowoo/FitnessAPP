@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd580928-bb60-480d-8b73-7c94df331487" name="Default Changelist" comment="p">
-      <change afterPath="$PROJECT_DIR$/src/page/CustomWorkout.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/page/EditLibrary.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/WorkoutList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/WorkoutList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/CurrentWorkout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/CurrentWorkout.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/page/TabPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/TabPage.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -34,8 +33,9 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/CurrentWorkout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="819">
-              <caret line="137" column="22" selection-start-line="137" selection-start-column="22" selection-end-line="137" selection-end-column="22" />
+            <state relative-caret-position="112">
+              <caret line="72" column="55" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="55" />
+              <caret line="181" column="11" selection-start-line="181" selection-start-column="4" selection-end-line="181" selection-end-column="11" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="e#177#223#0" expanded="true" />
@@ -44,13 +44,37 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/page/EditLibrary.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="203" column="80" lean-forward="true" selection-start-line="203" selection-start-column="80" selection-end-line="203" selection-end-column="80" />
+            <state relative-caret-position="362">
+              <caret line="134" column="34" selection-start-line="134" selection-start-column="34" selection-end-line="134" selection-end-column="34" />
               <folding>
-                <element signature="e#259#318#0" expanded="true" />
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/page/TabPage.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="41">
+              <caret line="107" column="31" selection-start-line="107" selection-start-column="31" selection-end-line="107" selection-end-column="31" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/page/CustomWorkout.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="122">
+              <caret line="121" column="22" selection-end-line="193" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -59,8 +83,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/Progress.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="93">
-              <caret line="12" selection-start-line="12" selection-end-line="13" />
+            <state relative-caret-position="253">
+              <caret line="87" column="50" selection-start-line="87" selection-start-column="40" selection-end-line="87" selection-end-column="50" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -76,13 +103,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>handleselect</find>
-      <find>options=</find>
-      <find>dropdown</find>
-      <find>sets</find>
-      <find>handleSelect</find>
-      <find>onSelect</find>
-      <find>update_empty</find>
       <find>confirm</find>
       <find>console.warn</find>
       <find>length</find>
@@ -101,11 +121,18 @@
       <find>completed</find>
       <find>button</find>
       <find>navProps</find>
-      <find>cancel</find>
       <find>&quot;PA</find>
       <find>CurrentWorkout</find>
       <find>apsl-react-native-button</find>
       <find>manual</find>
+      <find>navigation</find>
+      <find>abc</find>
+      <find>WorkoutList</find>
+      <find>custom work</find>
+      <find>cancel</find>
+      <find>currentWorkout</find>
+      <find>E</find>
+      <find>current workout</find>
     </findStrings>
     <replaceStrings>
       <replace>expo</replace>
@@ -125,7 +152,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/component/TabBarIcon.js" />
         <option value="$PROJECT_DIR$/src/utils/isIphoneX.js" />
         <option value="$PROJECT_DIR$/src/component/TabBarComponent.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/progressModal.js" />
@@ -172,10 +198,11 @@
         <option value="$PROJECT_DIR$/src/component/ReminderModal.js" />
         <option value="$PROJECT_DIR$/src/component/ExerciseList.js" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/page/CustomWorkout.js" />
-        <option value="$PROJECT_DIR$/src/page/TabPage.js" />
         <option value="$PROJECT_DIR$/src/page/CurrentWorkout.js" />
+        <option value="$PROJECT_DIR$/src/page/CustomWorkout.js" />
+        <option value="$PROJECT_DIR$/src/page/EditLibrary.js" />
         <option value="$PROJECT_DIR$/src/component/WorkoutList.js" />
+        <option value="$PROJECT_DIR$/src/page/TabPage.js" />
       </list>
     </option>
   </component>
@@ -362,12 +389,12 @@
       <workItem from="1558474929177" duration="7440000" />
       <workItem from="1558486475770" duration="2841000" />
       <workItem from="1558516275559" duration="2312000" />
-      <workItem from="1558561731364" duration="5184000" />
+      <workItem from="1558561731364" duration="5888000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="261032000" />
+    <option name="totallyTimeSpent" value="261736000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="23" width="1680" height="947" extended-state="0" />
@@ -439,7 +466,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/page/Health_scsslint_tmp3994645436888645333.js" />
     <entry file="file://$PROJECT_DIR$/src/page/Health_scsslint_tmp439047218457048163.js" />
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
@@ -783,10 +809,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/Progress.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="87" column="50" selection-start-line="87" selection-start-column="40" selection-end-line="87" selection-end-column="50" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/page/CustomWorkout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="98" column="14" lean-forward="true" selection-start-line="98" selection-start-column="14" selection-end-line="98" selection-end-column="14" />
+        <state relative-caret-position="122">
+          <caret line="121" column="22" selection-end-line="193" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -803,28 +839,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/TabPage.js">
+    <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-26">
-          <caret line="124" column="48" selection-start-line="124" selection-start-column="20" selection-end-line="124" selection-end-column="48" />
-          <caret line="83" column="34" selection-start-line="83" selection-start-column="6" selection-end-line="83" selection-end-column="34" />
+        <state relative-caret-position="3084">
+          <caret line="221" column="13" selection-start-line="221" selection-start-column="13" selection-end-line="221" selection-end-column="13" />
+          <folding>
+            <element signature="e#259#318#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/EditLibrary.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="362">
+          <caret line="134" column="34" selection-start-line="134" selection-start-column="34" selection-end-line="134" selection-end-column="34" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Progress.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="93">
-          <caret line="12" selection-start-line="12" selection-end-line="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/page/CurrentWorkout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="819">
-          <caret line="137" column="22" selection-start-line="137" selection-start-column="22" selection-end-line="137" selection-end-column="22" />
+        <state relative-caret-position="112">
+          <caret line="72" column="55" selection-start-line="72" selection-start-column="48" selection-end-line="72" selection-end-column="55" />
+          <caret line="181" column="11" selection-start-line="181" selection-start-column="4" selection-end-line="181" selection-end-column="11" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <element signature="e#177#223#0" expanded="true" />
@@ -832,12 +871,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
+    <entry file="file://$PROJECT_DIR$/src/page/TabPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="203" column="80" lean-forward="true" selection-start-line="203" selection-start-column="80" selection-end-line="203" selection-end-column="80" />
+        <state relative-caret-position="41">
+          <caret line="107" column="31" selection-start-line="107" selection-start-column="31" selection-end-line="107" selection-end-column="31" />
           <folding>
-            <element signature="e#259#318#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>

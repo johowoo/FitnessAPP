@@ -10,6 +10,7 @@ import {Calendar} from "./Calendar";
 import {Statistics} from "./Statistics";
 import {CurrentWorkout} from "../component";
 import {CustomWorkout} from "./CustomWorkout";
+import {EditLibrary} from "./EditLibrary";
 import Progress from "./Progress";
 import {TabBarIcon} from "../component/TabBarIcon";
 import TabBarComponent from "../component/TabBarComponent";
@@ -81,7 +82,7 @@ const StackNavigator = createStackNavigator({
         }),
     },
 });
-const CustomExerciseStackNavigator = createStackNavigator({
+const CurrentWorkoutStackNavigator = createStackNavigator({
     CurrentWorkout: {
         screen: props => <CurrentWorkout fontLoaded={fontLoaded} {...props} />,
         navigationOptions: {
@@ -92,9 +93,7 @@ const CustomExerciseStackNavigator = createStackNavigator({
         screen: props => <CustomWorkout {...props}  />,
         screenProps: "",
         navigationOptions: ({navigation}) => ({
-            gesturesEnabled: false,
-            // headerTitle: navigation?.state?.params?.date.toString()
-            // headerTitle: formatYYYY_MM_DD_HHMMFromParams(navigation?.state?.params),
+            gesturesEnabled: true,
             headerTitle: "Custom Workout",
             // `${navigation?.state?.params?.year.toString()}-${navigation?.state?.params?.month.toString()}-${navigation?.state?.params?.day.toString()} ${navigation?.state?.params?.hour.toString()}:${navigation?.state?.params?.minute.toString()}`,
             // header: null
@@ -106,7 +105,37 @@ const CustomExerciseStackNavigator = createStackNavigator({
             ),
             headerTintColor: "#c69",
             headerTitleStyle: {
-                color: "#eee",
+                color: "rgba(204,102,153,0.85)",
+                fontSize: 22,
+                fontFamily: "PattayaRegular"
+            },
+            // headerBackTitleStyle: {
+            //     color: "#d0d0d0",
+            fontSize: 22,
+            //     fontWeight: "bold"
+            //
+            // }
+        }),
+    }, EditLibrary: {
+        screen: props => <EditLibrary {...props}  />,
+        screenProps: "",
+        navigationOptions: ({navigation}) => ({
+            gesturesEnabled: true,
+            // headerTitle: navigation?.state?.params?.date.toString()
+            // headerTitle: formatYYYY_MM_DD_HHMMFromParams(navigation?.state?.params),
+            headerTitle: "Edit Library",
+            // `${navigation?.state?.params?.year.toString()}-${navigation?.state?.params?.month.toString()}-${navigation?.state?.params?.day.toString()} ${navigation?.state?.params?.hour.toString()}:${navigation?.state?.params?.minute.toString()}`,
+            // header: null
+            // headerBackTitle: "Progress Page",
+            // headerLeftContainerStyle: {color: "#fff"},
+            // headerTintColor: {color: "#FFF"},
+            headerBackground: (
+                <LinearGradient colors={["#1b98d9", "#219dd5"]} style={{flex: 1}}/>
+            ),
+            headerTintColor: "#c69",
+            headerTitleStyle: {
+                color: "rgba(204,102,153,0.85)",
+                fontSize: 24,
                 fontFamily: "PattayaRegular"
             },
             // headerBackTitleStyle: {
@@ -122,7 +151,7 @@ const BottomTabNavigator = createBottomTabNavigator(
     {
         CurrentWorkout: {
             // screen: props => <CurrentWorkout fontLoaded={fontLoaded} {...props} />,
-            screen: CustomExerciseStackNavigator,
+            screen: CurrentWorkoutStackNavigator,
             navigationOptions: () => ({
                 tabBarIcon: props => <TabBarIcon name="ios-fitness" {...props} />,
                 tabBarLabel: "fitness",
@@ -178,7 +207,7 @@ class TabPage extends Component {
                 {/*        tabBarPosition="bottom" */}
                 {/*        tabBarUnderlineStyle={{backgroundColor: "#787"}} */}
                 {/*        tabBarActiveTextColor="#787" */}
-                {/*        tabBarInactiveTextColor="#ddd" */}
+                {/*        tabBarInactiveTextColor="#cdcdcd" */}
                 {/*        renderTabBar={() => <CustomBar/>} */}
                 {/*        style={{marginBottom: 15}} */}
                 {/*    > */}
