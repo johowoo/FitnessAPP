@@ -1,6 +1,7 @@
 import React, {Component} from "react";
 import {View, Text, StyleSheet, Alert} from "react-native";
 import {connect} from "react-redux";
+// import {LinearGradient} from "expo";
 import Button from "apsl-react-native-button";
 import {TopBar} from "../component/TopBar";
 import {ReminderModal} from "../component/ReminderModal";
@@ -18,6 +19,7 @@ import {WorkoutList} from "../component/WorkoutList";
 import {ExerciseModal} from "./ExerciseModal";
 import {formatMonthandDay} from "../utils/formatMonthandDay";
 import LoadingUtil from "../utils/LoadingUtil";
+import {LinearGradient} from "expo";
 
 class _CurrentWorkout extends Component {
     static defaultProps = {
@@ -64,7 +66,7 @@ class _CurrentWorkout extends Component {
 
     render() {
         return (
-            <View>
+            <LinearGradient colors={["#1b98d9", "#57c5b8"]} style={{flex: 1}}>
                 <TopBar style={styles.topBar}>
                     <View style={{marginRight: 55}}>
                         {this.props.fontLoaded ? (
@@ -92,7 +94,6 @@ class _CurrentWorkout extends Component {
                             children={
                                 <Text
                                     key="completed"
-
                                     style={
                                         this.props.isExerciseListEmpty
                                             ? styles.completeDisabled
@@ -110,6 +111,7 @@ class _CurrentWorkout extends Component {
                         setModalVisibility={this.props.setModalVisibility}
                         currentWorkout={this.props.currentWorkout}
                         updateEmpty={this.props.updateEmpty}
+                        navigation={this.props.navigation}
                     />
                 </View>
                 <View>
@@ -128,7 +130,7 @@ class _CurrentWorkout extends Component {
                     handleCloseReminder={this.handleCloseReminder}
                     handleConfirm={this.handleConfirm}
                 />}
-            </View>
+            </LinearGradient>
         );
     }
 }

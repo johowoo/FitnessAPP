@@ -199,7 +199,10 @@ export class _WorkoutList extends Component {
                     </Text>
                     <View style={styles.buttonContainer}>
                         <Button
-                            onPress={this.handlePress.bind(this)}
+                            // onPress={this.handlePress.bind(this)}
+                            onPress={() => {
+                                this.props.navigation.navigate("CustomWorkout");
+                            }}
                             style={styles.plusButton}
                             textStyle={styles.plus}
                             children={

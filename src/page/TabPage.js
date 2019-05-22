@@ -9,6 +9,7 @@ import {
 import {Calendar} from "./Calendar";
 import {Statistics} from "./Statistics";
 import {CurrentWorkout} from "../component";
+import {CustomWorkout} from "./CustomWorkout";
 import Progress from "./Progress";
 import {TabBarIcon} from "../component/TabBarIcon";
 import TabBarComponent from "../component/TabBarComponent";
@@ -80,16 +81,54 @@ const StackNavigator = createStackNavigator({
         }),
     },
 });
+const CustomExerciseStackNavigator = createStackNavigator({
+    CurrentWorkout: {
+        screen: props => <CurrentWorkout fontLoaded={fontLoaded} {...props} />,
+        navigationOptions: {
+            header: null,
+        },
+    },
+    CustomWorkout: {
+        screen: props => <CustomWorkout {...props}  />,
+        screenProps: "",
+        navigationOptions: ({navigation}) => ({
+            gesturesEnabled: false,
+            // headerTitle: navigation?.state?.params?.date.toString()
+            // headerTitle: formatYYYY_MM_DD_HHMMFromParams(navigation?.state?.params),
+            headerTitle: "Custom Workout",
+            // `${navigation?.state?.params?.year.toString()}-${navigation?.state?.params?.month.toString()}-${navigation?.state?.params?.day.toString()} ${navigation?.state?.params?.hour.toString()}:${navigation?.state?.params?.minute.toString()}`,
+            // header: null
+            // headerBackTitle: "Progress Page",
+            // headerLeftContainerStyle: {color: "#fff"},
+            // headerTintColor: {color: "#FFF"},
+            headerBackground: (
+                <LinearGradient colors={["#1b98d9", "#219dd5"]} style={{flex: 1}}/>
+            ),
+            headerTintColor: "#c69",
+            headerTitleStyle: {
+                color: "#eee",
+                fontFamily: "PattayaRegular"
+            },
+            // headerBackTitleStyle: {
+            //     color: "#eee",
+            //     fontWeight: "bold"
+            //
+            // }
+        }),
+    },
+});
 
 const BottomTabNavigator = createBottomTabNavigator(
     {
         CurrentWorkout: {
-            screen: props => <CurrentWorkout fontLoaded={fontLoaded} {...props} />,
+            // screen: props => <CurrentWorkout fontLoaded={fontLoaded} {...props} />,
+            screen: CustomExerciseStackNavigator,
             navigationOptions: () => ({
                 tabBarIcon: props => <TabBarIcon name="ios-fitness" {...props} />,
                 tabBarLabel: "fitness",
             }),
         },
+
         Calendar: {
             screen: props => <Calendar fontLoaded={fontLoaded} {...props} />,
             navigationOptions: () => ({
