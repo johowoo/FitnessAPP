@@ -9,6 +9,7 @@ import {savedExerciseForEachDay} from "./reducers/savedExerciseForEachDay";
 import {progress} from "./reducers/progress";
 import {progressModal} from "./reducers/progressModal";
 import {displayPicture} from "./reducers/displayPicture";
+import {customWorkout} from "./reducers/customWorkout";
 
 export const reducer = combineReducers({
     currentWorkout,
@@ -20,5 +21,6 @@ export const reducer = combineReducers({
     savedExerciseForEachDay,
     progress,
     progressModal,
-    displayPicture
+    displayPicture,
+    customWorkout
 });

@@ -53,3 +53,14 @@ export const changeCurrentDisplayPicAction = data =>
 export const showDeleteConfirmModalInDisplayPictureAction = data =>
     createAction(types.SHOW_DELETE_CONFIRM_MODAL_IN_DISPLAY_PICTURE)(data);
 
+
+//Custom Workout
+export const addExerciseSetToCustomWorkout = data =>
+    createAction(types.ADD_EXERCISE_SET_TO_CUSTOM_WORKOUT)(data);
+export const deleteExerciseSetFromCustomWorkout = data =>
+    createAction(types.DELETE_EXERCISE_SET_FROM_CUSTOM_WORKOUT)(data);
+export const addExerciseSetFromCustomWorkoutToCurrentWorkout = data =>
+    createAction(types.ADD_EXERCISE_SET_FROM_CUSTOM_WORKOUT_TO_CURRENT_WORKOUT)(data);
+
+//Edit Library
+

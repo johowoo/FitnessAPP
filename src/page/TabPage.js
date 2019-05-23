@@ -16,8 +16,8 @@ import {TabBarIcon} from "../component/TabBarIcon";
 import TabBarComponent from "../component/TabBarComponent";
 import {DisplayPicture} from "./DisplayPicture";
 import Icon from "react-native-vector-icons/FontAwesome";
-import LoadingUtil from '../utils/LoadingUtil';
 import {formatYYYY_MM_DD_HHMMFromParams} from '../utils/formatMonthandDay';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 
 let fontLoaded = true;
 
@@ -72,17 +72,17 @@ const StackNavigator = createStackNavigator({
                 ),
                 headerTintColor: "#c69",
                 // headerTitleStyle: {
-            //     color: "#eee",
-            // },
-            // headerBackTitleStyle: {
-            //     color: "#eee",
-            //     fontWeight: "bold"
-            //
-            // }
-        }),
-    },
+                //     color: "#eee",
+                // },
+                // headerBackTitleStyle: {
+                //     color: "#eee",
+                //     fontWeight: "bold"
+                //
+                // }
+            }),
+        },
     }
-)
+    )
 ;
 const CurrentWorkoutStackNavigator = createStackNavigator({
     CurrentWorkout: {
@@ -105,9 +105,23 @@ const CurrentWorkoutStackNavigator = createStackNavigator({
             headerBackground: (
                 <LinearGradient colors={["#1b98d9", "#219dd5"]} style={{flex: 1}}/>
             ),
+            headerRight: (
+                <TouchableOpacity style={{marginRight: 30}}
+                                  onPress={() => {
+                                      console.warn("add");
+                                  }}>
+                    <View>
+                        <MaterialIcons name={"add"}
+                                       size={25}
+                                       color="#c69"
+                                       key="remove"
+                        />
+                    </View>
+                </TouchableOpacity>
+            ),
             headerTintColor: "#c69",
             headerTitleStyle: {
-                marginLeft: 30,
+                marginLeft: 20,
                 color: "rgba(204,102,153,0.85)",
                 fontSize: 25,
                 fontFamily: "PattayaRegular"
@@ -119,7 +133,8 @@ const CurrentWorkoutStackNavigator = createStackNavigator({
             //
             // }
         }),
-    }, EditLibrary: {
+    },
+    EditLibrary: {
         screen: props => <EditLibrary {...props}  />,
         screenProps: "",
         navigationOptions: ({navigation}) => ({
@@ -137,11 +152,22 @@ const CurrentWorkoutStackNavigator = createStackNavigator({
             ),
             headerTintColor: "#c69",
             headerTitleStyle: {
-                marginLeft: 30,
+                marginLeft: 20,
                 color: "rgba(204,102,153,0.85)",
                 fontSize: 25,
                 fontFamily: "PattayaRegular"
             },
+            headerRight: (
+                <TouchableOpacity style={{marginRight: 30}}
+                                  onPress={() => {
+                                      console.warn("add");
+                                  }
+                                  }>
+                    <View>
+                        <Icon name="pencil" size={24} color="#c69" key="delete"/>
+                    </View>
+                </TouchableOpacity>
+            ),
             // headerBackTitleStyle: {
             //     color: "#eee",
             //     fontWeight: "bold"

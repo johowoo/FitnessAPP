@@ -5,6 +5,7 @@ import {
     StyleSheet,
     Dimensions,
     ScrollView,
+    FlatList
 } from "react-native";
 import {
     changeCurrentDisplayPicAction,
@@ -15,6 +16,7 @@ import {LinearGradient} from "expo";
 import {connect} from "react-redux";
 import {ReminderModal} from "../component/ReminderModal";
 import LoadingUtil from "../utils/LoadingUtil";
+import IconFontAwesome from "react-native-vector-icons/FontAwesome";
 
 const {width, height} = Dimensions.get("window");
 
@@ -55,14 +57,48 @@ export class _CustomWorkout extends Component {
             <LinearGradient colors={["#219dd5", "#51c0bb"]} style={{flex: 1}}>
                 <ScrollView>
                     <View>
-                        <FlatList/>
+                        {this.props.customWorkoutSets.length > 0 ?
+                            <FlatList
+                                data={this.props.customWorkoutSets}
+                                style={styles.container}
+                                renderItem={props => this.renderItem({...props, navigation})}
+                                numColumns={2}
+                                keyExtractor={(item, index) => index.toString()}
+                                // onEndReached={this.loadData}
+                                // ListFooterComponent={() => <FooterComponent/>}
+                                onEndReachedThreshol={0.2}
+                                // onRefresh={this.onRefresh}
+                                // refreshing={this.state.refreshing}
+                                // extraData={}
+                            /> : (
+                                <View style={{
+                                    flex: 1,
+                                    height: height * 0.66,
+                                    textAlign: "center",
+                                    justifyContent: "center",
+                                    // backgroundColor: "#ccc"
+                                }}>
+                                    <Text style={{textAlign: 'center'}}>
+                                        <IconFontAwesome name="camera-retro" size={110} color="#c69"
+                                                         key="delete"/>
+                                    </Text>
+                                    <Text style={{
+                                        color: "#eee",
+                                        fontSize: 24,
+                                        fontFamily: "PattayaRegular",
+                                        margin: 20,
+                                        marginLeft: 40
+                                    }}>Please Click the + button to add your first progress photo </Text>
+                                </View>)
+                        }
                     </View>
-                    {this.props.displayPicture.showReminder && <ReminderModal
-                        reminderTitle={this.props.displayPicture.reminderTitle}
-                        reminderContent={this.props.displayPicture.reminderContent}
-                        handleCloseReminder={this.handleCloseReminder}
-                        handleConfirm={this.handleConfirm}
-                        hideConfirmButton={this.props.displayPicture.hideConfirmButton}/>
+                    {this.props.customWorkout.showReminder && <ReminderModal
+                        // reminderTitle={this.props.displayPicture.reminderTitle}
+                        // reminderContent={this.props.displayPicture.reminderContent}
+                        // handleCloseReminder={this.handleCloseReminder}
+                        // handleConfirm={this.handleConfirm}
+                        // hideConfirmButton={this.props.displayPicture.hideConfirmButton}
+                        />
                     }
                 </ScrollView>
             </LinearGradient>
@@ -71,11 +107,8 @@ export class _CustomWorkout extends Component {
 }
 
 const mapStateToProps = state => ({
-    bfrData: state.health.bfrData,
-    weightData: state.health.weightData,
-    progressPics: state.progress.pics,
-    currentPic: state.progress.currentPic,
-    displayPicture: state.displayPicture,
+    customWorkout: state.customWorkout,
+    customWorkoutSets: state.customWorkout.customWorkoutSets
 });
 
 const mapActionToProps = dispatch => ({
@@ -95,6 +128,10 @@ export const CustomWorkout = connect(
     mapActionToProps
 )(_CustomWorkout);
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        marginVertical: 20,
+    },
     topBar: {
         backgroundColor: "transparent",
         justifyContent: "center",
