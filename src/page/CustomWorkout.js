@@ -19,6 +19,7 @@ import LoadingUtil from "../utils/LoadingUtil";
 import IconFontAwesome from "react-native-vector-icons/FontAwesome";
 import ApslButton from "apsl-react-native-button";
 import Icon from "react-native-vector-icons/MaterialIcons";
+import {IconFont} from '@expo/vector-icons';
 
 const {width, height} = Dimensions.get("window");
 
@@ -59,7 +60,10 @@ export class _CustomWorkout extends Component {
                 onPress={async () => {
                 }}>
                 {/*<Image style={styles.image} source={{uri: props.item.photoURI}}/>*/}
-                <Text style={{color:"#eee",fontSize:30,fontFamily:"PattayaRegular"}}>{item}</Text>
+                <View>
+                    <IconFont name={"leg"} size={24} color={"#fff"}/>
+                </View>
+                {/*<Text style={{color: "#eee", fontSize: 30, fontFamily: "PattayaRegular"}}>{item}</Text>*/}
                 {this.state.showDeleteButton && this.state.selectTobeDeleted.includes(props.item.date) &&
                 <ApslButton
                     // onPress={this.closeModal}
@@ -72,7 +76,7 @@ export class _CustomWorkout extends Component {
     };
 
     render() {
-        console.warn("customWorkout", this.props.customWorkout);
+        // console.warn("customWorkout", this.props.customWorkout);
         return (
             <LinearGradient colors={["#219dd5", "#51c0bb"]} style={{flex: 1}}>
                 <ScrollView>
