@@ -56,9 +56,11 @@ export class _CustomWorkout extends Component {
         })
     };
     renderItem = ({item, index}) => {
-        return (<View style={styles.item}>
+        return (<View
+            style={{...styles.item, backgroundColor: this.props.customWorkoutAddable[item] ? "transparent" : "#ccc"}}>
             <TouchableOpacity
-                style={{marginTop: 10}}
+                disabled={!this.props.customWorkoutAddable[item]}
+                style={{marginTop: 10,}}
                 onPress={async () => {
                     this.setState({
                         selectedExerciseCategory: item,
@@ -87,6 +89,7 @@ export class _CustomWorkout extends Component {
     };
 
     render() {
+        console.warn("addable", this.props.customWorkoutAddable);
         // console.warn("customWorkout", this.props.customWorkout);
         return (
             <LinearGradient colors={["#219dd5", "#51c0bb"]} style={{flex: 1}}>
@@ -144,8 +147,8 @@ export class _CustomWorkout extends Component {
 
 const mapStateToProps = state => ({
     customWorkout: state.customWorkout,
-    customWorkoutSets: state.customWorkout.customWorkoutSets,
-    customWorkoutCategory: state.customWorkout.customWorkoutCategory
+    customWorkoutCategory: state.customWorkout.customWorkoutCategory,
+    customWorkoutAddable: state.customWorkout.customWorkoutAddable
 });
 
 const mapActionToProps = dispatch => ({
