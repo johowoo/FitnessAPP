@@ -57,13 +57,16 @@ export class _CustomWorkout extends Component {
     renderItem = ({item, index}) => {
         return (<View style={styles.item}>
             <TouchableOpacity
+                style={{marginTop: 10}}
                 onPress={async () => {
                 }}>
                 {/*<Image style={styles.image} source={{uri: props.item.photoURI}}/>*/}
-                <View>
+                <View style={styles.alignVerAndHorCenter}>
                     <IconFont name={item} size={60} color={"#fff"}/>
                 </View>
-                <Text style={{color: "#eee", fontSize: 30, fontFamily: "PattayaRegular"}}>{item}</Text>
+                <View style={styles.alignVerAndHorCenter}>
+                    <Text style={{color: "#eee", fontSize: 30, fontFamily: "PattayaRegular"}}>{item}</Text>
+                </View>
                 {this.state.showDeleteButton && this.state.selectTobeDeleted.includes(props.item.date) &&
                 <ApslButton
                     // onPress={this.closeModal}
@@ -200,6 +203,9 @@ const styles = StyleSheet.create({
         borderRadius: 10,
         borderColor: "#eee",
         borderWidth: 1,
-
     },
+    alignVerAndHorCenter: {
+        alignItems: "center",
+        justifyContent: 'center'
+    }
 });
