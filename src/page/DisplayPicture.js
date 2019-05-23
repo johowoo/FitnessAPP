@@ -58,7 +58,6 @@ export class _DisplayPicture extends Component {
     }
 
     async onSwipeRight(gestureState) {
-        console.warn("pics", this.props.progressPics);
         if (this.props.currentPic.index > 0) {
             await this.setState({
                 // photoURI: this.props.progressPics[this.props.currentPic.index - 1].photoURI,

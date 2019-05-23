@@ -108,7 +108,7 @@ const CurrentWorkoutStackNavigator = createStackNavigator({
             headerRight: (
                 <TouchableOpacity style={{marginRight: 30}}
                                   onPress={() => {
-                                      console.warn("add");
+                                      // console.warn("add");
                                   }}>
                     <View>
                         <MaterialIcons name={"add"}

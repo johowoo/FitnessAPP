@@ -126,7 +126,6 @@ export class _ExerciseList extends PureComponent {
         this.props.currentWorkout.forEach(async item => {
             if (item.exercise === this.state.selectedExercise) {
                 flag = false;
-                console.warn("false");
                 // ReminderModal
                 await this.setState({
                     showReminderModalDuplicated: true,
@@ -138,7 +137,6 @@ export class _ExerciseList extends PureComponent {
             }
         });
         if (flag) {
-            console.warn("true");
             await this.props.updateEmpty(false);
             await this.props.addExercise({
                 exercise: this.state.selectedExercise,
@@ -156,7 +154,6 @@ export class _ExerciseList extends PureComponent {
     };
     handelCancelDuplicated = async () => {
         await this.setState({setsModalVisible: false});
-        console.warn("cancel successfully");
 
     };
     handlePressAddExercise = () => {
