@@ -55,11 +55,11 @@ export const showDeleteConfirmModalInDisplayPictureAction = data =>
 
 
 //Custom Workout
-export const addExerciseSetToCustomWorkout = data =>
+export const addExerciseSetToCustomWorkoutAction = data =>
     createAction(types.ADD_EXERCISE_SET_TO_CUSTOM_WORKOUT)(data);
-export const deleteExerciseSetFromCustomWorkout = data =>
+export const deleteExerciseSetFromCustomWorkoutAction = data =>
     createAction(types.DELETE_EXERCISE_SET_FROM_CUSTOM_WORKOUT)(data);
-export const addExerciseSetFromCustomWorkoutToCurrentWorkout = data =>
+export const addExerciseSetFromCustomWorkoutToCurrentWorkoutAction = data =>
     createAction(types.ADD_EXERCISE_SET_FROM_CUSTOM_WORKOUT_TO_CURRENT_WORKOUT)(data);
 
 //Edit Library

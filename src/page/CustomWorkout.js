@@ -8,9 +8,7 @@ import {
     FlatList, TouchableOpacity, Image
 } from "react-native";
 import {
-    changeCurrentDisplayPicAction,
-    deleteOnePicFromProgressAction,
-    showDeleteConfirmModalInDisplayPictureAction
+    addExerciseSetToCustomWorkoutAction
 } from "../store/actions";
 import {LinearGradient} from "expo";
 import {connect} from "react-redux";
@@ -34,23 +32,25 @@ export class _CustomWorkout extends Component {
         };
     }
 
-    async onSwipeLeft(gestureState) {
-    }
-
-    async onSwipeRight(gestureState) {
-    }
-
+    // async onSwipeLeft(gestureState) {
+    // }
+    //
+    // async onSwipeRight(gestureState) {
+    // }
     //delete pic from progress
     handleConfirm = async () => {
         await LoadingUtil.showLoading();
-        await this.props.deleteOnePicFromProgress({});
-        await this.props.showDeleteConfirmModalInDisplayPicture({
+        //add exercises to currentworkout
+        await this.setState({
             showReminder: false
         });
+        // console.warn("selectedCategory", this.state.selectedExerciseCategory);
+        await this.props.addExerciseSetToCustomWorkout(this.state.selectedExerciseCategory);
+        await this.props.navigation.navigate("CurrentWorkout");
         await LoadingUtil.dismissLoading();
     };
     handleCloseReminder = (bool = false) => {
-        this.props.showDeleteConfirmModalInDisplayPicture({
+        this.setState({
             showReminder: false
         })
     };
@@ -59,6 +59,13 @@ export class _CustomWorkout extends Component {
             <TouchableOpacity
                 style={{marginTop: 10}}
                 onPress={async () => {
+                    this.setState({
+                        selectedExerciseCategory: item,
+                        showReminder: true,
+                        reminderTitle: "Add Exercises",
+                        reminderContent: `Do you want to add this sets of exercise(${item}) to currentWorkout`,
+                        hideConfirmButton: false
+                    })
                 }}>
                 {/*<Image style={styles.image} source={{uri: props.item.photoURI}}/>*/}
                 <View style={styles.alignVerAndHorCenter}>
@@ -119,12 +126,13 @@ export class _CustomWorkout extends Component {
                                 </View>)
                         }
                     </View>
-                    {this.props.customWorkout.showReminder && <ReminderModal
-                        // reminderTitle={this.props.displayPicture.reminderTitle}
-                        // reminderContent={this.props.displayPicture.reminderContent}
-                        // handleCloseReminder={this.handleCloseReminder}
-                        // handleConfirm={this.handleConfirm}
-                        // hideConfirmButton={this.props.displayPicture.hideConfirmButton}
+                    {this.state.showReminder && <ReminderModal
+                        showReminder={this.state.showReminder}
+                        reminderTitle={this.state.reminderTitle}
+                        reminderContent={this.state.reminderContent}
+                        handleCloseReminder={this.handleCloseReminder}
+                        handleConfirm={this.handleConfirm}
+                        hideConfirmButton={this.state.hideConfirmButton}
                     />
                     }
                 </ScrollView>
@@ -140,15 +148,10 @@ const mapStateToProps = state => ({
 });
 
 const mapActionToProps = dispatch => ({
-    changeCurrentDisplayPic(data) {
-        dispatch(changeCurrentDisplayPicAction(data));
+    addExerciseSetToCustomWorkout(data) {
+        dispatch(addExerciseSetToCustomWorkoutAction(data));
     },
-    showDeleteConfirmModalInDisplayPicture(data) {
-        dispatch(showDeleteConfirmModalInDisplayPictureAction(data))
-    },
-    deleteOnePicFromProgress(data) {
-        dispatch(deleteOnePicFromProgressAction(data));
-    },
+
 });
 
 export const CustomWorkout = connect(

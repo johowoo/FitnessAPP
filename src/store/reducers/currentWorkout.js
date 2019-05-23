@@ -1,4 +1,6 @@
 import * as types from "../actionTypes";
+import {initialExerciseSets, initialExerciseCategory} from '../../initialExerciseSets';
+
 
 export const currentWorkout = (state = [], action) => {
     switch (action.type) {
@@ -51,6 +53,13 @@ export const currentWorkout = (state = [], action) => {
                 }
             });
             return stateCopyForEditAll;
+        case types.ADD_EXERCISE_SET_TO_CUSTOM_WORKOUT:
+            console.warn('state', state);
+            console.warn("payload", action.payload);
+            console.warn("initialExerciseSets", initialExerciseSets);
+            console.warn("initialExerciseSets[payload]", initialExerciseSets[action.payload]);
+            return [...state, ...initialExerciseSets[action.payload]];
+            // return state;
         default:
             return state;
     }
