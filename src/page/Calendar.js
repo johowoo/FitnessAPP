@@ -8,7 +8,10 @@ import {
     TouchableWithoutFeedback,
     Dimensions,
 } from "react-native";
-import {CalendarList} from "react-native-calendars";
+import {
+    Calendar as
+        CalendarComp
+} from "react-native-calendars";
 import {connect} from "react-redux";
 import {LinearGradient} from "expo";
 import ApslButton from "apsl-react-native-button";
@@ -41,26 +44,52 @@ export class _Calendar extends Component {
                         <Text style={styles.textBar}>Calendar</Text>
                     ) : null}
                 </TopBar>
-                <CalendarList
-                    // onVisibleMonthsChange={months => {
-                    //     // console.warn("now these months are visible", months);
-                    // }}
-                    pastScrollRange={50}
-                    futureScrollRange={50}
-                    scrollEnabled
-                    markedDates={this.props.markedDates}
-                    onDayPress={day => {
-                        const date = day.dateString;
-                        if (!this.props.markedDates.hasOwnProperty(date)) {
-                            return;
-                        }
-                        this.setState({
-                            pressedDay: date,
-                            displayExercisesList: this.props.allExercisesList[date],
-                            isModalListVisible: true,
-                        });
-                    }}
-                />
+                {/*<LinearGradient colors={["#1b98d9", "#57c5b8"]} style={{flex: 1}}>*/}
+                    <CalendarComp
+                        theme={{
+                            backgroundColor: '#c69',
+                            calendarBackground: 'transparent',
+                            textSectionTitleColor: '#b6c1cd',
+                            selectedDayBackgroundColor: '#00adf5',
+                            selectedDayTextColor: '#ffffff',
+                            todayTextColor: '#00adf5',
+                            dayTextColor: '#eee',
+                            textDisabledColor: '#999',
+                            dotColor: '#00adf5',
+                            selectedDotColor: '#ffffff',
+                            arrowColor: '#fff',
+                            monthTextColor: '#ddd',
+                            indicatorColor: 'blue',
+                            textDayFontFamily: 'PattayaRegular',
+                            textMonthFontFamily: 'PattayaRegular',
+                            textDayHeaderFontFamily: 'PattayaRegular',
+                            textDayFontWeight: '300',
+                            textMonthFontWeight: 'bold',
+                            textDayHeaderFontWeight: '300',
+                            textDayFontSize: 16,
+                            textMonthFontSize: 16,
+                            textDayHeaderFontSize: 16
+                        }}
+                        // onVisibleMonthsChange={months => {
+                        //     // console.warn("now these months are visible", months);
+                        // }}
+                        pastScrollRange={50}
+                        futureScrollRange={50}
+                        scrollEnabled
+                        markedDates={this.props.markedDates}
+                        onDayPress={day => {
+                            const date = day.dateString;
+                            if (!this.props.markedDates.hasOwnProperty(date)) {
+                                return;
+                            }
+                            this.setState({
+                                pressedDay: date,
+                                displayExercisesList: this.props.allExercisesList[date],
+                                isModalListVisible: true,
+                            });
+                        }}
+                    />
+                {/*</LinearGradient>*/}
                 <Modal
                     visible={this.state.isModalListVisible}
                     style={{flex: 1}}
