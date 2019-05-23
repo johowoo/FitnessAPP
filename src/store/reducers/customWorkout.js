@@ -1,6 +1,13 @@
 import * as types from "../actionTypes";
+import {initialExerciseSets, initialExerciseCategory} from '../../initialExerciseSets';
 
-const defaultState = {showReminderModal: false, customWorkoutSets: []};
+const defaultState = {
+    showReminderModal: false,
+    customWorkoutSets: initialExerciseSets,
+    customWorkoutCategory: initialExerciseCategory
+};
+
+// console.warn("initialExerciseCategory",initialExerciseCategory);
 export const customWorkout = (state = defaultState, action) => {
     switch (action.type) {
         case types.ADD_EXERCISE_SET_TO_CUSTOM_WORKOUT:
@@ -27,7 +34,6 @@ export const customWorkout = (state = defaultState, action) => {
                 reminderContent: action.payload.reminderContent,
                 hideConfirmButton: action.payload.hideConfirmButton
             };
-
         default:
             return state;
     }

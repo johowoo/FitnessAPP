@@ -180,7 +180,7 @@ export class _WorkoutList extends Component {
     );
 
     render() {
-
+        console.warn("currentWorkout", this.props.currentWorkout);
         const listFooterComponent = (
             <View>
                 <View style={styles.addSomeExercises}>

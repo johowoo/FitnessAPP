@@ -5,7 +5,7 @@ import {
     StyleSheet,
     Dimensions,
     ScrollView,
-    FlatList
+    FlatList, TouchableOpacity, Image
 } from "react-native";
 import {
     changeCurrentDisplayPicAction,
@@ -17,6 +17,8 @@ import {connect} from "react-redux";
 import {ReminderModal} from "../component/ReminderModal";
 import LoadingUtil from "../utils/LoadingUtil";
 import IconFontAwesome from "react-native-vector-icons/FontAwesome";
+import ApslButton from "apsl-react-native-button";
+import Icon from "react-native-vector-icons/MaterialIcons";
 
 const {width, height} = Dimensions.get("window");
 
@@ -51,17 +53,35 @@ export class _CustomWorkout extends Component {
             showReminder: false
         })
     };
+    renderItem = ({item, index}) => {
+        return (<View style={styles.item}>
+            <TouchableOpacity
+                onPress={async () => {
+                }}>
+                {/*<Image style={styles.image} source={{uri: props.item.photoURI}}/>*/}
+                <Text>{item}</Text>
+                {this.state.showDeleteButton && this.state.selectTobeDeleted.includes(props.item.date) &&
+                <ApslButton
+                    // onPress={this.closeModal}
+                    textStyle={{fontSize: 34, color: "#c69"}}
+                    style={{position: "absolute", right: 0, top: -6, borderWidth: 0, borderRadius: 16}}
+                    children={<Icon name="check-circle" size={34} color={"#c69"} key="cancel"/>}
+                />}
+            </TouchableOpacity>
+        </View>)
+    };
 
     render() {
+        console.warn("customWorkout", this.props.customWorkout);
         return (
             <LinearGradient colors={["#219dd5", "#51c0bb"]} style={{flex: 1}}>
                 <ScrollView>
                     <View>
-                        {this.props.customWorkoutSets.length > 0 ?
+                        {this.props.customWorkoutCategory.length > 0 ?
                             <FlatList
-                                data={this.props.customWorkoutSets}
+                                data={this.props.customWorkoutCategory}
                                 style={styles.container}
-                                renderItem={props => this.renderItem({...props, navigation})}
+                                renderItem={props => this.renderItem({...props})}
                                 numColumns={2}
                                 keyExtractor={(item, index) => index.toString()}
                                 // onEndReached={this.loadData}
@@ -98,7 +118,7 @@ export class _CustomWorkout extends Component {
                         // handleCloseReminder={this.handleCloseReminder}
                         // handleConfirm={this.handleConfirm}
                         // hideConfirmButton={this.props.displayPicture.hideConfirmButton}
-                        />
+                    />
                     }
                 </ScrollView>
             </LinearGradient>
@@ -108,7 +128,8 @@ export class _CustomWorkout extends Component {
 
 const mapStateToProps = state => ({
     customWorkout: state.customWorkout,
-    customWorkoutSets: state.customWorkout.customWorkoutSets
+    customWorkoutSets: state.customWorkout.customWorkoutSets,
+    customWorkoutCategory: state.customWorkout.customWorkoutCategory
 });
 
 const mapActionToProps = dispatch => ({

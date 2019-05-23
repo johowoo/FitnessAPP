@@ -3,7 +3,7 @@ export const sectionExercises = [
         data: [
             "flat dumbbell bench press",
             "flat barbell bench press",
-            "inclince dumbbell bench press",
+            "incline dumbbell bench press",
         ],
         category: "Chest",
     },
@@ -11,13 +11,13 @@ export const sectionExercises = [
     {
         data: [
             "military press",
-            "shoulder barbell lift ",
-            "shoulder dumbbell lift ",
+            "shoulder barbell lift",
+            "shoulder dumbbell lift",
         ],
-        category: "shoulder",
+        category: "shoulders",
     },
     {
-        data: ["dumbbell curl", "barbell curl ", "dumbbell overhead extension"],
+        data: ["dumbbell curl", "barbell curl", "dumbbell overhead extension"],
         category: "Arms",
     },
     {
