@@ -151,7 +151,7 @@ export const CustomWorkout = connect(
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        marginVertical: 20,
+        // marginVertical: 20,
     },
     topBar: {
         backgroundColor: "transparent",
