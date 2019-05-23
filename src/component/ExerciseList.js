@@ -283,7 +283,6 @@ export class _ExerciseList extends PureComponent {
                                         title="Confirm"
                                         onPress={async () => {
                                             await this.handlePress.call(this);
-
                                         }}
                                     />
                                 </View>

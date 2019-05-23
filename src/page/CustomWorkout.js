@@ -8,7 +8,7 @@ import {
     FlatList, TouchableOpacity, Image
 } from "react-native";
 import {
-    addExerciseSetToCustomWorkoutAction
+    addExerciseSetToCustomWorkoutAction, updateEmptyAction
 } from "../store/actions";
 import {LinearGradient} from "expo";
 import {connect} from "react-redux";
@@ -40,12 +40,13 @@ export class _CustomWorkout extends Component {
     //delete pic from progress
     handleConfirm = async () => {
         await LoadingUtil.showLoading();
+        await this.props.updateEmpty(false);
         //add exercises to currentworkout
+        await this.props.addExerciseSetToCustomWorkout(this.state.selectedExerciseCategory);
         await this.setState({
             showReminder: false
         });
         // console.warn("selectedCategory", this.state.selectedExerciseCategory);
-        await this.props.addExerciseSetToCustomWorkout(this.state.selectedExerciseCategory);
         await this.props.navigation.navigate("CurrentWorkout");
         await LoadingUtil.dismissLoading();
     };
@@ -151,6 +152,9 @@ const mapActionToProps = dispatch => ({
     addExerciseSetToCustomWorkout(data) {
         dispatch(addExerciseSetToCustomWorkoutAction(data));
     },
+    updateEmpty(bool) {
+        dispatch(updateEmptyAction(bool));
+    }
 
 });
 
