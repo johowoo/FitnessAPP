@@ -89,7 +89,6 @@ export class _CustomWorkout extends Component {
     };
 
     render() {
-        console.warn("addable", this.props.customWorkoutAddable);
         // console.warn("customWorkout", this.props.customWorkout);
         return (
             <LinearGradient colors={["#219dd5", "#51c0bb"]} style={{flex: 1}}>

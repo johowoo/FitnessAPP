@@ -6,12 +6,14 @@ should never let the state of the redux to be an array!!!
 ## To be done
 ### bugs to be fixed
 * avoid duplicated exercise when adding exercise sets from CustomWorkout
+* refresh addable after clicking "finish"
 * white header when clicking back in stackNavigator
 * sets of cardio 
 * transparency in PhotoModal
 
 
 ### new functions
+* disable sets button after adding(confirming)
 * select month & year in calendar
 * back to today in calendar
 * saved selection of exercises
@@ -20,8 +22,10 @@ should never let the state of the redux to be an array!!!
 * dropdown -> selection & input 
 * slide effects in swiping pics
 * the main focus of exercise (chest/back ....)
-* add sets records for days before 
+* allow to add sets records for days before 
 
+### etc
+* consider the construct of the TabPage (whether display customWorkout firstly or not)
 
 ## completed
 ### functions
