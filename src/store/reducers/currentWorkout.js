@@ -54,8 +54,22 @@ export const currentWorkout = (state = [], action) => {
             });
             return stateCopyForEditAll;
         case types.ADD_EXERCISE_SET_TO_CUSTOM_WORKOUT:
-            return [...state, ...initialExerciseSets[action.payload]];
-            // return state;
+            const emptySets = [];
+            //prevent from adding duplicated sets
+            initialExerciseSets[action.payload].forEach((i, index) => {
+                let flag = false;
+                state.forEach(j => {
+                    if (i.exercise === j.exercise) {
+                        flag = true;
+                    }
+                });
+                if (!flag) {
+                    emptySets.push(i);
+                }
+            });
+            // return [...state, ...initialExerciseSets[action.payload]];
+            return [...state, ...emptySets];
+        // return state;
         default:
             return state;
     }

@@ -52,7 +52,7 @@ export class _Calendar extends Component {
                             textSectionTitleColor: '#cc6699',
                             // selectedDayBackgroundColor: '#cc6699',
                             selectedDayTextColor: '#eee',
-                            todayTextColor: '#880e4f',
+                            todayTextColor: '#cc6699',
                             dayTextColor: '#eee',
                             textDisabledColor: '#aaa',
                             dotColor: '#00adf5',
