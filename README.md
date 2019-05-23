@@ -1,15 +1,27 @@
 # FitnessAPP
 fitness app built with React native
+##notice
+should never let the state of the redux to be an array!!!
 
 ## To be done
 ### bugs to be fixed
-* white screen in calendar
+* avoid duplicated exercise when adding exercise sets from CustomWorkout
+* white header when clicking back in stackNavigator
+* sets of cardio 
+* transparency in PhotoModal
+
 
 ### new functions
-* dropdown -> selection & input 
+* select month & year in calendar
+* back to today in calendar
 * saved selection of exercises
-
+* editable library
+* finish & congrats page
+* dropdown -> selection & input 
+* slide effects in swiping pics
 * the main focus of exercise (chest/back ....)
+* add sets records for days before 
+
 
 ## completed
 ### functions
@@ -46,3 +58,4 @@ fitness app built with React native
 * headerTitle of PictureModal ✔️
 * disable completed when there are no exercises in currentWorkout
 (when delete all exercises)✔️
+* white screen in calendar✔️
