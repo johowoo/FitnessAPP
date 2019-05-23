@@ -24,7 +24,7 @@ export const calendar = (state = defaultState, action) => {
           [action.payload]: {
             selected: true,
             marked: true,
-            selectedColor: "#1b98d9",
+            selectedColor: "#cc6699",
           },
         },
       };
