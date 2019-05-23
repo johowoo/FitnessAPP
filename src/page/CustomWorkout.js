@@ -61,9 +61,9 @@ export class _CustomWorkout extends Component {
                 }}>
                 {/*<Image style={styles.image} source={{uri: props.item.photoURI}}/>*/}
                 <View>
-                    <IconFont name={"leg"} size={24} color={"#fff"}/>
+                    <IconFont name={item} size={60} color={"#fff"}/>
                 </View>
-                {/*<Text style={{color: "#eee", fontSize: 30, fontFamily: "PattayaRegular"}}>{item}</Text>*/}
+                <Text style={{color: "#eee", fontSize: 30, fontFamily: "PattayaRegular"}}>{item}</Text>
                 {this.state.showDeleteButton && this.state.selectTobeDeleted.includes(props.item.date) &&
                 <ApslButton
                     // onPress={this.closeModal}

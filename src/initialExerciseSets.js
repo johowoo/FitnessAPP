@@ -96,39 +96,57 @@ export const initialExerciseSets = {
             time: 1500000000003
         }
     ],
-    "Core": [
+    "Hip": [
         {
-            exercise: "abdominal crunch",
-            sets: 4,
+            exercise: "bulgarian split squat",
+            sets: 0,
             time: 1600000000001
         },
         {
-            exercise: "sit ups",
-            sets: 4,
+            exercise: "sumo squat",
+            sets: 0,
             time: 1600000000002
         },
         {
             exercise: "seated knee raise",
-            sets: 4,
+            sets: 0,
             time: 1600000000003
+        }
+    ],
+    "Core": [
+        {
+            exercise: "abdominal crunch",
+            sets: 4,
+            time: 1700000000001
+        },
+        {
+            exercise: "sit ups",
+            sets: 4,
+            time: 1700000000002
+        },
+        {
+            exercise: "kettlebell swing",
+            sets: 4,
+            time: 1700000000003
         }
     ],
     "Cardio": [
         {
             exercise: "abdominal crunch",
             sets: 0,
-            time: 1600000000001
+            time: 1800000000001
         },
         {
             exercise: "sit ups",
             sets: 0,
-            time: 1600000000002
+            time: 1800000000002
         },
         {
             exercise: "seated knee raise",
             sets: 0,
-            time: 1600000000003
+            time: 1800000000003
         }
-    ]
+    ],
+
 };
-export const initialExerciseCategory = ["Chest", "Back", "Shoulders", "Arms", "Legs", "Core", "Cardio"]
+export const initialExerciseCategory = ["Chest", "Back", "Arms", "Shoulders", "Legs", "Hip", "Core", "Cardio"];
