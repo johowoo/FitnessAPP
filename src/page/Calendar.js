@@ -47,12 +47,12 @@ export class _Calendar extends Component {
                 {/*<LinearGradient colors={["#1b98d9", "#57c5b8"]} style={{flex: 1}}>*/}
                     <CalendarComp
                         theme={{
-                            backgroundColor: '#c69',
+                            // backgroundColor: '#c69',
                             calendarBackground: 'transparent',
                             textSectionTitleColor: '#b6c1cd',
-                            selectedDayBackgroundColor: '#00adf5',
-                            selectedDayTextColor: '#ffffff',
-                            todayTextColor: '#00adf5',
+                            // selectedDayBackgroundColor: '#c69',
+                            selectedDayTextColor: '#880e4f',
+                            todayTextColor: '#880e4f',
                             dayTextColor: '#eee',
                             textDisabledColor: '#999',
                             dotColor: '#00adf5',
