@@ -59,7 +59,7 @@ export class _CustomWorkout extends Component {
                 onPress={async () => {
                 }}>
                 {/*<Image style={styles.image} source={{uri: props.item.photoURI}}/>*/}
-                <Text>{item}</Text>
+                <Text style={{color:"#eee",fontSize:30,fontFamily:"PattayaRegular"}}>{item}</Text>
                 {this.state.showDeleteButton && this.state.selectTobeDeleted.includes(props.item.date) &&
                 <ApslButton
                     // onPress={this.closeModal}
@@ -185,5 +185,17 @@ const styles = StyleSheet.create({
         color: "#eee",
         fontFamily: "PattayaRegular",
         fontSize: 16,
+    },
+    item: {
+        backgroundColor: "transparent",
+        alignItems: "center",
+        justifyContent: "center",
+        width: width * 0.4,
+        height: width * 0.4,
+        margin: width * 0.05,
+        borderRadius: 10,
+        borderColor: "#eee",
+        borderWidth: 1,
+
     },
 });
