@@ -23,7 +23,6 @@ export const customWorkout = (state = defaultState, action) => {
                 ...state, customWorkoutAddable: addableCopy
             };
         case types.CLEAR_CURRENT_WORKOUT:
-            console.warn("default", defaultState.customWorkoutAddable);
             const customWorkoutAddableEmpty = {};
             for (let key in initialExerciseSets) {
                 customWorkoutAddableEmpty[key] = true;
