@@ -99,17 +99,17 @@ export const initialExerciseSets = {
     "Hip": [
         {
             exercise: "bulgarian split squat",
-            sets: 0,
+            sets: 4,
             time: 1600000000001
         },
         {
             exercise: "sumo squat",
-            sets: 0,
+            sets: 4,
             time: 1600000000002
         },
         {
             exercise: "seated knee raise",
-            sets: 0,
+            sets: 4,
             time: 1600000000003
         }
     ],

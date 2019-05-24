@@ -21,6 +21,10 @@ export const customWorkout = (state = defaultState, action) => {
             return {
                 ...state, customWorkoutAddable: addableCopy
             };
+        case types.CLEAR_CURRENT_WORKOUT:
+            return {
+                ...state, customWorkoutAddable: defaultState.customWorkoutAddable
+            };
         case types.DELETE_EXERCISE_SET_FROM_CUSTOM_WORKOUT:
             return {
                 ...state,
