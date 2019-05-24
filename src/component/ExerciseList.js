@@ -210,6 +210,7 @@ export class _ExerciseList extends PureComponent {
     // };
 
     render() {
+        console.warn("List-sectionExercises", this.props.sectionExercises);
         return (
             <View style={{flex: 1, backgroundColor: "#eee"}}>
                 <LinearGradient
@@ -368,7 +369,7 @@ export class _ExerciseList extends PureComponent {
 const mapStateToProps = state => ({
     currentWorkout: state.currentWorkout,
     isExerciseListEmpty: state.exerciseCompleted.isExerciseListEmpty,
-    sectionExercises: state.exercises.sectionExercises,
+    // sectionExercises: state.exercises.sectionExercises,
 });
 const mapActionToProps = dispatch => ({
         addExercise: exercise => dispatch(addExerciseAction(exercise)),

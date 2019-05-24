@@ -29,6 +29,7 @@ export class _EditLibrary extends Component {
             toBeEditedExerciseSets: {}
         };
     }
+
     // async onSwipeLeft(gestureState) {
     // }
     //
@@ -64,9 +65,15 @@ export class _EditLibrary extends Component {
                 onPress={async () => {
                     await this.setState({
                         selectedExerciseCategory: item,
-
                     });
-                    await this.setState({showExerciseModal: true});
+                    console.warn(this.props.navigation);
+                    await this.props.navigation.setParams({header: null});
+                    await this.props.navigation.navigate("EditExercisesForLibrary");
+                    // console.warn("selectedSets", this.props.customWorkoutSets[this.state.selectedExerciseCategory]);
+                    // await this.setState({
+                    //     toBeEditedExerciseSets: this.props.customWorkoutSets[this.state.selectedExerciseCategory]
+                    // });
+                    // await this.setState({showExerciseModal: true});
                 }}>
                 {/*<Image style={styles.image} source={{uri: props.item.photoURI}}/>*/}
                 <View style={styles.alignVerAndHorCenter}>
@@ -138,11 +145,11 @@ export class _EditLibrary extends Component {
                     }
                 </ScrollView>
                 <View>
-                    <ExerciseModal
-                        sectionExercises={this.state.toBeEditedExerciseSets}
-                        visible={this.state.showExerciseModal}
-                        closeModal={() => this.setModalVisibility(false)}
-                    />
+                    {/*<ExerciseModal*/}
+                    {/*    sectionExercises={this.state.toBeEditedExerciseSets}*/}
+                    {/*    visible={this.state.showExerciseModal}*/}
+                    {/*    closeModal={() => this.setModalVisibility(false)}*/}
+                    {/*/>*/}
                 </View>
             </LinearGradient>
         );
@@ -152,6 +159,7 @@ export class _EditLibrary extends Component {
 const mapStateToProps = state => ({
     customWorkout: state.customWorkout,
     customWorkoutCategory: state.customWorkout.customWorkoutCategory,
+    customWorkoutSets: state.customWorkout.customWorkoutSets,
     customWorkoutAddable: state.customWorkout.customWorkoutAddable
 });
 

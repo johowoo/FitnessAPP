@@ -1,5 +1,5 @@
 import React, {Component, Fragment} from "react";
-import TabPage from "./page/TabPage";
+import TabPage from "./page/Main";
 import Welcome from "./page/Welcome";
 import MyLoading from './component/MyLoading';
 

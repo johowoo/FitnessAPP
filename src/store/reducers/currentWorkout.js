@@ -1,6 +1,4 @@
 import * as types from "../actionTypes";
-import {initialExerciseSets} from '../../initialExerciseSets';
-
 
 export const currentWorkout = (state = [], action) => {
     switch (action.type) {
@@ -36,9 +34,6 @@ export const currentWorkout = (state = [], action) => {
             const stateCopyForEditAll = JSON.parse(JSON.stringify(state));
             stateCopyForEditAll.map((item, index) => {
                 if (parseInt(item.time, 10) === parseInt(action.payload.time, 10)) {
-                    // stateCopyForEditAll.splice(index, 1);
-                    // console.warn("item.sets", item.sets);
-                    // console.warn("action.payload.sets", action.payload.sets);
                     item.sets = action.payload.sets;
                     delete item.weightRepsDataArr;
                     item.weightRepsDataArr = [];
