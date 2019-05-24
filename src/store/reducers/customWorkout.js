@@ -8,6 +8,7 @@ const defaultState = {
     customWorkoutCategory: initialExerciseCategory,
     customWorkoutAddable: {},
 };
+
 for (let key in initialExerciseSets) {
     defaultState.customWorkoutAddable[key] = true;
 }
@@ -22,8 +23,13 @@ export const customWorkout = (state = defaultState, action) => {
                 ...state, customWorkoutAddable: addableCopy
             };
         case types.CLEAR_CURRENT_WORKOUT:
+            console.warn("default", defaultState.customWorkoutAddable);
+            const customWorkoutAddableEmpty = {};
+            for (let key in initialExerciseSets) {
+                customWorkoutAddableEmpty[key] = true;
+            }
             return {
-                ...state, customWorkoutAddable: defaultState.customWorkoutAddable
+                ...state, customWorkoutAddable: customWorkoutAddableEmpty
             };
         case types.DELETE_EXERCISE_SET_FROM_CUSTOM_WORKOUT:
             return {

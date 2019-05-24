@@ -132,17 +132,17 @@ export const initialExerciseSets = {
     ],
     "Cardio": [
         {
-            exercise: "abdominal crunch",
+            exercise: "treadmill",
             sets: 0,
             time: 1800000000001
         },
         {
-            exercise: "sit ups",
+            exercise: "cylinder machine",
             sets: 0,
             time: 1800000000002
         },
         {
-            exercise: "seated knee raise",
+            exercise: "bicycle",
             sets: 0,
             time: 1800000000003
         }
