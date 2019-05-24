@@ -5,7 +5,7 @@ should never let the state of the redux to be an array!!!
 
 ## To be done
 ### bugs to be fixed
-* avoid duplicated exercise when adding exercise sets from CustomWorkout
+
 * refresh addable after clicking "finish"
 * white header when clicking back in stackNavigator
 * sets of cardio 
@@ -13,11 +13,11 @@ should never let the state of the redux to be an array!!!
 
 
 ### new functions
-* disable sets button after adding(confirming)
-* select month & year in calendar
-* back to today in calendar
-* saved selection of exercises
 * editable library
+* add button in custom workout
+* change ranks in currentWorkout
+* select month & year in calendar //calendar
+* back to today in calendar   //calender
 * finish & congrats page
 * dropdown -> selection & input 
 * slide effects in swiping pics
@@ -51,15 +51,17 @@ should never let the state of the redux to be an array!!!
 * default empty page of progress ✔️
 * editable sets in currentWorkout ✔️
 * can't add the same exercise twice  -> reminderModal ✔️
-
+* saved selection of exercises ✔️
+* disable sets(back, chest...) button after adding(confirming) ✔️
 
 ### bugs
 * position of photoModal ✔️
 * blur on editSets (key must be unique and can not be random)✔️
 * refresh analysis when update today's workouts ✔️
   (newAllExerciseList-->redux
-  completed-> change newAllExercistList directly)
+  completed-> change newAllExerciseList directly)
 * headerTitle of PictureModal ✔️
 * disable completed when there are no exercises in currentWorkout
 (when delete all exercises)✔️
 * white screen in calendar✔️
+* avoid duplicated exercise when adding exercise sets from CustomWorkout ✔️

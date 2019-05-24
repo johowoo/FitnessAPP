@@ -1,12 +1,12 @@
 import * as types from "../actionTypes";
-import {initialExerciseSets, initialExerciseCategory} from '../../initialExerciseSets';
+import {initialExerciseSets} from '../../initialExerciseSets';
 
 
 export const currentWorkout = (state = [], action) => {
     switch (action.type) {
         case types.ADD_EXERCISE:
             if (!action.payload.weightRepsDataArr) {
-                action.payload.weightRepsDataArr = []
+                action.payload.weightRepsDataArr = [];
             }
             return [...state, action.payload];
         case types.CLEAR_CURRENT_WORKOUT:
@@ -55,8 +55,11 @@ export const currentWorkout = (state = [], action) => {
             return stateCopyForEditAll;
         case types.ADD_EXERCISE_SET_TO_CUSTOM_WORKOUT:
             const emptySets = [];
+            // console.warn("sets", action.payload.sets);
+            // console.warn("initialSets", initialExerciseSets);
+            // console.warn("category", action.payload.category);
             //prevent from adding duplicated sets
-            initialExerciseSets[action.payload].forEach((i, index) => {
+            action.payload.sets[action.payload.category].forEach((i, index) => {
                 let flag = false;
                 state.forEach(j => {
                     if (i.exercise === j.exercise) {

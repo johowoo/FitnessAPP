@@ -1,20 +1,19 @@
 import React, {Component} from "react";
 import {
-    View,
-    Text,
-    StyleSheet,
-    Dimensions,
-    ScrollView,
-    Image,
+    View, Text, StyleSheet, Dimensions, ScrollView, FlatList, TouchableOpacity
 } from "react-native";
 import {
-    changeCurrentDisplayPicAction, deleteOnePicFromProgressAction, showDeleteConfirmModalInDisplayPictureAction
+    addExerciseSetToCustomWorkoutAction, updateEmptyAction
 } from "../store/actions";
 import {LinearGradient} from "expo";
-import GestureRecognizer, {swipeDirections} from 'react-native-swipe-gestures';
 import {connect} from "react-redux";
 import {ReminderModal} from "../component/ReminderModal";
 import LoadingUtil from "../utils/LoadingUtil";
+import IconFontAwesome from "react-native-vector-icons/FontAwesome";
+import ApslButton from "apsl-react-native-button";
+import Icon from "react-native-vector-icons/MaterialIcons";
+import {IconFont} from '@expo/vector-icons';
+import {ExerciseModal} from "./ExerciseModal";
 
 const {width, height} = Dimensions.get("window");
 
@@ -25,110 +24,144 @@ export class _EditLibrary extends Component {
             index: 0,
             reminderTitle: "",
             reminderContent: "",
-            showReminder: false
+            showExerciseModal: false,
+            showReminder: false,
+            toBeEditedExerciseSets: {}
         };
     }
-
-    async onSwipeLeft(gestureState) {
-        // console.warn("curentPicIndex", this.props.currentPic.index);
-        // console.warn("total length", this.props.progressPics.length - 1);
-        if (this.props.currentPic.index < this.props.progressPics.length - 1) {
-            await this.setState({
-                // photoURI: this.props.progressPics[this.props.currentPic.index + 1].photoURI,
-                // weight: this.props.progressPics[this.props.currentPic.index + 1].weight,
-                // BFR: this.props.progressPics[this.props.currentPic.index + 1].BFR,
-                date: this.props.progressPics[this.props.currentPic.index + 1].date,
-                index: this.state.index + 1,
-            });
-            await this.props.changeCurrentDisplayPic({index: this.state.index, date: this.state.date})
-        } else {
-
-            this.props.showDeleteConfirmModalInDisplayPicture({
-                showReminder: true,
-                reminderTitle: "Last pic",
-                reminderContent: "You have already reached the last pic",
-                hideConfirmButton: true
-            });
-        }
-    }
-
-    async onSwipeRight(gestureState) {
-        if (this.props.currentPic.index > 0) {
-            await this.setState({
-                // photoURI: this.props.progressPics[this.props.currentPic.index - 1].photoURI,
-                // weight: this.props.progressPics[this.props.currentPic.index - 1].weight,
-                // BFR: this.props.progressPics[this.props.currentPic.index - 1].BFR,
-                date: this.props.progressPics[this.props.currentPic.index - 1].date,
-                index: this.state.index - 1,
-            });
-            await this.props.changeCurrentDisplayPic({index: this.state.index, date: this.state.date})
-        } else {
-            this.props.showDeleteConfirmModalInDisplayPicture({
-                showReminder: true,
-                reminderTitle: "First pic",
-                reminderContent: "You have already reached the first pic",
-                hideConfirmButton: true
-            });
-        }
-    }
-
-
+    // async onSwipeLeft(gestureState) {
+    // }
+    //
+    // async onSwipeRight(gestureState) {
+    // }
     //delete pic from progress
     handleConfirm = async () => {
         await LoadingUtil.showLoading();
-        await this.props.deleteOnePicFromProgress({});
-        await this.props.showDeleteConfirmModalInDisplayPicture({
+        await this.props.updateEmpty(false);
+        //add exercises to currentworkout
+        await this.props.addExerciseSetToCustomWorkout(this.state.selectedExerciseCategory);
+        await this.setState({
             showReminder: false
         });
+        // console.warn("selectedCategory", this.state.selectedExerciseCategory);
+        await this.props.navigation.navigate("CurrentWorkout");
         await LoadingUtil.dismissLoading();
     };
     handleCloseReminder = (bool = false) => {
-        this.props.showDeleteConfirmModalInDisplayPicture({
+        this.setState({
             showReminder: false
         })
-        // this.setState({
-        //     showReminder: bool
-        // })
+    };
+    renderItem = ({item, index}) => {
+        return (<View
+            style={{
+                ...styles.item,
+                // backgroundColor: this.props.customWorkoutAddable[item] ? "transparent" : "#ccc"
+            }}>
+            <TouchableOpacity
+                // disabled={!this.props.customWorkoutAddable[item]}
+                style={{marginTop: 10,}}
+                onPress={async () => {
+                    await this.setState({
+                        selectedExerciseCategory: item,
+
+                    });
+                    await this.setState({showExerciseModal: true});
+                }}>
+                {/*<Image style={styles.image} source={{uri: props.item.photoURI}}/>*/}
+                <View style={styles.alignVerAndHorCenter}>
+                    <IconFont name={item} size={60} color={"#fff"}/>
+                </View>
+                <View style={styles.alignVerAndHorCenter}>
+                    <Text style={{color: "#eee", fontSize: 30, fontFamily: "PattayaRegular"}}>{item}</Text>
+                </View>
+                {this.state.showDeleteButton && this.state.selectTobeDeleted.includes(props.item.date) &&
+                <ApslButton
+                    // onPress={this.closeModal}
+                    textStyle={{fontSize: 34, color: "#c69"}}
+                    style={{position: "absolute", right: 0, top: -6, borderWidth: 0, borderRadius: 16}}
+                    children={<Icon name="check-circle" size={34} color={"#c69"} key="cancel"/>}
+                />}
+            </TouchableOpacity>
+        </View>)
     };
 
     render() {
+        // console.warn("customWorkout", this.props.customWorkout);
         return (
             <LinearGradient colors={["#219dd5", "#51c0bb"]} style={{flex: 1}}>
                 <ScrollView>
                     <View>
-                        <Text>Edit Library</Text>
+                        {this.props.customWorkoutCategory.length > 0 ?
+                            <FlatList
+                                data={this.props.customWorkoutCategory}
+                                style={styles.container}
+                                renderItem={props => this.renderItem({...props})}
+                                numColumns={2}
+                                keyExtractor={(item, index) => index.toString()}
+                                // onEndReached={this.loadData}
+                                // ListFooterComponent={() => <FooterComponent/>}
+                                onEndReachedThreshol={0.2}
+                                // onRefresh={this.onRefresh}
+                                // refreshing={this.state.refreshing}
+                                // extraData={}
+                            /> : (
+                                <View style={{
+                                    flex: 1,
+                                    height: height * 0.66,
+                                    textAlign: "center",
+                                    justifyContent: "center",
+                                    // backgroundColor: "#ccc"
+                                }}>
+                                    <Text style={{textAlign: 'center'}}>
+                                        <IconFontAwesome name="camera-retro" size={110} color="#c69"
+                                                         key="delete"/>
+                                    </Text>
+                                    <Text style={{
+                                        color: "#eee",
+                                        fontSize: 24,
+                                        fontFamily: "PattayaRegular",
+                                        margin: 20,
+                                        marginLeft: 40
+                                    }}>Please Click the + button to add your first progress photo </Text>
+                                </View>)
+                        }
                     </View>
-                    {this.props.displayPicture.showReminder && <ReminderModal
-                        reminderTitle={this.props.displayPicture.reminderTitle}
-                        reminderContent={this.props.displayPicture.reminderContent}
+                    {this.state.showReminder && <ReminderModal
+                        showReminder={this.state.showReminder}
+                        reminderTitle={this.state.reminderTitle}
+                        reminderContent={this.state.reminderContent}
                         handleCloseReminder={this.handleCloseReminder}
                         handleConfirm={this.handleConfirm}
-                        hideConfirmButton={this.props.displayPicture.hideConfirmButton}/>
+                        hideConfirmButton={this.state.hideConfirmButton}
+                    />
                     }
                 </ScrollView>
+                <View>
+                    <ExerciseModal
+                        sectionExercises={this.state.toBeEditedExerciseSets}
+                        visible={this.state.showExerciseModal}
+                        closeModal={() => this.setModalVisibility(false)}
+                    />
+                </View>
             </LinearGradient>
         );
     }
 }
 
 const mapStateToProps = state => ({
-    bfrData: state.health.bfrData,
-    weightData: state.health.weightData,
-    progressPics: state.progress.pics,
-    currentPic: state.progress.currentPic,
-    displayPicture: state.displayPicture,
+    customWorkout: state.customWorkout,
+    customWorkoutCategory: state.customWorkout.customWorkoutCategory,
+    customWorkoutAddable: state.customWorkout.customWorkoutAddable
 });
 
 const mapActionToProps = dispatch => ({
-    changeCurrentDisplayPic(data) {
-        dispatch(changeCurrentDisplayPicAction(data));
+    addExerciseSetToCustomWorkout(data) {
+        dispatch(addExerciseSetToCustomWorkoutAction(data));
     },
-    showDeleteConfirmModalInDisplayPicture(data) {
-        dispatch(showDeleteConfirmModalInDisplayPictureAction(data))
-    },
-    deleteOnePicFromProgress(data) {
-        dispatch(deleteOnePicFromProgressAction(data));
-    },
+    updateEmpty(bool) {
+        dispatch(updateEmptyAction(bool));
+    }
 });
 
 export const EditLibrary = connect(
@@ -136,6 +169,10 @@ export const EditLibrary = connect(
     mapActionToProps
 )(_EditLibrary);
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        // marginVertical: 20,
+    },
     topBar: {
         backgroundColor: "transparent",
         justifyContent: "center",
@@ -169,4 +206,19 @@ const styles = StyleSheet.create({
         fontFamily: "PattayaRegular",
         fontSize: 16,
     },
+    item: {
+        backgroundColor: "transparent",
+        alignItems: "center",
+        justifyContent: "center",
+        width: width * 0.4,
+        height: width * 0.4,
+        margin: width * 0.05,
+        borderRadius: 10,
+        borderColor: "#eee",
+        borderWidth: 1,
+    },
+    alignVerAndHorCenter: {
+        alignItems: "center",
+        justifyContent: 'center'
+    }
 });

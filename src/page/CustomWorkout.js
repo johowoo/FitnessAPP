@@ -5,7 +5,8 @@ import {
     StyleSheet,
     Dimensions,
     ScrollView,
-    FlatList, TouchableOpacity, Image
+    FlatList,
+    TouchableOpacity,
 } from "react-native";
 import {
     addExerciseSetToCustomWorkoutAction, updateEmptyAction
@@ -41,8 +42,11 @@ export class _CustomWorkout extends Component {
     handleConfirm = async () => {
         await LoadingUtil.showLoading();
         await this.props.updateEmpty(false);
-        //add exercises to currentworkout
-        await this.props.addExerciseSetToCustomWorkout(this.state.selectedExerciseCategory);
+        //add exercises to currentWorkout
+        await this.props.addExerciseSetToCustomWorkout({
+            category: this.state.selectedExerciseCategory,
+            sets: this.props.customWorkoutSets
+        });
         await this.setState({
             showReminder: false
         });
@@ -89,6 +93,7 @@ export class _CustomWorkout extends Component {
     };
 
     render() {
+        console.warn("customWorkoutSets", this.props.customWorkoutSets);
         // console.warn("customWorkout", this.props.customWorkout);
         return (
             <LinearGradient colors={["#219dd5", "#51c0bb"]} style={{flex: 1}}>
@@ -147,6 +152,7 @@ export class _CustomWorkout extends Component {
 const mapStateToProps = state => ({
     customWorkout: state.customWorkout,
     customWorkoutCategory: state.customWorkout.customWorkoutCategory,
+    customWorkoutSets: state.customWorkout.customWorkoutSets,
     customWorkoutAddable: state.customWorkout.customWorkoutAddable
 });
 

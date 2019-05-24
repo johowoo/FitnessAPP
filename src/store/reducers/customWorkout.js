@@ -4,7 +4,7 @@ import {initialExerciseSets, initialExerciseCategory} from '../../initialExercis
 //set default value
 const defaultState = {
     showReminderModal: false,
-    // customWorkoutSets: initialExerciseSets,
+    customWorkoutSets: initialExerciseSets,
     customWorkoutCategory: initialExerciseCategory,
     customWorkoutAddable: {},
 };
@@ -46,7 +46,6 @@ export const customWorkout = (state = defaultState, action) => {
                 reminderContent: action.payload.reminderContent,
                 hideConfirmButton: action.payload.hideConfirmButton
             };
-
         default:
             return state;
     }
