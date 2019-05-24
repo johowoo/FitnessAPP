@@ -21,6 +21,7 @@ export const ProgressStackNavigator = createStackNavigator({
             screenProps: "",
             navigationOptions: ({navigation}) => ({
                 gesturesEnabled: false,
+                headerMode: "float",
                 // headerTitle: navigation?.state?.params?.date.toString()
                 headerTitle: formatYYYY_MM_DD_HHMMFromParams(navigation?.state?.params),
                 // `${navigation?.state?.params?.year.toString()}-${navigation?.state?.params?.month.toString()}-${navigation?.state?.params?.day.toString()} ${navigation?.state?.params?.hour.toString()}:${navigation?.state?.params?.minute.toString()}`,
@@ -69,6 +70,9 @@ export const ProgressStackNavigator = createStackNavigator({
                 // }
             }),
         },
+    }, {
+        headerMode: "float",
+        headerTransitionPreset: "fade-in-place"
     }
     )
 ;
