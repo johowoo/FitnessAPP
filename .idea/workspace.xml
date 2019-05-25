@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd580928-bb60-480d-8b73-7c94df331487" name="Default Changelist" comment="p">
-      <change beforePath="$PROJECT_DIR$/src/page/CurrentWorkout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/CurrentWorkout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/CustomWorkout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/CustomWorkout.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/customWorkout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/customWorkout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/page/EditLibrary.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/EditLibrary.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,48 +17,34 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/navigator/CurrentWorkoutStackNavigator.js">
+        <entry file="file://$PROJECT_DIR$/src/page/Welcome.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="15" column="65" lean-forward="true" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
+            <state relative-caret-position="387">
+              <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="79" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
-                <element signature="e#429#477#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/page/CurrentWorkout.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="48" column="17" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-                <element signature="e#177#223#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/page/CustomWorkout.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="45" column="54" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="54" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#0#41#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/page/EditLibrary.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="279">
+              <caret line="60" column="42" selection-start-line="60" selection-start-column="42" selection-end-line="60" selection-end-column="42" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/store/reducers/customWorkout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="359">
-              <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
+            <state relative-caret-position="820">
+              <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
               <folding>
                 <element signature="e#0#40#0" expanded="true" />
               </folding>
@@ -78,9 +63,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>HANDLEcONFIRM</find>
-      <find>update</find>
-      <find>renderITEM</find>
       <find>let</find>
       <find>disa</find>
       <find>Finish</find>
@@ -101,13 +83,16 @@
       <find>headerRight</find>
       <find>headerLeft</find>
       <find>headerBackTitleVisible</find>
-      <find>console.warn</find>
       <find>trash</find>
       <find>Icon</find>
       <find>CurrentWorkout</find>
       <find>handleConfir</find>
       <find>renderItem</find>
+      <find>console.warn</find>
       <find>handleConfirm</find>
+      <find>renderiTEM</find>
+      <find>BORDER</find>
+      <find>#c69</find>
     </findStrings>
     <replaceStrings>
       <replace>expo</replace>
@@ -154,7 +139,6 @@
         <option value="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/glyphmaps/IconFont.json" />
         <option value="$PROJECT_DIR$/src/store/actions.js" />
         <option value="$PROJECT_DIR$/src/page/Calendar.js" />
-        <option value="$PROJECT_DIR$/src/initialExerciseSets.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/store/reducers/currentWorkout.js" />
         <option value="$PROJECT_DIR$/src/page/ExerciseModal.js" />
@@ -166,7 +150,6 @@
         <option value="$PROJECT_DIR$/src/page/Main.js" />
         <option value="$PROJECT_DIR$/src/page/Progress.js" />
         <option value="$PROJECT_DIR$/src/component/ExerciseList.js" />
-        <option value="$PROJECT_DIR$/src/page/EditLibrary.js" />
         <option value="$PROJECT_DIR$/src/navigator/EditLibraryStackNavigator.js" />
         <option value="$PROJECT_DIR$/src/navigator/CustomWorkoutNavigator.js" />
         <option value="$PROJECT_DIR$/src/navigator/InnerCurrentWorkoutNavigator.js" />
@@ -176,8 +159,10 @@
         <option value="$PROJECT_DIR$/src/navigator/InnerProgressNavigator.js" />
         <option value="$PROJECT_DIR$/src/page/DisplayPicture.js" />
         <option value="$PROJECT_DIR$/src/page/CurrentWorkout.js" />
-        <option value="$PROJECT_DIR$/src/page/CustomWorkout.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/customWorkout.js" />
+        <option value="$PROJECT_DIR$/src/page/CustomWorkout.js" />
+        <option value="$PROJECT_DIR$/src/initialExerciseSets.js" />
+        <option value="$PROJECT_DIR$/src/page/EditLibrary.js" />
       </list>
     </option>
   </component>
@@ -187,9 +172,9 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="width" value="1680" />
-    <option name="height" value="1050" />
+  <component name="ProjectFrameBounds" fullScreen="true">
+    <option name="width" value="3360" />
+    <option name="height" value="1417" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -199,7 +184,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -247,6 +231,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -377,18 +362,19 @@
       <workItem from="1558689249701" duration="2989000" />
       <workItem from="1558693278861" duration="4389000" />
       <workItem from="1558736814627" duration="2667000" />
-      <workItem from="1558741373362" duration="6581000" />
+      <workItem from="1558741373362" duration="7448000" />
+      <workItem from="1558778749451" duration="708000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="314980000" />
+    <option name="totallyTimeSpent" value="316555000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <frame x="0" y="0" width="3360" height="1417" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19528416" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19526094" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -402,7 +388,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="RNConsole" order="8" />
       <window_info anchor="bottom" id="CSS-X-Fire" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4996979" visible="true" weight="0.27724868" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4996979" visible="true" weight="0.27743903" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50030214" side_tool="true" weight="0.03640777" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.71707314" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
@@ -454,16 +440,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/component/PhotoModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="32" column="25" lean-forward="true" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/page/Statistics.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2448">
@@ -616,15 +592,6 @@
     <entry file="file://$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/glyphmaps/Ionicons.json">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/initialExercises.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-160">
-          <caret line="27" column="32" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="32" />
-          <caret line="27" column="43" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="43" />
-          <caret line="27" column="64" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@expo/vector-icons/IconFont.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="123">
@@ -665,13 +632,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-412">
           <caret line="4" column="25" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/initialExerciseSets.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="504">
-          <caret line="140" column="20" lean-forward="true" selection-start-line="140" selection-start-column="20" selection-end-line="140" selection-end-column="20" />
         </state>
       </provider>
     </entry>
@@ -772,16 +732,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/EditLibrary.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="574">
-          <caret line="60" column="15" lean-forward="true" selection-start-line="60" selection-start-column="15" selection-end-line="60" selection-end-column="15" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/navigator/EditLibraryStackNavigator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-156">
@@ -789,12 +739,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/navigator/CustomWorkoutNavigator.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/navigator/InnerCurrentWorkoutNavigator.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/navigator/CustomWorkoutNavigator.js" />
+    <entry file="file://$PROJECT_DIR$/src/navigator/InnerCurrentWorkoutNavigator.js" />
     <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-659">
@@ -847,8 +793,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/navigator/CurrentWorkoutStackNavigator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="15" column="65" lean-forward="true" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
+        <state relative-caret-position="246">
+          <caret line="15" column="65" selection-start-line="15" selection-start-column="65" selection-end-line="15" selection-end-column="65" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
             <element signature="e#429#477#0" expanded="true" />
@@ -858,7 +804,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/page/CurrentWorkout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
+        <state relative-caret-position="1189">
           <caret line="48" column="17" selection-start-line="48" selection-start-column="17" selection-end-line="48" selection-end-column="17" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
@@ -869,20 +815,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/page/CustomWorkout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="45" column="54" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="54" />
+        <state relative-caret-position="3403">
+          <caret line="103" column="37" selection-start-line="103" selection-start-column="37" selection-end-line="103" selection-end-column="37" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/initialExercises.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1107">
+          <caret line="27" column="32" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="32" />
+          <caret line="27" column="43" selection-start-line="27" selection-start-column="36" selection-end-line="27" selection-end-column="43" />
+          <caret line="27" column="64" selection-start-line="27" selection-start-column="47" selection-end-line="27" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/store/reducers/customWorkout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="359">
-          <caret line="21" column="59" selection-start-line="21" selection-start-column="59" selection-end-line="21" selection-end-column="59" />
+        <state relative-caret-position="820">
+          <caret line="21" column="40" selection-start-line="21" selection-start-column="40" selection-end-line="21" selection-end-column="40" />
           <folding>
             <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/initialExerciseSets.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="11" column="32" selection-start-line="11" selection-start-column="32" selection-end-line="11" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/Welcome.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="25" column="6" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="79" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/EditLibrary.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="279">
+          <caret line="60" column="42" selection-start-line="60" selection-start-column="42" selection-end-line="60" selection-end-column="42" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
           </folding>
         </state>
       </provider>

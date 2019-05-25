@@ -54,42 +54,47 @@ export class _EditLibrary extends Component {
         })
     };
     renderItem = ({item, index}) => {
-        return (<View
-            style={{
-                ...styles.item,
-                // backgroundColor: this.props.customWorkoutAddable[item] ? "transparent" : "#ccc"
-            }}>
-            <TouchableOpacity
-                // disabled={!this.props.customWorkoutAddable[item]}
-                style={{marginTop: 10,}}
-                onPress={async () => {
-                    await this.setState({
-                        selectedExerciseCategory: item,
-                    });
-                    await this.props.navigation.setParams({header: null});
-                    await this.props.navigation.navigate("EditExercisesForLibrary");
-                    // console.warn("selectedSets", this.props.customWorkoutSets[this.state.selectedExerciseCategory]);
-                    // await this.setState({
-                    //     toBeEditedExerciseSets: this.props.customWorkoutSets[this.state.selectedExerciseCategory]
-                    // });
-                    // await this.setState({showExerciseModal: true});
+        return (
+            <View
+                style={{
+                    ...styles.item,
+                    backgroundColor: "#c68"
                 }}>
-                {/*<Image style={styles.image} source={{uri: props.item.photoURI}}/>*/}
-                <View style={styles.alignVerAndHorCenter}>
-                    <IconFont name={item} size={60} color={"#fff"}/>
-                </View>
-                <View style={styles.alignVerAndHorCenter}>
-                    <Text style={{color: "#eee", fontSize: 30, fontFamily: "PattayaRegular"}}>{item}</Text>
-                </View>
-                {this.state.showDeleteButton && this.state.selectTobeDeleted.includes(props.item.date) &&
-                <ApslButton
-                    // onPress={this.closeModal}
-                    textStyle={{fontSize: 34, color: "#c69"}}
-                    style={{position: "absolute", right: 0, top: -6, borderWidth: 0, borderRadius: 16}}
-                    children={<Icon name="check-circle" size={34} color={"#c69"} key="cancel"/>}
-                />}
-            </TouchableOpacity>
-        </View>)
+                {/*<LinearGradient colors={["#4a168c", "#880e4f"]} style={styles.container}>*/}
+                    <TouchableOpacity
+                        // disabled={!this.props.customWorkoutAddable[item]}
+                        style={{marginTop: 10,}}
+                        onPress={async () => {
+                            await this.setState({
+                                selectedExerciseCategory: item,
+                            });
+                            await this.props.navigation.setParams({header: null});
+                            await this.props.navigation.navigate("EditExercisesForLibrary");
+                            // console.warn("selectedSets", this.props.customWorkoutSets[this.state.selectedExerciseCategory]);
+                            // await this.setState({
+                            //     toBeEditedExerciseSets: this.props.customWorkoutSets[this.state.selectedExerciseCategory]
+                            // });
+                            // await this.setState({showExerciseModal: true});
+                        }}>
+                        {/*<Image style={styles.image} source={{uri: props.item.photoURI}}/>*/}
+                        <View style={styles.alignVerAndHorCenter}>
+                            <IconFont name={item} size={60} color={"#fff"}/>
+                        </View>
+                        <View style={styles.alignVerAndHorCenter}>
+                            <Text style={{color: "#eee", fontSize: 30, fontFamily: "PattayaRegular"}}>{item}</Text>
+                        </View>
+                        {this.state.showDeleteButton && this.state.selectTobeDeleted.includes(props.item.date) &&
+                        <ApslButton
+                            // onPress={this.closeModal}
+                            textStyle={{fontSize: 34, color: "#c69"}}
+                            style={{position: "absolute", right: 0, top: -6, borderWidth: 0, borderRadius: 16}}
+                            children={<Icon name="check-circle" size={34} color={"#c69"} key="cancel"/>}
+                        />}
+                    </TouchableOpacity>
+                {/*</LinearGradient>*/}
+            </View>
+
+        )
     };
 
     render() {
@@ -221,8 +226,8 @@ const styles = StyleSheet.create({
         height: width * 0.4,
         margin: width * 0.05,
         borderRadius: 10,
-        borderColor: "#eee",
-        borderWidth: 1,
+        // borderColor: "#C69",
+        // borderWidth: 1,
     },
     alignVerAndHorCenter: {
         alignItems: "center",
