@@ -84,8 +84,6 @@ export class _DisplayPicture extends Component {
 
     componentWillMount() {
         const navProps = this.props?.navigation?.state?.params;
-
-        console.warn("willMount", navProps);
         this.setState({
             values: navProps,
             index: navProps.index,

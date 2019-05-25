@@ -66,7 +66,6 @@ export class _EditLibrary extends Component {
                     await this.setState({
                         selectedExerciseCategory: item,
                     });
-                    console.warn(this.props.navigation);
                     await this.props.navigation.setParams({header: null});
                     await this.props.navigation.navigate("EditExercisesForLibrary");
                     // console.warn("selectedSets", this.props.customWorkoutSets[this.state.selectedExerciseCategory]);

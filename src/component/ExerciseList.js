@@ -210,7 +210,6 @@ export class _ExerciseList extends PureComponent {
     // };
 
     render() {
-        console.warn("List-sectionExercises", this.props.sectionExercises);
         return (
             <View style={{flex: 1, backgroundColor: "#eee"}}>
                 <LinearGradient
