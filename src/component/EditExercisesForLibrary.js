@@ -4,8 +4,15 @@ import {WorkoutList} from "./WorkoutList";
 import {LinearGradient} from "expo";
 import {addExerciseSetToCustomWorkoutAction, updateEmptyAction} from "../store/actions";
 import {connect} from "react-redux";
-import {ExerciseModal} from "./ExerciseModal";
+import {ExerciseModal} from "../page/ExerciseModal";
 
+
+//ToDo
+//+ -> open the exerciseModal
+//x ->close the exerciseModal
+//**override
+//delete Exercises from customWorkoutSets
+//add Exercises to customWorkoutSets
 class _EditExercisesForLibrary extends Component {
     state = {exerciseModal: false};
 
