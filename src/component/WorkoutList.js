@@ -259,8 +259,8 @@ export class _WorkoutList extends Component {
         return (
             <SwipeableFlatList
                 style={{marginTop: 2}}
-                ListFooterComponent={listFooterComponent}
-                data={this.props.currentWorkout}
+                ListFooterComponent={this.props.showListFooterComponent ? listFooterComponent : null}
+                data={this.props.workoutSetsData}
                 renderItem={this._renderItem}
                 keyExtractor={(item, index) => item + index}
                 renderQuickActions={this.getQuickActions}
@@ -271,7 +271,7 @@ export class _WorkoutList extends Component {
 }
 
 const mapStateToProps = state => ({
-    currentWorkout: state.currentWorkout,
+    // currentWorkout: state.currentWorkout,
 });
 
 const mapActionsToProps = dispatch => ({

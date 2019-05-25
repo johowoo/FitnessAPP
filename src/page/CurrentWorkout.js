@@ -108,9 +108,11 @@ class _CurrentWorkout extends Component {
                     <WorkoutList
                         isCompleted={this.props.isCompleted}
                         setModalVisibility={this.props.setModalVisibility}
-                        currentWorkout={this.props.currentWorkout}
+                        // currentWorkout={this.props.currentWorkout}
                         updateEmpty={this.props.updateEmpty}
                         navigation={this.props.navigation}
+                        showListFooterComponent={true}
+                        workoutSetsData={this.props.currentWorkout}
                     />
                 </View>
                 <View>
