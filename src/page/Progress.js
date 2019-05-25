@@ -85,13 +85,13 @@ export class _Progress extends Component {
                             // console.warn("props.index", props.index);
                             // console.warn("props.item.date", props.item.date);
                             await this.props.changeCurrentDisplayPic({index: props.index, date: props.item.date})
+                            // await props.navigation.navigate("DisplayPicture");
                             await props.navigation.navigate("DisplayPicture", {
                                 ...props.item,
                                 index: props.index,
                                 // deleteOnePicFromProgress: this.props.deleteOnePicFromProgress,
                                 showDeleteConfirmModalInDisplayPicture: this.props.showDeleteConfirmModalInDisplayPicture
                             });
-
                         }
                     }}>
                     <Image style={styles.image} source={{uri: props.item.photoURI}}/>
