@@ -95,6 +95,7 @@ export class _CustomWorkout extends Component {
     render() {
         // console.warn("customWorkoutSets", this.props.customWorkoutSets);
         // console.warn("customWorkout", this.props.customWorkout);
+        // console.warn(this.props.customWorkoutAddable);
         return (
             <LinearGradient colors={["#219dd5", "#51c0bb"]} style={{flex: 1}}>
                 <ScrollView>

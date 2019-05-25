@@ -46,7 +46,6 @@ class _CurrentWorkout extends Component {
         // const currentDate = `${currentTimestamp.getFullYear()}${formatMonthandDay(
         //     currentTimestamp.getMonth() + 1
         // )}${formatMonthandDay(currentTimestamp.getDate())}`;
-
         this.props.addMarkedDate(currentDate);
         this.props.updateEmpty(true);
         this.props.addNewExerciseList({
@@ -84,7 +83,7 @@ class _CurrentWorkout extends Component {
                             onPress={async () => {
                                 await LoadingUtil.showLoading();
                                 await this.setState({
-                                    reminderTitle: "Completed",
+                                    reminderTitle: "Finish",
                                     reminderContent: "Have you finished all these exercises???"
                                 });
                                 await this.setState({showReminderModal: true});

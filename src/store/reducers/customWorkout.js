@@ -17,8 +17,9 @@ export const customWorkout = (state = defaultState, action) => {
     switch (action.type) {
         case types.ADD_EXERCISE_SET_TO_CUSTOM_WORKOUT:
             //change addable state
-            const addableCopy = state.customWorkoutAddable;
-            addableCopy[action.payload] = false;
+            const addableCopy = JSON.parse(JSON.stringify(state.customWorkoutAddable));
+            addableCopy[action.payload.category] = false;
+            // console.warn("addableCopy[action.payload]", addableCopy);
             return {
                 ...state, customWorkoutAddable: addableCopy
             };
