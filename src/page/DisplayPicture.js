@@ -114,7 +114,7 @@ export class _DisplayPicture extends Component {
     render() {
         // const this.state.values = this.props?.navigation?.state?.params;
         if (this.props.progressPics.length === 0) {
-            this.props?.navigation.goBack();
+            this.props?.navigation.navigate("Progress");
             return <View><Text>NULL</Text></View>;
         }
         return (
