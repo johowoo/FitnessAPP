@@ -21,8 +21,8 @@ export const EditLibraryStackNavigator = createStackNavigator({
             // }
         },
     }, {
-        headerBackTitleVisible: false,
-        headerTransitionPreset: "fade-in-place"
+        // headerBackTitleVisible: false,
+        // headerTransitionPreset: "fade-in-place",
         // headerMode: "none",
     })
 ;

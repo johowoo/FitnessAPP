@@ -15,11 +15,14 @@ export const ProgressStackNavigator = createStackNavigator({
         screen: props => <Progress fontLoaded={fontLoaded} {...props} />,
         navigationOptions: {
             header: null,
+            headerMode: "float",
         },
     },
     DisplayPicture: {
         screen: props => <DisplayPicture fontLoaded={fontLoaded} {...props}  />,
         navigationOptions: ({navigation}) => ({
+            // header: null,
+            headerMode: "float",
             gesturesEnabled: false,
             //     // headerTitle: navigation?.state?.params?.date.toString()
             headerTitle: formatYYYY_MM_DD_HHMMFromParams(navigation?.state?.params),
