@@ -34,15 +34,47 @@ export const customWorkout = (state = defaultState, action) => {
 
         //todo
         case types.ADD_WEIGHT_REPS_TO_EXERCISE_IN_LIBRARY:
-            console.warn("add_payload", action.payload);
+            const customWorkoutSetsForGivenCategoryCopy = JSON.parse(JSON.stringify(state.customWorkoutSets[action.payload.selectedExerciseCategory]));
+            customWorkoutSetsForGivenCategoryCopy.map(item => {
+                if (parseInt(item.time, 10) === parseInt(action.payload.time, 10)) {
+                    if (!item.weightRepsDataArr) {
+                        item.weightRepsDataArr = [];
+                    }
+                    item.weightRepsDataArr.push({reps: action.payload.reps, weight: action.payload.weight});
+                    item.reps = action.payload.reps;
+                    item.weight = action.payload.weight;
+                }
+            });
             return {
                 ...state,
+                customWorkoutSets: {
+                    ...state.customWorkoutSets,
+                    [action.payload.selectedExerciseCategory]: customWorkoutSetsForGivenCategoryCopy
+                }
             };
         case types.EDIT_WEIGHT_REPS_IN_WORKOUT_OF_LIBRARY:
-            console.warn("edit_payload", action.payload);
-
+            const editWorkoutSetsForGivenCategoryCopy = JSON.parse(JSON.stringify(state.customWorkoutSets[action.payload.selectedExerciseCategory]));
+            editWorkoutSetsForGivenCategoryCopy.map((item, index) => {
+                if (parseInt(item.time, 10) === parseInt(action.payload.time, 10)) {
+                    item.sets = action.payload.sets;
+                    delete item.weightRepsDataArr;
+                    item.weightRepsDataArr = [];
+                    let arrTmp = Object.keys(action.payload.weightText);
+                    // console.warn("length", arrTmp.length);
+                    for (let i = 0; i < arrTmp.length; i++) {
+                        item.weightRepsDataArr.push({
+                            reps: action.payload.repsText[i],
+                            weight: action.payload.weightText[i]
+                        });
+                    }
+                }
+            });
             return {
                 ...state,
+                customWorkoutSets: {
+                    ...state.customWorkoutSets,
+                    [action.payload.selectedExerciseCategory]: editWorkoutSetsForGivenCategoryCopy
+                }
             };
         case types.DELETE_EXERCISE_FROM_WORKOUT_LIST_OF_LIBRARY:
 
