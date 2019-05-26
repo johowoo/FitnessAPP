@@ -1,6 +1,6 @@
 import {combineReducers} from "redux";
 import {currentWorkout} from "./reducers/currentWorkout";
-import {ui} from "./reducers/ui";
+import {currentWorkoutModals} from "./reducers/currentWorkoutModals";
 import {exercises} from "./reducers/exercises";
 import {exerciseCompleted} from "./reducers/exerciseCompleted";
 import {calendar} from "./reducers/calendar";
@@ -14,7 +14,7 @@ import {editLibrary} from "./reducers/editLibrary";
 
 export const reducer = combineReducers({
     currentWorkout,
-    ui,
+    currentWorkoutModals,
     exercises,
     exerciseCompleted,
     calendar,

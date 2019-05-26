@@ -1,6 +1,6 @@
 import * as types from "../actionTypes";
 
-export const ui = (
+export const currentWorkoutModals = (
   state = {
     exerciseModal: false,
   },

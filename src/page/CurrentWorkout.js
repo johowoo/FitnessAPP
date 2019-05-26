@@ -20,6 +20,7 @@ import {ExerciseModal} from "./ExerciseModal";
 import {formatMonthandDay} from "../utils/formatMonthandDay";
 import LoadingUtil from "../utils/LoadingUtil";
 import {LinearGradient} from "expo";
+import {currentWorkoutModals} from "../store/reducers/currentWorkoutModals";
 
 class _CurrentWorkout extends Component {
     static defaultProps = {
@@ -140,7 +141,7 @@ const mapStateToProps = state => ({
     isCompleted: state.exerciseCompleted.isCompleted,
     isExerciseListEmpty: state.exerciseCompleted.isExerciseListEmpty,
     currentWorkout: state.currentWorkout,
-    exerciseModal: state.ui.exerciseModal,
+    exerciseModal: state.currentWorkoutModals.exerciseModal,
     sectionExercises: state.exercises.sectionExercises,
     extraSectionExercises: state.exercises.extraSectionExercises,
 });
