@@ -102,6 +102,9 @@ export class _EditLibrary extends Component {
 
         )
     };
+    handleCloseAddCategoryModal = (bool = false) => {
+        this.props.setAddCategoryModalForLibraryVisibility(bool);
+    };
 
     render() {
         return (
@@ -163,6 +166,7 @@ export class _EditLibrary extends Component {
                 <AddCategoryModal
                     showAddCategoryModal={this.props.showAddCategoryModal}
                     setAddCategoryModalForLibraryVisibility={this.props.setAddCategoryModalForLibraryVisibility}
+                    handleCloseModal={this.handleCloseAddCategoryModal}
                 />
             </LinearGradient>
         );

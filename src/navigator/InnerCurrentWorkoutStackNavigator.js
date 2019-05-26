@@ -107,7 +107,6 @@ export const InnerCurrentWorkoutStackNavigator = createStackNavigator({
             headerRight: (
                 <TouchableOpacity style={{marginRight: 30}}
                                   onPress={() => {
-                                      console.warn("add button");
                                       navigation?.state?.params.setAddCategoryModalForLibraryVisibility(true);
                                   }}>
                     <View>
