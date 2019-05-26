@@ -37,9 +37,19 @@ class _EditExercisesForLibrary extends Component {
                     setAddWeightModalVisibility={this.props.setEditLibraryAddWeightModalVisibility}
                     setEditWeightRepsModalVisibility={this.props.setEditLibraryEditWeightRepsModalVisibility}
                     //todo
-                    addWeightRepsToExercise={this.props.addWeightRepsToExerciseInLibrary}
-                    editWeightRepsInWorkout={this.props.editWeightRepsInWorkoutOfLibrary}
-                    deleteExerciseFromWorkoutList={this.props.deleteExerciseFromWorkoutListOfLibrary}
+                    selectedExerciseCategory={navProps.selectedExerciseCategory}
+                    addWeightRepsToExercise={(props) => this.props.addWeightRepsToExerciseInLibrary({
+                        ...props,
+                        selectedExerciseCategory: navProps.selectedExerciseCategory
+                    })}
+                    editWeightRepsInWorkout={(props) => this.props.editWeightRepsInWorkoutOfLibrary({
+                        ...props,
+                        selectedExerciseCategory: navProps.selectedExerciseCategory
+                    })}
+                    deleteExerciseFromWorkoutList={(props) => this.props.deleteExerciseFromWorkoutListOfLibrary({
+                        ...props,
+                        selectedExerciseCategory: navProps.selectedExerciseCategory
+                    })}
                 />
                 <ExerciseModal
                     sectionExercises={this.props.sectionExercises}

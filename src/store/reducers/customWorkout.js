@@ -34,11 +34,12 @@ export const customWorkout = (state = defaultState, action) => {
 
         //todo
         case types.ADD_WEIGHT_REPS_TO_EXERCISE_IN_LIBRARY:
-
+            console.warn("add_payload", action.payload);
             return {
                 ...state,
             };
         case types.EDIT_WEIGHT_REPS_IN_WORKOUT_OF_LIBRARY:
+            console.warn("edit_payload", action.payload);
 
             return {
                 ...state,
