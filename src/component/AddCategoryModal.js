@@ -7,7 +7,7 @@ export class AddCategoryModal extends Component {
             <Modal
                 visible={this.props.showAddCategoryModal}>
                 <Text>AddCategoryModal</Text>
-                <Button title={"close"} onPress={this.props.setAddCategoryModalForLibraryVisibility(false)}/>
+                <Button title={"close"} onPress={()=>this.props.setAddCategoryModalForLibraryVisibility(false)}/>
             </Modal>
         )
     }

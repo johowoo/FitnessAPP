@@ -25,6 +25,11 @@ export const editLibrary = (
                 ...state,
                 showEditWeightRepsForEditLibrary: action.payload,
             };
+            case types.SET_ADD_CATEGORY_MODAL_FOR_LIBRARY_VISIBILITY:
+            return {
+                ...state,
+                showAddCategoryModal: action.payload,
+            };
         default:
             return state;
     }
