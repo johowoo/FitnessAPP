@@ -7,7 +7,7 @@ export const editLibrary = (
     action
 ) => {
     switch (action.type) {
-        case types.SET_EDIT_LIBRARY_EXECERCISE_MODAL_VISIBILITY:
+        case types.SET_EDIT_LIBRARY_EXERCISE_MODAL_VISIBILITY:
             return {
                 ...state,
                 showExerciseModal: action.payload,

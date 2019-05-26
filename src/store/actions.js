@@ -1,12 +1,16 @@
 import {createAction} from "redux-actions";
 import * as types from "./actionTypes";
-
+//currentWorkout Modals
 export const setExerciseModalVisibility = visible =>
-    createAction(types.SET_EXECERCISE_VISIBILITY)(visible);
+    createAction(types.SET_EXERCISE_VISIBILITY)(visible);
+export const setAddWeightModalVisibilityAction = visible =>
+    createAction(types.SET_ADD_WEIGHT_MODAL_VISIBILITY)(visible);
+export const setEditWeightRepsModalVisibilityAction = visible =>
+    createAction(types.SET_EDIT_WEIGHT_REPS_MODAL_VISIBILITY)(visible);
+
 
 export const addExerciseAction = exercise =>
     createAction(types.ADD_EXERCISE)(exercise);
-
 export const addExerciseToSectionListAction = exercise =>
     createAction(types.ADD_EXERCISE_TO_SECTIONLIST)(exercise);
 export const deleteExerciseFromSectionListAction = exercise =>
@@ -17,12 +21,15 @@ export const clearCurrentWorkoutAction = () =>
 export const updateEmptyAction = bool => createAction(types.UPDATE_EMPTY)(bool);
 export const setCurrentDateAction = date =>
     createAction(types.SET_CURRENT_DATE)(date);
+
 export const addMarkedDateAction = date =>
     createAction(types.ADD_MARKED_DATE)(date);
+
 export const updateWeightAction = data =>
     createAction(types.UPDATE_WEIGHT_DATA)(data);
 export const updateBfrAction = data =>
     createAction(types.UPDATE_BFR_DATA)(data);
+
 export const addNewExerciseListAction = data =>
     createAction(types.ADD_NEW_EXERCISE_LIST)(data);
 
@@ -65,7 +72,7 @@ export const addExerciseSetFromCustomWorkoutToCurrentWorkoutAction = data =>
 
 //Edit Library
 export const setEditLibraryExerciseModalVisibilityAction = data =>
-    createAction(types.SET_EDIT_LIBRARY_EXECERCISE_MODAL_VISIBILITY)(data);
+    createAction(types.SET_EDIT_LIBRARY_EXERCISE_MODAL_VISIBILITY)(data);
 
 
 

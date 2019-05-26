@@ -13,6 +13,8 @@ import {
     addMarkedDateAction,
     updateEmptyAction,
     addNewExerciseListAction,
+    setAddWeightModalVisibilityAction,
+    setEditWeightRepsModalVisibilityAction
 } from "../store/actions";
 
 import {WorkoutList} from "../component/WorkoutList";
@@ -114,6 +116,10 @@ class _CurrentWorkout extends Component {
                         navigation={this.props.navigation}
                         showListFooterComponent={true}
                         workoutSetsData={this.props.currentWorkout}
+                        showAddWeightModal={this.props.showAddWeightModal}
+                        showEditWeightReps={this.props.showEditWeightReps}
+                        setAddWeightModalVisibility={this.props.setAddWeightModalVisibility}
+                        setEditWeightRepsModalVisibility={this.props.setEditWeightRepsModalVisibility}
                     />
                 </View>
                 <View>
@@ -142,6 +148,8 @@ const mapStateToProps = state => ({
     isExerciseListEmpty: state.exerciseCompleted.isExerciseListEmpty,
     currentWorkout: state.currentWorkout,
     exerciseModal: state.currentWorkoutModals.exerciseModal,
+    showAddWeightModal: state.currentWorkoutModals.showAddWeightModal,
+    showEditWeightReps: state.currentWorkoutModals.showEditWeightReps,
     sectionExercises: state.exercises.sectionExercises,
     extraSectionExercises: state.exercises.extraSectionExercises,
 });
@@ -167,6 +175,13 @@ const mapActionsToProps = dispatch => ({
     addNewExerciseList(payload) {
         return dispatch(addNewExerciseListAction(payload));
     },
+    setAddWeightModalVisibility(bool) {
+        return dispatch(setAddWeightModalVisibilityAction(bool));
+    },
+    setEditWeightRepsModalVisibility(payload) {
+        return dispatch(setEditWeightRepsModalVisibilityAction(payload));
+    },
+
 });
 
 export const CurrentWorkout = connect(

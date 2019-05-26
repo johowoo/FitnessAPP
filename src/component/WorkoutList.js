@@ -16,7 +16,9 @@ import {connect} from "react-redux";
 import {
     addWeightToExercisesAction,
     deleteExerciseFromWorkoutListAction,
-    editWeightRepsInWorkoutAction
+    editWeightRepsInWorkoutAction,
+    setAddWeightModalVisibilityAction,
+    setEditWeightRepsModalVisibilityAction
 } from "../store/actions";
 import {AddWeightToExercise} from "./AddWeightToExercise";
 import {EditWeightReps} from './EditWeightReps';
@@ -40,9 +42,7 @@ export class _WorkoutList extends Component {
     }
 
     handleCloseWeightModal = (showFlag, bool) => {
-        this.setState({
-            [showFlag]: bool,
-        });
+        this.props[showFlag](bool);
     };
     _renderItem = ({item: {exercise, sets, weight, time, reps, weightRepsDataArr}}) => (
         <TouchableHighlight
@@ -50,7 +50,8 @@ export class _WorkoutList extends Component {
             onPress={async () => {
                 if (sets > weightRepsDataArr?.length) {
                     await this.setState({time});
-                    await this.setState({showAddWeightModal: true});
+                    // await this.setState({showAddWeightModal: true});
+                    await this.props.setAddWeightModalVisibility(true);
                 } else {
                     // Alert.alert("Reminder", "You have already added weight and reps for all sets.")
                     await this.setState({
@@ -63,7 +64,8 @@ export class _WorkoutList extends Component {
             }}
             onLongPress={async () => {
                 await this.setState({time, weightRepsDataArr, sets});
-                await this.setState({showEditWeightReps: true})
+                // await this.setState({showEditWeightReps: true})
+                await this.props.setEditWeightRepsModalVisibility(true);
             }}
         >
             <View style={styles.listContainer}>
@@ -234,18 +236,18 @@ export class _WorkoutList extends Component {
                         {/*{"\n"}*/}
                         {/*exercises*/}
                     </Text>
-                    {this.state.showAddWeightModal && (
+                    {this.props.showAddWeightModal && (
                         <AddWeightToExercise
-                            showAddWeightModal={this.state.showAddWeightModal}
-                            handleCloseWeightModal={this.handleCloseWeightModal}
+                            showAddWeightModal={this.props.showAddWeightModal}
+                            handleCloseWeightModal={() => this.props.setAddWeightModalVisibility(false)}
                             addWeightRepsToExercise={this.props.addWeightRepsToExercise}
                             time={this.state.time}
                         />
                     )}
-                    {this.state.showEditWeightReps && (
+                    {this.props.showEditWeightReps && (
                         <EditWeightReps
-                            showEditWeightReps={this.state.showEditWeightReps}
-                            handleCloseWeightModal={this.handleCloseWeightModal}
+                            showEditWeightReps={this.props.showEditWeightReps}
+                            handleCloseWeightModal={() => this.props.setEditWeightRepsModalVisibility(false)}
                             addWeightRepsToExercise={this.props.addWeightRepsToExercise}
                             weightRepsDataArr={this.state.weightRepsDataArr}
                             sets={this.state.sets}
@@ -283,7 +285,13 @@ const mapActionsToProps = dispatch => ({
     },
     editWeightRepsInWorkout: data => {
         dispatch(editWeightRepsInWorkoutAction(data));
-    }
+    },
+    // setAddWeightModalVisibility(bool) {
+    //     return dispatch(setAddWeightModalVisibilityAction(bool));
+    // },
+    // setEditWeightRepsModalVisibility(payload) {
+    //     return dispatch(setEditWeightRepsModalVisibilityAction(payload));
+    // },
 });
 export const WorkoutList = connect(
     mapStateToProps,
