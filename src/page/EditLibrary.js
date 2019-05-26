@@ -65,7 +65,8 @@ export class _EditLibrary extends Component {
                     // disabled={!this.props.customWorkoutAddable[item]}
                     style={{
                         ...styles.item,
-                        backgroundColor: "#c68",
+                        // backgroundColor: "rgba(102,51,204,0.3)",
+                        backgroundColor: "#cc6699",
                         marginTop: 10
                     }}
                     onPress={async () => {
