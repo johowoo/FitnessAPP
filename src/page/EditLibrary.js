@@ -6,7 +6,8 @@ import {
     addExerciseSetToCurrentWorkoutAction,
     updateEmptyAction,
     setEditLibraryExerciseModalVisibilityAction,
-    setAddCategoryModalForLibraryVisibilityAction
+    setAddCategoryModalForLibraryVisibilityAction,
+    addCategoryToEditLibraryAction
 } from "../store/actions";
 import {LinearGradient} from "expo";
 import {connect} from "react-redux";
@@ -43,7 +44,7 @@ export class _EditLibrary extends Component {
     handleConfirm = async () => {
         await LoadingUtil.showLoading();
         await this.props.updateEmpty(false);
-        //add exercises to currentworkout
+        //add exercises to currentWorkout
         await this.props.addExerciseSetToCurrentWorkout(this.state.selectedExerciseCategory);
         await this.setState({
             showReminder: false
@@ -105,6 +106,9 @@ export class _EditLibrary extends Component {
     };
     handleCloseAddCategoryModal = (bool = false) => {
         this.props.setAddCategoryModalForLibraryVisibility(bool);
+    };
+    handleAddCategoryModalConfirm = (newCategoryText) => {
+        this.props.addCategoryToEditLibrary(newCategoryText);
     };
 
     render() {
@@ -168,6 +172,7 @@ export class _EditLibrary extends Component {
                     showAddCategoryModal={this.props.showAddCategoryModal}
                     setAddCategoryModalForLibraryVisibility={this.props.setAddCategoryModalForLibraryVisibility}
                     handleCloseModal={this.handleCloseAddCategoryModal}
+                    handleConfirm={this.handleAddCategoryModalConfirm}
                 />
             </LinearGradient>
         );
@@ -194,7 +199,10 @@ const mapActionToProps = dispatch => ({
     },
     setAddCategoryModalForLibraryVisibility(bool) {
         dispatch(setAddCategoryModalForLibraryVisibilityAction(bool))
-    }
+    },
+    addCategoryToEditLibrary(bool) {
+        dispatch(addCategoryToEditLibraryAction(bool))
+    },
 });
 
 export const EditLibrary = connect(

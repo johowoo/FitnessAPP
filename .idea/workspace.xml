@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd580928-bb60-480d-8b73-7c94df331487" name="Default Changelist" comment="p">
-      <change beforePath="$PROJECT_DIR$/src/component/PhotoModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/PhotoModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/AddCategoryModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/AddCategoryModal.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/page/EditLibrary.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/EditLibrary.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/customWorkout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/customWorkout.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -52,37 +53,12 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="240" column="82" selection-start-line="240" selection-start-column="82" selection-end-line="240" selection-end-column="82" />
-              <folding>
-                <element signature="e#0#39#0" expanded="true" />
-                <element signature="e#259#318#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/EditLibrary.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="245">
-              <caret line="68" column="49" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="49" />
+            <state relative-caret-position="442">
+              <caret line="109" column="33" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="33" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/component/PhotoModal.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="464">
-              <caret line="186" column="46" selection-start-line="186" selection-start-column="46" selection-end-line="186" selection-end-column="46" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -91,8 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/AddCategoryModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="84" column="46" lean-forward="true" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="46" />
+            <state relative-caret-position="197">
+              <caret line="42" column="112" selection-start-line="42" selection-start-column="112" selection-end-line="42" selection-end-column="112" />
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
@@ -103,17 +79,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/store/actions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="71" column="68" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="68" />
+            <state relative-caret-position="179">
+              <caret line="73" column="51" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/store/reducers/editLibrary.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/store/reducers/customWorkout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1271">
-              <caret line="31" column="14" lean-forward="true" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
+            <state relative-caret-position="243">
+              <caret line="105" column="12" selection-start-line="105" selection-start-column="12" selection-end-line="105" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#40#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -153,12 +132,12 @@
       <find>addExerciseSetToCustomWorkout</find>
       <find>ADD_EXERCISE_SET_TO_CUSTOM_WORKOUT</find>
       <find>Editlibrary</find>
-      <find>editli</find>
       <find>add button</find>
       <find>add</find>
-      <find>navigat</find>
       <find>#c68</find>
+      <find>editli</find>
       <find>cancle</find>
+      <find>navigat</find>
     </findStrings>
     <replaceStrings>
       <replace>expo</replace>
@@ -224,7 +203,6 @@
         <option value="$PROJECT_DIR$/src/page/CustomWorkout.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/component/ExerciseList.js" />
-        <option value="$PROJECT_DIR$/src/store/reducers/customWorkout.js" />
         <option value="$PROJECT_DIR$/src/component/EditExercisesForLibrary.js" />
         <option value="$PROJECT_DIR$/src/component/AddCategory.js" />
         <option value="$PROJECT_DIR$/src/store/actionTypes.js" />
@@ -234,9 +212,10 @@
         <option value="$PROJECT_DIR$/src/component/WorkoutList.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/editLibrary.js" />
         <option value="$PROJECT_DIR$/src/navigator/InnerCurrentWorkoutStackNavigator.js" />
-        <option value="$PROJECT_DIR$/src/component/AddCategoryModal.js" />
-        <option value="$PROJECT_DIR$/src/page/EditLibrary.js" />
         <option value="$PROJECT_DIR$/src/component/PhotoModal.js" />
+        <option value="$PROJECT_DIR$/src/page/EditLibrary.js" />
+        <option value="$PROJECT_DIR$/src/component/AddCategoryModal.js" />
+        <option value="$PROJECT_DIR$/src/store/reducers/customWorkout.js" />
       </list>
     </option>
   </component>
@@ -287,6 +266,19 @@
               <item name="FitnessAPP" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="page" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FitnessAPP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FitnessAPP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FitnessAPP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FitnessAPP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="store" type="462c0819:PsiDirectoryNode" />
+              <item name="reducers" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -427,12 +419,12 @@
       <workItem from="1558778749451" duration="3293000" />
       <workItem from="1558823902108" duration="5278000" />
       <workItem from="1558842043461" duration="5499000" />
-      <workItem from="1558850533699" duration="6990000" />
+      <workItem from="1558850533699" duration="7444000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="336907000" />
+    <option name="totallyTimeSpent" value="337361000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
@@ -775,16 +767,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/reducers/customWorkout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="513">
-          <caret line="103" column="14" selection-start-line="103" selection-start-column="14" selection-end-line="103" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#40#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/AddDropdown.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-832">
@@ -820,6 +802,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/navigator/InnerCurrentWorkoutStackNavigator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="109" column="51" selection-start-line="109" selection-start-column="51" selection-end-line="109" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/PhotoModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="390">
+          <caret line="185" column="27" lean-forward="true" selection-start-line="185" selection-start-column="27" selection-end-line="185" selection-end-column="27" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
@@ -842,10 +841,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/navigator/InnerCurrentWorkoutStackNavigator.js">
+    <entry file="file://$PROJECT_DIR$/src/page/EditLibrary.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="109" column="51" selection-start-line="109" selection-start-column="51" selection-end-line="109" selection-end-column="51" />
+        <state relative-caret-position="442">
+          <caret line="109" column="33" selection-start-line="109" selection-start-column="4" selection-end-line="109" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/AddCategoryModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="42" column="112" selection-start-line="42" selection-start-column="112" selection-end-line="42" selection-end-column="112" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -858,37 +870,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/store/actions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="71" column="68" selection-start-line="71" selection-start-column="23" selection-end-line="71" selection-end-column="68" />
+        <state relative-caret-position="179">
+          <caret line="73" column="51" selection-start-line="73" selection-start-column="23" selection-end-line="73" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/EditLibrary.js">
+    <entry file="file://$PROJECT_DIR$/src/store/reducers/customWorkout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="245">
-          <caret line="68" column="49" selection-start-line="68" selection-start-column="49" selection-end-line="68" selection-end-column="49" />
+        <state relative-caret-position="243">
+          <caret line="105" column="12" selection-start-line="105" selection-start-column="12" selection-end-line="105" selection-end-column="12" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/AddCategoryModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="84" column="46" lean-forward="true" selection-start-line="84" selection-start-column="26" selection-end-line="84" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/PhotoModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="464">
-          <caret line="186" column="46" selection-start-line="186" selection-start-column="46" selection-end-line="186" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
+            <element signature="e#0#40#0" expanded="true" />
           </folding>
         </state>
       </provider>

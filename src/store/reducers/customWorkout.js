@@ -25,9 +25,9 @@ export const customWorkout = (state = defaultState, action) => {
             };
         case types.CLEAR_CURRENT_WORKOUT:
             const customWorkoutAddableEmpty = {};
-            for (let key in initialExerciseSets) {
-                customWorkoutAddableEmpty[key] = true;
-            }
+            state.customWorkoutCategory.forEach(item=>{
+                customWorkoutAddableEmpty[item] = true;
+            });
             return {
                 ...state, customWorkoutAddable: customWorkoutAddableEmpty
             };
@@ -102,6 +102,11 @@ export const customWorkout = (state = defaultState, action) => {
                     [action.payload.selectedExerciseCategory]: [...state.customWorkoutSets[action.payload.selectedExerciseCategory], action.payload]
                 }
             };
+
+
+        case types.ADD_CATEGORY_TO_EDIT_LIBRARY:
+
+            return state;
         default:
             return state;
     }

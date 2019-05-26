@@ -40,6 +40,7 @@ export class AddCategoryModal extends Component {
                                     color="#00ffcc"
                                     title="Confirm"
                                     onPress={async () => {
+                                        await this.props.handleAddCategoryModalConfirm(this.state.categoryText);
                                         // await this.props.addWeightRepsToExercise({
                                         //     time: this.props.time,
                                         //     weight: this.state.categoryText,
