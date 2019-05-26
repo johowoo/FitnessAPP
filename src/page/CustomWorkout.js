@@ -86,7 +86,8 @@ export class _CustomWorkout extends Component {
                     {/*<IconFont name={item} size={60} color={"#fff"}/>*/}
                     {
                         initialExerciseCategory.includes(item) ? <IconFont name={item} size={60} color={"#eee"}/> :
-                            <Icon name="check-circle" size={60} color={"#eee"} key="cancel"/>
+                            <IconFontAwesome name="space-shuttle" size={60} color={"#eee"} key="cancel"/>
+
                     }
                 </View>
                 <View style={styles.alignVerAndHorCenter}>
