@@ -280,16 +280,16 @@ const mapStateToProps = state => ({
 });
 
 const mapActionsToProps = dispatch => ({
-    addWeightRepsToExercise: data => {
-        dispatch(addWeightToExercisesAction(data));
-    },
-    deleteExerciseFromWorkoutList: data => {
-        dispatch(deleteExerciseFromWorkoutListAction(data));
-    },
-    editWeightRepsInWorkout: data => {
-        dispatch(editWeightRepsInWorkoutAction(data));
-    },
-    // setAddWeightModalVisibility(bool) {
+    // addWeightRepsToExercise: data => {
+    //     dispatch(addWeightToExercisesAction(data));
+    // },
+    // editWeightRepsInWorkout: data => {
+    //     dispatch(editWeightRepsInWorkoutAction(data));
+    // },
+    // deleteExerciseFromWorkoutList: data => {
+    //     dispatch(deleteExerciseFromWorkoutListAction(data));
+    // },
+    // // setAddWeightModalVisibility(bool) {
     //     return dispatch(setAddWeightModalVisibilityAction(bool));
     // },
     // setEditWeightRepsModalVisibility(payload) {

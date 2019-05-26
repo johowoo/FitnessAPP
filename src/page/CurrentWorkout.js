@@ -14,7 +14,10 @@ import {
     updateEmptyAction,
     addNewExerciseListAction,
     setAddWeightModalVisibilityAction,
-    setEditWeightRepsModalVisibilityAction
+    setEditWeightRepsModalVisibilityAction,
+    addWeightToExercisesAction,
+    editWeightRepsInWorkoutAction,
+    deleteExerciseFromWorkoutListAction
 } from "../store/actions";
 
 import {WorkoutList} from "../component/WorkoutList";
@@ -120,6 +123,9 @@ class _CurrentWorkout extends Component {
                         showEditWeightReps={this.props.showEditWeightReps}
                         setAddWeightModalVisibility={this.props.setAddWeightModalVisibility}
                         setEditWeightRepsModalVisibility={this.props.setEditWeightRepsModalVisibility}
+                        addWeightRepsToExercise={this.props.addWeightRepsToExercise}
+                        editWeightRepsInWorkout={this.props.editWeightRepsInWorkout}
+                        deleteExerciseFromWorkoutList={this.props.deleteExerciseFromWorkoutList}
                     />
                 </View>
                 <View>
@@ -180,6 +186,15 @@ const mapActionsToProps = dispatch => ({
     },
     setEditWeightRepsModalVisibility(payload) {
         return dispatch(setEditWeightRepsModalVisibilityAction(payload));
+    },
+    addWeightRepsToExercise: data => {
+        dispatch(addWeightToExercisesAction(data));
+    },
+    editWeightRepsInWorkout: data => {
+        dispatch(editWeightRepsInWorkoutAction(data));
+    },
+    deleteExerciseFromWorkoutList: data => {
+        dispatch(deleteExerciseFromWorkoutListAction(data));
     },
 
 });
