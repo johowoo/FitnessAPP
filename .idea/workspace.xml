@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd580928-bb60-480d-8b73-7c94df331487" name="Default Changelist" comment="p">
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/editLibrary.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/EditExercisesForLibrary.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/EditExercisesForLibrary.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/component/ExerciseList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/ExerciseList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/navigator/InnerCurrentWorkoutStackNavigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigator/InnerCurrentWorkoutStackNavigator.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/EditLibrary.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/EditLibrary.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/ExerciseModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/ExerciseModal.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actionTypes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/component/EditWeightReps.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/EditWeightReps.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -61,8 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/EditExercisesForLibrary.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-105">
-              <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+            <state relative-caret-position="286">
+              <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -82,13 +74,25 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/ExerciseList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
-              <caret line="350" column="26" lean-forward="true" selection-start-line="350" selection-start-column="26" selection-end-line="350" selection-end-column="26" />
+            <state relative-caret-position="285">
+              <caret line="268" column="32" selection-start-line="268" selection-start-column="32" selection-end-line="268" selection-end-column="32" />
               <folding>
                 <element signature="e#0#43#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/component/EditWeightReps.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="253">
+              <caret line="104" column="62" selection-start-line="104" selection-start-column="62" selection-end-line="104" selection-end-column="62" />
+              <folding>
+                <element signature="e#0#151#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -97,20 +101,11 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/ExerciseModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
+            <state relative-caret-position="163">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/store/actionTypes.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="430">
-              <caret line="44" column="59" lean-forward="true" selection-start-line="44" selection-start-column="59" selection-end-line="44" selection-end-column="59" />
             </state>
           </provider>
         </entry>
@@ -144,8 +139,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>formatYYYY_MM_DD_HHMMFromParams</find>
-      <find>headerRight</find>
       <find>headerLeft</find>
       <find>headerBackTitleVisible</find>
       <find>trash</find>
@@ -153,7 +146,6 @@
       <find>CurrentWorkout</find>
       <find>handleConfir</find>
       <find>renderItem</find>
-      <find>console.warn</find>
       <find>handleConfirm</find>
       <find>renderiTEM</find>
       <find>BORDER</find>
@@ -174,6 +166,9 @@
       <find>navigate</find>
       <find>params</find>
       <find>console.warn(&quot;</find>
+      <find>c</find>
+      <find>console.warn</find>
+      <find>defaultValue</find>
     </findStrings>
     <replaceStrings>
       <replace>expo</replace>
@@ -182,10 +177,10 @@
     </replaceStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/src/store</dir>
-      <dir>$PROJECT_DIR$/src/component</dir>
       <dir>$PROJECT_DIR$</dir>
       <dir>$PROJECT_DIR$/src/page</dir>
       <dir>$PROJECT_DIR$/src/navigator</dir>
+      <dir>$PROJECT_DIR$/src/component</dir>
       <dir>$PROJECT_DIR$/src</dir>
     </dirStrings>
   </component>
@@ -203,7 +198,6 @@
         <option value="$PROJECT_DIR$/src/component/PhotoModal.js" />
         <option value="$PROJECT_DIR$/READEME.MD" />
         <option value="$PROJECT_DIR$/src/store/reducers/displayPicture.js" />
-        <option value="$PROJECT_DIR$/src/component/EditWeightReps.js" />
         <option value="$PROJECT_DIR$/src/component/ReminderModal.js" />
         <option value="$PROJECT_DIR$/node_modules/react-native-calendars/README.md" />
         <option value="$PROJECT_DIR$/src/store/reducers/calendar.js" />
@@ -243,9 +237,10 @@
         <option value="$PROJECT_DIR$/src/navigator/InnerCurrentWorkoutStackNavigator.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/editLibrary.js" />
         <option value="$PROJECT_DIR$/src/store/reducer.js" />
+        <option value="$PROJECT_DIR$/src/component/ExerciseList.js" />
         <option value="$PROJECT_DIR$/src/page/ExerciseModal.js" />
         <option value="$PROJECT_DIR$/src/component/EditExercisesForLibrary.js" />
-        <option value="$PROJECT_DIR$/src/component/ExerciseList.js" />
+        <option value="$PROJECT_DIR$/src/component/EditWeightReps.js" />
       </list>
     </option>
   </component>
@@ -447,17 +442,18 @@
       <workItem from="1558736814627" duration="2667000" />
       <workItem from="1558741373362" duration="7448000" />
       <workItem from="1558778749451" duration="3293000" />
-      <workItem from="1558823902108" duration="3256000" />
+      <workItem from="1558823902108" duration="3668000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="322396000" />
+    <option name="totallyTimeSpent" value="322808000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19467956" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19467956" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -471,7 +467,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="RNConsole" order="8" />
       <window_info anchor="bottom" id="CSS-X-Fire" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4996979" visible="true" weight="0.27724868" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4996979" visible="true" weight="0.27724868" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50030214" side_tool="true" weight="0.03640777" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.71707314" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
@@ -523,16 +519,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/component/EditWeightReps.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2501">
-          <caret line="72" column="26" selection-start-line="72" selection-start-column="26" selection-end-line="72" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#151#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/store/reducers/exerciseCompleted.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="246">
@@ -892,16 +878,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/ExerciseModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="7" column="19" selection-start-line="7" selection-start-column="19" selection-end-line="7" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/store/reducers/editLibrary.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -909,10 +885,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/ExerciseModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/EditExercisesForLibrary.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-105">
-          <caret line="34" column="36" selection-start-line="34" selection-start-column="36" selection-end-line="34" selection-end-column="36" />
+        <state relative-caret-position="286">
+          <caret line="25" column="43" selection-start-line="25" selection-start-column="43" selection-end-line="25" selection-end-column="43" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -921,10 +907,20 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/ExerciseList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="350" column="26" lean-forward="true" selection-start-line="350" selection-start-column="26" selection-end-line="350" selection-end-column="26" />
+        <state relative-caret-position="285">
+          <caret line="268" column="32" selection-start-line="268" selection-start-column="32" selection-end-line="268" selection-end-column="32" />
           <folding>
             <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/EditWeightReps.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="104" column="62" selection-start-line="104" selection-start-column="62" selection-end-line="104" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#151#0" expanded="true" />
           </folding>
         </state>
       </provider>
