@@ -22,6 +22,7 @@ import {
     deleteExerciseFromWorkoutListAction,
 } from "../store/actions";
 import {AddWeightToExercise} from "../component/AddWeightToExercise";
+import {PeriodAnalysis} from "../component/PeriodAnalysis";
 
 const {width, height} = Dimensions.get("window");
 
@@ -45,50 +46,56 @@ export class _Calendar extends Component {
                     ) : null}
                 </TopBar>
                 {/*<LinearGradient colors={["#1b98d9", "#57c5b8"]} style={{flex: 1}}>*/}
-                    <CalendarComp
-                        theme={{
-                            // backgroundColor: '#c69',
-                            calendarBackground: 'transparent',
-                            textSectionTitleColor: '#cc6699',
-                            // selectedDayBackgroundColor: '#cc6699',
-                            selectedDayTextColor: '#eee',
-                            todayTextColor: '#cc6699',
-                            dayTextColor: '#eee',
-                            textDisabledColor: '#aaa',
-                            dotColor: '#00adf5',
-                            selectedDotColor: '#ffffff',
-                            arrowColor: '#fff',
-                            monthTextColor: '#eee',
-                            indicatorColor: 'blue',
-                            textDayFontFamily: 'PattayaRegular',
-                            textMonthFontFamily: 'PattayaRegular',
-                            textDayHeaderFontFamily: 'PattayaRegular',
-                            textDayFontWeight: '300',
-                            textMonthFontWeight: 'bold',
-                            textDayHeaderFontWeight: '300',
-                            textDayFontSize: 16,
-                            textMonthFontSize: 16,
-                            textDayHeaderFontSize: 16
-                        }}
-                        // onVisibleMonthsChange={months => {
-                        //     // console.warn("now these months are visible", months);
-                        // }}
-                        pastScrollRange={50}
-                        futureScrollRange={50}
-                        scrollEnabled
-                        markedDates={this.props.markedDates}
-                        onDayPress={day => {
-                            const date = day.dateString;
-                            if (!this.props.markedDates.hasOwnProperty(date)) {
-                                return;
-                            }
-                            this.setState({
-                                pressedDay: date,
-                                displayExercisesList: this.props.allExercisesList[date],
-                                isModalListVisible: true,
-                            });
-                        }}
-                    />
+                <View style={{marginTop:30}}>
+                <PeriodAnalysis/>
+                </View>
+
+                <View style={{marginTop:50}}>
+                <CalendarComp
+                    theme={{
+                        // backgroundColor: '#c69',
+                        calendarBackground: 'transparent',
+                        textSectionTitleColor: '#cc6699',
+                        // selectedDayBackgroundColor: '#cc6699',
+                        selectedDayTextColor: '#eee',
+                        todayTextColor: '#cc6699',
+                        dayTextColor: '#eee',
+                        textDisabledColor: '#aaa',
+                        dotColor: '#00adf5',
+                        selectedDotColor: '#ffffff',
+                        arrowColor: '#fff',
+                        monthTextColor: '#eee',
+                        indicatorColor: 'blue',
+                        textDayFontFamily: 'PattayaRegular',
+                        textMonthFontFamily: 'PattayaRegular',
+                        textDayHeaderFontFamily: 'PattayaRegular',
+                        textDayFontWeight: '300',
+                        textMonthFontWeight: 'bold',
+                        textDayHeaderFontWeight: '300',
+                        textDayFontSize: 16,
+                        textMonthFontSize: 16,
+                        textDayHeaderFontSize: 16
+                    }}
+                    // onVisibleMonthsChange={months => {
+                    //     // console.warn("now these months are visible", months);
+                    // }}
+                    pastScrollRange={50}
+                    futureScrollRange={50}
+                    scrollEnabled
+                    markedDates={this.props.markedDates}
+                    onDayPress={day => {
+                        const date = day.dateString;
+                        if (!this.props.markedDates.hasOwnProperty(date)) {
+                            return;
+                        }
+                        this.setState({
+                            pressedDay: date,
+                            displayExercisesList: this.props.allExercisesList[date],
+                            isModalListVisible: true,
+                        });
+                    }}
+                />
+                </View>
                 {/*</LinearGradient>*/}
                 <Modal
                     visible={this.state.isModalListVisible}

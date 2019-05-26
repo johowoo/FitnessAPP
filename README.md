@@ -1,4 +1,4 @@
-# FitnessAPP Log
+# FitnessAPP
 fitness app built with React native
 ##notice
 should never let the state of the redux to be an array!!!
@@ -6,10 +6,15 @@ should never let the state of the redux to be an array!!!
 ## To be done
 ### bugs to be fixed
 * sets of cardio 
+* each library can not be empty(add problems);
 * transparency in PhotoModal
 * adjust to different smartphones (iPhone 8 ... Android)
 
 ### new functions
+* avoid duplicated category
+* update library once adding new exercise to specific category
+* deletable category in EditLibrary and CustomWorkout
+* change UI of the ExerciseList
 * editable library(add exercise to each sets from common ExerciseList
  give options: whether add to the library or currentWorkout)
 * add new Category in EditLibrary
