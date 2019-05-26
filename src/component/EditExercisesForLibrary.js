@@ -10,7 +10,8 @@ import {
     setEditLibraryEditWeightRepsModalVisibilityAction,
     addWeightRepsToExerciseInLibraryAction,
     editWeightRepsInWorkoutOfLibraryAction,
-    deleteExerciseFromWorkoutListOfLibraryAction
+    deleteExerciseFromWorkoutListOfLibraryAction,
+    addExerciseFromExerciseModalToCategoryOfLibraryAction
 } from "../store/actions";
 import {connect} from "react-redux";
 import {ExerciseModal} from "../page/ExerciseModal";
@@ -52,10 +53,15 @@ class _EditExercisesForLibrary extends Component {
                     })}
                 />
                 <ExerciseModal
+                    workoutSetsData={this.props.customWorkoutSets[navProps.selectedExerciseCategory]}
                     sectionExercises={this.props.sectionExercises}
                     extraSectionExercises={this.props.extraSectionExercises}
                     visible={this.props.showExerciseModalForEditLibrary}
                     closeModal={() => this.props.setEditLibraryExerciseModalVisibility(false)}
+                    addExercise={(props) => this.props.addExerciseFromExerciseModalToCategoryOfLibrary({
+                        ...props,
+                        selectedExerciseCategory: navProps.selectedExerciseCategory
+                    })}
                 />
             </LinearGradient>
         )
@@ -98,6 +104,9 @@ const mapActionToProps = dispatch => ({
     deleteExerciseFromWorkoutListOfLibrary(bool) {
         dispatch(deleteExerciseFromWorkoutListOfLibraryAction(bool))
     },
+    addExerciseFromExerciseModalToCategoryOfLibrary(data) {
+        dispatch(addExerciseFromExerciseModalToCategoryOfLibraryAction(data))
+    }
 });
 
 export const EditExercisesForLibrary = connect(

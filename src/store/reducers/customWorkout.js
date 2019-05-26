@@ -91,22 +91,17 @@ export const customWorkout = (state = defaultState, action) => {
                     [action.payload.selectedExerciseCategory]: deleteWorkoutSetsForGivenCategoryCopy
                 }
             };
-        // case types.DELETE_EXERCISE_SET_FROM_CUSTOM_WORKOUT:
-        //     return {
-        //         ...state,
-        //         showReminder: action.payload.showReminder,
-        //         reminderTitle: action.payload.reminderTitle,
-        //         reminderContent: action.payload.reminderContent,
-        //         hideConfirmButton: action.payload.hideConfirmButton
-        //     };
-        // case types.ADD_EXERCISE_SET_FROM_CUSTOM_WORKOUT_TO_CURRENT_WORKOUT:
-        //     return {
-        //         ...state,
-        //         showReminder: action.payload.showReminder,
-        //         reminderTitle: action.payload.reminderTitle,
-        //         reminderContent: action.payload.reminderContent,
-        //         hideConfirmButton: action.payload.hideConfirmButton
-        //     };
+        case types.ADD_EXERCISE_FROM_EXERCISE_MODAL_TO_CATEGORY_OF_LIBRARY:
+            if (!action.payload.weightRepsDataArr) {
+                action.payload.weightRepsDataArr = [];
+            }
+            return {
+                ...state,
+                customWorkoutSets: {
+                    ...state.customWorkoutSets,
+                    [action.payload.selectedExerciseCategory]: [...state.customWorkoutSets[action.payload.selectedExerciseCategory], action.payload]
+                }
+            };
         default:
             return state;
     }

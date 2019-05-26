@@ -1,17 +1,20 @@
-# FitnessAPP
+# FitnessAPP Log
 fitness app built with React native
 ##notice
 should never let the state of the redux to be an array!!!
 
 ## To be done
 ### bugs to be fixed
-* refresh addable icons after adding to currentWorkout/ clicking "finish"
 * sets of cardio 
 * transparency in PhotoModal
+* adjust to different smartphones (iPhone 8 ... Android)
 
 ### new functions
-* editable library
-* different UI in EditLibrary and CustomWorkout
+* editable library(add exercise to each sets from common ExerciseList
+ give options: whether add to the library or currentWorkout)
+* add new Category in EditLibrary
+* different UI in EditLibrary and CustomWorkout ???
+
 * add button in custom workout
 * change ranks in currentWorkout
 * select month & year in calendar //calendar
@@ -51,6 +54,10 @@ should never let the state of the redux to be an array!!!
 * can't add the same exercise twice  -> reminderModal ✔️
 * saved selection of exercises ✔️
 * disable sets(back, chest...) button after adding(confirming) ✔️
+* refresh addable icons after adding to currentWorkout/ clicking "finish" ✔️
+* touch to add reps/weights in EditLibraryForSets ✔️
+(give options: whether add to  the library or currentWorkout)  
+
 
 ### bugs
 * position of photoModal ✔️

@@ -123,7 +123,7 @@ export class _ExerciseList extends PureComponent {
     };
     handlePress = async () => {
         let flag = true;
-        this.props.currentWorkout.forEach(async item => {
+        this.props.workoutSetsData.forEach(async item => {
             if (item.exercise === this.state.selectedExercise) {
                 flag = false;
                 // ReminderModal
@@ -368,16 +368,14 @@ export class _ExerciseList extends PureComponent {
 }
 
 const mapStateToProps = state => ({
-    currentWorkout: state.currentWorkout,
+    // currentWorkout: state.currentWorkout,
     isExerciseListEmpty: state.exerciseCompleted.isExerciseListEmpty,
     // sectionExercises: state.exercises.sectionExercises,
 });
 const mapActionToProps = dispatch => ({
-        addExercise: exercise => dispatch(addExerciseAction(exercise)),
         updateEmpty: bool => dispatch(updateEmptyAction(bool)),
         addExerciseToSectionList: data => dispatch(addExerciseToSectionListAction(data)),
         deleteExerciseFromSectionList: data => dispatch(deleteExerciseFromSectionListAction(data))
-
     })
 ;
 export const ExerciseList = connect(

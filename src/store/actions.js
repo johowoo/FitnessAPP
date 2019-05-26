@@ -86,5 +86,10 @@ export const editWeightRepsInWorkoutOfLibraryAction = data =>
 export const deleteExerciseFromWorkoutListOfLibraryAction = data =>
     createAction(types.DELETE_EXERCISE_FROM_WORKOUT_LIST_OF_LIBRARY)(data);
 
+export const addExerciseFromExerciseModalToCategoryOfLibraryAction = data =>
+    createAction(types.ADD_EXERCISE_FROM_EXERCISE_MODAL_TO_CATEGORY_OF_LIBRARY)(data);
+
+
+
 
 

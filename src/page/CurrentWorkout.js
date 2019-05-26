@@ -134,6 +134,8 @@ class _CurrentWorkout extends Component {
                         extraSectionExercises={this.props.extraSectionExercises}
                         visible={this.props.exerciseModal}
                         closeModal={() => this.props.setModalVisibility(false)}
+                        workoutSetsData={this.props.currentWorkout}
+                        addExercise={this.props.addExercise}
                     />
                 </View>
                 {this.state.showReminderModal &&
