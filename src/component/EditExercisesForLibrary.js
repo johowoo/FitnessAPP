@@ -2,14 +2,18 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet} from "react-native";
 import {WorkoutList} from "./WorkoutList";
 import {LinearGradient} from "expo";
-import {addExerciseSetToCustomWorkoutAction, updateEmptyAction} from "../store/actions";
+import {
+    addExerciseSetToCustomWorkoutAction,
+    updateEmptyAction,
+    setEditLibraryExerciseModalVisibilityAction
+} from "../store/actions";
 import {connect} from "react-redux";
 import {ExerciseModal} from "../page/ExerciseModal";
 
 
 //ToDo
 //+ -> open the exerciseModal
-//x ->close the exerciseModal
+//x -> close the exerciseModal
 //**override
 //delete Exercises from customWorkoutSets
 //add Exercises to customWorkoutSets
@@ -26,9 +30,10 @@ class _EditExercisesForLibrary extends Component {
                     workoutSetsData={this.props.customWorkoutSets[navProps.selectedExerciseCategory]}
                 />
                 <ExerciseModal
-                    SectionExercises={this.props.sectionExercises}
-                    visible={this.state.exerciseModal}
-                    closeModal={() => this.state.setModalVisibility(false)}
+                    sectionExercises={this.props.sectionExercises}
+                    extraSectionExercises={this.props.extraSectionExercises}
+                    visible={this.props.showExerciseModal}
+                    closeModal={() => this.props.setEditLibraryExerciseModalVisibility(false)}
                 />
             </LinearGradient>
         )
@@ -40,6 +45,8 @@ const mapStateToProps = state => ({
     customWorkoutCategory: state.customWorkout.customWorkoutCategory,
     customWorkoutSets: state.customWorkout.customWorkoutSets,
     sectionExercises: state.exercises.sectionExercises,
+    extraSectionExercises: state.exercises.extraSectionExercises,
+    showExerciseModal: state.editLibrary.showExerciseModal
 });
 
 const mapActionToProps = dispatch => ({
@@ -48,6 +55,9 @@ const mapActionToProps = dispatch => ({
     },
     updateEmpty(bool) {
         dispatch(updateEmptyAction(bool));
+    },
+    setEditLibraryExerciseModalVisibility(bool) {
+        dispatch(setEditLibraryExerciseModalVisibilityAction(bool))
     }
 });
 

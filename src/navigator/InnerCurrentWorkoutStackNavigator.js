@@ -158,21 +158,11 @@ export const InnerCurrentWorkoutStackNavigator = createStackNavigator({
                 fontSize: 25,
                 fontFamily: "PattayaRegular"
             },
-            // headerRight: (
-            //     <TouchableOpacity style={{marginRight: 30}}
-            //                       onPress={() => {
-            //                           console.warn("add");
-            //                       }
-            //                       }>
-            //         <View>
-            //             <Icon name="add" size={24} color="#c69" key="delete"/>
-            //         </View>
-            //     </TouchableOpacity>
-            // ),
             headerRight: (
                 <TouchableOpacity style={{marginRight: 30}}
                                   onPress={() => {
-                                      // console.warn("add");
+                                      navigation.state.params.setEditLibraryExerciseModalVisibility(true);
+                                      console.warn("add");
                                   }}>
                     <View>
                         <MaterialIcons name={"add"}

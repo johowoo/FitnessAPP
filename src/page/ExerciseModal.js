@@ -4,7 +4,6 @@ import {ExerciseList} from "../component";
 
 export class ExerciseModal extends Component {
     render() {
-        // console.warn("sectionExercises", this.props.sectionExercises);
         return (
             <Modal
                 style={{flex: 1}}

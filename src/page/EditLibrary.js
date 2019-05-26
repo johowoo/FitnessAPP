@@ -3,7 +3,7 @@ import {
     View, Text, StyleSheet, Dimensions, ScrollView, FlatList, TouchableOpacity
 } from "react-native";
 import {
-    addExerciseSetToCustomWorkoutAction, updateEmptyAction
+    addExerciseSetToCustomWorkoutAction, updateEmptyAction, setEditLibraryExerciseModalVisibilityAction
 } from "../store/actions";
 import {LinearGradient} from "expo";
 import {connect} from "react-redux";
@@ -68,7 +68,10 @@ export class _EditLibrary extends Component {
                         await this.setState({
                             selectedExerciseCategory: item,
                         });
-                        await this.props.navigation.navigate("EditExercisesForLibrary", {selectedExerciseCategory: item});
+                        await this.props.navigation.navigate("EditExercisesForLibrary", {
+                            selectedExerciseCategory: item,
+                            setEditLibraryExerciseModalVisibility: this.props.setEditLibraryExerciseModalVisibility
+                        });
                         // console.warn("selectedSets", this.props.customWorkoutSets[this.state.selectedExerciseCategory]);
                         // await this.setState({
                         //     toBeEditedExerciseSets: this.props.customWorkoutSets[this.state.selectedExerciseCategory]
@@ -171,6 +174,9 @@ const mapActionToProps = dispatch => ({
     },
     updateEmpty(bool) {
         dispatch(updateEmptyAction(bool));
+    },
+    setEditLibraryExerciseModalVisibility(bool) {
+        dispatch(setEditLibraryExerciseModalVisibilityAction(bool))
     }
 });
 

@@ -10,6 +10,7 @@ import {progress} from "./reducers/progress";
 import {progressModal} from "./reducers/progressModal";
 import {displayPicture} from "./reducers/displayPicture";
 import {customWorkout} from "./reducers/customWorkout";
+import {editLibrary} from "./reducers/editLibrary";
 
 export const reducer = combineReducers({
     currentWorkout,
@@ -22,5 +23,6 @@ export const reducer = combineReducers({
     progress,
     progressModal,
     displayPicture,
-    customWorkout
+    customWorkout,
+    editLibrary
 });

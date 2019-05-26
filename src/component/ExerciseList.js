@@ -338,15 +338,17 @@ export class _ExerciseList extends PureComponent {
                         />
                     </TouchableHighlight>
                 ) : (
-                    <SectionList
-                        sections={this.props.sectionExercises}
-                        renderItem={data => this._renderItem(data)}
-                        renderSectionHeader={data => this._renderSectionHeader(data)}
-                        ListFooterComponent={() => this._renderListFooter()}
-                        // onEndReached={this.loadData}
-                        keyExtractor={(item, index) => item + index}
-                        extraData={this.props.sectionExercises}
-                    />
+                    <View>
+                        <SectionList
+                            sections={this.props.sectionExercises}
+                            renderItem={data => this._renderItem(data)}
+                            renderSectionHeader={data => this._renderSectionHeader(data)}
+                            ListFooterComponent={() => this._renderListFooter()}
+                            // onEndReached={this.loadData}
+                            keyExtractor={(item, index) => item + index}
+                            extraData={this.props.sectionExercises}
+                        />
+                    </View>
                 )}
                 <TouchableHighlight style={{flex: 1}} onPress={this.handleBlur.bind(this)}>
                     <View style={{flex: 1}}>
