@@ -20,6 +20,7 @@ import {IconFont} from '@expo/vector-icons';
 // import {ExerciseModal} from "./ExerciseModal";
 import {initialExerciseCategory} from "../initialExerciseSets";
 import {AddCategoryModal} from "../component/AddCategoryModal";
+import {createIcons} from "../utils/createIcons";
 
 
 const {width, height} = Dimensions.get("window");
@@ -88,12 +89,7 @@ export class _EditLibrary extends Component {
                     }}>
                     {/*<Image style={styles.image} source={{uri: props.item.photoURI}}/>*/}
                     <View style={styles.alignVerAndHorCenter}>
-                        {
-                            initialExerciseCategory.includes(item) ? <IconFont name={item} size={60} color={"#fff"}/> :
-                                <Icon name="check-circle" size={60} color={"#fff"} key="cancel"/>
-
-                        }
-
+                        {createIcons(item, index)}
                     </View>
                     <View style={styles.alignVerAndHorCenter}>
                         <Text style={{color: "#eee", fontSize: 30, fontFamily: "PattayaRegular"}}>{item}</Text>

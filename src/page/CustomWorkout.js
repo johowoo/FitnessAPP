@@ -9,8 +9,10 @@ import {
     TouchableOpacity,
 } from "react-native";
 import {
-    addExerciseSetToCurrentWorkoutAction, updateEmptyAction
+    addExerciseSetToCurrentWorkoutAction,
+    updateEmptyAction
 } from "../store/actions";
+
 import {LinearGradient} from "expo";
 import {connect} from "react-redux";
 import {ReminderModal} from "../component/ReminderModal";
@@ -20,6 +22,8 @@ import ApslButton from "apsl-react-native-button";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import {IconFont} from '@expo/vector-icons';
 import {initialExerciseCategory} from "../initialExerciseSets";
+import {createIcons} from "../utils/createIcons";
+
 
 const {width, height} = Dimensions.get("window");
 
@@ -82,13 +86,7 @@ export class _CustomWorkout extends Component {
                 }}>
                 {/*<Image style={styles.image} source={{uri: props.item.photoURI}}/>*/}
                 <View style={styles.alignVerAndHorCenter}>
-                    {/*//*/}
-                    {/*<IconFont name={item} size={60} color={"#fff"}/>*/}
-                    {
-                        initialExerciseCategory.includes(item) ? <IconFont name={item} size={60} color={"#eee"}/> :
-                            <IconFontAwesome name="space-shuttle" size={60} color={"#eee"} key="cancel"/>
-
-                    }
+                    {createIcons(item,index)}
                 </View>
                 <View style={styles.alignVerAndHorCenter}>
                     <Text style={{color: "#eee", fontSize: 30, fontFamily: "PattayaRegular"}}>{item}</Text>
@@ -228,7 +226,7 @@ const styles = StyleSheet.create({
         width: width * 0.4,
         height: width * 0.4,
         margin: width * 0.05,
-        borderRadius: 10,
+        borderRadius: 20,
         borderColor: "#eee",
         borderWidth: 1,
     },
