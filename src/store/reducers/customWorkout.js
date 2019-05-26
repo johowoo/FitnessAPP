@@ -77,11 +77,20 @@ export const customWorkout = (state = defaultState, action) => {
                 }
             };
         case types.DELETE_EXERCISE_FROM_WORKOUT_LIST_OF_LIBRARY:
-
+            const deleteWorkoutSetsForGivenCategoryCopy = JSON.parse(JSON.stringify(state.customWorkoutSets[action.payload.selectedExerciseCategory]));
+            deleteWorkoutSetsForGivenCategoryCopy.map((item, index) => {
+                if (parseInt(item.time, 10) === parseInt(action.payload.time, 10)) {
+                    // console.warn("matched", item);
+                    deleteWorkoutSetsForGivenCategoryCopy.splice(index, 1);
+                }
+            });
             return {
                 ...state,
+                customWorkoutSets: {
+                    ...state.customWorkoutSets,
+                    [action.payload.selectedExerciseCategory]: deleteWorkoutSetsForGivenCategoryCopy
+                }
             };
-
         // case types.DELETE_EXERCISE_SET_FROM_CUSTOM_WORKOUT:
         //     return {
         //         ...state,
