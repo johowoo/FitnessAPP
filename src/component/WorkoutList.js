@@ -115,17 +115,17 @@ export class _WorkoutList extends Component {
         })
     };
     handleConfirm = async () => {
-        LoadingUtil.showLoading();
+        await LoadingUtil.showLoading();
         await this.props.deleteExerciseFromWorkoutList({
             time: this.state.time,
         });
-        if (this.props.currentWorkout.length === 0) {
+        if (this.props.workoutSetsData.length === 0) {
             await this.props.updateEmpty(true);
         }
         await this.setState({
             showReminderModal: false,
         });
-        LoadingUtil.dismissLoading();
+        await LoadingUtil.dismissLoading();
     };
     getQuickActions = ({index, item}) => (
         <View style={styles.quickAContent}>

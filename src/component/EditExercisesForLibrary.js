@@ -28,6 +28,7 @@ class _EditExercisesForLibrary extends Component {
                 <WorkoutList
                     showListFooterComponent={false}
                     workoutSetsData={this.props.customWorkoutSets[navProps.selectedExerciseCategory]}
+                    currentWorkout={this.props.customWorkoutSets[navProps.selectedExerciseCategory]}
                     showAddWeightModal={this.props.showAddWeightModalForEditLibrary}
                     showEditWeightReps={this.props.showEditWeightRepsForEditLibrary}
                     setAddWeightModalVisibility={this.props.setEditLibraryAddWeightModalVisibility}

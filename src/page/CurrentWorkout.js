@@ -196,7 +196,6 @@ const mapActionsToProps = dispatch => ({
     deleteExerciseFromWorkoutList: data => {
         dispatch(deleteExerciseFromWorkoutListAction(data));
     },
-
 });
 
 export const CurrentWorkout = connect(
