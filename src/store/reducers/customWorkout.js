@@ -25,7 +25,7 @@ export const customWorkout = (state = defaultState, action) => {
             };
         case types.CLEAR_CURRENT_WORKOUT:
             const customWorkoutAddableEmpty = {};
-            state.customWorkoutCategory.forEach(item=>{
+            state.customWorkoutCategory.forEach(item => {
                 customWorkoutAddableEmpty[item] = true;
             });
             return {
@@ -103,10 +103,16 @@ export const customWorkout = (state = defaultState, action) => {
                 }
             };
 
-
         case types.ADD_CATEGORY_TO_EDIT_LIBRARY:
-
-            return state;
+            // customWorkoutSets: initialExerciseSets,
+            //     customWorkoutCategory: initialExerciseCategory,
+            // customWorkoutAddable: {},
+            return {
+                ...state,
+                customWorkoutCategory: [...state.customWorkoutCategory, action.payload],
+                customWorkoutAddable: {...state.customWorkoutAddable, [action.payload]: true},
+                customWorkoutSets: {...state.customWorkoutSets, [action.payload]: []}
+            };
         default:
             return state;
     }

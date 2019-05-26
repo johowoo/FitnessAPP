@@ -19,6 +19,7 @@ import IconFontAwesome from "react-native-vector-icons/FontAwesome";
 import ApslButton from "apsl-react-native-button";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import {IconFont} from '@expo/vector-icons';
+import {initialExerciseCategory} from "../initialExerciseSets";
 
 const {width, height} = Dimensions.get("window");
 
@@ -81,7 +82,12 @@ export class _CustomWorkout extends Component {
                 }}>
                 {/*<Image style={styles.image} source={{uri: props.item.photoURI}}/>*/}
                 <View style={styles.alignVerAndHorCenter}>
-                    <IconFont name={item} size={60} color={"#fff"}/>
+                    {/*//*/}
+                    {/*<IconFont name={item} size={60} color={"#fff"}/>*/}
+                    {
+                        initialExerciseCategory.includes(item) ? <IconFont name={item} size={60} color={"#eee"}/> :
+                            <Icon name="check-circle" size={60} color={"#eee"} key="cancel"/>
+                    }
                 </View>
                 <View style={styles.alignVerAndHorCenter}>
                     <Text style={{color: "#eee", fontSize: 30, fontFamily: "PattayaRegular"}}>{item}</Text>
