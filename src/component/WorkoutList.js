@@ -66,7 +66,6 @@ export class _WorkoutList extends Component {
             onLongPress={async () => {
                 await this.setState({time, weightRepsDataArr, sets});
                 // await this.setState({showEditWeightReps: true})
-                console.warn("longPress");
                 await this.props.setEditWeightRepsModalVisibility(true);
                 await this.forceUpdate();
             }}
@@ -204,7 +203,6 @@ export class _WorkoutList extends Component {
     );
 
     render() {
-        console.warn("this.props.showAddWeightModal", this.props.showAddWeightModal);
         const listFooterComponent = (
             <View>
                 <View style={styles.addSomeExercises}>

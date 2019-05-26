@@ -162,7 +162,6 @@ export const InnerCurrentWorkoutStackNavigator = createStackNavigator({
                 <TouchableOpacity style={{marginRight: 30}}
                                   onPress={() => {
                                       navigation.state.params.setEditLibraryExerciseModalVisibility(true);
-                                      console.warn("add");
                                   }}>
                     <View>
                         <MaterialIcons name={"add"}

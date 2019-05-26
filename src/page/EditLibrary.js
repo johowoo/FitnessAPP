@@ -55,15 +55,15 @@ export class _EditLibrary extends Component {
     };
     renderItem = ({item, index}) => {
         return (
-            <View
-                style={{
-                    ...styles.item,
-                    backgroundColor: "#c68"
-                }}>
+            <View>
                 {/*<LinearGradient colors={["#4a168c", "#880e4f"]} style={styles.container}>*/}
                 <TouchableOpacity
                     // disabled={!this.props.customWorkoutAddable[item]}
-                    style={{marginTop: 10,}}
+                    style={{
+                        ...styles.item,
+                        backgroundColor: "#c68",
+                        marginTop: 10
+                    }}
                     onPress={async () => {
                         await this.setState({
                             selectedExerciseCategory: item,

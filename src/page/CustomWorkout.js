@@ -61,10 +61,15 @@ export class _CustomWorkout extends Component {
     };
     renderItem = ({item, index}) => {
         return (<View
-            style={{...styles.item, backgroundColor: this.props.customWorkoutAddable[item] ? "transparent" : "#ccc"}}>
+        >
             <TouchableOpacity
+                style={{
+                    ...styles.item,
+                    backgroundColor: this.props.customWorkoutAddable[item] ? "transparent" : "#ccc",
+                    marginTop: 10
+                }}
                 disabled={!this.props.customWorkoutAddable[item]}
-                style={{marginTop: 10,}}
+                // style={{marginTop: 10,}}
                 onPress={async () => {
                     this.setState({
                         selectedExerciseCategory: item,
