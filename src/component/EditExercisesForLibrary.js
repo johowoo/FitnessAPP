@@ -7,7 +7,10 @@ import {
     updateEmptyAction,
     setEditLibraryExerciseModalVisibilityAction,
     setEditLibraryAddWeightModalVisibilityAction,
-    setEditLibraryEditWeightRepsModalVisibilityAction
+    setEditLibraryEditWeightRepsModalVisibilityAction,
+    addWeightRepsToExerciseInLibraryAction,
+    editWeightRepsInWorkoutOfLibraryAction,
+    deleteExerciseFromWorkoutListOfLibraryAction
 } from "../store/actions";
 import {connect} from "react-redux";
 import {ExerciseModal} from "../page/ExerciseModal";
@@ -33,6 +36,10 @@ class _EditExercisesForLibrary extends Component {
                     showEditWeightReps={this.props.showEditWeightRepsForEditLibrary}
                     setAddWeightModalVisibility={this.props.setEditLibraryAddWeightModalVisibility}
                     setEditWeightRepsModalVisibility={this.props.setEditLibraryEditWeightRepsModalVisibility}
+                    //todo
+                    addWeightRepsToExercise={this.props.addWeightRepsToExerciseInLibrary}
+                    editWeightRepsInWorkout={this.props.editWeightRepsInWorkoutOfLibrary}
+                    deleteExerciseFromWorkoutList={this.props.deleteExerciseFromWorkoutListOfLibrary}
                 />
                 <ExerciseModal
                     sectionExercises={this.props.sectionExercises}
@@ -71,6 +78,15 @@ const mapActionToProps = dispatch => ({
     },
     setEditLibraryEditWeightRepsModalVisibility(bool) {
         dispatch(setEditLibraryEditWeightRepsModalVisibilityAction(bool))
+    },
+    addWeightRepsToExerciseInLibrary(bool) {
+        dispatch(addWeightRepsToExerciseInLibraryAction(bool))
+    },
+    editWeightRepsInWorkoutOfLibrary(bool) {
+        dispatch(editWeightRepsInWorkoutOfLibraryAction(bool))
+    },
+    deleteExerciseFromWorkoutListOfLibrary(bool) {
+        dispatch(deleteExerciseFromWorkoutListOfLibraryAction(bool))
     },
 });
 

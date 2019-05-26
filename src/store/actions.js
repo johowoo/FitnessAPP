@@ -79,4 +79,12 @@ export const setEditLibraryEditWeightRepsModalVisibilityAction = data =>
     createAction(types.SET_EDIT_LIBRARY_EDIT_WEIGHT_REPS_MODAL_VISIBILITY)(data);
 
 
+export const addWeightRepsToExerciseInLibraryAction = data =>
+    createAction(types.ADD_WEIGHT_REPS_TO_EXERCISE_IN_LIBRARY)(data);
+export const editWeightRepsInWorkoutOfLibraryAction = data =>
+    createAction(types.EDIT_WEIGHT_REPS_IN_WORKOUT_OF_LIBRARY)(data);
+export const deleteExerciseFromWorkoutListOfLibraryAction = data =>
+    createAction(types.DELETE_EXERCISE_FROM_WORKOUT_LIST_OF_LIBRARY)(data);
+
+
 

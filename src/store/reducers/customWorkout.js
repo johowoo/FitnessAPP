@@ -31,22 +31,40 @@ export const customWorkout = (state = defaultState, action) => {
             return {
                 ...state, customWorkoutAddable: customWorkoutAddableEmpty
             };
-        case types.DELETE_EXERCISE_SET_FROM_CUSTOM_WORKOUT:
+
+        //todo
+        case types.ADD_WEIGHT_REPS_TO_EXERCISE_IN_LIBRARY:
+
             return {
                 ...state,
-                showReminder: action.payload.showReminder,
-                reminderTitle: action.payload.reminderTitle,
-                reminderContent: action.payload.reminderContent,
-                hideConfirmButton: action.payload.hideConfirmButton
             };
-        case types.ADD_EXERCISE_SET_FROM_CUSTOM_WORKOUT_TO_CURRENT_WORKOUT:
+        case types.EDIT_WEIGHT_REPS_IN_WORKOUT_OF_LIBRARY:
+
             return {
                 ...state,
-                showReminder: action.payload.showReminder,
-                reminderTitle: action.payload.reminderTitle,
-                reminderContent: action.payload.reminderContent,
-                hideConfirmButton: action.payload.hideConfirmButton
             };
+        case types.DELETE_EXERCISE_FROM_WORKOUT_LIST_OF_LIBRARY:
+
+            return {
+                ...state,
+            };
+
+        // case types.DELETE_EXERCISE_SET_FROM_CUSTOM_WORKOUT:
+        //     return {
+        //         ...state,
+        //         showReminder: action.payload.showReminder,
+        //         reminderTitle: action.payload.reminderTitle,
+        //         reminderContent: action.payload.reminderContent,
+        //         hideConfirmButton: action.payload.hideConfirmButton
+        //     };
+        // case types.ADD_EXERCISE_SET_FROM_CUSTOM_WORKOUT_TO_CURRENT_WORKOUT:
+        //     return {
+        //         ...state,
+        //         showReminder: action.payload.showReminder,
+        //         reminderTitle: action.payload.reminderTitle,
+        //         reminderContent: action.payload.reminderContent,
+        //         hideConfirmButton: action.payload.hideConfirmButton
+        //     };
         default:
             return state;
     }
