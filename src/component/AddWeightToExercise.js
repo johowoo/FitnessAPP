@@ -33,6 +33,7 @@ export class AddWeightToExercise extends Component {
     }
 
     render() {
+        console.warn("visible", this.props.showAddWeightModal);
         return (
             <Modal
                 visible={this.props.showAddWeightModal}

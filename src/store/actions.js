@@ -73,6 +73,10 @@ export const addExerciseSetFromCustomWorkoutToCurrentWorkoutAction = data =>
 //Edit Library
 export const setEditLibraryExerciseModalVisibilityAction = data =>
     createAction(types.SET_EDIT_LIBRARY_EXERCISE_MODAL_VISIBILITY)(data);
+export const setEditLibraryAddWeightModalVisibilityAction = data =>
+    createAction(types.SET_EDIT_LIBRARY_ADD_WEIGHT_MODAL_VISIBILITY)(data);
+export const setEditLibraryEditWeightRepsModalVisibilityAction = data =>
+    createAction(types.SET_EDIT_LIBRARY_EDIT_WEIGHT_REPS_MODAL_VISIBILITY)(data);
 
 
 

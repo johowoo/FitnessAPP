@@ -52,6 +52,7 @@ export class _WorkoutList extends Component {
                     await this.setState({time});
                     // await this.setState({showAddWeightModal: true});
                     await this.props.setAddWeightModalVisibility(true);
+                    await this.forceUpdate();
                 } else {
                     // Alert.alert("Reminder", "You have already added weight and reps for all sets.")
                     await this.setState({
@@ -65,7 +66,9 @@ export class _WorkoutList extends Component {
             onLongPress={async () => {
                 await this.setState({time, weightRepsDataArr, sets});
                 // await this.setState({showEditWeightReps: true})
+                console.warn("longPress");
                 await this.props.setEditWeightRepsModalVisibility(true);
+                await this.forceUpdate();
             }}
         >
             <View style={styles.listContainer}>
@@ -178,10 +181,30 @@ export class _WorkoutList extends Component {
                 handleConfirm={this.handleConfirm}
                 hideConfirmButton={this.state.hideConfirmButton}
             />}
+            {this.props.showAddWeightModal && (
+                <AddWeightToExercise
+                    showAddWeightModal={this.props.showAddWeightModal}
+                    handleCloseWeightModal={() => this.props.setAddWeightModalVisibility(false)}
+                    addWeightRepsToExercise={this.props.addWeightRepsToExercise}
+                    time={this.state.time}
+                />
+            )}
+            {this.props.showEditWeightReps && (
+                <EditWeightReps
+                    showEditWeightReps={this.props.showEditWeightReps}
+                    handleCloseWeightModal={() => this.props.setEditWeightRepsModalVisibility(false)}
+                    weightRepsDataArr={this.state.weightRepsDataArr}
+                    sets={this.state.sets}
+                    time={this.state.time}
+                    addWeightRepsToExercise={this.props.addWeightRepsToExercise}
+                    editWeightRepsInWorkout={this.props.editWeightRepsInWorkout}
+                />
+            )}
         </View>
     );
 
     render() {
+        console.warn("this.props.showAddWeightModal", this.props.showAddWeightModal);
         const listFooterComponent = (
             <View>
                 <View style={styles.addSomeExercises}>
@@ -236,25 +259,7 @@ export class _WorkoutList extends Component {
                         {/*{"\n"}*/}
                         {/*exercises*/}
                     </Text>
-                    {this.props.showAddWeightModal && (
-                        <AddWeightToExercise
-                            showAddWeightModal={this.props.showAddWeightModal}
-                            handleCloseWeightModal={() => this.props.setAddWeightModalVisibility(false)}
-                            addWeightRepsToExercise={this.props.addWeightRepsToExercise}
-                            time={this.state.time}
-                        />
-                    )}
-                    {this.props.showEditWeightReps && (
-                        <EditWeightReps
-                            showEditWeightReps={this.props.showEditWeightReps}
-                            handleCloseWeightModal={() => this.props.setEditWeightRepsModalVisibility(false)}
-                            addWeightRepsToExercise={this.props.addWeightRepsToExercise}
-                            weightRepsDataArr={this.state.weightRepsDataArr}
-                            sets={this.state.sets}
-                            time={this.state.time}
-                            editWeightRepsInWorkout={this.props.editWeightRepsInWorkout}
-                        />
-                    )}
+
                 </View>
             </View>
         );

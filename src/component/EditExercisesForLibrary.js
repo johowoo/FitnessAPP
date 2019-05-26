@@ -5,7 +5,9 @@ import {LinearGradient} from "expo";
 import {
     addExerciseSetToCustomWorkoutAction,
     updateEmptyAction,
-    setEditLibraryExerciseModalVisibilityAction
+    setEditLibraryExerciseModalVisibilityAction,
+    setEditLibraryAddWeightModalVisibilityAction,
+    setEditLibraryEditWeightRepsModalVisibilityAction
 } from "../store/actions";
 import {connect} from "react-redux";
 import {ExerciseModal} from "../page/ExerciseModal";
@@ -18,8 +20,6 @@ import {ExerciseModal} from "../page/ExerciseModal";
 //delete Exercises from customWorkoutSets
 //add Exercises to customWorkoutSets
 class _EditExercisesForLibrary extends Component {
-    state = {exerciseModal: false};
-
     render() {
         const navProps = this.props?.navigation?.state?.params;
         return (
@@ -28,11 +28,15 @@ class _EditExercisesForLibrary extends Component {
                 <WorkoutList
                     showListFooterComponent={false}
                     workoutSetsData={this.props.customWorkoutSets[navProps.selectedExerciseCategory]}
+                    showAddWeightModal={this.props.showAddWeightModalForEditLibrary}
+                    showEditWeightReps={this.props.showEditWeightRepsForEditLibrary}
+                    setAddWeightModalVisibility={this.props.setEditLibraryAddWeightModalVisibility}
+                    setEditWeightRepsModalVisibility={this.props.setEditLibraryEditWeightRepsModalVisibility}
                 />
                 <ExerciseModal
                     sectionExercises={this.props.sectionExercises}
                     extraSectionExercises={this.props.extraSectionExercises}
-                    visible={this.props.showExerciseModal}
+                    visible={this.props.showExerciseModalForEditLibrary}
                     closeModal={() => this.props.setEditLibraryExerciseModalVisibility(false)}
                 />
             </LinearGradient>
@@ -46,7 +50,9 @@ const mapStateToProps = state => ({
     customWorkoutSets: state.customWorkout.customWorkoutSets,
     sectionExercises: state.exercises.sectionExercises,
     extraSectionExercises: state.exercises.extraSectionExercises,
-    showExerciseModal: state.editLibrary.showExerciseModal
+    showExerciseModalForEditLibrary: state.editLibrary.showExerciseModalForEditLibrary,
+    showAddWeightModalForEditLibrary: state.editLibrary.showAddWeightModalForEditLibrary,
+    showEditWeightRepsForEditLibrary: state.editLibrary.showEditWeightRepsForEditLibrary,
 });
 
 const mapActionToProps = dispatch => ({
@@ -58,7 +64,13 @@ const mapActionToProps = dispatch => ({
     },
     setEditLibraryExerciseModalVisibility(bool) {
         dispatch(setEditLibraryExerciseModalVisibilityAction(bool))
-    }
+    },
+    setEditLibraryAddWeightModalVisibility(bool) {
+        dispatch(setEditLibraryAddWeightModalVisibilityAction(bool))
+    },
+    setEditLibraryEditWeightRepsModalVisibility(bool) {
+        dispatch(setEditLibraryEditWeightRepsModalVisibilityAction(bool))
+    },
 });
 
 export const EditExercisesForLibrary = connect(
