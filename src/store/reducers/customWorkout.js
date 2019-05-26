@@ -15,7 +15,7 @@ for (let key in initialExerciseSets) {
 // console.warn("initialExerciseCategory",initialExerciseCategory);
 export const customWorkout = (state = defaultState, action) => {
     switch (action.type) {
-        case types.ADD_EXERCISE_SET_TO_CUSTOM_WORKOUT:
+        case types.ADD_EXERCISE_SET_TO_CURRENT_WORKOUT:
             //change addable state
             const addableCopy = JSON.parse(JSON.stringify(state.customWorkoutAddable));
             addableCopy[action.payload.category] = false;

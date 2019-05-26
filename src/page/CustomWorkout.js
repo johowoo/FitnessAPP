@@ -9,7 +9,7 @@ import {
     TouchableOpacity,
 } from "react-native";
 import {
-    addExerciseSetToCustomWorkoutAction, updateEmptyAction
+    addExerciseSetToCurrentWorkoutAction, updateEmptyAction
 } from "../store/actions";
 import {LinearGradient} from "expo";
 import {connect} from "react-redux";
@@ -43,7 +43,7 @@ export class _CustomWorkout extends Component {
         await LoadingUtil.showLoading();
         await this.props.updateEmpty(false);
         //add exercises to currentWorkout
-        await this.props.addExerciseSetToCustomWorkout({
+        await this.props.addExerciseSetToCurrentWorkout({
             category: this.state.selectedExerciseCategory,
             sets: this.props.customWorkoutSets
         });
@@ -163,8 +163,8 @@ const mapStateToProps = state => ({
 });
 
 const mapActionToProps = dispatch => ({
-    addExerciseSetToCustomWorkout(data) {
-        dispatch(addExerciseSetToCustomWorkoutAction(data));
+    addExerciseSetToCurrentWorkout(data) {
+        dispatch(addExerciseSetToCurrentWorkoutAction(data));
     },
     updateEmpty(bool) {
         dispatch(updateEmptyAction(bool));

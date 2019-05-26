@@ -48,7 +48,7 @@ export const currentWorkout = (state = [], action) => {
                 }
             });
             return stateCopyForEditAll;
-        case types.ADD_EXERCISE_SET_TO_CUSTOM_WORKOUT:
+        case types.ADD_EXERCISE_SET_TO_CURRENT_WORKOUT:
             const emptySets = [];
             // console.warn("sets", action.payload.sets);
             // console.warn("initialSets", initialExerciseSets);

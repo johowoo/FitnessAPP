@@ -6,7 +6,6 @@ import {
     StyleSheet,
     Dimensions,
     TouchableHighlight,
-    Alert,
 } from "react-native";
 import Button from "apsl-react-native-button";
 // import {Icon} from 'expo';
@@ -14,11 +13,7 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import {connect} from "react-redux";
 import {
-    addWeightToExercisesAction,
-    deleteExerciseFromWorkoutListAction,
-    editWeightRepsInWorkoutAction,
-    setAddWeightModalVisibilityAction,
-    setEditWeightRepsModalVisibilityAction
+    addCategoryToEditLibraryAction, setAddCategoryModalForLibraryVisibilityAction
 } from "../store/actions";
 import {AddWeightToExercise} from "./AddWeightToExercise";
 import {EditWeightReps} from './EditWeightReps';
@@ -241,7 +236,10 @@ export class _WorkoutList extends Component {
                     <View style={styles.buttonContainer}>
                         <Button
                             onPress={() => {
-                                this.props.navigation.navigate("EditLibrary");
+                                this.props.navigation.navigate("EditLibrary", {
+                                    addCategoryToEditLibrary: this.props.addCategoryToEditLibrary,
+                                    setAddCategoryModalForLibraryVisibility: this.props.setAddCategoryModalForLibraryVisibility
+                                });
                             }}
                             // onPress={this.handlePress.bind(this)}
                             style={styles.plusButton}
@@ -280,21 +278,10 @@ const mapStateToProps = state => ({
 });
 
 const mapActionsToProps = dispatch => ({
-    // addWeightRepsToExercise: data => {
-    //     dispatch(addWeightToExercisesAction(data));
-    // },
-    // editWeightRepsInWorkout: data => {
-    //     dispatch(editWeightRepsInWorkoutAction(data));
-    // },
-    // deleteExerciseFromWorkoutList: data => {
-    //     dispatch(deleteExerciseFromWorkoutListAction(data));
-    // },
-    // // setAddWeightModalVisibility(bool) {
-    //     return dispatch(setAddWeightModalVisibilityAction(bool));
-    // },
-    // setEditWeightRepsModalVisibility(payload) {
-    //     return dispatch(setEditWeightRepsModalVisibilityAction(payload));
-    // },
+    addCategoryToEditLibrary: (data) => dispatch(addCategoryToEditLibraryAction(data)),
+    setAddCategoryModalForLibraryVisibility(bool) {
+        dispatch(setAddCategoryModalForLibraryVisibilityAction(bool))
+    }
 });
 export const WorkoutList = connect(
     mapStateToProps,

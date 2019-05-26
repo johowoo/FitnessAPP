@@ -62,21 +62,28 @@ export const showDeleteConfirmModalInDisplayPictureAction = data =>
 
 
 //Custom Workout
-export const addExerciseSetToCustomWorkoutAction = data =>
-    createAction(types.ADD_EXERCISE_SET_TO_CUSTOM_WORKOUT)(data);
-export const deleteExerciseSetFromCustomWorkoutAction = data =>
-    createAction(types.DELETE_EXERCISE_SET_FROM_CUSTOM_WORKOUT)(data);
+export const addExerciseSetToCurrentWorkoutAction = data =>
+    createAction(types.ADD_EXERCISE_SET_TO_CURRENT_WORKOUT)(data);
+// export const deleteExerciseSetFromCustomWorkoutAction = data =>
+//     createAction(types.DELETE_EXERCISE_SET_FROM_CUSTOM_WORKOUT)(data);
 export const addExerciseSetFromCustomWorkoutToCurrentWorkoutAction = data =>
     createAction(types.ADD_EXERCISE_SET_FROM_CUSTOM_WORKOUT_TO_CURRENT_WORKOUT)(data);
 
 
 //Edit Library
+export const setAddCategoryModalForLibraryVisibilityAction = data =>
+    createAction(types.SET_ADD_CATEGORY_MODAL_FOR_LIBRARY_VISIBILITY)(data);
+export const addCategoryToEditLibraryAction = data =>
+    createAction(types.ADD_CATEGORY_TO_EDIT_LIBRARY)(data);
+
+
 export const setEditLibraryExerciseModalVisibilityAction = data =>
     createAction(types.SET_EDIT_LIBRARY_EXERCISE_MODAL_VISIBILITY)(data);
 export const setEditLibraryAddWeightModalVisibilityAction = data =>
     createAction(types.SET_EDIT_LIBRARY_ADD_WEIGHT_MODAL_VISIBILITY)(data);
 export const setEditLibraryEditWeightRepsModalVisibilityAction = data =>
     createAction(types.SET_EDIT_LIBRARY_EDIT_WEIGHT_REPS_MODAL_VISIBILITY)(data);
+
 
 
 export const addWeightRepsToExerciseInLibraryAction = data =>

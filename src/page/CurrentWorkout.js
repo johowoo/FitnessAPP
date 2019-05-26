@@ -17,7 +17,7 @@ import {
     setEditWeightRepsModalVisibilityAction,
     addWeightToExercisesAction,
     editWeightRepsInWorkoutAction,
-    deleteExerciseFromWorkoutListAction
+    deleteExerciseFromWorkoutListAction, setAddCategoryModalForLibraryVisibilityAction
 } from "../store/actions";
 
 import {WorkoutList} from "../component/WorkoutList";
@@ -198,6 +198,7 @@ const mapActionsToProps = dispatch => ({
     deleteExerciseFromWorkoutList: data => {
         dispatch(deleteExerciseFromWorkoutListAction(data));
     },
+
 });
 
 export const CurrentWorkout = connect(

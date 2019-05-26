@@ -3,7 +3,7 @@ import {View, Text, StyleSheet} from "react-native";
 import {WorkoutList} from "./WorkoutList";
 import {LinearGradient} from "expo";
 import {
-    addExerciseSetToCustomWorkoutAction,
+    addExerciseSetToCurrentWorkoutAction,
     updateEmptyAction,
     setEditLibraryExerciseModalVisibilityAction,
     setEditLibraryAddWeightModalVisibilityAction,
@@ -80,8 +80,8 @@ const mapStateToProps = state => ({
 });
 
 const mapActionToProps = dispatch => ({
-    addExerciseSetToCustomWorkout(data) {
-        dispatch(addExerciseSetToCustomWorkoutAction(data));
+    addExerciseSetToCurrentWorkout(data) {
+        dispatch(addExerciseSetToCurrentWorkoutAction(data));
     },
     updateEmpty(bool) {
         dispatch(updateEmptyAction(bool));

@@ -4,7 +4,8 @@ export const editLibrary = (
     state = {
         showExerciseModalForEditLibrary: false,
         showAddWeightModalForEditLibrary: false,
-        showEditWeightRepsForEditLibrary: false
+        showEditWeightRepsForEditLibrary: false,
+        showAddCategoryModal: false
     },
     action
 ) => {

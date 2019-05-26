@@ -3,7 +3,10 @@ import {
     View, Text, StyleSheet, Dimensions, ScrollView, FlatList, TouchableOpacity
 } from "react-native";
 import {
-    addExerciseSetToCustomWorkoutAction, updateEmptyAction, setEditLibraryExerciseModalVisibilityAction
+    addExerciseSetToCurrentWorkoutAction,
+    updateEmptyAction,
+    setEditLibraryExerciseModalVisibilityAction,
+    setAddCategoryModalForLibraryVisibilityAction
 } from "../store/actions";
 import {LinearGradient} from "expo";
 import {connect} from "react-redux";
@@ -13,7 +16,8 @@ import IconFontAwesome from "react-native-vector-icons/FontAwesome";
 import ApslButton from "apsl-react-native-button";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import {IconFont} from '@expo/vector-icons';
-import {ExerciseModal} from "./ExerciseModal";
+// import {ExerciseModal} from "./ExerciseModal";
+import {AddCategoryModal} from "../component/AddCategoryModal";
 
 const {width, height} = Dimensions.get("window");
 
@@ -40,7 +44,7 @@ export class _EditLibrary extends Component {
         await LoadingUtil.showLoading();
         await this.props.updateEmpty(false);
         //add exercises to currentworkout
-        await this.props.addExerciseSetToCustomWorkout(this.state.selectedExerciseCategory);
+        await this.props.addExerciseSetToCurrentWorkout(this.state.selectedExerciseCategory);
         await this.setState({
             showReminder: false
         });
@@ -156,6 +160,10 @@ export class _EditLibrary extends Component {
                     {/*    closeModal={() => this.setModalVisibility(false)}*/}
                     {/*/>*/}
                 </View>
+                <AddCategoryModal
+                    showAddCategoryModal={this.props.showAddCategoryModal}
+                    setAddCategoryModalForLibraryVisibility={this.props.setAddCategoryModalForLibraryVisibility}
+                />
             </LinearGradient>
         );
     }
@@ -165,18 +173,22 @@ const mapStateToProps = state => ({
     customWorkout: state.customWorkout,
     customWorkoutCategory: state.customWorkout.customWorkoutCategory,
     customWorkoutSets: state.customWorkout.customWorkoutSets,
-    customWorkoutAddable: state.customWorkout.customWorkoutAddable
+    customWorkoutAddable: state.customWorkout.customWorkoutAddable,
+    showAddCategoryModal: state.editLibrary.showAddCategoryModal
 });
 
 const mapActionToProps = dispatch => ({
-    addExerciseSetToCustomWorkout(data) {
-        dispatch(addExerciseSetToCustomWorkoutAction(data));
+    addExerciseSetToCurrentWorkout(data) {
+        dispatch(addExerciseSetToCurrentWorkoutAction(data));
     },
     updateEmpty(bool) {
         dispatch(updateEmptyAction(bool));
     },
     setEditLibraryExerciseModalVisibility(bool) {
         dispatch(setEditLibraryExerciseModalVisibilityAction(bool))
+    },
+    setAddCategoryModalForLibraryVisibility(bool) {
+        dispatch(setAddCategoryModalForLibraryVisibilityAction(bool))
     }
 });
 
