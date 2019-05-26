@@ -176,6 +176,7 @@ export class _EditLibrary extends Component {
                     setAddCategoryModalForLibraryVisibility={this.props.setAddCategoryModalForLibraryVisibility}
                     handleCloseModal={this.handleCloseAddCategoryModal}
                     handleConfirm={this.handleAddCategoryModalConfirm}
+                    customWorkoutCategory={this.props.customWorkoutCategory}
                 />
             </LinearGradient>
         );

@@ -1,10 +1,14 @@
 import React, {Component} from "react";
 import {View, Text, Modal, Button, TextInput, StyleSheet, Dimensions} from 'react-native';
+import {ReminderModal} from "./ReminderModal";
 
 const {width, height} = Dimensions.get("window");
 
 export class AddCategoryModal extends Component {
-    state = {top: height * 0.3};
+    state = {top: height * 0.3, showReminderModal: false};
+    handleCloseReminder = (bool = false) => {
+        this.setState({showReminderModal: bool})
+    };
 
     render() {
         return (
@@ -40,13 +44,16 @@ export class AddCategoryModal extends Component {
                                     color="#00ffcc"
                                     title="Confirm"
                                     onPress={async () => {
-                                        await this.props.handleConfirm(this.state.categoryText);
-                                        // await this.props.addWeightRepsToExercise({
-                                        //     time: this.props.time,
-                                        //     weight: this.state.categoryText,
-                                        //     reps: this.state.repsText,
-                                        // });
-                                        await this.props.handleCloseModal(false);
+                                        if (this.props.customWorkoutCategory.includes(this.state.categoryText)) {
+                                            this.setState({
+                                                showReminderModal: true,
+                                                reminderTitle: "Duplicated",
+                                                reminderContent: "This category is already existed"
+                                            })
+                                        } else {
+                                            await this.props.handleConfirm(this.state.categoryText);
+                                            await this.props.handleCloseModal(false);
+                                        }
                                     }}
                                 />
                             </View>
@@ -64,6 +71,14 @@ export class AddCategoryModal extends Component {
                     </View>
                 </View>
                 <Button title={"close"} onPress={() => this.props.setAddCategoryModalForLibraryVisibility(false)}/>
+                {this.state.showReminderModal && <ReminderModal
+                    showReminderModal={this.state.showReminderModal}
+                    handleCloseReminder={this.handleCloseReminder}
+                    reminderTitle={this.state.reminderTitle}
+                    reminderContent={this.state.reminderContent}
+                    hideConfirmButton={true}
+                    // handleConfirm={this.handleConfirm}
+                />}
             </Modal>
         )
     }
