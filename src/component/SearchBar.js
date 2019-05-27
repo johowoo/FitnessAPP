@@ -2,8 +2,8 @@ import React, {Component} from "react";
 import {View, Text, StyleSheet, TextInput} from "react-native";
 
 export class SearchBar extends Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
             searchTerm: "",
         };
@@ -44,5 +44,6 @@ const styles = StyleSheet.create({
     text: {
         color: "black",
         fontSize: 24,
+        paddingLeft: 10
     },
 });

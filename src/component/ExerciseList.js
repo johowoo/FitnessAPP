@@ -341,7 +341,7 @@ export class _ExerciseList extends PureComponent {
                             />
                         </TouchableHighlight>
                     ) : (
-                        <View>
+                        <View style={{marginTop:-10}}>
                             <SectionList
                                 sections={this.props.sectionExercises}
                                 renderItem={data => this._renderItem(data)}
@@ -423,9 +423,11 @@ const styles = StyleSheet.create({
         borderWidth: 1.5,
         borderLeftWidth: 0,
         borderRightWidth: 0,
+        borderTopWidth:0,
         borderRadius: 2,
         justifyContent: "center",
         height: 45,
+        marginTop:15
     },
     sectionHeaderText: {
         fontSize: 24,
