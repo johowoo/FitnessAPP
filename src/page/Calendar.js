@@ -96,6 +96,7 @@ export class _Calendar extends Component {
                 />
                 </View>
                 <View style={{marginTop:30}}>
+                    <Text style={styles.analysisTitle}>Analysis</Text>
                 <PeriodAnalysis/>
                 </View>
                 {/*</LinearGradient>*/}
@@ -282,5 +283,18 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         // marginLeft: 10,
         // marginRight: 10
+    },
+    analysisTitle: {
+        color: "#ddd",
+        fontSize: 22,
+        height: 30,
+        // textAlign: "center",
+        margin: 10,
+        marginLeft: 0,
+        // marginTop:5,
+        marginBottom: 0,
+        alignItems: "center",
+        justifyContent: "center",
+        fontFamily: "PattayaRegular"
     },
 });

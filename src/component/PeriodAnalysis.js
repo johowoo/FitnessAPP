@@ -91,13 +91,13 @@ class _PeriodAnalysis extends Component {
                         defaultValue={"Today"}
                         onSelect={this.handleSelect.bind(this)}
                     />
-                    <Text style={styles.analysisTitle}>Analysis</Text>
+
                     <ApslButton
                         style={[styles.confirmButton]}
                         onPress={this.handleConfirmPressed.bind(this)}
                         children={
                             <Text key="confirm" style={{
-                                color: "#c69", fontSize: 16, fontWeight: "bold",
+                                color: "#c69", fontSize: 16,
                             }}>
                                 Confirm
                             </Text>
@@ -131,7 +131,10 @@ const styles = StyleSheet.create({
         borderRadius: 20,
         borderWidth: 1.5,
         borderColor: "#c69",
-        margin: 10
+        margin: 10,
+        shadowColor: "#666",
+        shadowOffset: {height: 5, width: 5},
+        shadowOpacity: 1.0
     },
     analysisTitle: {
         color: "#ddd",
@@ -148,15 +151,19 @@ const styles = StyleSheet.create({
     },
     textLine: {
         flexDirection: "row",
-        height: 30
+        height: 30,
+
     },
     textTerm: {
         fontSize: 16,
         color: "#ddd",
         width: width * 0.4,
-        marginLeft: width * 0.04
+        marginLeft: width * 0.04,
+
     },
     dropdownContainer: {
+        // shadowColor: "transparent",
+        // shadowOpacity: 0,
         height: 110,
         padding: width * 0.03,
         paddingTop: width * 0.02,
@@ -170,6 +177,7 @@ const styles = StyleSheet.create({
         borderWidth: 1.5,
         borderColor: "#c69",
         fontWeight: "bold",
+
 
         // backgroundColor:'#EEE',
         justifyContent: "center",
