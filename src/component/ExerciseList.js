@@ -213,11 +213,13 @@ export class _ExerciseList extends PureComponent {
         return (
             <View style={{flex: 1, backgroundColor: "#eee"}}>
                 <LinearGradient
-                    colors={["#00FFFF", "#00CCCC"]}
-                    start={{x: 0.0, y: 0.5}}
-                    end={{x: 1.0, y: 0.5}}
-                    locations={[0.0, 1.0]}
+                    // colors={["#00FFFF", "#00CCCC"]}
+                    colors={["#1b98d9", "#219dd5"]}
+                    // start={{x: 0.0, y: 0.5}}
+                    // end={{x: 1.0, y: 0.5}}
+                    // locations={[0.0, 1.0]}
                     style={styles.linearGradientContainer}>
+                    {/*<LinearGradient colors={["#1b98d9", "#219dd5"]} style={{flex: 1}}>*/}
                     <TopBar style={{flex: 1, flexDirection: "row"}}>
                         <SearchBar
                             placeholder="search for exercises"
@@ -237,131 +239,133 @@ export class _ExerciseList extends PureComponent {
                         </View>
                     </TopBar>
                 </LinearGradient>
-                <View>
-                    <ApslButton
-                        style={styles.addButton}
-                        onPress={this.handlePressAddExercise}
-                        children={
-                            <Text style={styles.addText} key="addText">
-                                {this.state.addHintText}
-                            </Text>
-                        }
-                    />
-                </View>
-                <Modal
-                    visible={this.state.setsModalVisible}
-                    transparent
-                    onRequestClose={() => this.setState({setsModalVisible: false})}>
-                    <View style={styles.modalOuterContainer}>
-                        <View style={styles.modalInnerContainer}>
-                            <Text style={{color: "#66666f", fontSize: 16, marginLeft: 10}}>
-                                Please select the number of sets:
-                            </Text>
-                            <ModalDropdown
-                                style={styles.dropdownMenu}
-                                textStyle={styles.dropdownMenuText}
-                                dropdownStyle={styles.dropdownList}
-                                dropdownTextStyle={styles.dropdownListText}
-                                dropdownTextHighlightStyle={styles.dropdownSelection}
-                                options={[
-                                    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "15", "20", "25", "30"
-                                ]}
-                                defaultValue="4"
-                                onSelect={(index, value) => {
-                                    this.setState({selectedSets: value});
-                                }}
-                            />
-                            <View
-                                style={{
-                                    flexDirection: "row",
-                                    justifyContent: "space-around",
-                                }}>
-                                <View style={styles.modalButtonContainer}>
-                                    <Button
-                                        style={styles.modalButton}
-                                        color="#00cccc"
-                                        title="Confirm"
-                                        onPress={async () => {
-                                            await this.handlePress.call(this);
-                                        }}
-                                    />
-                                </View>
-                                <View style={styles.modalButtonContainer}>
-                                    <Button
-                                        color="#00cccc"
-                                        style={styles.modalButton}
-                                        title="Cancel"
-                                        onPress={() => {
-                                            this.setState({setsModalVisible: false});
-                                        }}
-                                    />
+                <LinearGradient colors={["#219dd5", "#51c0bb"]} style={{flex: 1}}>
+                    <View>
+                        <ApslButton
+                            style={styles.addButton}
+                            onPress={this.handlePressAddExercise}
+                            children={
+                                <Text style={styles.addText} key="addText">
+                                    {this.state.addHintText}
+                                </Text>
+                            }
+                        />
+                    </View>
+                    <Modal
+                        visible={this.state.setsModalVisible}
+                        transparent
+                        onRequestClose={() => this.setState({setsModalVisible: false})}>
+                        <View style={styles.modalOuterContainer}>
+                            <View style={styles.modalInnerContainer}>
+                                <Text style={{color: "#66666f", fontSize: 16, marginLeft: 10}}>
+                                    Please select the number of sets:
+                                </Text>
+                                <ModalDropdown
+                                    style={styles.dropdownMenu}
+                                    textStyle={styles.dropdownMenuText}
+                                    dropdownStyle={styles.dropdownList}
+                                    dropdownTextStyle={styles.dropdownListText}
+                                    dropdownTextHighlightStyle={styles.dropdownSelection}
+                                    options={[
+                                        "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "15", "20", "25", "30"
+                                    ]}
+                                    defaultValue="4"
+                                    onSelect={(index, value) => {
+                                        this.setState({selectedSets: value});
+                                    }}
+                                />
+                                <View
+                                    style={{
+                                        flexDirection: "row",
+                                        justifyContent: "space-around",
+                                    }}>
+                                    <View style={styles.modalButtonContainer}>
+                                        <Button
+                                            style={styles.modalButton}
+                                            color="#00cccc"
+                                            title="Confirm"
+                                            onPress={async () => {
+                                                await this.handlePress.call(this);
+                                            }}
+                                        />
+                                    </View>
+                                    <View style={styles.modalButtonContainer}>
+                                        <Button
+                                            color="#00cccc"
+                                            style={styles.modalButton}
+                                            title="Cancel"
+                                            onPress={() => {
+                                                this.setState({setsModalVisible: false});
+                                            }}
+                                        />
+                                    </View>
                                 </View>
                             </View>
                         </View>
-                    </View>
-                    {this.state.showReminderModalDuplicated && <ReminderModal
-                        showReminderModal={this.state.showReminderModalDuplicated}
-                        handleCloseReminder={this.handleCloseReminderDuplicated}
-                        reminderTitle={this.state.reminderTitleDuplicated}
-                        reminderContent={this.state.reminderContentDuplicated}
-                        hideConfirmButton={this.state.hideConfirmButtonDuplicated}
-                        handelCancel={this.handelCancelDuplicated}
-                    />}
-                </Modal>
-                <View>
-                    {this.state.isAddingExercise ? (
-                        <AddDropdown
-                            handleConfirm={this.changeDisplayExercises.bind(this)}
-                            styles={dropdownStyles}
-                            options={[
-                                "Chest",
-                                "Shoulder",
-                                "Back",
-                                "Arms",
-                                "Legs",
-                                "Core",
-                                "Cardio",
-                            ]}
-                            placeholder="  Please enter an exercise"
-                        />
-                    ) : null}
-                </View>
-                {this.state.foundExercises.length ? (
-                    <TouchableHighlight onPress={this.handleBlur.bind(this)}>
-                        <FlatList
-                            data={this.state.foundExercises}
-                            renderItem={data => this._renderItem(data)}
-                            keyExtractor={(item, index) => item + index}
-                            getItemLayout={(data, index) => (
-                                {length: ITEM_HEIGHT, offset: ITEM_HEIGHT * index, index}
-                            )}
-                        />
-                    </TouchableHighlight>
-                ) : (
+                        {this.state.showReminderModalDuplicated && <ReminderModal
+                            showReminderModal={this.state.showReminderModalDuplicated}
+                            handleCloseReminder={this.handleCloseReminderDuplicated}
+                            reminderTitle={this.state.reminderTitleDuplicated}
+                            reminderContent={this.state.reminderContentDuplicated}
+                            hideConfirmButton={this.state.hideConfirmButtonDuplicated}
+                            handelCancel={this.handelCancelDuplicated}
+                        />}
+                    </Modal>
                     <View>
-                        <SectionList
-                            sections={this.props.sectionExercises}
-                            renderItem={data => this._renderItem(data)}
-                            renderSectionHeader={data => this._renderSectionHeader(data)}
-                            ListFooterComponent={() => this._renderListFooter()}
-                            // onEndReached={this.loadData}
-                            keyExtractor={(item, index) => item + index}
-                            extraData={this.props.sectionExercises}
-                        />
+                        {this.state.isAddingExercise ? (
+                            <AddDropdown
+                                handleConfirm={this.changeDisplayExercises.bind(this)}
+                                styles={dropdownStyles}
+                                options={[
+                                    "Chest",
+                                    "Shoulder",
+                                    "Back",
+                                    "Arms",
+                                    "Legs",
+                                    "Core",
+                                    "Cardio",
+                                ]}
+                                placeholder="  Please enter an exercise"
+                            />
+                        ) : null}
                     </View>
-                )}
-                <TouchableHighlight style={{flex: 1}} onPress={this.handleBlur.bind(this)}>
-                    <View style={{flex: 1}}>
-                    </View>
-                </TouchableHighlight>
-                {this.state.showReminderModal && <ReminderModal
-                    showReminderModal={this.state.showReminderModal}
-                    handleCloseReminder={this.handleCloseReminder}
-                    reminderTitle={this.state.reminderTitle}
-                    reminderContent={this.state.reminderContent}
-                    hideConfirmButton={this.state.hideConfirmButton}
-                    handleConfirm={this.handleConfirm}
-                />}
+                    {this.state.foundExercises.length ? (
+                        <TouchableHighlight onPress={this.handleBlur.bind(this)}>
+                            <FlatList
+                                data={this.state.foundExercises}
+                                renderItem={data => this._renderItem(data)}
+                                keyExtractor={(item, index) => item + index}
+                                getItemLayout={(data, index) => (
+                                    {length: ITEM_HEIGHT, offset: ITEM_HEIGHT * index, index}
+                                )}
+                            />
+                        </TouchableHighlight>
+                    ) : (
+                        <View>
+                            <SectionList
+                                sections={this.props.sectionExercises}
+                                renderItem={data => this._renderItem(data)}
+                                renderSectionHeader={data => this._renderSectionHeader(data)}
+                                ListFooterComponent={() => this._renderListFooter()}
+                                // onEndReached={this.loadData}
+                                keyExtractor={(item, index) => item + index}
+                                extraData={this.props.sectionExercises}
+                            />
+                        </View>
+                    )}
+                    <TouchableHighlight style={{flex: 1}} onPress={this.handleBlur.bind(this)}>
+                        <View style={{flex: 1}}>
+                        </View>
+                    </TouchableHighlight>
+                    {this.state.showReminderModal && <ReminderModal
+                        showReminderModal={this.state.showReminderModal}
+                        handleCloseReminder={this.handleCloseReminder}
+                        reminderTitle={this.state.reminderTitle}
+                        reminderContent={this.state.reminderContent}
+                        hideConfirmButton={this.state.hideConfirmButton}
+                        handleConfirm={this.handleConfirm}
+                    />}
+                </LinearGradient>
             </View>
         );
     }
@@ -414,13 +418,19 @@ const styles = StyleSheet.create({
         fontSize: 30,
     },
     sectionHeader: {
-        backgroundColor: "#ccc",
+        // backgroundColor: "#c69",
+        borderColor: "#aaa",
+        borderWidth: 1.5,
+        borderLeftWidth: 0,
+        borderRightWidth: 0,
+        borderRadius: 2,
         justifyContent: "center",
         height: 45,
     },
     sectionHeaderText: {
         fontSize: 24,
         marginLeft: 20,
+        color: "#eee"
     },
     listItem: {
         flexDirection: 'row',
@@ -433,6 +443,7 @@ const styles = StyleSheet.create({
     listText: {
         fontSize: 20,
         marginLeft: 24,
+        color:"#444"
     },
     indicatorContainer: {
         alignItems: "center",
