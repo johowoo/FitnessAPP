@@ -419,7 +419,7 @@ const styles = StyleSheet.create({
     },
     sectionHeader: {
         // backgroundColor: "#c69",
-        borderColor: "#aaa",
+        borderColor: "#ccc",
         borderWidth: 1.5,
         borderLeftWidth: 0,
         borderRightWidth: 0,
@@ -430,9 +430,10 @@ const styles = StyleSheet.create({
         marginTop:15
     },
     sectionHeaderText: {
-        fontSize: 24,
+        fontSize: 28,
         marginLeft: 20,
-        color: "#eee"
+        color: "#eee",
+        fontFamily:"PattayaRegular"
     },
     listItem: {
         flexDirection: 'row',
@@ -445,7 +446,8 @@ const styles = StyleSheet.create({
     listText: {
         fontSize: 20,
         marginLeft: 24,
-        color:"#444"
+        color:"#ddd",
+        // fontFamily: "PattayaRegular"
     },
     indicatorContainer: {
         alignItems: "center",
