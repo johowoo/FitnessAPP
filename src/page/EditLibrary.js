@@ -142,7 +142,7 @@ export class _EditLibrary extends Component {
                                 style={styles.container}
                                 renderItem={props => this.renderItem({...props})}
                                 numColumns={2}
-                                keyExtractor={(item, index) => index.toString()}
+                                keyExtractor={(item, index) => item.toString()+index.toString()}
                                 // onEndReached={this.loadData}
                                 // ListFooterComponent={() => <FooterComponent/>}
                                 onEndReachedThreshol={0.2}

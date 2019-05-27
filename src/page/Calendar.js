@@ -85,13 +85,14 @@ export class _Calendar extends Component {
                         onDayPress={day => {
                             const date = day.dateString;
                             if (!this.props.markedDates.hasOwnProperty(date)) {
-                                return;
+                                console.warn(date);
+                            }else{
+                                this.setState({
+                                    pressedDay: date,
+                                    displayExercisesList: this.props.allExercisesList[date],
+                                    isModalListVisible: true,
+                                });
                             }
-                            this.setState({
-                                pressedDay: date,
-                                displayExercisesList: this.props.allExercisesList[date],
-                                isModalListVisible: true,
-                            });
                         }}
                     />
                 </View>
@@ -141,7 +142,6 @@ export class _Calendar extends Component {
                             renderItem={this._renderItem}
                             keyExtractor={(item, index) => item + index}
                         />
-
                         {this.state.showAddWeightModal && (
                             <AddWeightToExercise
                                 showAddWeightModal={this.state.showAddWeightModal}
