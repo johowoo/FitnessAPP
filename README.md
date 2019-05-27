@@ -7,14 +7,11 @@ should never let the state of the redux to be an array!!!
 ### bugs to be fixed
 * sets of cardio 
 * each library can not be empty(add problems);
-* transparency in PhotoModal
 * adjust to different smartphones (iPhone 8 ... Android)
 
 ### new functions
-* update library once adding new exercise to specific category
 * change UI of the ExerciseList
-
-* change ranks in currentWorkout
+* change ranks in currentWorkout  ？？？
 * select month & year in calendar //calendar
 * back to today in calendar   //calendar
 * finish & congrats page
@@ -60,6 +57,8 @@ should never let the state of the redux to be an array!!!
  give options: whether add to the library or currentWorkout) ✔️
 * add new Category in EditLibrary ✔️
 * different UI in EditLibrary and CustomWorkout ✔️
+* update library once adding new exercise to specific category ✔️
+
 ### bugs
 * position of photoModal ✔️
 * blur on editSets (keys must be unique and can not be random)✔️
@@ -74,3 +73,4 @@ should never let the state of the redux to be an array!!!
 * white header when clicking back in stackNavigator ✔️
 * avoid duplicated category ✔️
 * upper and lower case of category ✔️
+* transparency in PhotoModal ✔️
