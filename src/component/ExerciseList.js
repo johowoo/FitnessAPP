@@ -40,7 +40,7 @@ export class _ExerciseList extends PureComponent {
         this.state = {
             isAddingExercise: false,
             foundExercises: [],
-            addHintText: "add more exercises",
+            addHintText: "Add more exercises",
             setsModalVisible: false,
             selectedSets: 4,
             selectedExercise: "",
@@ -87,7 +87,7 @@ export class _ExerciseList extends PureComponent {
                             // this.props.deleteExerciseFromSectionList(item)
                         }
                         }>
-                        <Icon name="delete" size={24} color="rgba(255,140,0,0.3)" key="delete"/>
+                        <Icon name="delete" size={24} color="#c69" key="delete"/>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -165,7 +165,7 @@ export class _ExerciseList extends PureComponent {
         } else {
             this.setState({
                 isAddingExercise: false,
-                addHintText: "add more exercises",
+                addHintText: "Add more exercises",
             });
         }
     };
@@ -414,7 +414,7 @@ const styles = StyleSheet.create({
         fontSize: 30,
     },
     sectionHeader: {
-        backgroundColor: "#00CCCC",
+        backgroundColor: "#ccc",
         justifyContent: "center",
         height: 45,
     },
@@ -447,7 +447,7 @@ const styles = StyleSheet.create({
         marginBottom: 5,
     },
     addText: {
-        color: "#FF8c00",
+        color: "#cc6699",
         fontWeight: "bold",
         fontSize: 20,
         marginTop: 5,
@@ -481,7 +481,7 @@ const styles = StyleSheet.create({
         marginTop: 15,
         marginBottom: 20,
         borderWidth: 1,
-        borderColor: "#FF8c00",
+        borderColor: "#cc6699",
         justifyContent: "center",
     },
     dropdownMenuText: {
@@ -498,7 +498,7 @@ const styles = StyleSheet.create({
         paddingLeft: 10,
     },
     dropdownSelection: {
-        backgroundColor: "#FF8c00",
+        backgroundColor: "#cc6699",
     },
     quick: {
         backgroundColor: "red",

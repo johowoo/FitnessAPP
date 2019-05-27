@@ -11,14 +11,17 @@ should never let the state of the redux to be an array!!!
 
 ### new functions
 * change UI of the ExerciseList
-* change ranks in currentWorkout  ？？？
 * select month & year in calendar //calendar
 * back to today in calendar   //calendar
 * finish & congrats page
-* dropdown -> selection & input 
-* slide effects in swiping pics
-* the main focus of exercise (chest/back ....)
 * allow to add sets records for days before 
+* slide effects in swiping pics
+* change ranks in currentWorkout  ？？？
+
+
+* dropdown -> selection & input 
+* the main focus of exercise (chest/back ....)??
+* shadow of button in CurrentWorkout
 
 ### etc
 * consider the construct of the TabPage (whether display customWorkout firstly or not)
