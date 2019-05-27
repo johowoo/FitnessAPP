@@ -131,6 +131,11 @@ export class _EditLibrary extends Component {
             <LinearGradient colors={["#219dd5", "#51c0bb"]} style={{flex: 1}}>
                 <ScrollView>
                     <View>
+                        <Text style={styles.instructionText}>click to edit exercises for specific category</Text>
+                        <Text style={styles.instructionText}>press "+" to add new category</Text>
+                        <Text style={styles.instructionText}>Hold to delete</Text>
+                    </View>
+                    <View>
                         {this.props.customWorkoutCategory.length > 0 ?
                             <FlatList
                                 data={this.props.customWorkoutCategory}
@@ -280,5 +285,11 @@ const styles = StyleSheet.create({
     alignVerAndHorCenter: {
         alignItems: "center",
         justifyContent: 'center'
+    },
+    instructionText: {
+        color: "#DDD",
+        fontFamily: "PattayaRegular",
+        fontSize: 20,
+        marginLeft: 30,
     }
 });
