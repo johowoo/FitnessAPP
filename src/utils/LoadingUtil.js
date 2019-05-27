@@ -1,4 +1,4 @@
-let LoadingUtil = {
+const LoadingUtil = {
     showLoading(timeOut = 10000){
         global.mLoadingComponentRef && global.mLoadingComponentRef.showLoading();
         this.timerLoading = setTimeout(() => {
