@@ -71,7 +71,7 @@ class _CurrentWorkout extends Component {
 
     render() {
         return (
-            <LinearGradient colors={["#1b98d9", "#57c5b8"]} style={{flex: 1}}>
+            <LinearGradient colors={["#1b98d9", "#51c0bb"]} style={{flex: 1}}>
                 <TopBar style={styles.topBar}>
                     <View style={{marginRight: 55}}>
                         {this.props.fontLoaded ? (
