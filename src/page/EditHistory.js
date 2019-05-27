@@ -2,8 +2,8 @@ import React, {Component} from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 import {connect} from 'react-redux';
 import {LinearGradient} from "expo";
+import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import {WorkoutList} from "../component/WorkoutList";
-import {ExerciseModal} from "./ExerciseModal";
 
 class _EditHistory extends Component {
     render() {

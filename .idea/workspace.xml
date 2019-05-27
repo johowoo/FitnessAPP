@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd580928-bb60-480d-8b73-7c94df331487" name="Default Changelist" comment="p">
+      <change beforePath="$PROJECT_DIR$/src/navigator/CalendarEditHistoryStackNavigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigator/CalendarEditHistoryStackNavigator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/navigator/InnerCurrentWorkoutStackNavigator.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/navigator/InnerCurrentWorkoutStackNavigator.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/page/EditHistory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/EditHistory.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -15,11 +17,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/EditHistory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+            <state relative-caret-position="-1262">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -28,12 +30,46 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/component/EditExercisesForLibrary.js">
+        <entry file="file://$PROJECT_DIR$/src/page/CurrentWorkout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2491">
-              <caret line="65" column="29" lean-forward="true" selection-start-line="29" selection-start-column="10" selection-end-line="65" selection-end-column="29" />
+            <state relative-caret-position="24">
+              <caret line="74" column="25" lean-forward="true" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#177#223#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/component/EditExercisesForLibrary.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="41">
+              <caret line="1" column="52" lean-forward="true" selection-start-line="1" selection-start-column="52" selection-end-line="1" selection-end-column="52" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/navigator/CurrentWorkoutStackNavigator.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="188">
+              <caret line="6" selection-start-line="6" selection-end-line="7" />
+              <folding>
+                <element signature="e#429#477#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/navigator/CalendarEditHistoryStackNavigator.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="169">
+              <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -52,18 +88,18 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/store/reducers/savedExerciseForEachDay.js">
+        <entry file="file://$PROJECT_DIR$/src/navigator/InnerCurrentWorkoutStackNavigator.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-256" />
+            <state relative-caret-position="732">
+              <caret line="47" column="17" lean-forward="true" selection-start-line="34" selection-start-column="10" selection-end-line="47" selection-end-column="17" />
+            </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/navigator/InnerCurrentWorkoutStackNavigator.js">
+        <entry file="file://$PROJECT_DIR$/src/store/reducers/savedExerciseForEachDay.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="32" column="60" lean-forward="true" selection-start-line="32" selection-start-column="53" selection-end-line="32" selection-end-column="60" />
-            </state>
+            <state relative-caret-position="-256" />
           </provider>
         </entry>
       </file>
@@ -78,7 +114,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>confirm</find>
       <find>includes</find>
       <find>renderItem</find>
       <find>props</find>
@@ -108,6 +143,7 @@
       <find>allex</find>
       <find>ondaypress</find>
       <find>Lineargradient colors=</find>
+      <find>Mate</find>
     </findStrings>
     <replaceStrings>
       <replace>expo</replace>
@@ -125,8 +161,8 @@
       <dir>$PROJECT_DIR$/src/page</dir>
       <dir>$PROJECT_DIR$/src/store/reducers</dir>
       <dir>$PROJECT_DIR$</dir>
-      <dir>$PROJECT_DIR$/src</dir>
       <dir>$PROJECT_DIR$/src/navigator</dir>
+      <dir>$PROJECT_DIR$/src</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -160,11 +196,9 @@
         <option value="$PROJECT_DIR$/src/component/AddWeightToExercise.js" />
         <option value="$PROJECT_DIR$/src/component/EditExercisesForLibrary.js" />
         <option value="$PROJECT_DIR$/src/component/AddCategory.js" />
-        <option value="$PROJECT_DIR$/src/page/CurrentWorkout.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/currentWorkout.js" />
         <option value="$PROJECT_DIR$/src/component/WorkoutList.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/editLibrary.js" />
-        <option value="$PROJECT_DIR$/src/navigator/InnerCurrentWorkoutStackNavigator.js" />
         <option value="$PROJECT_DIR$/src/component/PhotoModal.js" />
         <option value="$PROJECT_DIR$/src/utils/createIcons.js" />
         <option value="$PROJECT_DIR$/src/component/AddCategoryModal.js" />
@@ -183,9 +217,11 @@
         <option value="$PROJECT_DIR$/src/page/Calendar.js" />
         <option value="$PROJECT_DIR$/src/navigator/EditHistoryNavigator.js" />
         <option value="$PROJECT_DIR$/src/navigator/CalendarEditHistoryNavigator.js" />
-        <option value="$PROJECT_DIR$/src/navigator/CalendarEditHistoryStackNavigator.js" />
         <option value="$PROJECT_DIR$/src/navigator/CalendarStackNavigator.js" />
+        <option value="$PROJECT_DIR$/src/page/CurrentWorkout.js" />
+        <option value="$PROJECT_DIR$/src/navigator/InnerCurrentWorkoutStackNavigator.js" />
         <option value="$PROJECT_DIR$/src/page/EditHistory.js" />
+        <option value="$PROJECT_DIR$/src/navigator/CalendarEditHistoryStackNavigator.js" />
       </list>
     </option>
   </component>
@@ -402,12 +438,12 @@
       <workItem from="1558914985974" duration="1741000" />
       <workItem from="1558939208620" duration="2987000" />
       <workItem from="1558943130577" duration="7726000" />
-      <workItem from="1558995032110" duration="4379000" />
+      <workItem from="1558995032110" duration="5851000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="361067000" />
+    <option name="totallyTimeSpent" value="362539000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="947" extended-state="0" />
@@ -593,17 +629,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/CurrentWorkout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="30" column="10" selection-start-line="30" selection-start-column="10" selection-end-line="30" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#177#223#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/initialExercises.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
@@ -783,27 +808,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/navigator/CurrentWorkoutStackNavigator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="118">
-          <caret line="17" column="79" lean-forward="true" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="79" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-            <element signature="e#429#477#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/navigator/CalendarEditHistoryStackNavigator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="9" column="46" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="46" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/navigator/CalendarStackNavigator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="265">
@@ -851,17 +855,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/navigator/InnerCurrentWorkoutStackNavigator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="32" column="60" lean-forward="true" selection-start-line="32" selection-start-column="53" selection-end-line="32" selection-end-column="60" />
+        <state relative-caret-position="732">
+          <caret line="47" column="17" lean-forward="true" selection-start-line="34" selection-start-column="10" selection-end-line="47" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/EditHistory.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1262">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/CurrentWorkout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="24">
+          <caret line="74" column="25" lean-forward="true" selection-start-line="74" selection-start-column="25" selection-end-line="74" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#177#223#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/EditExercisesForLibrary.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2491">
-          <caret line="65" column="29" lean-forward="true" selection-start-line="29" selection-start-column="10" selection-end-line="65" selection-end-column="29" />
+        <state relative-caret-position="41">
+          <caret line="1" column="52" lean-forward="true" selection-start-line="1" selection-start-column="52" selection-end-line="1" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/navigator/CurrentWorkoutStackNavigator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="6" selection-start-line="6" selection-end-line="7" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#429#477#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -876,12 +908,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/EditHistory.js">
+    <entry file="file://$PROJECT_DIR$/src/navigator/CalendarEditHistoryStackNavigator.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="10" column="45" selection-start-line="10" selection-start-column="45" selection-end-line="10" selection-end-column="45" />
+        <state relative-caret-position="169">
+          <caret line="30" column="20" selection-start-line="30" selection-start-column="20" selection-end-line="30" selection-end-column="20" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

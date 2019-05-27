@@ -25,9 +25,9 @@ export const InnerCurrentWorkoutStackNavigator = createStackNavigator({
             }}>
                 <Text style={{color: "#c69", fontSize: 20}}>
                     &nbsp; &nbsp;
-                    <IconFontAwesome name="chevron-left" size={20} color="#c69"
-                                     key="delete"/>
-                    &nbsp;&nbsp;Back</Text>
+                    <IconFontAwesome name="chevron-left" size={20} color="#c69" key="delete"/>
+                    &nbsp;&nbsp;Back
+                </Text>
             </TouchableOpacity>,
             headerBackground: (
                 <LinearGradient colors={["#1b98d9", "#219dd5"]} style={{flex: 1}}/>
