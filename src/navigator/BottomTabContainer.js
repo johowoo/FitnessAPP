@@ -6,7 +6,7 @@ import {Calendar} from "../page/Calendar";
 import {Statistics} from "../page/Statistics";
 import {ProgressStackNavigator} from "./ProgressNavigator";
 import TabBarComponent from "../component/TabBarComponent";
-
+import {CalendarStackNavigator} from "./CalendarStackNavigator";
 
 const BottomTabNavigator
     = createBottomTabNavigator(
@@ -21,7 +21,9 @@ const BottomTabNavigator
         },
 
         Calendar: {
-            screen: props => <Calendar fontLoaded={fontLoaded} {...props} />,
+            // screen: props => <Calendar fontLoaded={fontLoaded} {...props} />,
+            screen: CalendarStackNavigator,
+            header: null,
             navigationOptions: () => ({
                 tabBarIcon: props => <TabBarIcon name="ios-calendar" {...props} />,
                 tabBarLabel: "calendar",

@@ -23,6 +23,8 @@ import {
 } from "../store/actions";
 import {AddWeightToExercise} from "../component/AddWeightToExercise";
 import {PeriodAnalysis} from "../component/PeriodAnalysis";
+import {WorkoutList} from "../component/WorkoutList";
+import {ExerciseModal} from "./ExerciseModal";
 
 const {width, height} = Dimensions.get("window");
 
@@ -39,7 +41,7 @@ export class _Calendar extends Component {
 
     render() {
         return (
-            <View>
+            <LinearGradient colors={["#1b98d9", "#51c0bb"]} style={{flex: 1}}>
                 <TopBar style={styles.topBar}>
                     {this.props.fontLoaded ? (
                         <Text style={styles.textBar}>Calendar</Text>
@@ -85,8 +87,11 @@ export class _Calendar extends Component {
                         onDayPress={day => {
                             const date = day.dateString;
                             if (!this.props.markedDates.hasOwnProperty(date)) {
+                                this.props.navigation.navigate("EditHistory", {
+                                    date: date
+                                });
                                 console.warn(date);
-                            }else{
+                            } else {
                                 this.setState({
                                     pressedDay: date,
                                     displayExercisesList: this.props.allExercisesList[date],
@@ -100,7 +105,7 @@ export class _Calendar extends Component {
                     <Text style={styles.analysisTitle}>Analysis</Text>
                     <PeriodAnalysis/>
                 </View>
-                {/*</LinearGradient>*/}
+
                 <Modal
                     visible={this.state.isModalListVisible}
                     style={{flex: 1}}
@@ -152,7 +157,7 @@ export class _Calendar extends Component {
                         )}
                     </LinearGradient>
                 </Modal>
-            </View>
+            </LinearGradient>
         );
     }
 
@@ -200,6 +205,8 @@ const mapStateToProps = state => ({
     allExercisesList: state.savedExerciseForEachDay.allExercisesList,
     exercisesListForPressedDay:
     state.savedExerciseForEachDay.exercisesListForPressedDay,
+    sectionExercises: state.exercises.sectionExercises,
+    extraSectionExercises: state.exercises.extraSectionExercises,
 });
 
 const mapActionsToProps = dispatch => ({
