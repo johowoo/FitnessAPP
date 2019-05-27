@@ -17,6 +17,7 @@ import LoadingUtil from "../utils/LoadingUtil";
 import IconFontAwesome from "react-native-vector-icons/FontAwesome";
 import ApslButton from "apsl-react-native-button";
 import Icon from "react-native-vector-icons/MaterialIcons";
+
 import {IconFont} from '@expo/vector-icons';
 // import {ExerciseModal} from "./ExerciseModal";
 import {initialExerciseCategory} from "../initialExerciseSets";
@@ -49,14 +50,10 @@ export class _EditLibrary extends Component {
     //delete pic from progress
     handleConfirm = async () => {
         await LoadingUtil.showLoading();
-        await this.props.updateEmpty(false);
-        //add exercises to currentWorkout
-        await this.props.addExerciseSetToCurrentWorkout(this.state.selectedExerciseCategory);
+        await this.props.deleteCategoryFromEditLibrary(this.state.selectedExerciseCategory);
         await this.setState({
             showReminder: false
         });
-        // console.warn("selectedCategory", this.state.selectedExerciseCategory);
-        await this.props.navigation.navigate("CurrentWorkout");
         await LoadingUtil.dismissLoading();
     };
     handleCloseReminder = (bool = false) => {
@@ -66,7 +63,7 @@ export class _EditLibrary extends Component {
     };
     renderItem = ({item, index}) => {
         return (
-            <View key={item+index}>
+            <View key={item + index}>
                 {/*<LinearGradient colors={["#4a168c", "#880e4f"]} style={styles.container}>*/}
                 <TouchableOpacity
                     // disabled={!this.props.customWorkoutAddable[item]}
@@ -80,7 +77,7 @@ export class _EditLibrary extends Component {
                     }}
                     onLongPress={async () => {
                         await this.setState({
-                            showDeleteButton: true
+                            showDeleteButton: !this.state.showDeleteButton
                         })
                     }}
                     onPress={async () => {
@@ -92,7 +89,6 @@ export class _EditLibrary extends Component {
                             setEditLibraryExerciseModalVisibility: this.props.setEditLibraryExerciseModalVisibility
                         });
                     }}>
-
                     {/*<Image style={styles.image} source={{uri: props.item.photoURI}}/>*/}
                     <View style={styles.alignVerAndHorCenter}>
                         {createIcons(item, index, "#c69")}
@@ -103,11 +99,14 @@ export class _EditLibrary extends Component {
                     {
                         this.state.showDeleteButton && <ApslButton
                             onPress={async () => {
-                                console.warn("delete");
                                 await this.setState({
                                     selectedExerciseCategory: item,
                                 });
-                                await this.props.deleteCategoryFromEditLibrary(this.state.selectedExerciseCategory);
+                                await this.setState({
+                                    showReminder: true,
+                                    reminderTitle: "Delete",
+                                    reminderContent: "Do you want to delete this category from library?"
+                                });
                             }}
                             textStyle={{fontSize: 34, color: "#c69"}}
                             style={{position: "absolute", right: 0, top: -6, borderWidth: 0, borderRadius: 16}}
@@ -173,7 +172,7 @@ export class _EditLibrary extends Component {
                         reminderContent={this.state.reminderContent}
                         handleCloseReminder={this.handleCloseReminder}
                         handleConfirm={this.handleConfirm}
-                        hideConfirmButton={this.state.hideConfirmButton}
+                        // hideConfirmButton={this.state.hideConfirmButton}
                     />
                     }
                 </ScrollView>
