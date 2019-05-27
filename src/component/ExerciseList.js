@@ -234,7 +234,7 @@ export class _ExerciseList extends PureComponent {
                                 onPress={this.closeModal}
                                 textStyle={styles.close}
                                 style={styles.closeButton}
-                                children={<Icon name="cancel" size={34} key="cancel"/>}
+                                children={<Icon name="cancel" size={34} key="cancel" color={"#c69"}/>}
                             />
                         </View>
                     </TopBar>
