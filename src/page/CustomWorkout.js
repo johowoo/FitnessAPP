@@ -109,7 +109,7 @@ export class _CustomWorkout extends Component {
         return (
             <LinearGradient colors={["#219dd5", "#51c0bb"]} style={{flex: 1}}>
                 <ScrollView>
-                    <View>
+                    <View style={{marginTop:20}}>
                         {this.props.customWorkoutCategory.length > 0 ?
                             <FlatList
                                 data={this.props.customWorkoutCategory}

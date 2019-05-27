@@ -130,7 +130,7 @@ export class _EditLibrary extends Component {
         return (
             <LinearGradient colors={["#219dd5", "#51c0bb"]} style={{flex: 1}}>
                 <ScrollView>
-                    <View>
+                    <View style={styles.instructionTextContainer}>
                         <Text style={styles.instructionText}>click to edit exercises for specific category</Text>
                         <Text style={styles.instructionText}>press "+" to add new category</Text>
                         <Text style={styles.instructionText}>Hold to delete</Text>
@@ -291,5 +291,9 @@ const styles = StyleSheet.create({
         fontFamily: "PattayaRegular",
         fontSize: 20,
         marginLeft: 30,
+    },
+    instructionTextContainer: {
+        marginTop: 20,
+        marginBottom: 10
     }
 });
