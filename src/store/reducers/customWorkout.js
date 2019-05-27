@@ -15,6 +15,16 @@ for (let key in initialExerciseSets) {
 // console.warn("initialExerciseCategory",initialExerciseCategory);
 export const customWorkout = (state = defaultState, action) => {
     switch (action.type) {
+        case types.ADD_EXERCISE_TO_SECTIONLIST:
+            //update library once adding new exercise to specific category
+            const customWorkoutSetsCopy = JSON.parse(JSON.stringify(state.customWorkoutSets));
+            customWorkoutSetsCopy[action.payload.category].push({
+                exercise: action.payload.item,
+                sets: 4,
+                time: new Date().getTime(),
+                weightRepsDataArr: []
+            });
+            return {...state, customWorkoutSets: customWorkoutSetsCopy};
         case types.ADD_EXERCISE_SET_TO_CURRENT_WORKOUT:
             //change addable state
             const addableCopy = JSON.parse(JSON.stringify(state.customWorkoutAddable));

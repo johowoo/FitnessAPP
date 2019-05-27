@@ -11,16 +11,9 @@ should never let the state of the redux to be an array!!!
 * adjust to different smartphones (iPhone 8 ... Android)
 
 ### new functions
-* avoid duplicated category
 * update library once adding new exercise to specific category
-* deletable category in EditLibrary and CustomWorkout
 * change UI of the ExerciseList
-* editable library(add exercise to each sets from common ExerciseList
- give options: whether add to the library or currentWorkout)
-* add new Category in EditLibrary
-* different UI in EditLibrary and CustomWorkout ???
 
-* add button in custom workout
 * change ranks in currentWorkout
 * select month & year in calendar //calendar
 * back to today in calendar   //calendar
@@ -62,8 +55,11 @@ should never let the state of the redux to be an array!!!
 * refresh addable icons after adding to currentWorkout/ clicking "finish" ✔️
 * touch to add reps/weights in EditLibraryForSets ✔️
 (give options: whether add to  the library or currentWorkout)  
-
-
+* deletable category in EditLibrary and CustomWorkout ✔️
+* editable library(add exercise to each sets from common ExerciseList
+ give options: whether add to the library or currentWorkout) ✔️
+* add new Category in EditLibrary ✔️
+* different UI in EditLibrary and CustomWorkout ✔️
 ### bugs
 * position of photoModal ✔️
 * blur on editSets (keys must be unique and can not be random)✔️
@@ -76,3 +72,5 @@ should never let the state of the redux to be an array!!!
 * white screen in calendar✔️
 * avoid duplicated exercise when adding exercise sets from CustomWorkout ✔️
 * white header when clicking back in stackNavigator ✔️
+* avoid duplicated category ✔️
+* upper and lower case of category ✔️
