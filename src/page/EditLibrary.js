@@ -34,7 +34,9 @@ export class _EditLibrary extends Component {
             reminderContent: "",
             showExerciseModal: false,
             showReminder: false,
-            toBeEditedExerciseSets: {}
+            toBeEditedExerciseSets: {},
+            selectTobeDeleted: [],
+            showDeleteButtons: false
         };
     }
 
@@ -75,6 +77,12 @@ export class _EditLibrary extends Component {
                         borderWidth: 1,
                         marginTop: 10
                     }}
+                    onLongPress={async () => {
+                        console.warn("abc");
+                        await this.setState({
+                            showDeleteButton: true
+                        })
+                    }}
                     onPress={async () => {
                         await this.setState({
                             selectedExerciseCategory: item,
@@ -83,26 +91,23 @@ export class _EditLibrary extends Component {
                             selectedExerciseCategory: item,
                             setEditLibraryExerciseModalVisibility: this.props.setEditLibraryExerciseModalVisibility
                         });
-                        // console.warn("selectedSets", this.props.customWorkoutSets[this.state.selectedExerciseCategory]);
-                        // await this.setState({
-                        //     toBeEditedExerciseSets: this.props.customWorkoutSets[this.state.selectedExerciseCategory]
-                        // });
-                        // await this.setState({showExerciseModal: true});
                     }}>
+
                     {/*<Image style={styles.image} source={{uri: props.item.photoURI}}/>*/}
                     <View style={styles.alignVerAndHorCenter}>
-                        {createIcons(item, index,"#c69")}
+                        {createIcons(item, index, "#c69")}
                     </View>
                     <View style={styles.alignVerAndHorCenter}>
                         <Text style={{color: "#c69", fontSize: 30, fontFamily: "PattayaRegular"}}>{item}</Text>
                     </View>
-                    {this.state.showDeleteButton && this.state.selectTobeDeleted.includes(props.item.date) &&
-                    <ApslButton
-                        // onPress={this.closeModal}
-                        textStyle={{fontSize: 34, color: "#c69"}}
-                        style={{position: "absolute", right: 0, top: -6, borderWidth: 0, borderRadius: 16}}
-                        children={<Icon name="check-circle" size={34} color={"#c69"} key="cancel"/>}
-                    />}
+                    {
+                        this.state.showDeleteButton && <ApslButton
+                            onPress={this.closeModal}
+                            textStyle={{fontSize: 34, color: "#c69"}}
+                            style={{position: "absolute", right: 0, top: -6, borderWidth: 0, borderRadius: 16}}
+                            children={<Icon name="cancel" size={34} color={"#FF6600"} key="cancel"/>}
+                        />
+                    }
                 </TouchableOpacity>
                 {/*</LinearGradient>*/}
             </View>
@@ -133,7 +138,7 @@ export class _EditLibrary extends Component {
                                 onEndReachedThreshol={0.2}
                                 // onRefresh={this.onRefresh}
                                 // refreshing={this.state.refreshing}
-                                // extraData={}
+                                extraData={this.state.showDeleteButton}
                             /> : (
                                 <View style={{
                                     flex: 1,
