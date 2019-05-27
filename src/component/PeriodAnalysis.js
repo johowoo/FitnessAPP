@@ -178,7 +178,6 @@ const styles = StyleSheet.create({
         borderColor: "#c69",
         fontWeight: "bold",
 
-
         // backgroundColor:'#EEE',
         justifyContent: "center",
     },
