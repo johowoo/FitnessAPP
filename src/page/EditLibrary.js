@@ -70,7 +70,9 @@ export class _EditLibrary extends Component {
                     style={{
                         ...styles.item,
                         // backgroundColor: "rgba(102,51,204,0.3)",
-                        backgroundColor: "#cc6699",
+                        backgroundColor: "transparent",
+                        borderColor: "#c69",
+                        borderWidth: 1,
                         marginTop: 10
                     }}
                     onPress={async () => {
@@ -89,10 +91,10 @@ export class _EditLibrary extends Component {
                     }}>
                     {/*<Image style={styles.image} source={{uri: props.item.photoURI}}/>*/}
                     <View style={styles.alignVerAndHorCenter}>
-                        {createIcons(item, index)}
+                        {createIcons(item, index,"#c69")}
                     </View>
                     <View style={styles.alignVerAndHorCenter}>
-                        <Text style={{color: "#eee", fontSize: 30, fontFamily: "PattayaRegular"}}>{item}</Text>
+                        <Text style={{color: "#c69", fontSize: 30, fontFamily: "PattayaRegular"}}>{item}</Text>
                     </View>
                     {this.state.showDeleteButton && this.state.selectTobeDeleted.includes(props.item.date) &&
                     <ApslButton
