@@ -7,7 +7,8 @@ import {
     updateEmptyAction,
     setEditLibraryExerciseModalVisibilityAction,
     setAddCategoryModalForLibraryVisibilityAction,
-    addCategoryToEditLibraryAction
+    addCategoryToEditLibraryAction,
+    deleteCategoryFromEditLibraryAction
 } from "../store/actions";
 import {LinearGradient} from "expo";
 import {connect} from "react-redux";
@@ -65,7 +66,7 @@ export class _EditLibrary extends Component {
     };
     renderItem = ({item, index}) => {
         return (
-            <View>
+            <View key={item+index}>
                 {/*<LinearGradient colors={["#4a168c", "#880e4f"]} style={styles.container}>*/}
                 <TouchableOpacity
                     // disabled={!this.props.customWorkoutAddable[item]}
@@ -78,7 +79,6 @@ export class _EditLibrary extends Component {
                         marginTop: 10
                     }}
                     onLongPress={async () => {
-                        console.warn("abc");
                         await this.setState({
                             showDeleteButton: true
                         })
@@ -102,7 +102,13 @@ export class _EditLibrary extends Component {
                     </View>
                     {
                         this.state.showDeleteButton && <ApslButton
-                            onPress={this.closeModal}
+                            onPress={async () => {
+                                console.warn("delete");
+                                await this.setState({
+                                    selectedExerciseCategory: item,
+                                });
+                                await this.props.deleteCategoryFromEditLibrary(this.state.selectedExerciseCategory);
+                            }}
                             textStyle={{fontSize: 34, color: "#c69"}}
                             style={{position: "absolute", right: 0, top: -6, borderWidth: 0, borderRadius: 16}}
                             children={<Icon name="cancel" size={34} color={"#FF6600"} key="cancel"/>}
@@ -213,6 +219,9 @@ const mapActionToProps = dispatch => ({
     },
     addCategoryToEditLibrary(bool) {
         dispatch(addCategoryToEditLibraryAction(bool))
+    },
+    deleteCategoryFromEditLibrary(data) {
+        dispatch(deleteCategoryFromEditLibraryAction(data))
     },
 });
 

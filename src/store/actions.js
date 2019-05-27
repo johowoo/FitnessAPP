@@ -72,6 +72,8 @@ export const setAddCategoryModalForLibraryVisibilityAction = data =>
     createAction(types.SET_ADD_CATEGORY_MODAL_FOR_LIBRARY_VISIBILITY)(data);
 export const addCategoryToEditLibraryAction = data =>
     createAction(types.ADD_CATEGORY_TO_EDIT_LIBRARY)(data);
+export const deleteCategoryFromEditLibraryAction = data =>
+    createAction(types.DELETE_CATEGORY_FROM_EDIT_LIBRARY)(data);
 
 
 export const setEditLibraryExerciseModalVisibilityAction = data =>

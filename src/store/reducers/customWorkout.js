@@ -104,15 +104,32 @@ export const customWorkout = (state = defaultState, action) => {
             };
 
         case types.ADD_CATEGORY_TO_EDIT_LIBRARY:
-            // customWorkoutSets: initialExerciseSets,
-            //     customWorkoutCategory: initialExerciseCategory,
-            // customWorkoutAddable: {},
             return {
                 ...state,
                 customWorkoutCategory: [...state.customWorkoutCategory, action.payload],
                 customWorkoutAddable: {...state.customWorkoutAddable, [action.payload]: true},
                 customWorkoutSets: {...state.customWorkoutSets, [action.payload]: []}
             };
+        case types.DELETE_CATEGORY_FROM_EDIT_LIBRARY:
+            console.warn("payload", action.payload);
+            const stateCopy = JSON.parse(JSON.stringify(state));
+            const emptyState = {customWorkoutCategory: [], customWorkoutAddable: {}, customWorkoutSets: {}};
+            state.customWorkoutCategory.forEach(item => {
+                if (item !== action.payload) {
+                    emptyState.customWorkoutCategory.push(item);
+                }
+            });
+            for (let i in state.customWorkoutAddable) {
+                if (state.customWorkoutAddable.hasOwnProperty(i) && i !== action.payload) {
+                    emptyState.customWorkoutAddable[i] = state.customWorkoutAddable[i];
+                }
+            }
+            for (let i in state.customWorkoutSets) {
+                if (state.customWorkoutSets.hasOwnProperty(i) && i !== action.payload) {
+                    emptyState.customWorkoutSets[i] = state.customWorkoutSets[i];
+                }
+            }
+            return emptyState;
         default:
             return state;
     }
