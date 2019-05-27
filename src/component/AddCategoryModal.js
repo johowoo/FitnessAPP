@@ -44,7 +44,11 @@ export class AddCategoryModal extends Component {
                                     color="#00ffcc"
                                     title="Confirm"
                                     onPress={async () => {
-                                        if (this.props.customWorkoutCategory.includes(this.state.categoryText)) {
+                                        const customWorkoutCategory = [];
+                                        this.props.customWorkoutCategory.forEach(item => {
+                                            customWorkoutCategory.push(item.toLowerCase());
+                                        });
+                                        if (customWorkoutCategory.includes(this.state.categoryText.toLowerCase())) {
                                             this.setState({
                                                 showReminderModal: true,
                                                 reminderTitle: "Duplicated",
