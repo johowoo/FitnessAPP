@@ -103,7 +103,7 @@ export class _Health extends Component {
                         <Text style={styles.textBar}>Statistics</Text>
                     ) : null}
                 </TopBar>
-                <PeriodAnalysis/>
+                {/*<PeriodAnalysis/>*/}
                 <ScrollView ref={ref => (this.scrollView = ref)}>
                     <View style={{marginTop: 20}}>
                         <View

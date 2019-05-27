@@ -46,11 +46,10 @@ export class _Calendar extends Component {
                     ) : null}
                 </TopBar>
                 {/*<LinearGradient colors={["#1b98d9", "#57c5b8"]} style={{flex: 1}}>*/}
-                <View style={{marginTop:30}}>
-                <PeriodAnalysis/>
-                </View>
+                {/*<View style={{marginTop:30}}>*/}
+                {/*</View>*/}
 
-                <View style={{marginTop:50}}>
+                <View style={{marginTop:10}}>
                 <CalendarComp
                     theme={{
                         // backgroundColor: '#c69',
@@ -96,6 +95,9 @@ export class _Calendar extends Component {
                     }}
                 />
                 </View>
+                <View style={{marginTop:30}}>
+                <PeriodAnalysis/>
+                </View>
                 {/*</LinearGradient>*/}
                 <Modal
                     visible={this.state.isModalListVisible}
@@ -138,6 +140,7 @@ export class _Calendar extends Component {
                             renderItem={this._renderItem}
                             keyExtractor={(item, index) => item + index}
                         />
+
                         {this.state.showAddWeightModal && (
                             <AddWeightToExercise
                                 showAddWeightModal={this.state.showAddWeightModal}

@@ -96,7 +96,9 @@ class _PeriodAnalysis extends Component {
                         style={[styles.confirmButton]}
                         onPress={this.handleConfirmPressed.bind(this)}
                         children={
-                            <Text key="confirm" style={{color: "#FF8c00", fontSize: 16}}>
+                            <Text key="confirm" style={{
+                                color: "#c69", fontSize: 16, fontWeight: "bold",
+                            }}>
                                 Confirm
                             </Text>
                         }
@@ -127,8 +129,8 @@ export const PeriodAnalysis = connect(mapStateToProps, null)(_PeriodAnalysis);
 const styles = StyleSheet.create({
     wholeContainer: {
         borderRadius: 20,
-        borderWidth: 1,
-        borderColor: "#ccc",
+        borderWidth: 1.5,
+        borderColor: "#c69",
         margin: 10
     },
     analysisTitle: {
@@ -141,7 +143,8 @@ const styles = StyleSheet.create({
         // marginTop:5,
         marginBottom: 0,
         alignItems: "center",
-        justifyContent: "center"
+        justifyContent: "center",
+        fontFamily: "PattayaRegular"
     },
     textLine: {
         flexDirection: "row",
@@ -164,15 +167,17 @@ const styles = StyleSheet.create({
         height: 40,
         borderRadius: 6,
         marginRight: width * 0.02,
-        borderWidth: 1,
-        borderColor: "#FF8c00",
+        borderWidth: 1.5,
+        borderColor: "#c69",
+        fontWeight: "bold",
+
         // backgroundColor:'#EEE',
         justifyContent: "center",
     },
     dropdownMenuText: {
         marginLeft: 10,
         fontSize: 18,
-        color: "#FF8c00",
+        color: "#c69",
     },
     dropdownList: {
         width: width * 0.28,
@@ -181,7 +186,7 @@ const styles = StyleSheet.create({
     dropdownListText: {
         fontSize: 18,
         marginLeft: 10,
-        color: "#FF8c00",
+        color: "#c69",
     },
     dropdownSelection: {
         color: "#00cccc",
@@ -191,7 +196,9 @@ const styles = StyleSheet.create({
         marginLeft: 36,
         height: 40,
         width: width * 0.25,
-        borderColor: "#FF8c00",
+        borderColor: "#c69",
+        borderWidth: 1.5,
+        // fontWeight: "bold",
     },
 });
 
