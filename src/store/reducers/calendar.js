@@ -1,4 +1,5 @@
 import * as types from "../actionTypes";
+import {formatYYYYMMDDFromDate} from "../../utils/formatMonthandDay";
 
 const defaultState = {
     markedDates: {
@@ -31,7 +32,7 @@ export const calendar = (state = defaultState, action) => {
                     },
                 },
             };
-            case types.ADD_HISTORY_MARKED_DATE:
+        case types.ADD_HISTORY_MARKED_DATE:
             return {
                 ...state,
                 markedDates: {
@@ -39,7 +40,7 @@ export const calendar = (state = defaultState, action) => {
                     [action.payload]: {
                         selected: true,
                         marked: true,
-                        selectedColor: "#fab839",
+                        selectedColor: parseInt(formatYYYYMMDDFromDate(new Date()), 10) > parseInt(action.payload.replace(/-/g, ''), 10) ? "#fab839" : "#009966",
                     },
                 },
             };

@@ -7,6 +7,7 @@ import {View, Text, TouchableOpacity} from "react-native";
 import IconFontAwesome from "react-native-vector-icons/FontAwesome";
 import {LinearGradient} from "expo";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
+import {formatYYYYMMDDFromDate} from "../utils/formatMonthandDay";
 
 export const CalendarEditHistoryStackNavigator = createStackNavigator({
     EditHistory: {
@@ -15,7 +16,7 @@ export const CalendarEditHistoryStackNavigator = createStackNavigator({
             gesturesEnabled: true,
             // headerTitle: navigation?.state?.params?.date.toString()
             // headerTitle: formatYYYY_MM_DD_HHMMFromParams(navigation?.state?.params),
-            headerTitle: "Edit History",
+            headerTitle: parseInt(formatYYYYMMDDFromDate(new Date()), 10) > parseInt(navigation.state.params.date.replace(/-/g, ''), 10) ? "Edit History" : "Edit Future",
             // headerBackTitle: null,
             headerLeft:
                 <TouchableOpacity onPress={() => {
