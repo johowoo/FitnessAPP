@@ -18,7 +18,6 @@ import {
 class _EditHistory extends Component {
     render() {
         const navProps = this.props.navigation.state.params;
-        console.warn("edithistory data", this.props.workoutHistoryExerciseList[navProps.date]);
         return (
             <LinearGradient colors={["#219dd1", "#51c0bb"]} style={{flex: 1}}>
                 {/*<Text>{navProps.selectedExerciseCategory}</Text>*/}
@@ -65,7 +64,7 @@ const mapStateToProps = (state) => ({
     allExercisesList: state.savedExerciseForEachDay.allExercisesList,
     sectionExercises: state.exercises.sectionExercises,
     extraSectionExercises: state.exercises.extraSectionExercises,
-    workoutHistoryExerciseList: state.editLibrary.workoutHistoryExerciseList
+    workoutHistoryExerciseList: state.editHistoryExercisesList.workoutHistoryExerciseList
 });
 
 const mapActionToProps = (dispatch) => ({

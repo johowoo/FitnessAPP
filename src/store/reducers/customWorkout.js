@@ -121,8 +121,6 @@ export const customWorkout = (state = defaultState, action) => {
                 customWorkoutSets: {...state.customWorkoutSets, [action.payload]: []}
             };
         case types.DELETE_CATEGORY_FROM_EDIT_LIBRARY:
-            console.warn("payload", action.payload);
-            const stateCopy = JSON.parse(JSON.stringify(state));
             const emptyState = {customWorkoutCategory: [], customWorkoutAddable: {}, customWorkoutSets: {}};
             state.customWorkoutCategory.forEach(item => {
                 if (item !== action.payload) {
