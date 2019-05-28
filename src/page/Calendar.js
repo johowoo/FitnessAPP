@@ -27,6 +27,7 @@ import {AddWeightToExercise} from "../component/AddWeightToExercise";
 import {PeriodAnalysis} from "../component/PeriodAnalysis";
 import {WorkoutList} from "../component/WorkoutList";
 import {ExerciseModal} from "./ExerciseModal";
+import {formatYYYY_MM_DDFromDate, formatYYYYMMDDFromDate} from "../utils/formatMonthandDay";
 
 const {width, height} = Dimensions.get("window");
 
@@ -89,6 +90,10 @@ export class _Calendar extends Component {
                         markedDates={this.props.markedDates}
                         onDayPress={day => {
                             const date = day.dateString;
+                            if (formatYYYY_MM_DDFromDate(new Date()) === date && !Object.keys(this.props.markedDates).includes(date)) {
+                                return;
+                            }
+                            ;
                             if (!this.props.markedDates.hasOwnProperty(date)) {
                                 this.props.navigation.navigate("EditHistory", {
                                     date,
@@ -130,7 +135,8 @@ export class _Calendar extends Component {
                         />
                         <View style={styles.topTitle}>
                             {this.props.fontLoaded ? (
-                                <Text style={styles.title}>Workout History</Text>
+                                <Text
+                                    style={styles.title}>{parseInt(formatYYYYMMDDFromDate(new Date()), 10) >= parseInt(this.state.pressedDay.replace(/-/g, ''), 10) ? "Workout History" : "Future Plan"}</Text>
                             ) : null}
                         </View>
                         <View style={{margin: 20}}>

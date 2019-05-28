@@ -18,3 +18,8 @@ export const formatYYYY_MM_DDFromDate = date => {
 export const formatYYYY_MM_DD_HHMMFromParams = date => {
     return `${date.year.toString()}-${formatMonthandDay(date.month).toString()}-${formatMonthandDay(date.day).toString()} ${date.hour < 10 ? '0' + date.hour : date.hour}:${date.minute < 10 ? '0' + date.minute : date.minute}`
 };
+// export const formatYYYY_MM_DDFromDate = date => {
+//     return `${date.getFullYear().toString()}-${formatMonthandDay(
+//         date.getMonth() + 1
+//     ).toString()}-${formatMonthandDay(date.getDate()).toString()}`
+// };
