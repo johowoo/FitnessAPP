@@ -31,7 +31,7 @@ class _EditHistory extends Component {
         });
         await this.props.addHistoryMarkedDate(navProps.date);
         await this.props.setReminderModalInEditHistory({showReminderModal: false});
-        await this.navigation.navigate("Calendar");
+        await this.props.navigation.navigate("Calendar");
         await LoadingUtil.dismissLoading();
     };
 
