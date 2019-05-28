@@ -31,6 +31,18 @@ export const calendar = (state = defaultState, action) => {
                     },
                 },
             };
+            case types.ADD_HISTORY_MARKED_DATE:
+            return {
+                ...state,
+                markedDates: {
+                    ...state.markedDates,
+                    [action.payload]: {
+                        selected: true,
+                        marked: true,
+                        selectedColor: "#fab839",
+                    },
+                },
+            };
         case types.SET_EDIT_HISTORY_EXERCISE_MODAL_VISIBILITY:
             return {...state, showEditHistory: action.payload};
         case types.SET_CALENDAR_EDIT_HISTORY_ADD_WEIGHT_MODAL_VISIBILITY:

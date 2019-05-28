@@ -2,7 +2,10 @@ import * as types from "../actionTypes";
 
 export const editHistoryExercisesList = (
     state = {
-        workoutHistoryExerciseList: {}
+        workoutHistoryExerciseList: {},
+        showReminderModal: false,
+        reminderTitle: "",
+        reminderContent: ""
     },
     action
 ) => {
@@ -81,6 +84,11 @@ export const editHistoryExercisesList = (
             };
         case types.ADD_EXERCISES_LIST_TO_WORKOUT_HISTORY:
             return {...state};
+        case types.SET_REMINDER_MODAL_IN_EDIT_HISTORY:
+            return {
+                ...state,
+                ...action.payload
+            };
         default:
             return state;
     }

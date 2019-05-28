@@ -54,8 +54,12 @@ export const CalendarEditHistoryStackNavigator = createStackNavigator({
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity style={{marginRight: 30}}
-                                      onPress={() => {
-                                          // console.warn("add");
+                                      onPress={async () => {
+                                          await navigation.state.params.setReminderModalInEditHistory({
+                                              showReminderModal: true,
+                                              reminderTitle: "Finish",
+                                              reminderContent: `Have you finished editing of the workout history for ${navigation.state.params.date}?`
+                                          });
                                       }}>
                         <View>
                             <MaterialIcons name={"check-circle"}

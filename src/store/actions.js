@@ -96,6 +96,9 @@ export const addExerciseFromExerciseModalToCategoryOfLibraryAction = data =>
 
 
 //Calendar
+export const addHistoryMarkedDateAction = data =>
+    createAction(types.ADD_HISTORY_MARKED_DATE)(data);
+
 export const setEditHistoryExerciseModalVisibilityAction = data =>
     createAction(types.SET_EDIT_HISTORY_EXERCISE_MODAL_VISIBILITY)(data);
 export const setCalendarEditHistoryAddWeightModalVisibilityAction = data =>
@@ -116,3 +119,5 @@ export const deleteExercisesFromExerciseListOfWorkoutHistoryAction = data =>
     createAction(types.DELETE_EXERCISES_FROM_EXERCISE_LIST_OF_WORKOUT_HISTORY)(data);
 
 
+export const setReminderModalInEditHistoryAction = data =>
+    createAction(types.SET_REMINDER_MODAL_IN_EDIT_HISTORY)(data);

@@ -5,6 +5,7 @@ import {LinearGradient} from "expo";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import {WorkoutList} from "../component/WorkoutList";
 import {ExerciseModal} from "./ExerciseModal";
+import LoadingUtil from '../utils/LoadingUtil';
 import {
     setEditHistoryExerciseModalVisibilityAction,
     setCalendarEditHistoryAddWeightModalVisibilityAction,
@@ -13,15 +14,34 @@ import {
     editWeightRepsInWorkoutOfCalendarHistoryAction,
     addExerciseListToWorkoutHistoryAction,
     addExercisesToExerciseListOfWorkoutHistoryAction,
-    deleteExercisesFromExerciseListOfWorkoutHistoryAction
+    deleteExercisesFromExerciseListOfWorkoutHistoryAction,
+    setReminderModalInEditHistoryAction,
+    addHistoryMarkedDateAction
 } from "../store/actions";
+import {ReminderModal} from "../component/ReminderModal";
 
 class _EditHistory extends Component {
+    state = {showReminderModal: false};
+    handleReminderConfirm = async () => {
+        const navProps = this.props.navigation.state.params;
+        await LoadingUtil.showLoading();
+        await this.props.addExerciseListToWorkoutHistory({
+            date: navProps.date,
+            exercises: this.props.workoutHistoryExerciseList[navProps.date],
+        });
+        await this.props.addHistoryMarkedDate(navProps.date);
+        await this.props.setReminderModalInEditHistory({showReminderModal: false});
+        await this.navigation.navigate("Calendar");
+        await LoadingUtil.dismissLoading();
+    };
+
     render() {
         const navProps = this.props.navigation.state.params;
+        console.warn("ExerciseList[navProps.date]", this.props.workoutHistoryExerciseList[navProps.date]);
         return (
             <LinearGradient colors={["#219dd1", "#51c0bb"]} style={{flex: 1}}>
                 {/*<Text>{navProps.selectedExerciseCategory}</Text>*/}
+                <View><Text style={styles.dateTitle}>{navProps.date}</Text></View>
                 <WorkoutList
                     showListFooterComponent={false}
                     workoutSetsData={this.props.workoutHistoryExerciseList[navProps.date]}
@@ -53,6 +73,14 @@ class _EditHistory extends Component {
                         date: navProps.date
                     })}
                 />
+                {this.props.showReminderModal && <ReminderModal
+                    showReminderModal={this.props.showReminderModal}
+                    handleCloseReminder={() => this.props.setReminderModalInEditHistory({showReminderModal: false})}
+                    reminderTitle={this.props.reminderTitle}
+                    reminderContent={this.props.reminderContent}
+                    hideConfirmButton={false}
+                    handleConfirm={this.handleReminderConfirm}
+                />}
             </LinearGradient>
         )
     }
@@ -66,6 +94,9 @@ const mapStateToProps = (state) => ({
     sectionExercises: state.exercises.sectionExercises,
     extraSectionExercises: state.exercises.extraSectionExercises,
     workoutHistoryExerciseList: state.editHistoryExercisesList.workoutHistoryExerciseList,
+    showReminderModal: state.editHistoryExercisesList.showReminderModal,
+    reminderTitle: state.editHistoryExercisesList.reminderTitle,
+    reminderContent: state.editHistoryExercisesList.reminderContent
 });
 
 const mapActionToProps = (dispatch) => ({
@@ -92,7 +123,24 @@ const mapActionToProps = (dispatch) => ({
     },
     addExerciseListToWorkoutHistory(data) {
         dispatch(addExerciseListToWorkoutHistoryAction(data));
+    },
+    setReminderModalInEditHistory: data => {
+        dispatch(setReminderModalInEditHistoryAction(data));
+    },
+    addHistoryMarkedDate: data => {
+        dispatch(addHistoryMarkedDateAction(data));
     }
 });
 
+const styles = StyleSheet.create({
+    dateTitle: {
+        fontFamily: "PattayaRegular",
+        fontSize: 22,
+        color: "#eee",
+        margin: 10,
+        marginLeft: 20,
+        marginTop: 15
+    }
+});
 export const EditHistory = connect(mapStateToProps, mapActionToProps)(_EditHistory);
+

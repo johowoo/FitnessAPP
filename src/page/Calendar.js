@@ -21,6 +21,7 @@ import {
     addWeightToExercisesAction,
     deleteExerciseFromWorkoutListAction,
     setEditHistoryExerciseModalVisibilityAction,
+    setReminderModalInEditHistoryAction
 } from "../store/actions";
 import {AddWeightToExercise} from "../component/AddWeightToExercise";
 import {PeriodAnalysis} from "../component/PeriodAnalysis";
@@ -41,6 +42,7 @@ export class _Calendar extends Component {
     };
 
     render() {
+        // console.warn("allExerciseList", this.props.allExercisesList);
         return (
             <LinearGradient colors={["#1b98d9", "#51c0bb"]} style={{flex: 1}}>
                 <TopBar style={styles.topBar}>
@@ -90,7 +92,8 @@ export class _Calendar extends Component {
                             if (!this.props.markedDates.hasOwnProperty(date)) {
                                 this.props.navigation.navigate("EditHistory", {
                                     date,
-                                    setEditHistoryExerciseModalVisibility: this.props.setEditHistoryExerciseModalVisibility
+                                    setEditHistoryExerciseModalVisibility: this.props.setEditHistoryExerciseModalVisibility,
+                                    setReminderModalInEditHistory: this.props.setReminderModalInEditHistory
                                 });
                                 // console.warn(date);
                             } else {
@@ -219,6 +222,9 @@ const mapActionsToProps = dispatch => ({
     },
     setEditHistoryExerciseModalVisibility: data => {
         dispatch(setEditHistoryExerciseModalVisibilityAction(data))
+    },
+    setReminderModalInEditHistory: data => {
+        dispatch(setReminderModalInEditHistoryAction(data));
     }
 });
 export const Calendar = connect(
