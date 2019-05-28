@@ -84,7 +84,6 @@ export const setEditLibraryEditWeightRepsModalVisibilityAction = data =>
     createAction(types.SET_EDIT_LIBRARY_EDIT_WEIGHT_REPS_MODAL_VISIBILITY)(data);
 
 
-
 export const addWeightRepsToExerciseInLibraryAction = data =>
     createAction(types.ADD_WEIGHT_REPS_TO_EXERCISE_IN_LIBRARY)(data);
 export const editWeightRepsInWorkoutOfLibraryAction = data =>
@@ -96,6 +95,6 @@ export const addExerciseFromExerciseModalToCategoryOfLibraryAction = data =>
     createAction(types.ADD_EXERCISE_FROM_EXERCISE_MODAL_TO_CATEGORY_OF_LIBRARY)(data);
 
 
-
-
-
+//Calendar
+export const setEditHistoryExerciseModalVisibilityAction = data =>
+    createAction(types.SET_EDIT_HISTORY_EXERCISE_MODAL_VISIBILITY)(data);

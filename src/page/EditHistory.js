@@ -4,6 +4,8 @@ import {connect} from 'react-redux';
 import {LinearGradient} from "expo";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import {WorkoutList} from "../component/WorkoutList";
+import {ExerciseModal} from "./ExerciseModal";
+import {setEditHistoryExerciseModalVisibilityAction} from "../store/actions";
 
 class _EditHistory extends Component {
     render() {
@@ -33,20 +35,32 @@ class _EditHistory extends Component {
                 {/*        selectedExerciseCategory: navProps.selectedExerciseCategory*/}
                 {/*    })}*/}
                 {/*/>*/}
-                {/*<ExerciseModal*/}
-                {/*    workoutSetsData={this.props.customWorkoutSets[navProps.selectedExerciseCategory]}*/}
-                {/*    sectionExercises={this.props.sectionExercises}*/}
-                {/*    extraSectionExercises={this.props.extraSectionExercises}*/}
-                {/*    visible={this.props.showExerciseModalForEditLibrary}*/}
-                {/*    closeModal={() => this.props.setEditLibraryExerciseModalVisibility(false)}*/}
-                {/*    addExercise={(props) => this.props.addExerciseFromExerciseModalToCategoryOfLibrary({*/}
-                {/*        ...props,*/}
-                {/*        selectedExerciseCategory: navProps.selectedExerciseCategory*/}
-                {/*    })}*/}
-                {/*/>*/}
+                <ExerciseModal
+                    // workoutSetsData={this.props.customWorkoutSets[navProps.selectedExerciseCategory]}
+                    sectionExercises={this.props.sectionExercises}
+                    extraSectionExercises={this.props.extraSectionExercises}
+                    visible={this.props.showEditHistory}
+                    closeModal={() => this.props.setEditHistoryExerciseModalVisibility(false)}
+                    // addExercise={(props) => this.props.addExerciseFromExerciseModalToCategoryOfLibrary({
+                    //     ...props,
+                    //     selectedExerciseCategory: navProps.selectedExerciseCategory
+                    // })}
+                />
             </LinearGradient>
         )
     }
 }
 
-export const EditHistory = connect(null, null)(_EditHistory);
+const mapStateToProps = (state) => ({
+    showEditHistory: state.calendar.showEditHistory,
+    sectionExercises: state.exercises.sectionExercises,
+    extraSectionExercises: state.exercises.extraSectionExercises,
+});
+
+const mapActionToProps = (dispatch) => ({
+    setEditHistoryExerciseModalVisibility(data = false) {
+        dispatch(setEditHistoryExerciseModalVisibilityAction(data));
+    }
+});
+
+export const EditHistory = connect(mapStateToProps, mapActionToProps)(_EditHistory);

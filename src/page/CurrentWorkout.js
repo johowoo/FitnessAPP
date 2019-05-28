@@ -17,7 +17,8 @@ import {
     setEditWeightRepsModalVisibilityAction,
     addWeightToExercisesAction,
     editWeightRepsInWorkoutAction,
-    deleteExerciseFromWorkoutListAction, setAddCategoryModalForLibraryVisibilityAction
+    deleteExerciseFromWorkoutListAction,
+    setAddCategoryModalForLibraryVisibilityAction
 } from "../store/actions";
 
 import {WorkoutList} from "../component/WorkoutList";

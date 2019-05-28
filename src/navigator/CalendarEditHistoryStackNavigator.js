@@ -41,7 +41,8 @@ export const CalendarEditHistoryStackNavigator = createStackNavigator({
             headerRight: (
                 <View style={{flexDirection: "row"}}>
                     <TouchableOpacity style={{marginRight: 20}}
-                                      onPress={() => {
+                                      onPress={async () => {
+                                          await navigation.state.params.setEditHistoryExerciseModalVisibility(true);
                                           // console.warn("add");
                                       }}>
                         <View>

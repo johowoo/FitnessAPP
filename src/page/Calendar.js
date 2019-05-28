@@ -20,6 +20,7 @@ import {TopBar} from "../component";
 import {
     addWeightToExercisesAction,
     deleteExerciseFromWorkoutListAction,
+    setEditHistoryExerciseModalVisibilityAction,
 } from "../store/actions";
 import {AddWeightToExercise} from "../component/AddWeightToExercise";
 import {PeriodAnalysis} from "../component/PeriodAnalysis";
@@ -88,9 +89,10 @@ export class _Calendar extends Component {
                             const date = day.dateString;
                             if (!this.props.markedDates.hasOwnProperty(date)) {
                                 this.props.navigation.navigate("EditHistory", {
-                                    date: date
+                                    date,
+                                    setEditHistoryExerciseModalVisibility: this.props.setEditHistoryExerciseModalVisibility
                                 });
-                                console.warn(date);
+                                // console.warn(date);
                             } else {
                                 this.setState({
                                     pressedDay: date,
@@ -105,7 +107,6 @@ export class _Calendar extends Component {
                     <Text style={styles.analysisTitle}>Analysis</Text>
                     <PeriodAnalysis/>
                 </View>
-
                 <Modal
                     visible={this.state.isModalListVisible}
                     style={{flex: 1}}
@@ -216,6 +217,9 @@ const mapActionsToProps = dispatch => ({
     deleteExerciseFromWorkoutList: data => {
         dispatch(deleteExerciseFromWorkoutListAction(data));
     },
+    setEditHistoryExerciseModalVisibility: data => {
+        dispatch(setEditHistoryExerciseModalVisibilityAction(data))
+    }
 });
 export const Calendar = connect(
     mapStateToProps,
