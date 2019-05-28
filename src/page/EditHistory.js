@@ -5,46 +5,53 @@ import {LinearGradient} from "expo";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import {WorkoutList} from "../component/WorkoutList";
 import {ExerciseModal} from "./ExerciseModal";
-import {setEditHistoryExerciseModalVisibilityAction} from "../store/actions";
+import {
+    setEditHistoryExerciseModalVisibilityAction,
+    setCalendarEditHistoryAddWeightModalVisibilityAction,
+    setCalendarEditHistoryEditWeightRepsModalVisibilityAction,
+    addWeightRepsToExerciseInCalendarHistoryAction,
+    editWeightRepsInWorkoutOfCalendarHistoryAction,
+    addExerciseListToWorkoutHistoryAction,
+    addExercisesToExerciseListOfWorkoutHistoryAction
+} from "../store/actions";
 
 class _EditHistory extends Component {
     render() {
+        console.warn("edithistory data", this.props.currentDateExerciseList);
+        const navProps = this.props.navigation.state.params;
         return (
             <LinearGradient colors={["#219dd1", "#51c0bb"]} style={{flex: 1}}>
                 {/*<Text>{navProps.selectedExerciseCategory}</Text>*/}
-                {/*<WorkoutList*/}
-                {/*    showListFooterComponent={false}*/}
-                {/*    workoutSetsData={this.props.customWorkoutSets[navProps.selectedExerciseCategory]}*/}
-                {/*    currentWorkout={this.props.customWorkoutSets[navProps.selectedExerciseCategory]}*/}
-                {/*    showAddWeightModal={this.props.showAddWeightModalForEditLibrary}*/}
-                {/*    showEditWeightReps={this.props.showEditWeightRepsForEditLibrary}*/}
-                {/*    setAddWeightModalVisibility={this.props.setEditLibraryAddWeightModalVisibility}*/}
-                {/*    setEditWeightRepsModalVisibility={this.props.setEditLibraryEditWeightRepsModalVisibility}*/}
-                {/*    //todo*/}
-                {/*    selectedExerciseCategory={navProps.selectedExerciseCategory}*/}
-                {/*    addWeightRepsToExercise={(props) => this.props.addWeightRepsToExerciseInLibrary({*/}
-                {/*        ...props,*/}
-                {/*        selectedExerciseCategory: navProps.selectedExerciseCategory*/}
-                {/*    })}*/}
-                {/*    editWeightRepsInWorkout={(props) => this.props.editWeightRepsInWorkoutOfLibrary({*/}
-                {/*        ...props,*/}
-                {/*        selectedExerciseCategory: navProps.selectedExerciseCategory*/}
-                {/*    })}*/}
-                {/*    deleteExerciseFromWorkoutList={(props) => this.props.deleteExerciseFromWorkoutListOfLibrary({*/}
-                {/*        ...props,*/}
-                {/*        selectedExerciseCategory: navProps.selectedExerciseCategory*/}
-                {/*    })}*/}
-                {/*/>*/}
+                <WorkoutList
+                    showListFooterComponent={false}
+                    workoutSetsData={this.props.currentDateExerciseList}
+                    showAddWeightModal={this.props.showAddWeightModalForEditHistory}
+                    showEditWeightReps={this.props.showAddWeightModalForEditHistory}
+                    setAddWeightModalVisibility={this.props.setCalendarEditHistoryAddWeightModalVisibility}
+                    setEditWeightRepsModalVisibility={this.props.setCalendarEditHistoryEditWeightRepsModalVisibility}
+                    addWeightRepsToExercise={(props) => this.props.addWeightRepsToExerciseInCalendarHistory({
+                        ...props,
+                        date: navProps.date
+                    })}
+                    editWeightRepsInWorkout={(props) => this.props.editWeightRepsInWorkoutOfCalendarHistory({
+                        ...props,
+                        date: navProps.date
+                    })}
+                    // deleteExerciseFromWorkoutList={(props) => this.props.deleteExerciseFromWorkoutListOfLibrary({
+                    //     ...props,
+                    //     selectedExerciseCategory: navProps.selectedExerciseCategory
+                    // })}
+                />
                 <ExerciseModal
-                    // workoutSetsData={this.props.customWorkoutSets[navProps.selectedExerciseCategory]}
+                    workoutSetsData={this.props.currentDateExerciseList}
                     sectionExercises={this.props.sectionExercises}
                     extraSectionExercises={this.props.extraSectionExercises}
                     visible={this.props.showEditHistory}
                     closeModal={() => this.props.setEditHistoryExerciseModalVisibility(false)}
-                    // addExercise={(props) => this.props.addExerciseFromExerciseModalToCategoryOfLibrary({
-                    //     ...props,
-                    //     selectedExerciseCategory: navProps.selectedExerciseCategory
-                    // })}
+                    addExercise={(props) => this.props.addExercisesToExerciseListOfWorkoutHistory({
+                        ...props,
+                        date: navProps.date
+                    })}
                 />
             </LinearGradient>
         )
@@ -53,13 +60,35 @@ class _EditHistory extends Component {
 
 const mapStateToProps = (state) => ({
     showEditHistory: state.calendar.showEditHistory,
+    showAddWeightModalForEditHistory: state.calendar.showAddWeightModalForEditHistory,
+    showEditWeightRepsForEditHistory: state.calendar.showEditWeightRepsForEditHistory,
+    allExercisesList: state.savedExerciseForEachDay.allExercisesList,
     sectionExercises: state.exercises.sectionExercises,
     extraSectionExercises: state.exercises.extraSectionExercises,
+    currentDateExerciseList: state.editLibrary.currentDateExerciseList
 });
 
 const mapActionToProps = (dispatch) => ({
     setEditHistoryExerciseModalVisibility(data = false) {
         dispatch(setEditHistoryExerciseModalVisibilityAction(data));
+    },
+    setCalendarEditHistoryAddWeightModalVisibility(data = false) {
+        dispatch(setCalendarEditHistoryAddWeightModalVisibilityAction(data));
+    },
+    setCalendarEditHistoryEditWeightRepsModalVisibility(data = false) {
+        dispatch(setCalendarEditHistoryEditWeightRepsModalVisibilityAction(data));
+    },
+    addWeightRepsToExerciseInCalendarHistory(data = false) {
+        dispatch(addWeightRepsToExerciseInCalendarHistoryAction(data));
+    },
+    editWeightRepsInWorkoutOfCalendarHistory(data = false) {
+        dispatch(editWeightRepsInWorkoutOfCalendarHistoryAction(data));
+    },
+    addExercisesToExerciseListOfWorkoutHistory(data) {
+        dispatch(addExercisesToExerciseListOfWorkoutHistoryAction(data))
+    },
+    addExerciseListToWorkoutHistory(data) {
+        dispatch(addExerciseListToWorkoutHistoryAction(data));
     }
 });
 

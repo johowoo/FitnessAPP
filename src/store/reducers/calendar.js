@@ -10,7 +10,10 @@ const defaultState = {
         // '2018-11-12': {selected: true, marked: true, selectedColor: '#1b98d9'}
     },
     currentDate: "",
-    showEditHistory: false
+    showEditHistory: false,
+    showAddWeightModalForEditHistory: false,
+    showEditWeightRepsForEditHistory: false,
+    workoutHistoryDataSets: []
 };
 export const calendar = (state = defaultState, action) => {
     switch (action.type) {
@@ -30,6 +33,11 @@ export const calendar = (state = defaultState, action) => {
             };
         case types.SET_EDIT_HISTORY_EXERCISE_MODAL_VISIBILITY:
             return {...state, showEditHistory: action.payload};
+        case types.SET_CALENDAR_EDIT_HISTORY_ADD_WEIGHT_MODAL_VISIBILITY:
+            return {...state, showAddWeightModalForEditHistory: action.payload};
+        case types.SET_CALENDAR_EDIT_HISTORY_EDIT_WEIGHT_REPS_MODAL_VISIBILITY:
+            return {...state, showEditWeightRepsForEditHistory: action.payload};
+
         default:
             return state;
     }

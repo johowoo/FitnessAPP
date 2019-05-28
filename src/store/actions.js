@@ -98,3 +98,19 @@ export const addExerciseFromExerciseModalToCategoryOfLibraryAction = data =>
 //Calendar
 export const setEditHistoryExerciseModalVisibilityAction = data =>
     createAction(types.SET_EDIT_HISTORY_EXERCISE_MODAL_VISIBILITY)(data);
+export const setCalendarEditHistoryAddWeightModalVisibilityAction = data =>
+    createAction(types.SET_CALENDAR_EDIT_HISTORY_ADD_WEIGHT_MODAL_VISIBILITY)(data);
+export const setCalendarEditHistoryEditWeightRepsModalVisibilityAction = data =>
+    createAction(types.SET_CALENDAR_EDIT_HISTORY_EDIT_WEIGHT_REPS_MODAL_VISIBILITY)(data);
+
+export const addWeightRepsToExerciseInCalendarHistoryAction = data =>
+    createAction(types.ADD_WEIGHT_REPS_TO_EXERCISE_IN_CALENDAR_HISTORY)(data);
+export const editWeightRepsInWorkoutOfCalendarHistoryAction = data =>
+    createAction(types.EDIT_WEIGHT_REPS_IN_WORKOUT_OF_CALENDAR_HISTORY_ACTION)(data);
+
+export const addExercisesToExerciseListOfWorkoutHistoryAction = data =>
+    createAction(types.ADD_EXERCISES_TO_EXERCISE_LIST_OF_WORKOUT_HISTORY)(data);
+export const addExerciseListToWorkoutHistoryAction = data =>
+    createAction(types.ADD_EXERCISES_LIST_TO_WORKOUT_HISTORY)(data);
+
+
