@@ -26,8 +26,12 @@ for (let i = 0; i < 12; i++) {
 }
 
 const defaultState = {
-    weightData: [],
-    bfrData: [],
+    weightData: [
+        85, 84, 82, 84, 83, 80, 78, 82, 84, 83, 80, 78,
+    ],
+    bfrData: [
+        0.20, 0.22, 0.25, 0.24, 0.22, 0.18, 0.20, 0.19, 0.18, 0.16, 0.18, 0.17,
+    ],
 };
 
 export const health = (state = defaultState, action) => {

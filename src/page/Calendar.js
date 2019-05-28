@@ -110,6 +110,31 @@ export class _Calendar extends Component {
                             }
                         }}
                     />
+                    <View style={{flexDirection: "row", marginTop: 10, marginLeft: 20}}>
+                        <View style={{flex: 0.3, flexDirection: "row", alignItems: "center", justifyContent: "center"}}><View
+                            style={{
+                                width: 22,
+                                height: 22,
+                                backgroundColor: "#fab839",
+                                borderRadius: 11
+                            }}><Text> </Text></View><Text style={{color: "#EFEFEF", marginLeft: 10}}>after</Text></View>
+                        <View style={{flex: 0.3, flexDirection: "row", alignItems: "center", justifyContent: "center"}}><View
+                            style={{
+                                width: 22,
+                                height: 22,
+                                backgroundColor: "#c69",
+                                borderRadius: 11
+                            }}><Text> </Text></View><Text
+                            style={{color: "#EFEFEF", marginLeft: 10}}>on-time</Text></View>
+                        <View style={{flex: 0.3, flexDirection: "row", alignItems: "center", justifyContent: "center"}}><View
+                            style={{
+                                width: 22,
+                                height: 22,
+                                backgroundColor: "#009966",
+                                borderRadius: 11
+                            }}><Text> </Text></View><Text
+                            style={{color: "#EFEFEF", marginLeft: 10}}>before</Text></View>
+                    </View>
                 </View>
                 <View style={{marginTop: 30}}>
                     <Text style={styles.analysisTitle}>Analysis</Text>
