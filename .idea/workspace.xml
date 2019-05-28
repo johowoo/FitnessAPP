@@ -2,12 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd580928-bb60-480d-8b73-7c94df331487" name="Default Changelist" comment="p">
-      <change afterPath="$PROJECT_DIR$/src/store/reducers/editHistoryExercisesList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/Calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Calendar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/page/EditHistory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/EditHistory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/customWorkout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/customWorkout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/editLibrary.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/editLibrary.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,7 +15,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="450">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/EditHistory.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="242">
@@ -32,11 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/store/reducers/editLibrary.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="3" column="13" lean-forward="true" selection-end-line="62" />
+            <state relative-caret-position="387">
+              <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -182,13 +177,13 @@
         <option value="$PROJECT_DIR$/src/store/actions.js" />
         <option value="$PROJECT_DIR$/src/component/ExerciseList.js" />
         <option value="$PROJECT_DIR$/src/component/WorkoutList.js" />
-        <option value="$PROJECT_DIR$/src/store/reducers/editLibrary.js" />
         <option value="$PROJECT_DIR$/src/page/Calendar.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/customWorkout.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/editHistory.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/editHistoryExercisesList.js" />
         <option value="$PROJECT_DIR$/src/store/reducer.js" />
         <option value="$PROJECT_DIR$/src/page/EditHistory.js" />
+        <option value="$PROJECT_DIR$/src/store/reducers/editLibrary.js" />
       </list>
     </option>
   </component>
@@ -407,18 +402,18 @@
       <workItem from="1558943130577" duration="7726000" />
       <workItem from="1558995032110" duration="6987000" />
       <workItem from="1559008623092" duration="6243000" />
-      <workItem from="1559032435699" duration="6110000" />
+      <workItem from="1559032435699" duration="6138000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="376028000" />
+    <option name="totallyTimeSpent" value="376056000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="947" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1898428" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.1898428" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -432,7 +427,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="RNConsole" order="8" />
       <window_info anchor="bottom" id="CSS-X-Fire" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4996979" visible="true" weight="0.30121952" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4996979" visible="true" weight="0.30121952" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50030214" side_tool="true" weight="0.03640777" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.7166948" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
@@ -856,13 +851,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/reducers/editLibrary.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="3" column="13" lean-forward="true" selection-end-line="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/store/reducer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="378">
@@ -884,6 +872,13 @@
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/reducers/editLibrary.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="387">
+          <caret line="39" column="14" selection-start-line="39" selection-start-column="14" selection-end-line="39" selection-end-column="14" />
         </state>
       </provider>
     </entry>
