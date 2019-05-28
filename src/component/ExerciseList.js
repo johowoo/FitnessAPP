@@ -123,7 +123,7 @@ export class _ExerciseList extends PureComponent {
     };
     handlePress = async () => {
         let flag = true;
-        this.props.workoutSetsData.forEach(async item => {
+        this.props.workoutSetsData && this.props.workoutSetsData.forEach(async item => {
             if (item.exercise === this.state.selectedExercise) {
                 flag = false;
                 // ReminderModal

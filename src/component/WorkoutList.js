@@ -255,7 +255,6 @@ export class _WorkoutList extends Component {
                         {/*{"\n"}*/}
                         {/*exercises*/}
                     </Text>
-
                 </View>
             </View>
         );

@@ -6,7 +6,7 @@ export const editLibrary = (
         showAddWeightModalForEditLibrary: false,
         showEditWeightRepsForEditLibrary: false,
         showAddCategoryModal: false,
-        currentDateExerciseList: []
+        workoutHistoryExerciseList: {}
     },
     action
 ) => {
@@ -43,8 +43,17 @@ export const editLibrary = (
             if (!action.payload.weightRepsDataArr) {
                 action.payload.weightRepsDataArr = [];
             }
+            const currentDateExerciseListCopy = state.workoutHistoryExerciseList[action.payload.date] ? JSON.parse(JSON.stringify(state.workoutHistoryExerciseList[action.payload.date])) : [];
+            currentDateExerciseListCopy.push(action.payload);
+            // const WorkHistoryExerciseCopy = JSON.parse(JSON.stringify(state.workoutHistoryExerciseList));
             // return [...state, action.payload];
-            return {...state, currentDateExerciseList: [...state.currentDateExerciseList, action.payload]};
+            return {
+                ...state,
+                workoutHistoryExerciseList: {
+                    ...state.workoutHistoryExerciseList,
+                    [action.payload.date]: currentDateExerciseListCopy
+                }
+            };
         case types.ADD_EXERCISES_LIST_TO_WORKOUT_HISTORY:
             return {...state};
         default:
