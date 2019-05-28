@@ -12,7 +12,8 @@ import {
     addWeightRepsToExerciseInCalendarHistoryAction,
     editWeightRepsInWorkoutOfCalendarHistoryAction,
     addExerciseListToWorkoutHistoryAction,
-    addExercisesToExerciseListOfWorkoutHistoryAction
+    addExercisesToExerciseListOfWorkoutHistoryAction,
+    deleteExercisesFromExerciseListOfWorkoutHistoryAction
 } from "../store/actions";
 
 class _EditHistory extends Component {
@@ -36,10 +37,10 @@ class _EditHistory extends Component {
                         ...props,
                         date: navProps.date
                     })}
-                    // deleteExerciseFromWorkoutList={(props) => this.props.deleteExerciseFromWorkoutListOfLibrary({
-                    //     ...props,
-                    //     selectedExerciseCategory: navProps.selectedExerciseCategory
-                    // })}
+                    deleteExerciseFromWorkoutList={(props) => this.props.deleteExercisesFromExerciseListOfWorkoutHistory({
+                        ...props,
+                        date: navProps.date
+                    })}
                 />
                 <ExerciseModal
                     workoutSetsData={this.props.workoutHistoryExerciseList[navProps.date]}
@@ -64,7 +65,7 @@ const mapStateToProps = (state) => ({
     allExercisesList: state.savedExerciseForEachDay.allExercisesList,
     sectionExercises: state.exercises.sectionExercises,
     extraSectionExercises: state.exercises.extraSectionExercises,
-    workoutHistoryExerciseList: state.editHistoryExercisesList.workoutHistoryExerciseList
+    workoutHistoryExerciseList: state.editHistoryExercisesList.workoutHistoryExerciseList,
 });
 
 const mapActionToProps = (dispatch) => ({
@@ -85,6 +86,9 @@ const mapActionToProps = (dispatch) => ({
     },
     addExercisesToExerciseListOfWorkoutHistory(data) {
         dispatch(addExercisesToExerciseListOfWorkoutHistoryAction(data))
+    },
+    deleteExercisesFromExerciseListOfWorkoutHistory(data) {
+        dispatch(deleteExercisesFromExerciseListOfWorkoutHistoryAction(data))
     },
     addExerciseListToWorkoutHistory(data) {
         dispatch(addExerciseListToWorkoutHistoryAction(data));

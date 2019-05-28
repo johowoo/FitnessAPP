@@ -112,5 +112,7 @@ export const addExercisesToExerciseListOfWorkoutHistoryAction = data =>
     createAction(types.ADD_EXERCISES_TO_EXERCISE_LIST_OF_WORKOUT_HISTORY)(data);
 export const addExerciseListToWorkoutHistoryAction = data =>
     createAction(types.ADD_EXERCISES_LIST_TO_WORKOUT_HISTORY)(data);
+export const deleteExercisesFromExerciseListOfWorkoutHistoryAction = data =>
+    createAction(types.DELETE_EXERCISES_FROM_EXERCISE_LIST_OF_WORKOUT_HISTORY)(data);
 
 

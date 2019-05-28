@@ -30,14 +30,6 @@ export const editLibrary = (
                 ...state,
                 showAddCategoryModal: action.payload,
             };
-        case types.ADD_WEIGHT_REPS_TO_EXERCISE_IN_CALENDAR_HISTORY:
-            return {
-                ...state,
-            };
-        case types.EDIT_WEIGHT_REPS_IN_WORKOUT_OF_CALENDAR_HISTORY_ACTION:
-            return {
-                ...state,
-            };
         default:
             return state;
     }
