@@ -40,7 +40,6 @@ export const editLibrary = (
                 ...state,
             };
         case types.ADD_EXERCISES_TO_EXERCISE_LIST_OF_WORKOUT_HISTORY:
-            console.warn("payload", action.payload);
             if (!action.payload.weightRepsDataArr) {
                 action.payload.weightRepsDataArr = [];
             }

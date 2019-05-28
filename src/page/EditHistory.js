@@ -26,7 +26,7 @@ class _EditHistory extends Component {
                     showListFooterComponent={false}
                     workoutSetsData={this.props.currentDateExerciseList}
                     showAddWeightModal={this.props.showAddWeightModalForEditHistory}
-                    showEditWeightReps={this.props.showAddWeightModalForEditHistory}
+                    showEditWeightReps={this.props.showEditWeightRepsForEditHistory}
                     setAddWeightModalVisibility={this.props.setCalendarEditHistoryAddWeightModalVisibility}
                     setEditWeightRepsModalVisibility={this.props.setCalendarEditHistoryEditWeightRepsModalVisibility}
                     addWeightRepsToExercise={(props) => this.props.addWeightRepsToExerciseInCalendarHistory({
