@@ -68,17 +68,14 @@ export class _DisplayPicture extends Component {
             });
             await this.props.changeCurrentDisplayPic({index: this.state.index, date: this.state.date})
         } else {
-            this.props.showDeleteConfirmModalInDisplayPicture({
-                showReminder: true,
-                reminderTitle: "First pic",
-                reminderContent: "You have already reached the first pic",
-                hideConfirmButton: true
-            });
-            // this.setState({
+            this.props.navigation.navigate("Progress");
+            // this.props.showDeleteConfirmModalInDisplayPicture({
             //     showReminder: true,
             //     reminderTitle: "First pic",
-            //     reminderContent: "You have already reached the first pic"
-            // })
+            //     reminderContent: "You have already reached the first pic",
+            //     hideConfirmButton: true
+            // });
+
         }
     }
 

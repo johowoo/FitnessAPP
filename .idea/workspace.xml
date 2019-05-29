@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd580928-bb60-480d-8b73-7c94df331487" name="Default Changelist" comment="p">
-      <change beforePath="$PROJECT_DIR$/src/page/Calendar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/Calendar.js" afterDir="false" />
-    </list>
+    <list default="true" id="fd580928-bb60-480d-8b73-7c94df331487" name="Default Changelist" comment="p" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -30,8 +28,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="229">
-              <caret line="305" column="23" selection-start-line="305" selection-start-column="23" selection-end-line="305" selection-end-column="23" />
+            <state relative-caret-position="-109">
+              <caret line="259" column="29" lean-forward="true" selection-start-line="259" selection-start-column="29" selection-end-line="259" selection-end-column="29" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="e#248#307#0" expanded="true" />
@@ -40,11 +38,36 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/component/PickerCamera.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="383">
+              <caret line="81" column="55" lean-forward="true" selection-start-line="81" selection-start-column="55" selection-end-line="81" selection-end-column="55" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/page/Progress.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="421">
+              <caret line="222" column="50" selection-start-line="222" selection-start-column="40" selection-end-line="222" selection-end-column="50" />
+              <caret line="235" column="14" selection-start-line="235" selection-start-column="4" selection-end-line="235" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/Calendar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="159" column="30" lean-forward="true" selection-start-line="155" selection-start-column="23" selection-end-line="159" selection-end-column="30" />
+            <state relative-caret-position="286">
+              <caret line="159" column="33" lean-forward="true" selection-start-line="155" selection-start-column="20" selection-end-line="159" selection-end-column="33" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -63,11 +86,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>updateEmpty</find>
-      <find>WorkoutLIST</find>
-      <find>UPDATEEMPTY</find>
-      <find>navigate</find>
-      <find>updateempty</find>
       <find>update</find>
       <find>customworkoutsets.</find>
       <find>reminder</find>
@@ -89,10 +107,15 @@
       <find>Progress&lt;</find>
       <find>Custom</find>
       <find>HandlePress</find>
-      <find>C</find>
-      <find>Custom work</find>
       <find>Workout His</find>
+      <find>Custom work</find>
+      <find>C</find>
+      <find>Manual wO</find>
       <find>Analysis</find>
+      <find>checkButtonAvailabilitySets</find>
+      <find>&lt;Pic</find>
+      <find>{this.props.showModal &amp;&amp; &lt;PhotoModal/&gt;}</find>
+      <find>Manu</find>
     </findStrings>
     <replaceStrings>
       <replace>expo</replace>
@@ -173,8 +196,8 @@
         <option value="$PROJECT_DIR$/src/page/CurrentWorkout.js" />
         <option value="$PROJECT_DIR$/src/page/Statistics.js" />
         <option value="$PROJECT_DIR$/src/page/Progress.js" />
-        <option value="$PROJECT_DIR$/src/component/WorkoutList.js" />
         <option value="$PROJECT_DIR$/src/page/Calendar.js" />
+        <option value="$PROJECT_DIR$/src/component/WorkoutList.js" />
       </list>
     </option>
   </component>
@@ -371,18 +394,18 @@
       <workItem from="1559032435699" duration="7722000" />
       <workItem from="1559080037683" duration="6662000" />
       <workItem from="1559092281045" duration="7125000" />
-      <workItem from="1559112300756" duration="5275000" />
+      <workItem from="1559112300756" duration="6221000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="396702000" />
+    <option name="totallyTimeSpent" value="397648000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="947" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17714632" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17714632" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -396,7 +419,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="RNConsole" order="8" />
       <window_info anchor="bottom" id="CSS-X-Fire" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4996979" visible="true" weight="0.3" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4996979" visible="true" weight="0.3" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50030214" side_tool="true" weight="0.03640777" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.7166948" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
@@ -621,13 +644,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/PickerCamera.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="41">
-          <caret line="11" selection-start-line="11" selection-end-line="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/page/Welcome.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="533">
@@ -818,13 +834,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Progress.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
-          <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/navigator/CurrentWorkoutStackNavigator.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="283">
@@ -845,10 +854,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/Calendar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="159" column="33" lean-forward="true" selection-start-line="155" selection-start-column="20" selection-end-line="159" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/PickerCamera.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="81" column="55" lean-forward="true" selection-start-line="81" selection-start-column="55" selection-end-line="81" selection-end-column="55" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="305" column="23" selection-start-line="305" selection-start-column="23" selection-end-line="305" selection-end-column="23" />
+        <state relative-caret-position="-109">
+          <caret line="259" column="29" lean-forward="true" selection-start-line="259" selection-start-column="29" selection-end-line="259" selection-end-column="29" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <element signature="e#248#307#0" expanded="true" />
@@ -856,10 +885,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Calendar.js">
+    <entry file="file://$PROJECT_DIR$/src/page/Progress.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="159" column="30" lean-forward="true" selection-start-line="155" selection-start-column="23" selection-end-line="159" selection-end-column="30" />
+        <state relative-caret-position="421">
+          <caret line="222" column="50" selection-start-line="222" selection-start-column="40" selection-end-line="222" selection-end-column="50" />
+          <caret line="235" column="14" selection-start-line="235" selection-start-column="4" selection-end-line="235" selection-end-column="14" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
