@@ -12,9 +12,7 @@ import React, {Component} from "react";
 import {Notifications, Permissions, Constants} from 'expo';
 import moment from 'moment';
 import {
-    addCategoryToEditLibraryAction,
-    resetCustomWorkoutAddableAction,
-    setAddCategoryModalForLibraryVisibilityAction, setNotificationModalVisibilityAction
+    setNotificationModalVisibilityAction
 } from "../store/actions";
 import {connect} from "react-redux";
 
@@ -39,29 +37,29 @@ class _SetNotificationModal extends Component {
         let result = await Permissions.askAsync(Permissions.NOTIFICATIONS);
 
         if (Constants.isDevice && result.status === 'granted') {
-            console.log('Notification permissions granted.')
+            console.warn('Notification permissions granted.')
         }
 
         Notifications.addListener(this._handleNotification);
     }
 
     _handleNotification = ({origin, data}) => {
-        console.info(`Notification (${origin}) with data: ${JSON.stringify(data)}`)
+        console.warn(`Notification (${origin}) with data: ${JSON.stringify(data)}`)
     };
 
-    _sendImmediateNotification() {
-        const localNotification = {
-            title: 'Immediate testing Title',
-            body: 'Testing body',
-            data: {type: 'immediate'}
-        };
-
-        console.log('Scheduling immediate notification:', {localNotification})
-
-        Notifications.presentLocalNotificationAsync(localNotification)
-            .then(id => console.info(`Immediate notification scheduled (${id})`))
-            .catch(err => console.error(err))
-    }
+    // _sendImmediateNotification() {
+    //     const localNotification = {
+    //         title: 'Immediate testing Title',
+    //         body: 'Testing body',
+    //         data: {type: 'immediate'}
+    //     };
+    //
+    //     console.warn('Scheduling immediate notification:', {localNotification})
+    //
+    //     Notifications.presentLocalNotificationAsync(localNotification)
+    //         .then(id => console.warn(`Immediate notification scheduled (${id})`))
+    //         .catch(err => console.error(err))
+    // }
 
     _sendDelayedNotification() {
         const localNotification = {
@@ -73,15 +71,14 @@ class _SetNotificationModal extends Component {
             time: (new Date()).getTime() + 5000
         };
 
-        console.log('Scheduling delayed notification:', {localNotification, schedulingOptions})
+        console.warn('Scheduling delayed notification:', {localNotification, schedulingOptions})
 
         Notifications.scheduleLocalNotificationAsync(localNotification, schedulingOptions)
-            .then(id => console.info(`Delayed notification scheduled (${id}) at ${moment(schedulingOptions.time).format()}`))
+            .then(id => console.warn(`Delayed notification scheduled (${id}) at ${moment(schedulingOptions.time).format()}`))
             .catch(err => console.error(err))
     }
 
     render() {
-        console.warn("visible", this.props.showSetNotificationModal);
         return (
             <Modal
                 visible={this.props.showSetNotificationModal}
@@ -143,7 +140,7 @@ class _SetNotificationModal extends Component {
                     </View>
                 </View>
                 <View style={styles.container}>
-                    <Button title='Send Immediate Notification' onPress={() => this._sendImmediateNotification()}/>
+                    {/*<Button title='Send Immediate Notification' onPress={() => this._sendImmediateNotification()}/>*/}
                     <Button title='Send Delayed Notification' onPress={() => this._sendDelayedNotification()}/>
                     <Button title='Close' onPress={() => this.props.setNotificationModalVisibility(false)}/>
                 </View>
