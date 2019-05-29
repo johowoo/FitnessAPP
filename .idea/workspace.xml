@@ -40,8 +40,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="475">
-              <caret line="325" column="19" lean-forward="true" selection-start-line="325" selection-start-column="19" selection-end-line="325" selection-end-column="19" />
+            <state relative-caret-position="101">
+              <caret line="336" column="76" selection-start-line="336" selection-start-column="76" selection-end-line="336" selection-end-column="76" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="e#260#319#0" expanded="true" />
@@ -53,8 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/SetNotificationModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="49" column="6" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
+            <state relative-caret-position="380">
+              <caret line="83" column="36" selection-start-line="83" selection-start-column="36" selection-end-line="83" selection-end-column="36" />
               <folding>
                 <element signature="e#0#135#0" expanded="true" />
               </folding>
@@ -109,7 +109,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>DELETEEXERCISEFROMWORKO</find>
       <find>Finish</find>
       <find>Icon</find>
       <find>Iconfont</find>
@@ -138,6 +137,7 @@
       <find>ICONFONT.JSON</find>
       <find>show</find>
       <find>_sendDelayedNotification</find>
+      <find>AddWeight</find>
       <find>this.props</find>
     </findStrings>
     <replaceStrings>
@@ -427,18 +427,17 @@
       <workItem from="1559080037683" duration="6662000" />
       <workItem from="1559092281045" duration="7125000" />
       <workItem from="1559112300756" duration="9027000" />
-      <workItem from="1559167402231" duration="2835000" />
+      <workItem from="1559167402231" duration="3077000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="404115000" />
+    <option name="totallyTimeSpent" value="404357000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="947" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17714632" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17714632" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -452,7 +451,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="RNConsole" order="8" />
       <window_info anchor="bottom" id="CSS-X-Fire" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4996979" visible="true" weight="0.07195122" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4996979" visible="true" weight="0.34390244" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50030214" side_tool="true" weight="0.03640777" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.7166948" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
@@ -920,8 +919,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/SetNotificationModal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="49" column="6" selection-start-line="49" selection-start-column="6" selection-end-line="49" selection-end-column="6" />
+        <state relative-caret-position="380">
+          <caret line="83" column="36" selection-start-line="83" selection-start-column="36" selection-end-line="83" selection-end-column="36" />
           <folding>
             <element signature="e#0#135#0" expanded="true" />
           </folding>
@@ -930,8 +929,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="475">
-          <caret line="325" column="19" lean-forward="true" selection-start-line="325" selection-start-column="19" selection-end-line="325" selection-end-column="19" />
+        <state relative-caret-position="101">
+          <caret line="336" column="76" selection-start-line="336" selection-start-column="76" selection-end-line="336" selection-end-column="76" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
             <element signature="e#260#319#0" expanded="true" />

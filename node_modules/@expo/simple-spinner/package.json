@@ -1,0 +1,16 @@
+{
+  "name": "@expo/simple-spinner",
+  "description": "A super simple spinner",
+  "keywords": ["simple", "spinner", "indicator"],
+  "version": "1.0.2",
+  "licence": "MIT",
+  "author": "Ian McCall <imccall@da-puck.com> (http://www.da-puck.com/)",
+  "main": "./spinner",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dapuck/node-simple-spinner.git"
+  },
+  "homepage": "https://github.com/dapuck/node-simple-spinner",
+  "dependencies": {
+  }
+}
