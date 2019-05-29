@@ -138,6 +138,15 @@ export const customWorkout = (state = defaultState, action) => {
                 }
             }
             return emptyState;
+        case types.RESET_CUSTOM_WORKOUT_ADDABLE:
+            const customWorkoutAddableCopy = JSON.parse(JSON.stringify(state.customWorkoutAddable));
+            for (let key in customWorkoutAddableCopy) {
+                if (customWorkoutAddableCopy.hasOwnProperty(key)) {
+                    customWorkoutAddableCopy[key] = true;
+                }
+            }
+            console.warn("addableCopy", customWorkoutAddableCopy);
+            return {...state, customWorkoutAddable: customWorkoutAddableCopy};
         default:
             return state;
     }

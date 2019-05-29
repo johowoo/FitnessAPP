@@ -6,16 +6,15 @@ fitness app built with React native
 
 ## To be done
 ### bugs to be fixed
-
+* set all Addable sets to true once the currentWorkout is empty(in delete case );
 * sets of cardio 
-* each library can not be empty, before added to CurrentWorkout(add problems)
-(need to check that the library has exercises);
 * adjust to different smartphones (iPhone 8 ... Android)
 
 ### new functions
 * select month & year in calendar //calendar
 * back to today in calendar   //calendar
 * finish & congrats page
+
 
 * add custom workout to editHistory
 * slide effects in swiping pics
@@ -85,3 +84,5 @@ fitness app built with React native
 * transparency in PhotoModal ✔️
 * check whether the pressedDate is before today  ✔️
 * check wether the editHistory is empty before finish ✔️
+* * each library can not be empty, before added to CurrentWorkout(add problems)
+(need to check that the library has exercises); ✔️

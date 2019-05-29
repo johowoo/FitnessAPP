@@ -13,7 +13,7 @@ import Icon from "react-native-vector-icons/MaterialIcons";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import {connect} from "react-redux";
 import {
-    addCategoryToEditLibraryAction, setAddCategoryModalForLibraryVisibilityAction
+    addCategoryToEditLibraryAction, setAddCategoryModalForLibraryVisibilityAction, resetCustomWorkoutAddableAction
 } from "../store/actions";
 import {AddWeightToExercise} from "./AddWeightToExercise";
 import {EditWeightReps} from './EditWeightReps';
@@ -116,6 +116,7 @@ export class _WorkoutList extends Component {
         });
         if (this.props.workoutSetsData.length === 0) {
             await this.props.updateEmpty && this.props.updateEmpty(true);
+            await this.props.resetCustomWorkoutAddable();
         }
         await this.setState({
             showReminderModal: false,
@@ -280,6 +281,9 @@ const mapActionsToProps = dispatch => ({
     addCategoryToEditLibrary: (data) => dispatch(addCategoryToEditLibraryAction(data)),
     setAddCategoryModalForLibraryVisibility(bool) {
         dispatch(setAddCategoryModalForLibraryVisibilityAction(bool))
+    },
+    resetCustomWorkoutAddable: () => {
+        dispatch(resetCustomWorkoutAddableAction());
     }
 });
 export const WorkoutList = connect(

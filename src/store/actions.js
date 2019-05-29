@@ -66,6 +66,8 @@ export const addExerciseSetToCurrentWorkoutAction = data =>
     createAction(types.ADD_EXERCISE_SET_TO_CURRENT_WORKOUT)(data);
 // export const deleteExerciseSetFromCustomWorkoutAction = data =>
 //     createAction(types.DELETE_EXERCISE_SET_FROM_CUSTOM_WORKOUT)(data);
+export const resetCustomWorkoutAddableAction = data =>
+    createAction(types.RESET_CUSTOM_WORKOUT_ADDABLE)(data);
 
 //Edit Library
 export const setAddCategoryModalForLibraryVisibilityAction = data =>
