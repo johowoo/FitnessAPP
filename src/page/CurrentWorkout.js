@@ -218,7 +218,7 @@ const styles = StyleSheet.create({
     textBar: {
         textAlign: "center",
         color: "#ddd",
-        fontSize: 28,
+        fontSize: 24,
         // fontFamily: Fonts.PattayaRegular
         fontFamily: "PattayaRegular",
     },

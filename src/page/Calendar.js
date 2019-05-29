@@ -168,7 +168,7 @@ export class _Calendar extends Component {
                                     style={styles.title}>{parseInt(formatYYYYMMDDFromDate(new Date()), 10) >= parseInt(this.state.pressedDay.replace(/-/g, ''), 10) ? "Workout History" : "Future Plan"}</Text>
                             ) : null}
                         </View>
-                        <View style={{margin: 20}}>
+                        <View style={{margin: 12}}>
                             {this.props.fontLoaded ? (
                                 <Text style={styles.subTitle}>{this.state.pressedDay}</Text>
                             ) : null}
@@ -233,7 +233,6 @@ export class _Calendar extends Component {
                         </Text>
                     </View>
                 ))}
-
             </View>
         </TouchableWithoutFeedback>
     );
@@ -276,7 +275,7 @@ const styles = StyleSheet.create({
     textBar: {
         textAlign: "center",
         color: "#ddd",
-        fontSize: 28,
+        fontSize: 25,
         // fontFamily: Fonts.PattayaRegular
         fontFamily: "PattayaRegular",
     },
@@ -287,23 +286,23 @@ const styles = StyleSheet.create({
         borderBottomColor: "#b0b0b0",
     },
     topTitle: {
-        height: 90,
+        height: 60,
         alignItems: "center",
-        padding: 20,
-        borderBottomWidth: 4,
-        borderBottomColor: "#ddd",
+        padding: 12,
+        borderBottomWidth: 1,
+        borderBottomColor: "#777",
     },
     title: {
         textAlign: "center",
         color: "#ddd",
-        fontSize: 32,
+        fontSize: 26,
         // fontFamily: Fonts.PattayaRegular
         fontFamily: "PattayaRegular",
     },
     subTitle: {
         textAlign: "center",
         color: "#ddd",
-        fontSize: 24,
+        fontSize: 22,
         // fontFamily: Fonts.PattayaRegular
         fontFamily: "PattayaRegular",
     },

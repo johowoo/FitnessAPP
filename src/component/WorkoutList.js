@@ -305,7 +305,7 @@ const styles = StyleSheet.create({
         lineHeight: 40,
         textAlign: "center",
         marginTop: 10,
-        fontSize: 25,
+        fontSize: 22,
         color: "#eee",
         fontFamily: "PattayaRegular"
     },
