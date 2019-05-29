@@ -46,12 +46,15 @@ export class _CustomWorkout extends Component {
     //delete pic from progress
     handleConfirm = async () => {
         await LoadingUtil.showLoading();
-        await this.props.updateEmpty(false);
+
         //add exercises to currentWorkout
         await this.props.addExerciseSetToCurrentWorkout({
             category: this.state.selectedExerciseCategory,
             sets: this.props.customWorkoutSets
         });
+        if (this.props.currentWorkout.length > 0) {
+            await this.props.updateEmpty(false);
+        }
         await this.setState({
             showReminder: false
         });
@@ -76,17 +79,26 @@ export class _CustomWorkout extends Component {
                 disabled={!this.props.customWorkoutAddable[item]}
                 // style={{marginTop: 10,}}
                 onPress={async () => {
-                    this.setState({
-                        selectedExerciseCategory: item,
-                        showReminder: true,
-                        reminderTitle: "Add Exercises",
-                        reminderContent: `Do you want to add this sets of exercise(${item}) to currentWorkout`,
-                        hideConfirmButton: false
-                    })
+                    await this.setState({selectedExerciseCategory: item});
+                    if (!this.props.customWorkoutSets[this.state.selectedExerciseCategory] || this.props.customWorkoutSets[this.state.selectedExerciseCategory].length === 0) {
+                        await this.setState({
+                            showReminder: true,
+                            reminderTitle: "Empty",
+                            reminderContent: `This category is empty,please edit this category in Edit Library`,
+                            hideConfirmButton: true
+                        })
+                    } else {
+                        await this.setState({
+                            showReminder: true,
+                            reminderTitle: "Add Exercises",
+                            reminderContent: `Do you want to add this sets of exercise(${item}) to currentWorkout`,
+                            hideConfirmButton: false
+                        })
+                    }
                 }}>
                 {/*<Image style={styles.image} source={{uri: props.item.photoURI}}/>*/}
                 <View style={styles.alignVerAndHorCenter}>
-                    {createIcons(item,index,"#eee")}
+                    {createIcons(item, index, "#eee")}
                 </View>
                 <View style={styles.alignVerAndHorCenter}>
                     <Text style={{color: "#eee", fontSize: 30, fontFamily: "PattayaRegular"}}>{item}</Text>
@@ -109,14 +121,14 @@ export class _CustomWorkout extends Component {
         return (
             <LinearGradient colors={["#219dd5", "#51c0bb"]} style={{flex: 1}}>
                 <ScrollView>
-                    <View style={{marginTop:20}}>
+                    <View style={{marginTop: 20}}>
                         {this.props.customWorkoutCategory.length > 0 ?
                             <FlatList
                                 data={this.props.customWorkoutCategory}
                                 style={styles.container}
                                 renderItem={props => this.renderItem({...props})}
                                 numColumns={2}
-                                keyExtractor={(item, index) => item.toString()+index.toString()}
+                                keyExtractor={(item, index) => item.toString() + index.toString()}
                                 // onEndReached={this.loadData}
                                 // ListFooterComponent={() => <FooterComponent/>}
                                 onEndReachedThreshol={0.2}
@@ -161,6 +173,7 @@ export class _CustomWorkout extends Component {
 }
 
 const mapStateToProps = state => ({
+    currentWorkout: state.currentWorkout,
     customWorkout: state.customWorkout,
     customWorkoutCategory: state.customWorkout.customWorkoutCategory,
     customWorkoutSets: state.customWorkout.customWorkoutSets,
