@@ -12,6 +12,8 @@ import Button from "apsl-react-native-button";
 import Icon from "react-native-vector-icons/MaterialIcons";
 import FontAwesomeIcon from "react-native-vector-icons/FontAwesome";
 import {connect} from "react-redux";
+import {IconFont} from '@expo/vector-icons';
+
 import {
     addCategoryToEditLibraryAction, setAddCategoryModalForLibraryVisibilityAction, resetCustomWorkoutAddableAction
 } from "../store/actions";
@@ -208,15 +210,16 @@ export class _WorkoutList extends Component {
                             style={styles.plusButton}
                             textStyle={styles.plus}
                             children={
-                                <Icon name="fitness-center" size={50} color="white" key="add"/>
+                                <IconFont name="Gym2" size={50} color="white"/>
                             }
                         />
+                        {/*<Icon name="fitness-center" size={50} color="white" key="add"/>*/}
                     </View>
                     <Text style={styles.bigText}>
                         Manual Workout
                     </Text>
-                    <View style={{marginTop: 5}}>
-                        <Text style={{color: "#ccc", fontFamily: "PattayaRegular", fontSize: 16, marginLeft: 20}}>
+                    <View>
+                        <Text style={{color: "#ccc", fontFamily: "PattayaRegular", fontSize: 14}}>
                             Add exercises manually one by one
                         </Text>
                     </View>
@@ -229,9 +232,11 @@ export class _WorkoutList extends Component {
                             style={styles.plusButton}
                             textStyle={styles.plus}
                             children={
-                                <FontAwesomeIcon name="pencil" size={50} color="white" key="add"/>
+                                <IconFont name="Edit" size={50} color="white"/>
                             }
                         />
+                        {/*<FontAwesomeIcon name="pencil" size={50} color="white" key="add"/>*/}
+
                     </View>
                     <Text style={styles.bigText}>
                         Custom Workout
@@ -239,8 +244,8 @@ export class _WorkoutList extends Component {
                         {/*{"\n"}*/}
                         {/*exercises*/}
                     </Text>
-                    <View style={{marginTop: 5}}>
-                        <Text style={{color: "#ccc", fontFamily: "PattayaRegular", fontSize: 16, marginLeft: 20}}>
+                    <View>
+                        <Text style={{color: "#ccc", fontFamily: "PattayaRegular", fontSize: 14}}>
                             Add exercises from existing categories
                         </Text>
                     </View>
@@ -256,9 +261,12 @@ export class _WorkoutList extends Component {
                             style={styles.plusButton}
                             textStyle={styles.plus}
                             children={
-                                <FontAwesomeIcon name="book" size={50} color="white" key="add"/>
+                                <IconFont name="Library" size={50} color="white"/>
+
                             }
                         />
+                        {/*<FontAwesomeIcon name="book" size={50} color="white" key="add"/>*/}
+
                     </View>
                     <Text style={styles.bigText}>
                         Edit Library
@@ -266,12 +274,32 @@ export class _WorkoutList extends Component {
                         {/*{"\n"}*/}
                         {/*exercises*/}
                     </Text>
-                    <View style={{marginTop: 5}}>
-                        <Text style={{color: "#ccc", fontFamily: "PattayaRegular", fontSize: 16, marginLeft: 20}}>
+                    <View>
+                        <Text style={{color: "#ccc", fontFamily: "PattayaRegular", fontSize: 14}}>
                             Edit existing category of exercises
                         </Text>
                     </View>
+                    <View style={styles.buttonContainer}>
+                        <Button
+                            onPress={this.handlePress.bind(this)}
+                            style={styles.plusButton}
+                            textStyle={styles.plus}
+                            children={
+                                <IconFont name="Alarm" size={50} color="white"/>
+                            }
+                        />
+                        {/*<Icon name="alarm" size={50} color="white" key="add"/>*/}
+                    </View>
+                    <Text style={styles.bigText}>
+                        Set Notifications
+                    </Text>
+                    {/*<View >*/}
+                    {/*    <Text style={{color: "#ccc", fontFamily: "PattayaRegular", fontSize: 14}}>*/}
+                    {/*        Add exercises manually one by one*/}
+                    {/*    </Text>*/}
+                    {/*</View>*/}
                 </View>
+
             </View>
         );
         return (
@@ -320,7 +348,7 @@ const styles = StyleSheet.create({
         lineHeight: 40,
         textAlign: "center",
         // marginTop: 5,
-        fontSize: 20,
+        fontSize: 18,
         color: "#eee",
         fontFamily: "PattayaRegular"
     },

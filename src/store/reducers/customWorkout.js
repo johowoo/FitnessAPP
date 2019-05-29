@@ -145,7 +145,6 @@ export const customWorkout = (state = defaultState, action) => {
                     customWorkoutAddableCopy[key] = true;
                 }
             }
-            console.warn("addableCopy", customWorkoutAddableCopy);
             return {...state, customWorkoutAddable: customWorkoutAddableCopy};
         default:
             return state;
