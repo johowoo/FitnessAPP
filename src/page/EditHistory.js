@@ -66,7 +66,6 @@ class _EditHistory extends Component {
                             ...props,
                             date: navProps.date
                         });
-                        console.warn("ava", this.props.checkButtonAvailabilitySets);
                         await this.props.navigation.setParams({checkButtonAvailabilitySets: this.props.checkButtonAvailabilitySets})
                     }}
                 />

@@ -52,11 +52,6 @@ export const editHistoryExercisesList = (
                     emptyState.push(item);
                 }
             });
-            console.warn("emptyState", emptyState);
-            console.warn("checkButtonAvailabilityButton", {
-                ...state.checkButtonAvailabilitySets,
-                [action.payload.date]: !!emptyState.length
-            });
             return {
                 ...state,
                 workoutHistoryExerciseList: {
