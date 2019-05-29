@@ -37,7 +37,6 @@ class _EditHistory extends Component {
 
     render() {
         const navProps = this.props.navigation.state.params;
-        console.warn("ExerciseList[navProps.date]", this.props.workoutHistoryExerciseList[navProps.date]);
         return (
             <LinearGradient colors={["#219dd1", "#51c0bb"]} style={{flex: 1}}>
                 {/*<Text>{navProps.selectedExerciseCategory}</Text>*/}

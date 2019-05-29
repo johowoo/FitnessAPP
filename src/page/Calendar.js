@@ -25,8 +25,7 @@ import {
 } from "../store/actions";
 import {AddWeightToExercise} from "../component/AddWeightToExercise";
 import {PeriodAnalysis} from "../component/PeriodAnalysis";
-import {WorkoutList} from "../component/WorkoutList";
-import {ExerciseModal} from "./ExerciseModal";
+
 import {formatYYYY_MM_DDFromDate, formatYYYYMMDDFromDate} from "../utils/formatMonthandDay";
 
 const {width, height} = Dimensions.get("window");
@@ -56,6 +55,7 @@ export class _Calendar extends Component {
                 {/*</View>*/}
 
                 <View style={{marginTop: 10}}>
+
                     <CalendarComp
                         theme={{
                             // backgroundColor: '#c69',
@@ -135,6 +135,11 @@ export class _Calendar extends Component {
                             }}><Text> </Text></View><Text
                             style={{color: "#EFEFEF", marginLeft: 10}}>before</Text></View>
                     </View>
+                </View>
+                <View style={{marginTop: 20}}>
+                    <Text style={{color: "#ccc", fontFamily: "PattayaRegular", fontSize: 20, marginLeft: 20}}>
+                        Click day in the calendar to check/edit workout history
+                    </Text>
                 </View>
                 <View style={{marginTop: 30}}>
                     <Text style={styles.analysisTitle}>Analysis</Text>
