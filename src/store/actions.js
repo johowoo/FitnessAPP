@@ -123,3 +123,9 @@ export const deleteExercisesFromExerciseListOfWorkoutHistoryAction = data =>
 
 export const setReminderModalInEditHistoryAction = data =>
     createAction(types.SET_REMINDER_MODAL_IN_EDIT_HISTORY)(data);
+
+//Set notifications
+export const setNotificationModalVisibilityAction = data =>
+    createAction(types.SET_NOTIFICATION_MODAL_VISIBILITY)(data);
+
+

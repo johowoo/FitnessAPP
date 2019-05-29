@@ -12,7 +12,7 @@ import {displayPicture} from "./reducers/displayPicture";
 import {customWorkout} from "./reducers/customWorkout";
 import {editLibrary} from "./reducers/editLibrary";
 import {editHistoryExercisesList} from "./reducers/editHistoryExercisesList";
-
+import {setNotification} from "./reducers/setNotification";
 
 export const reducer = combineReducers({
     currentWorkout,
@@ -27,5 +27,6 @@ export const reducer = combineReducers({
     displayPicture,
     customWorkout,
     editLibrary,
-    editHistoryExercisesList
+    editHistoryExercisesList,
+    setNotification
 });

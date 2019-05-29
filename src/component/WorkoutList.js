@@ -15,12 +15,16 @@ import {connect} from "react-redux";
 import {IconFont} from '@expo/vector-icons';
 
 import {
-    addCategoryToEditLibraryAction, setAddCategoryModalForLibraryVisibilityAction, resetCustomWorkoutAddableAction
+    addCategoryToEditLibraryAction,
+    setAddCategoryModalForLibraryVisibilityAction,
+    resetCustomWorkoutAddableAction,
+    setNotificationModalVisibilityAction
 } from "../store/actions";
 import {AddWeightToExercise} from "./AddWeightToExercise";
 import {EditWeightReps} from './EditWeightReps';
 import LoadingUtil from '../utils/LoadingUtil';
 import {ReminderModal} from "./ReminderModal";
+import {SetNotificationModal} from "./SetNotificationModal";
 
 const {width, height} = Dimensions.get("window");
 
@@ -281,7 +285,13 @@ export class _WorkoutList extends Component {
                     </View>
                     <View style={styles.buttonContainer}>
                         <Button
-                            onPress={this.handlePress.bind(this)}
+                            onPress={() => {
+                                console.warn("true")
+                                this.props.setNotificationModalVisibility(true)
+                            }
+                                // this.handlePress.bind(this)
+
+                            }
                             style={styles.plusButton}
                             textStyle={styles.plus}
                             children={
@@ -298,25 +308,33 @@ export class _WorkoutList extends Component {
                     {/*        Add exercises manually one by one*/}
                     {/*    </Text>*/}
                     {/*</View>*/}
+
                 </View>
             </View>
         );
         return (
-            <SwipeableFlatList
-                style={{marginTop: 2}}
-                ListFooterComponent={this.props.showListFooterComponent ? listFooterComponent : null}
-                data={this.props.workoutSetsData}
-                renderItem={this._renderItem}
-                keyExtractor={(item, index) => item + index}
-                renderQuickActions={this.getQuickActions}
-                maxSwipeDistance={80}
-            />
+            <View>
+                <SwipeableFlatList
+                    style={{marginTop: 2}}
+                    ListFooterComponent={this.props.showListFooterComponent ? listFooterComponent : null}
+                    data={this.props.workoutSetsData}
+                    renderItem={this._renderItem}
+                    keyExtractor={(item, index) => item + index}
+                    renderQuickActions={this.getQuickActions}
+                    maxSwipeDistance={80}
+                />
+                <SetNotificationModal
+                    showSetNotificationModal={this.props.showSetNotificationModal}
+                    handleCloseNotificationModal={this.props.setNotificationModalVisibility}
+                />
+            </View>
         );
     }
 }
 
 const mapStateToProps = state => ({
     // currentWorkout: state.currentWorkout,
+    showSetNotificationModal: state.setNotification.showSetNotificationModal
 });
 
 const mapActionsToProps = dispatch => ({
@@ -326,7 +344,10 @@ const mapActionsToProps = dispatch => ({
     },
     resetCustomWorkoutAddable: () => {
         dispatch(resetCustomWorkoutAddableAction());
-    }
+    },
+    setNotificationModalVisibility: bool => {
+        dispatch(setNotificationModalVisibilityAction(bool));
+    },
 });
 export const WorkoutList = connect(
     mapStateToProps,

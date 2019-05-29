@@ -18,7 +18,8 @@ import {
     addWeightToExercisesAction,
     editWeightRepsInWorkoutAction,
     deleteExerciseFromWorkoutListAction,
-    setAddCategoryModalForLibraryVisibilityAction
+    setAddCategoryModalForLibraryVisibilityAction,
+
 } from "../store/actions";
 
 import {WorkoutList} from "../component/WorkoutList";
@@ -27,6 +28,7 @@ import {formatMonthandDay} from "../utils/formatMonthandDay";
 import LoadingUtil from "../utils/LoadingUtil";
 import {LinearGradient} from "expo";
 import {currentWorkoutModals} from "../store/reducers/currentWorkoutModals";
+
 
 class _CurrentWorkout extends Component {
     static defaultProps = {
@@ -162,6 +164,7 @@ const mapStateToProps = state => ({
     showEditWeightReps: state.currentWorkoutModals.showEditWeightReps,
     sectionExercises: state.exercises.sectionExercises,
     extraSectionExercises: state.exercises.extraSectionExercises,
+    // showSetNotificationModal: state.setNotification.showReminderModal
 });
 const mapActionsToProps = dispatch => ({
     setModalVisibility(visible) {
@@ -200,6 +203,9 @@ const mapActionsToProps = dispatch => ({
     deleteExerciseFromWorkoutList: data => {
         dispatch(deleteExerciseFromWorkoutListAction(data));
     },
+    // setNotificationModalVisibility: data => {
+    //     dispatch(setNotificationModalVisibilityAction(data));
+    // },
 
 });
 
