@@ -61,10 +61,14 @@ class _EditHistory extends Component {
                         ...props,
                         date: navProps.date
                     })}
-                    deleteExerciseFromWorkoutList={(props) => this.props.deleteExercisesFromExerciseListOfWorkoutHistory({
-                        ...props,
-                        date: navProps.date
-                    })}
+                    deleteExerciseFromWorkoutList={async (props) => {
+                        await this.props.deleteExercisesFromExerciseListOfWorkoutHistory({
+                            ...props,
+                            date: navProps.date
+                        });
+                        console.warn("ava", this.props.checkButtonAvailabilitySets);
+                        await this.props.navigation.setParams({checkButtonAvailabilitySets: this.props.checkButtonAvailabilitySets})
+                    }}
                 />
                 <ExerciseModal
                     workoutSetsData={this.props.workoutHistoryExerciseList[navProps.date]}
@@ -78,13 +82,6 @@ class _EditHistory extends Component {
                             date: navProps.date
                         });
                         await this.props.navigation.setParams({checkButtonAvailabilitySets: this.props.checkButtonAvailabilitySets})
-                        // await this.props.navigation.navigate("Calendar");
-                        // await this.props.navigation.navigate("EditHistory", {
-                        //     date: navProps.date,
-                        //     setEditHistoryExerciseModalVisibility: navProps.setEditHistoryExerciseModalVisibility,
-                        //     setReminderModalInEditHistory: navProps.setReminderModalInEditHistory,
-                        //     checkButtonAvailabilitySets: navProps.checkButtonAvailabilitySets
-                        // });
                     }}
                 />
                 {this.props.showReminderModal && <ReminderModal

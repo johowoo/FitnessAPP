@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd580928-bb60-480d-8b73-7c94df331487" name="Default Changelist" comment="p">
+      <change beforePath="$PROJECT_DIR$/src/page/EditHistory.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/page/EditHistory.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/store/reducers/editHistoryExercisesList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/editHistoryExercisesList.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -18,8 +19,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/EditHistory.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="312">
-              <caret line="113" column="91" selection-start-line="113" selection-start-column="91" selection-end-line="113" selection-end-column="91" />
+            <state relative-caret-position="334">
+              <caret line="70" column="22" lean-forward="true" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -77,15 +78,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/store/reducers/savedExerciseForEachDay.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="41">
-              <caret line="19" column="54" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="54" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/utils/formatMonthandDay.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="191">
@@ -94,20 +86,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/store/reducers/editHistoryExercisesList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="145">
-              <caret line="46" column="73" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="73" />
+            <state relative-caret-position="174">
+              <caret line="63" column="54" selection-start-line="63" selection-start-column="54" selection-end-line="63" selection-end-column="54" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="117" column="47" lean-forward="true" selection-start-line="117" selection-start-column="47" selection-end-line="117" selection-end-column="47" />
+            <state relative-caret-position="187">
+              <caret line="117" column="73" lean-forward="true" selection-start-line="117" selection-start-column="73" selection-end-line="117" selection-end-column="73" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -135,7 +127,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>setReminderModalVisibilityInEditHistory</find>
       <find>date</find>
       <find>addNewExerciseList</find>
       <find>have</find>
@@ -160,11 +151,12 @@
       <find>ADD_EXERCISES_TO_EXERCISE_LIST_OF_WORKOUT_HISTORY</find>
       <find>addExercisesToexer</find>
       <find>addExercisesTo</find>
-      <find>navigate</find>
       <find>deleteExerc</find>
       <find>DELETE_EXERCISES_FROM_EXERCISE_LIST_OF_WORKOUT_HISTORY</find>
       <find>deleteExercisefrom</find>
       <find>deleteExercisesFromExerciseListOfWorkoutHistory</find>
+      <find>updateEmpty</find>
+      <find>navigate</find>
     </findStrings>
     <replaceStrings>
       <replace>expo</replace>
@@ -229,7 +221,6 @@
         <option value="$PROJECT_DIR$/src/navigator/CalendarStackNavigator.js" />
         <option value="$PROJECT_DIR$/src/navigator/InnerCurrentWorkoutStackNavigator.js" />
         <option value="$PROJECT_DIR$/src/component/ExerciseList.js" />
-        <option value="$PROJECT_DIR$/src/component/WorkoutList.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/customWorkout.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/editHistory.js" />
         <option value="$PROJECT_DIR$/src/store/reducer.js" />
@@ -243,8 +234,9 @@
         <option value="$PROJECT_DIR$/src/store/actionTypes.js" />
         <option value="$PROJECT_DIR$/src/page/Calendar.js" />
         <option value="$PROJECT_DIR$/src/navigator/CalendarEditHistoryStackNavigator.js" />
-        <option value="$PROJECT_DIR$/src/page/EditHistory.js" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/component/WorkoutList.js" />
+        <option value="$PROJECT_DIR$/src/page/EditHistory.js" />
         <option value="$PROJECT_DIR$/src/store/reducers/editHistoryExercisesList.js" />
       </list>
     </option>
@@ -460,18 +452,18 @@
       <workItem from="1559008623092" duration="6243000" />
       <workItem from="1559032435699" duration="7722000" />
       <workItem from="1559080037683" duration="6662000" />
-      <workItem from="1559092281045" duration="4179000" />
+      <workItem from="1559092281045" duration="5089000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="388481000" />
+    <option name="totallyTimeSpent" value="389391000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="947" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1898428" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17714632" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -485,7 +477,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="RNConsole" order="8" />
       <window_info anchor="bottom" id="CSS-X-Fire" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4996979" visible="true" weight="0.30121952" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4996979" visible="true" weight="0.30121952" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50030214" side_tool="true" weight="0.03640777" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.7166948" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
@@ -874,48 +866,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/Calendar.js">
+    <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="693">
-          <caret line="100" column="35" lean-forward="true" selection-start-line="100" selection-start-column="35" selection-end-line="100" selection-end-column="35" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/CurrentWorkout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="57" column="39" lean-forward="true" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#177#223#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/formatMonthandDay.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="11" column="37" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/navigator/CalendarEditHistoryStackNavigator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="57" column="100" selection-start-line="57" selection-start-column="73" selection-end-line="57" selection-end-column="100" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/EditHistory.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="113" column="91" selection-start-line="113" selection-start-column="91" selection-end-line="113" selection-end-column="91" />
+        <state relative-caret-position="187">
+          <caret line="117" column="73" lean-forward="true" selection-start-line="117" selection-start-column="73" selection-end-line="117" selection-end-column="73" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -932,6 +886,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/Calendar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="693">
+          <caret line="100" column="35" lean-forward="true" selection-start-line="100" selection-start-column="35" selection-end-line="100" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/navigator/CalendarEditHistoryStackNavigator.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="57" column="100" selection-start-line="57" selection-start-column="73" selection-end-line="57" selection-end-column="100" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/store/reducers/savedExerciseForEachDay.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="41">
@@ -939,20 +913,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/reducers/editHistoryExercisesList.js">
+    <entry file="file://$PROJECT_DIR$/src/page/CurrentWorkout.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="145">
-          <caret line="46" column="73" selection-start-line="46" selection-start-column="19" selection-end-line="46" selection-end-column="73" />
+        <state relative-caret-position="176">
+          <caret line="57" column="39" lean-forward="true" selection-start-line="57" selection-start-column="39" selection-end-line="57" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#177#223#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
+    <entry file="file://$PROJECT_DIR$/src/page/EditHistory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="117" column="47" lean-forward="true" selection-start-line="117" selection-start-column="47" selection-end-line="117" selection-end-column="47" />
+        <state relative-caret-position="334">
+          <caret line="70" column="22" lean-forward="true" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/formatMonthandDay.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="11" column="37" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/reducers/editHistoryExercisesList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="174">
+          <caret line="63" column="54" selection-start-line="63" selection-start-column="54" selection-end-line="63" selection-end-column="54" />
         </state>
       </provider>
     </entry>

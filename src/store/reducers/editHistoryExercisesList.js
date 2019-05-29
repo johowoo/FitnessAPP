@@ -45,21 +45,27 @@ export const editHistoryExercisesList = (
                 workoutHistoryExerciseList: {...state.workoutHistoryExerciseList, [action.payload.date]: stateCopy}
             };
         case types.DELETE_EXERCISES_FROM_EXERCISE_LIST_OF_WORKOUT_HISTORY:
-            const stateCopyDelete = JSON.parse(JSON.stringify(state.workoutHistoryExerciseList[action.payload.date]));
-            console.warn("delete_action_payload", action.payload);
+            // const stateCopyDelete = JSON.parse(JSON.stringify(state.workoutHistoryExerciseList[action.payload.date]));
             const emptyState = [];
-            stateCopyDelete.map((item, index) => {
+            state.workoutHistoryExerciseList[action.payload.date].map((item, index) => {
                 if (parseInt(item.time, 10) !== parseInt(action.payload.time, 10)) {
-                    // stateCopyDelete.splice(index, 1);
                     emptyState.push(item);
                 }
             });
-            // return {...state, workoutHistoryExerciseList: stateCopyDelete};
+            console.warn("emptyState", emptyState);
+            console.warn("checkButtonAvailabilityButton", {
+                ...state.checkButtonAvailabilitySets,
+                [action.payload.date]: !!emptyState.length
+            });
             return {
                 ...state,
                 workoutHistoryExerciseList: {
                     ...state.workoutHistoryExerciseList,
-                    [action.payload.date]: emptyState
+                    [action.payload.date]: emptyState,
+                },
+                checkButtonAvailabilitySets: {
+                    ...state.checkButtonAvailabilitySets,
+                    [action.payload.date]: !!emptyState.length
                 }
             };
         case types.EDIT_WEIGHT_REPS_IN_WORKOUT_OF_CALENDAR_HISTORY_ACTION:
