@@ -59,6 +59,7 @@ class _CurrentWorkout extends Component {
             date: currentDate,
             exercises: this.props.currentWorkout,
         });
+        this.props.navigation.navigate("CongratsPage");
     };
     handleCloseReminder = (bool) => {
         this.setState({
