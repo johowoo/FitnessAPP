@@ -1,5 +1,5 @@
 node_modules/*
-!node_modules/@expo
+!node_modules/@expo/vector-icons
 .expo/*
 npm-debug.*
 *.jks
