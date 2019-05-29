@@ -47,20 +47,6 @@ class _SetNotificationModal extends Component {
         console.warn(`Notification (${origin}) with data: ${JSON.stringify(data)}`)
     };
 
-    // _sendImmediateNotification() {
-    //     const localNotification = {
-    //         title: 'Immediate testing Title',
-    //         body: 'Testing body',
-    //         data: {type: 'immediate'}
-    //     };
-    //
-    //     console.warn('Scheduling immediate notification:', {localNotification})
-    //
-    //     Notifications.presentLocalNotificationAsync(localNotification)
-    //         .then(id => console.warn(`Immediate notification scheduled (${id})`))
-    //         .catch(err => console.error(err))
-    // }
-
     _sendDelayedNotification() {
         const localNotification = {
             title: 'Delayed testing Title',
@@ -93,26 +79,9 @@ class _SetNotificationModal extends Component {
                                 marginLeft: 10,
                                 marginBottom: 15,
                             }}>
-                            Please input the weight and reps of this exercise:
+                            Please Select the day you want to receive notifications:
                         </Text>
-                        <TextInput
-                            placeholderTextColor={"#cc6699"}
-                            style={styles.weightTextInput}
-                            value={this.state.weightText}
-                            placeholder=" Notification: 0-300 (KG)"
-                            onChangeText={text => {
-                                this.setState({weightText: text});
-                            }}
-                        />
-                        <TextInput
-                            placeholderTextColor={"#cc6699"}
-                            style={styles.weightTextInput}
-                            value={this.state.repsText}
-                            placeholder=" Reps: 0-50"
-                            onChangeText={text => {
-                                this.setState({repsText: text});
-                            }}
-                        />
+
                         <View
                             style={{flexDirection: "row", justifyContent: "space-around"}}>
                             <View style={styles.modalButtonContainer}>
@@ -139,11 +108,11 @@ class _SetNotificationModal extends Component {
                         </View>
                     </View>
                 </View>
-                <View style={styles.container}>
-                    {/*<Button title='Send Immediate Notification' onPress={() => this._sendImmediateNotification()}/>*/}
-                    <Button title='Send Delayed Notification' onPress={() => this._sendDelayedNotification()}/>
-                    <Button title='Close' onPress={() => this.props.setNotificationModalVisibility(false)}/>
-                </View>
+                {/*<View style={styles.container}>*/}
+                {/*    /!*<Button title='Send Immediate Notification' onPress={() => this._sendImmediateNotification()}/>*!/*/}
+                {/*    <Button title='Send Delayed Notification' onPress={() => this._sendDelayedNotification()}/>*/}
+                {/*    <Button title='Close' onPress={() => this.props.setNotificationModalVisibility(false)}/>*/}
+                {/*</View>*/}
             </Modal>
         );
     }
