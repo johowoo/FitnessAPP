@@ -5,7 +5,7 @@ import {
     SwipeableFlatList,
     StyleSheet,
     Dimensions,
-    TouchableHighlight,
+    TouchableHighlight, ScrollView,
 } from "react-native";
 import Button from "apsl-react-native-button";
 // import {Icon} from 'expo';
@@ -215,6 +215,11 @@ export class _WorkoutList extends Component {
                     <Text style={styles.bigText}>
                         Manual Workout
                     </Text>
+                    <View style={{marginTop: 5}}>
+                        <Text style={{color: "#ccc", fontFamily: "PattayaRegular", fontSize: 16, marginLeft: 20}}>
+                            Add exercises manually one by one
+                        </Text>
+                    </View>
                     <View style={styles.buttonContainer}>
                         <Button
                             // onPress={this.handlePress.bind(this)}
@@ -234,6 +239,11 @@ export class _WorkoutList extends Component {
                         {/*{"\n"}*/}
                         {/*exercises*/}
                     </Text>
+                    <View style={{marginTop: 5}}>
+                        <Text style={{color: "#ccc", fontFamily: "PattayaRegular", fontSize: 16, marginLeft: 20}}>
+                            Add exercises from existing categories
+                        </Text>
+                    </View>
                     <View style={styles.buttonContainer}>
                         <Button
                             onPress={() => {
@@ -256,6 +266,11 @@ export class _WorkoutList extends Component {
                         {/*{"\n"}*/}
                         {/*exercises*/}
                     </Text>
+                    <View style={{marginTop: 5}}>
+                        <Text style={{color: "#ccc", fontFamily: "PattayaRegular", fontSize: 16, marginLeft: 20}}>
+                            Edit existing category of exercises
+                        </Text>
+                    </View>
                 </View>
             </View>
         );
@@ -304,8 +319,8 @@ const styles = StyleSheet.create({
     bigText: {
         lineHeight: 40,
         textAlign: "center",
-        marginTop: 10,
-        fontSize: 22,
+        // marginTop: 5,
+        fontSize: 20,
         color: "#eee",
         fontFamily: "PattayaRegular"
     },

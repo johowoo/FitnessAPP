@@ -7,6 +7,7 @@ import {
     FlatList,
     TouchableWithoutFeedback,
     Dimensions,
+    ScrollView
 } from "react-native";
 import {
     Calendar as
@@ -50,152 +51,170 @@ export class _Calendar extends Component {
                         <Text style={styles.textBar}>Calendar</Text>
                     ) : null}
                 </TopBar>
-                {/*<LinearGradient colors={["#1b98d9", "#57c5b8"]} style={{flex: 1}}>*/}
-                {/*<View style={{marginTop:30}}>*/}
-                {/*</View>*/}
-                <View style={{marginTop: 10}}>
-                    <CalendarComp
-                        theme={{
-                            // backgroundColor: '#c69',
-                            calendarBackground: 'transparent',
-                            textSectionTitleColor: '#cc6699',
-                            // selectedDayBackgroundColor: '#cc6699',
-                            selectedDayTextColor: '#eee',
-                            todayTextColor: '#cc6699',
-                            dayTextColor: '#eee',
-                            textDisabledColor: '#aaa',
-                            dotColor: '#00adf5',
-                            selectedDotColor: '#ffffff',
-                            arrowColor: '#fff',
-                            monthTextColor: '#eee',
-                            indicatorColor: 'blue',
-                            textDayFontFamily: 'PattayaRegular',
-                            textMonthFontFamily: 'PattayaRegular',
-                            textDayHeaderFontFamily: 'PattayaRegular',
-                            textDayFontWeight: '300',
-                            textMonthFontWeight: 'bold',
-                            textDayHeaderFontWeight: '300',
-                            textDayFontSize: 16,
-                            textMonthFontSize: 16,
-                            textDayHeaderFontSize: 16
-                        }}
-                        // onVisibleMonthsChange={months => {
-                        //     // console.warn("now these months are visible", months);
-                        // }}
-                        pastScrollRange={50}
-                        futureScrollRange={50}
-                        scrollEnabled
-                        markedDates={this.props.markedDates}
-                        onDayPress={day => {
-                            const date = day.dateString;
-                            if (formatYYYY_MM_DDFromDate(new Date()) === date && !Object.keys(this.props.markedDates).includes(date)) {
-                                return;
-                            }
-                            ;
-                            if (!this.props.markedDates.hasOwnProperty(date)) {
-                                this.props.navigation.navigate("EditHistory", {
-                                    date,
-                                    setEditHistoryExerciseModalVisibility: this.props.setEditHistoryExerciseModalVisibility,
-                                    setReminderModalInEditHistory: this.props.setReminderModalInEditHistory,
-                                    checkButtonAvailabilitySets: this.props.checkButtonAvailabilitySets
-                                });
-                                // console.warn(date);
-                            } else {
-                                this.setState({
-                                    pressedDay: date,
-                                    displayExercisesList: this.props.allExercisesList[date],
-                                    isModalListVisible: true,
-                                });
-                            }
-                        }}
-                    />
-                    <View style={{flexDirection: "row", marginTop: 10, marginLeft: 20}}>
-                        <View style={{flex: 0.3, flexDirection: "row", alignItems: "center", justifyContent: "center"}}><View
-                            style={{
-                                width: 22,
-                                height: 22,
-                                backgroundColor: "#fab839",
-                                borderRadius: 11
-                            }}><Text> </Text></View><Text style={{color: "#EFEFEF", marginLeft: 10}}>after</Text></View>
-                        <View style={{flex: 0.3, flexDirection: "row", alignItems: "center", justifyContent: "center"}}><View
-                            style={{
-                                width: 22,
-                                height: 22,
-                                backgroundColor: "#c69",
-                                borderRadius: 11
-                            }}><Text> </Text></View><Text
-                            style={{color: "#EFEFEF", marginLeft: 10}}>on-time</Text></View>
-                        <View style={{flex: 0.3, flexDirection: "row", alignItems: "center", justifyContent: "center"}}><View
-                            style={{
-                                width: 22,
-                                height: 22,
-                                backgroundColor: "#009966",
-                                borderRadius: 11
-                            }}><Text> </Text></View><Text
-                            style={{color: "#EFEFEF", marginLeft: 10}}>before</Text></View>
+                <ScrollView>
+                    {/*<LinearGradient colors={["#1b98d9", "#57c5b8"]} style={{flex: 1}}>*/}
+                    {/*<View style={{marginTop:30}}>*/}
+                    {/*</View>*/}
+                    <View style={{marginTop: 10}}>
+                        <CalendarComp
+                            theme={{
+                                // backgroundColor: '#c69',
+                                calendarBackground: 'transparent',
+                                textSectionTitleColor: '#cc6699',
+                                // selectedDayBackgroundColor: '#cc6699',
+                                selectedDayTextColor: '#eee',
+                                todayTextColor: '#cc6699',
+                                dayTextColor: '#eee',
+                                textDisabledColor: '#aaa',
+                                dotColor: '#00adf5',
+                                selectedDotColor: '#ffffff',
+                                arrowColor: '#fff',
+                                monthTextColor: '#eee',
+                                indicatorColor: 'blue',
+                                textDayFontFamily: 'PattayaRegular',
+                                textMonthFontFamily: 'PattayaRegular',
+                                textDayHeaderFontFamily: 'PattayaRegular',
+                                textDayFontWeight: '300',
+                                textMonthFontWeight: 'bold',
+                                textDayHeaderFontWeight: '300',
+                                textDayFontSize: 16,
+                                textMonthFontSize: 16,
+                                textDayHeaderFontSize: 16
+                            }}
+                            // onVisibleMonthsChange={months => {
+                            //     // console.warn("now these months are visible", months);
+                            // }}
+                            pastScrollRange={50}
+                            futureScrollRange={50}
+                            scrollEnabled
+                            markedDates={this.props.markedDates}
+                            onDayPress={day => {
+                                const date = day.dateString;
+                                if (formatYYYY_MM_DDFromDate(new Date()) === date && !Object.keys(this.props.markedDates).includes(date)) {
+                                    return;
+                                }
+                                ;
+                                if (!this.props.markedDates.hasOwnProperty(date)) {
+                                    this.props.navigation.navigate("EditHistory", {
+                                        date,
+                                        setEditHistoryExerciseModalVisibility: this.props.setEditHistoryExerciseModalVisibility,
+                                        setReminderModalInEditHistory: this.props.setReminderModalInEditHistory,
+                                        checkButtonAvailabilitySets: this.props.checkButtonAvailabilitySets
+                                    });
+                                    // console.warn(date);
+                                } else {
+                                    this.setState({
+                                        pressedDay: date,
+                                        displayExercisesList: this.props.allExercisesList[date],
+                                        isModalListVisible: true,
+                                    });
+                                }
+                            }}
+                        />
+                        <View style={{flexDirection: "row", marginTop: 10, marginLeft: 20}}>
+                            <View style={{
+                                flex: 0.3,
+                                flexDirection: "row",
+                                alignItems: "center",
+                                justifyContent: "center"
+                            }}><View
+                                style={{
+                                    width: 22,
+                                    height: 22,
+                                    backgroundColor: "#fab839",
+                                    borderRadius: 11
+                                }}><Text> </Text></View><Text
+                                style={{color: "#EFEFEF", marginLeft: 10}}>after</Text></View>
+                            <View style={{
+                                flex: 0.3,
+                                flexDirection: "row",
+                                alignItems: "center",
+                                justifyContent: "center"
+                            }}><View
+                                style={{
+                                    width: 22,
+                                    height: 22,
+                                    backgroundColor: "#c69",
+                                    borderRadius: 11
+                                }}><Text> </Text></View><Text
+                                style={{color: "#EFEFEF", marginLeft: 10}}>on-time</Text></View>
+                            <View style={{
+                                flex: 0.3,
+                                flexDirection: "row",
+                                alignItems: "center",
+                                justifyContent: "center"
+                            }}><View
+                                style={{
+                                    width: 22,
+                                    height: 22,
+                                    backgroundColor: "#009966",
+                                    borderRadius: 11
+                                }}><Text> </Text></View><Text
+                                style={{color: "#EFEFEF", marginLeft: 10}}>before</Text></View>
+                        </View>
                     </View>
-                </View>
-                <View style={{marginTop: 20}}>
-                    <Text style={{color: "#ccc", fontFamily: "PattayaRegular", fontSize: 20, marginLeft: 20}}>
-                        Click day in the calendar to check/edit workout history
-                    </Text>
-                </View>
-                <View style={{marginTop: 30}}>
-                    <Text style={styles.analysisTitle}>Analysis</Text>
-                    <PeriodAnalysis/>
-                </View>
-                <Modal
-                    visible={this.state.isModalListVisible}
-                    style={{flex: 1}}
-                    onRequestClose={() => null}>
-                    <LinearGradient
-                        colors={["#4a168c", "#880e4f"]}
-                        style={styles.container}>
-                        <ApslButton
-                            style={styles.closeButton}
-                            onPress={() => {
-                                this.setState({
-                                    isModalListVisible: false,
-                                });
-                            }}
-                            children={
-                                <Icon name="cancel" size={24} color="#bbb" key="cancel"/>
-                            }
-                        />
-                        <View style={styles.topTitle}>
-                            {this.props.fontLoaded ? (
-                                <Text
-                                    style={styles.title}>{parseInt(formatYYYYMMDDFromDate(new Date()), 10) >= parseInt(this.state.pressedDay.replace(/-/g, ''), 10) ? "Workout History" : "Future Plan"}</Text>
-                            ) : null}
-                        </View>
-                        <View style={{margin: 12}}>
-                            {this.props.fontLoaded ? (
-                                <Text style={styles.subTitle}>{this.state.pressedDay}</Text>
-                            ) : null}
-                        </View>
-                        <FlatList
-                            style={{
-                                marginTop: 2,
-                                borderTopColor: "#ccc",
-                                borderTopWidth: 0.6,
-                                marginLeft: 15,
-                                marginRight: 15,
-                                paddingTop: 10,
-                            }}
-                            data={this.state.displayExercisesList}
-                            renderItem={this._renderItem}
-                            keyExtractor={(item, index) => item + index}
-                        />
-                        {this.state.showAddWeightModal && (
-                            <AddWeightToExercise
-                                showAddWeightModal={this.state.showAddWeightModal}
-                                handleCloseWeightModal={this.handleCloseWeightModal}
-                                addWeightRepsToExercise={this.props.addWeightRepsToExercise}
-                                time={this.state.time}
+                    {/*<View style={{marginTop: 20}}>*/}
+                    {/*    <Text style={{color: "#ccc", fontFamily: "PattayaRegular", fontSize: 20, marginLeft: 20}}>*/}
+                    {/*        Click day in the calendar to check/edit workout history*/}
+                    {/*    </Text>*/}
+                    {/*</View>*/}
+                    <View style={{marginTop: 20}}>
+                        <Text style={styles.analysisTitle}>Analysis</Text>
+                        <PeriodAnalysis/>
+                    </View>
+                    <Modal
+                        visible={this.state.isModalListVisible}
+                        style={{flex: 1}}
+                        onRequestClose={() => null}>
+                        <LinearGradient
+                            colors={["#4a168c", "#880e4f"]}
+                            style={styles.container}>
+                            <ApslButton
+                                style={styles.closeButton}
+                                onPress={() => {
+                                    this.setState({
+                                        isModalListVisible: false,
+                                    });
+                                }}
+                                children={
+                                    <Icon name="cancel" size={24} color="#bbb" key="cancel"/>
+                                }
                             />
-                        )}
-                    </LinearGradient>
-                </Modal>
+                            <View style={styles.topTitle}>
+                                {this.props.fontLoaded ? (
+                                    <Text
+                                        style={styles.title}>{parseInt(formatYYYYMMDDFromDate(new Date()), 10) >= parseInt(this.state.pressedDay.replace(/-/g, ''), 10) ? "Workout History" : "Future Plan"}</Text>
+                                ) : null}
+                            </View>
+                            <View style={{margin: 12}}>
+                                {this.props.fontLoaded ? (
+                                    <Text style={styles.subTitle}>{this.state.pressedDay}</Text>
+                                ) : null}
+                            </View>
+                            <FlatList
+                                style={{
+                                    marginTop: 2,
+                                    borderTopColor: "#ccc",
+                                    borderTopWidth: 0.6,
+                                    marginLeft: 15,
+                                    marginRight: 15,
+                                    paddingTop: 10,
+                                }}
+                                data={this.state.displayExercisesList}
+                                renderItem={this._renderItem}
+                                keyExtractor={(item, index) => item + index}
+                            />
+                            {this.state.showAddWeightModal && (
+                                <AddWeightToExercise
+                                    showAddWeightModal={this.state.showAddWeightModal}
+                                    handleCloseWeightModal={this.handleCloseWeightModal}
+                                    addWeightRepsToExercise={this.props.addWeightRepsToExercise}
+                                    time={this.state.time}
+                                />
+                            )}
+                        </LinearGradient>
+                    </Modal>
+                </ScrollView>
             </LinearGradient>
         );
     }
