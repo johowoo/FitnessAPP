@@ -11,8 +11,8 @@ export class CongratsPage extends Component {
                 <View>
                     <TouchableOpacity
                         style={{
-                            margin: 30,
-                            marginTop: 45,
+                            padding: 25,
+                            paddingTop: 45,
                         }}
                         onPress={() => this.props.navigation.navigate("CurrentWorkout")}
                     >
