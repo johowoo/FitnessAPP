@@ -115,7 +115,7 @@ export class _WorkoutList extends Component {
             time: this.state.time,
         });
         if (this.props.workoutSetsData.length === 0) {
-            await this.props.updateEmpty(true);
+            await this.props.updateEmpty && this.props.updateEmpty(true);
         }
         await this.setState({
             showReminderModal: false,

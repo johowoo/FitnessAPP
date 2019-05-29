@@ -46,9 +46,12 @@ export const editHistoryExercisesList = (
             };
         case types.DELETE_EXERCISES_FROM_EXERCISE_LIST_OF_WORKOUT_HISTORY:
             const stateCopyDelete = JSON.parse(JSON.stringify(state.workoutHistoryExerciseList[action.payload.date]));
+            console.warn("delete_action_payload", action.payload);
+            const emptyState = [];
             stateCopyDelete.map((item, index) => {
-                if (parseInt(item.time, 10) === parseInt(action.payload.time, 10)) {
-                    stateCopyDelete.splice(index, 1);
+                if (parseInt(item.time, 10) !== parseInt(action.payload.time, 10)) {
+                    // stateCopyDelete.splice(index, 1);
+                    emptyState.push(item);
                 }
             });
             // return {...state, workoutHistoryExerciseList: stateCopyDelete};
@@ -56,7 +59,7 @@ export const editHistoryExercisesList = (
                 ...state,
                 workoutHistoryExerciseList: {
                     ...state.workoutHistoryExerciseList,
-                    [action.payload.date]: stateCopyDelete
+                    [action.payload.date]: emptyState
                 }
             };
         case types.EDIT_WEIGHT_REPS_IN_WORKOUT_OF_CALENDAR_HISTORY_ACTION:
