@@ -210,7 +210,7 @@ export class _WorkoutList extends Component {
                             style={styles.plusButton}
                             textStyle={styles.plus}
                             children={
-                                <IconFont name="Gym2" size={50} color="white"/>
+                                <IconFont name="Gym2" size={50} color="white" key={"gym"}/>
                             }
                         />
                         {/*<Icon name="fitness-center" size={50} color="white" key="add"/>*/}
@@ -232,7 +232,7 @@ export class _WorkoutList extends Component {
                             style={styles.plusButton}
                             textStyle={styles.plus}
                             children={
-                                <IconFont name="Edit" size={50} color="white"/>
+                                <IconFont name="Edit" size={50} color="white" key={"edit"}/>
                             }
                         />
                         {/*<FontAwesomeIcon name="pencil" size={50} color="white" key="add"/>*/}
@@ -261,7 +261,7 @@ export class _WorkoutList extends Component {
                             style={styles.plusButton}
                             textStyle={styles.plus}
                             children={
-                                <IconFont name="Library" size={50} color="white"/>
+                                <IconFont name="Library" size={50} color="white" key={"library"}/>
 
                             }
                         />
@@ -285,7 +285,7 @@ export class _WorkoutList extends Component {
                             style={styles.plusButton}
                             textStyle={styles.plus}
                             children={
-                                <IconFont name="Alarm" size={50} color="white"/>
+                                <IconFont name="Alarm" size={50} color="white" key={"alarm"}/>
                             }
                         />
                         {/*<Icon name="alarm" size={50} color="white" key="add"/>*/}
@@ -299,7 +299,6 @@ export class _WorkoutList extends Component {
                     {/*    </Text>*/}
                     {/*</View>*/}
                 </View>
-
             </View>
         );
         return (

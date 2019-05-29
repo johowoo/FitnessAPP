@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="fd580928-bb60-480d-8b73-7c94df331487" name="Default Changelist" comment="p">
       <change beforePath="$PROJECT_DIR$/src/component/WorkoutList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/WorkoutList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/store/reducers/customWorkout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/customWorkout.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,11 +27,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="188">
-              <caret line="258" column="59" selection-start-line="258" selection-start-column="59" selection-end-line="258" selection-end-column="59" />
+            <state relative-caret-position="301">
+              <caret line="285" column="51" selection-start-line="285" selection-start-column="51" selection-end-line="285" selection-end-column="51" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="e#248#307#0" expanded="true" />
@@ -41,11 +40,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/glyphmaps/IconFont.json">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="284">
               <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/utils/createIcons.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="246">
+              <caret line="6" column="92" lean-forward="true" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="92" />
+              <folding>
+                <element signature="e#0#63#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -133,8 +144,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>reminder</find>
-      <find>sets:</find>
       <find>addable</find>
       <find>deleteExercisefromWOrkoutList</find>
       <find>DELETE_EXERCISE_FROM_WORKOUTLIST</find>
@@ -162,7 +171,9 @@
       <find>fIRSRT</find>
       <find>C</find>
       <find>console.warn</find>
+      <find>IconFont</find>
       <find>Manu</find>
+      <find>58889</find>
     </findStrings>
     <replaceStrings>
       <replace>expo</replace>
@@ -243,8 +254,8 @@
         <option value="$PROJECT_DIR$/src/page/DisplayPicture.js" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/src/store/reducers/customWorkout.js" />
-        <option value="$PROJECT_DIR$/src/component/WorkoutList.js" />
         <option value="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/glyphmaps/IconFont.json" />
+        <option value="$PROJECT_DIR$/src/component/WorkoutList.js" />
       </list>
     </option>
   </component>
@@ -274,59 +285,6 @@
             <path>
               <item name="FitnessAPP" type="b2602c69:ProjectViewProjectNode" />
               <item name="FitnessAPP" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FitnessAPP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FitnessAPP" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FitnessAPP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FitnessAPP" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="@expo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FitnessAPP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FitnessAPP" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="@expo" type="462c0819:PsiDirectoryNode" />
-              <item name="vector-icons" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FitnessAPP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FitnessAPP" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="@expo" type="462c0819:PsiDirectoryNode" />
-              <item name="vector-icons" type="462c0819:PsiDirectoryNode" />
-              <item name="fonts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FitnessAPP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FitnessAPP" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="@expo" type="462c0819:PsiDirectoryNode" />
-              <item name="vector-icons" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FitnessAPP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FitnessAPP" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="@expo" type="462c0819:PsiDirectoryNode" />
-              <item name="vector-icons" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="react-native-vector-icons" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="FitnessAPP" type="b2602c69:ProjectViewProjectNode" />
-              <item name="FitnessAPP" type="462c0819:PsiDirectoryNode" />
-              <item name="node_modules" type="462c0819:PsiDirectoryNode" />
-              <item name="@expo" type="462c0819:PsiDirectoryNode" />
-              <item name="vector-icons" type="462c0819:PsiDirectoryNode" />
-              <item name="vendor" type="462c0819:PsiDirectoryNode" />
-              <item name="react-native-vector-icons" type="462c0819:PsiDirectoryNode" />
-              <item name="glyphmaps" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="FitnessAPP" type="b2602c69:ProjectViewProjectNode" />
@@ -494,18 +452,18 @@
       <workItem from="1559032435699" duration="7722000" />
       <workItem from="1559080037683" duration="6662000" />
       <workItem from="1559092281045" duration="7125000" />
-      <workItem from="1559112300756" duration="8570000" />
+      <workItem from="1559112300756" duration="9027000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="399997000" />
+    <option name="totallyTimeSpent" value="400454000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="947" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17714632" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17714632" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -519,7 +477,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="RNConsole" order="8" />
       <window_info anchor="bottom" id="CSS-X-Fire" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4996979" visible="true" weight="0.3" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4996979" visible="true" weight="0.3" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50030214" side_tool="true" weight="0.03640777" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.7166948" />
       <window_info anchor="bottom" id="TypeScript" order="13" />
@@ -844,16 +802,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/utils/createIcons.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="6" column="92" lean-forward="true" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="92" />
-          <folding>
-            <element signature="e#0#63#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/react-native-vector-icons/RNIMigration.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-442">
@@ -980,21 +928,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="188">
-          <caret line="258" column="59" selection-start-line="258" selection-start-column="59" selection-end-line="258" selection-end-column="59" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#248#307#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/glyphmaps/IconFont.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="284">
           <caret line="38" column="1" lean-forward="true" selection-start-line="38" selection-start-column="1" selection-end-line="38" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/utils/createIcons.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="246">
+          <caret line="6" column="92" lean-forward="true" selection-start-line="6" selection-start-column="45" selection-end-line="6" selection-end-column="92" />
+          <folding>
+            <element signature="e#0#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="285" column="51" selection-start-line="285" selection-start-column="51" selection-end-line="285" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#248#307#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
