@@ -68,7 +68,7 @@ export class _DisplayPicture extends Component {
             });
             await this.props.changeCurrentDisplayPic({index: this.state.index, date: this.state.date})
         } else {
-            this.props.navigation.navigate("Progress");
+            await this.props.navigation.navigate("Progress");
             // this.props.showDeleteConfirmModalInDisplayPicture({
             //     showReminder: true,
             //     reminderTitle: "First pic",

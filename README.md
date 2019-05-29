@@ -6,20 +6,21 @@ fitness app built with React native
 
 ## To be done
 ### bugs to be fixed
-* set all Addable sets to true once the currentWorkout is empty(in delete case );
+//PickerCamera Line 82 (put showModal in redux)
 * sets of cardio 
 * adjust to different smartphones (iPhone 8 ... Android)
+* return to Progress instead of reminding it is the first pic
 
 ### new functions
+* instruction in CurrentWorkout  
+* notification (set alarm);
+* widget
 * select month & year in calendar //calendar
 * back to today in calendar   //calendar
-* finish & congrats page
-
 
 * add custom workout to editHistory
 * slide effects in swiping pics
 * change ranks in currentWorkout  ？？？
-
 
 * dropdown -> selection & input 
 * the main focus of exercise (chest/back ....)??
@@ -66,6 +67,7 @@ fitness app built with React native
 * change UI of the ExerciseList ✔️
 * allow to add sets records for days before ✔️
 * illustrate the meaning of different markedDates on the top of Calendar ✔️
+* finish & congrats page ✔️
 
 ### bugs
 * position of photoModal ✔️
@@ -84,5 +86,6 @@ fitness app built with React native
 * transparency in PhotoModal ✔️
 * check whether the pressedDate is before today  ✔️
 * check wether the editHistory is empty before finish ✔️
-* * each library can not be empty, before added to CurrentWorkout(add problems)
+* each library can not be empty, before added to CurrentWorkout(add problems)
 (need to check that the library has exercises); ✔️
+* set all Addable sets to true once the currentWorkout is empty(in delete case );
