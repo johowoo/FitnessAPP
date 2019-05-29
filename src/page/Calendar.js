@@ -53,9 +53,7 @@ export class _Calendar extends Component {
                 {/*<LinearGradient colors={["#1b98d9", "#57c5b8"]} style={{flex: 1}}>*/}
                 {/*<View style={{marginTop:30}}>*/}
                 {/*</View>*/}
-
                 <View style={{marginTop: 10}}>
-
                     <CalendarComp
                         theme={{
                             // backgroundColor: '#c69',
@@ -98,7 +96,8 @@ export class _Calendar extends Component {
                                 this.props.navigation.navigate("EditHistory", {
                                     date,
                                     setEditHistoryExerciseModalVisibility: this.props.setEditHistoryExerciseModalVisibility,
-                                    setReminderModalInEditHistory: this.props.setReminderModalInEditHistory
+                                    setReminderModalInEditHistory: this.props.setReminderModalInEditHistory,
+                                    checkButtonAvailabilitySets: this.props.checkButtonAvailabilitySets
                                 });
                                 // console.warn(date);
                             } else {
@@ -247,6 +246,7 @@ const mapStateToProps = state => ({
     state.savedExerciseForEachDay.exercisesListForPressedDay,
     sectionExercises: state.exercises.sectionExercises,
     extraSectionExercises: state.exercises.extraSectionExercises,
+    checkButtonAvailabilitySets: state.editHistoryExercisesList.checkButtonAvailabilitySets
 });
 
 const mapActionsToProps = dispatch => ({

@@ -55,6 +55,7 @@ export const CalendarEditHistoryStackNavigator = createStackNavigator({
                         </View>
                     </TouchableOpacity>
                     <TouchableOpacity style={{marginRight: 30}}
+                                      disabled={!navigation.state.params.checkButtonAvailabilitySets[navigation.state.params.date]}
                                       onPress={async () => {
                                           await navigation.state.params.setReminderModalInEditHistory({
                                               showReminderModal: true,
@@ -65,7 +66,7 @@ export const CalendarEditHistoryStackNavigator = createStackNavigator({
                         <View>
                             <MaterialIcons name={"check-circle"}
                                            size={30}
-                                           color="#c69"
+                                           color={navigation.state.params.checkButtonAvailabilitySets[navigation.state.params.date] ? "#c69" : "grey"}
                                            key="remove"
                             />
                         </View>

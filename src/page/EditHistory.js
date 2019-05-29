@@ -21,6 +21,11 @@ import {
 import {ReminderModal} from "../component/ReminderModal";
 
 class _EditHistory extends Component {
+    static navigationOptions = ({navigation}) => {
+        return {
+            title: navigation.getParam('otherParam', 'A Nested Details Screen'),
+        };
+    };
     state = {showReminderModal: false};
     handleReminderConfirm = async () => {
         const navProps = this.props.navigation.state.params;
@@ -67,10 +72,20 @@ class _EditHistory extends Component {
                     extraSectionExercises={this.props.extraSectionExercises}
                     visible={this.props.showEditHistory}
                     closeModal={() => this.props.setEditHistoryExerciseModalVisibility(false)}
-                    addExercise={(props) => this.props.addExercisesToExerciseListOfWorkoutHistory({
-                        ...props,
-                        date: navProps.date
-                    })}
+                    addExercise={async (props) => {
+                        await this.props.addExercisesToExerciseListOfWorkoutHistory({
+                            ...props,
+                            date: navProps.date
+                        });
+                        await this.props.navigation.setParams({checkButtonAvailabilitySets: this.props.checkButtonAvailabilitySets})
+                        // await this.props.navigation.navigate("Calendar");
+                        // await this.props.navigation.navigate("EditHistory", {
+                        //     date: navProps.date,
+                        //     setEditHistoryExerciseModalVisibility: navProps.setEditHistoryExerciseModalVisibility,
+                        //     setReminderModalInEditHistory: navProps.setReminderModalInEditHistory,
+                        //     checkButtonAvailabilitySets: navProps.checkButtonAvailabilitySets
+                        // });
+                    }}
                 />
                 {this.props.showReminderModal && <ReminderModal
                     showReminderModal={this.props.showReminderModal}
@@ -95,7 +110,8 @@ const mapStateToProps = (state) => ({
     workoutHistoryExerciseList: state.editHistoryExercisesList.workoutHistoryExerciseList,
     showReminderModal: state.editHistoryExercisesList.showReminderModal,
     reminderTitle: state.editHistoryExercisesList.reminderTitle,
-    reminderContent: state.editHistoryExercisesList.reminderContent
+    reminderContent: state.editHistoryExercisesList.reminderContent,
+    checkButtonAvailabilitySets: state.editHistoryExercisesList.checkButtonAvailabilitySets
 });
 
 const mapActionToProps = (dispatch) => ({

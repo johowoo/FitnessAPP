@@ -5,7 +5,8 @@ export const editHistoryExercisesList = (
         workoutHistoryExerciseList: {},
         showReminderModal: false,
         reminderTitle: "",
-        reminderContent: ""
+        reminderContent: "",
+        checkButtonAvailabilitySets: {}
     },
     action
 ) => {
@@ -23,7 +24,8 @@ export const editHistoryExercisesList = (
                 workoutHistoryExerciseList: {
                     ...state.workoutHistoryExerciseList,
                     [action.payload.date]: currentDateExerciseListCopy
-                }
+                },
+                checkButtonAvailabilitySets: {...state.checkButtonAvailabilitySets, [action.payload.date]: true}
             };
 
         case types.ADD_WEIGHT_REPS_TO_EXERCISE_IN_CALENDAR_HISTORY:
@@ -88,6 +90,12 @@ export const editHistoryExercisesList = (
             return {
                 ...state,
                 ...action.payload
+            };
+
+        case types.CHANGE_CHECK_BUTTON_AVAILABILITY_IN_EDIT_HISTORY:
+            return {
+                ...state,
+                checkButtonAvailabilitySets: {...state.checkButtonAvailabilitySets, [action.payload]: true}
             };
         default:
             return state;
