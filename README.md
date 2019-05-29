@@ -1,20 +1,23 @@
 # FitnessAPP
 fitness app built with React native
-##notice
-should never let the state of the redux to be an array!!!
+##notes
+* should never let the state of the redux to be an array!!!
+* use setParams to refresh state in NavigatorOptions(eg: header)
 
 ## To be done
 ### bugs to be fixed
+
 * sets of cardio 
-* each library can not be empty(add problems);
+* each library can not be empty, before added to CurrentWorkout(add problems)
+(need to check that the library has exercises);
 * adjust to different smartphones (iPhone 8 ... Android)
 
 ### new functions
-* change UI of the ExerciseList
 * select month & year in calendar //calendar
 * back to today in calendar   //calendar
 * finish & congrats page
-* allow to add sets records for days before 
+
+* add custom workout to editHistory
 * slide effects in swiping pics
 * change ranks in currentWorkout  ？？？
 
@@ -61,6 +64,9 @@ should never let the state of the redux to be an array!!!
 * add new Category in EditLibrary ✔️
 * different UI in EditLibrary and CustomWorkout ✔️
 * update library once adding new exercise to specific category ✔️
+* change UI of the ExerciseList ✔️
+* allow to add sets records for days before ✔️
+* illustrate the meaning of different markedDates on the top of Calendar ✔️
 
 ### bugs
 * position of photoModal ✔️
@@ -77,3 +83,5 @@ should never let the state of the redux to be an array!!!
 * avoid duplicated category ✔️
 * upper and lower case of category ✔️
 * transparency in PhotoModal ✔️
+* check whether the pressedDate is before today  ✔️
+* check wether the editHistory is empty before finish ✔️
