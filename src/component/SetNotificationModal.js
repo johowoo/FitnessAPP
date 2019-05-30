@@ -19,6 +19,7 @@ import {
 } from "../store/actions";
 import {connect} from "react-redux";
 import DateTimePicker from "react-native-modal-datetime-picker";
+import {formatMonthandDay} from "../utils/formatMonthandDay";
 import {getUnixTimeByDay, getTimeDifferenceFromZeroOfToday} from "../utils/unixTimes";
 
 const {width, height} = Dimensions.get("window");
@@ -45,7 +46,7 @@ class _SetNotificationModal extends Component {
     handleTimePicked = async date => {
         console.warn("difference", getTimeDifferenceFromZeroOfToday(date.getTime()));
         await this.setState({
-            timeChosen: `${date.getHours()}:${date.getMinutes()}`,
+            timeChosen: `${formatMonthandDay(date.getHours())}:${formatMonthandDay(date.getMinutes())}`,
             timeDifferenceFromZeroOfToday: getTimeDifferenceFromZeroOfToday(date.getTime())
         });
         await this.setState({
@@ -169,14 +170,41 @@ class _SetNotificationModal extends Component {
                             }}>
                             Please Select the time you want to receive notifications:
                         </Text>
-                        <Button title="Time Picker" onPress={this.showDateTimePicker} color={"#eee"}/>
-                        {
-                            this.state.showTimeChosen &&
-                            <Text>{this.state.timeChosen}
-                            </Text>
-                        }
+                        <View style={{flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
+
+                            {/*<View style={{*/}
+                            {/*    backgroundColor: "#ccc", borderRadius: 5, marginRight: 20, height: 30,*/}
+                            {/*    alignItems: 'center',*/}
+                            {/*    justifyContent: 'center'*/}
+                            {/*}}>*/}
+                            {/*    <Text style={{fontSize: 18, paddingLeft: 10, paddingRight: 10}}>*/}
+                            {/*        Time Picker*/}
+                            {/*    </Text>*/}
+                            {/*</View>*/}
+
+                            {/*<Button title="Time Picker" onPress={this.showDateTimePicker} color={"#eee"}/>*/}
+                            <TouchableOpacity
+                                onPress={this.showDateTimePicker}
+                            ><View
+                                style={{
+                                    borderRadius: 8,
+                                    backgroundColor: "#c69",
+                                    paddingLeft: 15,
+                                    paddingRight: 15,
+                                    height: 35,
+                                    alignItems: 'center',
+                                    justifyContent: 'center'
+                                }}>
+                                <Text
+                                    style={{color: "#eee", fontSize: 18, fontFamily: "PattayaRegular"}}>
+                                    {this.state.showTimeChosen ? this.state.timeChosen : "12:00"}
+                                </Text>
+                            </View>
+                            </TouchableOpacity>
+                        </View>
                         <DateTimePicker
                             mode={"time"}
+                            titleIOS={"Pick a time"}
                             // datePickerContainerStyleIOS={{backgroundColor:"#eee",color:"#eee"}}
                             isVisible={this.state.isDateTimePickerVisible}
                             onConfirm={this.handleTimePicked}
@@ -184,7 +212,7 @@ class _SetNotificationModal extends Component {
                         />
                         {/*</View>*/}
                         <View
-                            style={{flexDirection: "row", justifyContent: "space-around"}}>
+                            style={{flexDirection: "row", justifyContent: "space-around", marginTop: 5}}>
                             <View style={styles.modalButtonContainer}>
                                 <Button
                                     style={styles.modalButton}
