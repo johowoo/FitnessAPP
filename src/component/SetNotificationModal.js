@@ -40,7 +40,7 @@ class _SetNotificationModal extends Component {
     };
 
     handleDatePicked = date => {
-        console.log("A date has been picked: ", date);
+        console.warn("Time has been picked: ", date.getTime());
         this.hideDateTimePicker();
     };
 
@@ -70,7 +70,7 @@ class _SetNotificationModal extends Component {
                         this.props.chooseDayInWeek({day: item.day, isChosen: !item.isChosen});
                     }}
                     style={{
-                        backgroundColor: item.isChosen ? "#c69" : "#999",
+                        backgroundColor: item.isChosen ? "#c69" : "#888",
                         width: 50,
                         height: 40,
                         margin: 5,
@@ -90,14 +90,7 @@ class _SetNotificationModal extends Component {
     };
 
     _sendDelayedNotification() {
-        const localNotification = {
-            title: 'Delayed testing Title',
-            body: 'Testing body',
-            data: {type: 'delayed'}
-        };
-        const schedulingOptions = {
-            time: (new Date()).getTime() + 5000
-        };
+
 
         console.log('Scheduling delayed notification:', {localNotification, schedulingOptions})
 
@@ -162,6 +155,23 @@ class _SetNotificationModal extends Component {
                                     color="#00ffcc"
                                     title="Confirm"
                                     onPress={async () => {
+                                        await Notifications.cancelAllScheduledNotificationsAsync();
+                                        //add schedules from notifications
+                                        const localNotification = {
+                                            title: 'Delayed testing Title',
+                                            body: 'Testing body',
+                                            data: {type: 'delayed'}
+                                        };
+                                        Notifications.scheduleLocalNotificationAsync(localNotification, schedulingOptions)
+                                            .then(id => console.log(`Delayed notification scheduled (${id}) at ${moment(schedulingOptions.time).format()}`))
+                                            .catch(err => console.error(err));
+                                        const schedulingOptions = {
+                                            time: (new Date()).getTime() + 5000,
+                                            repeat: "week",
+                                        };
+
+
+                                        //add schedules from notifications
                                         await this.props.setNotificationModalVisibility(false);
                                     }}
                                 />

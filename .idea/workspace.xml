@@ -44,8 +44,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/component/SetNotificationModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="147" column="98" selection-start-line="147" selection-start-column="98" selection-end-line="147" selection-end-column="98" />
+            <state relative-caret-position="300">
+              <caret line="167" column="42" selection-start-line="167" selection-start-column="42" selection-end-line="167" selection-end-column="42" />
               <folding>
                 <element signature="e#0#135#0" expanded="true" />
               </folding>
@@ -112,7 +112,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Manual wO</find>
       <find>Analysis</find>
       <find>checkButtonAvailabilitySets</find>
       <find>&lt;Pic</find>
@@ -142,6 +141,7 @@
       <find>renderItem</find>
       <find>borderr</find>
       <find>day</find>
+      <find>timepicker</find>
     </findStrings>
     <replaceStrings>
       <replace>expo</replace>
@@ -419,12 +419,12 @@
       <workItem from="1559112300756" duration="9027000" />
       <workItem from="1559167402231" duration="4769000" />
       <workItem from="1559174971421" duration="119000" />
-      <workItem from="1559177868525" duration="6680000" />
+      <workItem from="1559177868525" duration="7257000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="412848000" />
+    <option name="totallyTimeSpent" value="413425000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="947" extended-state="0" />
@@ -911,8 +911,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/SetNotificationModal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="147" column="98" selection-start-line="147" selection-start-column="98" selection-end-line="147" selection-end-column="98" />
+        <state relative-caret-position="300">
+          <caret line="167" column="42" selection-start-line="167" selection-start-column="42" selection-end-line="167" selection-end-column="42" />
           <folding>
             <element signature="e#0#135#0" expanded="true" />
           </folding>
