@@ -29,7 +29,9 @@ class _SetNotificationModal extends Component {
         this.state = {
             isDateTimePickerVisible: false,
             top: height * 0.3,
-            scheduleTimeArr: []
+            showTimeChosen: false,
+            scheduleTimeArr: [],
+            timeDifferenceFromZeroOfToday: 43220000
         };
     };
 
@@ -40,8 +42,15 @@ class _SetNotificationModal extends Component {
         this.setState({isDateTimePickerVisible: false});
     };
 
-    handleDatePicked = date => {
-        console.warn("Time has been picked: ", getTimeDifferenceFromZeroOfToday(date.getTime()));
+    handleTimePicked = async date => {
+        console.warn("difference", getTimeDifferenceFromZeroOfToday(date.getTime()));
+        await this.setState({
+            timeChosen: `${date.getHours()}:${date.getMinutes()}`,
+            timeDifferenceFromZeroOfToday: getTimeDifferenceFromZeroOfToday(date.getTime())
+        });
+        await this.setState({
+            showTimeChosen: true
+        });
         this.hideDateTimePicker();
     };
 
@@ -51,12 +60,6 @@ class _SetNotificationModal extends Component {
         });
     };
 
-    componentWillMount() {
-        console.warn(this.props.isDayChosenInWeek);
-        // this.state.scheduleTimeArr = [];
-
-    }
-
     async componentDidMount() {
         const scheduleTimeArr = [];
         await this.props.isDayChosenInWeek.forEach(async (item, index) => {
@@ -64,8 +67,7 @@ class _SetNotificationModal extends Component {
                 scheduleTimeArr.push(getUnixTimeByDay(index));
             }
         });
-        await this.setState({scheduleTimeArr});
-        await console.warn("will", this.state.scheduleTimeArr);
+        await this.setState({scheduleTimeArr, timeDifferenceFromZeroOfToday: 43220000});
 
         this.keyboardDidShowListener = Keyboard.addListener(
             "keyboardDidShow",
@@ -99,8 +101,6 @@ class _SetNotificationModal extends Component {
                             this.setState({scheduleTimeArr: emptyScheduleTimeArr})
                         }
                         await this.props.chooseDayInWeek({day: item.day, isChosen: !item.isChosen});
-
-                        await console.warn(this.state.scheduleTimeArr)
                     }}
                     style={{
                         backgroundColor: item.isChosen ? "#c69" : "#888",
@@ -122,15 +122,13 @@ class _SetNotificationModal extends Component {
         console.log(`Notification (${origin}) with data: ${JSON.stringify(data)}`)
     };
 
-    _sendDelayedNotification() {
-
-
-        console.log('Scheduling delayed notification:', {localNotification, schedulingOptions})
-
-        Notifications.scheduleLocalNotificationAsync(localNotification, schedulingOptions)
-            .then(id => console.log(`Delayed notification scheduled (${id}) at ${moment(schedulingOptions.time).format()}`))
-            .catch(err => console.error(err))
-    }
+    // _sendDelayedNotification() {
+    //     console.log('Scheduling delayed notification:', {localNotification, schedulingOptions})
+    //
+    //     Notifications.scheduleLocalNotificationAsync(localNotification, schedulingOptions)
+    //         .then(id => console.log(`Delayed notification scheduled (${id}) at ${moment(schedulingOptions.time).format()}`))
+    //         .catch(err => console.error(err))
+    // }
 
     render() {
         return (
@@ -172,11 +170,16 @@ class _SetNotificationModal extends Component {
                             Please Select the time you want to receive notifications:
                         </Text>
                         <Button title="Time Picker" onPress={this.showDateTimePicker} color={"#eee"}/>
+                        {
+                            this.state.showTimeChosen &&
+                            <Text>{this.state.timeChosen}
+                            </Text>
+                        }
                         <DateTimePicker
                             mode={"time"}
                             // datePickerContainerStyleIOS={{backgroundColor:"#eee",color:"#eee"}}
                             isVisible={this.state.isDateTimePickerVisible}
-                            onConfirm={this.handleDatePicked}
+                            onConfirm={this.handleTimePicked}
                             onCancel={this.hideDateTimePicker}
                         />
                         {/*</View>*/}
@@ -191,19 +194,19 @@ class _SetNotificationModal extends Component {
                                         await Notifications.cancelAllScheduledNotificationsAsync();
                                         //add schedules from notifications
                                         const localNotification = {
-                                            title: 'Delayed testing Title',
-                                            body: 'Testing body',
+                                            title: 'Workout',
+                                            body: 'Come on ,meatball. It is time for workout',
                                             data: {type: 'delayed'}
                                         };
-                                        Notifications.scheduleLocalNotificationAsync(localNotification, schedulingOptions)
-                                            .then(id => console.log(`Delayed notification scheduled (${id}) at ${moment(schedulingOptions.time).format()}`))
-                                            .catch(err => console.error(err));
-                                        const schedulingOptions = {
-                                            time: (new Date()).getTime() + 5000,
-                                            repeat: "week",
-                                        };
-
-
+                                        this.state.scheduleTimeArr.forEach(item => {
+                                            const schedulingOptions = {
+                                                time: item + this.state.timeDifferenceFromZeroOfToday,
+                                                repeat: "week",
+                                            };
+                                            Notifications.scheduleLocalNotificationAsync(localNotification, schedulingOptions)
+                                                .then(id => console.log(`Delayed notification scheduled (${id}) at ${moment(schedulingOptions.time).format()}`))
+                                                .catch(err => console.error(err));
+                                        });
                                         //add schedules from notifications
                                         await this.props.setNotificationModalVisibility(false);
                                     }}
