@@ -30,7 +30,7 @@ class _SetNotificationModal extends Component {
         this.state = {
             isDateTimePickerVisible: false,
             top: height * 0.3,
-            showTimeChosen: false,
+            // showTimeChosen: false,
             scheduleTimeArr: [],
             timeDifferenceFromZeroOfToday: 43220000
         };
@@ -49,9 +49,9 @@ class _SetNotificationModal extends Component {
             timeChosen: `${formatMonthandDay(date.getHours())}:${formatMonthandDay(date.getMinutes())}`,
             timeDifferenceFromZeroOfToday: getTimeDifferenceFromZeroOfToday(date.getTime())
         });
-        await this.setState({
-            showTimeChosen: true
-        });
+        // await this.setState({
+        //     showTimeChosen: true
+        // });
         this.hideDateTimePicker();
     };
 
@@ -68,7 +68,12 @@ class _SetNotificationModal extends Component {
                 scheduleTimeArr.push(getUnixTimeByDay(index));
             }
         });
-        await this.setState({scheduleTimeArr, timeDifferenceFromZeroOfToday: 43220000});
+        await this.setState({
+            scheduleTimeArr,
+            timeDifferenceFromZeroOfToday: 43220000,
+            // showTimeChosen: false,
+            timeChosen: "12:00"
+        });
 
         this.keyboardDidShowListener = Keyboard.addListener(
             "keyboardDidShow",
@@ -197,7 +202,7 @@ class _SetNotificationModal extends Component {
                                 }}>
                                 <Text
                                     style={{color: "#eee", fontSize: 18, fontFamily: "PattayaRegular"}}>
-                                    {this.state.showTimeChosen ? this.state.timeChosen : "12:00"}
+                                    {this.state.timeChosen}
                                 </Text>
                             </View>
                             </TouchableOpacity>
