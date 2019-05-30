@@ -8,7 +8,8 @@ import {
     TextInput,
     FlatList,
     Keyboard,
-    TouchableOpacity
+    TouchableOpacity,
+    Platform
 } from "react-native";
 import React, {Component} from "react";
 import {Notifications, Permissions, Constants} from 'expo';
@@ -220,7 +221,7 @@ class _SetNotificationModal extends Component {
                                         //add schedules from notifications
                                         const localNotification = {
                                             title: 'Workout',
-                                            body: 'Come on ,meatball. It is time for workout',
+                                            body: 'Come on, meatball. It is time to do some exercises',
                                             data: {type: 'delayed'}
                                         };
 
@@ -228,8 +229,10 @@ class _SetNotificationModal extends Component {
                                             const schedulingOptions = {
                                                 time: item + this.state.timeDifferenceFromZeroOfToday,
                                                 repeat: "week",
-                                                intervalMs: 24 * 60 * 60 * 1000 * 7
                                             };
+                                            if (Platform.OS === "android") {
+                                                schedulingOptions.intervalMs = 24 * 60 * 60 * 1000 * 7
+                                            }
                                             Notifications.scheduleLocalNotificationAsync(localNotification, schedulingOptions)
                                                 .then(id => console.warn(`Delayed notification scheduled (${id}) at ${moment(schedulingOptions.time).format()}`))
                                                 .catch(err => console.error(err));
