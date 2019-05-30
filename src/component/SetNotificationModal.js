@@ -212,7 +212,7 @@ class _SetNotificationModal extends Component {
                                 marginLeft: 10,
                                 marginBottom: 15,
                             }}>
-                            Please select the day you want to receive repeat notifications in each week:
+                            Please select the day and time:
                         </Text>
                         {/*<View>*/}
                         <View>
