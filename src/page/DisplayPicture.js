@@ -90,6 +90,12 @@ export class _DisplayPicture extends Component {
         })
     }
 
+    componentDidMount() {
+        this.props.showDeleteConfirmModalInDisplayPicture({
+            showReminder: false
+        });
+    }
+
     //delete pic from progress
     handleConfirm = async () => {
         await LoadingUtil.showLoading();

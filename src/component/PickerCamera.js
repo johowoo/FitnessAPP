@@ -19,6 +19,7 @@ export class PickerCamera extends React.Component {
     };
 
     async componentDidMount() {
+        this.props.showProgressModalDispatch(false);
         // const permission1 = await Permissions.getAsync(Permissions.CAMERA_ROLL);
         const permission2 = await Permissions.getAsync(Permissions.CAMERA);
         // if (permission1.status !== 'granted') {

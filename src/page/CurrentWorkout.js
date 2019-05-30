@@ -44,6 +44,14 @@ class _CurrentWorkout extends Component {
         };
     }
 
+    componentDidMount() {
+        //close exerciseModal
+        if (this.props.currentWorkout.length === 0) {
+            this.props.updateEmpty(true);
+        }
+        this.props.setModalVisibility(false);
+    }
+
     handlePressComplete = () => {
         // console.warn("this", this);
         this.props.clearCurrentWorkout();

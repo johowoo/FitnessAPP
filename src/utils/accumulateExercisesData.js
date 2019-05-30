@@ -8,7 +8,7 @@ export const accumulateExercisesData = ({list, todayNumber, todayDate, period}) 
                 workouts++;
                 list[key].map((item, index) => {
                     if (item.sets) {
-                        sets += item.sets;
+                        sets += parseInt(item.sets, 10);
                     }
                     if (item.weightRepsDataArr?.length) {
                         item.weightRepsDataArr.map((item, index) => {

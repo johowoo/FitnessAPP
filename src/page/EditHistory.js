@@ -21,11 +21,10 @@ import {
 import {ReminderModal} from "../component/ReminderModal";
 
 class _EditHistory extends Component {
-    static navigationOptions = ({navigation}) => {
-        return {
-            title: navigation.getParam('otherParam', 'A Nested Details Screen'),
-        };
-    };
+    componentDidMount() {
+        this.props.setReminderModalInEditHistory({showReminderModal: false});
+    }
+    
     state = {showReminderModal: false};
     handleReminderConfirm = async () => {
         const navProps = this.props.navigation.state.params;
