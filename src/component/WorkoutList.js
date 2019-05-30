@@ -42,6 +42,10 @@ export class _WorkoutList extends Component {
         this.props.setModalVisibility(true);
     }
 
+    componentDidMount() {
+        this.props.setNotificationModalVisibility(false);
+    }
+
     handleCloseWeightModal = (showFlag, bool) => {
         this.props[showFlag](bool);
     };
