@@ -18,7 +18,7 @@ import {
     chooseDayInWeekAction
 } from "../store/actions";
 import {connect} from "react-redux";
-import DateTimePicker, {DatePicker, TimePicker} from "react-native-modal-datetime-picker";
+import DateTimePicker from "react-native-modal-datetime-picker";
 
 const {width, height} = Dimensions.get("window");
 
@@ -70,13 +70,15 @@ class _SetNotificationModal extends Component {
                         this.props.chooseDayInWeek({day: item.day, isChosen: !item.isChosen});
                     }}
                     style={{
-                        backgroundColor: item.isChosen ? "#c69" : "transparent",
-                        width: 70,
+                        backgroundColor: item.isChosen ? "#c69" : "#999",
+                        width: 50,
                         height: 40,
+                        margin: 5,
                         alignItems: "center",
                         justifyContent: "center",
+                        borderRadius: 10
                     }}>
-                    <Text style={{color: "#eee", fontSize: 20, fontFamily: "PattayaRegular"}}>
+                    <Text style={{color: "#eee", fontSize: 18, fontFamily: "PattayaRegular"}}>
                         {item.day}
                     </Text>
                 </TouchableOpacity>
@@ -128,9 +130,10 @@ class _SetNotificationModal extends Component {
                                 data={this.props.isDayChosenInWeek}
                                 renderItem={data => this._renderItem(data)}
                                 keyExtractor={(item, index) => item + index}
-                                numColumns={4}
+                                numColumns={5}
                                 extraData={this.state}
-                                style={{marginBottom: 10}}
+                                contentContainerStyle={{justifyContent: "center", alignItems: "center"}}
+                                style={{marginBottom: 10,}}
                             />
                         </View>
                         <Text
@@ -140,9 +143,9 @@ class _SetNotificationModal extends Component {
                                 marginLeft: 10,
                                 marginBottom: 15,
                             }}>
-                            Please Select the day you want to receive notifications:
+                            Please Select the time you want to receive notifications:
                         </Text>
-                        <Button title="Show DatePicker" onPress={this.showDateTimePicker}/>
+                        <Button title="Time Picker" onPress={this.showDateTimePicker} color={"#eee"}/>
                         <DateTimePicker
                             mode={"time"}
                             // datePickerContainerStyleIOS={{backgroundColor:"#eee",color:"#eee"}}
@@ -187,43 +190,59 @@ class _SetNotificationModal extends Component {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        // backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-    modalOuterContainer: {
-        flex: 1,
-        // justifyContent: 'center',
-        // alignItems: 'center',
-        position: "absolute",
-        left: width * 0.148,
-        // top: this.state.top,
-        backgroundColor: "rgba(0, 0, 0, 0.3)",
-        borderRadius: 8,
-    },
-    modalInnerContainer: {
-        height: 250,
-        width: width * 0.7,
-        backgroundColor: "rgba(102,51,204,0.9)",
-        paddingTop: 20,
-        padding: 10,
-        borderRadius: 8,
-    },
-    modalButtonContainer: {
-        width: 0.25 * width,
-    },
-    weightTextInput: {
-        marginLeft: width * 0.03,
-        marginRight: width * 0.03,
-        marginTop: width * 0.01,
-        marginBottom: width * 0.02,
-        backgroundColor: "rgba(255,140,0,0.1)",
-        height: 50,
-        color: "#00ffcc",
-    },
-});
+        container: {
+            flex: 1,
+            // backgroundColor: '#fff',
+            alignItems: 'center',
+            justifyContent: 'center',
+        },
+        modalOuterContainer: {
+            flex: 1,
+            // justifyContent: 'center',
+            // alignItems: 'center',
+            position: "absolute",
+            left: width * 0.092,
+// left: width * 0.148,
+// top: this.state.top,
+            backgroundColor: "rgba(0, 0, 0, 0.3)",
+            borderRadius: 8,
+        },
+        modalInnerContainer: {
+            height: 350,
+            width:
+                width * 0.8,
+            backgroundColor:
+                "rgba(102,51,204,0.9)",
+            paddingTop:
+                20,
+            padding:
+                10,
+            borderRadius:
+                8,
+        }
+        ,
+        modalButtonContainer: {
+            width: 0.25 * width,
+        }
+        ,
+        weightTextInput: {
+            marginLeft: width * 0.03,
+            marginRight:
+                width * 0.03,
+            marginTop:
+                width * 0.01,
+            marginBottom:
+                width * 0.02,
+            backgroundColor:
+                "rgba(255,140,0,0.1)",
+            height:
+                50,
+            color:
+                "#00ffcc",
+        }
+        ,
+    })
+;
 const mapStateToProps = state => ({
     // currentWorkout: state.currentWorkout,
     showSetNotificationModal: state.setNotification.showSetNotificationModal,
