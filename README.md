@@ -7,24 +7,24 @@ fitness app built with React native
 ## To be done
 ### bugs to be fixed
 //PickerCamera Line 82 (put showModal in redux)
+* notification timing bugs
 * sets of cardio 
 * adjust to different smartphones (iPhone 8 ... Android)
-* sets of analysis (convert to int before calculation)
+
 * back button in congrats page
 
 ### new functions
-* notification (set notifications for workout);
-* widget
 * select month & year in calendar //calendar
 * back to today in calendar   //calendar
 
+* widget
 * add custom workout to editHistory
 * slide effects in swiping pics
 * change ranks in currentWorkout  ？？？
 
 * dropdown -> selection & input 
 * the main focus of exercise (chest/back ....)??
-* shadow of button in CurrentWorkout
+* shadow of button in CurrentWorkout ?
 
 ### etc
 * consider the construct of the TabPage (whether display customWorkout firstly or not)
@@ -69,6 +69,7 @@ fitness app built with React native
 * illustrate the meaning of different markedDates on the top of Calendar ✔️
 * finish & congrats page ✔️
 * instructions in CurrentWorkout ✔️
+* notification (set notifications for workout); ✔️
 
 ### bugs
 * position of photoModal ✔️
@@ -91,3 +92,6 @@ fitness app built with React native
 (need to check that the library has exercises); ✔️
 * set all Addable sets to true once the currentWorkout is empty(in delete case ); ✔️
 * return to Progress instead of reminding it is the first pic ✔️
+* sets of analysis (convert to int before calculation) ✔️
+* update finish button in componentDidMount of CurrentWorkout ✔️
+* clear all scheduled notification before setting new ones ✔️
