@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="fd580928-bb60-480d-8b73-7c94df331487" name="Default Changelist" comment="p">
-      <change beforePath="$PROJECT_DIR$/src/component/SetNotificationModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/SetNotificationModal.js" afterDir="false" />
-    </list>
+    <list default="true" id="fd580928-bb60-480d-8b73-7c94df331487" name="Default Changelist" comment="p" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -18,8 +16,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/component/SetNotificationModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="206">
-              <caret line="151" column="36" lean-forward="true" selection-start-line="151" selection-start-column="36" selection-end-line="151" selection-end-column="36" />
+            <state relative-caret-position="6683">
+              <caret line="163" column="41" selection-start-line="163" selection-start-column="41" selection-end-line="163" selection-end-column="41" />
               <folding>
                 <element signature="e#0#184#0" expanded="true" />
                 <element signature="e#5009#5388#0" />
@@ -67,7 +65,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>warn</find>
       <find>Confirm</find>
       <find>Time</find>
       <find>diff</find>
@@ -97,6 +94,7 @@
       <find>handleSelect</find>
       <find>valid</find>
       <find>confirm</find>
+      <find>this.state.</find>
     </findStrings>
     <replaceStrings>
       <replace>expo</replace>
@@ -381,12 +379,12 @@
       <workItem from="1559167402231" duration="4769000" />
       <workItem from="1559174971421" duration="119000" />
       <workItem from="1559177868525" duration="7577000" />
-      <workItem from="1559201149241" duration="11224000" />
+      <workItem from="1559201149241" duration="11487000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="424969000" />
+    <option name="totallyTimeSpent" value="425232000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="947" extended-state="0" />
@@ -875,8 +873,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/SetNotificationModal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="151" column="36" lean-forward="true" selection-start-line="151" selection-start-column="36" selection-end-line="151" selection-end-column="36" />
+        <state relative-caret-position="6683">
+          <caret line="163" column="41" selection-start-line="163" selection-start-column="41" selection-end-line="163" selection-end-column="41" />
           <folding>
             <element signature="e#0#184#0" expanded="true" />
             <element signature="e#5009#5388#0" />
