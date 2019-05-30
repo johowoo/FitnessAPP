@@ -47,9 +47,22 @@ export class _ExerciseList extends PureComponent {
             selectedExercise: "",
             showReminderModal: false,
             hideConfirmButton: true,
-            tobeDeletedItem: ""
+            tobeDeletedItem: "",
+            showSelectSets: true
         };
     };
+
+    componentDidMount() {
+        let cardioExercisesCopy = [];
+        this.props.sectionExercises.forEach((item, index) => {
+            if (item.category === 'Cardio') {
+                cardioExercisesCopy = item.data;
+            }
+        });
+        this.setState({
+            cardioExercisesCopy
+        })
+    }
 
     handleCloseReminderDuplicated = (bool) => {
         this.setState({
@@ -68,6 +81,11 @@ export class _ExerciseList extends PureComponent {
         <TouchableHighlight
             // onPress={() => this.handlePress.call(this, item)}
             onPress={() => {
+                if (this.state.cardioExercisesCopy.includes(item)) {
+                    this.setState({showSelectSets: false, selectedCardio: item})
+                } else {
+                    this.setState({showSelectSets: true})
+                }
                 this.setState({setsModalVisible: true, selectedExercise: item})
             }
             }>
@@ -258,23 +276,49 @@ export class _ExerciseList extends PureComponent {
                         onRequestClose={() => this.setState({setsModalVisible: false})}>
                         <View style={styles.modalOuterContainer}>
                             <View style={styles.modalInnerContainer}>
-                                <Text style={{color: "#66666f", fontSize: 16, marginLeft: 10}}>
-                                    Please select the number of sets:
-                                </Text>
-                                <ModalDropdown
-                                    style={styles.dropdownMenu}
-                                    textStyle={styles.dropdownMenuText}
-                                    dropdownStyle={styles.dropdownList}
-                                    dropdownTextStyle={styles.dropdownListText}
-                                    dropdownTextHighlightStyle={styles.dropdownSelection}
-                                    options={[
-                                        "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "15", "20", "25", "30"
-                                    ]}
-                                    defaultValue="4"
-                                    onSelect={(index, value) => {
-                                        this.setState({selectedSets: value});
-                                    }}
-                                />
+                                {
+                                    this.state.showSelectSets ? (
+                                        <View>
+                                            <Text style={{color: "#66666f", fontSize: 16, marginLeft: 10}}>
+                                                Please select the number of sets:
+                                            </Text>
+                                            <ModalDropdown
+                                                style={styles.dropdownMenu}
+                                                textStyle={styles.dropdownMenuText}
+                                                dropdownStyle={styles.dropdownList}
+                                                dropdownTextStyle={styles.dropdownListText}
+                                                dropdownTextHighlightStyle={styles.dropdownSelection}
+                                                options={[
+                                                    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "15", "20", "25", "30"
+                                                ]}
+                                                defaultValue="4"
+                                                onSelect={(index, value) => {
+                                                    this.setState({selectedSets: value});
+                                                }}
+                                            />
+                                        </View>) : (
+                                        <View>
+                                            <Text style={{
+                                                color: "#66666f",
+                                                fontSize: 16,
+                                                marginLeft: 10,
+                                                marginBottom: 30
+                                            }}>
+                                                Do you want to add this cardio?
+                                            </Text>
+                                            <View style={{alignItems: 'center'}}>
+                                                <Text style={{
+                                                    color: "#51C0BB",
+                                                    fontSize: 25,
+                                                    marginBottom: 20
+                                                }}>
+                                                    {this.state.selectedCardio}
+                                                </Text>
+                                            </View>
+                                        </View>
+                                    )
+                                }
+
                                 <View
                                     style={{
                                         flexDirection: "row",
