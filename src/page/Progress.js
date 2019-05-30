@@ -37,6 +37,8 @@ const numColumns = 3;
 
 export class _Progress extends Component {
     async componentDidMount() {
+        this.props.showProgressPickerDispatch(false);
+        this.props.showProgressModalDispatch(false);
         const permission1 = await Permissions.getAsync(Permissions.CAMERA_ROLL);
         const permission2 = await Permissions.getAsync(Permissions.CAMERA);
         if (permission1.status !== "granted") {
@@ -212,7 +214,7 @@ export class _Progress extends Component {
                                     fontFamily: "PattayaRegular",
                                     margin: 20,
                                     marginLeft: 40
-                                }}>Please Click the + button to add your first progress photo  </Text>
+                                }}>Please Click the + button to add your first progress photo </Text>
                             </View>)
                     }
                     {showPicker && (
