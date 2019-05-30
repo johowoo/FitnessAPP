@@ -37,8 +37,9 @@ class _SetNotificationModal extends Component {
         super(props);
         this.state = {
             isDateTimePickerVisible: false,
-            top: height * 0.15,
+            top: height * 0.12,
             // showTimeChosen: false,
+            enableSound: false,
             validatePeriodCount: 4,
             scheduleTimeArr: [],
             notificationText: "Come on, meatball. It is time to do some exercises",
@@ -141,6 +142,40 @@ class _SetNotificationModal extends Component {
     handleSelect = (index, value) => {
         console.warn(mapPeriodToCountsOfWeeksObj[value]);
         this.setState({validatePeriodCount: mapPeriodToCountsOfWeeksObj[value]});
+    };
+    handleConfirmNotification = async () => {
+        await Notifications.cancelAllScheduledNotificationsAsync();
+        //add schedules from notifications
+        const localNotification = {
+            title: 'Workout',
+            body: this.state.notificationText,
+            data: {type: 'delayed'},
+            [Platform.OS]: {sound: this.state.enableSound},
+        };
+        this.state.scheduleTimeArr.forEach(item => {
+            // if (Platform.OS === "android") {
+            //     const schedulingOptions = {
+            //         time: item + this.state.timeDifferenceFromZeroOfToday,
+            //         repeat: "week",
+            //     };
+            //     schedulingOptions.intervalMs = 24 * 60 * 60 * 1000 * 7;
+            //     Notifications.scheduleLocalNotificationAsync(localNotification, schedulingOptions)
+            //         .then(id => console.warn(`Delayed notification scheduled (${id}) at ${moment(schedulingOptions.time).format()}`))
+            //         .catch(err => console.error(err));
+            // } else {
+            const oneDayTime = 24 * 60 * 60 * 1000 * 7;
+            for (let i = 0; i < this.state.validatePeriodCount; i++) {
+                const schedulingOptions = {
+                    time: item + this.state.timeDifferenceFromZeroOfToday + oneDayTime * i,
+                };
+                Notifications.scheduleLocalNotificationAsync(localNotification, schedulingOptions)
+                    .then(id => console.warn(`Delayed notification scheduled (${id}) at ${moment(schedulingOptions.time).format()}`))
+                    .catch(err => console.error(err));
+            }
+            // }
+        });
+        //add schedules from notifications
+        await this.props.setNotificationModalVisibility(false);
     };
 
     render() {
@@ -293,7 +328,16 @@ class _SetNotificationModal extends Component {
                                 }}>
                                 Enable sound:
                             </Text>
-                            <Switch/>
+                            <Switch
+                                trackColor={{true: "#c69"}}
+                                thumbColor={"#ccc"}
+                                value={this.state.enableSound}
+                                onValueChange={value => {
+                                    this.setState({
+                                        enableSound: !this.state.enableSound
+                                    });
+                                }}
+                            />
                         </View>
                         {/*</View>*/}
                         <View
@@ -303,39 +347,7 @@ class _SetNotificationModal extends Component {
                                     style={styles.modalButton}
                                     color="#00ffcc"
                                     title="Confirm"
-                                    onPress={async () => {
-                                        await Notifications.cancelAllScheduledNotificationsAsync();
-                                        //add schedules from notifications
-                                        const localNotification = {
-                                            title: 'Workout',
-                                            body: this.state.notificationText,
-                                            data: {type: 'delayed'}
-                                        };
-                                        this.state.scheduleTimeArr.forEach(item => {
-                                            if (Platform.OS === "android") {
-                                                const schedulingOptions = {
-                                                    time: item + this.state.timeDifferenceFromZeroOfToday,
-                                                    repeat: "week",
-                                                };
-                                                schedulingOptions.intervalMs = 24 * 60 * 60 * 1000 * 7;
-                                                Notifications.scheduleLocalNotificationAsync(localNotification, schedulingOptions)
-                                                    .then(id => console.warn(`Delayed notification scheduled (${id}) at ${moment(schedulingOptions.time).format()}`))
-                                                    .catch(err => console.error(err));
-                                            } else {
-                                                const oneDayTime = 24 * 60 * 60 * 1000 * 7;
-                                                for (let i = 0; i < 4; i++) {
-                                                    const schedulingOptions = {
-                                                        time: item + this.state.timeDifferenceFromZeroOfToday + oneDayTime * i,
-                                                    };
-                                                    Notifications.scheduleLocalNotificationAsync(localNotification, schedulingOptions)
-                                                        .then(id => console.warn(`Delayed notification scheduled (${id}) at ${moment(schedulingOptions.time).format()}`))
-                                                        .catch(err => console.error(err));
-                                                }
-                                            }
-                                        });
-                                        //add schedules from notifications
-                                        await this.props.setNotificationModalVisibility(false);
-                                    }}
+                                    onPress={this.handleConfirmNotification}
                                 />
                             </View>
                             <View style={styles.modalButtonContainer}>
