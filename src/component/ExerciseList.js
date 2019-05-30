@@ -11,7 +11,8 @@ import {
     Dimensions,
     Button,
     Modal,
-    Alert
+    Alert,
+    TextInput
 } from "react-native";
 import {connect} from "react-redux";
 import {LinearGradient} from "expo";
@@ -29,6 +30,7 @@ import {
     deleteExerciseFromSectionListAction
 } from "../store/actions";
 import {ReminderModal} from "./ReminderModal";
+import InputScrollView from "react-native-input-scroll-view";
 
 const {width, height} = Dimensions.get("window");
 const isNotchScreen = height / width >= 18.5 / 9;
@@ -60,7 +62,8 @@ export class _ExerciseList extends PureComponent {
             }
         });
         this.setState({
-            cardioExercisesCopy
+            cardioExercisesCopy,
+            cardioMinutes: '0'
         })
     }
 
@@ -141,10 +144,26 @@ export class _ExerciseList extends PureComponent {
     onRefresh = () => {
     };
     handlePress = async () => {
-        let flag = true;
+        if (this.state.cardioMinutes) {
+            const re = /^[0-9\b]+$/;
+            let result = re.test(this.state.cardioMinutes);
+            if (!result) {
+                this.setState({
+                    showReminderModalDuplicated: true,
+                    reminderTitleDuplicated: "Not a number",
+                    reminderContentDuplicated: "Please enter valid number (Minutes) ",
+                    hideConfirmButtonDuplicated: true
+                })
+            }
+
+            // submit
+
+
+        }
+        let isThisExerciseNotDuplicated = true;
         this.props.workoutSetsData && this.props.workoutSetsData.forEach(async item => {
             if (item.exercise === this.state.selectedExercise) {
-                flag = false;
+                isThisExerciseNotDuplicated = false;
                 // ReminderModal
                 await this.setState({
                     showReminderModalDuplicated: true,
@@ -155,16 +174,29 @@ export class _ExerciseList extends PureComponent {
                 // Alert.alert("error", "can not add same exercise twice");
             }
         });
-        if (flag) {
+        if (isThisExerciseNotDuplicated) {
             await this.props.updateEmpty(false);
-            await this.props.addExercise({
-                exercise: this.state.selectedExercise,
-                sets: this.state.selectedSets,
-                time: new Date().getTime(),
-            });
-            await this.setState({setsModalVisible: false});
+            if (this.state.cardioMinutes) {
+                await this.props.addExercise({
+                    exercise: this.state.selectedExercise,
+                    sets: 0,
+                    time: new Date().getTime(),
+                    minutes: this.state.cardioMinutes
+                });
+            } else {
+                await this.props.addExercise({
+                    exercise: this.state.selectedExercise,
+                    sets: this.state.selectedSets,
+                    time: new Date().getTime(),
+                });
+            }
+
+            await this.setState({setsModalVisible: false, cardioMinutes: '0'});
+            console.warn(this.props.workoutSetsData);
             await this.props.closeModal();
         }
+
+
     };
 
     handleConfirm = () => {
@@ -304,17 +336,17 @@ export class _ExerciseList extends PureComponent {
                                                 marginLeft: 10,
                                                 marginBottom: 30
                                             }}>
-                                                Do you want to add this cardio?
+                                                Do you want to add {this.state.selectedCardio}?
                                             </Text>
-                                            <View style={{alignItems: 'center'}}>
-                                                <Text style={{
-                                                    color: "#51C0BB",
-                                                    fontSize: 25,
-                                                    marginBottom: 20
-                                                }}>
-                                                    {this.state.selectedCardio}
-                                                </Text>
-                                            </View>
+                                            <TextInput
+                                                placeholderTextColor={"#cc6699"}
+                                                style={styles.TextInput}
+                                                value={this.state.cardioMinutes}
+                                                placeholder="Minutes"
+                                                onChangeText={text => {
+                                                    this.setState({cardioMinutes: text});
+                                                }}
+                                            />
                                         </View>
                                     )
                                 }
@@ -579,7 +611,16 @@ const styles = StyleSheet.create({
         {
             flex: 0.1, height: 60,
             paddingLeft: 40, paddingRight: 10, justifyContent: "center"
-        }
+        },
+    TextInput: {
+        marginLeft: width * 0.03,
+        marginRight: width * 0.03,
+        marginTop: width * 0.01,
+        marginBottom: width * 0.02,
+        backgroundColor: "rgba(255,140,0,0.1)",
+        height: 50,
+        color: "#00ffcc",
+    },
 });
 const dropdownStyles = StyleSheet.create({
     dropdownInput: {
