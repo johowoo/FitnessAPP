@@ -226,16 +226,26 @@ class _SetNotificationModal extends Component {
                                         };
 
                                         this.state.scheduleTimeArr.forEach(item => {
-                                            const schedulingOptions = {
-                                                time: item + this.state.timeDifferenceFromZeroOfToday,
-                                                repeat: "week",
-                                            };
                                             if (Platform.OS === "android") {
-                                                schedulingOptions.intervalMs = 24 * 60 * 60 * 1000 * 7
+                                                const schedulingOptions = {
+                                                    time: item + this.state.timeDifferenceFromZeroOfToday,
+                                                    repeat: "week",
+                                                };
+                                                schedulingOptions.intervalMs = 24 * 60 * 60 * 1000 * 7;
+                                                Notifications.scheduleLocalNotificationAsync(localNotification, schedulingOptions)
+                                                    .then(id => console.warn(`Delayed notification scheduled (${id}) at ${moment(schedulingOptions.time).format()}`))
+                                                    .catch(err => console.error(err));
+                                            } else {
+                                                const oneDayTime = 24 * 60 * 60 * 1000 * 7;
+                                                for (let i = 0; i < 4; i++) {
+                                                    const schedulingOptions = {
+                                                        time: item + this.state.timeDifferenceFromZeroOfToday + oneDayTime * i,
+                                                    };
+                                                    Notifications.scheduleLocalNotificationAsync(localNotification, schedulingOptions)
+                                                        .then(id => console.warn(`Delayed notification scheduled (${id}) at ${moment(schedulingOptions.time).format()}`))
+                                                        .catch(err => console.error(err));
+                                                }
                                             }
-                                            Notifications.scheduleLocalNotificationAsync(localNotification, schedulingOptions)
-                                                .then(id => console.warn(`Delayed notification scheduled (${id}) at ${moment(schedulingOptions.time).format()}`))
-                                                .catch(err => console.error(err));
                                         });
                                         //add schedules from notifications
                                         await this.props.setNotificationModalVisibility(false);
