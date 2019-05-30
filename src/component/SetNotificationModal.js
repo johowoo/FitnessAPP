@@ -169,18 +169,6 @@ class _SetNotificationModal extends Component {
                             Please Select the time you want to receive notifications:
                         </Text>
                         <View style={{flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
-
-                            {/*<View style={{*/}
-                            {/*    backgroundColor: "#ccc", borderRadius: 5, marginRight: 20, height: 30,*/}
-                            {/*    alignItems: 'center',*/}
-                            {/*    justifyContent: 'center'*/}
-                            {/*}}>*/}
-                            {/*    <Text style={{fontSize: 18, paddingLeft: 10, paddingRight: 10}}>*/}
-                            {/*        Time Picker*/}
-                            {/*    </Text>*/}
-                            {/*</View>*/}
-
-                            {/*<Button title="Time Picker" onPress={this.showDateTimePicker} color={"#eee"}/>*/}
                             <TouchableOpacity
                                 onPress={this.showDateTimePicker}
                             ><View
