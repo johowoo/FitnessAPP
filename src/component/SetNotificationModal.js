@@ -19,6 +19,7 @@ import {
 } from "../store/actions";
 import {connect} from "react-redux";
 import DateTimePicker from "react-native-modal-datetime-picker";
+import {getUnixTimeByDay, getTimeDifferenceFromZeroOfToday} from "../utils/unixTimes";
 
 const {width, height} = Dimensions.get("window");
 
@@ -28,19 +29,19 @@ class _SetNotificationModal extends Component {
         this.state = {
             isDateTimePickerVisible: false,
             top: height * 0.3,
+            scheduleTimeArr: []
         };
-    }
+    };
 
     showDateTimePicker = () => {
         this.setState({isDateTimePickerVisible: true});
     };
-
     hideDateTimePicker = () => {
         this.setState({isDateTimePickerVisible: false});
     };
 
     handleDatePicked = date => {
-        console.warn("Time has been picked: ", date.getTime());
+        console.warn("Time has been picked: ", getTimeDifferenceFromZeroOfToday(date.getTime()));
         this.hideDateTimePicker();
     };
 
@@ -50,7 +51,22 @@ class _SetNotificationModal extends Component {
         });
     };
 
+    componentWillMount() {
+        console.warn(this.props.isDayChosenInWeek);
+        // this.state.scheduleTimeArr = [];
+
+    }
+
     async componentDidMount() {
+        const scheduleTimeArr = [];
+        await this.props.isDayChosenInWeek.forEach(async (item, index) => {
+            if (item.isChosen) {
+                scheduleTimeArr.push(getUnixTimeByDay(index));
+            }
+        });
+        await this.setState({scheduleTimeArr});
+        await console.warn("will", this.state.scheduleTimeArr);
+
         this.keyboardDidShowListener = Keyboard.addListener(
             "keyboardDidShow",
             this.keyboardDidShowHandler.bind(this)
@@ -66,8 +82,25 @@ class _SetNotificationModal extends Component {
         return (
             <View>
                 <TouchableOpacity
-                    onPress={() => {
-                        this.props.chooseDayInWeek({day: item.day, isChosen: !item.isChosen});
+                    onPress={async () => {
+                        if (!item.isChosen) {
+                            if (!this.state.scheduleTimeArr.includes(getUnixTimeByDay(index))) {
+                                await this.setState({
+                                    scheduleTimeArr: [...this.state.scheduleTimeArr, getUnixTimeByDay(index)]
+                                })
+                            }
+                        } else {
+                            const emptyScheduleTimeArr = [];
+                            this.state.scheduleTimeArr.forEach(i => {
+                                if (i !== getUnixTimeByDay(index)) {
+                                    emptyScheduleTimeArr.push(i)
+                                }
+                            });
+                            this.setState({scheduleTimeArr: emptyScheduleTimeArr})
+                        }
+                        await this.props.chooseDayInWeek({day: item.day, isChosen: !item.isChosen});
+
+                        await console.warn(this.state.scheduleTimeArr)
                     }}
                     style={{
                         backgroundColor: item.isChosen ? "#c69" : "#888",
