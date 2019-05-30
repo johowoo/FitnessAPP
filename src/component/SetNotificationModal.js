@@ -15,13 +15,32 @@ import {
     setNotificationModalVisibilityAction
 } from "../store/actions";
 import {connect} from "react-redux";
+import DateTimePicker, {DatePicker, TimePicker} from "react-native-modal-datetime-picker";
 
 const {width, height} = Dimensions.get("window");
 
 class _SetNotificationModal extends Component {
-    state = {
-        top: height * 0.3,
+    constructor(props) {
+        super(props);
+        this.state = {
+            isDateTimePickerVisible: false,
+            top: height * 0.3,
+        };
+    }
+
+    showDateTimePicker = () => {
+        this.setState({isDateTimePickerVisible: true});
     };
+
+    hideDateTimePicker = () => {
+        this.setState({isDateTimePickerVisible: false});
+    };
+
+    handleDatePicked = date => {
+        console.log("A date has been picked: ", date);
+        this.hideDateTimePicker();
+    };
+
     keyboardDidShowHandler = () => {
         this.setState({
             top: height * 0.2,
@@ -37,14 +56,14 @@ class _SetNotificationModal extends Component {
         let result = await Permissions.askAsync(Permissions.NOTIFICATIONS);
 
         if (Constants.isDevice && result.status === 'granted') {
-            console.warn('Notification permissions granted.')
+            console.log('Notification permissions granted.')
         }
 
         Notifications.addListener(this._handleNotification);
     }
 
     _handleNotification = ({origin, data}) => {
-        console.warn(`Notification (${origin}) with data: ${JSON.stringify(data)}`)
+        console.log(`Notification (${origin}) with data: ${JSON.stringify(data)}`)
     };
 
     _sendDelayedNotification() {
@@ -57,10 +76,10 @@ class _SetNotificationModal extends Component {
             time: (new Date()).getTime() + 5000
         };
 
-        console.warn('Scheduling delayed notification:', {localNotification, schedulingOptions})
+        console.log('Scheduling delayed notification:', {localNotification, schedulingOptions})
 
         Notifications.scheduleLocalNotificationAsync(localNotification, schedulingOptions)
-            .then(id => console.warn(`Delayed notification scheduled (${id}) at ${moment(schedulingOptions.time).format()}`))
+            .then(id => console.log(`Delayed notification scheduled (${id}) at ${moment(schedulingOptions.time).format()}`))
             .catch(err => console.error(err))
     }
 
@@ -81,7 +100,16 @@ class _SetNotificationModal extends Component {
                             }}>
                             Please Select the day you want to receive notifications:
                         </Text>
-
+                        {/*<View>*/}
+                        <Button title="Show DatePicker" onPress={this.showDateTimePicker}/>
+                        <DateTimePicker
+                            mode={"date"}
+                            // datePickerContainerStyleIOS={{backgroundColor:"#eee",color:"#eee"}}
+                            isVisible={this.state.isDateTimePickerVisible}
+                            onConfirm={this.handleDatePicked}
+                            onCancel={this.hideDateTimePicker}
+                        />
+                        {/*</View>*/}
                         <View
                             style={{flexDirection: "row", justifyContent: "space-around"}}>
                             <View style={styles.modalButtonContainer}>

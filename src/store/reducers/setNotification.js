@@ -5,7 +5,6 @@ export const setNotification = (state = {
 }, action) => {
     switch (action.type) {
         case types.SET_NOTIFICATION_MODAL_VISIBILITY:
-            console.warn("here", action.payload);
             return {...state, showSetNotificationModal: action.payload};
         default:
             return state;

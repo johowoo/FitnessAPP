@@ -286,7 +286,6 @@ export class _WorkoutList extends Component {
                     <View style={styles.buttonContainer}>
                         <Button
                             onPress={() => {
-                                console.warn("true")
                                 this.props.setNotificationModalVisibility(true)
                             }
                                 // this.handlePress.bind(this)
