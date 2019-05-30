@@ -6,13 +6,16 @@ import {
     StyleSheet,
     Dimensions,
     TextInput,
+    FlatList,
     Keyboard,
+    TouchableOpacity
 } from "react-native";
 import React, {Component} from "react";
 import {Notifications, Permissions, Constants} from 'expo';
 import moment from 'moment';
 import {
-    setNotificationModalVisibilityAction
+    setNotificationModalVisibilityAction,
+    chooseDayInWeekAction
 } from "../store/actions";
 import {connect} from "react-redux";
 import DateTimePicker, {DatePicker, TimePicker} from "react-native-modal-datetime-picker";
@@ -52,15 +55,33 @@ class _SetNotificationModal extends Component {
             "keyboardDidShow",
             this.keyboardDidShowHandler.bind(this)
         );
-
         let result = await Permissions.askAsync(Permissions.NOTIFICATIONS);
-
         if (Constants.isDevice && result.status === 'granted') {
             console.log('Notification permissions granted.')
         }
-
         Notifications.addListener(this._handleNotification);
     }
+
+    _renderItem = ({item, index}) => {
+        return (
+            <View>
+                <TouchableOpacity
+                    onPress={() => {
+                        this.props.chooseDayInWeek({day: item.day, isChosen: !item.isChosen});
+                    }}
+                    style={{
+                        backgroundColor: item.isChosen ? "#c69" : "transparent",
+                        width: 70,
+                        height: 40,
+                        alignItems: "center",
+                        justifyContent: "center",
+                    }}>
+                    <Text style={{color: "#eee", fontSize: 20, fontFamily: "PattayaRegular"}}>
+                        {item.day}
+                    </Text>
+                </TouchableOpacity>
+            </View>)
+    };
 
     _handleNotification = ({origin, data}) => {
         console.log(`Notification (${origin}) with data: ${JSON.stringify(data)}`)
@@ -101,9 +122,29 @@ class _SetNotificationModal extends Component {
                             Please Select the day you want to receive notifications:
                         </Text>
                         {/*<View>*/}
+                        <View>
+                            <FlatList
+                                // style={{flex: 1, flexDirection: 'row'}}
+                                data={this.props.isDayChosenInWeek}
+                                renderItem={data => this._renderItem(data)}
+                                keyExtractor={(item, index) => item + index}
+                                numColumns={4}
+                                extraData={this.state}
+                                style={{marginBottom: 10}}
+                            />
+                        </View>
+                        <Text
+                            style={{
+                                color: "#00ffcc",
+                                fontSize: 16,
+                                marginLeft: 10,
+                                marginBottom: 15,
+                            }}>
+                            Please Select the day you want to receive notifications:
+                        </Text>
                         <Button title="Show DatePicker" onPress={this.showDateTimePicker}/>
                         <DateTimePicker
-                            mode={"date"}
+                            mode={"time"}
                             // datePickerContainerStyleIOS={{backgroundColor:"#eee",color:"#eee"}}
                             isVisible={this.state.isDateTimePickerVisible}
                             onConfirm={this.handleDatePicked}
@@ -118,7 +159,6 @@ class _SetNotificationModal extends Component {
                                     color="#00ffcc"
                                     title="Confirm"
                                     onPress={async () => {
-
                                         await this.props.setNotificationModalVisibility(false);
                                     }}
                                 />
@@ -186,13 +226,17 @@ const styles = StyleSheet.create({
 });
 const mapStateToProps = state => ({
     // currentWorkout: state.currentWorkout,
-    showSetNotificationModal: state.setNotification.showSetNotificationModal
+    showSetNotificationModal: state.setNotification.showSetNotificationModal,
+    isDayChosenInWeek: state.setNotification.isDayChosenInWeek
 });
 
 const mapActionsToProps = dispatch => ({
     setNotificationModalVisibility: (bool = false) => {
         dispatch(setNotificationModalVisibilityAction(bool));
     },
+    chooseDayInWeek: (data) => {
+        dispatch(chooseDayInWeekAction(data));
+    }
 });
 
 export const SetNotificationModal = connect(mapStateToProps, mapActionsToProps)(_SetNotificationModal);

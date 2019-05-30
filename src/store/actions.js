@@ -127,5 +127,7 @@ export const setReminderModalInEditHistoryAction = data =>
 //Set notifications
 export const setNotificationModalVisibilityAction = data =>
     createAction(types.SET_NOTIFICATION_MODAL_VISIBILITY)(data);
+export const chooseDayInWeekAction = data =>
+    createAction(types.CHOOSE_DAY_IN_WEEK)(data);
 
 

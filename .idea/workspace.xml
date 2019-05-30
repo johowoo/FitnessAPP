@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fd580928-bb60-480d-8b73-7c94df331487" name="Default Changelist" comment="p">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/component/SetNotificationModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/component/SetNotificationModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actionTypes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actionTypes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/actions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/actions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/store/reducers/setNotification.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/store/reducers/setNotification.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,7 +21,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/page/CurrentWorkout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="7380">
+            <state relative-caret-position="307">
               <caret line="207" column="9" selection-start-line="205" selection-start-column="3" selection-end-line="207" selection-end-column="9" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
@@ -32,8 +34,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="10824">
-              <caret line="288" column="40" selection-start-line="288" selection-start-column="40" selection-end-line="288" selection-end-column="40" />
+            <state relative-caret-position="1993">
+              <caret line="288" column="44" selection-start-line="288" selection-start-column="44" selection-end-line="288" selection-end-column="44" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
                 <element signature="e#260#319#0" expanded="true" />
@@ -42,11 +44,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/component/SetNotificationModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="278">
-              <caret line="106" column="85" lean-forward="true" selection-start-line="106" selection-start-column="85" selection-end-line="106" selection-end-column="85" />
+            <state relative-caret-position="410">
+              <caret line="70" column="22" lean-forward="true" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
               <folding>
                 <element signature="e#0#135#0" expanded="true" />
               </folding>
@@ -55,17 +57,22 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/package.json">
+        <entry file="file://$PROJECT_DIR$/src/page/CustomWorkout.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1250" />
+            <state relative-caret-position="401">
+              <caret line="129" column="46" lean-forward="true" selection-start-line="129" selection-start-column="32" selection-end-line="129" selection-end-column="46" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/store/reducers/setNotification.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="123">
-              <caret line="3" column="28" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="28" />
+            <state relative-caret-position="627">
+              <caret line="24" column="72" selection-start-line="24" selection-start-column="72" selection-end-line="24" selection-end-column="72" />
             </state>
           </provider>
         </entry>
@@ -73,8 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/store/actionTypes.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4551">
-              <caret line="111" column="38" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="38" />
+            <state relative-caret-position="544">
+              <caret line="113" column="55" lean-forward="true" selection-start-line="113" selection-start-column="55" selection-end-line="113" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -82,8 +89,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/store/actions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5043">
-              <caret line="124" column="65" selection-start-line="124" selection-start-column="65" selection-end-line="124" selection-end-column="65" />
+            <state relative-caret-position="603">
+              <caret line="129" column="34" selection-start-line="129" selection-start-column="13" selection-end-line="129" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -108,14 +115,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Lineargradient colors=</find>
-      <find>fontawesome</find>
-      <find>Current Workout</find>
-      <find>Calendar&lt;</find>
-      <find>Statistics&lt;</find>
-      <find>Progress&lt;</find>
-      <find>Custom</find>
-      <find>HandlePress</find>
       <find>Workout His</find>
       <find>Custom work</find>
       <find>Manual wO</find>
@@ -136,8 +135,16 @@
       <find>this.props</find>
       <find>showSet</find>
       <find>console.info</find>
-      <find>backgroundco</find>
       <find>console.warn</find>
+      <find>here</find>
+      <find>backgroundco</find>
+      <find>&lt;flatlist</find>
+      <find>mode</find>
+      <find>&lt;flat</find>
+      <find>flexdire</find>
+      <find>flatlist</find>
+      <find>RENDERitem</find>
+      <find>renderItem</find>
     </findStrings>
     <replaceStrings>
       <replace>expo</replace>
@@ -213,14 +220,14 @@
         <option value="$PROJECT_DIR$/node_modules/@expo/vector-icons/node_modules/react-native-vector-icons/glyphmaps/IconFont.json" />
         <option value="$PROJECT_DIR$/node_modules/@expo/vector-icons/vendor/react-native-vector-icons/glyphmaps/IconFont.json" />
         <option value="$PROJECT_DIR$/src/store/reducer.js" />
-        <option value="$PROJECT_DIR$/src/store/actionTypes.js" />
-        <option value="$PROJECT_DIR$/src/store/actions.js" />
         <option value="$PROJECT_DIR$/src/page/CurrentWorkout.js" />
-        <option value="$PROJECT_DIR$/src/store/reducers/setNotification.js" />
-        <option value="$PROJECT_DIR$/src/component/WorkoutList.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/src/component/WorkoutList.js" />
+        <option value="$PROJECT_DIR$/src/store/actionTypes.js" />
+        <option value="$PROJECT_DIR$/src/store/actions.js" />
         <option value="$PROJECT_DIR$/src/component/SetNotificationModal.js" />
+        <option value="$PROJECT_DIR$/src/store/reducers/setNotification.js" />
       </list>
     </option>
   </component>
@@ -249,6 +256,17 @@
             <path>
               <item name="FitnessAPP" type="b2602c69:ProjectViewProjectNode" />
               <item name="FitnessAPP" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FitnessAPP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FitnessAPP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="FitnessAPP" type="b2602c69:ProjectViewProjectNode" />
+              <item name="FitnessAPP" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -404,12 +422,12 @@
       <workItem from="1559112300756" duration="9027000" />
       <workItem from="1559167402231" duration="4769000" />
       <workItem from="1559174971421" duration="119000" />
-      <workItem from="1559177868525" duration="1824000" />
+      <workItem from="1559177868525" duration="5893000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="407992000" />
+    <option name="totallyTimeSpent" value="412061000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="947" extended-state="0" />
@@ -532,16 +550,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/ExerciseList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="366" column="23" lean-forward="true" selection-start-line="359" selection-start-column="19" selection-end-line="366" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/page/Welcome.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="533">
@@ -584,16 +592,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="167">
           <caret line="68" column="22" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/CustomWorkout.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2583">
-          <caret line="87" column="51" selection-start-line="87" selection-start-column="51" selection-end-line="87" selection-end-column="51" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>
@@ -839,46 +837,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/page/CurrentWorkout.js">
+    <entry file="file://$PROJECT_DIR$/src/component/ExerciseList.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="7380">
-          <caret line="207" column="9" selection-start-line="205" selection-start-column="3" selection-end-line="207" selection-end-column="9" />
+        <state relative-caret-position="-108">
+          <caret line="339" column="34" lean-forward="true" selection-start-line="334" selection-start-column="30" selection-end-line="339" selection-end-column="34" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#177#223#0" expanded="true" />
+            <element signature="e#0#43#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="10824">
-          <caret line="288" column="40" selection-start-line="288" selection-start-column="40" selection-end-line="288" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#39#0" expanded="true" />
-            <element signature="e#260#319#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/reducers/setNotification.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="123">
-          <caret line="3" column="28" selection-start-line="3" selection-start-column="4" selection-end-line="3" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/actionTypes.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4551">
-          <caret line="111" column="38" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/actions.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5043">
-          <caret line="124" column="65" selection-start-line="124" selection-start-column="65" selection-end-line="124" selection-end-column="65" />
         </state>
       </provider>
     </entry>
@@ -889,18 +854,71 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/actions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="603">
+          <caret line="129" column="34" selection-start-line="129" selection-start-column="13" selection-end-line="129" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1250" />
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/actionTypes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="113" column="55" lean-forward="true" selection-start-line="113" selection-start-column="55" selection-end-line="113" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/CustomWorkout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="401">
+          <caret line="129" column="46" lean-forward="true" selection-start-line="129" selection-start-column="32" selection-end-line="129" selection-end-column="46" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/component/WorkoutList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1993">
+          <caret line="288" column="44" selection-start-line="288" selection-start-column="44" selection-end-line="288" selection-end-column="44" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#260#319#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/page/CurrentWorkout.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="207" column="9" selection-start-line="205" selection-start-column="3" selection-end-line="207" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#177#223#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/component/SetNotificationModal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="278">
-          <caret line="106" column="85" lean-forward="true" selection-start-line="106" selection-start-column="85" selection-end-line="106" selection-end-column="85" />
+        <state relative-caret-position="410">
+          <caret line="70" column="22" lean-forward="true" selection-start-line="70" selection-start-column="22" selection-end-line="70" selection-end-column="22" />
           <folding>
             <element signature="e#0#135#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/reducers/setNotification.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="627">
+          <caret line="24" column="72" selection-start-line="24" selection-start-column="72" selection-end-line="24" selection-end-column="72" />
         </state>
       </provider>
     </entry>
