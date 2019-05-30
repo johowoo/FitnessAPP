@@ -34,6 +34,7 @@ const {width, height} = Dimensions.get("window");
 const isNotchScreen = height / width >= 18.5 / 9;
 const ITEM_HEIGHT = 40;
 
+
 export class _ExerciseList extends PureComponent {
     constructor(props) {
         super(props);

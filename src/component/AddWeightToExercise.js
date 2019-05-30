@@ -7,8 +7,10 @@ import {
     Dimensions,
     TextInput,
     Keyboard,
+    Switch
 } from "react-native";
 import React, {Component} from "react";
+import ModalDropdown from "react-native-modal-dropdown";
 
 const {width, height} = Dimensions.get("window");
 

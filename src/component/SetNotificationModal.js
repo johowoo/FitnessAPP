@@ -22,17 +22,26 @@ import {connect} from "react-redux";
 import DateTimePicker from "react-native-modal-datetime-picker";
 import {formatMonthandDay} from "../utils/formatMonthandDay";
 import {getUnixTimeByDay, getTimeDifferenceFromZeroOfToday} from "../utils/unixTimes";
+import ModalDropdown from "react-native-modal-dropdown";
 
 const {width, height} = Dimensions.get("window");
+const mapPeriodToCountsOfWeeksObj = {
+    "1 Month": 4,
+    "3 Months": 12,
+    "6 Months": 26,
+    "1 Year": 52,
+}
 
 class _SetNotificationModal extends Component {
     constructor(props) {
         super(props);
         this.state = {
             isDateTimePickerVisible: false,
-            top: height * 0.3,
+            top: height * 0.15,
             // showTimeChosen: false,
+            validatePeriodCount: 4,
             scheduleTimeArr: [],
+            notificationText: "Come on, meatball. It is time to do some exercises",
             timeDifferenceFromZeroOfToday: 43220000
         };
     };
@@ -73,6 +82,7 @@ class _SetNotificationModal extends Component {
             scheduleTimeArr,
             timeDifferenceFromZeroOfToday: 43220000,
             // showTimeChosen: false,
+            validatePeriodCount: 4,
             timeChosen: "12:00"
         });
 
@@ -128,6 +138,10 @@ class _SetNotificationModal extends Component {
     _handleNotification = ({origin, data}) => {
         console.log(`Notification (${origin}) with data: ${JSON.stringify(data)}`)
     };
+    handleSelect = (index, value) => {
+        console.warn(mapPeriodToCountsOfWeeksObj[value]);
+        this.setState({validatePeriodCount: mapPeriodToCountsOfWeeksObj[value]});
+    };
 
     render() {
         return (
@@ -142,9 +156,28 @@ class _SetNotificationModal extends Component {
                                 color: "#00ffcc",
                                 fontSize: 16,
                                 marginLeft: 10,
+                                marginBottom: 10,
+                            }}>
+                            Please input the content of notifications:
+                        </Text>
+                        <TextInput
+                            placeholderTextColor={"#cc6699"}
+                            style={styles.NotificationTextInput}
+                            value={this.state.notificationText}
+                            placeholder=" Come on, meatball. It is time to do some exercises"
+                            onChangeText={text => {
+                                this.setState({notificationText: text});
+                            }}
+                        />
+                        <Text
+                            style={{
+                                color: "#00ffcc",
+                                fontSize: 16,
+                                marginTop: 15,
+                                marginLeft: 10,
                                 marginBottom: 15,
                             }}>
-                            Please Select the day you want to receive notifications:
+                            Please select the day you want to receive repeat notifications in each week:
                         </Text>
                         {/*<View>*/}
                         <View>
@@ -159,43 +192,91 @@ class _SetNotificationModal extends Component {
                                 style={{marginBottom: 10,}}
                             />
                         </View>
-                        <Text
-                            style={{
-                                color: "#00ffcc",
-                                fontSize: 16,
-                                marginLeft: 10,
-                                marginBottom: 15,
-                            }}>
-                            Please Select the time you want to receive notifications:
-                        </Text>
-                        <View style={{flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
-                            <TouchableOpacity
-                                onPress={this.showDateTimePicker}
-                            ><View
+                        <View style={{
+                            // marginTop: 10,
+                            flexDirection: "row",
+                            alignItems: "center",
+                            justifyContent: "space-around"
+                        }}>
+                            <Text
                                 style={{
-                                    borderRadius: 8,
-                                    backgroundColor: "#c69",
-                                    paddingLeft: 15,
-                                    paddingRight: 15,
-                                    height: 35,
-                                    alignItems: 'center',
-                                    justifyContent: 'center'
+                                    color: "#00ffcc",
+                                    fontSize: 16,
+                                    marginLeft: 10,
+                                    marginBottom: 15,
+                                    marginTop: 15
                                 }}>
-                                <Text
-                                    style={{color: "#eee", fontSize: 18, fontFamily: "PattayaRegular"}}>
-                                    {this.state.timeChosen}
-                                </Text>
+                               Time:
+                            </Text>
+                            <View style={{flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
+                                <TouchableOpacity
+                                    onPress={this.showDateTimePicker}
+                                ><View
+                                    style={{
+                                        borderRadius: 8,
+                                        backgroundColor: "#c69",
+                                        paddingLeft: 15,
+                                        paddingRight: 15,
+                                        height: 35,
+                                        alignItems: 'center',
+                                        justifyContent: 'center'
+                                    }}>
+                                    <Text
+                                        style={{color: "#eee", fontSize: 18, fontFamily: "PattayaRegular"}}>
+                                        {this.state.timeChosen}
+                                    </Text>
+                                </View>
+                                </TouchableOpacity>
                             </View>
-                            </TouchableOpacity>
+                            <DateTimePicker
+                                mode={"time"}
+                                titleIOS={"Pick a time"}
+                                // datePickerContainerStyleIOS={{backgroundColor:"#eee",color:"#eee"}}
+                                isVisible={this.state.isDateTimePickerVisible}
+                                onConfirm={this.handleTimePicked}
+                                onCancel={this.hideDateTimePicker}
+                            />
                         </View>
-                        <DateTimePicker
-                            mode={"time"}
-                            titleIOS={"Pick a time"}
-                            // datePickerContainerStyleIOS={{backgroundColor:"#eee",color:"#eee"}}
-                            isVisible={this.state.isDateTimePickerVisible}
-                            onConfirm={this.handleTimePicked}
-                            onCancel={this.hideDateTimePicker}
-                        />
+                        <View style={{
+                            marginTop: 10,
+                            flexDirection: "row",
+                            alignItems: "center",
+                            justifyContent: "space-around"
+                        }}>
+                            <Text
+                                style={{
+                                    color: "#00ffcc",
+                                    fontSize: 16,
+                                    marginLeft: 10,
+                                    marginTop: 16,
+                                    marginBottom: 10,
+                                }}>
+                                Valid period:
+                            </Text>
+                            <ModalDropdown
+                                style={[styles.dropdownMenu]}
+                                textStyle={[
+                                    styles.dropdownMenuText,
+                                ]}
+                                dropdownStyle={[
+                                    styles.dropdownList,
+                                ]}
+                                dropdownTextStyle={[
+                                    styles.dropdownListText,
+                                ]}
+                                dropdownTextHighlightStyle={[
+                                    styles.dropdownSelection,
+                                ]}
+                                options={[
+                                    "1 Month",
+                                    "3 Months",
+                                    "6 Months",
+                                    "1 Year",
+                                ]}
+                                defaultValue={"1 Month"}
+                                onSelect={this.handleSelect.bind(this)}
+                            />
+                        </View>
                         {/*</View>*/}
                         <View
                             style={{flexDirection: "row", justifyContent: "space-around", marginTop: 5}}>
@@ -209,10 +290,9 @@ class _SetNotificationModal extends Component {
                                         //add schedules from notifications
                                         const localNotification = {
                                             title: 'Workout',
-                                            body: 'Come on, meatball. It is time to do some exercises',
+                                            body: this.state.notificationText,
                                             data: {type: 'delayed'}
                                         };
-
                                         this.state.scheduleTimeArr.forEach(item => {
                                             if (Platform.OS === "android") {
                                                 const schedulingOptions = {
@@ -251,6 +331,7 @@ class _SetNotificationModal extends Component {
                                 />
                             </View>
                         </View>
+
                     </View>
                 </View>
                 {/*<View style={styles.container}>*/}
@@ -282,7 +363,7 @@ const styles = StyleSheet.create({
             borderRadius: 8,
         },
         modalInnerContainer: {
-            height: 350,
+            height: 550,
             width:
                 width * 0.85,
             backgroundColor:
@@ -299,22 +380,47 @@ const styles = StyleSheet.create({
             width: 0.25 * width,
         }
         ,
-        weightTextInput: {
+        NotificationTextInput: {
             marginLeft: width * 0.03,
             marginRight:
                 width * 0.03,
-            marginTop:
-                width * 0.01,
-            marginBottom:
-                width * 0.02,
+            marginBottom: 15,
             backgroundColor:
                 "rgba(255,140,0,0.1)",
             height:
                 50,
             color:
                 "#00ffcc",
-        }
-        ,
+        },
+        dropdownMenu: {
+            width: width * 0.28,
+            height: 30,
+            borderRadius: 6,
+            marginRight: width * 0.02,
+            borderWidth: 1.5,
+            borderColor: "#c69",
+            fontWeight: "bold",
+
+            // backgroundColor:'#EEE',
+            justifyContent: "center",
+        },
+        dropdownMenuText: {
+            marginLeft: 10,
+            fontSize: 16,
+            color: "#c69",
+        },
+        dropdownList: {
+            width: width * 0.28,
+            marginTop: 15,
+        },
+        dropdownListText: {
+            fontSize: 18,
+            marginLeft: 10,
+            color: "#c69",
+        },
+        dropdownSelection: {
+            color: "#00cccc",
+        },
     })
 ;
 const mapStateToProps = state => ({

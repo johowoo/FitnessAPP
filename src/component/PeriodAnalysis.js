@@ -209,11 +209,4 @@ const styles = StyleSheet.create({
     },
 });
 
-const dropdownStyles = StyleSheet.create({
-    dropdownInput: {
-        backgroundColor: "rgba(255,140,0,0.1)",
-    },
-    dropdownMenu: {
-        backgroundColor: "#EEE",
-    },
-});
+
