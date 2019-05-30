@@ -9,7 +9,7 @@ import {
     FlatList,
     Keyboard,
     TouchableOpacity,
-    Platform
+    Platform, Switch
 } from "react-native";
 import React, {Component} from "react";
 import {Notifications, Permissions, Constants} from 'expo';
@@ -206,7 +206,7 @@ class _SetNotificationModal extends Component {
                                     marginBottom: 15,
                                     marginTop: 15
                                 }}>
-                               Time:
+                                Time:
                             </Text>
                             <View style={{flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
                                 <TouchableOpacity
@@ -277,6 +277,24 @@ class _SetNotificationModal extends Component {
                                 onSelect={this.handleSelect.bind(this)}
                             />
                         </View>
+                        <View style={{
+                            marginTop: 10,
+                            flexDirection: "row",
+                            alignItems: "center",
+                            justifyContent: "space-around"
+                        }}>
+                            <Text
+                                style={{
+                                    color: "#00ffcc",
+                                    fontSize: 16,
+                                    marginLeft: 10,
+                                    marginTop: 16,
+                                    marginBottom: 10,
+                                }}>
+                                Enable sound:
+                            </Text>
+                            <Switch/>
+                        </View>
                         {/*</View>*/}
                         <View
                             style={{flexDirection: "row", justifyContent: "space-around", marginTop: 5}}>
@@ -331,7 +349,6 @@ class _SetNotificationModal extends Component {
                                 />
                             </View>
                         </View>
-
                     </View>
                 </View>
                 {/*<View style={styles.container}>*/}
