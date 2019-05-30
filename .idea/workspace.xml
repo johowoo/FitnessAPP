@@ -44,8 +44,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/component/SetNotificationModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="395">
-              <caret line="73" column="33" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="33" />
+            <state relative-caret-position="-931">
+              <caret line="286" column="39" selection-start-line="286" selection-start-column="39" selection-end-line="286" selection-end-column="39" />
               <folding>
                 <element signature="e#0#170#0" expanded="true" />
               </folding>
@@ -130,9 +130,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>showSet</find>
-      <find>console.info</find>
-      <find>console.warn</find>
       <find>here</find>
       <find>backgroundco</find>
       <find>&lt;flatlist</find>
@@ -147,7 +144,6 @@
       <find>ischosen</find>
       <find>renderITEM</find>
       <find>warn</find>
-      <find>time</find>
       <find>Confirm</find>
       <find>Time</find>
       <find>diff</find>
@@ -160,6 +156,10 @@
       <find>borderradi</find>
       <find>timeC</find>
       <find>timechosen</find>
+      <find>format</find>
+      <find>showTimech</find>
+      <find>time</find>
+      <find>confirm</find>
     </findStrings>
     <replaceStrings>
       <replace>expo</replace>
@@ -444,12 +444,12 @@
       <workItem from="1559167402231" duration="4769000" />
       <workItem from="1559174971421" duration="119000" />
       <workItem from="1559177868525" duration="7577000" />
-      <workItem from="1559201149241" duration="6013000" />
+      <workItem from="1559201149241" duration="7066000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="419758000" />
+    <option name="totallyTimeSpent" value="420811000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1680" height="947" extended-state="0" />
@@ -933,8 +933,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/component/SetNotificationModal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="73" column="33" selection-start-line="73" selection-start-column="33" selection-end-line="73" selection-end-column="33" />
+        <state relative-caret-position="-931">
+          <caret line="286" column="39" selection-start-line="286" selection-start-column="39" selection-end-line="286" selection-end-column="39" />
           <folding>
             <element signature="e#0#170#0" expanded="true" />
           </folding>

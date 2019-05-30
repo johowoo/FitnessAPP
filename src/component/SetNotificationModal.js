@@ -128,14 +128,6 @@ class _SetNotificationModal extends Component {
         console.log(`Notification (${origin}) with data: ${JSON.stringify(data)}`)
     };
 
-    // _sendDelayedNotification() {
-    //     console.log('Scheduling delayed notification:', {localNotification, schedulingOptions})
-    //
-    //     Notifications.scheduleLocalNotificationAsync(localNotification, schedulingOptions)
-    //         .then(id => console.log(`Delayed notification scheduled (${id}) at ${moment(schedulingOptions.time).format()}`))
-    //         .catch(err => console.error(err))
-    // }
-
     render() {
         return (
             <Modal
@@ -231,13 +223,15 @@ class _SetNotificationModal extends Component {
                                             body: 'Come on ,meatball. It is time for workout',
                                             data: {type: 'delayed'}
                                         };
+
                                         this.state.scheduleTimeArr.forEach(item => {
                                             const schedulingOptions = {
                                                 time: item + this.state.timeDifferenceFromZeroOfToday,
                                                 repeat: "week",
+                                                intervalMs: 24 * 60 * 60 * 1000 * 7
                                             };
                                             Notifications.scheduleLocalNotificationAsync(localNotification, schedulingOptions)
-                                                .then(id => console.log(`Delayed notification scheduled (${id}) at ${moment(schedulingOptions.time).format()}`))
+                                                .then(id => console.warn(`Delayed notification scheduled (${id}) at ${moment(schedulingOptions.time).format()}`))
                                                 .catch(err => console.error(err));
                                         });
                                         //add schedules from notifications
@@ -289,7 +283,7 @@ const styles = StyleSheet.create({
         modalInnerContainer: {
             height: 350,
             width:
-                width * 0.8,
+                width * 0.85,
             backgroundColor:
                 "rgba(102,51,204,0.9)",
             paddingTop:
