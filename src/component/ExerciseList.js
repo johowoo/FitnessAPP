@@ -145,7 +145,6 @@ export class _ExerciseList extends PureComponent {
     };
     handlePress = async () => {
         if (this.state.cardioMinutes && this.state.cardioMinutes !== "0") {
-            console.warn("here cardioMinute");
             const re = /^[0-9\b]+$/;
             let result = re.test(this.state.cardioMinutes);
             if (!result) {
@@ -182,7 +181,6 @@ export class _ExerciseList extends PureComponent {
                     minutes: parseInt(this.state.cardioMinutes, 10)
                 });
             } else {
-                console.warn("else");
                 await this.props.addExercise({
                     exercise: this.state.selectedExercise,
                     sets: this.state.selectedSets,
@@ -190,7 +188,6 @@ export class _ExerciseList extends PureComponent {
                 });
             }
             await this.setState({setsModalVisible: false, cardioMinutes: 0});
-            console.warn(this.props.workoutSetsData);
             await this.props.closeModal();
         }
 

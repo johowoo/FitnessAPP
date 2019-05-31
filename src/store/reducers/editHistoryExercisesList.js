@@ -36,7 +36,6 @@ export const editHistoryExercisesList = (
                         item.weightRepsDataArr = [];
                     }
                     if (action.payload.cardioMinutes) {
-                        console.warn("here", item);
                         //change minutes
                         item.minutes = action.payload.cardioMinutes;
                     } else {

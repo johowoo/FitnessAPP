@@ -139,7 +139,6 @@ class _SetNotificationModal extends Component {
         console.log(`Notification (${origin}) with data: ${JSON.stringify(data)}`)
     };
     handleSelect = (index, value) => {
-        console.warn(mapPeriodToCountsOfWeeksObj[value]);
         this.setState({validatePeriodCount: mapPeriodToCountsOfWeeksObj[value]});
     };
     handleConfirmNotification = async () => {

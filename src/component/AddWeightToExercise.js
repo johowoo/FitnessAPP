@@ -79,7 +79,6 @@ export class AddWeightToExercise extends Component {
                                     onPress={async () => {
                                         let actionPayload = {};
                                         if (this.props.cardioMinutes) {
-                                            console.warn( "cardioMinutes", this.state.weightText)
                                             actionPayload = {
                                                 time: this.props.time,
                                                 cardioMinutes: this.state.weightText,

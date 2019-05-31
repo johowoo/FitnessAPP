@@ -241,7 +241,6 @@ export class _WorkoutList extends Component {
     );
 
     render() {
-        console.warn("props", this.props.workoutSetsData);
         const listFooterComponent = (
             <View>
                 <View style={styles.addSomeExercises}>
