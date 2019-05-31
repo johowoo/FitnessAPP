@@ -37,7 +37,7 @@ class _SetNotificationModal extends Component {
         super(props);
         this.state = {
             isDateTimePickerVisible: false,
-            top: (height - 550) * 0.4,
+            top: (height - 540) * 0.4,
             // top: height * 0.12,
             // showTimeChosen: false,
             enableSound: false,
@@ -341,7 +341,7 @@ class _SetNotificationModal extends Component {
                             </View>
                             {/*</View>*/}
                             <View
-                                style={{flexDirection: "row", justifyContent: "space-around", marginTop: 15,}}>
+                                style={{flexDirection: "row", justifyContent: "space-around", marginTop: 35,}}>
                                 <View style={styles.modalButtonContainer}>
                                     <Button
                                         style={styles.modalButton}
@@ -388,7 +388,7 @@ const styles = StyleSheet.create({
             borderRadius: 8,
         },
         modalInnerContainer: {
-            height: 550,
+            height: 540,
             width:
                 width * 0.85,
             backgroundColor:

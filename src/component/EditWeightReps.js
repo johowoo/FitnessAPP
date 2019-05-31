@@ -71,124 +71,126 @@ export class EditWeightReps extends Component {
                 visible={this.props.showEditWeightReps}
                 transparent
                 onRequestClose={() => this.props.handleCloseWeightModal("showEditWeightReps", false)}>
-                <View style={{...styles.modalOuterContainer, top: this.state.top}}>
-                    <View style={styles.modalInnerContainer}>
-                        <Text
-                            style={{
-                                color: "#66666f",
-                                fontSize: 16,
-                                marginLeft: 10,
-                                marginBottom: 15,
-                            }}>
-                            Please edit the sets , weight and rep numbers of this exercise:
-                        </Text>
-
-                        <View style={styles.dropdownModalContainerLine}>
-                            <ModalDropdown
-                                style={[styles.dropdownMenu]}
-                                textStyle={[
-                                    styles.dropdownMenuText,
-                                ]}
-                                dropdownStyle={[
-                                    styles.dropdownList,
-                                ]}
-                                dropdownTextStyle={[
-                                    styles.dropdownListText,
-                                ]}
-                                dropdownTextHighlightStyle={[
-                                    styles.dropdownSelection,
-                                ]}
-                                options={[
-                                    "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "15", "20", "25", "30"
-                                ]}
-                                defaultValue={this.props.sets.toString()}
-                                onSelect={this.handleSelect.bind(this)}
-                            /><Text style={{color: "#666", fontSize: 16}}>sets</Text>
-                        </View>
-                        <ScrollView style={{height: 160}} keyboardShouldPersistTaps={'always'}>
+                <View style={{backgroundColor: "rgba(0,0,0,0.7)", flex: 1}}>
+                    <View style={{...styles.modalOuterContainer, top: this.state.top}}>
+                        <View style={styles.modalInnerContainer}>
                             <Text
                                 style={{
                                     color: "#66666f",
-                                    fontSize: 14,
+                                    fontSize: 16,
                                     marginLeft: 10,
                                     marginBottom: 15,
                                 }}>
-                                weight(0-100KG) reps(0-50)
+                                Please edit the sets , weight and rep numbers of this exercise:
                             </Text>
-                            {newWeightRepsDataArr.map((item, index) => {
-                                // if (item.weight && item.reps) {
-                                return (
-                                    <View style={styles.dataContainer}
-                                        // ****key can not includes math.random(). or it will rerender many times
-                                          key={index + item.weight + index}>
-                                        <Text style={{
-                                            alignItems: "center",
-                                            marginTop: width * 0.02,
-                                            marginLeft: width * 0.02,
-                                            marginBottom: width * 0.02, height: 25,
-                                            color: "#777"
-                                        }}>{index + 1}:</Text>
-                                        <TextInput
-                                            style={{...styles.weightTextInput, flex: 0.5}}
-                                            value={this.state.weightText[index]}
-                                            placeholder="0-300 (KG)"
-                                            defaultValue={item.weight || ""}
-                                            onChangeText={//阻止主动重新渲染
-                                                text => {
-                                                    const weightText = JSON.parse(JSON.stringify(this.state.weightText));
-                                                    weightText[index] = text;
-                                                    this.setState({
-                                                        weightText
-                                                    })
-                                                }
-                                            }
-                                        />
-                                        <TextInput
-                                            style={{...styles.weightTextInput, flex: 0.4}}
-                                            value={this.state.repsText[index]}
-                                            defaultValue={item.reps || ""}
-                                            placeholder="0-50 reps"
-                                            onChangeText={
-                                                text => {
-                                                    const repsText = JSON.parse(JSON.stringify(this.state.repsText));
-                                                    repsText[index] = text;
-                                                    this.setState({
-                                                        repsText
-                                                    })
-                                                }
-                                            }
-                                        />
-                                    </View>)
-                                // }
-                            })}
-                        </ScrollView>
-                        <View
-                            style={{flexDirection: "row", justifyContent: "space-around"}}>
-                            <View style={styles.modalButtonContainer}>
-                                <Button
-                                    style={styles.modalButton}
-                                    color="#00cccc"
-                                    title="Confirm"
-                                    onPress={async () => {
-                                        await this.props.editWeightRepsInWorkout({
-                                            time: this.props.time,
-                                            weightText: this.state.weightText,
-                                            repsText: this.state.repsText,
-                                            sets: this.state.selectedSets
-                                        });
-                                        await this.props.handleCloseWeightModal("showEditWeightReps", false);
-                                    }}
-                                />
+
+                            <View style={styles.dropdownModalContainerLine}>
+                                <ModalDropdown
+                                    style={[styles.dropdownMenu]}
+                                    textStyle={[
+                                        styles.dropdownMenuText,
+                                    ]}
+                                    dropdownStyle={[
+                                        styles.dropdownList,
+                                    ]}
+                                    dropdownTextStyle={[
+                                        styles.dropdownListText,
+                                    ]}
+                                    dropdownTextHighlightStyle={[
+                                        styles.dropdownSelection,
+                                    ]}
+                                    options={[
+                                        "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "15", "20", "25", "30"
+                                    ]}
+                                    defaultValue={this.props.sets.toString()}
+                                    onSelect={this.handleSelect.bind(this)}
+                                /><Text style={{color: "#666", fontSize: 16}}>sets</Text>
                             </View>
-                            <View style={styles.modalButtonContainer}>
-                                <Button
-                                    color="#00cccc"
-                                    style={styles.modalButton}
-                                    title="Cancel"
-                                    onPress={() => {
-                                        this.props.handleCloseWeightModal("showEditWeightReps", false);
-                                    }}
-                                />
+                            <ScrollView style={{height: 160}} keyboardShouldPersistTaps={'always'}>
+                                <Text
+                                    style={{
+                                        color: "#66666f",
+                                        fontSize: 14,
+                                        marginLeft: 10,
+                                        marginBottom: 15,
+                                    }}>
+                                    weight(0-100KG) reps(0-50)
+                                </Text>
+                                {newWeightRepsDataArr.map((item, index) => {
+                                    // if (item.weight && item.reps) {
+                                    return (
+                                        <View style={styles.dataContainer}
+                                            // ****key can not includes math.random(). or it will rerender many times
+                                              key={index + item.weight + index}>
+                                            <Text style={{
+                                                alignItems: "center",
+                                                marginTop: width * 0.02,
+                                                marginLeft: width * 0.02,
+                                                marginBottom: width * 0.02, height: 25,
+                                                color: "#777"
+                                            }}>{index + 1}:</Text>
+                                            <TextInput
+                                                style={{...styles.weightTextInput, flex: 0.5}}
+                                                value={this.state.weightText[index]}
+                                                placeholder="0-300 (KG)"
+                                                defaultValue={item.weight || ""}
+                                                onChangeText={//阻止主动重新渲染
+                                                    text => {
+                                                        const weightText = JSON.parse(JSON.stringify(this.state.weightText));
+                                                        weightText[index] = text;
+                                                        this.setState({
+                                                            weightText
+                                                        })
+                                                    }
+                                                }
+                                            />
+                                            <TextInput
+                                                style={{...styles.weightTextInput, flex: 0.4}}
+                                                value={this.state.repsText[index]}
+                                                defaultValue={item.reps || ""}
+                                                placeholder="0-50 reps"
+                                                onChangeText={
+                                                    text => {
+                                                        const repsText = JSON.parse(JSON.stringify(this.state.repsText));
+                                                        repsText[index] = text;
+                                                        this.setState({
+                                                            repsText
+                                                        })
+                                                    }
+                                                }
+                                            />
+                                        </View>)
+                                    // }
+                                })}
+                            </ScrollView>
+                            <View
+                                style={{flexDirection: "row", justifyContent: "space-around"}}>
+                                <View style={styles.modalButtonContainer}>
+                                    <Button
+                                        style={styles.modalButton}
+                                        color="#00cccc"
+                                        title="Confirm"
+                                        onPress={async () => {
+                                            await this.props.editWeightRepsInWorkout({
+                                                time: this.props.time,
+                                                weightText: this.state.weightText,
+                                                repsText: this.state.repsText,
+                                                sets: this.state.selectedSets
+                                            });
+                                            await this.props.handleCloseWeightModal("showEditWeightReps", false);
+                                        }}
+                                    />
+                                </View>
+                                <View style={styles.modalButtonContainer}>
+                                    <Button
+                                        color="#00cccc"
+                                        style={styles.modalButton}
+                                        title="Cancel"
+                                        onPress={() => {
+                                            this.props.handleCloseWeightModal("showEditWeightReps", false);
+                                        }}
+                                    />
+                                </View>
                             </View>
                         </View>
                     </View>

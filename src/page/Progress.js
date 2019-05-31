@@ -182,7 +182,7 @@ export class _Progress extends Component {
                     </View>
                 </TopBar>
                 <ScrollView ref={ref => (this.scrollView = ref)}>
-                    <View style={{marginTop: 5}}/>
+                    <View/>
                     {progressPics.length > 0 ?
                         <FlatList
                             data={progressPics}

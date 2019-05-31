@@ -28,6 +28,15 @@ import {createIcons} from "../utils/createIcons";
 const {width, height} = Dimensions.get("window");
 
 export class _EditLibrary extends Component {
+    componentDidMount() {
+        this.setState({
+            showExerciseModal: false,
+            showReminder: false,
+            showDeleteButtons: false
+        });
+        this.props.setAddCategoryModalForLibraryVisibility(false);
+    }
+
     constructor(props) {
         super(props);
         this.state = {
@@ -142,7 +151,7 @@ export class _EditLibrary extends Component {
                                 style={styles.container}
                                 renderItem={props => this.renderItem({...props})}
                                 numColumns={2}
-                                keyExtractor={(item, index) => item.toString()+index.toString()}
+                                keyExtractor={(item, index) => item.toString() + index.toString()}
                                 // onEndReached={this.loadData}
                                 // ListFooterComponent={() => <FooterComponent/>}
                                 onEndReachedThreshol={0.2}

@@ -178,7 +178,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: "center",
         alignItems: "center",
-        // backgroundColor: "rgba(0,0,0,0.7)",
+        backgroundColor: "rgba(0,0,0,0.7)",
         borderRadius: 8,
     },
     modalInnerContainer: {

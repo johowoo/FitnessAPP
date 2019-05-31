@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
         // position: "absolute",
         // left: width * 0.148,
         // top: this.state.top,
-        backgroundColor: "rgba(0, 0, 0, 0.3)",
+        backgroundColor: "rgba(0, 0, 0, 0.7)",
         borderRadius: 8,
     },
     modalInnerContainer: {

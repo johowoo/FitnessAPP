@@ -51,37 +51,40 @@ export class PickerCamera extends React.Component {
         return (
             <Modal transparent visible={this.props.showPicker}
                    onRequestClose={this.props.showProgressPickerDispatch}>
-                {/* {this.props.children} */}
-                <TouchableOpacity
-                    style={{flex: 1, backgroundColor: "transparent"}}
-                    onPress={() => this.props.showProgressPickerDispatch(false)}>
-                    <View style={styles.modalContainer}/>
-                </TouchableOpacity>
 
-                <View style={styles.modalContainer}>
-                    <View style={styles.modalInnerContainer}>
-                        <TouchableOpacity
-                            style={styles.button}
-                            onPress={() => {
-                                // this.setState({showCamera: true})
-                                this._pickImage("launchCameraAsync").catch(err =>
-                                    console.warn(err)
-                                );
-                            }}>
-                            <Text style={styles.buttonText}>Camera</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity
-                            style={styles.button}
-                            onPress={() => {
-                                this._pickImage("launchImageLibraryAsync").catch(err =>
-                                    console.warn(err)
-                                );
-                            }}>
-                            <Text style={styles.buttonText}>Choose from library</Text>
-                        </TouchableOpacity>
+                <View style={{flex: 1, backgroundColor: "rgba(0,0,0,0.7)"}}>
+                    {/* {this.props.children} */}
+                    <TouchableOpacity
+                        style={{flex: 1, backgroundColor: "transparent"}}
+                        onPress={() => this.props.showProgressPickerDispatch(false)}>
+                        <View style={styles.modalContainer}/>
+                    </TouchableOpacity>
+                    <View style={styles.modalContainer}>
+                        <View style={styles.modalInnerContainer}>
+                            <TouchableOpacity
+                                style={styles.button}
+                                onPress={() => {
+                                    // this.setState({showCamera: true})
+                                    this._pickImage("launchCameraAsync").catch(err =>
+                                        console.warn(err)
+                                    );
+                                }}>
+                                <Text style={styles.buttonText}>Camera</Text>
+                            </TouchableOpacity>
+                            <TouchableOpacity
+                                style={styles.button}
+                                onPress={() => {
+                                    this._pickImage("launchImageLibraryAsync").catch(err =>
+                                        console.warn(err)
+                                    );
+                                }}>
+                                <Text style={styles.buttonText}>Choose from library</Text>
+                            </TouchableOpacity>
+                        </View>
                     </View>
+                    {this.props.showModal && <PhotoModal/>}
                 </View>
-                {this.props.showModal && <PhotoModal/>}
+
             </Modal>
         );
     }

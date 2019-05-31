@@ -40,71 +40,73 @@ export class AddWeightToExercise extends Component {
                 visible={this.props.showAddWeightModal}
                 transparent
                 onRequestClose={() => this.props.handleCloseWeightModal("showAddWeightModal", false)}>
-                <View style={{...styles.modalOuterContainer, top: this.state.top}}>
-                    <View style={{...styles.modalInnerContainer, height: this.props.cardioMinutes ? 200 : 250,}}>
-                        <Text
-                            style={{
-                                color: "#00ffcc",
-                                fontSize: 16,
-                                marginLeft: 10,
-                                marginBottom: 15,
-                            }}>
-                            {this.props.cardioMinutes ? "Please input the duration for this cardio exercise:" : "Please input the weight and reps of this exercise:"}
-                        </Text>
-                        <TextInput
-                            placeholderTextColor={"#cc6699"}
-                            style={styles.weightTextInput}
-                            value={this.state.weightText}
-                            placeholder={this.props.cardioMinutes ? "Minutes: 0-300" : " Weight: 0-300 (KG)"}
-                            onChangeText={text => {
-                                this.setState({weightText: text});
-                            }}
-                        />
-                        {!this.props.cardioMinutes && <TextInput
-                            placeholderTextColor={"#cc6699"}
-                            style={styles.weightTextInput}
-                            value={this.state.repsText}
-                            placeholder=" Reps: 0-50"
-                            onChangeText={text => {
-                                this.setState({repsText: text});
-                            }}
-                        />}
-                        <View
-                            style={{flexDirection: "row", justifyContent: "space-around"}}>
-                            <View style={styles.modalButtonContainer}>
-                                <Button
-                                    style={styles.modalButton}
-                                    color="#00ffcc"
-                                    title="Confirm"
-                                    onPress={async () => {
-                                        let actionPayload = {};
-                                        if (this.props.cardioMinutes) {
-                                            actionPayload = {
-                                                time: this.props.time,
-                                                cardioMinutes: this.state.weightText,
-                                            }
+                <View style={{flex: 1, backgroundColor: "rgba(0,0,0,0.7)"}}>
+                    <View style={{...styles.modalOuterContainer, top: this.state.top}}>
+                        <View style={{...styles.modalInnerContainer, height: this.props.cardioMinutes ? 200 : 250,}}>
+                            <Text
+                                style={{
+                                    color: "#00ffcc",
+                                    fontSize: 16,
+                                    marginLeft: 10,
+                                    marginBottom: 15,
+                                }}>
+                                {this.props.cardioMinutes ? "Please input the duration for this cardio exercise:" : "Please input the weight and reps of this exercise:"}
+                            </Text>
+                            <TextInput
+                                placeholderTextColor={"#cc6699"}
+                                style={styles.weightTextInput}
+                                value={this.state.weightText}
+                                placeholder={this.props.cardioMinutes ? "Minutes: 0-300" : " Weight: 0-300 (KG)"}
+                                onChangeText={text => {
+                                    this.setState({weightText: text});
+                                }}
+                            />
+                            {!this.props.cardioMinutes && <TextInput
+                                placeholderTextColor={"#cc6699"}
+                                style={styles.weightTextInput}
+                                value={this.state.repsText}
+                                placeholder=" Reps: 0-50"
+                                onChangeText={text => {
+                                    this.setState({repsText: text});
+                                }}
+                            />}
+                            <View
+                                style={{flexDirection: "row", justifyContent: "space-around"}}>
+                                <View style={styles.modalButtonContainer}>
+                                    <Button
+                                        style={styles.modalButton}
+                                        color="#00ffcc"
+                                        title="Confirm"
+                                        onPress={async () => {
+                                            let actionPayload = {};
+                                            if (this.props.cardioMinutes) {
+                                                actionPayload = {
+                                                    time: this.props.time,
+                                                    cardioMinutes: this.state.weightText,
+                                                }
 
-                                        } else {
-                                            actionPayload = {
-                                                time: this.props.time,
-                                                weight: this.state.weightText,
-                                                reps: this.state.repsText,
-                                            };
-                                        }
-                                        await this.props.addWeightRepsToExercise(actionPayload);
-                                        await this.props.handleCloseWeightModal("showAddWeightModal", false);
-                                    }}
-                                />
-                            </View>
-                            <View style={styles.modalButtonContainer}>
-                                <Button
-                                    color="#00ffcc"
-                                    style={styles.modalButton}
-                                    title="Cancel"
-                                    onPress={() => {
-                                        this.props.handleCloseWeightModal("showAddWeightModal", false);
-                                    }}
-                                />
+                                            } else {
+                                                actionPayload = {
+                                                    time: this.props.time,
+                                                    weight: this.state.weightText,
+                                                    reps: this.state.repsText,
+                                                };
+                                            }
+                                            await this.props.addWeightRepsToExercise(actionPayload);
+                                            await this.props.handleCloseWeightModal("showAddWeightModal", false);
+                                        }}
+                                    />
+                                </View>
+                                <View style={styles.modalButtonContainer}>
+                                    <Button
+                                        color="#00ffcc"
+                                        style={styles.modalButton}
+                                        title="Cancel"
+                                        onPress={() => {
+                                            this.props.handleCloseWeightModal("showAddWeightModal", false);
+                                        }}
+                                    />
+                                </View>
                             </View>
                         </View>
                     </View>
@@ -122,7 +124,7 @@ const styles = StyleSheet.create({
         position: "absolute",
         left: width * 0.148,
         // top: this.state.top,
-        backgroundColor: "rgba(0, 0, 0, 0.3)",
+
         borderRadius: 8,
     },
     modalInnerContainer: {
