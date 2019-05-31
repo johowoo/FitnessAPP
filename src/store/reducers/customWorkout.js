@@ -50,9 +50,14 @@ export const customWorkout = (state = defaultState, action) => {
                     if (!item.weightRepsDataArr) {
                         item.weightRepsDataArr = [];
                     }
-                    item.weightRepsDataArr.push({reps: action.payload.reps, weight: action.payload.weight});
-                    item.reps = action.payload.reps;
-                    item.weight = action.payload.weight;
+                    if (action.payload.cardioMinutes) {
+                        //change minutes
+                        item.minutes = action.payload.cardioMinutes;
+                    } else {
+                        item.weightRepsDataArr.push({reps: action.payload.reps, weight: action.payload.weight});
+                        item.reps = action.payload.reps;
+                        item.weight = action.payload.weight;
+                    }
                 }
             });
             return {

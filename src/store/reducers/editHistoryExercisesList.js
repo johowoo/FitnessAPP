@@ -35,9 +35,15 @@ export const editHistoryExercisesList = (
                     if (!item.weightRepsDataArr) {
                         item.weightRepsDataArr = [];
                     }
-                    item.weightRepsDataArr.push({reps: action.payload.reps, weight: action.payload.weight});
-                    item.reps = action.payload.reps;
-                    item.weight = action.payload.weight;
+                    if (action.payload.cardioMinutes) {
+                        console.warn("here", item);
+                        //change minutes
+                        item.minutes = action.payload.cardioMinutes;
+                    } else {
+                        item.weightRepsDataArr.push({reps: action.payload.reps, weight: action.payload.weight});
+                        item.reps = action.payload.reps;
+                        item.weight = action.payload.weight;
+                    }
                 }
             });
             return {
