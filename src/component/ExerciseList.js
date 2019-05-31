@@ -63,7 +63,7 @@ export class _ExerciseList extends PureComponent {
         });
         this.setState({
             cardioExercisesCopy,
-            cardioMinutes: '0'
+            cardioMinutes: 0
         })
     }
 
@@ -144,7 +144,8 @@ export class _ExerciseList extends PureComponent {
     onRefresh = () => {
     };
     handlePress = async () => {
-        if (this.state.cardioMinutes) {
+        if (this.state.cardioMinutes && this.state.cardioMinutes !== "0") {
+            console.warn("here cardioMinute");
             const re = /^[0-9\b]+$/;
             let result = re.test(this.state.cardioMinutes);
             if (!result) {
@@ -155,10 +156,7 @@ export class _ExerciseList extends PureComponent {
                     hideConfirmButtonDuplicated: true
                 })
             }
-
             // submit
-
-
         }
         let isThisExerciseNotDuplicated = true;
         this.props.workoutSetsData && this.props.workoutSetsData.forEach(async item => {
@@ -170,7 +168,7 @@ export class _ExerciseList extends PureComponent {
                     reminderTitleDuplicated: "Duplicated",
                     reminderContentDuplicated: "This exercise has been already added to today's workout",
                     hideConfirmButtonDuplicated: true,
-                })
+                });
                 // Alert.alert("error", "can not add same exercise twice");
             }
         });
@@ -181,17 +179,17 @@ export class _ExerciseList extends PureComponent {
                     exercise: this.state.selectedExercise,
                     sets: 0,
                     time: new Date().getTime(),
-                    minutes: this.state.cardioMinutes
+                    minutes: parseInt(this.state.cardioMinutes, 10)
                 });
             } else {
+                console.warn("else");
                 await this.props.addExercise({
                     exercise: this.state.selectedExercise,
                     sets: this.state.selectedSets,
                     time: new Date().getTime(),
                 });
             }
-
-            await this.setState({setsModalVisible: false, cardioMinutes: '0'});
+            await this.setState({setsModalVisible: false, cardioMinutes: 0});
             console.warn(this.props.workoutSetsData);
             await this.props.closeModal();
         }

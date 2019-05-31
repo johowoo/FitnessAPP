@@ -225,7 +225,7 @@ export class _Calendar extends Component {
         });
     };
 
-    _renderItem = ({item: {exercise, sets, weight, reps, time, weightRepsDataArr}}) => (
+    _renderItem = ({item: {exercise, sets, weight, reps, time, weightRepsDataArr, minutes}}) => (
         <TouchableWithoutFeedback
             onPress={async () => {
                 await this.setState({time});
@@ -233,12 +233,12 @@ export class _Calendar extends Component {
             }}>
             <View style={styles.workoutContainer}>
                 <View style={styles.listItem}>
-                    <View style={{flex: 0.03}}/>
-                    <View style={{flex: 0.77}}>
+                    <View style={{flex: 0.01}}/>
+                    <View style={{flex: 0.75}}>
                         <Text style={styles.exerciseText}>{`  ${exercise}`}</Text>
                     </View>
-                    <View style={{flex: 0.2}}>
-                        <Text style={styles.exerciseText}>{sets} sets</Text>
+                    <View style={{flex: 0.24}}>
+                        <Text style={styles.exerciseText}>{minutes ? `${minutes} mins` : `${sets} sets`}</Text>
                     </View>
                 </View>
                 {weightRepsDataArr && weightRepsDataArr.length > 0 && weightRepsDataArr.map((item, index) => (

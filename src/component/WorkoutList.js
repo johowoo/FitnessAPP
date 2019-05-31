@@ -141,6 +141,10 @@ export class _WorkoutList extends Component {
             </View>
         </TouchableHighlight>
     );
+    // _renderItem = item => {
+    //     console.warn("item", item);
+    //     return (<View><Text>ABC</Text></View>)
+    // }
     handleCloseReminder = (bool) => {
         this.setState({
             showReminderModal: bool
@@ -237,6 +241,7 @@ export class _WorkoutList extends Component {
     );
 
     render() {
+        console.warn("props", this.props.workoutSetsData);
         const listFooterComponent = (
             <View>
                 <View style={styles.addSomeExercises}>
