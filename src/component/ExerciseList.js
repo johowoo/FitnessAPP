@@ -276,7 +276,7 @@ export class _ExerciseList extends PureComponent {
                          height: 100,
                         alignItems: "center",
                         marginTop: 40,
-                        marginBottom:20,
+                        marginBottom:15,
                         // backgroundColor:"#000"
                         // paddingTop: 10,
                         // paddingBottom: 50
@@ -290,7 +290,7 @@ export class _ExerciseList extends PureComponent {
                             onTextChange={this.handleSearch.bind(this)}
                             // onBlur={this.handleBlur.bind(this)}
                         />
-                        <View style={{flex: 0.1}}>
+                        <View style={{flex: 0.1,marginTop:10}}>
                             <ApslButton
                                 onPress={this.closeModal}
                                 textStyle={styles.close}
@@ -478,7 +478,7 @@ const styles = StyleSheet.create({
         flex: 0.9,
         borderColor: "grey",
         borderWidth: 1,
-        height: 45,
+        height: 40,
         padding: 5,
         justifyContent: "center",
         borderRadius: 20,
