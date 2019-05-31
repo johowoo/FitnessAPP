@@ -37,7 +37,8 @@ class _SetNotificationModal extends Component {
         super(props);
         this.state = {
             isDateTimePickerVisible: false,
-            top: height * 0.12,
+            top: (height-550) * 0.4,
+            // top: height * 0.12,
             // showTimeChosen: false,
             enableSound: false,
             validatePeriodCount: 4,
@@ -383,7 +384,7 @@ const styles = StyleSheet.create({
             // justifyContent: 'center',
             // alignItems: 'center',
             position: "absolute",
-            left: width * 0.092,
+            left: width * 0.075,
 // left: width * 0.148,
 // top: this.state.top,
             backgroundColor: "rgba(0, 0, 0, 0.3)",
