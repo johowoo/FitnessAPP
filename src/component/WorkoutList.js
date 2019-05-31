@@ -82,6 +82,9 @@ export class _WorkoutList extends Component {
                 }
             }}
             onLongPress={async () => {
+                if (minutes) {
+                    return;
+                }
                 await this.setState({time, weightRepsDataArr, sets});
                 // await this.setState({showEditWeightReps: true})
                 await this.props.setEditWeightRepsModalVisibility(true);
@@ -123,7 +126,7 @@ export class _WorkoutList extends Component {
                             color: "#bbb",
                             marginRight: 20,
                         }}>
-                        {"Touch to add more weight & reps / Hold to edit"}
+                        {"Click to add more weight & reps / Hold to edit"}
                     </Text>
                 </View>}
                 {minutes && <View style={{...styles.listItem, height: 25}}>
@@ -132,7 +135,7 @@ export class _WorkoutList extends Component {
                             color: "#bbb",
                             marginRight: 20,
                         }}>
-                        {"Hold to edit minutes"}
+                        {"Click to edit minutes"}
                     </Text>
                 </View>}
             </View>

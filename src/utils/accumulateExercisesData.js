@@ -10,6 +10,9 @@ export const accumulateExercisesData = ({list, todayNumber, todayDate, period}) 
                     if (item.sets) {
                         sets += parseInt(item.sets, 10);
                     }
+                    if (item.minutes) {
+                        ++sets;
+                    }
                     if (item.weightRepsDataArr?.length) {
                         item.weightRepsDataArr.map((item, index) => {
                             if (item.reps && item.weight) {
