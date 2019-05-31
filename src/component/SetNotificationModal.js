@@ -55,7 +55,6 @@ class _SetNotificationModal extends Component {
     };
 
     handleTimePicked = async date => {
-        console.warn("difference", getTimeDifferenceFromZeroOfToday(date.getTime()));
         await this.setState({
             timeChosen: `${formatMonthandDay(date.getHours())}:${formatMonthandDay(date.getMinutes())}`,
             timeDifferenceFromZeroOfToday: getTimeDifferenceFromZeroOfToday(date.getTime())
