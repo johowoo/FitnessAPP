@@ -329,15 +329,17 @@ export class _ExerciseList extends PureComponent {
                                                 color: "#66666f",
                                                 fontSize: 16,
                                                 marginLeft: 10,
-                                                marginBottom: 30
+                                                marginBottom: 10
                                             }}>
-                                                Do you want to add {this.state.selectedCardio}?
+                                                Please input the duration for
+                                                <Text style={{color: "#00cccc"}}> {this.state.selectedCardio}</Text>
+                                                ?
                                             </Text>
                                             <TextInput
-                                                placeholderTextColor={"#cc6699"}
+                                                placeholderTextColor={"#aaa"}
                                                 style={styles.TextInput}
                                                 value={this.state.cardioMinutes}
-                                                placeholder="Minutes"
+                                                placeholder="minutes"
                                                 onChangeText={text => {
                                                     this.setState({cardioMinutes: text});
                                                 }}
@@ -611,7 +613,7 @@ const styles = StyleSheet.create({
         marginRight: width * 0.03,
         marginTop: width * 0.01,
         marginBottom: width * 0.02,
-        backgroundColor: "rgba(255,140,0,0.1)",
+        backgroundColor: "#ddd",
         height: 50,
         color: "#00ffcc",
     },
