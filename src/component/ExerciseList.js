@@ -273,10 +273,10 @@ export class _ExerciseList extends PureComponent {
                     <View style={{
                         flex: 1,
                         flexDirection: "row",
-                         height: 100,
+                        height: 100,
                         alignItems: "center",
                         marginTop: 40,
-                        marginBottom:15,
+                        marginBottom: 15,
                         // backgroundColor:"#000"
                         // paddingTop: 10,
                         // paddingBottom: 50
@@ -290,7 +290,7 @@ export class _ExerciseList extends PureComponent {
                             onTextChange={this.handleSearch.bind(this)}
                             // onBlur={this.handleBlur.bind(this)}
                         />
-                        <View style={{flex: 0.1,marginTop:10}}>
+                        <View style={{flex: 0.1, marginTop: 10}}>
                             <ApslButton
                                 onPress={this.closeModal}
                                 textStyle={styles.close}
@@ -406,7 +406,7 @@ export class _ExerciseList extends PureComponent {
                                 handleConfirm={this.changeDisplayExercises.bind(this)}
                                 styles={dropdownStyles}
                                 options={[
-                                    "Chest", "Shoulder", "Back", "Arms", "Legs", "Core", "Cardio",
+                                    "Chest", "Shoulder", "Back", "Arms", "Legs", "Hip", "Core", "Cardio",
                                 ]}
                                 placeholder="  Please enter an exercise"
                                 placeholderTextColor={"#aaa"}
@@ -486,7 +486,7 @@ const styles = StyleSheet.create({
     input: {
         color: "black",
         fontSize: 20,
-        height:30
+        height: 30
     },
     close: {
         fontSize: 34,

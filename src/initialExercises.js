@@ -7,6 +7,7 @@ export const sectionExercises = [
         ],
         category: "Chest",
     },
+    {data: ["bulgarian split squat", "sumo squat", "seated knee raise"], category: "Hip"},
     {data: ["quad extensions", "squats", "lunges"], category: "Legs"},
     {
         data: [

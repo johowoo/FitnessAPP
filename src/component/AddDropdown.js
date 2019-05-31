@@ -4,7 +4,7 @@ import ModalDropdown from "react-native-modal-dropdown";
 import ApslButton from "apsl-react-native-button";
 import LoadingUtil from '../utils/LoadingUtil';
 
-const data = ["Chest", "Shoulders", "Back", "Arms", "Legs", "Core", "Cardio"];
+const data = ["Chest", "Shoulders", "Back", "Arms", "Legs", "Hip", "Core", "Cardio"];
 
 const {width} = Dimensions.get("window");
 
