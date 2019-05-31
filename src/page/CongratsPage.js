@@ -11,8 +11,14 @@ export class CongratsPage extends Component {
                 <View>
                     <TouchableOpacity
                         style={{
-                            padding: 25,
-                            paddingTop: 45,
+                            margin: 15,
+                            marginTop: 35,
+                            marginLeft:0,
+                            height: 100,
+                            width: 100,
+                            // backgroundColor: "#333",
+                            alignItems: 'center',
+                            justifyContent: "center"
                         }}
                         onPress={() => this.props.navigation.navigate("CurrentWorkout")}
                     >

@@ -91,7 +91,7 @@ export class _CustomWorkout extends Component {
                         await this.setState({
                             showReminder: true,
                             reminderTitle: "Add Exercises",
-                            reminderContent: `Do you want to add this sets of exercise(${item}) to currentWorkout`,
+                            reminderContent: `Do you want to add this set of exercises (${item}) to workout?`,
                             hideConfirmButton: false
                         })
                     }
