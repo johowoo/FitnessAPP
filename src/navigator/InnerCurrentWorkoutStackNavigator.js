@@ -2,7 +2,7 @@ import React from 'react';
 import {CustomWorkout} from "../page/CustomWorkout";
 import {LinearGradient} from "expo";
 import {EditLibrary} from "../page/EditLibrary";
-import {Text, TouchableOpacity, View} from "react-native";
+import {Platform, Text, TouchableOpacity, View} from "react-native";
 import IconFontAwesome from "react-native-vector-icons/FontAwesome";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
 import {EditExercisesForLibrary} from "../component/EditExercisesForLibrary";
@@ -48,10 +48,12 @@ export const InnerCurrentWorkoutStackNavigator = createStackNavigator({
             // ),
             headerTintColor: "#c69",
             headerTitleStyle: {
-                marginLeft: 20,
+               marginLeft: Platform.OS === "android" ? 80 : 10,
+
                 color: "rgba(204,102,153,0.85)",
                 fontSize: 25,
-                fontFamily: "PattayaRegular"
+                fontFamily: "PattayaRegular",
+                fontWeight: '200',
             },
             // headerBackTitleStyle: {
             //     color: "#d0d0d0",
@@ -88,10 +90,12 @@ export const InnerCurrentWorkoutStackNavigator = createStackNavigator({
             ),
             headerTintColor: "#c69",
             headerTitleStyle: {
-                marginLeft: 20,
+               marginLeft: Platform.OS === "android" ? 80 : 10,
+
                 color: "rgba(204,102,153,0.85)",
                 fontSize: 25,
-                fontFamily: "PattayaRegular"
+                fontFamily: "PattayaRegular",
+                fontWeight: '200',
             },
             // headerRight: (
             //     <TouchableOpacity style={{marginRight: 30}}
@@ -153,10 +157,11 @@ export const InnerCurrentWorkoutStackNavigator = createStackNavigator({
             ),
             headerTintColor: "#c69",
             headerTitleStyle: {
-                marginLeft: 20,
+               marginLeft: Platform.OS === "android" ? 80 : 10,
                 color: "rgba(204,102,153,0.85)",
                 fontSize: 25,
-                fontFamily: "PattayaRegular"
+                fontFamily: "PattayaRegular",
+                fontWeight: '200',
             },
             headerRight: (
                 <TouchableOpacity style={{marginRight: 30}}

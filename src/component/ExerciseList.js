@@ -391,15 +391,10 @@ export class _ExerciseList extends PureComponent {
                                 handleConfirm={this.changeDisplayExercises.bind(this)}
                                 styles={dropdownStyles}
                                 options={[
-                                    "Chest",
-                                    "Shoulder",
-                                    "Back",
-                                    "Arms",
-                                    "Legs",
-                                    "Core",
-                                    "Cardio",
+                                    "Chest", "Shoulder", "Back", "Arms", "Legs", "Core", "Cardio",
                                 ]}
                                 placeholder="  Please enter an exercise"
+                                placeholderTextColor={"#aaa"}
                             />
                         ) : null}
                     </View>
@@ -621,6 +616,7 @@ const styles = StyleSheet.create({
 const dropdownStyles = StyleSheet.create({
     dropdownInput: {
         backgroundColor: "rgba(255,140,0,0.1)",
+        color:"#eee"
     },
     dropdownMenu: {
         backgroundColor: "#EEE",

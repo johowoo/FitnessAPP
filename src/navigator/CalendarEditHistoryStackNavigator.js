@@ -3,7 +3,7 @@ import {createStackNavigator} from "react-navigation";
 import {Calendar} from "../page/Calendar";
 import {EditHistory} from "../page/EditHistory";
 import {CurrentWorkout} from "../page/CurrentWorkout";
-import {View, Text, TouchableOpacity} from "react-native";
+import {View, Text, TouchableOpacity,Platform} from "react-native";
 import IconFontAwesome from "react-native-vector-icons/FontAwesome";
 import {LinearGradient} from "expo";
 import MaterialIcons from "react-native-vector-icons/MaterialIcons";
@@ -34,10 +34,12 @@ export const CalendarEditHistoryStackNavigator = createStackNavigator({
             ),
             headerTintColor: "#c69",
             headerTitleStyle: {
-                marginLeft: 20,
+               marginLeft: Platform.OS === "android" ? 80 : 10,
+
                 color: "rgba(204,102,153,0.85)",
                 fontSize: 25,
-                fontFamily: "PattayaRegular"
+                fontFamily: "PattayaRegular",
+                fontWeight: '200', //fix fontFamily bug for Android
             },
             headerRight: (
                 <View style={{flexDirection: "row"}}>
