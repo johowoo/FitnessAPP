@@ -9,18 +9,27 @@ export const currentWorkout = (state = [], action) => {
             return [...state, action.payload];
         case types.CLEAR_CURRENT_WORKOUT:
             return [];
+
         case types.ADD_WEIGHT_TO_EXERCISE:
             const stateCopy = JSON.parse(JSON.stringify(state));
+            // console.warn("1here", action.payload);
             stateCopy.map(item => {
                 if (parseInt(item.time, 10) === parseInt(action.payload.time, 10)) {
                     if (!item.weightRepsDataArr) {
                         item.weightRepsDataArr = [];
                     }
-                    item.weightRepsDataArr.push({reps: action.payload.reps, weight: action.payload.weight});
-                    item.reps = action.payload.reps;
-                    item.weight = action.payload.weight;
+                    if (action.payload.cardioMinutes) {
+                        console.warn("here",item);
+                        //change minutes
+                        item.minutes = action.payload.cardioMinutes;
+                    } else {
+                        item.weightRepsDataArr.push({reps: action.payload.reps, weight: action.payload.weight});
+                        item.reps = action.payload.reps;
+                        item.weight = action.payload.weight;
+                    }
                 }
             });
+
             return stateCopy;
         case types.DELETE_EXERCISE_FROM_WORKOUTLIST:
             const stateCopyDelete = JSON.parse(JSON.stringify(state));

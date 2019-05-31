@@ -41,7 +41,7 @@ export class AddWeightToExercise extends Component {
                 transparent
                 onRequestClose={() => this.props.handleCloseWeightModal("showAddWeightModal", false)}>
                 <View style={{...styles.modalOuterContainer, top: this.state.top}}>
-                    <View style={styles.modalInnerContainer}>
+                    <View style={{...styles.modalInnerContainer, height: this.props.cardioMinutes ? 200 : 250,}}>
                         <Text
                             style={{
                                 color: "#00ffcc",
@@ -49,18 +49,18 @@ export class AddWeightToExercise extends Component {
                                 marginLeft: 10,
                                 marginBottom: 15,
                             }}>
-                            Please input the weight and reps of this exercise:
+                            {this.props.cardioMinutes ? "Please input the duration for this cardio exercise:" : "Please input the weight and reps of this exercise:"}
                         </Text>
                         <TextInput
                             placeholderTextColor={"#cc6699"}
                             style={styles.weightTextInput}
                             value={this.state.weightText}
-                            placeholder=" Weight: 0-300 (KG)"
+                            placeholder={this.props.cardioMinutes ? "Minutes: 0-300" : " Weight: 0-300 (KG)"}
                             onChangeText={text => {
                                 this.setState({weightText: text});
                             }}
                         />
-                        <TextInput
+                        {!this.props.cardioMinutes && <TextInput
                             placeholderTextColor={"#cc6699"}
                             style={styles.weightTextInput}
                             value={this.state.repsText}
@@ -68,7 +68,7 @@ export class AddWeightToExercise extends Component {
                             onChangeText={text => {
                                 this.setState({repsText: text});
                             }}
-                        />
+                        />}
                         <View
                             style={{flexDirection: "row", justifyContent: "space-around"}}>
                             <View style={styles.modalButtonContainer}>
@@ -77,11 +77,22 @@ export class AddWeightToExercise extends Component {
                                     color="#00ffcc"
                                     title="Confirm"
                                     onPress={async () => {
-                                        await this.props.addWeightRepsToExercise({
-                                            time: this.props.time,
-                                            weight: this.state.weightText,
-                                            reps: this.state.repsText,
-                                        });
+                                        let actionPayload = {};
+                                        if (this.props.cardioMinutes) {
+                                            console.warn( "cardioMinutes", this.state.weightText)
+                                            actionPayload = {
+                                                time: this.props.time,
+                                                cardioMinutes: this.state.weightText,
+                                            }
+
+                                        } else {
+                                            actionPayload = {
+                                                time: this.props.time,
+                                                weight: this.state.weightText,
+                                                reps: this.state.repsText,
+                                            };
+                                        }
+                                        await this.props.addWeightRepsToExercise(actionPayload);
                                         await this.props.handleCloseWeightModal("showAddWeightModal", false);
                                     }}
                                 />
@@ -116,7 +127,7 @@ const styles = StyleSheet.create({
         borderRadius: 8,
     },
     modalInnerContainer: {
-        height: 250,
+
         width: width * 0.7,
         backgroundColor: "rgba(102,51,204,0.9)",
         paddingTop: 20,

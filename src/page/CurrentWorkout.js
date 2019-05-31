@@ -49,6 +49,8 @@ class _CurrentWorkout extends Component {
         if (this.props.currentWorkout.length === 0) {
             this.props.updateEmpty(true);
         }
+        this.props.setAddWeightModalVisibility(false);
+        this.props.setEditWeightRepsModalVisibility(false);
         this.props.setModalVisibility(false);
     }
 

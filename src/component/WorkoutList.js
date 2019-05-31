@@ -54,23 +54,31 @@ export class _WorkoutList extends Component {
             // onPress={(item) => this.handlePress.call(this, item)}
             onPress={async () => {
                 if (minutes) {
+                    //cardio
                     await this.setState({
+                        time,
                         cardioMinutes: minutes
-                    })
-                }
-                if (sets > weightRepsDataArr?.length) {
-                    await this.setState({time});
-                    // await this.setState({showAddWeightModal: true});
+                    });
                     await this.props.setAddWeightModalVisibility(true);
-                    await this.forceUpdate();
                 } else {
-                    // Alert.alert("Reminder", "You have already added weight and reps for all sets.")
+                    //other exercises
                     await this.setState({
-                        showReminderModal: true,
-                        reminderTitle: "Reminder",
-                        reminderContent: "You have already added weight and reps for all sets.",
-                        hideReminderButton: true,
-                    })
+                        cardioMinutes: 0
+                    });
+                    if (sets > weightRepsDataArr?.length) {
+                        await this.setState({time});
+                        // await this.setState({showAddWeightModal: true});
+                        await this.props.setAddWeightModalVisibility(true);
+                        await this.forceUpdate();
+                    } else {
+                        // Alert.alert("Reminder", "You have already added weight and reps for all sets.")
+                        await this.setState({
+                            showReminderModal: true,
+                            reminderTitle: "Reminder",
+                            reminderContent: "You have already added weight and reps for all sets.",
+                            hideReminderButton: true,
+                        })
+                    }
                 }
             }}
             onLongPress={async () => {
@@ -342,6 +350,7 @@ export class _WorkoutList extends Component {
                     keyExtractor={(item, index) => item + index}
                     renderQuickActions={this.getQuickActions}
                     maxSwipeDistance={80}
+                    // extraData={this.props.workoutSetsData}
                 />
                 <SetNotificationModal
                     showSetNotificationModal={this.props.showSetNotificationModal}
