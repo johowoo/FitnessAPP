@@ -150,6 +150,7 @@ class _CurrentWorkout extends Component {
                         closeModal={() => this.props.setModalVisibility(false)}
                         workoutSetsData={this.props.currentWorkout}
                         addExercise={this.props.addExercise}
+                        updateEmpty={this.props.updateEmpty}
                     />
                 </View>
                 {this.state.showReminderModal &&

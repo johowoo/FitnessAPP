@@ -23,8 +23,9 @@ import {ReminderModal} from "../component/ReminderModal";
 class _EditHistory extends Component {
     componentDidMount() {
         this.props.setReminderModalInEditHistory({showReminderModal: false});
+        this.props.setEditHistoryExerciseModalVisibility(false);
     }
-    
+
     state = {showReminderModal: false};
     handleReminderConfirm = async () => {
         const navProps = this.props.navigation.state.params;

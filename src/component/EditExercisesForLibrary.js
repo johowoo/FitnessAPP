@@ -24,6 +24,10 @@ import {ExerciseModal} from "../page/ExerciseModal";
 //delete Exercises from customWorkoutSets
 //add Exercises to customWorkoutSets
 class _EditExercisesForLibrary extends Component {
+    componentDidMount() {
+        this.props.setEditLibraryExerciseModalVisibility(false);
+    }
+
     render() {
         const navProps = this.props?.navigation?.state?.params;
         return (

@@ -172,7 +172,7 @@ export class _ExerciseList extends PureComponent {
             }
         });
         if (isThisExerciseNotDuplicated) {
-            await this.props.updateEmpty(false);
+            await this.props.updateEmpty && this.props.updateEmpty(false);
             if (this.state.cardioMinutes) {
                 await this.props.addExercise({
                     exercise: this.state.selectedExercise,
@@ -449,7 +449,6 @@ const mapStateToProps = state => ({
     // sectionExercises: state.exercises.sectionExercises,
 });
 const mapActionToProps = dispatch => ({
-        updateEmpty: bool => dispatch(updateEmptyAction(bool)),
         addExerciseToSectionList: data => dispatch(addExerciseToSectionListAction(data)),
         deleteExerciseFromSectionList: data => dispatch(deleteExerciseFromSectionListAction(data))
     })

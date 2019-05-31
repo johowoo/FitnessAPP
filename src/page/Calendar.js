@@ -22,7 +22,8 @@ import {
     addWeightToExercisesAction,
     deleteExerciseFromWorkoutListAction,
     setEditHistoryExerciseModalVisibilityAction,
-    setReminderModalInEditHistoryAction
+    setReminderModalInEditHistoryAction,
+    updateEmptyAction
 } from "../store/actions";
 import {AddWeightToExercise} from "../component/AddWeightToExercise";
 import {PeriodAnalysis} from "../component/PeriodAnalysis";
@@ -99,7 +100,8 @@ export class _Calendar extends Component {
                                         date,
                                         setEditHistoryExerciseModalVisibility: this.props.setEditHistoryExerciseModalVisibility,
                                         setReminderModalInEditHistory: this.props.setReminderModalInEditHistory,
-                                        checkButtonAvailabilitySets: this.props.checkButtonAvailabilitySets
+                                        checkButtonAvailabilitySets: this.props.checkButtonAvailabilitySets,
+                                        updateEmpty: this.props.updateEmpty
                                     });
                                     // console.warn(date);
                                 } else {
@@ -279,7 +281,9 @@ const mapActionsToProps = dispatch => ({
     },
     setReminderModalInEditHistory: data => {
         dispatch(setReminderModalInEditHistoryAction(data));
-    }
+    },
+    updateEmpty: bool => dispatch(updateEmptyAction(bool)),
+
 });
 export const Calendar = connect(
     mapStateToProps,
