@@ -260,7 +260,7 @@ export class _ExerciseList extends PureComponent {
                 flex: 1,
                 backgroundColor: "#eee",
                 marginTop: height / width >= 18.5 / 9 ? 0 : -25,
-                marginBottom: 10
+                marginBottom: 20
             }}>
                 <LinearGradient
                     // colors={["#00FFFF", "#00CCCC"]}
@@ -270,7 +270,18 @@ export class _ExerciseList extends PureComponent {
                     // locations={[0.0, 1.0]}
                     style={styles.linearGradientContainer}>
                     {/*<LinearGradient colors={["#1b98d9", "#219dd5"]} style={{flex: 1}}>*/}
-                    <TopBar style={{flex: 1, flexDirection: "row"}}>
+                    <View style={{
+                        flex: 1,
+                        flexDirection: "row",
+                         height: 100,
+                        alignItems: "center",
+                        marginTop: 40,
+                        marginBottom:20,
+                        // backgroundColor:"#000"
+                        // paddingTop: 10,
+                        // paddingBottom: 50
+                        // padding: 20
+                    }}>
                         <SearchBar
                             placeholder="search for exercises"
                             autoFocus
@@ -287,7 +298,7 @@ export class _ExerciseList extends PureComponent {
                                 children={<Icon name="cancel" size={34} key="cancel" color={"#c69"}/>}
                             />
                         </View>
-                    </TopBar>
+                    </View>
                 </LinearGradient>
                 <LinearGradient colors={["#219dd5", "#51c0bb"]} style={{flex: 1}}>
                     <View>
@@ -460,14 +471,14 @@ export const ExerciseList = connect(
 )(_ExerciseList);
 const styles = StyleSheet.create({
     linearGradientContainer: {
-        height: isNotchScreen ? 100 : 65,
+        height: isNotchScreen ? 100 : 85,
     },
     searchBar: {
         backgroundColor: "white",
         flex: 0.9,
         borderColor: "grey",
         borderWidth: 1,
-        height: 35,
+        height: 45,
         padding: 5,
         justifyContent: "center",
         borderRadius: 20,
@@ -475,6 +486,7 @@ const styles = StyleSheet.create({
     input: {
         color: "black",
         fontSize: 20,
+        height:30
     },
     close: {
         fontSize: 34,
