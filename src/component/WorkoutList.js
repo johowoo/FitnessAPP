@@ -242,7 +242,6 @@ export class _WorkoutList extends Component {
 
     render() {
         const listFooterComponent = (
-            <View>
                 <View style={styles.addSomeExercises}>
                     <View style={styles.buttonContainer}>
                         <Button
@@ -345,7 +344,6 @@ export class _WorkoutList extends Component {
                     {/*</View>*/}
 
                 </View>
-            </View>
         );
         return (
             <View>

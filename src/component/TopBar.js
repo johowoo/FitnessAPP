@@ -9,7 +9,7 @@ import { View, StyleSheet, Dimensions } from "react-native";
 
 const { width, height } = Dimensions.get("window");
 
-const marginTop = height / width >= 18.5 / 9 ? 35 : 0;
+const marginTop = height / width >= 18.5 / 9 ? 35 : 25;
 
 export class TopBar extends React.Component {
   render() {
