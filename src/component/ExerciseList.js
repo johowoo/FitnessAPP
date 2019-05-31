@@ -36,7 +36,6 @@ const {width, height} = Dimensions.get("window");
 const isNotchScreen = height / width >= 18.5 / 9;
 const ITEM_HEIGHT = 40;
 
-
 export class _ExerciseList extends PureComponent {
     constructor(props) {
         super(props);
@@ -257,7 +256,7 @@ export class _ExerciseList extends PureComponent {
 
     render() {
         return (
-            <View style={{flex: 1, backgroundColor: "#eee"}}>
+            <View style={{flex: 1, backgroundColor: "#eee", marginTop: height / width >= 18.5 / 9 ? 0 : -25}}>
                 <LinearGradient
                     // colors={["#00FFFF", "#00CCCC"]}
                     colors={["#1b98d9", "#219dd5"]}
@@ -616,7 +615,7 @@ const styles = StyleSheet.create({
 const dropdownStyles = StyleSheet.create({
     dropdownInput: {
         backgroundColor: "rgba(255,140,0,0.1)",
-        color:"#eee"
+        color: "#eee"
     },
     dropdownMenu: {
         backgroundColor: "#EEE",
