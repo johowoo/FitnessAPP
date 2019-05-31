@@ -75,7 +75,7 @@ export class AddWeightToExercise extends Component {
                                 <View style={styles.modalButtonContainer}>
                                     <Button
                                         style={styles.modalButton}
-                                        color="#00ffcc"
+                                        color="#00cccc"
                                         title="Confirm"
                                         onPress={async () => {
                                             let actionPayload = {};
@@ -99,7 +99,7 @@ export class AddWeightToExercise extends Component {
                                 </View>
                                 <View style={styles.modalButtonContainer}>
                                     <Button
-                                        color="#00ffcc"
+                                        color="#00cccc"
                                         style={styles.modalButton}
                                         title="Cancel"
                                         onPress={() => {

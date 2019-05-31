@@ -569,7 +569,8 @@ const styles = StyleSheet.create({
         width: 0.25 * width,
     },
     modalButton: {
-        backgroundColor: "#00cccc",
+        // backgroundColor: "#00cccc",
+        backgroundColor: "#c69",
     },
     dropdownMenu: {
         width: width * 0.58,

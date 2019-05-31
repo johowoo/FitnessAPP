@@ -37,9 +37,8 @@ class _SetNotificationModal extends Component {
         super(props);
         this.state = {
             isDateTimePickerVisible: false,
-            top: (height - 540) * 0.4,
-            // top: height * 0.12,
-            // showTimeChosen: false,
+            top: (height - 540) * 0.3,
+
             enableSound: false,
             validatePeriodCount: 4,
             scheduleTimeArr: [],
@@ -345,14 +344,14 @@ class _SetNotificationModal extends Component {
                                 <View style={styles.modalButtonContainer}>
                                     <Button
                                         style={styles.modalButton}
-                                        color="#00ffcc"
+                                        color="#00cccc"
                                         title="Confirm"
                                         onPress={this.handleConfirmNotification}
                                     />
                                 </View>
                                 <View style={styles.modalButtonContainer}>
                                     <Button
-                                        color="#00ffcc"
+                                        color="#00cccc"
                                         style={styles.modalButton}
                                         title="Cancel"
                                         onPress={() => {

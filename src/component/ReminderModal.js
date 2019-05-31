@@ -44,14 +44,14 @@ export class ReminderModal extends Component {
                             {!this.props.hideConfirmButton && <View style={styles.modalButtonContainer}>
                                 <Button
                                     style={styles.modalButton}
-                                    color="#00ffcc"
+                                    color="#00cccc"
                                     title="Confirm"
                                     onPress={this.props.handleConfirm || this.props.handleCloseReminder}
                                 />
                             </View>}
                             <View style={styles.modalButtonContainer}>
                                 <Button
-                                    color="#00ffcc"
+                                    color="#00cccc"
                                     style={styles.modalButton}
                                     title="Cancel"
                                     // onPress={this.props.handleCancel ? this.props.handleCancel : () => {

@@ -42,7 +42,7 @@ export class AddCategoryModal extends Component {
                                 <View style={styles.modalButtonContainer}>
                                     <Button
                                         style={styles.modalButton}
-                                        color="#00ffcc"
+                                        color="#00cccc"
                                         title="Confirm"
                                         onPress={async () => {
                                             const customWorkoutCategory = [];
@@ -64,7 +64,7 @@ export class AddCategoryModal extends Component {
                                 </View>
                                 <View style={styles.modalButtonContainer}>
                                     <Button
-                                        color="#00ffcc"
+                                        color="#00cccc"
                                         style={styles.modalButton}
                                         title="Cancel"
                                         onPress={() => {
