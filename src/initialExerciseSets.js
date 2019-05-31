@@ -144,18 +144,21 @@ export const initialExerciseSets = {
             exercise: "treadmill",
             sets: 0,
             time: 1800000000001,
+            minutes: "30",
             weightRepsDataArr: []
         },
         {
             exercise: "cylinder machine",
             sets: 0,
             time: 1800000000002,
+            minutes: "30",
             weightRepsDataArr: []
         },
         {
             exercise: "bicycle",
             sets: 0,
             time: 1800000000003,
+            minutes: "30",
             weightRepsDataArr: []
         }
     ],

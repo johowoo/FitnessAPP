@@ -49,10 +49,15 @@ export class _WorkoutList extends Component {
     handleCloseWeightModal = (showFlag, bool) => {
         this.props[showFlag](bool);
     };
-    _renderItem = ({item: {exercise, sets, weight, time, reps, weightRepsDataArr}}) => (
+    _renderItem = ({item: {exercise, sets, weight, time, reps, weightRepsDataArr, minutes}}) => (
         <TouchableHighlight
             // onPress={(item) => this.handlePress.call(this, item)}
             onPress={async () => {
+                if (minutes) {
+                    await this.setState({
+                        cardioMinutes: minutes
+                    })
+                }
                 if (sets > weightRepsDataArr?.length) {
                     await this.setState({time});
                     // await this.setState({showAddWeightModal: true});
@@ -77,12 +82,14 @@ export class _WorkoutList extends Component {
         >
             <View style={styles.listContainer}>
                 <View style={styles.listItem}>
-                    <View style={{flex: 0.03}}/>
+                    <View style={{flex: 0.01}}/>
                     <View style={{flex: 0.77}}>
                         <Text style={styles.exerciseText}>{`  ${exercise}`}</Text>
                     </View>
-                    <View style={{flex: 0.2}}>
-                        <Text style={styles.exerciseText}>{sets} sets</Text>
+                    <View style={{flex: 0.22}}>
+                        <Text style={styles.exerciseText}>
+                            {minutes ? `${minutes} mins` : `${sets} sets`}
+                        </Text>
                     </View>
                 </View>
                 {weightRepsDataArr?.map((item, index) => {
@@ -109,6 +116,15 @@ export class _WorkoutList extends Component {
                             marginRight: 20,
                         }}>
                         {"Touch to add more weight & reps / Hold to edit"}
+                    </Text>
+                </View>}
+                {minutes && <View style={{...styles.listItem, height: 25}}>
+                    <Text
+                        style={{
+                            color: "#bbb",
+                            marginRight: 20,
+                        }}>
+                        {"Hold to edit minutes"}
                     </Text>
                 </View>}
             </View>
@@ -192,6 +208,7 @@ export class _WorkoutList extends Component {
                     handleCloseWeightModal={() => this.props.setAddWeightModalVisibility(false)}
                     addWeightRepsToExercise={this.props.addWeightRepsToExercise}
                     time={this.state.time}
+                    cardioMinutes={this.state.cardioMinutes}
                 />
             )}
             {this.props.showEditWeightReps && (
