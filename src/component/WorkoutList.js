@@ -242,108 +242,108 @@ export class _WorkoutList extends Component {
 
     render() {
         const listFooterComponent = (
-                <View style={styles.addSomeExercises}>
-                    <View style={styles.buttonContainer}>
-                        <Button
-                            onPress={this.handlePress.bind(this)}
-                            style={styles.plusButton}
-                            textStyle={styles.plus}
-                            children={
-                                <IconFont name="Gym2" size={50} color="white" key={"gym"}/>
-                            }
-                        />
-                        {/*<Icon name="fitness-center" size={50} color="white" key="add"/>*/}
-                    </View>
-                    <Text style={styles.bigText}>
-                        Manual Workout
+            <View style={styles.addSomeExercises}>
+                <View style={styles.buttonContainer}>
+                    <Button
+                        onPress={this.handlePress.bind(this)}
+                        style={styles.plusButton}
+                        textStyle={styles.plus}
+                        children={
+                            <IconFont name="Gym2" size={50} color="white" key={"gym"}/>
+                        }
+                    />
+                    {/*<Icon name="fitness-center" size={50} color="white" key="add"/>*/}
+                </View>
+                <Text style={styles.bigText}>
+                    Manual Workout
+                </Text>
+                <View>
+                    <Text style={{color: "#ccc", fontFamily: "PattayaRegular", fontSize: 14}}>
+                        Add exercises manually one by one
                     </Text>
-                    <View>
-                        <Text style={{color: "#ccc", fontFamily: "PattayaRegular", fontSize: 14}}>
-                            Add exercises manually one by one
-                        </Text>
-                    </View>
-                    <View style={styles.buttonContainer}>
-                        <Button
-                            // onPress={this.handlePress.bind(this)}
-                            onPress={() => {
-                                this.props.navigation.navigate("CustomWorkout");
-                            }}
-                            style={styles.plusButton}
-                            textStyle={styles.plus}
-                            children={
-                                <IconFont name="Edit" size={50} color="white" key={"edit"}/>
-                            }
-                        />
-                        {/*<FontAwesomeIcon name="pencil" size={50} color="white" key="add"/>*/}
-
-                    </View>
-                    <Text style={styles.bigText}>
-                        Custom Workout
-                        {/*add some*/}
-                        {/*{"\n"}*/}
-                        {/*exercises*/}
-                    </Text>
-                    <View>
-                        <Text style={{color: "#ccc", fontFamily: "PattayaRegular", fontSize: 14}}>
-                            Add exercises from existing categories
-                        </Text>
-                    </View>
-                    <View style={styles.buttonContainer}>
-                        <Button
-                            onPress={() => {
-                                this.props.navigation.navigate("EditLibrary", {
-                                    addCategoryToEditLibrary: this.props.addCategoryToEditLibrary,
-                                    setAddCategoryModalForLibraryVisibility: this.props.setAddCategoryModalForLibraryVisibility
-                                });
-                            }}
-                            // onPress={this.handlePress.bind(this)}
-                            style={styles.plusButton}
-                            textStyle={styles.plus}
-                            children={
-                                <IconFont name="Library" size={50} color="white" key={"library"}/>
-
-                            }
-                        />
-                        {/*<FontAwesomeIcon name="book" size={50} color="white" key="add"/>*/}
-
-                    </View>
-                    <Text style={styles.bigText}>
-                        Edit Library
-                        {/*add some*/}
-                        {/*{"\n"}*/}
-                        {/*exercises*/}
-                    </Text>
-                    <View>
-                        <Text style={{color: "#ccc", fontFamily: "PattayaRegular", fontSize: 14}}>
-                            Edit existing category of exercises
-                        </Text>
-                    </View>
-                    <View style={styles.buttonContainer}>
-                        <Button
-                            onPress={() => {
-                                this.props.setNotificationModalVisibility(true)
-                            }
-                                // this.handlePress.bind(this)
-
-                            }
-                            style={styles.plusButton}
-                            textStyle={styles.plus}
-                            children={
-                                <IconFont name="Alarm" size={50} color="white" key={"alarm"}/>
-                            }
-                        />
-                        {/*<Icon name="alarm" size={50} color="white" key="add"/>*/}
-                    </View>
-                    <Text style={styles.bigText}>
-                        Set Notifications
-                    </Text>
-                    {/*<View >*/}
-                    {/*    <Text style={{color: "#ccc", fontFamily: "PattayaRegular", fontSize: 14}}>*/}
-                    {/*        Add exercises manually one by one*/}
-                    {/*    </Text>*/}
-                    {/*</View>*/}
+                </View>
+                <View style={styles.buttonContainer}>
+                    <Button
+                        // onPress={this.handlePress.bind(this)}
+                        onPress={() => {
+                            this.props.navigation.navigate("CustomWorkout");
+                        }}
+                        style={styles.plusButton}
+                        textStyle={styles.plus}
+                        children={
+                            <IconFont name="Edit" size={50} color="white" key={"edit"}/>
+                        }
+                    />
+                    {/*<FontAwesomeIcon name="pencil" size={50} color="white" key="add"/>*/}
 
                 </View>
+                <Text style={styles.bigText}>
+                    Custom Workout
+                    {/*add some*/}
+                    {/*{"\n"}*/}
+                    {/*exercises*/}
+                </Text>
+                <View>
+                    <Text style={{color: "#ccc", fontFamily: "PattayaRegular", fontSize: 14}}>
+                        Add exercises from existing categories
+                    </Text>
+                </View>
+                <View style={styles.buttonContainer}>
+                    <Button
+                        onPress={() => {
+                            this.props.navigation.navigate("EditLibrary", {
+                                addCategoryToEditLibrary: this.props.addCategoryToEditLibrary,
+                                setAddCategoryModalForLibraryVisibility: this.props.setAddCategoryModalForLibraryVisibility
+                            });
+                        }}
+                        // onPress={this.handlePress.bind(this)}
+                        style={styles.plusButton}
+                        textStyle={styles.plus}
+                        children={
+                            <IconFont name="Library" size={50} color="white" key={"library"}/>
+
+                        }
+                    />
+                    {/*<FontAwesomeIcon name="book" size={50} color="white" key="add"/>*/}
+
+                </View>
+                <Text style={styles.bigText}>
+                    Edit Library
+                    {/*add some*/}
+                    {/*{"\n"}*/}
+                    {/*exercises*/}
+                </Text>
+                <View>
+                    <Text style={{color: "#ccc", fontFamily: "PattayaRegular", fontSize: 14}}>
+                        Edit existing category of exercises
+                    </Text>
+                </View>
+                <View style={styles.buttonContainer}>
+                    <Button
+                        onPress={() => {
+                            this.props.setNotificationModalVisibility(true)
+                        }
+                            // this.handlePress.bind(this)
+
+                        }
+                        style={styles.plusButton}
+                        textStyle={styles.plus}
+                        children={
+                            <IconFont name="Alarm" size={50} color="white" key={"alarm"}/>
+                        }
+                    />
+                    {/*<Icon name="alarm" size={50} color="white" key="add"/>*/}
+                </View>
+                <Text style={styles.bigText}>
+                    Set Notifications
+                </Text>
+                {/*<View >*/}
+                {/*    <Text style={{color: "#ccc", fontFamily: "PattayaRegular", fontSize: 14}}>*/}
+                {/*        Add exercises manually one by one*/}
+                {/*    </Text>*/}
+                {/*</View>*/}
+
+            </View>
         );
         return (
             <View>
@@ -394,6 +394,7 @@ const styles = StyleSheet.create({
         // justifyContent: 'center',
         alignItems: "center",
         padding: 10,
+        marginBottom: 60
     },
     buttonContainer: {
         flexDirection: "row",

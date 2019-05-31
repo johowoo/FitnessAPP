@@ -1,5 +1,5 @@
 import React, {Component} from "react";
-import {View, Text, StyleSheet, Alert} from "react-native";
+import {View, Text, StyleSheet, ScrollView} from "react-native";
 import {connect} from "react-redux";
 // import {LinearGradient} from "expo";
 import Button from "apsl-react-native-button";
@@ -124,35 +124,37 @@ class _CurrentWorkout extends Component {
                         />
                     </View>
                 </TopBar>
-                <View>
-                    <WorkoutList
-                        isCompleted={this.props.isCompleted}
-                        setModalVisibility={this.props.setModalVisibility}
-                        // currentWorkout={this.props.currentWorkout}
-                        updateEmpty={this.props.updateEmpty}
-                        navigation={this.props.navigation}
-                        showListFooterComponent={true}
-                        workoutSetsData={this.props.currentWorkout}
-                        showAddWeightModal={this.props.showAddWeightModal}
-                        showEditWeightReps={this.props.showEditWeightReps}
-                        setAddWeightModalVisibility={this.props.setAddWeightModalVisibility}
-                        setEditWeightRepsModalVisibility={this.props.setEditWeightRepsModalVisibility}
-                        addWeightRepsToExercise={this.props.addWeightRepsToExercise}
-                        editWeightRepsInWorkout={this.props.editWeightRepsInWorkout}
-                        deleteExerciseFromWorkoutList={this.props.deleteExerciseFromWorkoutList}
-                    />
-                </View>
-                <View>
-                    <ExerciseModal
-                        sectionExercises={this.props.sectionExercises}
-                        extraSectionExercises={this.props.extraSectionExercises}
-                        visible={this.props.exerciseModal}
-                        closeModal={() => this.props.setModalVisibility(false)}
-                        workoutSetsData={this.props.currentWorkout}
-                        addExercise={this.props.addExercise}
-                        updateEmpty={this.props.updateEmpty}
-                    />
-                </View>
+                <ScrollView>
+                    <View>
+                        <WorkoutList
+                            isCompleted={this.props.isCompleted}
+                            setModalVisibility={this.props.setModalVisibility}
+                            // currentWorkout={this.props.currentWorkout}
+                            updateEmpty={this.props.updateEmpty}
+                            navigation={this.props.navigation}
+                            showListFooterComponent={true}
+                            workoutSetsData={this.props.currentWorkout}
+                            showAddWeightModal={this.props.showAddWeightModal}
+                            showEditWeightReps={this.props.showEditWeightReps}
+                            setAddWeightModalVisibility={this.props.setAddWeightModalVisibility}
+                            setEditWeightRepsModalVisibility={this.props.setEditWeightRepsModalVisibility}
+                            addWeightRepsToExercise={this.props.addWeightRepsToExercise}
+                            editWeightRepsInWorkout={this.props.editWeightRepsInWorkout}
+                            deleteExerciseFromWorkoutList={this.props.deleteExerciseFromWorkoutList}
+                        />
+                    </View>
+                    <View>
+                        <ExerciseModal
+                            sectionExercises={this.props.sectionExercises}
+                            extraSectionExercises={this.props.extraSectionExercises}
+                            visible={this.props.exerciseModal}
+                            closeModal={() => this.props.setModalVisibility(false)}
+                            workoutSetsData={this.props.currentWorkout}
+                            addExercise={this.props.addExercise}
+                            updateEmpty={this.props.updateEmpty}
+                        />
+                    </View>
+                </ScrollView>
                 {this.state.showReminderModal &&
                 <ReminderModal
                     showReminderModal={this.state.showReminderModal}
