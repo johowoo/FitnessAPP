@@ -256,7 +256,12 @@ export class _ExerciseList extends PureComponent {
 
     render() {
         return (
-            <View style={{flex: 1, backgroundColor: "#eee", marginTop: height / width >= 18.5 / 9 ? 0 : -25}}>
+            <View style={{
+                flex: 1,
+                backgroundColor: "#eee",
+                marginTop: height / width >= 18.5 / 9 ? 0 : -25,
+                marginBottom: 10
+            }}>
                 <LinearGradient
                     // colors={["#00FFFF", "#00CCCC"]}
                     colors={["#1b98d9", "#219dd5"]}
