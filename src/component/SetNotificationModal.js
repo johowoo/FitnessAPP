@@ -37,7 +37,7 @@ class _SetNotificationModal extends Component {
         super(props);
         this.state = {
             isDateTimePickerVisible: false,
-            top: (height-550) * 0.4,
+            top: (height - 550) * 0.4,
             // top: height * 0.12,
             // showTimeChosen: false,
             enableSound: false,
@@ -183,190 +183,187 @@ class _SetNotificationModal extends Component {
                 visible={this.props.showSetNotificationModal}
                 transparent={true}
                 onRequestClose={() => this.props.setNotificationModalVisibility(false)}>
-                <View style={{...styles.modalOuterContainer, top: this.state.top}}>
-                    <View style={styles.modalInnerContainer}>
-                        <Text
-                            style={{
-                                color: "#00ffcc",
-                                fontSize: 16,
-                                marginLeft: 10,
-                                marginBottom: 10,
-                            }}>
-                            Please input the content of notifications:
-                        </Text>
-                        <TextInput
-                            placeholderTextColor={"#cc6699"}
-                            style={styles.NotificationTextInput}
-                            value={this.state.notificationText}
-                            placeholder=" Come on, meatball. It is time to do some exercises"
-                            onChangeText={text => {
-                                this.setState({notificationText: text});
-                            }}
-                        />
-                        <Text
-                            style={{
-                                color: "#00ffcc",
-                                fontSize: 16,
-                                marginTop: 15,
-                                marginLeft: 10,
-                                marginBottom: 15,
-                            }}>
-                            Please select the day and time:
-                        </Text>
-                        {/*<View>*/}
-                        <View>
-                            <FlatList
-                                // style={{flex: 1, flexDirection: 'row'}}
-                                data={this.props.isDayChosenInWeek}
-                                renderItem={data => this._renderItem(data)}
-                                keyExtractor={(item, index) => item + index}
-                                numColumns={5}
-                                extraData={this.state}
-                                contentContainerStyle={{justifyContent: "center", alignItems: "center"}}
-                                style={{marginBottom: 10,}}
-                            />
-                        </View>
-                        <View style={{
-                            // marginTop: 10,
-                            flexDirection: "row",
-                            alignItems: "center",
-                            justifyContent: "space-around"
-                        }}>
+                <View style={{flex: 1, backgroundColor: "rgba(0,0,0,0.85)"}}>
+                    <View style={{...styles.modalOuterContainer, top: this.state.top}}>
+                        <View style={styles.modalInnerContainer}>
                             <Text
                                 style={{
                                     color: "#00ffcc",
                                     fontSize: 16,
                                     marginLeft: 10,
-                                    marginBottom: 15,
-                                    marginTop: 15
-                                }}>
-                                Time:
-                            </Text>
-                            <View style={{flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
-                                <TouchableOpacity
-                                    onPress={this.showDateTimePicker}
-                                ><View
-                                    style={{
-                                        borderRadius: 8,
-                                        backgroundColor: "#c69",
-                                        paddingLeft: 15,
-                                        paddingRight: 15,
-                                        height: 35,
-                                        alignItems: 'center',
-                                        justifyContent: 'center'
-                                    }}>
-                                    <Text
-                                        style={{color: "#eee", fontSize: 18, fontFamily: "PattayaRegular"}}>
-                                        {this.state.timeChosen}
-                                    </Text>
-                                </View>
-                                </TouchableOpacity>
-                            </View>
-                            <DateTimePicker
-                                mode={"time"}
-                                titleIOS={"Pick a time"}
-                                // datePickerContainerStyleIOS={{backgroundColor:"#eee",color:"#eee"}}
-                                isVisible={this.state.isDateTimePickerVisible}
-                                onConfirm={this.handleTimePicked}
-                                onCancel={this.hideDateTimePicker}
-                            />
-                        </View>
-                        <View style={{
-                            marginTop: 10,
-                            flexDirection: "row",
-                            alignItems: "center",
-                            justifyContent: "space-around"
-                        }}>
-                            <Text
-                                style={{
-                                    color: "#00ffcc",
-                                    fontSize: 16,
-                                    marginLeft: 10,
-                                    marginTop: 16,
                                     marginBottom: 10,
                                 }}>
-                                Valid period:
+                                Please input the content of notifications:
                             </Text>
-                            <ModalDropdown
-                                style={[styles.dropdownMenu]}
-                                textStyle={[
-                                    styles.dropdownMenuText,
-                                ]}
-                                dropdownStyle={[
-                                    styles.dropdownList,
-                                ]}
-                                dropdownTextStyle={[
-                                    styles.dropdownListText,
-                                ]}
-                                dropdownTextHighlightStyle={[
-                                    styles.dropdownSelection,
-                                ]}
-                                options={[
-                                    "1 Month",
-                                    "3 Months",
-                                    "6 Months",
-                                    "1 Year",
-                                ]}
-                                defaultValue={"1 Month"}
-                                onSelect={this.handleSelect.bind(this)}
-                            />
-                        </View>
-                        <View style={{
-                            marginTop: 10,
-                            flexDirection: "row",
-                            alignItems: "center",
-                            justifyContent: "space-around"
-                        }}>
-                            <Text
-                                style={{
-                                    color: "#00ffcc",
-                                    fontSize: 16,
-                                    marginLeft: 10,
-                                    marginTop: 16,
-                                    marginBottom: 10,
-                                }}>
-                                Enable sound:
-                            </Text>
-                            <Switch
-                                trackColor={{true: "#c69"}}
-                                thumbColor={"#ccc"}
-                                value={this.state.enableSound}
-                                onValueChange={value => {
-                                    this.setState({
-                                        enableSound: !this.state.enableSound
-                                    });
+                            <TextInput
+                                placeholderTextColor={"#cc6699"}
+                                style={styles.NotificationTextInput}
+                                value={this.state.notificationText}
+                                placeholder=" Come on, meatball. It is time to do some exercises"
+                                onChangeText={text => {
+                                    this.setState({notificationText: text});
                                 }}
                             />
-                        </View>
-                        {/*</View>*/}
-                        <View
-                            style={{flexDirection: "row", justifyContent: "space-around", marginTop: 5}}>
-                            <View style={styles.modalButtonContainer}>
-                                <Button
-                                    style={styles.modalButton}
-                                    color="#00ffcc"
-                                    title="Confirm"
-                                    onPress={this.handleConfirmNotification}
+                            <Text
+                                style={{
+                                    color: "#00ffcc",
+                                    fontSize: 16,
+                                    marginTop: 15,
+                                    marginLeft: 10,
+                                    marginBottom: 15,
+                                }}>
+                                Please select the day and time:
+                            </Text>
+                            {/*<View>*/}
+                            <View>
+                                <FlatList
+                                    // style={{flex: 1, flexDirection: 'row'}}
+                                    data={this.props.isDayChosenInWeek}
+                                    renderItem={data => this._renderItem(data)}
+                                    keyExtractor={(item, index) => item + index}
+                                    numColumns={5}
+                                    extraData={this.state}
+                                    contentContainerStyle={{justifyContent: "center", alignItems: "center"}}
+                                    style={{marginBottom: 10,}}
                                 />
                             </View>
-                            <View style={styles.modalButtonContainer}>
-                                <Button
-                                    color="#00ffcc"
-                                    style={styles.modalButton}
-                                    title="Cancel"
-                                    onPress={() => {
-                                        this.props.setNotificationModalVisibility(false);
+                            <View style={{
+                                // marginTop: 10,
+                                flexDirection: "row",
+                                alignItems: "center",
+                                justifyContent: "space-around"
+                            }}>
+                                <Text
+                                    style={{
+                                        color: "#00ffcc",
+                                        fontSize: 16,
+                                        marginLeft: 10,
+                                        marginBottom: 15,
+                                        marginTop: 15
+                                    }}>
+                                    Time:
+                                </Text>
+                                <View style={{flexDirection: "row", alignItems: "center", justifyContent: "center"}}>
+                                    <TouchableOpacity
+                                        onPress={this.showDateTimePicker}
+                                    ><View
+                                        style={{
+                                            borderRadius: 8,
+                                            backgroundColor: "#c69",
+                                            paddingLeft: 15,
+                                            paddingRight: 15,
+                                            height: 35,
+                                            alignItems: 'center',
+                                            justifyContent: 'center'
+                                        }}>
+                                        <Text
+                                            style={{color: "#eee", fontSize: 18, fontFamily: "PattayaRegular"}}>
+                                            {this.state.timeChosen}
+                                        </Text>
+                                    </View>
+                                    </TouchableOpacity>
+                                </View>
+                                <DateTimePicker
+                                    mode={"time"}
+                                    titleIOS={"Pick a time"}
+                                    // datePickerContainerStyleIOS={{backgroundColor:"#eee",color:"#eee"}}
+                                    isVisible={this.state.isDateTimePickerVisible}
+                                    onConfirm={this.handleTimePicked}
+                                    onCancel={this.hideDateTimePicker}
+                                />
+                            </View>
+                            <View style={{
+                                marginTop: 10,
+                                flexDirection: "row",
+                                alignItems: "center",
+                                justifyContent: "space-around"
+                            }}>
+                                <Text
+                                    style={{
+                                        color: "#00ffcc",
+                                        fontSize: 16,
+                                        marginLeft: 10,
+                                        marginTop: 16,
+                                        marginBottom: 10,
+                                    }}>
+                                    Valid period:
+                                </Text>
+                                <ModalDropdown
+                                    style={[styles.dropdownMenu]}
+                                    textStyle={[
+                                        styles.dropdownMenuText,
+                                    ]}
+                                    dropdownStyle={[
+                                        styles.dropdownList,
+                                    ]}
+                                    dropdownTextStyle={[
+                                        styles.dropdownListText,
+                                    ]}
+                                    dropdownTextHighlightStyle={[
+                                        styles.dropdownSelection,
+                                    ]}
+                                    options={[
+                                        "1 Month",
+                                        "3 Months",
+                                        "6 Months",
+                                        "1 Year",
+                                    ]}
+                                    defaultValue={"1 Month"}
+                                    onSelect={this.handleSelect.bind(this)}
+                                />
+                            </View>
+                            <View style={{
+                                marginTop: 10,
+                                flexDirection: "row",
+                                alignItems: "center",
+                                justifyContent: "space-around"
+                            }}>
+                                <Text
+                                    style={{
+                                        color: "#00ffcc",
+                                        fontSize: 16,
+                                        marginLeft: 10,
+                                        marginTop: 16,
+                                        marginBottom: 10,
+                                    }}>
+                                    Enable sound:
+                                </Text>
+                                <Switch
+                                    trackColor={{true: "#c69"}}
+                                    thumbColor={"#ccc"}
+                                    value={this.state.enableSound}
+                                    onValueChange={value => {
+                                        this.setState({
+                                            enableSound: !this.state.enableSound
+                                        });
                                     }}
                                 />
+                            </View>
+                            {/*</View>*/}
+                            <View
+                                style={{flexDirection: "row", justifyContent: "space-around", marginTop: 15,}}>
+                                <View style={styles.modalButtonContainer}>
+                                    <Button
+                                        style={styles.modalButton}
+                                        color="#00ffcc"
+                                        title="Confirm"
+                                        onPress={this.handleConfirmNotification}
+                                    />
+                                </View>
+                                <View style={styles.modalButtonContainer}>
+                                    <Button
+                                        color="#00ffcc"
+                                        style={styles.modalButton}
+                                        title="Cancel"
+                                        onPress={() => {
+                                            this.props.setNotificationModalVisibility(false);
+                                        }}
+                                    />
+                                </View>
                             </View>
                         </View>
                     </View>
                 </View>
-                {/*<View style={styles.container}>*/}
-                {/*    /!*<Button title='Send Immediate Notification' onPress={() => this._sendImmediateNotification()}/>*!/*/}
-                {/*    <Button title='Send Delayed Notification' onPress={() => this._sendDelayedNotification()}/>*/}
-                {/*    <Button title='Close' onPress={() => this.props.setNotificationModalVisibility(false)}/>*/}
-                {/*</View>*/}
             </Modal>
         );
     }
@@ -378,6 +375,7 @@ const styles = StyleSheet.create({
             // backgroundColor: '#fff',
             alignItems: 'center',
             justifyContent: 'center',
+
         },
         modalOuterContainer: {
             flex: 1,
@@ -387,7 +385,6 @@ const styles = StyleSheet.create({
             left: width * 0.075,
 // left: width * 0.148,
 // top: this.state.top,
-            backgroundColor: "rgba(0, 0, 0, 0.3)",
             borderRadius: 8,
         },
         modalInnerContainer: {
