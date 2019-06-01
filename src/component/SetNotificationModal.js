@@ -182,7 +182,7 @@ class _SetNotificationModal extends Component {
                 visible={this.props.showSetNotificationModal}
                 transparent={true}
                 onRequestClose={() => this.props.setNotificationModalVisibility(false)}>
-                <View style={{flex: 1, backgroundColor: "rgba(0,0,0,0.85)"}}>
+                <View style={{flex: 1, backgroundColor: "rgba(0,0,0,0.7)"}}>
                     <View style={{...styles.modalOuterContainer, top: this.state.top}}>
                         <View style={styles.modalInnerContainer}>
                             <Text

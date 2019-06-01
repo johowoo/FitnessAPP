@@ -1,12 +1,6 @@
 import React from 'react';
 import {createStackNavigator} from "react-navigation";
 import Progress from "../page/Progress";
-import {DisplayPicture} from "../page/DisplayPicture";
-import {formatYYYY_MM_DD_HHMMFromParams} from "../utils/formatMonthandDay";
-import {Text, TouchableOpacity, View} from "react-native";
-import Icon from "react-native-vector-icons/FontAwesome";
-import {LinearGradient} from "expo";
-import IconFontAwesome from "react-native-vector-icons/FontAwesome";
 import {InnerProgressStackNavigator} from "./InnerProgressNavigator";
 
 let fontLoaded = true;
