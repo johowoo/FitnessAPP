@@ -87,7 +87,7 @@ class _CurrentWorkout extends Component {
         return (
             <LinearGradient colors={["#1b98d9", "#51c0bb"]} style={{flex: 1}}>
                 <TopBar style={styles.topBar}>
-                    <View style={{marginRight: 55}}>
+                    <View>
                         {this.props.fontLoaded ? (
                             <Text style={styles.textBar}>Current Workout</Text>
                         ) : null}
@@ -243,11 +243,12 @@ const styles = StyleSheet.create({
     },
     completeButton: {
         borderColor: "#fff",
-        marginTop: 50,
+        marginTop: 45,
         borderWidth: 1,
         height: 30,
-        width: 90,
+        width: 60,
         marginLeft: 50,
+        marginRight: 10
     },
     completeButtonDisabled: {
         backgroundColor: "rgba(50,50,50,0.1)",
