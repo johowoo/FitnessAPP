@@ -253,12 +253,12 @@ const styles = StyleSheet.create({
     completeButtonDisabled: {
         backgroundColor: "rgba(50,50,50,0.1)",
         borderColor: "#999",
-        marginTop: 50,
-        // borderStyle: null,
+        marginTop: 45,
         borderWidth: 1,
         height: 30,
-        width: 90,
+        width: 60,
         marginLeft: 50,
+        marginRight: 10
     },
     completeDisabled: {
         color: "#999",

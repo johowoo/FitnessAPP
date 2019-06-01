@@ -12,6 +12,8 @@ import isIphoneX from "../utils/isIphoneX";
 
 const windowWidth = Dimensions.get("window").width;
 const tabWidth = windowWidth / 4;
+const {width, height} = Dimensions.get("window");
+const isNotchScreen = height / width >= 18.5 / 9;
 const SpotLight = posed.View({
   route0: { x: 0 },
   route1: { x: tabWidth },
@@ -27,11 +29,11 @@ const Scaler = posed.View({
 const S = StyleSheet.create({
   container: {
     flexDirection: "row",
-    height: 52,
+    height: 40,
     elevation: 2,
     alignItems: "center",
-    marginTop: 5,
-    marginBottom: isIphoneX ? 18 : 0,
+    marginTop: 10,
+    marginBottom: isNotchScreen ? 30 : 15,
   },
   tabButton: { flex: 1 },
   spotLight: {

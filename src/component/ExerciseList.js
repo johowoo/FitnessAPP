@@ -260,7 +260,6 @@ export class _ExerciseList extends PureComponent {
                 flex: 1,
                 backgroundColor: "#eee",
                 marginTop: height / width >= 18.5 / 9 ? 0 : -25,
-                marginBottom: 20
             }}>
                 <LinearGradient
                     // colors={["#00FFFF", "#00CCCC"]}
@@ -290,12 +289,12 @@ export class _ExerciseList extends PureComponent {
                             onTextChange={this.handleSearch.bind(this)}
                             // onBlur={this.handleBlur.bind(this)}
                         />
-                        <View style={{flex: 0.1, marginTop: 10}}>
+                        <View style={{flex: 0.1, marginTop: 12, marginRight:15}}>
                             <ApslButton
                                 onPress={this.closeModal}
                                 textStyle={styles.close}
                                 style={styles.closeButton}
-                                children={<Icon name="cancel" size={34} key="cancel" color={"#c69"}/>}
+                                children={<Icon name="cancel" size={35} key="cancel" color={"#c69"}/>}
                             />
                         </View>
                     </View>
@@ -471,17 +470,21 @@ export const ExerciseList = connect(
 )(_ExerciseList);
 const styles = StyleSheet.create({
     linearGradientContainer: {
-        height: isNotchScreen ? 100 : 85,
+        height: 100,
+        paddingTop: isNotchScreen ? 5 : 30,
+        // paddingRight: 10
     },
     searchBar: {
         backgroundColor: "white",
         flex: 0.9,
         borderColor: "grey",
         borderWidth: 1,
-        height: 40,
+        height: 35,
         padding: 5,
         justifyContent: "center",
         borderRadius: 20,
+        marginLeft: 10,
+        marginRight: 5,
     },
     input: {
         color: "black",
@@ -489,7 +492,7 @@ const styles = StyleSheet.create({
         height: 30
     },
     close: {
-        fontSize: 34,
+        fontSize: 40,
     },
     closeButton: {
         borderWidth: 0,
