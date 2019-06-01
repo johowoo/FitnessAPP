@@ -283,7 +283,7 @@ const dropdownStyles = StyleSheet.create({
     dropdownInput: {
         backgroundColor: "transparent",
         height: 40,
-        borderColor: "rgba(255,140,0,0.8)",
+        borderColor: "#c69",
         borderWidth: 1,
         borderRadius: 10,
         color: "#ddd",
@@ -294,24 +294,24 @@ const dropdownStyles = StyleSheet.create({
     },
     dropdownMenu: {
         height: 35,
-        borderColor: "rgba(255,140,0,0.8)",
+        borderColor: "#c69",
     },
     dropdownMenuText: {
         fontSize: 18,
-        color: "#FF8c00",
+        color: "#c69",
     },
     dropdownList: {
         marginTop: 10,
     },
     dropdownListText: {
         fontSize: 18,
-        color: "#FF8c00",
+        color: "#c69",
     },
     dropdownSelection: {
         color: "#00cccc",
     },
     confirmButton: {
         height: 35,
-        borderColor: "rgba(255,140,0,0.8)",
+        borderColor: "#c69",
     },
 });

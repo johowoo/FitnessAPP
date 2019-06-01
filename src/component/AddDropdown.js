@@ -82,7 +82,7 @@ export class AddDropdown extends Component {  //eslint-disable-line
                         style={[styles.confirmButton, this.props.styles.confirmButton]}
                         onPress={this.handlePress}
                         children={
-                            <Text key="confirm" style={{color: "#FF8c00"}}>
+                            <Text key="confirm" style={{color: "#cc6699"}}>
                                 Confirm
                             </Text>
                         }
@@ -100,6 +100,7 @@ const styles = StyleSheet.create({
         zIndex: 999,
     },
     dropdownInput: {
+        paddingLeft: 10,
         marginLeft: width * 0.03,
         marginRight: width * 0.03,
         // backgroundColor: "rgba(255,140,0,0.1)",
