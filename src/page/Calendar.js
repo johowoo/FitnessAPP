@@ -32,7 +32,7 @@ import {formatYYYY_MM_DDFromDate, formatYYYYMMDDFromDate} from "../utils/formatM
 
 const {width, height} = Dimensions.get("window");
 
-const marginTop = height / width >= 18.5 / 9 ? 35 : 0;
+const marginTop = height / width >= 18.5 / 9 ? 35 : 20;
 
 export class _Calendar extends Component {
     state = {
