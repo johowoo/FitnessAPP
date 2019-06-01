@@ -68,18 +68,18 @@ export class _Health extends Component {
     }
 
     handleAddDropdown = async (type) => {
-        await LoadingUtil.showLoading();
+        // await LoadingUtil.showLoading();
         await this.setState({
             [type]: !this.state[type],
         });
-        await LoadingUtil.dismissLoading();
+        // await LoadingUtil.dismissLoading();
     };
 
     handleAddWeightConfirm = async data => {
-        await LoadingUtil.showLoading();
+        // await LoadingUtil.showLoading();
         await this.props.updateWeightData(data);
         await this.forceUpdate();
-        await LoadingUtil.dismissLoading();
+        // await LoadingUtil.dismissLoading();
     };
 
     handleAddBFRConfirm = async data => {
