@@ -137,7 +137,7 @@ export class _Progress extends Component {
                 <TopBar style={styles.topBar}>
                     {/* {this.props.fontLoaded ? <Text style={styles.textBar}>Progress</Text> : null} */}
                     <Text style={styles.textBar}>Progress</Text>
-                    <View style={{position: "absolute", left: 15}}>
+                    <View style={{position: "absolute", left: 20}}>
                         <TouchableOpacity
                             style={{height: 25, width: 25, backgroundColor: "transparent"}}
                             // onPress={() => this.handleModal({showPicker: true})}
@@ -161,7 +161,9 @@ export class _Progress extends Component {
                                 size={25}
                                 color="white"
                                 key="remove"
-                            /> : <Text style={{color: "#eee", fontSize: 22}}>delete</Text>}
+                            /> :
+                                <IconFontAwesome name="trash-o" size={24} color="#eee" key="delete"/>
+                            }
                         </TouchableOpacity>
                     </View>
                     <View style={{position: "absolute", right: 15}}>
