@@ -12,7 +12,6 @@ const BottomTabNavigator
     = createBottomTabNavigator(
     {
         CurrentWorkout: {
-            // screen: props => <CurrentWorkout fontLoaded={fontLoaded} {...props} />,
             screen: CurrentWorkoutStackNavigator,
             navigationOptions: () => ({
                 tabBarIcon: props => <TabBarIcon name="ios-fitness" {...props} />,

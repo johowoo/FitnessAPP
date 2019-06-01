@@ -23,7 +23,13 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
-    }
+      "supportsTablet": true,
+      "bundleIdentifier": "com.bug8.JoesFitness"
+    },
+    "android": {
+      "package": "com.bug8.JoesFitness"
+    },
+    "description": "A gym app built for bodybuilders who want to make a detailed workout plan and record their progress.",
+    "githubUrl": "https://github.com/johowoo/FitnessAPP"
   }
 }
