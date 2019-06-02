@@ -4,6 +4,20 @@ fitness app built with React native
 * should never let the state of the redux to be an array!!!
 * use setParams to refresh state in NavigatorOptions(eg: header)
 
+## main functions
+* set scheduled notifications for workouts
+* log workout history
+* log and edit record weight/reps/sets data
+* editable categories in exercises library (Chest, Back, Cardio ...)
+* add a whole category of exercises to current workout in one time
+* editable library
+* Calendar component to record/edit workout history/plan
+* analysis function
+* weight/body fat rate charts
+* progress photo(add data and photo at the same time)
+* link data inputted with progress photo with weight/BFR charts
+
+
 ## To be done
 ### bugs to be fixed
 //PickerCamera Line 82 (put showModal in redux)
