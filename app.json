@@ -8,7 +8,7 @@
       "ios",
       "android"
     ],
-    "version": "1.0.0",
+    "version": "1.0.2",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -26,9 +26,11 @@
       "supportsTablet": false,
       "bundleIdentifier": "com.bug8.JoesFitness",
       "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": "NO",
         "NSCameraUsageDescription": "This app uses the camera to take photos so that users can compare these photos to see their progress in fitness.",
         "NSPhotoLibraryUsageDescription":"This app uses photo library to add photos into the Progress Page and let users to compare these photos to see progress."
-      }
+      },
+      "buildNumber": "1.0.2"
     },
     "android": {
       "package": "com.bug8.JoesFitness"
