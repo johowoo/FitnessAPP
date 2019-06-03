@@ -75,15 +75,12 @@ export class AddCategoryModal extends Component {
                             </View>
                         </View>
                     </View>
-
-                    {/*<Button title={"close"} onPress={() => this.props.setAddCategoryModalForLibraryVisibility(false)}/>*/}
                     {this.state.showReminderModal && <ReminderModal
                         showReminderModal={this.state.showReminderModal}
                         handleCloseReminder={this.handleCloseReminder}
                         reminderTitle={this.state.reminderTitle}
                         reminderContent={this.state.reminderContent}
                         hideConfirmButton={true}
-                        // handleConfirm={this.handleConfirm}
                     />}
                 </View>
             </Modal>
