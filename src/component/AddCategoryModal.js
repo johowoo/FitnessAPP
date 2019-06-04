@@ -91,8 +91,6 @@ export class AddCategoryModal extends Component {
 const styles = StyleSheet.create({
     modalOuterContainer: {
         flex: 1,
-        // justifyContent: 'center',
-        // alignItems: 'center',
         position: "absolute",
         left: width * 0.148,
         // top: this.state.top,
