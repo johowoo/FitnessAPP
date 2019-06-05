@@ -1,31 +1,34 @@
-import React from 'react';
-import {createStackNavigator} from "react-navigation";
-import {CurrentWorkout} from "../page/CurrentWorkout";
-import {InnerCurrentWorkoutStackNavigator} from "./InnerCurrentWorkoutStackNavigator";
-import {CongratsPage} from "../page/CongratsPage";
+import React from "react";
+import { createStackNavigator } from "react-navigation";
+import { CurrentWorkout } from "../page/CurrentWorkout";
+import { InnerCurrentWorkoutStackNavigator } from "./InnerCurrentWorkoutStackNavigator";
+import { CongratsPage } from "../page/CongratsPage";
 
-let fontLoaded = true;
+const fontLoaded = true;
 
-export const CurrentWorkoutStackNavigator = createStackNavigator({
+export const CurrentWorkoutStackNavigator = createStackNavigator(
+  {
     CurrentWorkout: {
-        screen: props => <CurrentWorkout fontLoaded={fontLoaded} {...props} />,
-        navigationOptions: {
-            header: null,
-        },
+      screen: props => <CurrentWorkout fontLoaded={fontLoaded} {...props} />,
+      navigationOptions: {
+        header: null,
+      },
     },
     InnerCurrentWorkoutStackNavigator: {
-        screen: InnerCurrentWorkoutStackNavigator,
-        navigationOptions: {
-            header: null,
-        },
+      screen: InnerCurrentWorkoutStackNavigator,
+      navigationOptions: {
+        header: null,
+      },
     },
     CongratsPage: {
-        screen: CongratsPage,
-        navigationOptions: {
-            header: null
-        }
-    }
-}, {
+      screen: CongratsPage,
+      navigationOptions: {
+        header: null,
+      },
+    },
+  },
+  {
     headerMode: "float",
-    headerTransitionPreset: "fade-in-place"
-});
+    headerTransitionPreset: "fade-in-place",
+  }
+);

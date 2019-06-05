@@ -1,17 +1,17 @@
-import React, {Component} from "react";
-import {Modal} from "react-native";
-import {ExerciseList} from "../component";
+import React, { Component } from "react";
+import { Modal } from "react-native";
+import { ExerciseList } from "../component";
 
 export class ExerciseModal extends Component {
-    render() {
-        return (
-            <Modal
-                style={{flex: 1}}
-                animationType="slide"
-                visible={this.props.visible}
-                onRequestClose={this.props.closeModal}>
-                <ExerciseList {...this.props} />
-            </Modal>
-        );
-    }
+  render() {
+    return (
+      <Modal
+        style={{ flex: 1 }}
+        animationType="slide"
+        visible={this.props.visible}
+        onRequestClose={this.props.closeModal}>
+        <ExerciseList {...this.props} />
+      </Modal>
+    );
+  }
 }

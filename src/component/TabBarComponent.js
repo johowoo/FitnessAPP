@@ -12,7 +12,7 @@ import isIphoneX from "../utils/isIphoneX";
 
 const windowWidth = Dimensions.get("window").width;
 const tabWidth = windowWidth / 4;
-const {width, height} = Dimensions.get("window");
+const { width, height } = Dimensions.get("window");
 const isNotchScreen = height / width >= 18.5 / 9;
 const SpotLight = posed.View({
   route0: { x: 0 },
