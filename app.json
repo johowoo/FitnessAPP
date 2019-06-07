@@ -23,7 +23,7 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true,
+      "supportsTablet": false,
       "bundleIdentifier": "com.bug8.JoesFitness"
     },
     "android": {
@@ -31,5 +31,8 @@
     },
     "description": "A gym app built for bodybuilders who want to make a detailed workout plan and record their progress.",
     "githubUrl": "https://github.com/johowoo/FitnessAPP"
+  },
+  "infoPlist": {
+    "NSCameraUsageDescription": "This app uses the camera and album to record progress photos so that users can compare them to see their progress."
   }
 }
