@@ -1,66 +1,66 @@
 # FitnessAPP
-fitness app built with React native
-##notes
-* should never let the state of the redux to be an array!!!
-* use setParams to refresh state in NavigatorOptions(eg: header)
+Fitness app built with React native.
+
+## notes
+* Should never let the state of the redux to be an array!!!.
+* Use setParams to refresh state in NavigatorOptions(eg: header).
 
 ## main functions
-* set scheduled notifications for workouts
-* log workout history
-* log and edit record weight/reps/sets data
-* editable categories in exercises library (Chest, Back, Cardio ...)
-* add a whole category of exercises to current workout in one time
-* editable library
+* Set scheduled notifications for workouts
+* Log workout history
+* Log and edit record weight/reps/sets data
+* Editable categories in exercises library (Chest, Back, Cardio ...)
+* Add a whole category of exercises to current workout in one time
+* Editable library
 * Calendar component to record/edit workout history/plan
-* analysis function
-* weight/body fat rate charts
-* progress photo(add data and photo at the same time)
-* link data inputted with progress photo with weight/BFR charts
+* Analysis function
+* Weight/body fat rate charts
+* Progress photo(add data and photo at the same time)
+* Link data inputted with progress photo with weight/BFR charts
 
 
 ## To be done
 ### bugs to be fixed
 //PickerCamera Line 82 (put showModal in redux)
-* notification timing bugs
-* sets of cardio 
-* adjust to different smartphones (iPhone 8 ... Android)
-
-* back button in congrats page
+* Notification timing bugs
+* Sets of cardio 
+* Adjust to different smartphones (iPhone 8 ... Android)
+* Back button in congrats page
 
 ### new functions
-* select month & year in calendar //calendar
-* back to today in calendar   //calendar
+* Select month & year in calendar //calendar
+* Sack to today in calendar   //calendar
 
-* widget
-* add custom workout to editHistory
-* slide effects in swiping pics
-* change ranks in currentWorkout  ？？？
+* Widget
+* Add custom workout to editHistory
+* Slide effects in swiping pics
+* Change ranks in currentWorkout  ？？？
 
-* dropdown -> selection & input 
-* the main focus of exercise (chest/back ....)??
-* shadow of button in CurrentWorkout ?
+* Dropdown -> selection & input 
+* The main focus of exercise (chest/back ....)??
+* Shadow of button in CurrentWorkout ?
 
 ### etc
-* consider the construct of the TabPage (whether display customWorkout firstly or not)
+* Consider the construct of the TabPage (whether display customWorkout firstly or not)
 
 ## completed
 ### functions
-* deletable set data ✔️
-* keep refreshing exercise category ✔️
-* add more exercise ✔️
+* Deletable set data ✔️
+* Keep refreshing exercise category ✔️
+* Add more exercise ✔️
 * delete exercise ✔️
-* editable weight/reps list ✔️
-* touchable search results ✔️
-* week/month/6 months/year analysis ✔️
-* swipe photos in progress ✔️
-* deletable pics ✔️
-* deletable exercise category ✔️
-* exercise category validation (no duplication) ✔️
-* loading icon in progress pics ✔️
-* step counts -> HEALTH ✘
-* position -> GPS ✘
-* lazy loading of pics ✘
-* delete function in each pic  ✔️
+* Editable weight/reps list ✔️
+* Touchable search results ✔️
+* Week/month/6 months/year analysis ✔️
+* Swipe photos in progress ✔️
+* Deletable pics ✔️
+* Deletable exercise category ✔️
+* Exercise category validation (no duplication) ✔️
+* Loading icon in progress pics ✔️
+* Step counts -> HEALTH ✘
+* Position -> GPS ✘
+* Lazy loading of pics ✘
+* Delete function in each pic  ✔️
  (refresh after deleting
   after deleting the last pic return to Progress)
 * delete one pic modal -> confirm modal✔️
